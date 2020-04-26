@@ -1,0 +1,1097 @@
+%% LyX 2.1.4 created this file.  For more info, see http://www.lyx.org/.
+%% Do not edit unless you really know what you are doing.
+\documentclass[11pt,czech,american]{book}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\geometry{verbose,tmargin=4cm,bmargin=3cm,lmargin=3cm,rmargin=2cm,headheight=0.8cm,headsep=1cm,footskip=0.5cm}
+\pagestyle{headings}
+\setcounter{secnumdepth}{3}
+\usepackage{url}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[final]{pdfpages}
+\usepackage{natbib}
+\usepackage{mathrsfs}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage[noend]{algpseudocode}
+\usepackage{caption}
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{lyxlist}[1]
+{\begin{list}{}
+{\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+%% Font setup: please leave the LyX font settings all set to 'default'
+%% if you want to use any of these packages:
+
+%% Use Times New Roman font for text and Belleek font for math
+%% Please make sure that the 'esint' package is turned off in the
+%% 'Math options' page.
+\usepackage[varg]{txfonts}
+
+%% Use Utopia text with Fourier-GUTenberg math
+%\usepackage{fourier}
+
+%% Bitstream Charter text with Math Design math
+%\usepackage[charter]{mathdesign}
+
+%%---------------------------------------------------------------------
+
+%% Make the multiline figure/table captions indent so that the second
+%% line "hangs" right below the first one.
+%\usepackage[format=hang]{caption}
+
+%% Indent even the first paragraph in each section
+\usepackage{indentfirst}
+
+%%---------------------------------------------------------------------
+
+%% Disable page numbers in the TOC. LOF, LOT (TOC automatically
+%% adds \thispagestyle{chapter} if not overriden
+%\addtocontents{toc}{\protect\thispagestyle{empty}}
+%\addtocontents{lof}{\protect\thispagestyle{empty}}
+%\addtocontents{lot}{\protect\thispagestyle{empty}}
+
+%% Shifts the top line of the TOC (not the title) 1cm upwards 
+%% so that the whole TOC fits on 1 page. Additional page size
+%% adjustment is performed at the point where the TOC
+%% is inserted.
+%\addtocontents{toc}{\protect\vspace{-1cm}}
+
+%%---------------------------------------------------------------------
+
+% completely avoid orphans (first lines of a new paragraph on the bottom of a page)
+\clubpenalty=9500
+
+% completely avoid widows (last lines of paragraph on a new page)
+\widowpenalty=9500
+
+% disable hyphenation of acronyms
+\hyphenation{CDFA HARDI HiPPIES IKEM InterTrack MEGIDDO MIMD MPFA DICOM ASCLEPIOS MedInria}
+
+%%---------------------------------------------------------------------
+
+%% Print out all vectors in bold type instead of printing an arrow above them
+\renewcommand{\vec}[1]{\boldsymbol{#1}}
+
+% Replace standard \cite by the parenthetical variant \citep
+%\renewcommand{\cite}{\citep}
+
+\makeatother
+
+\usepackage{babel}
+\begin{document}
+\def\documentdate{July 7, 2017}
+
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{note}{Note}[chapter]
+\newtheorem{example}{Example} 
+
+\newtheorem{theorem}{Theorem}
+
+\captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
+
+
+\def\documentdate{\today}
+
+\pagestyle{empty}
+{\centering
+
+\noindent %
+\begin{minipage}[c]{3cm}%
+\noindent \begin{center}
+\includegraphics[width=3cm,height=3cm,keepaspectratio]{Images/TITLE/cvut}
+\par\end{center}%
+\end{minipage}%
+\begin{minipage}[c]{0.6\linewidth}%
+\begin{center}
+\textsc{\large{}Czech Technical University in Prague}{\large{}}\\
+{\large{}Faculty of Nuclear Sciences and Physical Engineering}
+\par\end{center}%
+\end{minipage}%
+\begin{minipage}[c]{3cm}%
+\noindent \begin{center}
+\includegraphics[width=3cm,height=3cm,keepaspectratio]{Images/TITLE/fjfi}
+\par\end{center}%
+\end{minipage}
+
+\vspace{3cm}
+
+
+\textbf{\huge{}Real Options Valuation: A Dynamic Programming Approach}{\huge \par}
+
+\vspace{1cm}
+
+
+\selectlanguage{czech}%
+\textbf{\huge{}Oceňování projektů metodou reálných opcí z pohledu dynamického progamování}{\huge \par}
+
+\selectlanguage{american}%
+\vspace{2cm}
+
+
+{\large{}Master's Thesis}{\large \par}
+
+}
+
+\vfill{}
+
+\begin{lyxlist}{MMMMMMMMM}
+\begin{singlespace}
+\item [{Author:}] \textbf{Filip Rolenec}
+\item [{Supervisor:}] \textbf{Ing. Rudolf Kulhavý, DrSc.}
+\end{singlespace}
+
+\item [{Language~advisor:}] \textbf{Ing. Rudolf Kulhavý, DrSc.} 
+\begin{singlespace}
+\item [{Academic~year:}] 2020/2021\end{singlespace}
+
+\end{lyxlist}
+\newpage{}
+
+~\newpage{}
+
+~
+
+\vfill{}
+
+
+\begin{center}
+\includepdf[pages={1}]{Images/zadaniMT.pdf}
+
+
+\par\end{center}
+
+\vfill{}
+
+
+~\newpage{}
+
+~
+
+\vfill{}
+
+
+\begin{center}
+\includepdf[pages={2}]{Images/zadaniMT.pdf}
+\par\end{center}
+
+\vfill{}
+
+
+~\newpage{}
+
+\noindent \emph{\Large{}Acknowledgment:}{\Large \par}
+
+\noindent I would like to thank my supervisor Ing. Rudolf Kulhavý, DrSc. for his professional guidance and all the advice given while creating this thesis. 
+
+\vfill
+
+\noindent \emph{\Large{}Author's declaration:}{\Large \par}
+
+\noindent I declare that this Master's thesis is entirely
+my own work and I have listed all the used sources in the bibliography.
+
+\bigskip{}
+
+
+\noindent Prague, \documentdate\hfill{}Filip Rolenec
+
+\vspace{2cm}
+
+
+\newpage{}
+
+~\newpage{}
+
+\selectlanguage{czech}%
+\begin{onehalfspace}
+\noindent \emph{Název práce:}
+
+\noindent \textbf{Oceňování projektů metodou reálných opcí z pohledu dynamického progamování}
+\end{onehalfspace}
+
+\bigskip{}
+
+
+\noindent \emph{Autor:} Filip Rolenec
+
+\bigskip{}
+
+
+\noindent \emph{Obor:} Matematické inženýrství 
+
+
+\bigskip{}
+
+
+\noindent \emph{Druh práce:} Diplomová práce
+
+\bigskip{}
+
+
+\noindent \emph{Vedoucí práce:} Ing. Rudolf Kulhavý, DrSc.
+
+
+\bigskip{}
+
+
+\noindent \emph{Abstrakt:} Valuace převážné většiny investičních příležitostí se dnes stále určuje metodou diskontovaných peněžních toků (DCF) \ref{}. DCF metoda je přímočará a pro jednoduché projekty dává velmi přesné výsledky. Složitější projekty, které pro tuto práci definujme jako projekty s vysokou mírou vnitřní neurčitosti a existencí manažerských rozhodnutí značně ovlivňujících strukturu projektu (reálné opce), jsou dnes oceňovány metodou \textit{real option analysis} (ROA). Metoda ROA přiznává hodnotu možnostem změny projektového plánu, v důsledku čehož je ohodnocení ROA vyšší než DCF. 
+
+Tato práce má za cíl interpretovat řízení projektů a s ním související zisk, jako řízení stochastického systému. Rozsáhlá teorie stochastického řízení \ref{}, \ref{}, \ref{}, dovoluje vybudovat novou teorii oceňování postavenoj na základech ROA, která mimo jiné řeší omezení ROA na pouze jediný zdroj neurčitosti - například cenu těžených minerálů na burze v budoucnosti \ref{}. 
+
+Nový originální přístup k oceňování projektů, který kombinuje dosavadní dosažené znalosti v ekonomické teorii (ROA) a teorii stochastického řízení systémů, je obecně definován v první části práce a prakticky otestován simulacemi na třídě problémů z oblasti těžebního průmyslu. 
+
+
+\bigskip{}
+
+
+\noindent \emph{Klíčová slova:}   Analýza reálných opcí, Diskontované peněžní toky, Oceňování projektů, Stochastické řízení, Těžební průmysl
+
+
+
+\selectlanguage{american}%
+\vfill{}
+~
+
+\begin{onehalfspace}
+\noindent \emph{Title:}
+
+\noindent \textbf{Real Options Valuation: A Dynamic Programming Approach}
+\end{onehalfspace}
+
+\bigskip{}
+
+
+\noindent \emph{Author:} Filip Rolenec
+
+\bigskip{}
+
+
+\noindent \emph{Abstract:} The valuation of investment opportunities (projects) is nowadays still predominantly computed by the\textit{ discounted cash flow } (DCF) method \ref{}. DCF is straightforward and gives solid results for simple projects. For more complicated projects, which are in this thesis defined as projects with identifiable real options having substantial degree of inner uncertainty, the \textit{real option analysis} (ROA) is now being used. ROA recognizes value in the ability to change projects' plans, which usually results in loss limitation, increasing the overall expected value of the project. 
+
+This thesis aims to interpret project execution and its valuation as a problem of stochastic decision control. The extensive stochastic decision control theory allows us, based on ROA,  to design new valuation theory, that for example solves the limitation of ROA on only one source of uncertainty - such as the volatile price of the mined materials on the market. 
+
+New and original approach to project valuation, that combines both the economical theory (ROA) and the stochastic control theory is defined in the first part of the thesis and then tested by simulations on one class of valuation problems - valuation of projects in mining industry.
+
+\bigskip{}
+
+
+\noindent \emph{Keywords:} Discounted cash flow, Mining industry, Project valuation,  Real option analysis, Stochastic decision control
+
+\newpage{}
+
+~\newpage{}
+
+\pagestyle{plain}
+
+\tableofcontents{}
+
+\newpage{}
+
+
+\chapter{Publications that I have read and short introduction to them}
+
+	Books in the assignment description
+\begin{itemize}
+	\item{Real option, A practitioner's guide - Copeland, Antikarov 2003 \ref{Cop:01}}
+\end{itemize}
+
+
+
+\chapter{Introduction}
+
+
+
+
+
+
+
+
+In broad terms, this bachelor thesis studies decision making under uncertainty, one of the core parts of human activities. The process of decision making can be generally described as a sequence of actions taken on a system. Every performed action influences the system and generates a dependent output state. The structure of decision-making loop studied in the thesis is illustrated in Fig.\ref{Fig:MDPGeneral}, while its parts are gradually clarified within the whole text. When the optimality of this sequence is studied, some measure of "profit" has to be introduced. This is usually done by assigning numerical value to each of the possible state-action-output state configurations. Since different actions lead to different output states it is reasonable to ask which sequence of actions leads to the highest profit on average. The mapping that generates such behaviour is called the optimal policy and its approximate design is the main topic of this work.
+
+When studying real life systems, the output states tend to be uncertain, meaning that one action can lead to many states with generally different probabilities. Moreover, these \textit{transition probabilities} are usually a priori unknown. The goal of statisticians is then to make the best estimates of the transition probabilities, based on the available data. These estimates can surely be made in various ways, but in this text we will talk mainly about the Bayesian approach to this problem, as it fits to the decision-making context.
+
+As the research of decision-making theory can offer a significant improvement in various fields of human well-being, a lot of time and resources have been used for creating a coherent, widely acceptable and applicable theory. One of the key publications in this field is Puterman's book on Markov Decision Processes \cite{Put:05}, which describes in detail the main mathematical framework that is used in this work. Another important book is Bellman's Dynamic Programming \cite{Bel:57}, which presents a simple but powerful approach for optimisation of the decision policy. The main idea in Bellman's theory, that is meant to be used primarily  for finite-horizon processes, is that if the policy is to be optimal, its last action has to be. The theory of dynamic programming works well for systems with known parameters and it has been used in various fields of engineering, including, for instance, water engineering \cite{Yak:82}, speech recognition \cite{Rab:89} or molecular biology \cite{GalGia:87}. A problem arises when the parameters are unknown or uncertain, which is almost always the case in real life applications. The need for estimation of the parameters based on the available data can be satisfied with a Bayesian approach, \cite{Pet:81}. 
+
+The Bayesian statistics paradigm as an alternative to the classical statistical model, offers an opportunity to implement an educated guess - a prior knowledge about the parameters of the process. The certainty about existence of a prior educated guess is well formulated by Peterka \cite{Pet:81}: "No prior information is a fallacy: an ignorant has no problems to solve". It means that every time one is solving a decision problem, one has to have at least some information, or opinion, about how the system behaves, or what its responses are expected to be. The practical usage of Bayesian estimation can be seen, for example, in works of Chaabane \cite{ChaManNou:16} (material engineering) or Bornignon \cite{BorFigAze:17} (petroleum engineering). 
+
+This text studies the optimal (in some sense) decision policy for discrete, finite-horizon Markov decision processes (MDPs), which form the backbone of the whole thesis. The optimal policy for MDPs can be designed by the theory of dynamic programming for known parameters. The policies for MDPs with unknown parameters can be also designed by the theory of dynamic programming, when outcomes of Bayesian estimation are included to the solution \cite{Duf:02}, but the actual feasibility of achieving the optimal policy is questionable. The exponential complexity that comes from the enormous increase in the size of the information state space is one of the main problem this work addresses. 
+
+Another problem, which is addressed in this work is the notorious exploration vs exploitation dichotomy  \cite{CreLiuMer:13}. It expresses the concern about estimation accuracy when only a limited amount of data is available and when actions have to be selected in parallel with the given exploitation aim. In other words, it is hard to assign an empirically supported probability to a process that has not happened. 
+
+The impact of the addition of deliberation cost into the model is the last aspect touched in this thesis. This term reflects the fact that "thinking cost resources", meaning that even the actions that could be described as "thinking" influence the profit of the decision making.
+
+To solve all these problems generally would be very difficult, and that is why we have to limit our research to specific classes of MDPs. The first class can be characterized as MDPs that have fixed and finite number of actions and states. I call these MDPs \textit{single systems}. The second class of MDPs, that is being studied, is called \textit{multi-armed bandit}, even though it is actually a generalisation of the original definition of this term, \cite{VerMeh:05}. The class of \textit{multi-armed bandit} systems is a generalisation of the \textit{single systems} in a sense that the former "consist of" several latter.
+
+The structure of this thesis can be described as follows. A brief introduction to the mathematical model of MDPs and to the Bayesian statistics approach is presented in Chapter 2. Chapter 3 consists of both the formulations of the inspected optimisation problems and their solutions. Algorithms derived in Chapter 3 are then tested in simulations of various types of processes in Chapter 4, namely: \textit{single systems} with known and unknown parameters. Chapter 5 provides a commentary on the conformity between the expected results from theory and the actual results from the simulations. Finally, Chapter 6 summarizes the work that has been done, underlines the main contributions contained in Chapters 3, 4 and 5, and offers suggestions for the future research.
+
+
+
+
+
+%\addcontentsline{toc}{chapter}{Introduction}
+
+
+
+%\addcontentsline{toc}{chapter}{Preliminaries}
+
+\pagestyle{headings}
+
+\chapter{Preliminaries}
+
+This chapter introduces the mathematical theory and notions that are further used in this work. At first, several general mathematical definitions are presented. These are then followed by a specific notation for each part of the theory in respective sub-chapters.
+
+In this work the usual notation for natural numbers $\mathbb{N}$, and real numbers $\mathbb{R}$ is used. The bold capital letters, such as $\textbf{B}$, represent a set of all $\textit{b}$ $\in \textbf{B}$, as in \cite{Rum:16}. Cardinality of $\mathbf{B}$ is denoted as $|\mathbf{B}|$. In the whole work, $p(x)$ represents the probability of an event $x$. This $p(x)$ probability is mostly used for discrete-valued events, but it can also be in a form of probability density for the events with continuous range. Since this thesis works with conditional probability processes, expressing that probabilities of output states depend on actions, it uses conditional probability of an event $x$ happening after the event $y$ has already happened $p(x|y)=\frac{p(x,y)}{p(y)}$.
+
+Also, the standard symbol for Kronecker delta function, $\delta(x,y)$ is used. This function is defined as $\delta(x,y)=1$, if $x=y$ and $0$, if $x \ne y$. For the parts of the thesis, where the complexity of algorithms is discussed, the Landau's $\mathcal{O}$ notion is used, \cite{Lan:09}.
+
+
+Symbols that will be used in individual parts of this work originate mostly from three publications. The notion used for describing Markov's processes comes from \cite{Put:05}, Bayesian statistics theory is mostly taken from \cite{Pet:81}, and finally the notion used for dynamic programming originates from \cite{Bel:57}. 
+
+
+
+\section{Discrete Markov decisions processes}\label{DMDPSection}
+A lot of real life decision tasks can be approximately described by the mathematical framework called discrete Markov decision processes (MDPs), Fig. \ref{Fig:MDPSchema}. The definition of this mathematical framework is crucial for this work, as it is the basis upon which the theory of policy optimisation is built. 
+
+\begin{definition}
+	Discrete Markov Decision Process $\mathcal{M}$ is defined as ordered set of five elements $(\textbf{T},\textbf{S},\textbf{A},P,R) $, where:
+	\begin{itemize}
+		\item \textbf{T} stands for a discrete, finite set of decision epochs; $\textbf{T}=\{0,1,2,...,|\mathbf{T}|\}$, where\footnote{Because the number of time epochs $|\mathbf{T}|$ is used frequently, the notation $|\mathbf{T}|=N$ is used.} $|\mathbf{T}| \in \mathbb{N}$
+		\item \textbf{S} denotes a discrete, finite set of possible states of the system; $\textbf{S}=\{1,2,...,|\mathbf{S}|\}$, where $|\mathbf{S}| \in \mathbb{N}$. 
+		\item  \textbf{A} stands for a discrete, finite set of possible actions; $\textbf{A}=\{1,2,...,|\mathbf{A}|\}$, where $|\mathbf{A}| \in \mathbb{N}$. 
+		
+		\item $P$ is a transition probability function, meaning that $P(\tilde{s}|a,s) \geq 0$, where $\sum_{\tilde{s} \in \mathbf{S}}P(\tilde{s}|a,s)=1$, fulfilling the \textbf{Markovian feature} $P(\tilde{s}|a,s)=P(\tilde{s}|a,s,v)$, $\forall \tilde{s},s \in \textbf{S}$ and $\forall a \in \textbf{A}$, where $v$ represents any additional past observation.
+		
+		\item $R$ represents a real-valued reward function $R=R(\tilde{s},a,s)$, where $\tilde{s}, s \in \mathbf{S}$, $a\in \mathbf{A}$ that is used for evaluation of the $s\rightarrow a\rightarrow \tilde{s}$ paths of the process. 
+		
+		The state in time epoch $t=0$ is known and it is denoted $s_0$.
+	\end{itemize} 
+	
+\end{definition}\label{DMDP}
+
+
+The special requirement for $P$ called the Markovian feature means that the output in a MDP depends only on the previous state and the performed action. No other information has any influence on the probability of the next state.
+
+
+
+\section{Dynamic programming}\label{DynProg}
+
+When we talk about MDPs, it is usually because an optimisation task of some system behaviour is being solved. This means that mappings that assign actions to the observed states are mutually compared according to value functions, i.e. expected cumulative reward they induce. These mappings are called \textbf{policies} in this thesis\footnote{It is worth noting that a term \textit{optimal decision strategy} is used for optimal policies in some other works, for example \cite{Ast:70}. }, Definition \ref{Def:policy}, and the one that generates the most total reward on average is called the \textbf{optimal policy}. The optimal policy maximises the expected reward cumulated over all considered epochs.
+
+\begin{definition}\label{Def:policy}
+	Let $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ be a MDP, then a \textbf{policy} $\pi_t \in \mathbf{\Pi_{t}}$, on such $\mathcal{M}$ is defined $\forall t \in \mathbf{T}$ as a sequence of a decision rules $(\pi_{t,\tau})_{\tau=t}^{N}$.
+	
+	A \textbf{decision rule} $\pi_{t,\tau}$ is the probability of selecting action $a$ when the state $s$ is observed, i.e.: $\pi_{t,\tau}(a|s))\geq 0,\sum_{a\in\mathbf{A}}\pi_{t,\tau}(a|s)=1,\tau \geq t, \tau \in \mathbf{T},\forall a \in \mathbf{A}$, $\forall s \in \mathbf{S}$. When the decision rule $\pi_{t,\tau}(a|s)=1$ for some action $a$ and some state $s$, then we say that the decision rule is \textbf{deterministic}. A policy that consists only of the deterministic decision rules is called \textbf{deterministic policy}. 
+\end{definition}
+
+The theory of dynamic programming, explained in detail in \cite{Bel:57}, is a simple yet powerful tool for obtaining the optimal policies in finite-horizon processes. As said in Introduction the idea is simple: \textit{"if the policy is to be optimal the last decision has to be optimal"}. Before this idea can be mathematically formulated, the notion of value function is introduced.
+
+\begin{definition}\label{ValueF} 
+	Let $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ be a MDP and $\pi_t \in \mathbf{\mathbf{\Pi_t}}$ a policy, then \textbf{value functions} of $\mathcal{M}$, $\varphi_{t}^{\pi_t}: \mathbf{S}\rightarrow \mathbb{R}$ are defined $\forall \pi_t \in \mathbf{\Pi_t}$, $\forall t \in \mathbf{T}\setminus \{N\}$ as:
+	\begin{equation}
+	\varphi_{t}^{\pi_t}(s)=E\bigg[\sum_{\tau > t, \tau \in \mathbf{T}}R(s_\tau,a_{\tau-1},s_{\tau-1})\big|s_t=s\bigg], 	
+	\end{equation}
+	where $s_{\tau}, s_{\tau-1} \in \textbf{S}$, represent the state of the system in $\tau$-th (($\tau$-1)-th) time epoch, $s \in \mathbf{S}$ stands for the state for which the value function is evaluated and $a_{\tau-1}$ represents the action taken in the ($\tau-1$)-th time epoch. The symbol E represents the conditional expectation.
+	
+	The term optimal value function $\varphi_t^{o}=\max_{\pi_t \in \mathbf{\Pi_{t}}}\varphi_{t}^{\pi_t}$ is further used as a value function of the optimal policy $\pi_{t}^{o}$, i.e. a policy maximising the value function. 
+	
+\end{definition}
+
+This value function $\varphi_t^{\pi_t}(s)$ thus represents the expected cumulative reward from the state $s \in \mathbf{S}$ at the time epoch $t \in \mathbf{T}$ for the policy $\pi_t$. 
+
+Now, when the optimal policy is desired, one can transform the problem to finding the optimal value function and then simply declare the optimal policy as the argument of the maxima. 
+
+
+When we would like to obtain the optimal value function, we could first think about the simple maximisation of $\varphi_{t}^{\pi_t}$ over the set $\mathbf{\Pi_t}$. But even if we limited our maximisation to the purely deterministic policies, it would still mean to compare $|\mathbf{A}|^{|\mathbf{S}|(N-t)}$ distinguishable ones on $|\mathbf{S}|$ states, $|\mathbf{A}|$ actions, in $N-t$ time epochs. This means that the algorithm would still have exponential complexity, which is generally considered infeasible. Thus another algorithm for obtaining the optimal value function has to be used. It is the dynamic programming algorithm that offers an alternative approach for evaluating the optimal value function $\varphi_t^{o}$ with a significantly lower complexity. Its main idea is that the $\varphi_t^{o}$ is computed layer by layer as it can be seen in Theorem \ref{DynProgTheo}.
+
+
+\begin{theorem}\label{DynProgTheo}
+	Let $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ be a MDP, then the optimal value function $\varphi_t^{o}(s)=\max_{\pi_t \in \mathbf{\Pi_{t}}}\varphi_t^{\pi_t}$ can be computed recursively $\forall t \in \mathbf{T}\setminus\{N\}$ through the equation:
+	
+	\begin{equation}
+	\varphi_t^{o}(s)=\max_{a_t \in \mathbf{A}} E\bigg[R(s_{t+1},a,s) + \varphi_{t+1}^{o}(s_{t+1})|a_t,s\bigg],
+	\label{DynProgEq}
+	\end{equation}
+	considering that $\varphi_{N}^{o}=0$ as Definition \ref{ValueF} implies. Furthermore the optimal policy $\pi_{t}^{o}$, as the argument of maxima, is concentrated on maximising arguments in Equation (\ref{DynProgEq}). 
+	
+\end{theorem}
+
+\begin{proof}
+	This theorem will be proven via a finite backward mathematical induction.
+	
+	At first, let us take an action $a^{o}_{N-1}$ in the time epoch $N-1$ defined as:
+	\begin{equation}
+	a^{o}_{N-1}(s) = \mathrm{Arg}\max_{a\in\mathbf{A}} E[R(s_{N},a,s)|a,s].
+	\end{equation}
+	By the definition of maxima the inequality
+	\begin{equation}
+	E[R(s_{N},a,s)|a^{o}_{N-1}(s),s]\geq E[R(s_{N},a,s)|a,s]
+	\end{equation}
+	holds $\forall a \in \mathbf{A}$. Now, let us take any decision rule $\pi_{N-1,N-1}$. This function consists only of a single decision rule, generating the action $a \in \mathbf{A}$ given by $\pi_{N-1,N-1}(a|s)\geq 0$. By multiplying the inequality by these non-negative numbers and summing over all $a \in \mathbf{A}$ we get 
+	\begin{equation}
+	E[R(s_{N},a,s)|a^{o}_{N-1}(s),s]\geq  E_{\pi_{N-1,N-1}}[R(s_{N},a,s)|s],
+	\end{equation}
+	where $E_{\pi_{N-1,N-1}}$ represents a mean value based on the randomised decision rule $\pi_{N-1,N-1}$. By defining $\pi^{o}_{N-1,N-1}(a|s)=\delta(a^{o}_{N-1}(s),a)$ the left side of the inequality can be rewritten as
+	\begin{equation}\label{Eq:Theo1Final}
+	E_{\pi^{o}_{N-1,N-1}}[R(s_{N},a,s)|s]\geq  E_{\pi_{N-1,N-1}}[R(s_{N},a,s)|s].
+	\end{equation}
+	Inequality (\ref{Eq:Theo1Final}) shows both, the optimality of the deterministic policy $\pi^{o}_{N-1,N-1}$ and the validity of Equation (\ref{DynProgEq}) for $t=N-1$, since $\varphi_{N}^{o}(s)=0$ $\forall s \in \mathbf{S}$.
+	
+	The proof for the remaining induction steps is identical to the one presented above, with the exception that instead of function $R$, the sum $R+\varphi_{\tau}^{o}$ is used, when the validity for (\ref{DynProgEq}) is being proven for $t=\tau-1$.
+	
+\end{proof}
+
+Now it can be seen how the optimal value functions $\varphi_t^{o}$ are computed in the dynamic programming algorithm. At first the value $\varphi_N^{o}(s)$ is evaluated $\forall s \in \mathbf{S}$ from Definition \ref{ValueF}. This is simply $0$, as it is a maximum of zero sums $\forall s \in \mathbf{S}$. Theorem \ref{DynProgTheo} is then used for the first time for evaluating the optimal value function in the time epoch $t=N-1$, $\varphi_{N-1}^{o}(s)$, $\forall s \in \mathbf{S}$. Equation  (\ref{DynProgEq}) is then recursively used for lower and lower levels until the values of $\varphi_0^{o}(s)$ are obtained $\forall s \in \mathbf{S}$. The optimal deterministic policy is concentrated on maximising arguments found during evaluations. \footnote{Okay like this?}
+
+It can also be seen that the complexity, in this case the number of operations needed, of this algorithm is $\mathcal{O}(N|\mathbf{S}|^2|\mathbf{A}|)$. There are $N$ optimal value functions $\varphi_{t}^{o}$, one for each time layer, each with $|\mathbf{S}|$ values needed to be computed. To evaluate one value means to compare average rewards from $|\mathbf{A}|$ actions, where one average reward takes $\mathcal{O}(|\mathbf{S}|)$ operations to obtain.
+
+
+\section{Bayesian estimation}\label{BayesianSection}
+This section briefly recalls the Bayesian approach to the statistical decision theory for inspected MDPs with an unknown parameter $\theta$. 
+
+As this thesis studies the optimal policies for MDPs with unknown transition probability function $P(\tilde{s}|a,s)$ there is a need for its estimation. At first the function $P$ is parametrized by the parameter $\theta \in \mathbf{\Theta}$. This dependency is described as $P(\tilde{s}|a,s,\theta)$. This reduces estimation of $P$ to estimation of eh parameter $\theta$.
+
+The estimation of the parameter $\theta$, which is used for determining the optimal policy, can be logically based only on the previously measured data, which are in the considered case compressed into a sufficient statistic denoted as $v=v(\tilde{s}|a,s) \in \mathbf{V}$. The values of the $v$ statistic $v(\tilde{s}|a,s)$, where $\tilde{s},s \in \mathbf{S},a \in \mathbf{A}$, represent the number of times the path $s \rightarrow a \rightarrow \tilde{s}$ has been measured through the history of such MDP. 
+
+The estimation can be done by classic approach or the alternative Bayesian where both assume to know the family of the distribution of data, $\mathscr{F}=\{P(\tilde{s}|a,s,\theta)|\tilde{s},s \in \mathbf{S}, a \in \mathbf{A}, \theta \in \mathbf{\Theta}\}$, parametrized by finite-dimensional $\theta \in \mathbf{\Theta}$. The main advantage of the Bayesian estimation is that it provides the needed system model even with no or small amount of data forming $v$ available. This feature of the Bayesian approach is needed in order to perform dynamic programming Section \ref{DynProg} and it is the main reason why it is used in this work.
+
+The main feature of the Bayesian statistics is that it treats the unknown parameter $\theta$ as random variable. A distribution of this random variable" $\theta$ is then studied. 
+
+Before any measurement is made, a statistician has to provide a probability density function of continuous-valued $\theta$, called the prior probability $p_0(\theta)$, which should express some knowledge about process that is being studied.\footnote{This is new} This probability then serves as a starting point, which is being adjusted by the truly measured data represented by the statistic $v$. The prior probability $p_0(\theta)$ can be derived in several ways \cite{Ber:85} by exploiting
+
+\begin{itemize}
+	\item an information from the past, data from the previous inspection of the same (or similar) problems;
+	\item a subjective educated guess of the statistician or an expert on the topic;
+	\item a combination of the former two, for instance by using their weighted average;
+	\item the principle of insufficient reasons, where the $p_0(\theta)$ is uniform distribution on the domain of $\theta$, meaning that $\theta$ has the same probability of having any value possible.
+\end{itemize}
+
+
+
+The principle of insufficient reasons can be used even when the estimated parameter is from set that has an infinite measure. Then $p_0(\theta)$ is not an actual probability distribution (as it does not integrate to 1) but rather a improper distribution, with which is worked in the same way as with the ordinary probability distribution. A detailed construction of $p_0(\theta)$ can be found in \cite{Pet:81}.
+
+Now, when the \textit{prior probability} $p_0(\theta)$ is known, it can be adjusted for the actually measured data represented by the statistic $v$ and then used for the prediction of the future behaviour of the system that is needed in dynamic programming. The adjustment is represented by an equation that comes from more general identity called the Bayes rule, Theorem \ref{BayesRule}, \cite{Rum:16}.
+
+
+\begin{theorem}\label{BayesRule}
+	Let \textit{x} and \textit{y} be random variables and \textbf{X} a set of all possible values of the variable \textit{x}. Then the conditional probability p(x|y) fulfils the following equality:
+	
+	\begin{equation}
+	p(x|y)=\frac{p(y|x)p(x)}{\int_{\textbf{X}}p(y|x)p(x)dx}.
+	\label{BayesRuleEq}
+	\end{equation}
+	
+\end{theorem}
+
+When identifying $x=\theta$, $\mathbf{X}=\mathbf{\Theta}$, and $y=v$, Equation (\ref{BayesRuleEq}) yields:
+
+\begin{equation}
+p(\theta|v)=\frac{p(v|\theta)p_0(\theta)}{\int_{\mathbf{\Theta}}p(v|\theta)p_0(\theta)d\Theta},
+\end{equation}\label{Eq:Predictor}
+where $p(\theta|v)$ is called a \textit{posterior probability} of the parameter $\theta$ based on the value of statistic $v$. For a given parametric model, 
+$P(\tilde{s}|a,s,\theta)$ and policies, for which $\theta$ is unknown, i.e.
+$\pi_{t,\tau}(a|s,v,\theta)=
+\pi_{t,\tau}(a|s,v)$, see \textit{Natural conditions of control} \cite{Pet:81}, the Bayes rule provides the update of the statistic $v$ on $\tilde{v}$ by using observed $s,a,\tilde{s}$ as
+\begin{equation}
+\label{Eq:Vupdt}
+p(\theta|\tilde{v})=
+\frac{P(\tilde{s}|a,s,\theta)p(\theta|v)  }{\int_{\mathbf{\Theta}} P(\tilde{s}|a,s,\theta)p(\theta|v)d\theta}.
+\end{equation}
+
+
+
+%It is worth noting that the knowledge of  family $\mathscr{F}$ is used in this formula through $p(v|\theta)$.
+Now, we are able to derive the estimation of the parameter $\theta$ based on the statistic $v$ according to Equation (\ref{Eq:Predictor}). However the main question about the future behaviour of the process that is described by $P(\tilde{s}|a,s,\theta)$ remains. Our incomplete knowledge of the parameter $\theta$ extends the state $s$ on a generalised state $(s,v)$, where $v$ is a sufficient statistic for $\theta$ estimation and is called the information state.
+
+Prediction\footnote{Common name for the transition probability gained by learning.} of the $s$-part of the generalised state then reads
+
+\begin{equation}\label{Eq:PostP}
+P(\tilde{s}|a,s,v)=\int_{\mathbf{\Theta}}P(\tilde{s}|a,s,\theta)
+{p(\theta|v)}d\theta,
+\end{equation}
+
+whereas the evolution of $v$ to $\tilde{v}$ is given by (\ref{Eq:Vupdt}). It reflects that system and knowledge accumulation dynamically evolve in dependence on chosen action and that the generalised state $(s,v)$ evolves in Markovian way.
+
+
+%It needs to be stated that for obtaining the predictor $P(\tilde{s}|a,s,v)$, the statistician has to know the family of the distribution, from which the data originate from. This knowledge is expressed through the distribution $p(\tilde{s}|a,s,\theta)$, hich is in this case easy to obtain. The parameter $\theta$ itself consists of all the probabilities of paths $s \rightarrow a \rightarrow \tilde{s}$.
+
+
+
+\chapter{Addressed tasks and their solutions}\label{ProblemFormChapter}
+This chapter delimits the optimisation problems of chosen classes of MDPs and provides their  theoretical solutions. Each sub-chapter concentrates on one class of MDPs, starting with the \textit{single system} for known and unknown transition probability function $P$ in Sections \ref{simple settings} and \ref{SimpleSettingsUnknownFormulation}, which are then followed by optimisation of the \textit{multi-armed bandit} in Section \ref{BanditKnownFormulation}. 
+
+
+It is shown that when using the dynamic programming algorithm for obtaining the optimal policies for the processes with known transition parameters $P$, the solution is straightforward and not hard to apply. On the other hand, when the solution to the optimisation problems for systems with unknown $P$ is desired, one cannot offer a feasible and unambiguous one. I present three types of algorithms, which are all based on the combination of the dynamic programming and the Bayesian estimation. The difference in these is in exploiting the estimation results, which has a significant influence on the overall complexity. 
+
+
+\section{Optimal decision policy for a single system with known model}\label{simple settings} 
+The first goal of this thesis is to find the optimal decision policy of MDP that I call \textit{single system} if the transition probability function $P$ is known. This MDP is defined as follows.
+
+\begin{definition}\label{Def:SinSys}
+	Let $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ be a MDP. Then $\mathcal{M}$ is called \textbf{single system}, when the sets $\mathbf{A}$ and $\mathbf{S}$ can be represented as $A=\{1,2,...,|\mathbf{A}|\}$, or $S=\{1,2,...,|\mathbf{S}|\}$ respectively. 
+\end{definition}
+
+These types of processes correspond with the idea that a system can be in one of finite number of states and then after "turning on" generates an output, which is an observable state of the system. This output state is rewarded based on the initial state and performed action via the reward function $R$. The actions can the be interpreted as "putting the system in a different state".
+
+\begin{example}
+A real life example of the \textit{single system} MDP is an evaluated biased coin tossing. Imagine a game where you are tossing a coin and you are rewarded with $\$1$ every time you get Heads as the output. The coin bias is known and the result of the toss depends on the side, from which the coin is tossed. The action of turning the coin after its landing (and before another toss) is penalised by paying a dime. The question is how to behave, what actions to perform, in each time epoch of this process when you want to get as much money as you can in a finite, $N$-round game.
+\end{example}\label{Ex:Single}
+
+Finding the optimal policy for \textit{single system} MDP $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ with known transition probability function $P$ is the easiest problem that is addressed in this thesis. The solution in form of a decision table could come straight from definition of the \textit{value function}, Definition \ref{ValueF}. The optimal policy $\pi_0^{o}$ for the initial state $s_{0}\in \mathbf{S}$ would be the argument of the maxima of the optimal value function $\varphi_0^{o}(s_{0})$.
+
+Such an algorithm would have to evaluate the expected reward for all the possible $|\mathbf{A}|^{|\mathbf{S}|N}$ distinguishable deterministic policies while finding the maximum of them. This algorithm could be categorized as a brute force algorithm and the computational complexity would be at least exponential in a number of operations.
+
+Much more efficient Algorithm \ref{alg:SingleKnown}, which is based on Theorem \ref{DynProgTheo}, is used in this thesis. Theorem \ref{DynProgTheo} offers to recursively evaluate all the optimal value functions $\varphi_t^{o}$ with the complexity $\mathcal{O}((N-t)|\mathbf{S}|^2|\mathbf{A}|)$. This means that the optimal policy $\pi_0^{o}$ for the \textit{single system} MDP class can be obtained as the argument of the optimal value function $\varphi_0^{o}$ with a complexity $\mathcal{O}(N|\mathbf{S}|^2|\mathbf{A}|)$.
+
+We can now describe the dynamic programming algorithm in detail.
+
+\begin{algorithm}
+	\caption{Finding the optimal policy for a \textit{single system} MDP with known $P$}\label{alg:SingleKnown}
+	\begin{algorithmic}[1]
+		\Require{$\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$}
+		\State$ \varphi_N^{o}(s) \gets 0$, $\forall s \in \mathbf{S} $ \Comment{Based on Definition \ref{ValueF}.}
+		\State $t \gets N$ 
+		\While{$t\ne 0$}
+		\For{ each $s \in \{1,2,...,|\mathbf{S}|\}$}
+		\State $\varphi_{t-1}^{o}(s) \gets Equation$ $(\ref{DynProgEq})$ \Comment{With known $P$ and $\varphi_{t}^{o}$}
+		\EndFor
+		\State $t \gets t-1$
+		\EndWhile
+		\State $\pi_{0}^{o}(s) \gets argmax$ $\varphi_0^{o}(s)$ $ \forall s\in \mathbf{S}$, \Comment{Deriving the optimal policy}
+		\State	\Return{$\pi_{0}^{o}$}
+	\end{algorithmic}
+\end{algorithm}
+
+
+
+
+This algorithm offers not only the explicit optimal policy in terms of a decision table but also the expected cumulative reward that is to be gained from the beginning in each state $s \in \mathbf{S}$ when the optimal policy is used through the process. This is expressed through the value $\varphi_0^{o}(s)$. With the knowledge of both $\pi_0^{o}$ and the values $\varphi_{0}^{o}(s)$, a simulation of the actual decision making on $\mathcal{M}$ can be performed and the experimental cumulative rewards can be compared to the expected optimal ones. This simulation can be found in Section \ref{Sec:ExpKnoSin}.
+
+
+
+\section{Optimal decision policy for a single system with unknown model}\label{SimpleSettingsUnknownFormulation}
+The second optimisation problem this thesis copes with has almost identical setting as the first one. The only but crucial difference from the first problem presented in the previous section is that the decision maker lacks information about the transition probability function $P$. 
+
+
+It is reasonable to expect that this lack of information makes the conclusions about the optimal policy more difficult to make and that some estimations of $P$ have to be made. These estimates, each in time $t \in \mathbf{T}$, are noted as $P_t$ and they are called predictors. 
+\footnote{Please read the following paragraph, it is new}
+The adopted Bayesian approach expresses the incomplete knowledge by considering family $\mathscr{F}$ parametric models. It updates 
+sufficient statistics $v_{t}\in \mathbf{V}_{t}$ determining posterior probabilities of $\theta\in \boldsymbol{\Theta}$. Then, it evaluates predictors $P_t$, which relate the observed past states and the selected actions to future states. Thus, the predictor serves as the known system model needed in the design of policy optimal under the available information. 
+
+
+%In this thesis I use the Bayesian estimation, which is outlined in \ref{BayesianEstimationSolution}, where the parametrisation of $P$ by $\theta$ parameter is presented. 
+%
+%The Bayesian estimates of parameter $\theta$, denoted as $\theta_t$, are expected to improve with each output and that is why the algorithms in this chapter are adaptive. The adaptivity means that each decision $a$ in time epoch $t$ is based on the estimate $\theta_t$ that is derived with respect to the whole history of the process until that time, described by a statistic $v_t \in \mathbf{V_t}$.
+
+
+ The $v_t$ is called information state and it consists of the frequencies of paths $s \rightarrow a \rightarrow \tilde{s}$ that have been measured until the time epoch $t$, see Section \ref{BayesianEstimationSolution}. The $\mathbf{V_t}$ is the set of all the possible information states.
+
+Now a question how to determine the optimal action in time epoch $t$ based on the available information arises. When the theory of dynamic programming is to be used, one have to generalise the definition of a "state" from $s \in \mathbf{S}$ to a $(s,v_t)$ pair because the predictor $P_t$ modelling the system depends on $v_t$. This exact dynamic programming approach is then shown to be infeasible due to the extreme increase in the cardinality of $\mathbf{V_t}$ with higher $t$. This approach is presented in \ref{PureBayesSol}.
+
+
+The extreme complexity caused by incomplete knowledge is avoided by "freezing" the evolution of the informational state $v_t$ used for dynamic programming. Moreover, the predictor $P(s_{\tau+1}|a_{\tau},s_{\tau},\hat{\theta_{t}})$ is used in optimisation for $\tau\geq t,\tau\in\mathbf{T}$, where $\hat{\theta_{t}}$ is the current (in time epoch $t$) point estimate of  $\theta$, see Section \ref{CertEqSol}. This approximation approach is called certainty equivalence, as it declares the estimate $\hat{\theta_{t}}$ to be equivalent to the actual parameter $\theta$. \footnote{Check this again please, I have made hats for the point estimates and referenced the solution. And overall changed it a bit}
+
+
+%The second algorithm that is introduced counteracts the failure of the first one. The extreme complexities caused by the assumption that $\theta_t$ is a random variable evolving in time as $\theta_\tau$ are removed by interpreting $\theta_\tau$ $\forall \tau \geq t$, $\tau \in \mathbf{T}$, as point estimates $\hat{\theta_t}$ via the theory of certainty Equivalence (CE). This algorithm is presented in Section \ref{CertEqSol}. 
+
+Now two algorithms are available, one more precise but infeasible, and the other one which has significantly lower complexity, but it is sub-optimal as it does not fully exploit all available information.
+
+One could wonder if there is an algorithm "in between". Some algorithm providing the best results (closest to the ones in Section \ref{PureBayesSol}) while respecting the amount of computing power available. The answer to this question can be found in Section \ref{mStepSol} where the m-Step approximation algorithm is presented. This m-Step approximation algorithm works as a hybrid of the two formerly derived ones. At first, the CE approach is used for the evaluation of the estimate of the value function in time epochs $\tau\geq t+m$. Then the exact dynamic programming is initiated for the computation of the estimate of the optimal value function for the remaining $\max\{m,N-t\}$ time epochs. A small $m$ is used so that the statistician using this algorithm is able to modify the feasibility of this algorithm with respect to the available computing power. This algorithm is presented in \ref{mStepSol}.\footnote{This paragraph is totally new, I have changed a lot about what you have suggested, hope is it okay still.}
+
+\subsection{Bayesian estimation of transition probability function $P$}\label{BayesianEstimationSolution}
+For the computation of the Bayesian estimate of the transition probability function, two entities are needed. The family of the distribution of $P(\tilde{s}|a,s,\theta)$, $\mathscr{F}$, and the prior probability of $\theta$, $p_0(\theta)$. These are then used for the evaluation of the Bayesian estimate of $\theta$, called $\theta_t$, which provides the $P_t$ estimation through Equation (\ref{Eq:PostP}), and are defined as follows. 
+
+In the considered discrete-valued case, transition probability functions are finite-dimensional tables. Thus, they can be parametrised by probability values as:
+\begin{equation}
+\label{e:calF}
+\mathscr{F}=\Big\{P(\tilde{s}|a,s,\theta)
+\Big|\theta(\tilde{s}|a,s)=\prod_{\tilde{s}',s'\in\mathbf{S}}\prod_{a'\in\mathbf{A}}
+\theta(\tilde{s}'|a',s')
+^{\delta(\tilde{s}',\tilde{s})\delta(s',s)\delta(a',a)} \Big\},
+\end{equation} 
+where the set of parameters $\theta$ is determined by their meaning. They have to be non-negative and sum over $\tilde{s}$ one must be the identity matrix. This seemingly complex expression of $\mathscr{F}$ members hints how to choose the prior probability  $p_0(\theta)$.  It is determined by parameters $w=w(\tilde{s}|a,s)\geq 0$,\footnote{Please check the whole section up to this, huge changes were made} where $\tilde{s}, s \in \mathbf{S}, a \in \mathbf{A}$, as:
+
+\begin{equation}
+p_{0}(\theta|w)\propto
+\prod_{\tilde{s},a,s}
+\theta(\tilde{s}|a,s)^{w(\tilde{s}|a,s)-1},
+\end{equation}
+where $\propto$ means proportionality. The normalising factor is a product of multivariate beta functions 
+\begin{equation}
+\prod_{s,a}\frac{\prod_{\tilde{s}}
+	\Gamma(w(\tilde{s}|a,s))}
+{\Gamma(\sum_{\tilde{s}}
+	w(\tilde{s}|a,s))}.
+\end{equation} 
+
+
+
+The Bayesian rule, Equation (\ref{BayesRuleEq}), point-wise multiplies prior probability by likelihood, i.e. by members of $\mathscr{F}$ evaluated at observed data. The "complex" form of $\mathscr{F}$, Equation (\ref{e:calF}), immediately reveals the form of sufficient statistics $v_{t}=v(\tilde{s}|a,s), \tilde{s},s\in \mathbf{S},\ a\in \mathbf{A}$ as the number of how many times the transition $s\rightarrow a \rightarrow\tilde{s}$ occurred until the time epoch $t$. This also implies that the posterior probability has the same functional form as the prior probability. This reduces the updating of the posterior probability into simple updating of counts represented in informational state $v_{t}$. It also interprets the parameter $w(\tilde{s}|a,s)$ determining prior probability as a variable that represents the number of paths already measured by the previous experiment. \footnote{Also a brand new paragraph, please check this one also.}
+
+Now when the prior probability $p_0(\theta)$, the family of of the $P$ distribution, $\mathscr{F}$, and the reason for their choice was presented, we can see how the actual posterior estimation of $P$ looks like. This estimate is represented by predictors $P_t$ which are computed based on the measured statistic $v_t$ according to Equation (\ref{Eq:Predictor}). The result of the integration in this equation is 
+%
+%Now that the prior distribution $p_0(\theta)$ is known together with the family of the distribution $\mathscr{F}$, the Bayes rule, Equation (\ref{BayesRuleEq}), can be used for the computation of the posterior estimation $p(\theta_t|v_t)$. This estimation is then used for the creation of the predictor $P_t$ based on the measured statistic according to  Equation (\ref{Eq:Predictor}). The result of the integration in Equation (\ref{Eq:Predictor}) is 
+
+\begin{equation}
+P_{t}(\tilde{s}|a,s,w,v_t)=\frac{w(\tilde{s}|a,s)+v(\tilde{s}|a,s)}{\sum_{s'\in \mathbf{S}}(w(s'|a,s)+v(s'|a,s))},\label{Eq:PosPEst}
+\end{equation}
+where the detail derivation of this equation can be found in \cite{KarBoh:20050084}. 
+
+\subsection{Optimal Bayesian decision policy}\label{PureBayesSol}
+The first algorithm for obtaining a sub-optimal policy for a \textit{single system} with unknown transition probability function $P$ is called the optimal Bayesian algorithm, Algorithm \ref{alg:SingleUnKnown}. It is again based on the theory of dynamic programming explained in Section \ref{DynProg}. 
+
+The actual function $P$ needed for the evaluation of the mean values in all time epochs $t \in \mathbf{T}$, which are crucial for the dynamic programming, is replaced by the Bayesian predictor $P_t$. This predictor is constructed according to the Section \ref{BayesianEstimationSolution} based on the informational state $v_t$, which describes the history of the process.
+
+The addition of the information state $v$ just slightly transforms the  formulation of the important equation (\ref{DynProgEq}) derived in Theorem \ref{DynProgTheo}. If we understand the new couple $(s,v)$ as a generalised state, then Theorem \ref{DynProgTheo} says that the optimal value function $\varphi_{t}^{o}(s,v)$ can be computed $\forall s \in \mathbf{S}$, $\forall v \in \mathbf{V_t}$ as:
+
+
+\begin{equation}
+\varphi_{t}^{o}(s,v)=\max_{\pi_{t} \in \mathbf{\Pi_{t}}} E\bigg[R(\tilde{s},a_{t},s) + \varphi_{t+1}^{o}(\tilde{s},\tilde{v})|s,v \bigg],
+\label{DynamicProgramingModified}
+\end{equation}
+where $\tilde{s} \in \mathbf{S}$ and $\tilde{v} \in \mathbf{V_{t+1}}$. 
+
+The only thing that has to be taken into account is that the expected value $E$ is based on particular $P_t$ determined by the history $v_t\in \mathbf{V_t}$ and the prior information $w \in \mathbf{W}$. 
+
+It is worth noting that some generalised states $(\tilde{s},\tilde{v}) \in (\mathbf{S},\mathbf{V})$, in fact most of them, can be obtained with zero probability, due to the evolution of the information part of the generalised state. This significantly lowers the complexity of the actual implementation of the algorithm. 
+
+Since all the paths are taken into account with this approach, one can compute the optimal value functions $\varphi_t^{o}(s,v)$, $\forall s\in \mathbf{S}$ and $\forall v \in \mathbf{V_t}$, in the same way as earlier, with the difference of dependence on the predictor  $P_t$ given by $v_t$. 
+
+The optimal policy is now computed for all possible paths of the process that can occur. That means that each time we are faced with a decision, we already know what the optimal one is. It is the argument of the maxima of function $\varphi_{t}^{o}(s,v_t)$ provided that we are dealing with a state $s \in \mathbf{S}$ in time epoch $t \in \mathbf{T}$ when the history described by statistics $v_t \in \mathbf{V_t}$ has happened.
+
+
+The algorithm of obtaining the optimal policy is similar to the one for known parameters and it is described in detail as Algorithm \ref{alg:SingleUnKnown}.
+
+
+
+\begin{algorithm}
+	\caption{Optimal Bayesian algorithm for the optimisation of \textit{single system} MDP with unknown $P$}\label{alg:SingleUnKnown}
+	\begin{algorithmic}[1]
+		\Require{$\textbf{T},\textbf{S},\textbf{A},R,w,\mathscr{F},s_{0}$, $P$ unknown.} 
+		\State $\varphi_{N}^{o}(s,v_N) \gets 0$, $\forall s \in \mathbf{S}$, $\forall v_N \in \mathbf{V_N}$ \Comment As no further gain is expected
+		\State $t \gets N$
+		\While{$t \ne 0$}
+		\For{each $(s,v_t) \in (\mathbf{S},\mathbf{V_t})$}
+		\State $\varphi_{t-1}^{o}(s,v_{t-1}) \gets$ Equation (\ref{DynamicProgramingModified}) \Comment{Considering the $P_t$ based on $v_t$}
+		\State $t \gets t-1$
+		\State $\pi_{0}^{o}(s,v_0) \gets argmax$ $\varphi_{0}^{o}(s,v_0)$
+		\EndFor
+		\EndWhile
+		\State \Return $\pi_{0}^{o}$ 
+		
+	\end{algorithmic}
+\end{algorithm}
+
+When we look at the algorithm in detail it can be seen that the computational complexity will generally be extreme for this type of algorithms. Only the computation of the pre-last optimal value function $\varphi_{N-1}^{o}(s,v_{N-1})$ means to compute and store the results for $|\mathbf{S}||\mathbf{V_{N-1}}|$ variables, where the $|\mathbf{V_{N-1}}|$ is the number of all the possible paths the process could have gone through until the time epoch $N-1$. 
+
+Lets derive this number to show how many values have to be computed, for example, for the mentioned pre-last optimal value function $\varphi_{N-1}^{o}$. The problem of finding the cardinality $|\mathbf{V_{N-1}}|$ can be interpreted as giving a certain amount of marbles into another number of pockets, where the pockets represent the distinguishable paths $s \rightarrow a \rightarrow \tilde{s}$, and the marbles represent the path $s \rightarrow a \rightarrow \tilde{s}$ in each time epoch. When a path $s \rightarrow a \rightarrow \tilde{s}$ is measured, its pocket gets a marble. The combinatorics theory, which can be found in \cite{HerKucSim:03}, says that the number of such possible "marble
+distributions" is $ \binom{|\mathbf{S}||\mathbf{A}||\mathbf{S}|+N-2}{N-1}$, which is for example for the settings in Section \ref{Sec:ExpmStep}, where $|\mathbf{S}|=3=|\mathbf{A}|$ and $N=30$, number $3.56 \times10^{15}$. 
+
+Because of the enormous requirements for computing power and storage, determined  by the cardinality of the information state space, this algorithm is declared as infeasible and an alternative approach is offered.
+
+
+
+\subsection{Certainty equivalence}\label{CertEqSol}
+In this section a second, now feasible, algorithm that copes with the optimisation problem of \textit{single system} MDP with unknown transition probability function $P$ is presented. Because the policy derived by this algorithm is based on the CE approximation it is not generally the optimal one. However, the derived policy is the best one based on this type of approximation and that is why we call it the sub-optimal policy.
+
+
+As said in the end of Section \ref{PureBayesSol} the main reason that the first algorithm fails in actual computation, is that the addition of the information state to the evaluation extremely increases the complexity of the algorithm. The second algorithm is presented with a goal to eradicate this dependency on the information state. The theory of certainty equivalence (CE) offers such eradication. 
+
+The need for informational state $v$ arose from the Bayesian theory which says that the predictor $P_t$ depends on the history of the MDP until the time epoch $t$, through the distribution of a random variable $\theta_t$. \footnote{In my opinion the $\theta_t$ notion should stay, the predictor does depend on the history through the distribution of the theta estimate, not theta itself} The theory of CE freezes the evolution of the sufficient statistic and uses the point estimate $\theta_t$ of $\theta$ instead of the unknown $\theta$. As a result, the estimate $\theta_t$ of $\theta$ does not change. We define the point estimate $\theta_t$ as the expectd value
+
+\begin{equation}
+\hat{\theta_{t}}=E[\theta|v],
+\label{Eq:CertEq}
+\end{equation}
+\footnote{I have eliminated the t dependency on the right side, but I want to keep the hat on the left side.}where $v \in \mathbf{V_t}$. The used estimate of $P$, denoted as $\hat{P}$ is time invariant during optimisation and it is the main contribution of the CE approach.
+
+It is worth noting that the estimate $\hat{P_t}$ is identical to the Bayesian estimate determined by the equation (\ref{Eq:PosPEst}). This is not a coincidence but a result of our choice of $\theta$ parametrisation and the choice of $E[\theta|v]$ as our point estimate of $\theta$.
+
+
+This approach makes the information state redundant in dynamic programming because we can now use the dynamic programming algorithm for these point estimates $\hat{P_t}$ with no further complications. The problem was now reduced to finding the optimal policy for the \textit{single system} with known parameters. The CE algorithm for \textit{single system} MDPs is in detail described as Algorithm \ref{alg:SingleCE}.
+
+
+\begin{algorithm}
+	\caption{CE algorithm for the optimisation of \textit{single system} MDP with unknown $P$}\label{alg:SingleCE}
+	\begin{algorithmic}[1]
+		\Require $\textbf{T},\textbf{S},\textbf{A},R,w,\mathscr{F},s_{0}$, $P$ unknown.
+		\State Make the first point estimate $\hat{P_0}$ based only on $w$. \Comment{Equation (\ref{Eq:PosPEst})}
+		\For{$i=0,i\leq N,i++$} 
+		\State Find the optimal policy $\pi_0^{o}(s_0)$ for $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},\hat{P_i},R)$
+		through Algorithm \ref{alg:SingleKnown}.
+		\State Perform the first action of the derived policy and observe the output state.
+		\State $s_0 \gets$ output state.
+		\State Re-evaluate the point estimate $\hat{P_i}$ to $\hat{P_{i+1}}$ based on the state-action-output state triplet. \Comment{Equation (\ref{Eq:PosPEst})}
+		\State $\mathbf{T} \gets \mathbf{T}\setminus \{|\mathbf{T}|\}$ 
+		\EndFor
+		\State The sub-optimal policy is defined by the performed actions through the process. 
+	\end{algorithmic}
+\end{algorithm}
+
+
+The simulation, where a policy derived by this algorithm is used is presented in the Section \ref{Sec:ExpCE}.
+
+\subsection{m-Step approximation}\label{mStepSol}
+ The last presented algorithm, Algorithm \ref{alg:Singlemstep}, offers to balance the quality of the derived sub-optimal policy with the computing power needed for its evaluation. When working with this algorithm the statistician controls the complexity based on parameter $m$, which is used in the name of the m-Step approximation algorithm. This parameter $m$ represents for how many time epochs is the dynamic programming performed "properly", meaning with the information state in mind, and after what amount of time epochs the CE approximation is used.
+
+In the first algorithm, $P$ is taken as a random variable for the whole process. In the second algorithm this random variable $P$ is replaced by the point estimates $\hat{P_t}$. Now,  the transition probability function $P$ is considered to be a random variable for the first $m$ steps of the process, after which it is substituted by its point estimate $\hat{P_t}$. The detailed description can be seen in Algorithm \ref{alg:Singlemstep}.
+
+\begin{algorithm}
+	\caption{m-Step algorithm for the optimisation of \textit{single system} MDP with unknown $P$}\label{alg:Singlemstep}
+	\begin{algorithmic}[1]
+		\Require{$\textbf{T},\textbf{S},\textbf{A},R,w,\mathscr{F},s_{0}$, $P$ unknown.} 
+		\State Make the point estimate $\hat{P_0}$ from the CE theory. \Comment{Equation (\ref{Eq:PosPEst})}
+		\For{$i=0,i\leq N,i++$}							
+		\State $\varphi_N^{o}(s) \gets 0$, $\forall s \in \mathbf{S}$. \Comment{Based on Definition \ref{ValueF}.}
+		\State $t=N-i$.
+		\While{$t>m$}
+		\For{ each $s \in \mathbf{S}$}
+		\State $\varphi_{t}^{o}(s)$ is evaluated based on Algorithm \ref{alg:SingleKnown} used for $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},\hat{P_i},R)$. 
+		\State $t \gets t-1$.
+		\EndFor
+		\EndWhile
+		\While{	$t\not=0$}
+		\State evaluate $\varphi_{t}^{o}(s,v)$ from the $\varphi_{m+1}^{o}(s)$, taken as the horizon value $\varphi_{m+1}^{o}(s,v)$ $\forall v \in \mathbf{V_{t+1}}$ similarly to Algorithm \ref{alg:SingleUnKnown}. 
+		\State $t \gets t-1$.
+		\EndWhile
+		\State $\pi_0^{o}(s_{0}) \gets argmax \varphi_0^{o}(s_{0},v)$ $ \forall s\in \mathbf{S}$. \Comment{$v \in \mathbf{V_0}=\{0\}$} 
+		\State The action advised by $\pi_0^{o}(s_{0})$ is taken and the output state $\tilde{s}$ is measured.
+		\State $s_{0} \gets \tilde{s}.$ 
+		
+		\State The point estimate $\hat{P_{i}}$ is adjusted to $\hat{P_{i+1}}$, based on the information of the measured $(\tilde{s},a,s)$ triplet. \Comment{Via Equation (\ref{Eq:PosPEst}).}
+		\State $\mathbf{T} \gets \mathbf{T}\setminus \{|\mathbf{T}|\}$
+		\EndFor
+		\State The sub-optimal derived policy $\pi_{0}^{o}$ is defined through the actions that are taken through the process.
+	\end{algorithmic}
+\end{algorithm}
+
+
+The simulation, where a policy derived by this algorithm is used is presented in the Section \ref{Sec:ExpmStep}. 
+
+
+\section{Optimal decision policy for multi-armed bandit}\label{BanditKnownFormulation}
+This section presents the definition and the solution to the decision-making problem on a second class of MDPs. The members of this class are presented as consisting of \footnote{This is new, please check.}several  \textit{single systems} defined in Section \ref{Def:SinSys}. This class is called \textit{multi-armed bandit} MDPs and it is defined in detail as follows.
+
+\begin{definition}\label{Def:MulArm}
+	Let $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ be a MDP. Then $\mathcal{M}$ is called a \textbf{multi-armed bandit} MDP if the structure of sets $\mathbf{A}$, $\mathbf{S}$ and functions $P$ and $R$ fulfils the following requirements.
+	\begin{itemize}
+		\item $\mathbf{S}$ can be represented as $\mathbf{S}=\{(s^{a}|s^{p})|\ s^{a} \in \mathbf{S_a}, s^{p} \in \mathbf{S_1}\times\dots\times\mathbf{S_{|\mathbf{K}|}}\}$, where $|\mathbf{K}| \in \mathbb{N}$ is the cardinality of an index set $\mathbf{K}$ and $\mathbf{S_k}$, $k \in \{1,2,..|\mathbf{K}|\}$, are the state sets of the respective \textit{single systems}. The number $s^{a}$ is the number of an "active" \textit{single system}. The $|\mathbf{K}|$-dimensional vector $s^{p}$ is called the positional state and it represents the "positions" of each of the considered $|\mathbf{K}|$ \textit{single systems}.
+		\item  $\mathbf{A}$ can be represented as $\mathbf{A}=\{(a^a,a^p)|\ a^a \in \{1,2,...,|\mathbf{K}|\}, a^p \in \{1,2,...,|\mathbf{A_{a^a}}|\}$\footnote{Was the $a^a$ a good idea?}, where $|\mathbf{A_{a^a}}| \in \mathbb{N}$ is the cardinality of action set $\mathbf{A_{a^a}}$ of the $a^a-th$ single system. The first part of the action $a_t^a$ makes the $a-th$ system active in the time epoch $t$, whereas the second part $a^p$ influences its position state, the $a-th$ dimension of the positional state $s^p$.
+		\item The function $P(\tilde{s}|a,s)$ keeps state entries unchanged for non-active systems and for the active system it has its own transition probability evolving its positional state in the same way it would when the other \textit{single system} were not considered.
+		\item Values $R(\tilde{s},a,s)$ are zero for non-active systems and the active system is rewarded on its own, again as if the other \textit{single systems} did not exist. On the top of this evaluation the deliberation cost is introduced, assigning usually higher negative reward for each action which changes the active state $s^a$ and effectively lowering the total given reward. The higher negative rewards of the deliberation cost represent the idea that changes of an active state are "harder to do" and that "thinking costs resources" \footnote{How to talk about this reward, should I introduce a new deliberation function, or otherwise it is not zero...}
+		\textbf{ALTERNATIVE}
+		Values of $R$ consist of two parts $R(\tilde{s},a,s)=R'(\tilde{s},a,s)-D(\tilde{s},a,s)$, where the $R'$ function is a generalisation of the individual $R_k$ reward functions of the $\mathcal{M}_{k}$ \textit{single systems}, meaning that the $R'$ is zero for non-active systems and the active system is rewarded on its own. The $D$ function is then called the deliberation cost and it assigns a larger (in comparison to the reward)\footnote{Actually other prices, but I have not introduced them.} values to the triplets $(\tilde{s},a,s)$ where $s^a\neq a^a$. This effectively means that the actions, where the active \textit{single system} is changed are taken as highly unprofitable, when only one time epoch is considered. This represents the idea that the changes of the active system are "harder to do" or that "thinking costs resources". \footnote{Please review this part and tell me what you thin about it...}\footnote{They can however be profitable in long-time horizon.}
+	\end{itemize}
+	
+\end{definition}
+
+
+
+This class of MDPs is defined as to be consistent with an idea that we are faced with a decision-making problem on a several \textit{single system} MDPs among which we can switch at the beginning of each time epoch. The active \textit{single system} $\mathcal{M}_k$, $k \in \mathbf{K}$ that is to be interacted with is chosen via the $a^a$-part of the action and the $\mathcal{M}_k$ then behaves as described in Section \ref{simple settings} with its corresponding sets $\mathbf{T_{a^a}},\mathbf{S_{a^a}},\mathbf{A_{a^a}}$ and functions $P_{a^a},R_{a^a}$, which are determined by the original \textit{multi-armed bandit} sets $\mathbf{T},\mathbf{S},\mathbf{A}$ and functions $P,R$.
+
+It is worth noting that in this general case each \textit{single system} MDP constructing the \textit{multi-armed bandit} MDP can have different dimensions of the state and action space $\mathbf{S_i}$, $\mathbf{A_i}$, $i \in \{1,2,...,l\}$. 
+
+
+
+\begin{example}\label{Ex:Multi}
+A real life example of this MDP could be again a biased coin tossing. Imagine a game when you are sitting at the table on which there are multiple coins with generally different bias. You get one coin on certain side in your hands and you are told the rules. You get $\$$1 each time the coin lands on Heads. You can choose to change your coin for any other coin for $\$$3 and you have to place it to the side it is on the table (you have to "conserve its state"). The turn of the coin costs 5 cents and the result of the toss generally depends on the side from which the coin is tossed. You know the bias of each one coin and the question is: what is the best sequence of actions that you can perform to get as much money as possible, on average, from this $N$-round game?
+
+It is important to mention that you are able to see the other coins "on the table" so that the position state $s^{p}$ is known in each time epoch. 
+\end{example}
+
+
+This Example \ref{Ex:Multi} could be easily generalised to a process where some coins are dices or other $|\mathbf{S_k}|$-dimensional, $k \in \{1,2,...,|\mathbf{K}|\}$, entities expressing randomness in readers mind. 
+
+
+
+%The significant difference in the price of different type of actions was not artificial. It represents the idea that to change the \textit{single system} is "harder to do" or that "thinking costs resources". In other words, it is important to see the fundamental difference in the first and second element of the action in the \textit{multi-armed bandit} MDP. The "price" of the $c$-part of the action is reflected in the $R$ function an it is called "deliberation cost".
+
+
+Now, when the optimality of a decision making on the \textit{multi-armed bandit} MDPs is studied, a strong mathematical tool can be introduced. When there is a solution to a one class of problems, in this case decision making for \textit{single system} MDPs, and another class is to be studied, one can try to interpret the latter problem as the former one and derive the solution with ease. This idea leads to interpretation of the \textit{multi-armed bandit} MDP as \textit{single system} through an easily imagined bijective mapping. \footnote{Is it easy?} 
+
+
+When the \textit{multi-armed bandit} MDP is interpreted as \textit{single system} MDP the state and action space that describes the process is generally large. In fact so large that even standard dynamic programming is infeasible when the presented sparse MDP structure is not exploited. The exploitation of the \textit{multi-armed bandit} MDP structure promises development of feasible algorithm for known-parameter case and thus also for the CE version for unknown-parameter case. All of these are unfortunately out of scope of this work and they are left for the future research.
+
+On the top of a standard optimisation of \textit{multi-armed bandit} MDPs for known and unknown $P$ several modifications could be presented. One possible modification is that the first dimension of the action $a^a$ provides a new information about the system that can be used for performing a more profitable $a^p$ action. Or a second modification, where we are not able to observe the whole positional state $s^{p}$, but only the position of the active \textit{single system}. Both of these are also out of scope of this work and they are left for the future research.
+
+
+
+\chapter{Experiments}\label{Cha:Experiments}
+In this chapter the simulations of the MDPs that are studied in the previous chapter are presented. The purpose of these simulations is to illustrate the use of the presented theory in the previous chapter and to test the experimentally derived sub-optimal policies. 
+
+In both following sub-chapters there are simulations of \textit{single system} MDPs. At first, I present two simulations of the \textit{single system} with known transition probability function $P$, where the quality of the experimentally derived optimal policy by Algorithm \ref{alg:SingleKnown} is the only studied feature.
+
+The second part of this chapter focuses on simulation of a \textit{single system} MDP, where the transition probability function $P$ is not known. In the previous chapter two feasible approaches to the approximation of $P$ and to the derivation of the sub-optimal strategy are presented. The certainty equivalence approach presented in Section \ref{CertEqSol} and the m-Step approximation in Section \ref{mStepSol}. The profitability of these sub-optimal policies derived by the respective methods is compared, while the optimal average cumulative reward is also presented.
+
+It needs to be said that the simulation of the most complex optimisation problem, for the \textit{multi-armed bandit} with unknown parameters, is out of the scope of this work. \footnote{It still is right? But now the reason is the complexity...}
+
+Now, the common ground of all the following experiments is presented. At first the actual experiment has to be defined. The type of MDP, the policy design and the possible type of estimation determines the program that is used for the experiment. All the programs that are used for the evaluation are entirely my work and they are attached to this thesis on a CD.
+
+When the class of the simulation is chosen, a specific MDP $\mathcal{M}$, Definition \ref{DMDP}, is defined through the supporting functions based on the dimensions of $\mathcal{M}$. Beside the definition of all the sets constructing the MDP, $\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$ and an initial state $s_0 \in \mathbf{S}$, the prior information $w \in \mathbf{W}$, (for simulations with unknown $P$) has to be given by the statistician (or by a random generator). 
+
+
+The optimisation problem that is studied is thus well defined and the actual simulation of the decision making takes place. The main simulations that are run are focused on the derivation of the average cumulative rewards for the respective policy designs. For this purpose, the input-output loop of decision making, presented in Fig. \ref{Fig:MDPSchema} is embedded into a Monte-Carlo loop as we can see in Fig. \ref{Fig:SchemaComplete}.
+
+
+All the parts of the loop situated under the "Decision Maker" rectangle have already been defined by the choice of the experiment. These three parts of the decision making determine the sub-optimal action in each time epoch with respect to the up-to-date\footnote{Not sure about this...} knowledge about the simulated system (data, prior information) via respective algorithms. 
+
+
+
+After the sub-optimal action in each time epoch is taken, the probability distribution of the pseudo-random generator is set to the values corresponding with that action. The output is then given based on this distribution and it is called an "Observed state". The information about the input-action-output triplet $(s,a,\tilde{s})$ can then be treated in two ways. Either it is only assigned a reward with an $R$ function, which is then used to make conclusion about the quality of the performed policy, or it can be also used for updating the sufficient statistic \footnote{Information state?} $v_t$ used for the evaluation of the $P_t$ predictors, as can be seen in Equation (\ref{Eq:PosPEst}).\footnote{Or in algorithms 3 and 4?}
+
+The evaluation of the experiments is mostly visual. The quality of policies tested in all simulations is rated based on histograms of frequencies of cumulative rewards, which are compared to the achievable optimum. The reason for using histograms is that the overall cumulative reward is a random variable and at least several hundreds iterations of the same simulation have to be run in order to get a reasonable statistic about the mean value. This Monte Carlo methodology, \cite{Ham:13}, is a standard way to simulation-based verification and comparison of alternative policies.
+
+Also for the simulations with unknown $P$, the convergence of the $P_t$ predictors, Fig. \ref{Fig:ConvP}, is presented by scatter graph as an evolution in time for the respective $P_t$ values for one run of the simulation.
+
+
+
+
+\section{Optimal policy for a single system with known parameters}\label{Sec:ExpKnoSin}
+\paragraph{Experiment}
+In this section two Monte Carlo simulations of a \textit{single system} MDP with known parameters, which differ in the number of iterations, are presented.\footnote{Is it called like that? Iterations?} As said in the beginning of this chapter the goal of this simulation is to check the quality of the derived sub-optimal policy. The overall structure of the experiment is described by the Fig. \ref{Fig:SchemaComplete} and the detailed procedure for derivation of the sub-optimal actions are described in Algorithm \ref{alg:SingleKnown}. Because the class of the MDP that is studied is already determined, we can proceed to the definition of the dimensions, which are chosen as follows. 
+\paragraph{Settings and results}
+The number of time epochs is chosen as $N=50$ and the number of possible states and actions $|\mathbf{S}|=|\mathbf{A}|=6$. This means that the functions $R$ and $P$ are defined by $|\mathbf{A}||\mathbf{S}|^2=216$ values. Because a table with 216 values would be of a little use, these values are presented only in a digital form in the file \textit{DynamicKnown.mat} on a CD attached to this thesis.
+
+The first number of iterations for the Monte Carlo method is set to 500, while the second run is performed for 5 000 simulations of the process. \footnote{Or the $N$-round process?}
+
+The quality of the derived sub-optimal policy can be visually checked with both histograms of frequencies of the cumulative rewards obtained from both Monte Carlo simulations. These histograms can be seen in Fig. \ref{Fig:HisSinKno} and Fig. \ref{Fig:HisSinKno2}.
+
+
+
+
+
+
+The optimal average cumulative reward determined by the optimal value function is 85.2003, whereas the average values of my simulations are 85.6264 for the run with 500 Monte Carlo iterations, and 85.2236 for the run with 5 000 iterations. \footnote{Maybe to much digits?}
+
+
+\paragraph{Discussion}
+The main goal of this simulation is to check the quality of the experimentally derived sub-optimal policy via Algorithm \ref{alg:SingleKnown}. As we can see, the difference between the average cumulative reward of the derived policy and the expected optimal average cumulative reward is approximately $0.5\%$ in the first simulation with 500 Monte Carlo iterations and approximately $0.026 \%$ in the second simulation with 5000 iterations.  \footnote{I dont know how to fit the exceedance in here, so if it is not that important I would prefer not to talk about it.}
+
+We can also see that in the second performed experiment made for 5 000 iterations, ten times the first case, both the variance of the distribution and the difference from the optimal value decreased. It is then assumed that this trend would continue with more iterations and that both the variance and the difference would get closer and closer to zero.
+
+With this assumption we can say that the experimentally derived optimal policy is in fact the optimal one. \footnote{Is that a good reasoning?}
+
+
+
+\section{Optimal policy for a single system with unknown parameters}
+In this section a second simulation of the decision making is presented. Now the \textit{single system} MDP with unknown transition probability function $P$ is simulated. It is important to mention that the lack of information about $P$ is just pretended. If we want to compare our experimentally derived decision policies to the optimal one, we have to know what the optimum is.
+
+In the previous chapter we have derived two different approaches to the approximation of the unknown $P$ function. The first one is the CE approach, Section \ref{CertEqSol}, and the second one is the m-Step approach, Section \ref{mStepSol}.
+
+The former is simulated in the first sub-section, where the average experimental cumulative reward is compared to the achievable optimum derived by Algorithm \ref{alg:SingleKnown}, for known $P$. In addition the first sub-chapter offers a grid of graphs that show the evolution of the predictors $P_t$ over time. This can be seen in Fig. \ref{Fig:ConvP}.
+
+The m-Step approach to the $P$ estimation is then simulated in the second sub-chapter, where the average experimental cumulative rewards are again compared to the achievable optimum. On the top of that the results of m-Step approximation are also compared with the ones of CE approach. The convergence of the predictor is no longer studied in this sub-chapter, as the results would be merely the same as in the CE case.
+
+
+\subsection{Algorithm based on certainty equivalence}\label{Sec:ExpCE}
+
+\paragraph{Experiment}
+In this sub-section the simulation of a decision making on a \textit{single system} MDP $\mathcal{M}$ with unknown parameters, when the CE approach to the $P$ estimation is used is presented. The first experiment of this section focuses only on one run of the defined MDP and provides a grid of graphs, where the convergence of $P_t$ predictor values is shown. The second experiment of this section focuses on the quality of the sub-optimal policy derived by Algorithm \ref{alg:SingleCE}. The comparison to the achievable optimum is depicted in Fig. \ref{Fig:HisSinUnkCer}.
+
+
+\paragraph{Settings and results}
+The dimensions of the specific MDP that is studied are for both parts of the experiment the same. The cardinality of sets $\mathbf{A}$ and $\mathbf{S}$ is set to 2, so that the convergence of the predictors $P_t$ to $P$ can be reasonably visualised, see Fig. \ref{Fig:ConvP}. This means that both $P$ and $R$ are represented by 8 values which can both be found in Table \ref{Tab:PRwValues}.
+
+
+
+
+\begin{table}[H]
+	\centering
+	\renewcommand{\arraystretch}{2}
+	
+	
+	\begin{tabular}[t]{|r|r |r|}
+		\hline
+		\multicolumn{3}{|c|}{$P(:,:,s=1)$} \\
+		\hline
+		$\tilde{s}$/$a$  & 1 & 2\\
+		\hline
+		1	& 0.4237&	0.6885\\
+		\hline
+		2 & 0.5763 & 0.3115 \\ 
+		\hline
+		
+		\multicolumn{3}{c}{} \\[-0.4cm]
+		\hline
+		\multicolumn{3}{|c|}{$P(:,:,s=2)$} \\
+		\hline
+		$\tilde{s}$/$a$ & 1 & 2\\
+		\hline
+		1	& 0.7282&	0.8816\\
+		\hline
+		2 & 0.2718 & 0.1184 \\ 
+		\hline
+	\end{tabular}
+	\hfill
+	\begin{tabular}[t]{|r|r |r|}
+		\hline
+		\multicolumn{3}{|c|}{$R(:,:,s=1)$} \\
+		\hline
+		$\tilde{s}$/$a$  & 1 & 2\\
+		\hline
+		1	& 1.4315&	-0.0569\\
+		\hline
+		2 & 2.7287 & -0.3111 \\ 
+		\hline
+		
+		\multicolumn{3}{c}{} \\[-0.4cm]
+		\hline
+		\multicolumn{3}{|c|}{$R(:,:,s=2)$} \\
+		\hline
+		$\tilde{s}$/$a$ & 1 & 2\\
+		\hline
+		1	& -0.1039&	2.5921\\
+		\hline
+		2 & 1.1251 & -0.2876 \\ 
+		\hline
+	\end{tabular}
+	\hfill
+	\begin{tabular}[t]{|r|r |r|}
+		\hline
+		\multicolumn{3}{|c|}{$w(:,:,s=1)$} \\
+		\hline
+		$\tilde{s}$/$a$  & 1 & 2\\
+		\hline
+		1	& 8&	5\\
+		\hline
+		2 & 1 & 2 \\ 
+		\hline
+		
+		\multicolumn{3}{c}{} \\[-0.4cm]
+		\hline
+		\multicolumn{3}{|c|}{$w(:,:,s=2)$} \\
+		\hline
+		$\tilde{s}$/$a$ & 1 & 2\\
+		\hline
+		1	& 1&	2\\
+		\hline
+		2 & 9 & 1 \\ 
+		\hline
+	\end{tabular}
+	\caption{Tables of $P$, $R$ and $w$ values for the CE approach simulation. Original 3D arrays are presented by two  "slices" which differ in the initial state $s=1$ or $s=2$. }\label{Tab:PRwValues}
+\end{table}\footnote{Hope this representation is OK, and how to do the backslash $\tilde{s},a$?}
+
+
+
+The number of time epochs $N$ is set to $N=50$, so that the convergence of $P_t$ predictor values could easily be seen. The number of iterations for deriving the quality of the experimentally obtained sub-optimal policy by Monte Carlo method is set to 1500 in the second experiment of this section.
+
+
+The initial state is chosen as $s_0=2$ and the parameter values $w(\tilde{s},a,s)$ that determine the prior distribution can also be found in Table \ref{Tab:PRwValues}.
+
+The distribution of the cumulative reward for the CE derived policy can be seen in Fig. \ref{Fig:HisSinUnkCer} and the convergence of $P_t$ to $P$ can be seen in Fig. \ref{Fig:ConvP}.
+
+
+
+
+The average cumulative reward for the CE approach to this MDP $\mathcal{M}$ given by the experiment is 110.18, whereas the optimal value is 110.40 . 
+
+\paragraph{Discussion}
+In the simulations in this section, both the convergence of predictors $P_t$ to $P$, and the quality of the derived sub-optimal policy for the \textit{single system} with unknown $P$ is shown. In Fig. \ref{Fig:ConvP} we can see that the convergence of some predictor values to the real $P$ values is fast for some values, in our case for pairs $(s=1,a=1)$ and $(s=2,a=2)$, and sometimes it is non-existent. This is due to the strategy that is performed through the experiment. The algorithm evaluates the best sub-optimal actions from its knowledge at the time of a decision. This results, in this case, to taking the action $a=2$ every time the process is in state $s=2$, and also action $a=1$ when the state is $s=1$.
+
+Due to this decision-making strategy the values of the triplets ($\tilde{s},a,s$) do or do not change based only on the fact if the actions that form them are performed or not. 
+
+In the second simulation we can see, that the optimal average cumulative reward 110.40 is  not far from the experimentally obtained one 110.18. The reason for \footnote{of?} this is that the prior estimates are not strong and the number of time epoch $N=50$ is high enough for the algorithm to "learn" the $P$ correctly.\footnote{Maybe other word than strong} This means that evaluated fractions for the predictor values, as described by Equation (\ref{Eq:PosPEst}), are highly adaptive to the actually measured triplets ($\tilde{s},a,s$). This strong adaptivity results in a high-quality semi-optimal strategy.
+
+\subsection{Algorithm based on m-Step improvement of certainty equivalence}\label{Sec:ExpmStep}
+
+\paragraph{Experiment}
+The last experiment that is presented is the simulation of the decision making on the \textit{single system} MDP $\mathcal{M}$, where the m-Step approximation approach for $P$ estimation is compared to the CE one and to the optimum. New MDP is defined and the quality of the respective approaches is again determined by the Monte Carlo method.
+\paragraph{Settings and results}
+The number of time epochs is chosen as $N=30$ and the number of possible states and actions $|\mathbf{S}|=|\mathbf{A}|=3$. This means that the functions $R$ and $P$ are defined by $|\mathbf{A}||\mathbf{S}|^2=27$ values. Because a table with 27 values would still be of a little use, these values are presented only in a digital form in the file \textit{MCCEvsmStep.mat} on a CD attached to this thesis.
+
+The number $m$ that is crucial for this method is set to $m=3$ as it is the maximal number for a feasible computation (in order of hours on my computer). The number of Monte Carlo iterations is set to 1000.
+
+The comparison of the average cumulative rewards for the CE estimation approach and the m-Step estimation approach can be seen in histogram Fig. \ref{Fig:HisSinUnkmSt}, where also the optimal value is depicted. 
+
+
+\footnote{It was red in the eps. file, now it is black, What to do with it?}
+
+
+The value of m-Step approximation average cumulative reward determined by my simulation is 39.60, the value of CE approximation average is 38.69 and the optimal value is 54.63. 
+
+
+
+\paragraph{Discussion}
+The main reason for construction of this experiment is to confirm the superiority of the m-Step approximation approach to the CE one. As we can see above, the average cumulative reward for m-Step approach is up to $2.4\%$ higher than the one derived by the CE approximation. This number is derived from the 1000 iterations Monte Carlo experiment. The superiority of the m-Step approximation can be also seen visually in histogram Fig. \ref{Fig:HisSinUnkmSt}, where the frequencies of the m-Step approach are higher with the higher values of the cumulative rewards obtained in one run. 
+
+Also, when compared to the maximum, our experimentally derived average cumulative rewards from each estimation are approximately $70\%$ of the optimum. I do think that this is due to the higher number of possible paths of the MDP presented in this section in comparison with the previous one. A higher number of possible actions means higher number of the non-optimal ones. In the case, where there are two actions to choose from one is optimal and the other is not. In a MDP where $|\mathbf{A}|=3$ the number of non-optimal actions doubles in comparison to MDP with $|\mathbf{A}|=2$. \footnote{I could talk about the estimates, which were like the lowest possible, but it would not fit my reasoning above.}
+
+The question whether the $2.4\%$ improvement is significant depends of the frame of reference. If this algorithm would be theoretically used in some part of a billion dollar industry, where the $2.4\%$ improvement would mean tens of millions of dollars, the difference would indeed be significant. However in a environment, where the revenue from the decision making would be low, and for example the computing power is expensive, the implementation of m-Step algorithm is maybe not worth the effort and the much simpler CE approach for $P_t$ predictor estimation is sufficient. This is actually also a decision-making problem, what approach to use, when the price of computing power is given together with the expected revenue from the different estimation approaches. 
+
+
+\chapter{Discussion}
+In this chapter an overview of the performed experiments from the Chapter \ref{Cha:Experiments}  is presented.
+
+The purpose of each experiment is to check the quality of the policies derived theoretically in Chapter \ref{ProblemFormChapter}, via the average cumulative rewards, obtained by the Monte Carlo method. 
+
+At first, the quality of the policy derived for the \textit{single system} with known $P$, is tested. The average cumulative reward is obtained for two numbers of Monte Carlo iterations \footnote{Not sure about this formulation}, Section \ref{Sec:ExpKnoSin}, where each time the difference between the optimal average cumulative reward and the experimental one is lower than $0.5\%$. The reason why two experiments with different number of Monte Carlo iterations are run is that we are able to see a trend of \footnote{in?} the histograms. With higher number of iterations the histogram becomes more narrow and the difference of the averages decreases. Since the difference is as low as $0.5\%$ and it is getting lower with more iterations, we can say that the derived policy via algorithm \ref{alg:SingleKnown} is really the optimal one. \footnote{Is that a good reasoning?}
+
+
+The second part of the experiments is devoted to the study of two different approaches for obtaining the optimal decision policy for \textit{single system} with unknown $P$. These two approaches, the CE approximation, Section \ref{CertEqSol}, and the m-Step approximation, Section \ref{mStepSol}, are tested again in a sense of their quality, with a hope, that the theoretically superior m-Step approximation approach will produce higher average cumulative reward than the CE approximation.
+
+This hypothesis was confirmed, as we can see in Section \ref{Sec:ExpmStep}, histogram Fig. \ref{Fig:HisSinUnkmSt}. The m-Step approximation gave up to $2.4\%$ larger average cumulative reward than the CE approach, when sustaining a reasonable demand for computing power. This would of course change if the settings of MDPs in experiment Section \ref{Sec:ExpmStep} had such extreme dimensions that even 1-step approximation would not be feasible. 
+
+Also an experiment, which goal is to visualise the evolution of the predictor $P_t$ is performed in Section \ref{Sec:ExpCE}. In the grid of graphs Fig. \ref{Fig:ConvP}, we can see, how some values of the predictor converge with time, while some values of the $P_t$ predictors stay unchanged through the whole process. 
+
+The problem of the non-adaptivity of certain values of the predictors is that the paths that determine their value are never tried, even though they could possibly be the most profitable. This problem is called the exploration vs. exploitation problem and its solution is the optimal rate between trying new paths and learning the true nature of the process, and the exploitation of the sub-most profitable (according to our limited knowledge) paths. \footnote{Well I have it in abstract and this is the first time i have talked about it, is that a problem?} The study of this dichotomy \footnote{really dichotomy?} is out of scope of this work, and it is left for the future research.
+
+
+
+\chapter{Conclusions}
+\footnote{As I had time on Monday and I think you will not like this conclusions I offer a second one right after this one.}
+In this Bachelor's thesis \footnote{Should I change it to bachelors degree project?} I study the optimal decision making on discrete Markov decision processes (MDPs). I have defined two classes of MDPs which I call \textit{single system} and \textit{multi-armed bandit}, which differ by the structure of their respective sets. 
+
+I have presented the theory of dynamic programming as a key method for finding the optimal policies \footnote{Should there be references here?} for \textit{single system} MDPs with known transition probability function $P$. This theory is then confirmed by an experiment in Section \ref{Sec:ExpKnoSin}, where the quality of the derived sub-optimal policy is tested. The difference between the experimentally derived average cumulative reward, obtained by Monte Carlo method, and the optimal average cumulative reward, determined by the value function, is lower than $0.5\%$ for 500 Monte Carlo iterations. This difference even decreased to $0.026\%$ for 5000 Monte Carlo iterations. This decreasing, almost negligible, difference serves as an argument for the verification of the optimality of the derived policy.
+
+The second part of the thesis focused on decision making on the \textit{single system} MDPs, when the transition probability function $P$ is not known. Three solutions to this decision-making problem are presented. In all of them the estimation of the unknown $P$ in a form of predictors $P_t$, Section \ref{BayesianSection}, is based on the Bayesian theory for estimation of the parameter $\theta$ with which the $P$ is parametrized. The difference in the three solutions for this case of unknown $P$ is in both computational complexity and the quality of the derived policies. 
+
+The first approach called optimal Bayesian approach, Section \ref{PureBayesSol}, is based on the construction the generalised state ($s,v_t$), where this $v_t$ is called the information state and which represents the history of the process until the time $t$. Based on this information state $v_t$ and prior information for the Bayesian estimation $w$ we are able to construct predictors needed for the dynamic programming for each time epoch for all the possible paths of the process. I have also argued, that this approach is infeasible one, because of the exponential increase of the complexity of dynamic programming due to the increase in the cardinality of the informational state $v_t$ with time. \footnote{references??}
+
+The second approach to the estimation that I have presented is called the certainty equivalence (CE) approach. The main purpose of this approach is to lower the complexity of the algorithm that derives the optimal policy in each time epoch of the process. The predictors that are used for the dynamic programming are presented as "frozen in time", meaning that the predictor that is used for the evaluation of the value function in the last time epoch is the same as the one for the first one. This approach significantly decreases the computational power needed for the computation of the, now sub-optimal, policy. 
+
+As this CE approximation is rather rough \footnote{Hruby} we can expect that the derived sub-optimal policy will not provide as good average cumulative rewards as the optimal one. The quality of the sub-optimal policy derived by the CE approximation method, Algorithm \ref{alg:SingleCE}, is performed in Section \ref{Sec:ExpCE}, and in spite of the expectation the average cumulative reward of the experimentally derived sub-optimal policy is lower than the optimal value only by $0.2\%$. In Section \ref{Sec:ExpCE} I have argued that the reason of this high quality of the derived policy is due to the high adaptivity of the algorithm, which is determined by the use of weak prior estimation in my simulation. The convergence of the predictors $P_t$, Fig. \ref{Fig:ConvP} is rather fast and thus the decisions of the optimal policy are performed by the derived sub-optimal one from the early time epochs of the experiment.
+
+The third approach, that I have come up with, for the decision making on the \textit{single system} MDP that I present in this thesis is called the m-Step approximation. The purpose of this approach is to exploit the computational power available for even better results that the CE approximation gives. The idea behind this m-Step approach is that the predictors $P_t$ are not "frozen" completely, but only after limited amount of time epochs $m$, in which they are expected to be changing. This approach is a hybrid between the first and second approach and it allows the statistician to maximise the quality of the derived sub-optimal policy with respect to the computing power they possess. 
+
+A simulation for the \textit{single system} processes, where the quality of second, CE, and third, m-Step, approach is compared to the optimum is presented in Section \ref{Sec:ExpmStep}. It is shown that for a higher dimensional process (in this case $|\mathbf{S}|=|\mathbf{A}|=3$) the difference between the CE and m-Step approach is relatively large, up to $2.4\%$ for the studied \textit{single system} MDP. This simulation, only with $m=3$, confirmed the superiority of the m-Step algorithm to the CE one, while the computational power of my computer is enough to perform the computation.
+
+Second class of MDPs, called the \textit{multi-armed bandit} MDP is coped with only theoretically in Section \ref{BanditKnownFormulation}. It is shown that in terms of mathematical computation, the optimal and sub-optimal policies for this class of the MDPs can be derived in the same way that the \textit{single system} class MDPs are. The reason why this class is introduced, is the structure of its members. The structure of the \textit{multi-armed bandit} MDP better describes the structure of a decision making on more than one entity and the theory of this type of MDPs can be widened as is described in the end of the Section \ref{BanditKnownFormulation}.
+
+\footnote{Should I talk more about the future research and if so, what should it be? Beside the dependency in the multi-armed bandit. What else can be done. My solution is not great, the improvement of the mStep algorithm must be forced by certain specific values, so that the basic CE is the best because it is easy and it does not make worse results than the mStep much. Both are not bad in comparison with the opitmum for longer runs and for not-strong estimates.}
+
+
+\textbf{SECOND CONCLUSIONS}
+
+In this bachelor's thesis I have presented a unified theory for decision making on the discrete Markov decision processes (MDPs). I have defined two classes od the MDPs which I call \textit{single system} MDPs, Definition \ref{}, and \textit{multi-armed bandit} MDP. The theory of MDPs and its notation is inspired by Putterman's book on this topic, \cite{Put:05}.
+
+The main focus of this thesis is to derive the optimal policy, Definition \ref{}, for the defined classes of MDPs. Two cases of the optimisation problems are presented, where in both the theory of dynamic programming, taken from Bellman's book \cite{Bel:57}, is used.
+
+ In the first part of the thesis the Bellman's theory is applied to the \textit{single system} MDPs where the transition probability function $P$ is expected to be known, Section \ref{}. The quality of the derived policy is tested in Section \ref{}, where the negligible difference between the experimentally derived average cumulative reward served as an argument of declaring the experimentally derived sub-optimal policy as the optimal one.
+ 
+ In the second part of this thesis I present a problem of optimisation for \textit{single systems} with unknown transition probability function $P$, Section \ref{}, to which I present 3 different solutions. In all solutions the Bayesian estimation theory for $P$ is used. The difference in the solutions is the use of the Bayesian estimation in the dynamic programming algorithm, while the details are explained below. 
+ 
+ The first solution that I present for the \textit{single system} optimal decision-making problem is called optimal Bayesian approach, Section \ref{}. This solution is based on the introduction of the informational state $v_t$ which serves as a statistic describing the history of the MDP. A generalised notion of "state" is defined, \ref{}, and the dynamic programming algorithm is used in the same way as for the case with known $P$. It is shown that this approach works in theory, but it extremely increases the need for a computational power. Thus a second approach is presented.
+ 
+ The second approach that I present... etc. \textbf{I will make the review of your review as suggested, but the idea of the second try is clear I suppose}
+\pagestyle{plain}
+
+\bibliographystyle{plain}
+
+\bibliography{fr}
+
+
+
+
+\end{document}

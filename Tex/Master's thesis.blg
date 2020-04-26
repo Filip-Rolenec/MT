@@ -1,0 +1,86 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Master's thesis.aux
+The style file: plain.bst
+Database file #1: fr.bib
+Repeated entry---line 185 of file fr.bib
+ : @report(Rum:16
+ :               ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 209 of file fr.bib
+ :  
+ :  address={Bristol}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 245 of file fr.bib
+ :  
+ :  publisher={Springer Berlin Heidelberg},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 325 of file fr.bib
+ :  
+ :  note={ISBN 978-80-01-04595-4}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 417 of file fr.bib
+ :  
+ :  note={ISBN 0136566952, 9780136566953; ISSN 0891-4559}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 505 of file fr.bib
+ :  
+ :  url={http://www.sciencedirect.com/science/article/pii/0005109886900154},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "Bel:57"
+Warning--I didn't find a database entry for "CreLiuMer:13"
+Warning--I didn't find a database entry for "Ast:70"
+Warning--I didn't find a database entry for "Ber:85"
+Warning--I didn't find a database entry for "KarBoh:20050084"
+Warning--I didn't find a database entry for "Ham:13"
+Warning--empty school in Duf:02
+Warning--empty journal in GalGia:87
+Warning--empty year in VerMeh:05
+Warning--empty booktitle in ChaManNou:16
+You've used 12 entries,
+            2118 wiz_defined-function locations,
+            591 strings with 5867 characters,
+and the built_in function-call counts, 3042 in all, are:
+= -- 297
+> -- 90
+< -- 2
++ -- 39
+- -- 26
+* -- 151
+:= -- 523
+add.period$ -- 40
+call.type$ -- 12
+change.case$ -- 45
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 144
+empty$ -- 284
+format.name$ -- 26
+if$ -- 648
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 13
+newline$ -- 65
+num.names$ -- 24
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 37
+quote$ -- 0
+skip$ -- 91
+stack$ -- 0
+substring$ -- 141
+swap$ -- 22
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 42
+warning$ -- 4
+while$ -- 29
+width$ -- 14
+write$ -- 131
+(There were 6 error messages)
