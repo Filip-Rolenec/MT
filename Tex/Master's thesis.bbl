@@ -1,75 +1,19 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
-\bibitem{Duf:02}
-Michael~O'Gordon Duff.
-\newblock {\em Optimal Learning; Computational Procedures for Bayes-Adaptive
-  Markov Decision Processes}.
-\newblock PhD thesis, 2002.
+\bibitem{BacChi:19}
+S.~Bacci and B.~Chiandotto.
+\newblock {\em Introduction to Statistical Decision Theory: Utility Theory and
+  Causal Analysis}.
+\newblock CRC Press, 2019.
 
-\bibitem{BorFigAze:17}
-Leonardo~Azevedo Fernando Luis~Bordignon, Leandro Passos de~Figueireido.
-\newblock Hybrid global stochastic and {B}ayesian linearized acoustic seismic
-  inversion methodology.
-\newblock {\em IEEE Transactions on Geoscience and Remote Sensing},
-  55:4457--4464, August 2017.
+\bibitem{BerDeM:09}
+J.~Berk and P.~DeMarzo.
+\newblock {\em Corporate Finance}.
+\newblock Pearson, 2014.
 
-\bibitem{GalGia:87}
-Zvi Galil and Raffaele Giancarlo.
-\newblock Speeding up dynamic programming with applications to molecular
-  biology.
-\newblock 1987.
-\newblock Elsevier.
-
-\bibitem{HerKucSim:03}
-Jaromir~Simsa Jiri~Herman, Radan~Kucera.
-\newblock {\em Counting and Configurations: Problems in Combinatorics,
-  Arithmetic, and Geometry}.
-\newblock Springer Science \& Business Media, January 2003.
-
-\bibitem{VerMeh:05}
-Mohri~Mehryar Joann{\`e}s~Vermorel.
-\newblock Multi-armed bandit algorithms and empirical evaluation.
-\newblock In {\em Machine Learning: ECML 2005}.
-
-\bibitem{Lan:09}
-Edmund Landau.
-\newblock {\em Handbuch der Lehre von der Verteilung der Primzahlen},
-  volume~01.
-\newblock Liepzig B.G. Teubner, 1909.
-
-\bibitem{ChaManNou:16}
-Nouha~Jaoua Marwa~Chaabane, Majdi~Mansouri.
-\newblock Bayesian method for states estimation in structural health monitoring
-  application.
-\newblock Monastir, Tunisia, 2016. IEEE.
-
-\bibitem{Pet:81}
-V.~Peterka.
-\newblock Bayesian approach to system identification.
-\newblock In {\em in Trends and Progress in System Identification, P. Eykhoff,
-  Ed}, pages 239--304. Pergamon Press, 1981.
-
-\bibitem{Put:05}
-M.L. Puterman.
-\newblock {\em Markov Decsion Processes: Discrete Stochastic Dynamic
-  Programming}.
-\newblock Wiley, 2005.
-
-\bibitem{Rab:89}
-L.~R. Rabiner.
-\newblock A tutorial on hidden {M}arkov models and selected applications in
-  speech recognition.
-\newblock {\em Proceedings of the IEEE}, 77:257--286, 1989.
-
-\bibitem{Rum:16}
-Marko Ruman.
-\newblock Decision making in multi-proposer ultimatum game, 2016.
-\newblock CTU FJFI.
-
-\bibitem{Yak:82}
-Sidney Yakowitz.
-\newblock Dynamic programming applications in water resources.
-\newblock {\em AN AGU JOURNAL}, 18, 1982.
-\newblock draft.
+\bibitem{BlaSch:73}
+Fischer Black and Myron Scholes.
+\newblock The pricing of options and corporate liabilities.
+\newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
 
 \end{thebibliography}

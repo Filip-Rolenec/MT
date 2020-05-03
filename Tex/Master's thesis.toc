@@ -5,33 +5,32 @@
 \babel@toc {american}{}
 \babel@toc {czech}{}
 \babel@toc {american}{}
-\contentsline {chapter}{\numberline {1}Publications that I have read and short introduction to them}{15}% 
-\contentsline {chapter}{\numberline {2}Introduction}{17}% 
-\contentsline {chapter}{\numberline {3}Preliminaries}{19}% 
-\contentsline {section}{\numberline {3.1}Discrete Markov decisions processes}{19}% 
-\contentsline {section}{\numberline {3.2}Dynamic programming}{20}% 
-\contentsline {section}{\numberline {3.3}Bayesian estimation}{22}% 
-\contentsline {chapter}{\numberline {4}Addressed tasks and their solutions}{25}% 
-\contentsline {section}{\numberline {4.1}Optimal decision policy for a single system with known model}{25}% 
-\contentsline {section}{\numberline {4.2}Optimal decision policy for a single system with unknown model}{26}% 
-\contentsline {subsection}{\numberline {4.2.1}Bayesian estimation of transition probability function $P$}{27}% 
-\contentsline {subsection}{\numberline {4.2.2}Optimal Bayesian decision policy}{28}% 
-\contentsline {subsection}{\numberline {4.2.3}Certainty equivalence}{29}% 
-\contentsline {subsection}{\numberline {4.2.4}m-Step approximation}{30}% 
-\contentsline {section}{\numberline {4.3}Optimal decision policy for multi-armed bandit}{30}% 
-\contentsline {chapter}{\numberline {5}Experiments}{35}% 
-\contentsline {section}{\numberline {5.1}Optimal policy for a single system with known parameters}{36}% 
-\contentsline {paragraph}{Experiment}{36}% 
-\contentsline {paragraph}{Settings and results}{36}% 
+\contentsline {chapter}{\numberline {1}Introduction}{17}% 
+\contentsline {chapter}{\numberline {2}Preliminaries}{21}% 
+\contentsline {section}{\numberline {2.1}Classic valuation techniques}{21}% 
+\contentsline {subsection}{\numberline {2.1.1}Net Present Value}{21}% 
+\contentsline {subsection}{\numberline {2.1.2}ENPV valuation}{22}% 
+\contentsline {subsection}{\numberline {2.1.3}Comparing investments}{22}% 
+\contentsline {subsection}{\numberline {2.1.4}Other frequently used valuation techniques}{22}% 
+\contentsline {subsection}{\numberline {2.1.5}Decision tree analysis}{22}% 
+\contentsline {section}{\numberline {2.2}Real option analysis}{22}% 
+\contentsline {subsection}{\numberline {2.2.1}Financial options}{23}% 
+\contentsline {subsection}{\numberline {2.2.2}Black-Scholes Merton model}{23}% 
+\contentsline {subsection}{\numberline {2.2.3}Real options}{23}% 
+\contentsline {section}{\numberline {2.3}Statistical decision theory}{23}% 
+\contentsline {subsection}{\numberline {2.3.1}Bayesian statistics}{24}% 
+\contentsline {subsection}{\numberline {2.3.2}Utility}{24}% 
+\contentsline {section}{\numberline {2.4}Approximate dynamic programming}{25}% 
+\contentsline {chapter}{\numberline {3}Real option analysis in terminology of stochastic decision control}{27}% 
+\contentsline {chapter}{\numberline {4}Application of the cheery-picked valuation technique. }{29}% 
+\contentsline {section}{\numberline {4.1}Approximate dynamic programming}{29}% 
+\contentsline {section}{\numberline {4.2}Valuation example}{29}% 
+\contentsline {subsection}{\numberline {4.2.1}NPV valuation }{29}% 
+\contentsline {subsection}{\numberline {4.2.2}DTA valuation}{29}% 
+\contentsline {subsection}{\numberline {4.2.3}Classic ROA valuation}{29}% 
+\contentsline {subsection}{\numberline {4.2.4}New approach}{29}% 
+\contentsline {chapter}{\numberline {5}Discussion}{31}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{33}% 
+\contentsline {chapter}{\numberline {7}Bachelor's thesis parts that could be useful for TeX styling}{35}% 
+\contentsline {section}{\numberline {7.1}Discrete Markov decisions processes}{35}% 
 \contentsline {paragraph}{Discussion}{36}% 
-\contentsline {section}{\numberline {5.2}Optimal policy for a single system with unknown parameters}{37}% 
-\contentsline {subsection}{\numberline {5.2.1}Algorithm based on certainty equivalence}{37}% 
-\contentsline {paragraph}{Experiment}{37}% 
-\contentsline {paragraph}{Settings and results}{37}% 
-\contentsline {paragraph}{Discussion}{38}% 
-\contentsline {subsection}{\numberline {5.2.2}Algorithm based on m-Step improvement of certainty equivalence}{39}% 
-\contentsline {paragraph}{Experiment}{39}% 
-\contentsline {paragraph}{Settings and results}{39}% 
-\contentsline {paragraph}{Discussion}{39}% 
-\contentsline {chapter}{\numberline {6}Discussion}{41}% 
-\contentsline {chapter}{\numberline {7}Conclusions}{43}% 
