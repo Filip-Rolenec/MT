@@ -16,4 +16,21 @@ Fischer Black and Myron Scholes.
 \newblock The pricing of options and corporate liabilities.
 \newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
 
+\bibitem{Cop:01}
+T.E. Copeland and V.~Antikarov.
+\newblock {\em Real Options: A Practitioner's Guide}.
+\newblock Texere, 2001.
+
+\bibitem{Gut:09}
+G.~Guthrie.
+\newblock {\em Real Options in Theory and Practice}.
+\newblock Financial Management Association Survey and Synthesis. Oxford
+  University Press, 2009.
+
+\bibitem{Vol:03}
+A.~Vollert.
+\newblock {\em A Stochastic Control Framework for Real Options in Strategic
+  Evaluation}.
+\newblock Birkh{\"a}user Boston, 2012.
+
 \end{thebibliography}

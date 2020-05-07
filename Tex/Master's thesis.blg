@@ -43,45 +43,45 @@ I was expecting a `,' or a `)'---line 687 of file fr.bib
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for ""
-You've used 3 entries,
+You've used 6 entries,
             2118 wiz_defined-function locations,
-            517 strings with 4364 characters,
-and the built_in function-call counts, 857 in all, are:
-= -- 79
-> -- 39
+            536 strings with 4711 characters,
+and the built_in function-call counts, 1552 in all, are:
+= -- 143
+> -- 66
 < -- 0
-+ -- 16
-- -- 12
-* -- 52
-:= -- 152
-add.period$ -- 9
-call.type$ -- 3
-change.case$ -- 13
++ -- 28
+- -- 20
+* -- 81
+:= -- 275
+add.period$ -- 19
+call.type$ -- 6
+change.case$ -- 23
 chr.to.int$ -- 0
-cite$ -- 3
-duplicate$ -- 35
-empty$ -- 72
-format.name$ -- 12
-if$ -- 175
+cite$ -- 6
+duplicate$ -- 71
+empty$ -- 138
+format.name$ -- 20
+if$ -- 324
 int.to.chr$ -- 0
-int.to.str$ -- 3
-missing$ -- 5
-newline$ -- 18
-num.names$ -- 6
-pop$ -- 21
+int.to.str$ -- 6
+missing$ -- 11
+newline$ -- 33
+num.names$ -- 12
+pop$ -- 44
 preamble$ -- 1
-purify$ -- 12
+purify$ -- 22
 quote$ -- 0
-skip$ -- 22
+skip$ -- 41
 stack$ -- 0
-substring$ -- 41
-swap$ -- 3
+substring$ -- 57
+swap$ -- 6
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 8
+type$ -- 14
 warning$ -- 0
-while$ -- 8
-width$ -- 4
-write$ -- 33
+while$ -- 14
+width$ -- 7
+write$ -- 64
 (There were 8 error messages)

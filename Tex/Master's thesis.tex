@@ -97,6 +97,7 @@
 \newtheorem{definition}{Definition}[chapter]
 \newtheorem{note}{Note}[chapter]
 \newtheorem{example}{Example} 
+\newtheorem{assumption}{Assumption} 
 
 \newtheorem{theorem}{Theorem}
 
@@ -347,9 +348,9 @@ In this thesis the state-of-the art theories of ROA valuation and SDT are presen
 The power of the new theory is shown on a class of problems called ... The current literature copes with them in much simpler way and their assumptions are much larger. My \footnote{Or the presented approach, should I avoid pronouns in the text? } approach also potentiates adoption in practical usage, as it puts the decision making manager in charge. The manager decides how to create the prior distributions, he is the one who needs to determine all the possible actions and scenarios that can happen. The algorithm that is presented in this thesis can and should be used in real world as a managerial tool to maximize the profits of divisions or companies as a whole. 
 
 
-The goal to maximize wealth in financial world is approached in a really narrow matter. Money represents value, which in models decreases in time by a percentage given by some authority, most of the time central banks. In respected financial publications \cite{BerDeM:09}, \cite{} or \cite{}, there is no notion of utility. It seems like for financial institutions, it does not matter to get 1M in cash now or to gamble for 2M in a fair coin flip. On the other hand, in SDT,  the concept of utility is taken very seriously. Most of the people would prefer even such a small amount as 200k against a fair gamble between 0 and 2M. This is due to the concave utility function people tend to have when very high amounts are discussed. 
+The goal to maximize wealth in financial world is approached in a really narrow matter. Money represents value, which in models decreases in time by a percentage given by some authority, most of the time central banks. In respected financial publications \cite{BerDeM:09}, \cite{} or \cite{}, there is no notion of utility. It seems like for financial institutions, it does not matter to get 1M in cash now or to gamble for 2M in a fair coin flip. On the other hand, in SDT,  the concept of utility is taken very seriously. Majority of people would prefer even a very small amount, such as 200k against a fair gamble between 0 and 2M. This is due to the concave utility function people tend to have when very high amounts are discussed and the question is more about what would make them happier. 
 
-Maximization of wealth either in the sense of investment company or individual is natural. Almost everybody would agree that to have more wealth is better than have less. Better investment decisions mean higher accumulation of wealth, which together with assumption of free market result in an increase of utility of each participant in the economy \footnote{Find that reference... Duke university lectures... }. In other words, when a company makes higher profits it should mean that the part of the population that participated in the wealth creation should be happier. 
+Maximization of wealth either in the sense of investment company or individual is natural. Almost everybody would agree that to have more wealth is better than have less. Better investment decisions mean higher accumulation of wealth, which together with assumption of free market results in an increase of utility of each participant in the economy \footnote{Find that reference... Duke university lectures... }. In other words, when a company makes higher profits it should mean that the part of the population that participated in the wealth creation should be happier. 
 
 
 
@@ -360,6 +361,248 @@ Maximization of wealth either in the sense of investment company or individual i
 %\addcontentsline{toc}{chapter}{Preliminaries}
 
 \pagestyle{headings}
+
+
+
+\chapter{Valuation task }
+The task is to valuate a project in a form of max E\{NPV(Options)\}.
+
+\begin{definition}
+	A project is defined as a piece of planned work or an activity that is finished over a period of time and intended to achieve a particular purpose, mainly an increase of company's or individual's wealth\footnote{First part comes from Cambridge dictionary. }.
+\end{definition}
+
+Examples of a project are: 
+\begin{itemize}
+	\item developing a cooper mine; 
+	\item innovation of chemical processes in an oil refinery;
+	\item upgrade of current machinery in a production line; 
+	\item changing the form of software development philosophy towards agile practices.
+\end{itemize}
+
+When examining the expression max E\{NPV(Options)\} four observations come to mind. 
+
+First, the maximization is over some set of control strategies. This set can be generally large, even uncountable. Due to the class of the problems that are addressed in this thesis, the actions made by a manager are not expected to be continuous, not even very frequent. This would result in an assumption of small control strategy space, at least for now. 
+
+\begin{assumption}
+	The strategy space is small, certainly finite. 
+\end{assumption}
+
+Second, there is an expectation E, which means that there is uncertainty for a single fixed strategy. This uncertainty comes from the nature of free cash flow in each period and originates in both project's inner development (Will I be able to change the production line to produce the goods I want it to?) or outer, most of the time in a form of market price uncertainty of input or output goods. 
+
+\begin{definition}
+	Free cash flow is the cash a company produces through its operations, less the cost of expenditures on assets.
+\end{definition}
+
+
+Third, net present value (NPV), that is defined in all publications that I have seen as: 
+
+\begin{equation}
+NPV = \sum_{t \in \mathbf{T}} \frac{C_t}{r^t}, 
+\end{equation}
+where $C_t$ is free cash flow and $r$ is a discount rate that represents devaluation of money in time. 
+
+The last observation is that NPV is a function of options. There has to exist some opportunity to change future cash flow in the light of partial or full uncertainty resolution. 
+
+\section{How is a similar task solved by different authors}
+Statistical decision theory is in my opinion captured the best in a book from Bacci and Chiandotto \cite{BacChi:19} and summarized by Fig. \ref{fig:SDTScheme}.
+
+\begin{figure}
+	\includegraphics[width=\linewidth]{Images/SDTSchema.png}
+	\caption{SDT Schema.}
+	\label{fig:SDTScheme}
+\end{figure}
+
+The project (SDT authors call it a \textit{process}) is a sequence of states and actions (and sometimes decisions). To obtain the best performance out of the project a measure of utility instead of simple monetary reward can be introduced. The uncertainty in a project is addressed by a parameterized model with prior distribution that concentrates all knowledge relevant to the project. 
+
+The best action strategy is the one that maximizes cumulative utility and it is usually obtained by a method of backward induction called dynamic programming. 
+
+\begin{definition}
+	TODO - a proper definition of dynamic programming. 
+\end{definition}
+
+Not sure about what is the difference between stochastic decision theory and stochastic control theory. They are probably synonyms. 
+
+Dynamic programming is a tool used for determining the optimal strategy and a value of a project (\textit{process}). Its core is the Bellman equation, which represents the backward induction of value function computation. 
+
+Real option analysis can be understood in multiple ways. If a replicating portfolio exists, then a value of some expected cash flow is identical to the current value of a portfolio. The support for this statement comes from the law of one price from economics. The assumption of replicating portfolio existence becomes hard to defend as the project that is to be valued becomes more abstract and/or complex.
+
+For more complex projects, real option valuation uses binomial models with risk-neutral probabilities coming from the law of one price (Guthrie \cite{Gut:09}), or stochastic models of an expected behavior of the state variable determining the future cash flow (Vollert \cite{Vol:03}). 
+
+\section{My valuation}
+This sub-chapter is my attempt to best describe a real option valuation understood in a sense of an opportunity to make change in future project's cash flows. 
+
+First I start with the intuitive equation: 
+
+\begin{equation}\label{eq:valIntuitive}
+	V = \max_{\pi \in \mathbf{\Pi}} E\left[\sum_{t \in \mathbf{T}} DC_t(s_t,b_t(\pi)) \right], 
+\end{equation}
+where $\pi $ is a strategy, a sequence of decisions that the manager is able to do to change the course of the project. Time evolution of the process is represented by a variable $t$ which iterates over range of time epochs, so far finite or infinite countable $\mathbf{T}$. Discounted cash flow $DC_t$ assumed to be obtained at the end of an epoch $t$  is derived from the free cash flow $C_t$ and a constant discount rate $r>1$ as: 
+
+\begin{equation}\label{eq:discCF}
+	DC_t = \frac{C_t}{r^t}. 
+\end{equation}
+
+
+\begin{assumption}
+	Discount parameter is constant in time. 
+\end{assumption}
+ We can see that $DC_t$ depends on two variables, state variable $s_t$, which represents the state of an environment (outer world, like prices of oil, price of skilled software engineers, etc.) and $b_t$, project "branch", which represents that state of the project itself (inner property of the project, for example if a copper mine is active or idle, or if the decision was to produce chocolate instead of vanilla ice cream). 
+ 
+ \begin{assumption}\label{ass:independence}
+ 	State variable $s_t$ is a random variable and does not depend on actions of the project's management. 
+ \end{assumption}
+
+Assumption \ref{ass:independence} can be violated for example in duopolistic markets or others, where a single company decision has non-negligible influence on the market. 
+
+\begin{assumption}\label{ass:branchVar}
+	A "branch" upon which the project is in the moment is assumed to be a random variable and  its value is determined only by actions in a policy $\pi$ and its random nature. 
+\end{assumption}
+
+Assumption \ref{ass:branchVar} is reasonable for majority of projects. Management makes a decision to open or close a mine, to produce chocolate or vanilla. However, for example in some R\&D projects the outcome of a manager's decision is uncertain. 
+
+\subsection{Addressing the uncertainty}\label{subs:addressingUncertainty}
+In this subsection the meaning of the expected value will be examined. We follow on the equation \ref{eq:valIntuitive} \footnote{not sure about the expression}. Using the linear property of expectation $E$ and substituting for $DC_t$ with equation \ref{eq:discCF} we obtain: 
+
+\begin{equation}
+	V= \max_{\pi \in \mathbf{\Pi}}\sum_{t \in \mathbf{T}}\frac{E[C_t(s_t,b_t(\pi))]}{r^t}.
+\end{equation}
+
+\begin{assumption}
+	Environment $s_t$ can take on values from a finite or countable set $\mathbf{S_t}, \forall t \in \mathbf{T}$. 
+\end{assumption}
+
+This assumption is important only for simpler discussion later. Uncountable $\mathbf{S_t}$ could probably work too, but we would need to perform integration instead of summation \footnote{The verb integrate probably has a different meaning. }. 
+
+ \begin{assumption}\label{ass:branchState}
+	The actual state of $b_t \in \mathbf{B_t}$ depends only on actions in policy $\pi$ that happened before the time period $t \in \mathbf{T}$. 
+\end{assumption}
+
+As a result of assumption \ref{ass:branchState} a term \textit{partial strategy} is defined. 
+\begin{definition}\label{def:partialStrategy}
+ A partial strategy $\pi_t$ for a full strategy $\pi$ is defined as the first $t$ elements of its vector, $\pi_t = (a_1,a_2,..., a_t)$\footnote{It can be noticed that $\pi_{|\mathbf{T}=\pi}$}.
+\end{definition}
+
+
+\begin{assumption}
+	For a given partial strategy $\pi_t$, the project "branch" can take on values from a finite set $\mathbf{B_t}, \forall t \in \mathbf{T}$. 
+\end{assumption}
+
+In most cases the "branch" of a project is a deterministic function of a managerial decision, however $b_t$ also covers variables whose evolution is triggered by a managerial decision. For example building a bridge with toll payments a year later also postpones the "adoption curve" of the new road. 
+
+\begin{assumption}\label{ass:bsIndep}
+	The state of an environment $s_t$ and the branch state $b_t$ are stochastically independent random variables. 
+\end{assumption}
+Using assumptions \ref{ass:branchState}, \ref{ass:bsIndep} and definition \ref{def:partialStrategy} we arrive at the final valuation formula:
+
+\begin{equation}\label{eq:valuationFinal}
+	V= \max_{\pi_{t-1} \in \mathbf{\Pi}}\sum_{t \in \mathbf{T}}\frac{\sum\limits_{s_t \in \mathbf{S_t} } \sum\limits_{b_t \in \mathbf{B_t}(\pi_{t-1}) }p(s_t)p(b_t(\pi_{t-1}))C_t(s_t,b_t(\pi_{t-1}))}{r^t}. 
+\end{equation}
+
+ Now, there are several questions about our ability to actually compute this valuation. 
+
+\begin{itemize}
+	\item Where do the sets $\mathbf{T}, \mathbf{S_t}, \mathbf{B_t}$ come from? 
+	\item How to determine the discount factor $r$. 
+	\item How are we able to obtain the cash flow function $C_t(s_t, b_t)$?
+	\item What are we maximizing over? What is the set of possible strategies $\pi \in \Pi$?
+	\item How to obtain the probabilities $p(s_t), p(b_t(\pi_{t-1}))$?
+\end{itemize}
+
+All of these questions will be answered in the next section. 
+
+\subsection{Actual value computation}
+In this section we will be discussing, how to actually value a project with the equation \ref{eq:valuationFinal}.
+\subsubsection{Sets $\mathbf{T}, \mathbf{S_t}, \mathbf{B_t}$}
+All of the sets $\mathbf{T}, \mathbf{S_t}, \mathbf{B_t}$ come from the model of a valuation problem.
+ 
+ The number and frequency of time periods is determined by $\mathbf{T}$, when the most usual approach is to have $\mathbf{T}$ as a finite number of yearly periods. This can represent either a duration of project rights (for example in mining) or rights for a cash flow share (for example from bridge tolls), or such fuzzy future, where nobody really knows what will happen with the project 50 years from now. 
+ 
+ The set of possible branches $\mathbf{B_t}$ comes from the project manager. He needs to identify the project alteration possibilities in each time period $t \in \mathbf{T}$. The set $\mathbf{B_t}$ is small most of the time, however in cases, when for example a start of a variable that is modeled by binomial tree is dependent on the strategy, the set $\mathbf{B_t}$ can grow rather quickly. The example is again a bridge project, where the number of toll-paying customers in time $t$ depends on a time period in which the bridge was finished. 
+
+ 
+ And finally, the values of an environment state $\mathbf{S_t}$ are determined by a model of the outer world. The set $\mathbf{S_t}$ should be able to capture the uncertainty about all important parameters for the project while remaining as simple as possible. A classical example is a binomial tree of input prices for our process (oil, software engineer's salary).
+ 
+ \subsubsection{Discount factor $r$}
+ The discount factor, representing time value of money plays a big role in the financial world. It is expected to be $r>1$ because today's economy depends on non-negative inflation. 
+ 
+ \begin{assumption}\label{ass:discountFactor}
+ 	The discount factor $r$ is expected to be larger than one and constant through the project's lifetime. 
+ \end{assumption}
+The assumption \ref{ass:discountFactor} serves as a simplification. To study time variant discount factor in the light of real option valuation is not interesting. However, one could simply model the discount rate as $r_t$ with some probabilities $p(r_t)$ and compute an expected discount rate. 
+ 
+ \subsubsection{Cash flow function}
+ The core of each project valuation is its cash flow function $C_t(s_t,b_t)$, which represents the additional monetary value created by it over some time period. Usually, this function is simply defined as the difference between the total price of inputs (usually given by $s_t$) and outputs (usually given by $b_t$ or $s_t$) for a given period. In more complex models, the inputs can also represent depreciation of machinery, expenses on marketing campaigns or additional costs to acquiring new workforce (not only their salary).
+ 
+ An example of zero cash flow is when a project is deferred and waits to be undertaken or not. A simple example of non-zero cash flow is a project of running ammonia factory, where the cash flow is:
+
+
+ \begin{equation}
+ 	C_t = \frac{n_g}{c_{g\rightarrow a}}p_a - n_g*p_g, 
+ \end{equation}
+ where $n_g$ is the volume of processed gas, $p_g, p_a$ are prices of gas and ammonia on the market and $c_{g\rightarrow a}$ is an inner company coefficient, that says how many units of gas are needed to produce one unit of ammonia. 
+ 
+ \subsubsection{Strategies $\pi$}
+ As was pointed out by many articles \footnote{See for example \cite{}, \cite{}, or \cite{}.} the ability to change the course of a project has value. The sequence of actions (in some papers called decisions) form a strategy $\pi = (a_1, a_2,..., a_{|\mathbf{T}|})$. 
+ 
+ \begin{assumption}
+ Action $a_t$ is expected to happen in the end of the corresponding time period $t \in \mathbf{T}$. 
+ \end{assumption}
+
+The set of possible strategies $\mathbf{\Pi}$ needs to be given by a manger responsible for the project or his team. He should know best, what are the possible changes in the project, that could improve its cash flow and increase its value. 
+
+The set of possible strategies is usually well defined by a real options understood in a sense of an ability to act. 
+
+In an example from \cite{Gut:09}, an operator of a gas power plant can choose to produce electricity or not to, based on the current price of gas and power. The strategies in this example can be represented as binary vectors: 
+\begin{equation}
+\mathbf{\Pi} = \{(a_1,...a_{|\mathbf{T}|})|a_i \in {1,0}, \forall i \in \mathbf{T}\}, 
+\end{equation}
+where $a_i = 1 $ means that the plant is running in the next time period $i+1$ and $a_i=0$ means that the power plant will be in an idle state. 
+
+
+\subsubsection{Probabilities}
+Finally, the most complex problem from the list in the end of section \ref{subs:addressingUncertainty} is to determine what to substitute all $p(s_t)$ and $p(b_t)$ in the equation \ref{eq:valuationFinal} for. 
+
+The difference in the ROA, SDT and for example DTA techniques is mainly in the difference in which they cope with the derivation of these values. 
+
+For DTA, both $p(s_t)$ and $p(b_t)$ are assumed to be known in each time period. This is because problems solved with DTA are usually simple and they need to declare only small number of probabilities. 
+ 
+ For ROA the probabilities $p(s_t)$ arise as the so-called risk-free probabilities that come from the idea of replicating portfolio and the validity of the law of one price. For example Guthrie in \cite{Gut:09} uses the capital asset pricing model (CAPM), that provides risk-neutral probabilities of up and down movements, $p_u, p_d$. All other probabilities that could be defined as $p(s_t)$ are in \cite{Gut:09} determined by a binomial pricing model as a product of $p_u$ and $p_d$. 
+ 
+ Another approach to ROA can be seen in the work of Vollert \cite{Vol:03}, who models the replicating portfolios as some stochastic Ito process, which gives the probabilities of $s_t$. 
+ 
+The branch probabilities $p(b_t)$ are in ROA not understood as a separate category, thus they do not need to be further discussed\footnote{Not sure about this, check it. }. 
+ 
+ 
+ Finally, in SDT, the value of both $p(s_t)$ and $p(b_t)$ comes from the knowledge about the underlying problem expressed as prior (or posterior, when updated for new data) probability distribution. The prior probability distribution is constructed from the inner knowledge of experts on the subject, former relevant data, principle of insufficient reasons or their combinations. In SDT it is usually expected that $p(s_t)$ comes from some parameterized family of distributions: 
+ \begin{equation}
+ 	\mathcal{F} = \{p(s_t|\theta)|\theta \in \mathbf{\Theta} \}. 
+ \end{equation}
+ 
+ An example is a binomial distribution $Bi(t,\theta)$:
+ \begin{equation}
+  p(s_t = k|\theta) = \binom{t}{k}\theta^{k}(1-\theta)^{t-k}.
+ \end{equation}
+ 
+ I believe that this approach is the most general, because one can interpret the prior distribution in many possible ways. The SDT approach also allows for combination of many different sources of knowledge about the project \cite{}. 
+ 
+ The problems of ROA approach are the inability to find a replicating portfolio to any more complex project and unclear and undiscussed origins of "actual" probabilities in CAPM model and other variables in it used in \cite{Gut:09}.
+ 
+  The STD approach is protected against these problems, as even when there is no prior, there is always a principle of insufficient reasons, which needs only a model, a requirement of all techniques that try to determine $p(s_t)$ and $p(b_t)$.
+ 
+ 
+ \subsection{The maximization process}
+ 
+TODO after supervisor's review. In a nutshell it is a dynamic programming and after realization that the complexity is large, it is approximate dynamic programming.  
+ 
+ \subsection{Note at the end}
+ 
+ Without using the replicating portfolio, the "Real Options" in my work means only the ability to change the projects path as is presented in articles \cite{Cop:01},... I would love to incorporate the law of one price in the priors of SDT somehow. 
+ 
+ 
+
+
+
+
 
 \chapter{Preliminaries}
 
