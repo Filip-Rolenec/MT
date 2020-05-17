@@ -6,43 +6,66 @@
 \babel@toc {czech}{}
 \babel@toc {american}{}
 \contentsline {chapter}{\numberline {1}Introduction}{17}% 
-\contentsline {chapter}{\numberline {2}Valuation task }{21}% 
-\contentsline {section}{\numberline {2.1}How is a similar task solved by different authors}{22}% 
-\contentsline {section}{\numberline {2.2}My valuation}{23}% 
-\contentsline {subsection}{\numberline {2.2.1}Addressing the uncertainty}{23}% 
-\contentsline {subsection}{\numberline {2.2.2}Actual value computation}{24}% 
-\contentsline {subsubsection}{\numberline {2.2.2.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{25}% 
-\contentsline {subsubsection}{\numberline {2.2.2.2}Discount factor $r$}{25}% 
-\contentsline {subsubsection}{\numberline {2.2.2.3}Cash flow function}{25}% 
-\contentsline {subsubsection}{\numberline {2.2.2.4}Strategies $\pi $}{25}% 
-\contentsline {subsubsection}{\numberline {2.2.2.5}Probabilities}{26}% 
-\contentsline {subsection}{\numberline {2.2.3}The maximization process}{27}% 
-\contentsline {subsection}{\numberline {2.2.4}Note at the end}{27}% 
-\contentsline {chapter}{\numberline {3}Preliminaries}{29}% 
-\contentsline {section}{\numberline {3.1}Classic valuation techniques}{29}% 
-\contentsline {subsection}{\numberline {3.1.1}Net Present Value}{29}% 
-\contentsline {subsection}{\numberline {3.1.2}ENPV valuation}{30}% 
-\contentsline {subsection}{\numberline {3.1.3}Comparing investments}{30}% 
-\contentsline {subsection}{\numberline {3.1.4}Other frequently used valuation techniques}{30}% 
-\contentsline {subsection}{\numberline {3.1.5}Decision tree analysis}{30}% 
-\contentsline {section}{\numberline {3.2}Real option analysis}{30}% 
-\contentsline {subsection}{\numberline {3.2.1}Financial options}{31}% 
-\contentsline {subsection}{\numberline {3.2.2}Black-Scholes Merton model}{31}% 
-\contentsline {subsection}{\numberline {3.2.3}Real options}{31}% 
-\contentsline {section}{\numberline {3.3}Statistical decision theory}{31}% 
-\contentsline {subsection}{\numberline {3.3.1}Bayesian statistics}{32}% 
-\contentsline {subsection}{\numberline {3.3.2}Utility}{32}% 
-\contentsline {section}{\numberline {3.4}Approximate dynamic programming}{33}% 
-\contentsline {chapter}{\numberline {4}Real option analysis in terminology of stochastic decision control}{35}% 
-\contentsline {chapter}{\numberline {5}Application of the cheery-picked valuation technique. }{37}% 
-\contentsline {section}{\numberline {5.1}Approximate dynamic programming}{37}% 
-\contentsline {section}{\numberline {5.2}Valuation example}{37}% 
-\contentsline {subsection}{\numberline {5.2.1}NPV valuation }{37}% 
-\contentsline {subsection}{\numberline {5.2.2}DTA valuation}{37}% 
-\contentsline {subsection}{\numberline {5.2.3}Classic ROA valuation}{37}% 
-\contentsline {subsection}{\numberline {5.2.4}New approach}{37}% 
-\contentsline {chapter}{\numberline {6}Discussion}{39}% 
-\contentsline {chapter}{\numberline {7}Conclusions}{41}% 
-\contentsline {chapter}{\numberline {8}Bachelor's thesis parts that could be useful for TeX styling}{43}% 
-\contentsline {section}{\numberline {8.1}Discrete Markov decisions processes}{43}% 
-\contentsline {paragraph}{Discussion}{44}% 
+\contentsline {section}{\numberline {1.1}The rest of the chapter is kept as an inspiration for the future writing.}{17}% 
+\contentsline {chapter}{\numberline {2}Preliminaries}{21}% 
+\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{21}% 
+\contentsline {section}{\numberline {2.2}Corporate finance}{21}% 
+\contentsline {subsection}{\numberline {2.2.1}Standard valuation metrics}{22}% 
+\contentsline {paragraph}{Net present value}{22}% 
+\contentsline {paragraph}{Decision tree analysis}{23}% 
+\contentsline {section}{\numberline {2.3}Real option analysis}{23}% 
+\contentsline {section}{\numberline {2.4}Stochastic decision theory}{23}% 
+\contentsline {subsection}{\numberline {2.4.1}Bayesian statistics}{23}% 
+\contentsline {subsection}{\numberline {2.4.2}Dynamic programming}{24}% 
+\contentsline {subsection}{\numberline {2.4.3}Approximate dynamic programming}{24}% 
+\contentsline {chapter}{\numberline {3}Real options in the language of SDT}{25}% 
+\contentsline {section}{\numberline {3.1}ROA vs SDT comparison}{26}% 
+\contentsline {section}{\numberline {3.2}New valuation technique}{26}% 
+\contentsline {subsection}{\numberline {3.2.1}Discounted cash flow}{27}% 
+\contentsline {subsection}{\numberline {3.2.2}Cash flow}{27}% 
+\contentsline {subsection}{\numberline {3.2.3}Addressing uncertainty}{29}% 
+\contentsline {section}{\numberline {3.3}Origins of variables in the valuation equation}{30}% 
+\contentsline {subsection}{\numberline {3.3.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{30}% 
+\contentsline {subsection}{\numberline {3.3.2}Discount factor $r_t$}{30}% 
+\contentsline {subsection}{\numberline {3.3.3}Supply and demand curves}{30}% 
+\contentsline {subsection}{\numberline {3.3.4}Set of strategies}{30}% 
+\contentsline {subsection}{\numberline {3.3.5}Probabilities of states}{30}% 
+\contentsline {chapter}{\numberline {4}Source of inspiration to chapter 2 - preliminaries}{31}% 
+\contentsline {section}{\numberline {4.1}Classic valuation techniques}{31}% 
+\contentsline {subsection}{\numberline {4.1.1}Net Present Value}{31}% 
+\contentsline {subsection}{\numberline {4.1.2}ENPV valuation}{32}% 
+\contentsline {subsection}{\numberline {4.1.3}Comparing investments}{32}% 
+\contentsline {subsection}{\numberline {4.1.4}Other frequently used valuation techniques}{32}% 
+\contentsline {subsection}{\numberline {4.1.5}Decision tree analysis}{32}% 
+\contentsline {section}{\numberline {4.2}Real option analysis}{32}% 
+\contentsline {subsection}{\numberline {4.2.1}Financial options}{33}% 
+\contentsline {subsection}{\numberline {4.2.2}Black-Scholes Merton model}{33}% 
+\contentsline {subsection}{\numberline {4.2.3}Real options}{33}% 
+\contentsline {section}{\numberline {4.3}Statistical decision theory}{34}% 
+\contentsline {subsection}{\numberline {4.3.1}Bayesian statistics}{34}% 
+\contentsline {subsection}{\numberline {4.3.2}Utility}{34}% 
+\contentsline {section}{\numberline {4.4}Approximate dynamic programming}{35}% 
+\contentsline {chapter}{\numberline {5}Source of inspiration for chapter 3. }{37}% 
+\contentsline {section}{\numberline {5.1}How is a similar task solved by different authors}{38}% 
+\contentsline {section}{\numberline {5.2}My valuation}{39}% 
+\contentsline {subsection}{\numberline {5.2.1}Addressing the uncertainty}{39}% 
+\contentsline {subsection}{\numberline {5.2.2}Actual value computation}{40}% 
+\contentsline {subsubsection}{\numberline {5.2.2.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{41}% 
+\contentsline {subsubsection}{\numberline {5.2.2.2}Discount factor $r$}{41}% 
+\contentsline {subsubsection}{\numberline {5.2.2.3}Cash flow function}{41}% 
+\contentsline {subsubsection}{\numberline {5.2.2.4}Strategies $\pi $}{41}% 
+\contentsline {subsubsection}{\numberline {5.2.2.5}Probabilities}{42}% 
+\contentsline {subsection}{\numberline {5.2.3}The maximization process}{43}% 
+\contentsline {subsection}{\numberline {5.2.4}Note at the end}{43}% 
+\contentsline {chapter}{\numberline {6}Application of the cheery-picked valuation technique. }{45}% 
+\contentsline {section}{\numberline {6.1}Approximate dynamic programming}{45}% 
+\contentsline {section}{\numberline {6.2}Valuation example}{45}% 
+\contentsline {subsection}{\numberline {6.2.1}NPV valuation }{45}% 
+\contentsline {subsection}{\numberline {6.2.2}DTA valuation}{45}% 
+\contentsline {subsection}{\numberline {6.2.3}Classic ROA valuation}{45}% 
+\contentsline {subsection}{\numberline {6.2.4}New approach}{45}% 
+\contentsline {chapter}{\numberline {7}Discussion}{47}% 
+\contentsline {chapter}{\numberline {8}Conclusions}{49}% 
+\contentsline {chapter}{\numberline {9}Bachelor's thesis parts that could be useful for TeX styling}{51}% 
+\contentsline {section}{\numberline {9.1}Discrete Markov decisions processes}{51}% 
+\contentsline {paragraph}{Discussion}{52}% 
