@@ -21,6 +21,7 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{caption}
 
+
 \usepackage{array}
 \usepackage{ragged2e}
 
@@ -425,111 +426,227 @@ Maximization of wealth either in the sense of investment company or individual i
 \chapter{Preliminaries}
 \ruletext{Introduction to preliminaries}
 
-To properly understand a mathematical text it is important to first define the used symbolism and phrases. Since this thesis is based on many different authors, from both financial and mathematical world presenting a short unifying overview of the used theory needs to be presented. 
+To properly understand a mathematical text it is important to first define the used notions and symbolism. Since this thesis is based on many different authors, from both financial and mathematical world, a short unifying overview of the used theory is important. 
 
-The notation used in this thesis comes predominantly from the most influential authors in the respective studied fields. The pure mathematical symbolism comes from the author's studying experience and its applicability proven in his previous works \cite{Rol:18} and \cite{}.  \footnote{Should Filip ==Author or Filip == I/Me?}
+The notation used in this thesis comes predominantly from the most influential authors in the respective fields of study: 
+\begin{itemize}
+	\item general economy \cite{BerDeM:09};
+	\item real options \cite{Gut:09};
+	\item stochastic decision theory \cite{BacChi:19}.
+\end{itemize}
+
+ The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU and its applicability is proven in his previous works \cite{Rol:18} and \cite{Rol:19}. 
+\footnote{Filip == Author or Filip == I/Me} 
 
 \ruletext{}
 \section{Used mathematical symbolism}
-\ruletext{Sets, random variables, what do i mean by 'probability'}
+\ruletext{Sets, random variables, what do I mean by 'probability'}
 
-In the whole thesis, bold capital letters, such as $\mathbf{B}$, represent a set of all elements $b \in \mathbf{B}$ as in \cite{}. The cardinality of a set $\mathbf{B}$ is denoted with two vertical lines as $|\mathbf{B}|$. Random variables, understood as coming from the standard Kolmogorov probability theory \cite{}, are represented with a number with a tilde, i.e. $\tilde{s_t}$. Realizations of a random variables are denoted by the same letters as the random variable without the tilde, i.e. $s_t$. 
+In the whole thesis, bold capital letters, such as $\mathbf{B}$, represent a set of all elements $b \in \mathbf{B}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{B}$ is denoted with two vertical lines as $|\mathbf{B}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense? }, are represented with a tilde above the variable, i.e. $\tilde{s_t}$. Realizations of a random variables are denoted by the same letters as the random variable without the tilde, i.e. $s_t$. 
 
-Probability of  a realization $s_t$ of a random variable $\tilde{s_t}$ is denoted by $p(\tilde{s_t}=s_t)=p(s_t)=x$, where $x \in <0,1>$). This probability is understood as both  subjective \cite{} or frequentist \cite{} and both as discrete valued and as a probability density, depending on context\footnote{Probably not the clearest definition}.
+Probability of a realization $s_t$ of random variable $\tilde{s_t}$ is denoted as $p(\tilde{s_t}=s_t)=p(s_t)=x$, where $x \in [0,1]$. This probability is understood as both  subjective \cite{} or frequentist \cite{} and both discrete valued and as a probability density, depending on context.
 
-The conditional probability  of a realization of a random variable $\tilde{x} = x$ after a realization of another random variable $\tilde{y} = y$ is expressed as $p(x|y) = \frac{p(x,y)}{p(y)}$, which again represents both probability density or discrete values, depending on the context. 
+The conditional probability  of a realization of a random variable $\tilde{x} = x$ after a realization of another random variable $\tilde{y} = y$ is expressed as $p(x|y) = \frac{p(x,y)}{p(y)}$, which again represents both discrete values or probability density depending on the context. 
+
 <Probably some other definitions that will be needed in the following chapters> 
 
 \ruletext{}
 
-\section{Corporate finance}
+\section{General economics}
 \ruletext{Introduction and basic financial concepts. }
 
-This thesis stands on two main theoretical pillars. First is the theory of corporate finance \cite{} and the second is stochastic decision theory (SDT). In this section a basic review of corporate finance terminology and procedures is presented with the focus on project valuation techniques. 
+This thesis is built on two main theoretical pillars, the theory of corporate finance \cite{BerDeM:09} and stochastic decision theory (SDT) \cite{BacChi:19}. A basic review of corporate finance terminology and procedures is presented in this section with a focus on project valuation techniques. 
 
 
 \begin{definition}[Project]
-	A project is defined as a piece of planned work or an activity that is finished over a period of time and intended to achieve a particular purpose, mainly an increase of company's or individual's wealth\footnote{First part comes from Cambridge dictionary. }.
+	A project is defined as a piece of planned work or an activity that is finished over a period of time and intended to achieve a particular purpose, mainly a wealth increase of a company or an individual. \footnote{First part comes from Cambridge dictionary. Is that ok just to cite it? }
 \end{definition}
 
-A value of a project is naturally a function of elementary monetary transactions within the project. To track and model each transaction of a project in detail is in principle possible, but such approach would be way too complex for practical usage. Furthermore, its benefits would probably not be significant enough to defend the extra effort of decision makers. 
+\begin{definition}[Value]
+	The amount of money that can be received for something. \footnote{Again cambridge dictionary...} \footnote{This definition is added to say that by value in economics we mean money that we can obtain from the asset.}
+\end{definition}
 
-For purposes of valuation an aggregation of elementary monetary transactions a concept of cash flow and free cash flow is used in the financial world \cite{}.
+A value of a project is naturally a function of realized elementary monetary transactions within the project and the potential selling price of remaining assets. To track and model each transaction of a project in detail is in principle possible, but such approach would be way too complex for practical usage. Furthermore, its benefits would most likely not be significant enough to defend the extra effort of decision makers. 
+
+
+For purposes of project valuation an aggregation of elementary monetary transactions - a concept of cash flow (CF) and free cash flow (FCF) are used in the financial world.
 
 \begin{definition}(Cash flow)
-	Cash flow is the net amount of cash and cash-equivalents being transferred into and out of a business(project).  \footnote{Investopedia, economical books do not define it. }
+	Cash flow is the net amount of cash and cash-equivalents being transferred into and out of a business (project).  \footnote{Investopedia, economical books do not define it. }
+	
 \end{definition}
 
 \begin{definition}(Free cash flow)
-	The incremental effect of a project on the firm’s available cash is the project’s free cash flow (FCF). <Operating Cash Flow - Capital Expenditures>
+	The incremental effect of a project on the firm’s available cash is the project’s free cash flow \cite{BerDeM:09}: 
+	\begin{equation}
+		FCF = Operating Cash Flow - Capital Expenditures.
+	\end{equation}
 \end{definition}
-<Discuss discrete and continuous cash flows>
+
+
+Cash flows are in their detail nature discrete, each transaction within the project changes the global cash flow. The moments in which transactions legally take place could be taken as individual time instants. 
+
+However, it is easy to imagine understanding the cash flow as a continuous stream of money per time. By the nature of corporate management, one could also expect, that in majority of non-extreme applications, this would not result in a major distortion of cash flow reality. \footnote{Should I discuss here more. I mean that corporate management does not care about each transaction in each store, it cares about daily or even monthly revenues.}
+
+All of this is true also for free cash flow. 
+
+In this thesis we will further work only with the FCF, so from now on, the term \textit{cash flow} will only mean free cash flow. \footnote{Maybe confusing, consider to define only FCF and call it cash flow...}
+
+
 \ruletext{}
 
 \subsection{Standard valuation metrics}
-\ruletext{NPV, DTA, WACC and others}
-The FCF captures a success of a project per period. To be able to compare different projects one needs to be able to systematically compare their cash flows as an ultimate indicator of a projects quality. 
+\ruletext{NPV, DTA, IRR, WACC and others}
 
-The following valuation techniques are attempts to aggregate FCF vectors in one number to enable decision maker to choose to invest in a project at all, or to choose between a portfolio of projects. 
+Cash flows capture information about value added to a project in given periods. Due to time value of money and different lifespans of projects, one has to come up with algorithms for consistent and systematic valuation of projects, according to their cash flows. 
 
-\paragraph{Net present value}
-First valuation technique, Net Present Value, is arguably the most used valuation technique in capital budgeting \cite{}. Its computation is simple and it can be described as a summation of free cash flows discounted for the time value of money: 
+Valuation techniques are attempts to aggregate cash flow vectors in one number to enable decision makers to help to choose an investment with highest expected profit. 
+
+\paragraph{Net resent value}
+First valuation technique, net present value, is arguably the most used valuation technique in capital budgeting \cite{} \footnote{Is this a strong enough statement that I need to cite somebody?}. Its computation is simple and it can be described as a sum of cash flows discounted for the time value of money:
 
 \begin{equation}
 NPV = \sum_{t \in \mathbf{T}} \frac{C_t}{r^t}, 
 \end{equation}
-where $\mathbf{T} = \{0,1,...,|\mathbf{T}|\}$ is set of constant time periods in which the cash flow $C_t$ is obtained. The periods are usually years or months, but can effectively have any granularity the decision maker wants it to. Discounting factor $r$ expresses the time value of money and is usually derived from the current risk-free interest rate given by the central bank of a nation. \footnote{The discussion about negative interest rates and thus r<1 is left to my valuation in chapter 3.}. 
+where $\mathbf{T} = \{0,1,...,|\mathbf{T}|\}$ is a set of time periods in which the cash flows $C_t$ are obtained. These periods are usually years or months, but they can effectively have any granularity the decision maker wants them to. Discounting factor $r$ expresses the time value of money and is usually derived from the current risk-free interest rate given by the central bank of a nation. \footnote{The discussion about negative interest rates and thus r<1  and also the correct discounting rate is left to my valuation in chapter 3.}
 
-The NPV valuation technique is simple to use, assuming we know the discount rate, which is constant through the lifetime of the investment, and free cash flows, that are expected to be certain. 
+The NPV valuation technique is simple to use, assuming we know the discount rate, which is  constant through the project's duration, and free cash flows, that are assumed to be certain. \footnote{Should I put an example here or would that be too trivial? Cash flow is [-400, 100,100,200,200], interest rate 5\% -> NPV is... }
 
-A more advanced approach that acknowledges the variability in both cash flows and risk-free interest rates is called expected NPV (ENPV): 
+A more advanced approach that acknowledges the variability in both cash flows and risk-free interest rate is called expected NPV(ENPV) :\footnote{Seems like literature does not use this and I made it up. In the eyes of economics, the cash flows seem to be expected values all the times, the distribution is not considered. } \footnote{Also there is ENPV as "Expanded NPV" NPV+options value used by Vollert, Pindyck and others. }
 \begin{equation}
-	ENPV = E\left[\sum_{t \in \mathbf{T}} \frac{\tilde{C_t}}{\tilde{r^t}} \right],
+	ENPV = E\left[\sum_{t \in \mathbf{T}} \frac{\tilde{C_t}}{\tilde{r_t}^t} \right],
 \end{equation}
 where both the distribution cash flow and interest rate is expected to be known. 
 
 \paragraph{Decision tree analysis}
-The simplest valuation technique that acknowledges the importance of further management of investments is call decision tree analysis \cite{}. In addition to time value discounting it offers a framework that can incorporate active decision making in a form of decision nodes in a decision tree.
+The simplest valuation technique that acknowledges the importance of further management of investments is called decision tree analysis \cite{Vol:03}. In addition to time value discounting of the cash flows it offers a framework that can incorporate active management of a project, potentially increasing its overall profits. 
 
-A decision tree consists of three type of nodes. 
-<Finish the definition of DTA and cite a refer to a picture in some book> 
+The ability to make actions in projects is sometimes interpreted as having \textit{Real Options} \cite {}. This confusing terminology might result in misunderstandings. That is why it needs to be said, that valuation that recognizes the ability of a manger to act but ignores the law-of-one-price will be addressed as DTA. 
 
-The decision tree analysis is used only for valuation of projects with very simple scenarios \footnote{But if we dont have replication portfolio or a magical K it is the same as ROA... }
+\begin{definition}[Law of one price]
+		<Definition of Law of one price> 
+\end{definition}
 
-<Add WACC, IRR, and others that will be discussed in the part where an attitude towards risk will be studied> 
+The decision tree analysis is usually used only for valuation of projects with very simple scenarios. However, its structure could be potentially used for more complex problems. 
+
+The criticism of DTA coming from Vollert \cite{Vol:03} and others \cite{} is that DTA uses a single discount rate for different branches of the project. This is contradictory to the standard rule in the economics that riskier projects should be discounted more \cite{}. 
+
+However, this criticism could be countered with upgraded DTA with variable discount rates in different branches rather easily. Furthermore, both Vollert \cite{} and  ... \cite{} do not address this problem and use a constant discount rates in their final valuation algorithms as well.  
+
+The discussion about risk and its role in valuation algorithm is more discussed in \ref{}. 
+
+\paragraph{Internal rate of return}
+The internal rate of return serves usually as a basic threshold for enterprises entering new projects. Each company would have their own internal threshold of IRR, based on their confidence in ability to make more or less returns overall. A startup would most likely have an IRR higher than a long time established bank. 
+
+\begin{definition}[IRR]
+	The internal rate of return is the interest rate that sets the net present value of the cash flows equal to zero \cite{BerDeM:09}. This means that IRR for cash flows $C_t$ needs to satisfy the following equation:
+	\begin{equation}
+		0=\sum_{t=0}^{T}\frac{C_t}{(1+IRR)^t}
+	\end{equation}
+\end{definition}
+
+The problems with IRR are that additional assumptions on cash flow vector have to be satisfied so that the result from equation \ref{} is unambiguous. \footnote{Or maybe there are no clear assumptions, but I know that there can be no IRR or two or more satisfying the equation.}
+
+\paragraph{Weighted average cost of capital}
+
+<This paragraph is not true, needs to be redone. The WACC is a combination of a premium that investors want in order to hold the shares of the company and a rate for which the company can borrow money. The risk free rate does not play any clear role in WACC. >
+ 
+The term time value of money represent the truth that the value of money today is not the same as next year. Due to the modern economical theory, inflation is a pursued phenomenon, keeping the economy running. 
+
+In economy, it is expected that there is a risk-free interest rate, usually determined by the rates on bonds issued by the central banks of given nations. 
+
+In capital budgeting the time value of money has a close connection to cost of capital. The cost of capital can have two forms, based on the money source for your investment. In the first case, you have some cash reserves and by investing in a project the only cost of capital is that you forego the opportunity to invest in bonds with risk-free rate of return, "paying" the opportunity cost. In second case, if company's funds are not sufficient, you need to borrow money on the market for an interest rate, which results in additional "cost" of capital. 
+
+The interest rates in second case are naturally higher, since lenders carry additional risk of borrower's default. 
+
+The term weighted average cost of capital combines the costs of capital coming from the two sources, further incorporating the notion of corporate tax reliefs. 
+
+\begin{definition}[WACC]
+The firm's effective after-tax cost of capital is called the weighted-average cost of capital (WACC): 
+\begin{equation}
+	WACC = \frac{E}{E+D}\cdot r_E + \frac{D}{E+D}\cdot r_D (1-\tau_C), 
+\end{equation}
+where E is the value of equity, D is the value of debt, $r_E$ the equity cost of capital, $r_D$ the debt cost of capital and $\tau_C$ is the corporate tax rate.
+\end{definition}
+
 
 \ruletext{}
 
 \section{Real option analysis}
-An option in financial world means having a right to buy (or sell) an asset in future for a fixed price (strike price) \cite{BerDeM:09}. Trading with options has origins in markets with commodities such as corn or oil, where participants want to in some sense insure themselves against the negative movement of a price on the market. Options that are being traded today on the derivative market span almost every tradeable asset \footnote{Find some citation or do not use this sentence.}. 
 
-The value of an option certainly depends on its time to maturity, current price of the asset and a strike price. A proper valuation method for options came with the Scholz-Merton model \cite{}, which in addition requires only the volatility of the underlying asset and the assumption of effective markets \footnote{probably has a different name... }. 
+\ruletext{What is ROA, introduction and hint of larger future discussion in the next chapter}
+	
+	
+An option in financial world means having a right to buy (or sell) an asset in future for a fixed price (strike price) \cite{BerDeM:09}. Option trading has origins in commodity markets (for example corn or oil), where participants want to in some sense insure themselves against the negative movement of a price on the market. Options that are being traded today on the derivative market span almost every tradeable asset that can be though of \footnote{Find some citation or do not use this sentence.}. 
 
-<Maybe Sch-Merton model in more detail> 
+The value of an option naturally depends on its time to maturity, current price of the asset and a strike price. A proper valuation method for options came with the Scholz-Merton model \cite{BlaSch:73}, which in addition requires only the volatility of the underlying asset and the assumption of effective markets \footnote{Maybe has a different name}. 
 
-The proper valuation of financial options spawned the idea of real option analysis. The ability to buy or sell an asset for a given price is close to the ability to invest in a project or even deeper, to make partial investments in a project. 
+<Sch-Merton model in more detail> 
 
-The phrase real option analysis as is used in the literature is rather fuzzy. It is used by many authors such as \cite{}, \cite{} or \cite{} but in detail it means a different framework each time. In this section a review of these different approaches is presented, while the discussion of their meaning is left for the next chapter. 
+The established and well received technique for financial option valuation spawned the idea of real option analysis. The option to buy an asset for a given price is similar to the ability to buy an expected future cash flow, i.e. invest in a project. 
 
-Lets first disclose what is constant in the different approaches. 
+<Origins of real options> The first economist, pioneer of the term \textit{Real option analysis}, ... ... treats investments as a complete analogy of trading with options. To be able to delay an investment has a value and..... 
 
-<Talk about how somebody has replicating portfolio, some authors dont and 
-< Origins of ROA, different forms in which it is presented, keep a deeper discussion for the next chapter> 
+The usage of the phrase real option analysis in literature is rather fuzzy. It is used by many authors such as \cite{}, \cite{} and \cite{}, however their usage of the term differs. Three different usage classes of the term real option analysis were identified by the author. They differ by the level of analogy to the financial options. 
 
-\section{Stochastic decision theory}
-<Standard SDT as a framework, states, actions, inputs, outputs, rewards, probability distributions>
+First, there is a class of complete analogy. All five parameters of financial options needed for their valuation with BSM model are identified with the parameters of an investment opportunity. An example of a valuation of a car dealership can be found in \cite{BerDeM:09}\footnote{Should I reference page numbers? } where the following identification is made:
+
+<Table with the identification> 
+
+Another example can be found in \cite{} ... 
+
+This class of authors focuses on the clear analogy and thus its scope of possible actions of a manager is limited basically only to time options. A decisions whether to invest in the project now or later. 
+
+
+The second class of authors uses only the core property of the financial analogy and that is the law-of-one-price. With the help of this assumption, the authors, eg. \cite{Gut:09} usually derive risk-neutral probabilities which are then used for modeling of some internal variable of the cash flow functions. 
+
+This class of authors is the most numerous and most mathematically rigorous. The core of the works in this class is usually solving stochastic differential equations, eg. \cite{Vol:03} whereas the role of the assumption about law-of-one-price is used mainly as the reasoning for obtaining one of the missing parameters of the stochastic model. 
+
+
+Third class of authors does not use the law-of-one-price and is thus the farthest away from the original idea of ....\footnote{The pioneer name}. This class of authors understands the term real option analysis as a useful lens for looking at the project valuation. They accentuate the value of further managerial decision, but the valuation structure and ideas do not differ from the DTA approach. 
+
+Thus, this class of authors is declared as a misuse of terminology and not further considered. 
+
+In the next part of the thesis, namely \ref{} the core message behind the term real option analysis will be thoroughly discussed. 
+
+\ruletext{}
+
+\section{Statistical decision theory}
+\ruletext{Standard SDT as a framework, states, actions, inputs, outputs, rewards, probability distributions}
+
+The second pillar upon which this thesis stands is the statistical decision theory. An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making as in its broadest meaning encapsulates a vast amount of human behavior, the class of problems it is able to solve is quite large. 
+
+The STD's main focus is to determine the optimal decisions to act upon generally in dynamic and uncertain environment. A classical structure of a decision making problem consists of five building blocks
+
+\begin{itemize}
+	\item Set of time epochs
+	\item Set of environment states in those epochs
+	\item Set of actions in those states
+	\item Reward function of transition from one state to another. 
+	\item Transition probabilities governing the transitions from one state to another. 
+\end{itemize}
+
+The set of time epochs, states and actions is usually known, derived from the decision problem that is being solved. Reward function are also usually known functions of previous actions and states. Actual transition probabilities can be known, but generally are not. 
+
+If the transition probabilities are not known they have to be estimated. There exist two statistical schools of parameter estimation, classical school and bayesian school. The Bayesian approach seems to fit better the format of decision making and it is used more widely in this framework. 
+
+The goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies. This maximization can be in total absolute values (in finite or discounted cases) or per time period (mostly in infinite non-discount cases). In this thesis we will focus on the total cumulative reward of a finite process (?). 
+
+To compute the expected cumulative reward a clever idea of backward induction, called dynamic programming is used. A function of state called the value function is defined representing the expected cumulative gain from the given node onwards. The backward induction uses the narrative that a sequence of actions is optimal if and only if the last action in the sequence is optimal. 
+
+This clever computation of value functions from the problem horizon backwards through all the possible states of the problem decreases the complexity from being exponential to being polynomial. Instead of maximizing over ... possible strategies at once, one needs to compute significantly less demanding complexity of ... 
+
+The number of computations to obtain the optimal decision strategy is significantly reduced
+To obtain the optimal decision strategy the 
+
+\ruletext{}
+
 \subsection{Bayesian statistics}
 <Why is it important here? Prior posterior, Bayes equation, not very detailed, it is not a focus of this thesis> 
 \subsection{Dynamic programming}
 <Dynamic programming in a nutshell, its main message, bellman equation and say that it has practical problems with higher dimensions> 
 \subsection{Approximate dynamic programming}
 <Probably will be needed because of problems with applicability of standard DP. Talk about what problems does it solve, what are the commonly used types.> 
-
-
-
-To understand the main message of this thesis it is important to present several key financial and mathematical concepts. We begin with defining the basic terminology that is used in the financial world, like cash flow, demand curve, and standard metrics used for project valuation today. A real option analysis is presented as the most advanThe second part of his chapter focuses on introduction to stochastic decision 
-
-
 
 
 
@@ -562,6 +679,9 @@ The new valuation approach should reflect the economical features of a project v
 
 \section{ROA vs SDT comparison}
 <Discussion over their definitions from the preliminaries chapter, where they are introduced> 
+
+
+
 
 
 \section{New valuation technique}\footnote{Come up with a clever name for it.}
@@ -765,76 +885,47 @@ And finally, the values of an environment state $\mathbf{U_t}$ are determined by
 
 
 
-\chapter{Source of inspiration to chapter 2 - preliminaries}
-To understand the main message of this thesis it is important to present several key financial and mathematical concepts. Two main concepts that will be examined in this thesis are Real Option analysis (ROA) and stochastic decision theory (SDT).
 
 
 
-\section{Classic valuation techniques}
-For clarity of the further research lets define the basic valuation techniques. Even though, or maybe exactly because, they are simple, they are widely used in investment companies today. All techniques are based on an idea of cash flow per sample period, where cash flow is clear profit, already adjusted for expenditures, taxes, and all other mathematically distracting aspects of accounting. 
+\chapter{Application of the new valuation technique. }
+The class of .... valuation problems is ideal for demonstration of the usability of the newly developed valuation technique. Due to the inherit uncertainty in this field and many actions that can be undertaken, the additional value  assigned to the investment opportunity can be significant. 
 
-\subsection{Net Present Value} 
-This metric is mentioned in almost all publications about valuation techniques. It is simple and it takes into account time value of money. The classic definition of NPV is: 
-
-\begin{equation}
-NPV = \sum_{t \in \mathbf{T}} \frac{C_t}{r^t}, 
-\end{equation}
-where $\mathbf{T}$ is set of time periods in which free cash flow $C_t$ is obtained. Discounting factor $r^t$ expresses the time value of money and it is expected to be positive. In the light of recent events in advanced economies like that of Japan, Switzerland and Germany, the positivity of this variable is not a clear cut. Unprecedented moves of the central banks of these countries to boost the economy by negative interest rates might cause a problems in NPV valuation, since many examples \cite{},... rely on the fact that an infinite sum of constant cash flows discounted by any factor $r>1$ converges. 
-
-However that is not the concern of this publication and we will assume that $r>1$.
-
-The NPV valuation technique is simple to use, assuming we know the discount rate, which is constant through the lifetime of the investment, and free cash flows, that are expected to be certain. 
-
-The problem with this valuation arises if we acknowledge that the discount rate, or cash flows, or both can be uncertain. Two possible valuation techniques emerge from this uncertainty. First there is the simple scenario approach, in which the valuation committee decides cash flows and/or interest rate evolution scenarios as bad, neutral and good. This is unfortunately effectively the pinacle of valuation techniques in some investment companies. 
-
-Second type concerned with uncertainty is ENPV valuation. 
-
-\subsection{ENPV valuation}
-The simplest approach how to handle uncertainty is to use expected values of the random variables that occur in the classic NPV equation. Now it is accepted that cash flow $C_t$ and also discount rate is a random variable. In both cases it is expected that the distribution of these variables is known. The ENPV valuation is then: 
-\begin{equation}
-ENPV = \sum_{t \in \mathbf{T}} E[\frac{C_t}{r^t}] = \sum_{t \in \mathbf{T}} \frac{p(C_t)C_t}{p(r_t)r_t^t}. 
-\end{equation}
+We start with a rigorous mathematical definition of this class of valuation techniques in terms of SDT. Then we pick one example and promptly show that the number of possible states is exponential with respect to... Approximate dynamic programming techniques like Q-learning or SARSA were developed in order to solve exactly these types of problems. Due to their strengths and only a minor flaws their usage is justified. 
 
 
-\subsection{Comparing investments}
-There could be some part where metrics that are used to favor one investment over the other here. Comparing NPVs only seems not a good idea, but for example ROIC seems much better and the simplest strategy I would use for investment decision making. 
+\section{Approximate dynamic programming}
+<Proposal of a fitting method to the class of problems defined above> 
 
-Also comparing IRR and other statistics seems like a magic, maybe because in the end the decision is only backed by these numbers, but the feeling manager has is what the decision is based upon. 
+\section{Valuation example}
 
+\subsection{NPV valuation }
 
-\subsection{Other frequently used valuation techniques} 
-Probably not needed, thus it should not be here. Just an idea. IRR, EVA, EPS,... 
+\subsection{DTA valuation}
 
+\subsection{Classic ROA valuation}
 
-\subsection{Decision tree analysis}
-The decision tree analysis, which was introduced in... is the first valuation technique that acknowledges the importance of further management of investments. In some sense it is equivalent to a NPV with a number of scenarios equal to number of leaves in the decision tree representing an investment. 
-
-Decision tree analysis is based on creation of a decision tree, with three type of nodes. Decision nodes serve as a representation of an opportunity to take action by the decision maker, whereas \textit{probability} nodes serve as a representation of an uncertain event that cannot be modified. 
-
-As can be seen in many many articles the added value of acknowledging the possibility to act upon the existing investment can be crucial. In more dynamic environments this value increases, since there is generally a bigger change between cash flows of different actions. 
-
-It bewilders me, from the terminology perspective, how some authors interpret a difference between two different DTA trees as an "Real option". However from the linguistic point of view that makes sense. A new branch in a decision three is literally a new option (real option) to act upon resolution of uncertainties in an investment. 
-
-\section{Real option analysis}
-The idea to analyze investment opportunities and their parts as options that are available to a decision maker came right after a widely recognized valuation technique of financial options was adopted. This technique is of course the Nobel-prize wining Black-Scholes-Merton model, first published in \cite{BlaSch:73} which allows to value financial option with only small requirements and a widely accepted assumptions. 
-
-Based on this valuation model, group led by ... came up with the idea to adopt this type of thinking into real project investment decision. The similarities between simple project investments and financial options are clear, but for more complicated projects, this interpretation starts to be less and less viable. Further discussion is left to next chapters. 
-
-\subsection{Financial options}
-The rise of the derivative market of futures and options comes from the idea of insurance against the fluctuation of commodity prices on the market. To secure against the unwanted shifts in the price of a commodity viable for running a business certainly has value for the participants of the economy. The question long time (?) was how large this value is. 
-
-A financial option is an ability to buy or sell an asset for a given price in some time in the future. A financial option can be also defined by its two properties, price for which shares can be bought (in case of call option) or sold (put option) - strike price, and the time at which the option can be realized - time to maturity. Furthermore there are two types of options european and american, which have the ability to execute the option earlier than the maturity time. Because it was proved that executing an option earlier than in the time of maturity \cite{}, it does not matter which options are we going to talk about.  
-
-<Also talking only about calls since puts are not important in real options> 
-
-An example of a financial option from current market can be the option to buy Amazon stock currently valued 2286 for 3000 USD in 17-7-2020. This option has a price tag of 11 USD at the time of writing. 
-
-Option speculation is interesting because it allows the investor large profits if the markets move in the right direction. For example if the price of Amazon stock from the previous example will be 3110 USD, then an investor into those type of options can count with a 1000\% profit. 
-
-The question now is, where did the price tag for an option came from. A elegant answer lies in the Black-Scholes model for option pricing. 
+\subsection{New approach}
 
 
-\subsection{Black-Scholes Merton model}
+
+\chapter{Discussion}
+The new approach is better because it solves the current problems with ... Also the applicability of the new approach is in my opinion broader since it can address multiple sources of uncertainty. Furthermore the power of the decision making process is kept in the hands of the decision maker through creation of prior distributions. The manager is guided through the world of utility functions and priors, which both can be created from a set of simple questions about gambles and beliefs of the manager. The creation and usage of the utility and prior density functions are fool-proof in a sense of mathematical coherence. 
+
+
+
+
+\chapter{Conclusions}
+In my master's thesis I have rigorously compared the state-of-the-art valuation techniques used in present investment companies. I have shown the advantages and disadvantages of real option analysis  and stochastic decision theory. The combination of these, which I call ...,  yields a new view on the world of risky investments that empowers the decision maker and thus allows for better adoption in the rigid environment of investing. 
+
+
+
+
+
+\chapter{Inspiration}
+
+
+\section{Black-Scholes Merton model}
 Only four parameters and one assumption is needed to determine a value of an option according to BSM model for option pricing. Assume that the market is complete, and thus the law of one price holds \cite{}. Then to value a option you need to know only its time to maturity, its strike price, the current price of the underlying stock and its volatility as follows \cite{BerDeM:09}: 
 \begin{equation}
 C = SN(d_1) - PV(K)N(d_2), 
@@ -846,13 +937,7 @@ d_1 = \frac{ln(S/PV(K))}{\sigma \sqrt{T}}+\frac{\sigma \sqrt{T}}{2}
 d_2 = d_1 - \sigma \sqrt{T}
 \end{equation}
 
-
 The dependency of the price of an option is positive in case of volatility and time to maturity Increasing these parameters leads to a higher option price. On the contrary the rise in current stock price or strike price of the options lowers the value of an option. 
-
-
-\subsection{Real options}
-<Difference in DTAs, analogy for financial options, or CAPM model?>
-
 
 \section{Statistical decision theory}
 The second pillar upon which this thesis stands is the statistical decision theory. An area of applied mathematics with broad history. The class of problems that can be solved by this approach is very wide and greatly standardized. 
@@ -893,15 +978,7 @@ There is also an interesting asymmetry between incurring a loss and getting a pr
 Each person has their own utility function with respect to money and it can be sketched essentially by a questionaire. More questions mean more precision, and it also keeps your answers coherent.  
 
 
-\section{Approximate dynamic programming}
-<Why it exists and what are the types?>
-Actual application of classic dynamic programming 
-
-
-	
-	
-	
-\chapter{Source of inspiration for chapter 3. }
+\section{Project and cash flow}
 
 \begin{definition}
 	A project is defined as a piece of planned work or an activity that is finished over a period of time and intended to achieve a particular purpose, mainly an increase of company's or individual's wealth\footnote{First part comes from Cambridge dictionary. }.
@@ -939,7 +1016,7 @@ where $C_t$ is free cash flow and $r$ is a discount rate that represents devalua
 
 The last observation is that NPV is a function of options. There has to exist some opportunity to change future cash flow in the light of partial or full uncertainty resolution. 
 
-\section{How is a similar task solved by different authors}
+\subsection{How is a similar task solved by different authors}
 Statistical decision theory is in my opinion captured the best in a book from Bacci and Chiandotto \cite{BacChi:19} and summarized by Fig. \ref{fig:SDTScheme}.
 
 \begin{figure}
@@ -1129,71 +1206,10 @@ The branch probabilities $p(b_t)$ are in ROA not understood as a separate catego
  \subsection{The maximization process}
  
 TODO after supervisor's review. In a nutshell it is a dynamic programming and after realization that the complexity is large, it is approximate dynamic programming.  
- 
- \subsection{Note at the end}
- 
- Without using the replicating portfolio, the "Real Options" in my workmeans only the ability to change the projects path as is presented in articles \cite{Cop:01},... I would love to incorporate the law of one price in the priors of SDT somehow. 
+
  
  
-
-
-
-
-
-
-\chapter{Application of the cheery-picked valuation technique. }
-The class of .... valuation problems is ideal for demonstration of the usability of the newly developed valuation technique. Due to the inherit uncertainty in this field and many actions that can be undertaken, the additional value  assigned to the investment opportunity can be significant. 
-
-We start with a rigorous mathematical definition of this class of valuation techniques in terms of SDT. Then we pick one example and promptly show that the number of possible states is exponential with respect to... Approximate dynamic programming techniques like Q-learning or SARSA were developed in order to solve exactly these types of problems. Due to their strengths and only a minor flaws their usage is justified. 
-
-
- \section{Approximate dynamic programming}
-<Proposal of a fitting method to the class of problems defined above> 
-
-\section{Valuation example}
- 
- \subsection{NPV valuation }
- 
- \subsection{DTA valuation}
- 
- \subsection{Classic ROA valuation}
- 
- \subsection{New approach}
- 
-
-
-\chapter{Discussion}
-The new approach is better because it solves the current problems with ... Also the applicability of the new approach is in my opinion broader since it can address multiple sources of uncertainty. Furthermore the power of the decision making process is kept in the hands of the decision maker through creation of prior distributions. The manager is guided through the world of utility functions and priors, which both can be created from a set of simple questions about gambles and beliefs of the manager. The creation and usage of the utility and prior density functions are fool-proof in a sense of mathematical coherence. 
-
-
-
-
-\chapter{Conclusions}
-In my master's thesis I have rigorously compared the state-of-the-art valuation techniques used in present investment companies. I have shown the advantages and disadvantages of real option analysis  and stochastic decision theory. The combination of these, which I call ...,  yields a new view on the world of risky investments that empowers the decision maker and thus allows for better adoption in the rigid environment of investing. 
-
-
-
-
-
-
-
-\chapter{Bachelor's thesis parts that could be useful for TeX styling}
-
-
-
-
-\section{Discrete Markov decisions processes}\label{DMDPSection}
-A lot of real life decision tasks can be approximately described by the mathematical framework called discrete Markov decision processes (MDPs), Fig. XY. The definition of this mathematical framework is crucial for this work, as it is the basis upon which the theory of policy optimisation is built. 
-
-\begin{definition}
-	Discrete Markov Decision Process $\mathcal{M}$ is defined as ordered set of five elements $(\textbf{T},\textbf{S},\textbf{A},P,R) $, where:
-	\begin{itemize}
-		\item \textbf{T} stands for a discrete, finite set of decision epochs; $\textbf{T}=\{0,1,2,...,|\mathbf{T}|\}$, where\footnote{Because the number of time epochs $|\mathbf{T}|$ is used frequently, the notation $|\mathbf{T}|=N$ is used.} $|\mathbf{T}| \in \mathbb{N}$
-		
-		The state in time epoch $t=0$ is known and it is denoted $s_0$.
-	\end{itemize} 
-	
-\end{definition}\label{DMDP}
+\section{Bachelor's thesis parts that could be useful for TeX styling}
 
 
 \begin{definition}\label{ValueF} 
@@ -1249,109 +1265,21 @@ We can now describe the dynamic programming algorithm in detail.
 
 
 
-
 \begin{example}\label{Ex:Multi}
-A real life example of this MDP could be again a biased coin tossing. Imagine a game when you are sitting at the table on which there are multiple coins with generally different bias. You get one coin on certain side in your hands and you are told the rules. You get $\$$1 each time the coin lands on Heads. You can choose to change your coin for any other coin for $\$$3 and you have to place it to the side it is on the table (you have to "conserve its state"). The turn of the coin costs 5 cents and the result of the toss generally depends on the side from which the coin is tossed. You know the bias of each one coin and the question is: what is the best sequence of actions that you can perform to get as much money as possible, on average, from this $N$-round game?
+A real life example of this MDP could be again a biased coin tossing. Imagine a game when you are sitting at the table on which there are multiple coins with generally different bias.
 
 It is important to mention that you are able to see the other coins "on the table" so that the position state $s^{p}$ is known in each time epoch. 
 \end{example}
 
 
-
-\paragraph{Discussion}
-The main goal of this simulation is to check the quality of the experimentally derived sub-optimal policy via Algorithm \ref{alg:SingleKnown}. As we can see, the difference between the average cumulative reward of the derived policy and the expected optimal average cumulative reward is approximately $0.5\%$ in the first simulation with 500 Monte Carlo iterations and approximately $0.026 \%$ in the second simulation with 5000 iterations.  \footnote{I dont know how to fit the exceedance in here, so if it is not that important I would prefer not to talk about it.}
-
-We can also see that in the second performed experiment made for 5 000 iterations, ten times the first case, both the variance of the distribution and the difference from the optimal value decreased. It is then assumed that this trend would continue with more iterations and that both the variance and the difference would get closer and closer to zero.
-
-With this assumption we can say that the experimentally derived optimal policy is in fact the optimal one. \footnote{Is that a good reasoning?}
+<There was table here. That should be easy to find again> 
 
 
-
-
-\begin{table}[H]
-	\centering
-	\renewcommand{\arraystretch}{2}
-	
-	
-	\begin{tabular}[t]{|r|r |r|}
-		\hline
-		\multicolumn{3}{|c|}{$P(:,:,s=1)$} \\
-		\hline
-		$\tilde{s}$/$a$  & 1 & 2\\
-		\hline
-		1	& 0.4237&	0.6885\\
-		\hline
-		2 & 0.5763 & 0.3115 \\ 
-		\hline
-		
-		\multicolumn{3}{c}{} \\[-0.4cm]
-		\hline
-		\multicolumn{3}{|c|}{$P(:,:,s=2)$} \\
-		\hline
-		$\tilde{s}$/$a$ & 1 & 2\\
-		\hline
-		1	& 0.7282&	0.8816\\
-		\hline
-		2 & 0.2718 & 0.1184 \\ 
-		\hline
-	\end{tabular}
-	\hfill
-	\begin{tabular}[t]{|r|r |r|}
-		\hline
-		\multicolumn{3}{|c|}{$R(:,:,s=1)$} \\
-		\hline
-		$\tilde{s}$/$a$  & 1 & 2\\
-		\hline
-		1	& 1.4315&	-0.0569\\
-		\hline
-		2 & 2.7287 & -0.3111 \\ 
-		\hline
-		
-		\multicolumn{3}{c}{} \\[-0.4cm]
-		\hline
-		\multicolumn{3}{|c|}{$R(:,:,s=2)$} \\
-		\hline
-		$\tilde{s}$/$a$ & 1 & 2\\
-		\hline
-		1	& -0.1039&	2.5921\\
-		\hline
-		2 & 1.1251 & -0.2876 \\ 
-		\hline
-	\end{tabular}
-	\hfill
-	\begin{tabular}[t]{|r|r |r|}
-		\hline
-		\multicolumn{3}{|c|}{$w(:,:,s=1)$} \\
-		\hline
-		$\tilde{s}$/$a$  & 1 & 2\\
-		\hline
-		1	& 8&	5\\
-		\hline
-		2 & 1 & 2 \\ 
-		\hline
-		
-		\multicolumn{3}{c}{} \\[-0.4cm]
-		\hline
-		\multicolumn{3}{|c|}{$w(:,:,s=2)$} \\
-		\hline
-		$\tilde{s}$/$a$ & 1 & 2\\
-		\hline
-		1	& 1&	2\\
-		\hline
-		2 & 9 & 1 \\ 
-		\hline
-	\end{tabular}
-	\caption{Tables of $P$, $R$ and $w$ values for the CE approach simulation. Original 3D arrays are presented by two  "slices" which differ in the initial state $s=1$ or $s=2$. }\label{Tab:PRwValues}
-\end{table}\footnote{Hope this representation is OK, and how to do the backslash $\tilde{s},a$?}
 
 
 \pagestyle{plain}
-
 \bibliographystyle{plain}
-
 \bibliography{fr}
-
-
 
 
 \end{document}

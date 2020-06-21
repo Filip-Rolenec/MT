@@ -27,9 +27,19 @@ G.~Guthrie.
 \newblock Financial Management Association Survey and Synthesis. Oxford
   University Press, 2009.
 
+\bibitem{Kol:60}
+Andrey~N. Kolmogorov.
+\newblock {\em Foundations of the Theory of Probability}.
+\newblock Chelsea Pub Co, 2 edition, June 1960.
+
 \bibitem{Rol:18}
 F.~Rolenec.
 \newblock Feasible bayesian multi-armed bandit optimisation, 2018.
+\newblock CVUT FJFI.
+
+\bibitem{Rol:19}
+F.~Rolenec.
+\newblock Learning with forgetting preserving a guaranteed knowledge, 2019.
 \newblock CVUT FJFI.
 
 \bibitem{Vol:03}
