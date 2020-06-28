@@ -47,45 +47,48 @@ Repeated entry---line 743 of file fr.bib
  :                   ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for ""
-You've used 9 entries,
+Warning--empty journal in Ber:54
+Warning--empty year in Ber:54
+Warning--empty booktitle in ChaManNou:16
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            553 strings with 4988 characters,
-and the built_in function-call counts, 2189 in all, are:
-= -- 202
-> -- 87
-< -- 0
-+ -- 37
-- -- 26
-* -- 105
-:= -- 382
-add.period$ -- 28
-call.type$ -- 9
-change.case$ -- 35
+            620 strings with 6479 characters,
+and the built_in function-call counts, 4771 in all, are:
+= -- 468
+> -- 172
+< -- 1
++ -- 72
+- -- 52
+* -- 264
+:= -- 818
+add.period$ -- 59
+call.type$ -- 18
+change.case$ -- 74
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 97
-empty$ -- 204
-format.name$ -- 26
-if$ -- 462
+cite$ -- 21
+duplicate$ -- 210
+empty$ -- 429
+format.name$ -- 52
+if$ -- 1015
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 13
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 69
+int.to.str$ -- 18
+missing$ -- 24
+newline$ -- 93
+num.names$ -- 36
+pop$ -- 110
 preamble$ -- 1
-purify$ -- 31
+purify$ -- 62
 quote$ -- 0
-skip$ -- 61
+skip$ -- 133
 stack$ -- 0
-substring$ -- 72
-swap$ -- 9
-text.length$ -- 0
+substring$ -- 222
+swap$ -- 26
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
-warning$ -- 0
-while$ -- 20
-width$ -- 10
-write$ -- 95
+type$ -- 56
+warning$ -- 3
+while$ -- 45
+width$ -- 20
+write$ -- 196
 (There were 9 error messages)

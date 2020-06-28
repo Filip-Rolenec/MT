@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 JUN 2020 19:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 JUN 2020 23:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -794,42 +794,42 @@ LaTeX Warning: Label `eq:valuationFinal' multiply defined.
 )
 \openout1 = `"Master's thesis.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 128.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 128
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 130.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 130
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 128.
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 128.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 128
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 130
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 128.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 128
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 130
 .
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 128.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 128.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 130.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 130.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 128.
-LaTeX Font Info:    Try loading font information for T1+txr on input line 128.
+LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Try loading font information for T1+txr on input line 130.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
@@ -940,7 +940,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
 ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 128.
+LaTeX Info: Redefining \selectfont on input line 130.
 \c@definition=\count317
 \c@note=\count318
 \c@example=\count319
@@ -949,38 +949,38 @@ LaTeX Info: Redefining \selectfont on input line 128.
 <Images/TITLE/cvut.pdf, id=1, 1128.215pt x 931.48pt>
 File: Images/TITLE/cvut.pdf Graphic file (type pdf)
 <use Images/TITLE/cvut.pdf>
-Package pdftex.def Info: Images/TITLE/cvut.pdf  used on input line 149.
+Package pdftex.def Info: Images/TITLE/cvut.pdf  used on input line 151.
 (pdftex.def)             Requested size: 85.35272pt x 70.46915pt.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 151.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 153.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 151.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 153.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 151.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 153.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 151.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 153.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 151.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 153.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 151.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 153.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsyc.fd
@@ -989,7 +989,7 @@ File: utxsyc.fd 2000/12/15 v3.1
 <Images/TITLE/fjfi.pdf, id=2, 1239.63126pt x 1083.04625pt>
 File: Images/TITLE/fjfi.pdf Graphic file (type pdf)
 <use Images/TITLE/fjfi.pdf>
-Package pdftex.def Info: Images/TITLE/fjfi.pdf  used on input line 160.
+Package pdftex.def Info: Images/TITLE/fjfi.pdf  used on input line 162.
 (pdftex.def)             Requested size: 85.34549pt x 74.565pt.
  [1
 Non-PDF special ignored!
@@ -1014,80 +1014,80 @@ s/TITLE/cvut.pdf> <./Images/TITLE/fjfi.pdf>] [2]
 <Images/zadaniMT.pdf, id=21, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 208.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 208.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <Images/zadaniMT.pdf, id=24, page=1, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [3]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 206.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [4 <./Images/zadaniMT.pdf>] [5]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 224.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 224.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <Images/zadaniMT.pdf, id=52, page=2, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [6]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 222.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [7 <./Images/zadaniMT.pdf>] [8] [9] [10]
 
-LaTeX Warning: Reference `' on page 11 undefined on input line 285.
-
-
 LaTeX Warning: Reference `' on page 11 undefined on input line 287.
 
 
-LaTeX Warning: Reference `' on page 11 undefined on input line 287.
+LaTeX Warning: Reference `' on page 11 undefined on input line 289.
 
 
-LaTeX Warning: Reference `' on page 11 undefined on input line 287.
+LaTeX Warning: Reference `' on page 11 undefined on input line 289.
 
 
-LaTeX Warning: Reference `' on page 11 undefined on input line 319.
+LaTeX Warning: Reference `' on page 11 undefined on input line 289.
+
+
+LaTeX Warning: Reference `' on page 11 undefined on input line 321.
 
 [11] [12] [13] [14
 
@@ -1097,106 +1097,107 @@ LaTeX Warning: Reference `' on page 11 undefined on input line 319.
 
  [16]
 Chapter 1.
+
+Overfull \hbox (2.08046pt too wide) in paragraph at lines 370--372
+$[]$  
+ []
+
 [17
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 387.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 391.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 387.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 391.
  [18]
-Overfull \hbox (7.42801pt too wide) has occurred while \output is active
-\T1/txr/m/sl/10.95 1.1.  THE REST OF THE CHAPTER IS KEPT AS AN INSPIRATION FOR 
-THE FUTURE WRITING. \T1/txr/m/n/10.95 19
- []
+[19] [20]
+Chapter 2.
+[21
 
-[19] [20
+] [22] [23]
+
+LaTeX Warning: Reference `' on page 24 undefined on input line 543.
+
+[24] [25]
+
+LaTeX Warning: Reference `' on page 26 undefined on input line 649.
+
+[26] [27]
+
+LaTeX Warning: Reference `' on page 28 undefined on input line 706.
+
+[28] [29] [30
 
 ]
-Chapter 2.
-[21] [22] [23]
-
-LaTeX Warning: Reference `' on page 24 undefined on input line 536.
-
-
-LaTeX Warning: Reference `' on page 24 undefined on input line 548.
-
-[24]
-
-LaTeX Warning: Reference `' on page 25 undefined on input line 610.
-
-[25] [26]
 Chapter 3.
-[27
+[31] [32] [33]
 
-] [28]
-
-LaTeX Warning: Reference `' on page 29 undefined on input line 700.
+LaTeX Warning: Reference `' on page 34 undefined on input line 882.
 
 
-LaTeX Warning: Reference `' on page 29 undefined on input line 702.
+LaTeX Warning: Reference `' on page 34 undefined on input line 884.
 
 
-LaTeX Warning: Reference `' on page 29 undefined on input line 710.
+LaTeX Warning: Reference `' on page 34 undefined on input line 892.
 
 
-LaTeX Warning: Reference `' on page 29 undefined on input line 710.
+LaTeX Warning: Reference `' on page 34 undefined on input line 892.
 
-[29]
+[34]
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 749.
-
-
-LaTeX Warning: Reference `' on page 30 undefined on input line 749.
+LaTeX Warning: Reference `' on page 35 undefined on input line 931.
 
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 749.
+LaTeX Warning: Reference `' on page 35 undefined on input line 931.
 
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 761.
+LaTeX Warning: Reference `' on page 35 undefined on input line 931.
 
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 782.
+LaTeX Warning: Reference `' on page 35 undefined on input line 943.
 
-[30]
+[35]
 
-LaTeX Warning: Reference `' on page 31 undefined on input line 805.
+LaTeX Warning: Reference `' on page 36 undefined on input line 964.
 
 
-LaTeX Warning: Reference `' on page 31 undefined on input line 829.
+LaTeX Warning: Reference `' on page 36 undefined on input line 987.
 
-[31] [32]
+
+LaTeX Warning: Reference `' on page 36 undefined on input line 1011.
+
+[36] [37] [38
+
+]
 Chapter 4.
-[33
-
-] [34
+[39] [40
 
 ]
 Chapter 5.
-[35] [36
+[41] [42
 
 ]
 Chapter 6.
-[37] [38
+[43] [44
 
 ]
 Chapter 7.
-[39] [40]
-<Images/SDTSchema.png, id=171, 999.735pt x 819.06pt>
+[45] [46]
+<Images/SDTSchema.png, id=192, 999.735pt x 819.06pt>
 File: Images/SDTSchema.png Graphic file (type png)
 <use Images/SDTSchema.png>
-Package pdftex.def Info: Images/SDTSchema.png  used on input line 997.
+Package pdftex.def Info: Images/SDTSchema.png  used on input line 1179.
 (pdftex.def)             Requested size: 455.24411pt x 372.97282pt.
- [41] [42 <./Images/SDTSchema.png>]
+ [47] [48 <./Images/SDTSchema.png>]
 
-LaTeX Warning: Reference `eq:discCF' on page 43 undefined on input line 1051.
+LaTeX Warning: Reference `eq:discCF' on page 49 undefined on input line 1233.
 
-[43] [44] [45] [46] (./Master's thesis.bbl [47] [48]) [49
+[49] [50] [51] [52] (./Master's thesis.bbl [53] [54] [55
 
-]
+]) [56]
 (./Master's thesis.aux)
 
 LaTeX Warning: There were undefined references.
@@ -1206,10 +1207,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24422 strings out of 492616
- 436201 string characters out of 6129482
- 572502 words of memory out of 5000000
- 27954 multiletter control sequences out of 15000+600000
+ 24457 strings out of 492616
+ 436699 string characters out of 6129482
+ 572729 words of memory out of 5000000
+ 27989 multiletter control sequences out of 15000+600000
  634376 words of font info for 167 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,963b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1231,10 +1232,10 @@ live/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive/2019
 /texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
 pe1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (49 pages, 399230 bytes).
+Output written on "Master's thesis.pdf" (56 pages, 418004 bytes).
 PDF statistics:
- 262 PDF objects out of 1000 (max. 8388607)
- 178 compressed objects within 2 object streams
+ 284 PDF objects out of 1000 (max. 8388607)
+ 193 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

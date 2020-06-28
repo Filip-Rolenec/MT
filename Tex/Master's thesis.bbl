@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{BacChi:19}
 S.~Bacci and B.~Chiandotto.
@@ -6,20 +6,43 @@ S.~Bacci and B.~Chiandotto.
   Causal Analysis}.
 \newblock CRC Press, 2019.
 
+\bibitem{Ber:85}
+J.O.\ Berger.
+\newblock {\em Statistical Decision Theory and {B}ayesian Analysis}.
+\newblock Springer, NY, 1985.
+
 \bibitem{BerDeM:09}
 J.~Berk and P.~DeMarzo.
 \newblock {\em Corporate Finance}.
 \newblock Pearson, 2014.
+
+\bibitem{Ber:54}
+Dino Bernoulli.
+\newblock Exposition of a new theory on the measurement of risk.
+\newblock 22(1):23--36.
 
 \bibitem{BlaSch:73}
 Fischer Black and Myron Scholes.
 \newblock The pricing of options and corporate liabilities.
 \newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
 
-\bibitem{Cop:01}
-T.E. Copeland and V.~Antikarov.
-\newblock {\em Real Options: A Practitioner's Guide}.
-\newblock Texere, 2001.
+\bibitem{DeG:04}
+M.H. DeGroot.
+\newblock {\em Optimal Statistical Decisions}.
+\newblock Wiley Classics Library. Wiley, 2004.
+
+\bibitem{BorFigAze:17}
+Leonardo~Azevedo Fernando Luis~Bordignon, Leandro Passos de~Figueireido.
+\newblock Hybrid global stochastic and {B}ayesian linearized acoustic seismic
+  inversion methodology.
+\newblock {\em IEEE Transactions on Geoscience and Remote Sensing},
+  55:4457--4464, August 2017.
+
+\bibitem{Gue:17}
+Manuel Guerra, Peter Kort, Cláudia Nunes, and Carlos Oliveira.
+\newblock Hysteresis due to irreversible exit: Addressing the option to
+  mothball.
+\newblock {\em Journal of Economic Dynamics and Control}, 92, 05 2017.
 
 \bibitem{Gut:09}
 G.~Guthrie.
@@ -27,10 +50,41 @@ G.~Guthrie.
 \newblock Financial Management Association Survey and Synthesis. Oxford
   University Press, 2009.
 
+\bibitem{Kas:04}
+Ilhem Kassar and Pierre Lasserre.
+\newblock Species preservation and biodiversity value: a real options approach.
+\newblock {\em Journal of Environmental Economics and Management}, 48(2):857 --
+  879, 2004.
+
 \bibitem{Kol:60}
 Andrey~N. Kolmogorov.
 \newblock {\em Foundations of the Theory of Probability}.
 \newblock Chelsea Pub Co, 2 edition, June 1960.
+
+\bibitem{ChaManNou:16}
+Nouha~Jaoua Marwa~Chaabane, Majdi~Mansouri.
+\newblock Bayesian method for states estimation in structural health monitoring
+  application.
+\newblock Monastir, Tunisia, 2016. IEEE.
+
+\bibitem{Pet:81}
+V.~Peterka.
+\newblock Bayesian approach to system identification.
+\newblock In {\em in Trends and Progress in System Identification, P. Eykhoff,
+  Ed}, pages 239--304. Pergamon Press, 1981.
+
+\bibitem{Pow:11}
+Warren~B. Powell.
+\newblock {\em Approximate Dynamic Programming: Solving the Curses of
+  Dimensionality}.
+\newblock Wiley Series in Probability and Statistics. Wiley, Hoboken, NJ, USA,
+  2nd edition, 2011.
+
+\bibitem{Que:10}
+Bertrand Quélin and Charlotte Krychowski.
+\newblock Real options and strategic investment decisions: Can they be of use
+  to scholars?
+\newblock {\em Academy of Management Perspectives}, 24, 05 2010.
 
 \bibitem{Rol:18}
 F.~Rolenec.
