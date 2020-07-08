@@ -136,6 +136,7 @@
 \newtheorem{assumption}{Assumption} 
 
 \newtheorem{theorem}{Theorem}
+\newtheorem*{remark}{Remark}
 
 \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
 
@@ -284,19 +285,17 @@ my own work and I have listed all the used sources in the bibliography.
 \bigskip{}
 
 
-\noindent \emph{Abstrakt:} Oceňování převážné většiny investičních příležitostí se dnes stále určuje metodou \textit{diskontovaných peněžních toků} (DCF) \ref{}. DCF metoda je přímočará a pro jednoduché projekty dává velmi přesné výsledky. Složitější projekty, které pro tuto práci definujme jako projekty s vysokou mírou vnitřní neurčitosti a existencí manažerských rozhodnutí značně ovlivňujících strukturu projektu (reálné opce), jsou dnes oceňovány metodou \textit{real option analysis} (ROA). Metoda ROA přiznává hodnotu možnostem změny projektového plánu, v důsledku čehož je ohodnocení ROA vyšší než DCF. 
+\noindent \emph{Abstrakt:} Investiční příležitosti jsou v současné době oceňovány pomocí řady algoritmů a metrik vzešlých z ekonomické teorie. Nejčastěji používaná metoda \textit{diskontovaných peněžních toků} (DCF) zohledňuje časovou hodnotu peněz a pro jednoduché projekty dává investorům velmi dobré odhady s minimálními požadavky na matematické znalosti. Složitější projekty, které v této práci chápeme jako projekty s vysokou mírou neurčitosti a existencí následných manažerských rozhodnutí, je možné oceňovat pomocí teorie \textit{reálných opcí} (ROA). Metoda ROA vychází z nedokonalé analogie oceňování finančních opcí a přiznává hodnotu možnostem změny projektového plánu. 
 
-Tato práce má za cíl interpretovat řízení projektů a s ním související ocenění, jako řízení stochastického systému. Rozsáhlá teorie stochastického řízení \ref{}, \ref{}, \ref{}, dovoluje vybudovat novou teorii oceňování postavenou na základech ROA, která mimo jiné řeší omezení ROA na pouze jediný zdroj neurčitosti - například cenu těžených minerálů na trhu \cite{}. 
+Tato práce má za cíl představit nový rámec pro oceňování investičních příležitostí, jejichž řízení je chápáno  jako stochastický rozhodovací problém. Tento rámec, umožňující využití desítek let výzkumu v oblasti stochastické rozhodovací teorie, pokrývá metody DCF a ROA, přičemž zjemňuje jejich předpoklady. Hlavní přínosy nového oceňovacího rámce jsou: možnost zodhlednění více zdrojů neurčitosti, modelování neurčitosti libovolnou distribucí, přímočaré začlenění bayesovského učení, modelování přístupu k riziku rozhodovacího subjektu a libovolný počet i druh povolených manažerských akcí. 
 
-Nový originální přístup k oceňování projektů, který kombinuje dosavadní dosažené znalosti v ekonomické teorii (ROA) a teorii stochastického řízení systémů (SDT) je obecně definován v první části práce a prakticky otestován simulacemi na třídě problémů z oblasti  <Area of study>. 
-
-Simulace ukazují, že kromě lepší interpretovatelnosti modelu a možnosti vložení subjektivních pravděpodobností je ocenění metodou ... přesnější o ... \%. Výsledky vyjadřují naději na zvýšenou adopci metody ... v praxi. 
+Nový rámec znatelně rozšiřuje třídu projektů ocenitelných s velkou přesností a lze ho chápat jako sjednocující zobecnění technik oceňování v podnikovém řízení. 
 
 
 \bigskip{}
 
 
-\noindent \emph{Klíčová slova:}   Analýza reálných opcí, Diskontované peněžní toky, Oceňování projektů, Stochastické řízení, Těžební průmysl
+\noindent \emph{Klíčová slova:}   Analýza reálných opcí, Black-Scholes model, Diskontované peněžní toky, Dynamické programování, Energetika, Oceňování projektů, Stochastické řízení
 
 
 
@@ -318,18 +317,17 @@ Simulace ukazují, že kromě lepší interpretovatelnosti modelu a možnosti vl
 \bigskip{}
 
 
-\noindent \emph{Abstract:} The valuation of investment opportunities (projects) is nowadays still predominantly computed by the\textit{ discounted cash flow } (DCF) method \ref{}. DCF is straightforward and gives solid results for simple projects. For more complicated projects, which are in this thesis defined as projects with substantial degree of inner uncertainty and with an existence of ability to change the course of the project by direct managerial actions, the \textit{real option analysis} (ROA) is now being used. ROA recognizes the value in the possibility of projects' plan change, which usually results in loss limitation, increasing the project's overall expected value. 
+\noindent \emph{Abstract:} The valuation of investment opportunities is currently done via metrics and algorithms formed by the economical theory. The majority of investors and companies still values projects with a method of \textit{discounted cash flows} (DCF), which takes into account the time value of money and gives solid results for simple projects with minimal requirement on mathematical skills. More complicated projects, which are in this thesis thought of as projects with a substantial degree of inner uncertainty and with an existence of further managerial decisions, can be valued by the \textit{real options analysis} (ROA). This method comes from an imperfect analogy to financial option valuation and it recognizes the value of the ability to change the course of a given project.  
 
-This thesis aims to interpret project execution and its valuation as a problem of stochastic decision control. The extensive stochastic decision control theory (SDT) allows, based on ROA,  to design new valuation theory, that for example solves the limitation of ROA on only one source of uncertainty - such as the volatile price of the mined materials on the market. 
+This thesis presents a new valuation framework for projects, which are understood as problems of optimal stochastic decision control. This framework incorporates the DCF and ROA methods, simplifies the requested assumptions and allows for decades of research in the field of \textit{stochastic decision theory} (SDT) to be used. The main contributions of the new framework are: ability to incorporate multiple sources of uncertainty, usage of any distribution for modeling the uncertainty, ability to conveniently incorporate Bayesian learning, ability to model user's approach to risk and ability to model any type and scale of managerial actions.
 
-The new and original approach to project valuation, that combines both the economical theory (ROA) and the stochastic control theory is defined in the first part of the thesis and then tested by simulations on a class of valuation problems - valuation of projects in <Industry>.
+The new framework significantly expands the class of projects that can be reasonably valued and it can be understood as a unification of project valuation in business management.
 
-Simulations show that in addition to better model's interpretability and a possibility to include a personal probability distributions, the valuation by <method> is <percentage> more precise than best current strategies. The results hint a possible increase in adoption of this method in practice. 
 
 \bigskip{}
 
 
-\noindent \emph{Keywords:} Discounted cash flow, Mining industry, Project valuation,  Real option analysis, Stochastic decision control
+\noindent \emph{Keywords:} Black-Scholes model, Discounted cash flow, Dynamic programming, Power industry, Project valuation,  Real option analysis, Stochastic decision control
 
 \newpage{}
 
@@ -447,11 +445,26 @@ The notation used in this thesis comes predominantly from the most influential a
 \section{Used mathematical symbolism}
 \ruletext{Sets, random variables, what do I mean by 'probability'}
 
-In the whole thesis, bold capital letters, such as $\mathbf{B}$, represent a set of all elements $b \in \mathbf{B}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{B}$ is denoted with two vertical lines as $|\mathbf{B}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense? }, are represented with a tilde above the variable, i.e. $\tilde{b}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e. $b$. 
+In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense? }, are represented with a tilde above the variable, i.e. $\tilde{x}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e. $x$. 
 
-Probability of a realization $b$ of random variable $\tilde{b}$ is denoted as $p(\tilde{b}=b)=p(b)=x$, where $x \in [0,1]$. This probability is understood as both  subjective \cite{} or frequentist \cite{} and both discrete valued and as a probability density, depending on context.
+\begin{definition}(Probability)
+	Let $\tilde{x}$ be a random discrete variable. Then $P(x)$ denotes a probability that the realization of $\tilde{x}=x$. Similarly if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density of the realization $\tilde{x}=x$. 
+\end{definition}
+\begin{remark}
+	To rigorously unify the notation and simplify the formulas a Radon-Nikodým (RN) density \cite{Rao:87a} is introduced  with the notation $p(x)$ and the name ``probability density``. The dominating measure of this RN density is either the counting measure (in discrete case) or a the Lebesgue measure (in continuous case). The notation $P(X)$ is reserved only for the cases when the discreteness of the argument needs to be emphasized. 
+\end{remark}
 
-The conditional probability  of a realization of a random variable $\tilde{b} = b$ after a realization of another random variable $\tilde{a} = a$ is expressed as $p(b|a) = \frac{p(b,a)}{p(a)}$, which again represents both discrete values or probability density depending on the context. 
+The last general definition is the definition of well known concept of conditional probability \cite{Jay:03}. 
+\begin{definition}(Conditional probability)
+	Let, depending on the context, symbol $p(x|y)$ represents either the conditional probability on discrete variables or the conditional probability density on continuous variables. Then the $p(x|y)$ is defined as:
+	\begin{equation}\label{eq:condP}
+	p(x|y)=\frac{p(x,y)}{p(y)},
+	\end{equation} where $p(x,y)$ is a joint probability density of $x$ and $y$. 
+\end{definition}
+
+\begin{remark}
+	The definition of conditional probability expressed by the equation (\ref{eq:condP}) corresponds with the classic definitions of the conditional probability and conditional probability density in both the discrete and continuous case. 
+\end{remark}
 
 <Probably some other definitions that will be needed in the following chapters> 
 
@@ -810,30 +823,58 @@ The last assumption about risk-free rate being constant is not of major interest
 To conclude, the origins of ROA in BSM model are giving us the distribution of the future price in any given time through two variables, $\sigma$ obtained from the past observations of the price movement \footnote{Time scale adjusted} and $\mu$ from the assumption about arbitrage-free world. \footnote{Arbitrage free world gives us the $\mu$ when there is a replicating portfolio, it cannot be used all the time... }
 
 \section{Approach to risk}
-The literature uses the term risk in many different meanings. In the spoken English the meaning of risk is the possibility of something bad happening. In parts of SDT, namely \cite{DeG:04}, the meaning of risk means the minimal expected loss. In parts of the <Podnikova ekonomika> \cite {} risk means the uncertainty, that cannot be modeled. In economical books \cite{BerDeM:09} or \cite{}, the risk is understood as ... 
+The usage of the term risk varies widely in the literature. In the spoken English the meaning of risk is the possibility of something bad happening. In parts of SDT, namely \cite{DeG:04}, the meaning of risk means the minimal expected loss. In parts of business administration \footnote{Podnikova ekonomika} \cite{Kni:21} risk means uncertainty that cannot be modeled. 
 
-\textbf{ENDED HERE, THINK MORE ABOUT RISK AND CONTINUE}
-	
-	
-The term risk is widely used not only in the economic literature. In a person that is not biased by the terminology by one of
+In economical books \cite{BerDeM:09} or \cite{} the risk is understood as uncertainty of investment returns. Risk in these publications is understood as volatility - standard deviation of the profit performances of individual asset types. 
 
-In this chapter the term risk and its different usages in the literature is addressed. In different 
+In correspondence to the focus of this thesis on project valuation the view of economical theory makes the most sense and it will be further discussed. 
 
-<Talk about approach to risk in a sense of uncertain results>  In correspondence to project valuation 
+Historical records of the returns for different types of investments in \cite{BerDeM:09} show that there is almost linear dependency between an investment's volatility and its returns. This observation is made only on a small sample of easily distinguishable investment opportunities: Treasury bills, Corporate bonds and three stock portfolios: World stocks, small stocks and S\&P 500. 
+
+In spite of the small sample of options, these investment opportunities cover a majority of the classical financial investments in non-derivative markets. 
+
+The conclusion of this observation is that investors are risk-averse and the more volatility an investment has, the more returns they require. If the market constituted only from risk-neutral participants, there is no reason why more volatile assets should have returns in multiples of others. 
+
+The idea of risk-averse decision makers is again familiar to the stochastic decision theory. The concept of utility takes into account exactly this human behavior, being more averse towards loss of the same nominal value than keen on profit. 
+
+The second part of the uncertainty specific for investments is their correlation with the overall market. An asset that has a negative correlation to the overall economy, for example food companies <Example1> or gold mining companies <Example2> can be understood as a hedge against the negative trends in the overall market and people are willing to pay more for such assets. 
+
+This is where the notion of risk-premiums comes in. The assets that are perfectly correlated with the market tend to have higher returns, since the investors require high risk-premiums on that asset. On the other hand, assets with negative correlation to the market are understood as tools for hedging and have generally lower requested return rates. 
+
+To incorporate the influence of correlation with the market on the utility of individual asset the utility function needs to be 2-dimensional. 
+
+\begin{example}
+	<Utility function 2D> 
+\end{example}
+
+It can be seen from the example, that in computation of individual utilities for one asset there is always the same correlation with the market. Thus, when there is a small number of branches in the valued project one can understand the utility function not as two-dimensional, but as multiple 1D utility functions, for example denoted with subscripts $U_{CB}$ and $U_{Oil}$. 
+
+
 
 \section{Time value of money}
-<Talk about time value of money, what does literature say, lower, upper bounds, finding the correct discount value>
+Due to the belief of the majority of national central banks in the theory of ... the optimal target inflation is set to be around 2\%. This rate, the theory says, is the optimal for people to not delay purchases and investments, and incentives them to purchase goods and services now. The consequence of a non-zero requested inflation rate is the concept of time value of money. 
+
+It is a well known fact that 1000 USD now does not have the same value as 1000 USD next year. When we are talking about the time value of money two rates are important.
+
+ First, what is the risk-free rate that the investor is able to get if he invest the money he currently owns. This type of return is usually determined by the rate with which the government bonds are issued. This rate determines the minimal appreciation of already held money. This rate is generally expected to be positive, but as the recent unprecedented events show also negative. The negative interest rates were presented by a central banks of: Japan (20xx, -0.5\%), Germany (20xx -0.x\%) and Switzerland (20xx -0.5\%) with the intention to support the economy with offer of cheaper loans from commercial banks. \footnote{Not sure about this, needs to be checked.}
+
+The second important interest rate is the one for which the investor can borrow in commercial banks, or other institutions and individuals. This interest rate is a function of many variables, such as the amount of borrowed money, the credibility and valuation of the investor and also risk of the project. With the assumption of risk-neutral creditors and no fixed costs associated with the process of lending money, the only relevant factor for creditors to obtain a given expected return is the debtor's probability of default.
+
+The rate at which a project's investor is able to borrow may vary significantly. There is only a small risk of default of a large bank or already established energetic company which can guarantee for the loan with their other assets. On the other hand a small startup, with no guarantee and a risky project has a significantly higher probability of default and thus to increase the average expected return for a creditor, the interest rate of the loan needs to be higher. 
 
 
+In this section I argue that the discount factor for valuation of given FCF vector is individual for each company and that it can be computed as a weighted average of the two aforementioned rates based on the level of self financing. The following formula
+
+\begin{equation}
+	r
+\end{equation}
+
+This formula reflects the idea that the money company already has could 
 
 
+The discussion about the limits of time value of money is also interesting. The time value of money can be interpreted as being indifferent to having some amount of money now to having a different amount of money later. For example, assume the interest rate is 5\%, then one cannot be indifferent to having a 100 USD now and 103 USD the next year, since the 100 can be turned to 105 USD with no risk. Thus there exists an upper limit of money one can be indifferent to obtaining now versus obtaining a firm amount next year. 
 
-
-
-
-
-
-
+There also exists a theoretical lower bound of such indifference. One also cannot value the 105 USD obtained in the future lower than some value $x = 105/r$ where $r$ is the interest rate one is able to get from a creditors. One cannot be indifferent to having less than $105/r$ now and 105 next year, since the choice of 105 next year would allow one to borrow $x_2<105/r$, obtain 105 next year and keep the difference. The lower bound comes as a consequence of a possibility to borrow money and absence of arbitrage. 
 
 
 

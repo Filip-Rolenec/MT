@@ -50,45 +50,45 @@ Warning--I didn't find a database entry for ""
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--empty booktitle in ChaManNou:16
-You've used 18 entries,
+You've used 21 entries,
             2118 wiz_defined-function locations,
-            620 strings with 6479 characters,
-and the built_in function-call counts, 4771 in all, are:
-= -- 468
-> -- 172
+            640 strings with 6740 characters,
+and the built_in function-call counts, 5428 in all, are:
+= -- 528
+> -- 193
 < -- 1
-+ -- 72
-- -- 52
-* -- 264
-:= -- 818
-add.period$ -- 59
-call.type$ -- 18
-change.case$ -- 74
++ -- 81
+- -- 58
+* -- 291
+:= -- 935
+add.period$ -- 68
+call.type$ -- 21
+change.case$ -- 83
 chr.to.int$ -- 0
-cite$ -- 21
-duplicate$ -- 210
-empty$ -- 429
-format.name$ -- 52
-if$ -- 1015
+cite$ -- 24
+duplicate$ -- 246
+empty$ -- 495
+format.name$ -- 58
+if$ -- 1156
 int.to.chr$ -- 0
-int.to.str$ -- 18
-missing$ -- 24
-newline$ -- 93
-num.names$ -- 36
-pop$ -- 110
+int.to.str$ -- 21
+missing$ -- 30
+newline$ -- 108
+num.names$ -- 42
+pop$ -- 131
 preamble$ -- 1
-purify$ -- 62
+purify$ -- 71
 quote$ -- 0
-skip$ -- 133
+skip$ -- 151
 stack$ -- 0
-substring$ -- 222
-swap$ -- 26
+substring$ -- 237
+swap$ -- 29
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
+type$ -- 62
 warning$ -- 3
-while$ -- 45
-width$ -- 20
-write$ -- 196
+while$ -- 51
+width$ -- 23
+write$ -- 229
 (There were 9 error messages)

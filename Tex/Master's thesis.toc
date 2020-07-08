@@ -11,14 +11,14 @@
 \contentsline {section}{\numberline {2.2}General economics}{22}% 
 \contentsline {subsection}{\numberline {2.2.1}Standard valuation metrics}{23}% 
 \contentsline {paragraph}{Net resent value}{23}% 
-\contentsline {paragraph}{Decision tree analysis}{23}% 
+\contentsline {paragraph}{Decision tree analysis}{24}% 
 \contentsline {paragraph}{Internal rate of return}{24}% 
 \contentsline {paragraph}{Weighted average cost of capital}{24}% 
 \contentsline {section}{\numberline {2.3}Real option analysis}{25}% 
-\contentsline {paragraph}{Complete analogy}{25}% 
+\contentsline {paragraph}{Complete analogy}{26}% 
 \contentsline {paragraph}{Partial analogy}{26}% 
 \contentsline {paragraph}{No analogy}{26}% 
-\contentsline {section}{\numberline {2.4}Statistical decision theory}{26}% 
+\contentsline {section}{\numberline {2.4}Statistical decision theory}{27}% 
 \contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{27}% 
 \contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{28}% 
 \contentsline {paragraph}{<Q-Learning, SARSA,..>}{28}% 
@@ -36,8 +36,8 @@
 \contentsline {subsection}{\numberline {3.5.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{37}% 
 \contentsline {subsection}{\numberline {3.5.2}Discount factor $r_t$}{37}% 
 \contentsline {subsection}{\numberline {3.5.3}Supply and demand curves}{37}% 
-\contentsline {subsection}{\numberline {3.5.4}Set of strategies}{37}% 
-\contentsline {subsection}{\numberline {3.5.5}Probabilities of states}{37}% 
+\contentsline {subsection}{\numberline {3.5.4}Set of strategies}{38}% 
+\contentsline {subsection}{\numberline {3.5.5}Probabilities of states}{38}% 
 \contentsline {chapter}{\numberline {4}Application of the new valuation technique. }{39}% 
 \contentsline {section}{\numberline {4.1}Approximate dynamic programming}{39}% 
 \contentsline {section}{\numberline {4.2}Valuation example}{39}% 
