@@ -24,43 +24,21 @@
 \contentsline {paragraph}{<Q-Learning, SARSA,..>}{28}% 
 \contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{28}% 
 \contentsline {subsection}{\numberline {2.4.4}Utility}{29}% 
-\contentsline {chapter}{\numberline {3}Real options in the language of SDT}{31}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{31}% 
 \contentsline {section}{\numberline {3.1}The core of ROA}{32}% 
-\contentsline {section}{\numberline {3.2}Approach to risk}{33}% 
-\contentsline {section}{\numberline {3.3}Time value of money}{33}% 
-\contentsline {section}{\numberline {3.4}New valuation technique}{33}% 
-\contentsline {subsection}{\numberline {3.4.1}Discounted cash flow}{34}% 
-\contentsline {subsection}{\numberline {3.4.2}Cash flow}{34}% 
-\contentsline {subsection}{\numberline {3.4.3}Addressing uncertainty}{36}% 
-\contentsline {section}{\numberline {3.5}Origins of variables in the valuation equation}{37}% 
-\contentsline {subsection}{\numberline {3.5.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{37}% 
-\contentsline {subsection}{\numberline {3.5.2}Discount factor $r_t$}{37}% 
-\contentsline {subsection}{\numberline {3.5.3}Supply and demand curves}{37}% 
-\contentsline {subsection}{\numberline {3.5.4}Set of strategies}{38}% 
-\contentsline {subsection}{\numberline {3.5.5}Probabilities of states}{38}% 
-\contentsline {chapter}{\numberline {4}Application of the new valuation technique. }{39}% 
-\contentsline {section}{\numberline {4.1}Approximate dynamic programming}{39}% 
-\contentsline {section}{\numberline {4.2}Valuation example}{39}% 
-\contentsline {subsection}{\numberline {4.2.1}NPV valuation }{39}% 
-\contentsline {subsection}{\numberline {4.2.2}DTA valuation}{39}% 
-\contentsline {subsection}{\numberline {4.2.3}Classic ROA valuation}{39}% 
-\contentsline {subsection}{\numberline {4.2.4}New approach}{39}% 
+\contentsline {section}{\numberline {3.2}Approach to risk}{32}% 
+\contentsline {subsection}{\numberline {3.2.1}Risk-premiums}{33}% 
+\contentsline {section}{\numberline {3.3}Time value of money}{34}% 
+\contentsline {section}{\numberline {3.4}New valuation technique}{35}% 
+\contentsline {subsection}{\numberline {3.4.1}Modelling FCF}{37}% 
+\contentsline {subsection}{\numberline {3.4.2}Problems}{37}% 
+\contentsline {subsection}{\numberline {3.4.3}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{38}% 
+\contentsline {chapter}{\numberline {4}Valuation of projects in multiple-source industries}{39}% 
+\contentsline {section}{\numberline {4.1}Power company}{39}% 
+\contentsline {section}{\numberline {4.2}Public transportation/Water treatment/}{39}% 
 \contentsline {chapter}{\numberline {5}Discussion}{41}% 
 \contentsline {chapter}{\numberline {6}Conclusions}{43}% 
 \contentsline {chapter}{\numberline {7}Inspiration}{45}% 
 \contentsline {section}{\numberline {7.1}Black-Scholes Merton model}{45}% 
-\contentsline {section}{\numberline {7.2}Statistical decision theory}{45}% 
-\contentsline {subsection}{\numberline {7.2.1}Bayesian statistics}{46}% 
-\contentsline {subsection}{\numberline {7.2.2}Utility}{46}% 
-\contentsline {section}{\numberline {7.3}Project and cash flow}{46}% 
-\contentsline {subsection}{\numberline {7.3.1}How is a similar task solved by different authors}{47}% 
-\contentsline {section}{\numberline {7.4}My valuation}{49}% 
-\contentsline {subsection}{\numberline {7.4.1}Addressing the uncertainty}{49}% 
-\contentsline {subsection}{\numberline {7.4.2}Actual value computation}{50}% 
-\contentsline {subsubsection}{\numberline {7.4.2.1}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{51}% 
-\contentsline {subsubsection}{\numberline {7.4.2.2}Discount factor $r$}{51}% 
-\contentsline {subsubsection}{\numberline {7.4.2.3}Cash flow function}{51}% 
-\contentsline {subsubsection}{\numberline {7.4.2.4}Strategies $\pi $}{51}% 
-\contentsline {subsubsection}{\numberline {7.4.2.5}Probabilities}{52}% 
-\contentsline {subsection}{\numberline {7.4.3}The maximization process}{53}% 
-\contentsline {section}{\numberline {7.5}Bachelor's thesis parts that could be useful for TeX styling}{53}% 
+\contentsline {section}{\numberline {7.2}Project and cash flow}{46}% 
+\contentsline {section}{\numberline {7.3}Bachelor's thesis parts that could be useful for TeX styling}{46}% 
