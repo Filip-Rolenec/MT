@@ -341,86 +341,51 @@ The new framework significantly expands the class of projects that can be reason
 
 
 \chapter{Introduction}
-The ability to systematically and reliably value projects is the core of investment decision making. According to the economical theory presented by \cite{} \footnote{That guy from Duke university} profits of an investment reflect the value added to the participants on the market, who paid the money to enable the profits. The profits of the venture are understood as the ultimate measure of additional value that has been created. 
+The ability to systematically and reliably value projects is the core of investment decision making. According to the economical theory presented by \cite{} \footnote{That guy from Duke university} profits of an investment reflect the value added to the participants of the market, expressed by actual spending of their money. The profits of a venture are understood as the ultimate measure of additional value that has been created. 
 
-A good valuation technique enables companies to increase their profits and as \cite{BerDeM:09} (?)  says: the main and actually only goal of a manager is to increase the wealth of stakeholders. It is thus rather fortunate that, by the logic of \cite{} \footnote{Guy from duke}, in free market increasing this value coincides with the adding value to all interested participants on the market. One could thus extrapolate and say, that in free market, the goal of a manager is to improve lives of market participants. 
+A good valuation technique enables companies to increase their profits and as \cite{BerDeM:09} (?)  says: the main and actually only goal of a manager is to increase the wealth of stakeholders. It is thus rather fortunate that, by the logic of \cite{} \footnote{Guy from duke}, in free market, increasing this value coincides with the adding value to all interested participants on the market. One could thus extrapolate and say, that in free market, the goal of a manager is to improve lives of market participants. 
 
-The current state of capital investment valuation techniques is very diverse. Majority of investors rely predominantly on the standard Net Present Value (NPV) technique, its generalization in a form of NPV with scenarios (sometimes called Decision Tree Analysis(DTA)) or NPV-derived metrics with some internal mostly fabricated parameters, such as Risk Adjusted Discount Rate (RADR) or Internal Rate of Return (IRR). \footnote{Create citations to these statements}
+The current state of capital investment valuation techniques is very diverse. Majority of investors rely predominantly on the standard Net Present Value (NPV) technique, its generalization in a form of NPV with scenarios (sometimes called Decision Tree Analysis(DTA)) or NPV-derived metrics with some mostly artificial parameters, such as NPV with Risk Adjusted Discount Rate (RADR) or Internal Rate of Return (IRR). \footnote{Create citations to these statements}
 
-These valuation techniques are usually simple, resulting in a very limited scope of their application. Two main problems are that in their simplicity they do not address the problem of uncertainty or ability of further management of the projects in much detail, or in the case of uncertainty the argumentation is misleading \footnote{Risky FCFs should be discounted more...}.
+These valuation techniques are usually simple, resulting in a very limited scope of their application. Two main problems are that they do not address the problem of uncertainty or further management ability, in much detail, or in the case of uncertainty the argumentation is misleading \footnote{Risky FCFs should be discounted more...}.
 
-In many articles and economical books one superior valuation technique, that recognizes the value of further managerial actions and also copes with the uncertainty in more complex way is cal Real Options Analysis (ROA). The valuation of projects is understood as analogy to valuation of financial options, which is elegantly handled by the Black-Sholes-Merton Nobel prize winning technique \cite{}. 
+In many articles and economical books one superior valuation technique, that recognizes the value of further managerial actions and also copes with the uncertainty in more complex way is cal Real Options Analysis (ROA). Project valuation by ROA is in literature used in three forms, differing in the level of its analogy to valuation of financial options, which is elegantly handled by the Black-Sholes-Merton Nobel prize winning valuation technique \cite{}. 
 
-The value added by acknowledging of further management of projects (so called real options) with high uncertainty is significant. Articles \cite{} and \cite{} show, how the standard valuations tend to undervalue certain projects, which leads to unrealized opportunity of significant profits. 
+The value added by recognizing the importance of further management in projects with high degree of uncertainty is significant. Articles \cite{} and \cite{} show, how standard valuation techniques tend to undervalue these projects, leading to potentially significant unrealized profits. 
 
- 
-<Talk about ROA, its advantages and usage in real life> \footnote{Do not talk about DTA in the complicated sense. }
+The core of BSM model, and thus its analogy in the form of ROA, is only an argument about the expected value of a price, which is understood as following log-normally distributed random process. This argument is used in creation of so called risk-neutral probabilities of price movements of the underlying variable. 
 
-<Talk about it not being applied in reality and its reasons> 
+By reading the publications about ROA one starts to be accustomed to the structure of projects as a collection of managerial decisions. This narrative rings a strong bell to a scholar that has encountered stochastic decision theory (SDT). 
 
-<Decide which problems will be solved in this thesis> 
+Stochastic decision theory, with its decades of research, offers a brilliant framework for any decision making problem, which projects effectively are. The analogy for project value has also a potential to be found in the value functions which represent the expected cumulative rewards from undertaking the optimal strategy. 
 
-<Talk about how this all is actually decision making and that it would be interesting to look at it as a SDT problem> 
+The goal of this thesis is to incorporate some key features of economical thinking about value of a project in the framework of SDT. The main focus in put on the approach to risk, time value of money and enabling for multiple sources of risk in the models. 
 
-<Say a brief history of SDT and how it fits naturally> 
+The first dimension of risk - uncertainty about the monetary outcome - in the economical theory is being in SDT addressed by the utility theory. The second dimension - assessing different values to assets based on their correlation to the overall market - has no clear analogy with the SDT theory, which is solved by making the utility function two-dimensional, or in a case of small number of different correlations, multiple utility functions with subscripts are defined. 
 
-<Say what is missing in SDT and what more does it offer, arbitrage vs utility thinking and Bayes> 
+The time value of money exists in SDT in a simple form of discounting, which is very similar to discounting with either risk-free discount rate, or risk-adjusted discount rate in economics. In this thesis the idea of people being logically indifferent to some sums of money now and in the future based on their current assets and ability to borrow and invest with no risk is presented. 
 
-\vspace{5mm}
+In addition to being able to interpret the classical valuation techniques in the form of SDT, this new approach allows us to present theoretically any number of different uncertainties modeled by any random process (the economical theory exclusively uses normal and log-normal processes). 
 
-\ruletext{\textbf{The remaining text is left as inspiration}}
-\vspace{5mm}
+Because the project is modeled by the SDT framework, its value is assessed through the process of dynamic programming - in a case of simple models - or by the advanced theory of approximate dynamic programming (ADP) - in case of more complicated models. 
 
-The current state of capital investment valuation techniques is a mess. Majority of investors still rely on the standard Net Present Value (NPV) technique or its slight generalizations in form of optimal/average/bad scenarios, risk adjusted discount rate (RADR) hurdles (usually set to an arbitrary percentage), internal rate of return (IRR) metric (which is essentially the same as RADR hurdles) and other metrics like,... ROIC, ENPV. 
+The advantages of understanding a project's valuation problem as a dynamic decision problems are then demonstrated on two examples of business areas with multiple sources of production. Examples of such business are producers of electric power, water, raw materials that can be extracted by multiple viable methods, public transportation companies and others. 
 
-All the listed generalizations try to cope with one of two main problems of NPV, which is inability to incorporate uncertainty (ENPV, scenario approach) or intra-investment comparison (IRR(?), ROIC). 
+This class of business was chosen due to the variability in available production units of a given material/service and partially due to the some level of author's expertise in the field of power generation. 
 
-None of these valuation techniques acknowledges the managerial ability to take action and improve the course of an investment. ENPV can be interpreted is such way but that is abusing of its notation. 
+First, it is shown that the formulation of ROA from authors like Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} and others \cite{} can be interpreted by SDT rather easily, smoothly allowing for multiple sources and models of uncertainty, possibility of Bayesian learning and the ability to cope with high dimensional problems. 
 
-The decision tree analysis (DTA) is the simplest approach for valuing an investment with acknowledging decision nodes as an inherit trait of an investment process. It should not be a surprise that being able to make a decision through the lifetime of an investment has value. Also, it is quite clear that the more uncertain the investment and its parts are, the more valuable the ability to act is. To value an ability to make a decision and change the path which the investment follows is not a complicated task. All it takes is to compare a value of a project with that ability and without it (both with DTA), and declare that the value of such "decision option" is the difference between the two. 
+Second a possible generalization of the example is shown, presenting the full power of the new approach. It is expected that by lowering the assumptions of ROA and similar techniques, considering various aspects of project's features with less approximation, a more precise valuation can be achieved. 
 
-Many authors from the financial world \footnote{See \textit{this} and \textit{that}} use the term real option valuation when talking about this difference between DTA trees with or without some branches that represent the ability to make a decision and act upon it. I think that is rather unfortunate, since the terminology clashes with the real option valuation, which this thesis is about. 
+The advantage of SDT formulation in comparison to ROA and other models is not as clear-cut as the ROA vs NPV for example, where NPV serves only a lower bound to ROA valuation. The SDT approach tries to incorporate as much information as possible to get the most precise current value of a project, which does not have to be same or higher as ROA. 
 
-The true real option analysis (ROA) is about being able to value investment options in the same way financial options are valued. The Black-Scholes-Merton option pricing model that is widely used in financial world is an exceptionally elegant valuation tool. All that it needs to know about financial option to valuate it is four parameters - the strike price and expiration date of an option itself, the volatility and current price of the underlying asset upon which the option is written. \footnote{probably some more assumptions}. This Nobel-Prize winning elegance led mathematical and financial experts to try to interpret investment decision making in terms of "real options", that can be valued in the same way the financial options are, by the BSM model. 
+The new SDT approach has a goal to incorporate all the standard economical theory, approach to risk, time value of money, different valuation of returns on market-correlated assets, while enabling more complex modeling of uncertainty, Bayesian learning and a way to address projects, that translate to a high-dimensional decision problems. 
 
-The attempts to interpret each of four important parameters of a financial option in terms of investment parameters are successful for simple cases (Dealership in BERK), however they fail for more complex ones. The ability to use real option valuation technique depends heavily on the ability to find a relevant company, stock or other publicly traded proxy variable to the examined investment. One finds plausible to construct a replicating portfolio for an investment in oil mining facility or a food production line, however this assumption is hard to believe for highly innovative products in new fields, such as software development or R\&D investments. 
+\textbf{Suggestions: ROA history, more citations, talking about replicating portfolios}
 
-The ROA valuation approach in investment decision making has cyclical nature. The first wave of the real ROA approach can be traced to ... who presented his ideas shortly after the initial publication about financial option pricing \cite{BlaSch:73}. Next wave comes with ... and finally the most recent publications trying to make practical use of real option analysis are \cite{} and \cite{}. 
-
-Nearly all publications of real options published in the last <number> years talk about small penetrability of this approach to the actual usage by managers in large and small investment companies. The stated reasons are always the same,
-\begin{itemize}
-\item Vollert says that its complexity, but that is because he uses stochastic models, Ito lemma and computes PDEs, all the time. That has nothing to do with replicating portfolios and BSM model. 
-\item Mr. Kulhavy says that the problem is in finding the replicating portfolio and even if you find it you have to persuade the manager to see it too. 
-\item <Problem with adoption> 
-\item <Another problem with adoption>
-\end{itemize}
-
-
-I believe that the current usage of ROA by investors makes sense. The actual ROA approach is based on finding a replicating portfolio that behaves in the same way as the investment. If a manager beliefs that he has found a replicating portfolio, then it does not make sense for him to value the project differently than the replicating portfolio. However, there is still the issue of finding such replicating portfolio. 
-
-The usage of ROA in sense of different DTA trees is well posed. The ability to hold production in refinery in times of large oil prices can surely increase its value. In this sense the ROA has the biggest impact on the valuation in investments that are highly uncertain and in which there are actions that can alter the course of future cash flow. This also means that in the opposite case, when there is high degree of certainty about the execution and cash flow of the project, or if there are no actions to be taken, the ROA does not create additional value. 
-
-The power of classic ROA is to seemly eliminate the probabilistic nature from the picture. This can be done by the power of all-wise market, that forbids the existence of arbitrage. If a tradeable  \footnote{This is a valid word, Cambridge dictionary say so... }replicating portfolio is found, then I should not care if I make my investment or if I use the money to buy the replicating portfolio. 
-
-For the mathematicians from the field of stochastic decision making the problem of valuation is just another decision making under uncertainty. Define state  and action space, define rewards (free cash flow) in each epoch and get prior probability density as expected transition probability from one state to another upon undertaking certain action.
-
-The difference between the SDT and ROA is that the former relies on the prior density functions, that are the core of Bayesian statistic, while the latter, coming from economics, relies on the power of the market and managers ability to find a replicating portfolio. 
-
-In this thesis the state-of-the art theories of ROA valuation and SDT are presented. Their strengths and weaknesses are discussed and a hybrid approach from the cherry-picked parts of the corresponding theories is presented. 
-
-The power of the new theory is shown on a class of problems called ... The current literature copes with them in much simpler way and their assumptions are much larger. My \footnote{Or the presented approach, should I avoid pronouns in the text? } approach also potentiates adoption in practical usage, as it puts the decision making manager in charge. The manager decides how to create the prior distributions, he is the one who needs to determine all the possible actions and scenarios that can happen. The algorithm that is presented in this thesis can and should be used in real world as a managerial tool to maximize the profits of divisions or companies as a whole. 
-
-
-The goal to maximize wealth in financial world is approached in a really narrow matter. Money represents value, which in models decreases in time by a percentage given by some authority, most of the time central banks. In respected financial publications \cite{BerDeM:09}, \cite{} or \cite{}, there is no notion of utility. It seems like for financial institutions, it does not matter to get 1M in cash now or to gamble for 2M in a fair coin flip. On the other hand, in SDT,  the concept of utility is taken very seriously. Majority of people would prefer even a very small amount, such as 200k against a fair gamble between 0 and 2M. This is due to the concave utility function people tend to have when very high amounts are discussed and the question is more about what would make them happier. 
-
-Maximization of wealth either in the sense of investment company or individual is natural. Almost everybody would agree that to have more wealth is better than have less. Better investment decisions mean higher accumulation of wealth, which together with assumption of free market results in an increase of utility of each participant in the economy \footnote{Find that reference... Duke university lectures... }. In other words, when a company makes higher profits it should mean that the part of the population that participated in the wealth creation should be happier. 
-
-\ruletext{}
 
 
 %\addcontentsline{toc}{chapter}{Introduction}
-
-
 
 %\addcontentsline{toc}{chapter}{Preliminaries}
 
@@ -572,30 +537,17 @@ The problems with IRR are that additional assumptions on cash flow vector have t
 
 \paragraph{Weighted average cost of capital}
 
-\vspace{5mm}
+New projects can be financed from two sources, from the company's free capital obtained from other ventures or founders, or in majority of the cases (?) by borrowing money on a market. 
 
-\textbf{<This paragraph is not true, needs to be redone. The WACC is a combination of a premium that investors want in order to hold the shares of the company and a rate for which the company can borrow money. The risk free rate does not play any direct role in WACC. >}
- 
-The term time value of money represent the truth that the value of money today is not the same as next year. Due to the modern economical theory, inflation is a pursued phenomenon, keeping the economy running. 
+There are two standard alternatives when it comes to borrowing money. The company can either issue stocks and allow investors to participate on its future profits or the money can be borrowed, as individuals do, in a bank. The effective interest rate of the first option is the expected return investors want for their participation in the ventures of given company, while the interest rate of the second option is a pre-arranged contractually supported rate. 
 
-The existence of a risk-free interest rate in an economy is assumed and it is usually determined by the rates of bonds issued by the central banks of given nations. 
+The cost of capital, the effective interest rate of the given mixture of funding for a new project is then given by the weighted average of these two rates, adjusted for a tax benefit in borrowing from a creditor. This rate is called WACC - weighted average cost of capital and is defined as: 
 
-In capital budgeting the time value of money has a close connection to cost of capital. The cost of capital can have two forms, based on the money source for your investment. In the first case, you have some cash reserves and by investing in a project the only cost of capital is that you forego the opportunity to invest in bonds with risk-free rate of return, "paying" the opportunity cost. In second case, if company's funds are not sufficient, you need to borrow money on the market for an interest rate, which results in additional "cost" of capital. 
-
-The interest rates in second case are naturally higher, since lenders carry additional risk of borrower's default. 
-
-The term weighted average cost of capital combines the costs of capital coming from the two sources, further incorporating the notion of corporate tax reliefs. 
-
-\begin{definition}[WACC]
-The firm's effective after-tax cost of capital is called the weighted-average cost of capital (WACC): 
 \begin{equation}
 	WACC = \frac{E}{E+D}\cdot r_E + \frac{D}{E+D}\cdot r_D (1-\tau_C), 
 \end{equation}
-where E is the value of equity, D is the value of debt, $r_E$ the equity cost of capital, $r_D$ the debt cost of capital and $\tau_C$ is the corporate tax rate.
-\end{definition}
+where $E$ is the value of equity, $D$ is the value of debt, $r_E$ the equity cost of capital, $r_D$ the debt cost of capital and $\tau_C$ is the corporate tax rate.
 
-
-\ruletext{}
 
 \section{Real option analysis}\label{sec:ROA}
 
@@ -772,76 +724,73 @@ The utility function of each decision maker is different and an approximation of
 
 
 \chapter{Project valuation as stochastic decision problem}
-<Talk about how projects are valued now in economy with semi-mathematical concepts, say that SDT fits the problem very well. Say that prior the implementation of valuation as SDP, several key non-trivial parameters and concepts need to be discussed.> 
 
-The current process of project valuation is done by the economical algorithms with different attributes. They differ in computational complexity, requirements on mathematical knowledge of the managers and ability to incorporate further decision making or uncertainty into the valuation.
+Currently the process of project valuation is executed by algorithms from the economical theory. These algorithms differ in computational complexity, ability to incorporate further decision making or uncertainty into the valuation and in requirements on the managers' mathematical knowledge. 
 
-These algorithms, that help to generate a decision making basis for managers (NPV, IRR, ROA,...) are somehow artificial. They are based on very strong assumptions and they tend to simplify and compromise in various aspects of handling uncertainty, time value of money and the structure of a project. 
+These algorithms (NPV, IRR, ROA, ... ) support the decision making of managers by providing single numbers, representing different metrics of the project. They are based on very strong assumptions which correlates with their simplicity. They tend to compromise in various aspects of the projects when handling uncertainty, time value of money, or their structure. 
 
-Due to the many shortcuts, simplifications and hard assumptions that the economical theory makes, it is only sensible to try to formulate investing (and its further management) as a stochastic decision problem, which allows for much broader description with less assumptions. 
+Because the actual structure of a project strongly resembles the structure of a decision making problem under uncertainty and because the current economical theory makes many shortcuts, simplifications and hard assumptions, it is only sensible to try to formulate investing in (and the further management of) a project as a stochastic decision problem. 
 
-Before describing the new valuation technique, that intends to be a generalization of the current economical algorithms, several key features of the economical valuation techniques need to be discussed. 
-
-First is the core of ROA, which is by many authors (\cite{} \cite{}, \cite{})described as the most advanced valuation technique in use. In the first section of this chapter, we will look at the main message that the ROA actually tries to communicate, so that we can use it in the SDT-fashioned valuation technique. 
+ The new algorithm, which is based on the SDT theory, tries to drop as many limiting assumptions that economical theory makes, while cherry-picking the ones that encapsulate the economy-specific truths about value and markets. Lets discuss these truths now. 
 
 
-Second is the approach to risk. In the second section of this chapter, the approach to risk of economical valuation techniques is discussed. I believe that it does not stay on a firm ground and that it uses shortcuts which effectively mix the role of uncertainty and time value of money. 
+First is the core of ROA, which is by many authors (\cite{}, \cite{}, \cite{}) described as the most advanced valuation technique in use. In the first section of this chapter, we will look at the main message that the ROA actually tries to communicate, so that we can use it in the SDT-fashioned valuation technique. 
 
-Third is the discussion about the time value of money, which is in economics usually understood as discounting the future FCF by a constant rate. The approach of economical books has a large assumption that investors can borrow for the same rates as they can make risk-free investments , which is not the reality for most investors \cite{}. Also, as mentioned before, the future cash discounting is being misused to compensate for uncertain future FCFs, because of a belief that more riskier FCFs should be discounted more. 
+In the second section of this chapter, the approach to risk of economical valuation techniques is discussed. I believe that the current understanding of risk is not based on stable theory and that shortcuts are used, effectively mixing the role of uncertainty and time value of money. 
 
-This chapter culminates with the actual SDT-fashioned valuation technique, that respects both SDT theory and the key concepts of valuation from economical theory. 
+The third section focuses on the discussion about the time value of money, which is in economics usually understood as discounting the future FCF by a constant rate. The approach of economical books has one large assumption that investors can borrow for the same rates as they can make risk-free investments , which is not the reality for most investors \cite{}. Also, as mentioned before, the future cash discounting is being misused to compensate for uncertain future FCFs, because of a belief that more riskier FCFs should be discounted more. 
+
+This chapter culminates with the actual SDT-fashioned valuation technique, that cherry-picks the key useful concepts of the SDT theory, which are incorporated to the SDT framework. 
 
 \section{The core of ROA}
 
-<Say, what actually ROA is in its core, estimate of expected mean of the price. This is the strategy that is taken as the most advanced in Economics and that managers do not have enough math skills to use it> 
-The Real Option Analysis is not clearly defined project valuation framework. Coming from non-optimal analogy with valuation of financial options, namely the BSM model, it brings a new way of looking at the valuation of a project. 
+The Real Option Analysis is not clearly defined project valuation framework. Coming from a non-optimal analogy with valuation of financial options - the BSM model - it brings a new way of looking at the valuation of a project. 
 
-To be able to talk about the real option analysis, we should first talk about the essence of the BSM financial option valuation model. 
-
-When the BSM model is deconstructed, it can be seen that it only describes the price of the underlying asset by one specific distribution and that the final valuation is the expected profit of the option holder. 
-
-The BSM model expects the logarithm of the underlying asset's price to follow a wiener process, a limit of random walk. This means that in each given time instant the asset price is expected to be distributed log-normally, i.e. coming from the class of log-normal distributions, which has the following probability density: 
+To talk about the core of the ROA is to talk about the core of BSM, which when deconstructed, says that the logarithm of the underlying asset's price follows a Wiener process - a limit of random walk - with certain parameters. This means that in each given time instant $t$ the asset price is expected to be distributed log-normally with parameters $\mu(t)$ and $\sigma(t)$ \footnote{Fill in the exact time dependencies of $\sigma(t)$ and $\mu(t)$ on time}, i.e. coming from the class of log-normal distributions, which has the following probability density: 
 
 \begin{equation}
-p(x) = \frac{1}{x\sigma\sqrt{2\pi}}exp\left(-\frac{(ln(x)-\mu)^2}{2\sigma^2}\right)
+p(x) = \frac{1}{x\sigma(t)\sqrt{2\pi}}exp\left(-\frac{(ln(x)-\mu(t))^2}{2\sigma(t)^2}\right)
 \end{equation}
-where $\sigma>0$, $\mu \in \mathbb{R}$ are parameters of the distribution and $x \in (0,+\infty)$ is a variable. 
+where $\sigma(t)>0$, $\mu(t) \in \mathbb{R}$, and $x \in (0,+\infty)$. 
 
-The first discussed assumption of ROA thus means that, given the current price of an asset $x$ the distribution of price in any given future time $t$ can be described by only two parameters $\sigma$ and $\mu$. 
+The value of an option is then the expected profit from being able to buy the underlying asset for a strike price, given its distribution as a random variable:
+\begin{equation}
+	v(o) = E_x[\max(x-s,0)], 
+\end{equation}
 
-The second assumption for BSM model is rather simple. The variation of the asset price is assumed to be known. Its actual derivation is usually obtained from the abundant historical data about the asset price as can be seen in \cite{Gut:09}. 
+where $s$ is a strike price, $x$ is the price of the underlying asset and $v(o)$ is the value of a given option. 
 
-The next assumption of the BSM model is in my opinion the core of the whole ROA approach and it is certainly worth to be incorporated into the SDT framework. This assumption is about effective markets and the law of one price. The law of one price says, that there cannot exist an arbitrage, a way to get more than the risk-free interest rate with no additional risk. 
 
-This assumption effectively results in obtaining the second parameter in modeling the price of the underlying asset as log-normally distributed, $\mu$.  Due to the non-existence of arbitrage, the value of option, its replicating portfolio and given amount of bonds have the same expected returns,the risk-free interest rate. \footnote{Already confirmed on a binomial model, further, needs to be confirmed on the continuous case also. }
+The BSM has three interesting assumptions. First is that the $\sigma$ of the price movement is known, usually derived from the abundant historical data, see \cite{Gut:09}. Second assumption is that the law of one price holds, meaning that existent effective market prevents the formation of arbitrage opportunity, a way to get more than the risk-free interest rate with no additional risk. 
 
-The last assumption about risk-free rate being constant is not of major interest, it merely serves as a reminder of the time-value of money, which is taken in the financial world very seriously. 
+This second assumption effectively results in obtaining the parameter $\mu$. The value of an option derived by the BSM model, assuming log-normal distribution and known $\sigma$ to only one value of $\mu$ such that the expected profit from using the option is the same as would be the profit of investment in a risk-free alternative. This could be understood as a risk-neutral probability distribution, a generalization of risk-neutral probabilities used by Guthrie in \cite{Gut:09}. Being able to obtain the risk-neutral distribution is the core of ROA and it is worth to cherry-pick for the final SDT valuation. 
 
-To conclude, the origins of ROA in BSM model are giving us the distribution of the future price in any given time through two variables, $\sigma$ obtained from the past observations of the price movement \footnote{Time scale adjusted} and $\mu$ from the assumption about arbitrage-free world. \footnote{Arbitrage free world gives us the $\mu$ when there is a replicating portfolio, it cannot be used all the time... }
+The last assumption of ROA about risk-free rate being constant is not of major interest, it merely serves as a reminder of the time-value of money, which is taken in the financial world very seriously. 
+
+To conclude, the origins of ROA in BSM model are giving us the risk neutral distribution of the future price in any given time through two variables, $\sigma$ obtained from the past observations of the price movement \footnote{Time scale adjusted} and $\mu$ from the assumption about arbitrage-free world
 
 \section{Approach to risk}
-<Talk about how risk is understood in economics, and how SDT has a really nice framework for that> 
 
-The usage of the term risk varies widely in the literature. In the spoken English the meaning of risk is the possibility of something bad happening \footnote{Cambridge dictionary}. In parts of SDT, namely \cite{DeG:04}, the meaning of risk means the minimal expected loss. Business administration \footnote{Podnikova ekonomika} \cite{Kni:21} understands risk as uncertainty that cannot be modeled. 
+The usage of the term risk varies widely in the literature. In the spoken English risk means the possibility of something bad happening \footnote{Cambridge dictionary}. In parts of SDT, namely \cite{DeG:04}, is risk understood as the minimal expected loss. Business administration \footnote{Podnikova ekonomika} \cite{Kni:21} uses the term risk for uncertainty that cannot be modeled. 
 
-In economical books \cite{BerDeM:09} or \cite{} risk is understood as uncertainty of  returns on the investment. This uncertainty is presented as volatility - standard deviation: 
+In economical books \cite{BerDeM:09} or \cite{} is risk understood as uncertainty of  returns on an investment. This uncertainty is presented as volatility - standard deviation: 
 \begin{equation}
-risk = \sqrt{E[\tilde{R}^2]-E[\tilde{R}])^2}, 
+risk = \sqrt{E[\tilde{R}^2]-(E[\tilde{R}])^2}, 
 \end{equation}
-where $\tilde{R}$ is a random variable representing the uncertain return of an investment. This definition fits the narrative of this thesis and will be used from now on. 
+where $\tilde{R}$ is a random variable representing the return of an investment. This definition fits the narrative of this thesis and will be used from now on. 
 
-Historical records of different standardized investment opportunities - World stocks, small stocks and S\&P 500 - show a clear positive correlation between return of an investment and its volatility \cite{BerDeM:09}. In spite of the small sample, these investment opportunities cover a majority of the classical financial investments of non-derivative market. 
+Historical records of different standardized investment opportunities - world stocks, small US stocks, US bonds, US corporate bonds, and S\&P 500 - show clear positive correlation between return of an investment and its volatility \cite{BerDeM:09}. In spite of the small sample, these investment opportunities cover a majority of the classical financial investments of non-derivative market. 
 
-The conclusion of this observation is that investors are risk-averse and the more volatile an investment is, the more returns they require. If all investors would be risk-averse, the correlation between the volatility and returns of different asset types would be statistically improbable. 
+A discussion about this observation leads to a conclusion that investors are risk-averse and the more volatile an investment is, the more return they require. If all investors would be risk-neutral, the observed correlation between volatility and returns of different asset types would be statistically improbable. 
 
 The concept of risk-averse investors is very similar to the findings of SDT about risk-averse decision makers \cite{BacChi:19}, who in the same fashion prefer certain gains over uncertain, despite their nominal value being lower than the expected value. Both economical theory and SDT observe this type of human behavior, however SDT addresses it formally using utility theory. Instead of speculations about the "true" relationship between risk and returns, the SDT formalizes individual preferences of decision makers with a utility function. The goal of a decision maker then not to maximize the expected nominal value of his decisions, but his expected utility. 
 
-The superior approach of SDT to human risk aversion will be further used in the proposed valuation technique of this thesis. 
+The superior approach of SDT in a form of utility function covers the findings of the economical theory and it will be further used in the proposed SDT-based valuation technique. 
 
 \subsection{Risk-premiums}
-Another important concept in the world of investment that concerns risk is the so called market risk premium. Similar to the observations of the relationship between returns and risk, historical records also reveal a relationship between returns of investments and their correlation with the overall market \footnote{The term overall market is usually aproximated by a wide stock index, \cite{BerDeM:09} uses S\&P500}. Positively correlated investment opportunities tend to have higher returns (the investors require a market-risk premiums) than those with no, or negative correlation. 
+Another important concept in the world of investment that concerns risk is the so called market risk premium. Similar to the observations of the relationship between returns and risk, historical records also reveal a relationship between returns of investments and their correlation with the overall market \footnote{The term overall market is usually approximated by a wide stock index, \cite{BerDeM:09} uses S\&P500.}. Positively correlated investment opportunities tend to have higher returns (the investors require a market-risk premiums) than those with no, or negative correlation. 
 
-The conclusion of this observation is that the negative correlation of an asset to the overall market has value for the investors as a tool fo hedging. Historical data show, that investors are satisfied with holding low-return investments, as long as they perform well in the time of crisis. 
+The conclusion of this observation is that the negative correlation of an asset to the overall market has value for the investors as a tool for hedging. Historical data show, that investors are satisfied with holding low-return investments, as long as they perform well in the time of crisis. 
 
 To cover this behavior fully by SDT, one needs to make the utility function two dimensional: 
 
@@ -850,7 +799,7 @@ U(r, c_{m})
 \end{equation}
 where $r$ is a nominal reward and $c_{m}$ is a correlation of that reward with the market.
 
-When computing the expected utility of an uncertain reward $\tilde{r}$, the individual realizations $r$ do not have different correlations with the market, which makes the computation of maxima easier. 
+When computing the expected utility of an uncertain reward $\tilde{r}$, the individual realizations $r$ do not have different correlations with the market, which makes the computation of expected value easier. 
 
 Furthermore, due to the nature of project investment, there are usually only few different branches of the project where the cash flows have different correlation to the market. This is why we can introduce branch-specific one-dimensional utility functions, denoted with subscripts: 
 \begin{equation}
@@ -859,15 +808,13 @@ U_b(r),  b \in \mathbf{B}
 where $b$ represents a single branch of a project and $\mathbf{B}$ is a set of all branches with different correlations of FCF flows with the overall market. 
 
 \section{Time value of money}
-<Talk about how simply does the economical theory approach this problem and offer the new solution> 
+
 
 The value of money changes in time and it is determined by the supply and demand curve as any other asset. \footnote{Is asset a good word?} It might be confusing to talk about "value" of money, since we are used to measure the value of assets in money, but that is effectively a shortcut in human thinking. 
 
-The supply side of the "money market" is a national monopoly usually held by central banks. Due to the belief of the majority of them in the theory of ... they try to keep the supply such that the inflation rate is around $2\%$ \cite{}. The existence of a monopoly with potentially unlimited supply and a strictly positive inflation philosophy results in a decrease of money value in time. 
+The supply side of the "money market" is a national monopoly usually held by central banks. Due to the belief of the majority of them in the theory of ... they try to keep the supply such that the inflation rate is between $1\%$ and $3\%$ \cite{}. The existence of a monopoly with potentially unlimited supply and a strictly positive inflation philosophy results in a decrease of money value in time. 
 
-When talking about the time value of money two rates are important. 
-
-First is the risk-free rate, which says the rate that the investor is able to get with no risk. This rate is an approximation, no-risk investment does not occur in reality. Economical books determine this rate from the observable returns on government issued bonds. The risk-free rate determines the minimal appreciation of already held money. It is expected to be positive, but as the recent unprecedented events show it can also be negative. \footnote{Negative interest rates were presented by the central banks of: Japan(xY bond, -0.5\%, 2018), Germany(...), Australia(...)}
+When talking about the time value of money two rates are important. First is the risk-free rate, which says the rate that the investor is able to get with no risk. This rate is an approximation, no risk-free investment does occur in reality. Economical books determine this rate from the observable returns of government issued bonds. The risk-free rate determines the minimal appreciation of already held money. It is expected to be positive, but as the recent unprecedented events show it can also be negative. \footnote{Negative interest rates were presented by the central banks of: Japan(xY bond, -0.5\%, 2018), Germany(...), Australia(...)}
 
 The second important interest rate is the one for which investor can borrow money on the market. This rate is a function of many variables, such as the amount of borrowed money, the credibility and valuation of the investor, and also risk of the project. With the assumption of risk-neutral creditors and no fixed costs associated with the process of lending money, the only relevant factor for creditors to obtain a given expected return is the debtor's probability of default. 
 
@@ -877,14 +824,13 @@ The usual strategy for coping with time value of money in economics is by discou
 
 In this section I embrace the idea of "exchanging" money in time and I try to solve the two problems listed above. I argue that the effective discount rate for valuation of a given FCF vector is individual for each company and it is between the two aforementioned rates, where the closeness to each one of them is based on the level of self financing of that FCF vector. 
 
-The key idea of valuation of FCF vector lays in the indifference. I argue that given a certain positive \footnote{so far} FCF vector, there exists an amount of money, that an investor should be indifferent to obtaining now. This is effectively the "fair-price" of such a FCF, which is effectively a project. 
+The key idea of valuation of FCF vector lays in the idea of indifference. I argue that given a certain positive \footnote{so far} FCF vector, there exists an amount of money, that an investor should be indifferent to obtaining now. This is effectively the "fair-price" of such a FCF, which is effectively a project. 
 
-This feeling of indifference does not embrace another of human decision making flaws, where they internally assign uncertainty to money rewards in the future. All the cash flows in the FCF vector are certain. 
+This feeling of indifference does not embrace another of human decision making flaws, where uncertainty is automatically assigned to the future money rewards. All the cash flows in the FCF vector are certain. 
 
-I define the Net Present Value (NPV) of a FCF vector as a volume of money $x$ that is such that I am indifferent to having $x$ now, or the rights to FCF vector. This is not an abuse of notation since the rate in NPV is not strictly defined, and as we will see, the idea of indifference will introduce an "implicit" interest rate. The idea of indifference is effectively only proper way to derive the "correct" discount rate for NPV, based on logic and more detailed information about the investor. 
+I define the Net Present Value (NPV) of a FCF vector for a decision maker $D$ as a volume of money $x$ that is such that $D$ is indifferent to having $x$ now, or the FCF vector. This is not an abuse of notation since the rate in NPV is not strictly defined, and as we will see, the idea of indifference will introduce an "implicit" interest rate. The idea of indifference is effectively only proper way to derive the "correct" discount rate for NPV, based on logic and more detailed information about the investor. 
 
-The NPV of a given FCF vector is a function of risk-free interest rate, amount of free money the company has for investments and the rate with which is the company able ot borrow. The idea is that the investor has two options, either to buy the FCF vector for $x$, generally partially with borrowed money or invest the free money in the risk-free investment. The $x$ has to be such, that no matter the initial action, after the returns from FCF end, the investor has the same amount of money. 
-
+The NPV of a given FCF vector for $D $ s a function of risk-free interest rate, amount of free money the $D$ has for investments and the rate with which is $D$ able to borrow. The idea is that $D$ has two options, either to buy the FCF vector for $x$, generally partially with borrowed money or invest the free money in the risk-free investment. The $x$ has to be such, that no matter the initial action, after a time that would take to collect the FCF,  $D$ has the same amount of money.
 
 Due to the non-linearity of the implicit equation for NPV for given FCF vector, the value $x$ is derived numerically by the following algorithm: 
 \begin{algorithm}
@@ -898,118 +844,121 @@ NPV = \sum_{t \in \mathbf{T}} \frac{C_t}{r^t},
 \end{equation}
 which is the same as \ref{eq:NPV}, with the difference, that now $r$ is the unknown variable. 
 
-In the end it needs to be emphasized that the effective discount rate is in between the risk-free rate and the rate for which the company can borrow money (WACC for example). If these two values are identical, meaning the investor can find creditors who consider him to be a risk-free debtor, then this new algorithm is useless since that implies the effective interest rate being the risk-free rate. 
+In the end it needs to be emphasized that the effective discount rate is in between the risk-free rate and the rate for which the company can borrow money (WACC for example). If these two values are identical, meaning the investor can find creditors who consider him to be a risk-free debtor, then this new algorithm is useless since that implies the effective interest rate being equal to the risk-free rate. 
 
 
 \section{New valuation technique}\footnote{Come up with a clever name for it.}
-<Discussion about SDT format is missing, T, S, A, reward and probabilities. Reward is substituted, probabilities of future states are products of individual probabilities, assuming their independence. How do we get the probabilities? What the new valuation technique should do:>  
 
-A valuation of a real project with given strategy is a process of assigning current monetary value to a vector of future FCFs, with values modeled by a complex probability distribution conditioned on that strategy. A valuation of a project is then the maximum over all valuations with the given strategy. 
+As was stated in the previous chapters, the new valuation technique is based on the SDT framework for decision making under uncertainty, with certain parts being substituted or rearranged to fit the economical theory. \footnote{Maybe in more detail in subsections}
 
-The complex nature of individual future FCFs comes from the many uncertain parameters that influence such FCF. It might be demand in the given time interval, price of input raw materials and labor, previous decisions influencing the cost per unit parameter, where these decisions themselves can be for example influenced by the previous prices of raw materials. 
+\paragraph{Sets $\mathbf{T}$, $\mathbf{S}$ and $\mathbf{A}$}
+The structure of a project needs to be obtained from the investor himself. The granularity of time intervals making $T$, the possible states of the project (together with the states of the environment - for example prices of raw materials, demand curve parameters,...) that should be taken into account $S$ \footnote{Maybe $S_t$ } and the actions that the manager of a project is able to perform $A$ all need to be defined by the investor with as much focus as possible.
 
-It can be felt that even with allowing for small amounts of uncertainty and further decision making in the project, the complexity rises extremely. This is why, in the spirit of SDT, we will compute the value gradually, starting from the time horizon of a project, gradually maximizing the utility by our actions going from the horizon, while keeping in mind the time value of money. 
+\paragraph{Reward function $r$}The structure of rewards is the first feature of SDT that needs to be adjusted because of the format of project valuation. Because of the time value of money, it is important that some expenses/profits are happening right after the decision at time $t$ - $a_t$ - and some are due to accounting reasons understood as being obtained after the next state $s_{t+1}$ is already realized. The first type, denoted as $C_{t-}$, can be understood as immediate expenses from buying new equipment or most of the times this is the initial investment in the project. The second type $C_{t+}$ is then usually the collected cash flow from the epoch $t$, i.e. after the $s_{t+1}$ is realized. \footnote{This does not fit the reality much maybe. A more continuous approach might make more sense.} Thus the reward function $r$ in the standard SDT is replaced with functions $C_{t-}(a_t,s_t)$ and $C_{t+}(a_t,s_{t+1})$ both being realized between the actions $a_t$ and $a_{t+1}$. 
 
-The classical approach for solving decision making problems in SDT is to find a strategy that maximizes the expected reward in the following fashion: 
+\paragraph{Transition probability function} The uncertainty in the new valuation technique is approached in the standard SDT manner with prior probabilities. Most of the uncertainty in project valuation is about the price of raw materials, the demand for a product, the volume and purity of a product or a cost and time delay in research and development departments. All of this uncertainty can certainly be modeled, either with a model based on years of data and experience, or only on an educated guess of an expert. The true probabilities that rule the transition process from one state to another - transition probabilities - are expected to be unknown. 
+
+The first feature incorporated into the new valuation technique is the core of ROA as discussed in section \ref{}. At first, we will expect the price of inputs to follow a loq-normal random process with known variation $\sigma$ and mean $\mu$. In other words our model of price will be the risk-neutral probability density function for price in the given time instant. \footnote{Or a distribution from a class with the same expected returns.}
+
+Here we are talking only about price of inputs, since usually the pool of suppliers of raw materials and labor is larger enough that the demand for the project does not influence the price. On the other hand, for example in niche markets, the supply of our product can certainly influence the price, so for that we will use the supply and demand curves model. However keep in mind, that log-normal model and risk-neutral probability densities can be used for modeling of the output price as well. 
+
+\paragraph{What is the value of a project?} To value a project with a given strategy is to assign current monetary value to a vector of uncertain future FCF ($C_{t-}$ and $C_{t+}$), which values are modeled by a complex probability distributions conditioned on that strategy. A value of a project is then the maximum over all strategies. 
+
+
+The complex nature of individual future FCFs comes from the many uncertain parameters that influence such FCF. It might be demand in the given time interval, price of input raw materials and labor, previous decisions influencing the input/output transformation parameter, where these decisions themselves can be for example influenced by the previous prices of raw materials. 
+
+It can be felt that even with allowing for small amounts of uncertainty and further decision making in the project, the complexity rises extremely. This is why, in the spirit of SDT, we will compute the value gradually, starting from the time horizon of a project, gradually maximizing the value from our actions going from the horizon, while keeping in mind the time value of money and risk-aversion of decision makers. 
+
+\paragraph{Dynamic programming}
+
+To solve a decision making problem in SDT is to find the optimal strategy, a strategy that maximizes the expected reward:
+
 \begin{equation}
-	content...
+	\pi^{*}=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t \in \mathbf{T}} r(s_t,a_t,s_{t+1})|a_t(\pi)\right],
 \end{equation}
-,where .... 
+where the expectation is computed from the modeled transition probabilities. 
 
-This maximization is then solved by a backward induction, called dynamic programming, with computation of the respective value functions in each given state of the project. This algorithm results not only in the expected cumulative value of rewards obtained, but as a bonus an optimal strategy, that describes optimal actions in each state of the project. 
+To maximize over all possible strategies is usually impossible due to the cardinality of the set $\Pi$, so a gradual approach of backward induction called dynamic programming is used. Dynamic programming computes so called value function (expected reward until horizon) gradually the horizon and its result is not only the optimal strategy, but also the expected reward to be gained from such strategy. 
 
 The new valuation algorithm is based on this idea of backward induction, however due to specifics of project valuation several steps need to be adjusted. 
 
-When a backward induction is used in the classic dynamic programming, the bellman equation
+When a backward induction is used in the classic dynamic programming, each update of value function in states with lower time index $V(s_t)$ based on the values in higher time index $V(s_{t+1})$ is realized by the Bellman equation
+
 \begin{equation}
-	eq
+	V(s_{t})= \max_{a_{t}\in\mathbf{A_{t}(s_{t})}}\sum_{s_{t+1} \in \mathbf{S_{t+1}}} p(s_t,a_{t}, s_{t+1}) (V(s_{t+1})+r(s_t,a_{t}, s_{t+1}))
 \end{equation}
- is used to make a step back in time and value all states in the time epoch one lower from the values of states in the following time epoch. To incorporate the economical ideas about risk and time value of money, this step needs to be significantly adjusted. 
+
+To use this structure of backward induction and embrace the project structure and economical ideas about risk and time value of money, this step needs to be significantly adjusted. 
+
+\paragraph{After-action and after-period FCF}
+Because of the time value of money, it is important to distinguish the FCF obtained at the beginning of time period $t$, $C_{t-}$ and $C_{t+}$. The original Bellman equation is changed to: 
+\begin{equation}
+	V(s_{t})= \max_{a_{t}\in\mathbf{A_{t}(s_{t})}}\sum_{s_{t+1} \in \mathbf{S_{t+1}}} p(s_t,a_{t}, s_{t+1}) (V(s_{t+1})+C_{t-}(a_t,s_t)+C_{t+}(a_t,s_{t+1}))
+\end{equation}
+
+\paragraph{Adjusting for risk-aversion}
+The equation \ref{} now finds a maximum of the expected future monetary rewards in a state $s_t$. However, due to the risk-aversion of decision maker the goal is not to maximize expected monetary reward, but the expected utility. Because of the time value of money, the cash flows in time $t-$ and $t+$ need to be treated separately: 
+
+\begin{equation}
+	V(s_{t})= \max_{a_{t}\in\mathbf{A_{t}(s_{t})}}\sum_{s_{t+1} \in \mathbf{S_{t+1}}} p(s_t,a_{t}, s_{t+1}) U(C_{t-}(a_t,s_t))+ \sum_{s_{t+1} \in \mathbf{S_{t+1}}} p(s_t,a_{t}, s_{t+1}) U(V(s_{t+1})+C_{t+}(a_t,s_{t+1})).
+\end{equation}
+
+Utility function is a continuous non-decreasing function of monetary value, which means that the expected value of utility from the FCF in time $t-$ and $t+$ can be identified with a monetary value with the same utility that is expected from the original FCFs and the all the future gains represented by $V_t$: 
+
+\begin{equation}\label{eq:EUSum}
+	V(s_t) = \max_{a_{t}\in\mathbf{A_{t}(s_{t})}} EU_{t-}+EU_{t+}, 
+\end{equation}
+where $EU_{t-}$ is the cash equivalent with the same utility as is the expected utility from the $C_{t-}$ FCF. Similarly the $EU_{t+}$ is the cash equivalent with the utility as is the expected utility from $V_(s_t)+C_{t+}$. 
+
+ \paragraph{Adjusting DP for time value of money}
+ The last economical aspect that needs to be included into the decision making is the time value of money, discussed in section \ref{}. Since the monetary value of $EU_{t-}$ is different from the monetary value $EU_{t+}$ they cannot be simply added as the equation \ref{eq:EUSum} suggests. The value $EU_{t+}$ needs to be "exchanged", discounted with an effective discount rate $r_e$ coming from the algorithm of indifference \ref{}.
  
- All the following ideas concern a concept of "exchanging" or "identifying" different sources of value (money) to a "cash in time $t$. 
+ \begin{equation}\label{eq:EUSum}
+ V(s_t) = \max_{a_{t}\in\mathbf{A_{t}(s_{t})}} EU_{t-}+\frac{EU_{t+}}{(1+r_e)}, 
+ \end{equation}
  
+ finalizing the economical adjustments to the original Bellman equation. Now that the step of a backward induction was described, similarly to the original DP, the value $V(s_0)$ in the original state, together with the expected reward can be computed. The expected reward now has an interpretation of expected value of the project, which was our main goal. 
  
- <Take the $C_{t+}|a_t$ FCF at the end of epoch $t$, and the expected cash equivalent of being in the given next state. Add them together and get a certain cash equivalent value of that. Then do the same with potential cash outflows in the beginning of the $t$ epoch, then value this cash flow by the algorithm that values time in money. Maximize over all actions. 
-
-Starting with the bellman equation: 
-\begin{equation}
-	content...
-\end{equation}
-
-we need to 
-
-First, lets emphasize that reward in our sense has two types, first $C_{t-}$ obtained after a decision made in time $t$ and second obtained at the end of the time epoch $t$ $C_{t+}$. For example buying a power plant results in $C_{t-}$, while cash from selling its power results in $C_{t+}$. 
-
-The new bellman equation wants to maximize a cash equivalent in time $C_{t-}$. First, lets talk about the cash $C_{t+}$ and cash equivalent $V(s_t)$ obtained at the time $C_{t-}$. To embrace the idea of risk-averse investors, the certain equivalent of this uncertain FCF and its aggreagted future equivalent $V(s_t)$ is not derived as the expected cash value, but as the cash value, that has the same utility as is the expected utility of the $C_{t-}$ and $V(s_t)$: 
-
-\begin{equation}
-	content...
-\end{equation}
-
-This certain equivalence of FCF is also done for the $C_{t-}$ type, where is usually less uncertainty. 
-\begin{equation}
-	content...
-\end{equation}
-
-Now we have two values of cash equivalent to be obtained in the beginning and the end of the time epoch $t$, $Eq_{t-}$ and $Eq_{t+}$. Now the concept of time value of money is to be embraced. To determine the final cash equivalent value of the uncertain $C_{t-}$, $C_{t+}$ $V(s_{t+1})$ in terms of $C_{t-}$ dollars, we need to use the algorithm presented in section \ref{} for determining the discount for $Eq_{t+}$. 
-
-If the algorithm can be understood as a function, say $A(\cdot)$, then the final expected cash equivalent of $C_{t-}$, $C_{t+}$, $V(s_t+1)$ can be computed as: 
-\begin{equation}
-	V(s_t|a_t)=Eq_{t-}+A(Eq_{t+}).
-\end{equation}
-
-By maximization over these values for different possible actions $\mathbf{A_t(s_t)}$ the optimal action, together with the value of future cash flows is obtained: 
-
-\begin{equation}
-	V(s_t) = \max_{a_t\in\mathbf{A_t(s_t)}}V(s_t|a_t)
-\end{equation}
-
-
-Now that we have come up with the adjusted bellman equation, we can substitute this step in dynamic programming and use it to the full extend of SDT. 
-
-The value of a project is then obtained by the backwards induction as $V(s_0)$. 
+ The following algorithm summarizes the procedure dynamic programming algorithm adjusted for economical theory. 
+ 
+\begin{algorithm}
+	\caption{Finding the optimal policy for a \textit{single system} MDP with known $P$}\label{alg:SingleKnown}
+	\begin{algorithmic}[1]
+		\Require{$\mathcal{M}=(\textbf{T},\textbf{S},\textbf{A},P,R)$}
+	\end{algorithmic}
+\end{algorithm}
 
 \subsection{Modelling FCF}
-< Talk here more about how the randomness in FCF. $C_{t-}$ is a random variable with its distribution influenced by the state $s_t$ and its usually simple, while $C_{t+}$ is a random variable influenced by the state $s_t$ generally in a more complex way. Usually it is a evolution of prices according to some process.> 
-The FCF aggregates all individual transactions of a project in given time period. In general each project has spend money on inputs (raw materials, supplier goods, labor,...) which are transformed to products that are sold on the market. This thesis views the price of each input as a general random process and its parameters are a function of the volume of each input. 
+Now that the adjusted dynamic programming algorithm is ready to be used the details of FCF divided earlier into $C_{t-}$ and $C_{t+}$ need to be discussed. 
 
-FCF is thus a value of a random process in one time instant
+The $C_{t-}$ represents the instant FCF after the action $a_t$ is taken. This is mostly some purchase or sell of parts of the project, investment costs or income of salvage value of abandoned project. This part of FCF is generally less uncertain and less complex to describe. It mostly consists of one firm value, or in minority of cases in one random variable expressing the $C_{t-}$ value. 
 
-\begin{equation}
-	FCF(q)=\sum_{inputs} -p_i(q*s_i)*q*s_i+p_o(q)*q
+The second part $C_{t+}$ includes the process of transformation of labor and raw materials into the products and is thus more complicated to describe. The value of $C_{t+}$ can be described by the following equation:
+
+\begin{equation}\label{eq:CPlus}
+	C_{t+}(a_t,s_{t+1}) = p_o(q(a_t), s_{t+1})*q(a_t)- \sum_{inputs} p_i(s_{t+1}, q(a_t)*z_i(s_{t+1}))*q(a_t)*z_i(s_{t+1}),
 \end{equation}
-, where $p_i$ is a price of input given the output quantity $q$, $s_i$ is a parameter that say how many units of input are needed to get the output and $p_o$ is the price of produced output. 
+where $p_i$ is a price of input given the output quantity $q$ in time $t+1$\footnote{Should I care about if purchases are made in the start or end of the epoch?}, $z_i$ is a parameter that say how many units of input are needed to get the output and $p_o$ is the price of produced output. 
 
-The quantity of production $q$ and the transformation parameter can usually be controlled by actions at least to some extend, while the prices are usually governed by a random process of respective movement of supply and demand curves. 
+As can be seen from the formulation \ref{eq:CPlus}, all prices of inputs and the price of output are dependent on the quantity that is purchased from the market or sold there. This is where the modeling by supply and demand curves comes in. Instead of $s_t$ saying that the price of one input is some firm value a more thorough information about price curves is given. 
 
-The modeling of supply and demand curves is in this thesis as follows: 
-
-< I dont know much about modeling of this, is there some additional value in modeling the curves, or can the prices by simply random processes and prices their realizations?> 
-
-This results in the parametric model of FCF:
+\paragraph{Price curves} Curves of supply and demand are modeled as being from a class of curves defined as: 
 \begin{equation}
-	C_{t+}(\Theta,a_t,s_t) = \sum_{inputs} -p_i(\Theta,s-t,q(a_t))*s_i)*q(a_t)*s_i+p_o(\Theta, s-t, q(a_t))*q, 
+	\mathcal{G} = \{...\}
 \end{equation}
+which is motivated by the work of <this scholar> \cite{}. 
+
+This detail finalizes the theoretical application of the adjusted dynamic programming for project valuation. 
+
+\subsection{Approximate dynamic programming}
+<Say that because the complexity is still huge a ADP approach needs to be performed. The Bellman equation update step derived earlier should be ok with this> \footnote{Or transfer this problem to a fourth chapter of actual application. }
 
 \subsection{Problems}
-
+<This is only notes for now, maybe it will be useful in discussion, chapter 5> 
 \begin{itemize}
-	\item Granularity of time intervals might influence the valuation because of non-linearity of utility function. 10*U(1) != U(10)... Summing over utility of selling one barel of oil 
+	\item Granularity of time intervals might influence the valuation because of non-linearity of utility function. 10*U(1) != U(10)... My three barrel example. 
 	\item Utility function preferences might vary in time. 
 \end{itemize}
-
-
-
-
-\subsection{Sets $\mathbf{T}, \mathbf{S_t}, \mathbf{B_t}$}
-All of the sets $\mathbf{T}, \mathbf{U_t}, \mathbf{B_t}$ come from the model of a valuation problem.
-
-The number and frequency of time periods is determined by $\mathbf{T}$, when the most usual approach is to have $\mathbf{T}$ as a finite number of yearly periods. This can represent either a duration of project rights (for example in mining) or rights for a cash flow share (for example from bridge tolls), or such fuzzy future, where nobody really knows what will happen with the project 50 years from now. 
-
-The set of possible branches $\mathbf{B_t}$ comes from the project manager. He needs to identify the project alteration possibilities in each time period $t \in \mathbf{T}$. The set $\mathbf{B_t}$ is small most of the time, however in cases, when for example a start of a variable that is modeled by binomial tree is dependent on the strategy, the set $\mathbf{B_t}$ can grow rather quickly. The example is again a bridge project, where the number of toll-paying customers in time $t$ depends on a time period in which the bridge was finished. 
-
-
-And finally, the values of an environment state $\mathbf{U_t}$ are determined by a model of the outer world. The set $\mathbf{U_t}$ should be able to capture the uncertainty about all important parameters for the project while remaining as simple as possible. A classical example is a binomial tree of input prices for our process (oil, software engineer's salary).
 
 
 
@@ -1037,8 +986,7 @@ The new approach is better because it solves the current problems with ... Also 
 In my master's thesis I have rigorously compared the state-of-the-art valuation techniques used in present investment companies. I have shown the advantages and disadvantages of real option analysis  and stochastic decision theory. The combination of these, which I call ...,  yields a new view on the world of risky investments that empowers the decision maker and thus allows for better adoption in the rigid environment of investing. 
 
 
-
-
+The results of the new approach are promising and this thesis could be understood as a first step towards a broader usage of SDT in the field of project valuation. 
 
 
 
@@ -1055,7 +1003,12 @@ In my master's thesis I have rigorously compared the state-of-the-art valuation 
 
 \chapter{Inspiration}
 
-he, in my opinion, natural idea of interpretation of ROA in terms of SDT. 
+\section{Problems of the current approach}
+I will list here the problems I think my current approach to project valuation has. 
+\begin{itemize}
+	\item Bad time scaling. If I will use half year or quarter year time intervals instead of year intervals, the result would be different due to the general shape of the utility function. It seems like the valuation technique is influenced by the time intervals used. 
+	\item 
+\end{itemize}
 
 
 

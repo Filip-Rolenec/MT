@@ -6,39 +6,49 @@
 \babel@toc {czech}{}
 \babel@toc {american}{}
 \contentsline {chapter}{\numberline {1}Introduction}{17}% 
-\contentsline {chapter}{\numberline {2}Preliminaries}{21}% 
-\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{21}% 
-\contentsline {section}{\numberline {2.2}General economics}{22}% 
-\contentsline {subsection}{\numberline {2.2.1}Standard valuation metrics}{23}% 
-\contentsline {paragraph}{Net resent value}{23}% 
-\contentsline {paragraph}{Decision tree analysis}{24}% 
-\contentsline {paragraph}{Internal rate of return}{24}% 
-\contentsline {paragraph}{Weighted average cost of capital}{24}% 
-\contentsline {section}{\numberline {2.3}Real option analysis}{25}% 
-\contentsline {paragraph}{Complete analogy}{26}% 
-\contentsline {paragraph}{Partial analogy}{26}% 
-\contentsline {paragraph}{No analogy}{26}% 
-\contentsline {section}{\numberline {2.4}Statistical decision theory}{27}% 
-\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{27}% 
-\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{28}% 
-\contentsline {paragraph}{<Q-Learning, SARSA,..>}{28}% 
-\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{28}% 
-\contentsline {subsection}{\numberline {2.4.4}Utility}{29}% 
-\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{31}% 
-\contentsline {section}{\numberline {3.1}The core of ROA}{32}% 
-\contentsline {section}{\numberline {3.2}Approach to risk}{32}% 
-\contentsline {subsection}{\numberline {3.2.1}Risk-premiums}{33}% 
-\contentsline {section}{\numberline {3.3}Time value of money}{34}% 
-\contentsline {section}{\numberline {3.4}New valuation technique}{35}% 
-\contentsline {subsection}{\numberline {3.4.1}Modelling FCF}{37}% 
-\contentsline {subsection}{\numberline {3.4.2}Problems}{37}% 
-\contentsline {subsection}{\numberline {3.4.3}Sets $\mathbf {T}, \mathbf {S_t}, \mathbf {B_t}$}{38}% 
-\contentsline {chapter}{\numberline {4}Valuation of projects in multiple-source industries}{39}% 
-\contentsline {section}{\numberline {4.1}Power company}{39}% 
-\contentsline {section}{\numberline {4.2}Public transportation/Water treatment/}{39}% 
-\contentsline {chapter}{\numberline {5}Discussion}{41}% 
-\contentsline {chapter}{\numberline {6}Conclusions}{43}% 
-\contentsline {chapter}{\numberline {7}Inspiration}{45}% 
-\contentsline {section}{\numberline {7.1}Black-Scholes Merton model}{45}% 
-\contentsline {section}{\numberline {7.2}Project and cash flow}{46}% 
-\contentsline {section}{\numberline {7.3}Bachelor's thesis parts that could be useful for TeX styling}{46}% 
+\contentsline {chapter}{\numberline {2}Preliminaries}{19}% 
+\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{19}% 
+\contentsline {section}{\numberline {2.2}General economics}{20}% 
+\contentsline {subsection}{\numberline {2.2.1}Standard valuation metrics}{21}% 
+\contentsline {paragraph}{Net resent value}{21}% 
+\contentsline {paragraph}{Decision tree analysis}{22}% 
+\contentsline {paragraph}{Internal rate of return}{22}% 
+\contentsline {paragraph}{Weighted average cost of capital}{22}% 
+\contentsline {section}{\numberline {2.3}Real option analysis}{23}% 
+\contentsline {paragraph}{Complete analogy}{23}% 
+\contentsline {paragraph}{Partial analogy}{24}% 
+\contentsline {paragraph}{No analogy}{24}% 
+\contentsline {section}{\numberline {2.4}Statistical decision theory}{24}% 
+\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{25}% 
+\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{26}% 
+\contentsline {paragraph}{<Q-Learning, SARSA,..>}{26}% 
+\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{26}% 
+\contentsline {subsection}{\numberline {2.4.4}Utility}{27}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{29}% 
+\contentsline {section}{\numberline {3.1}The core of ROA}{30}% 
+\contentsline {section}{\numberline {3.2}Approach to risk}{30}% 
+\contentsline {subsection}{\numberline {3.2.1}Risk-premiums}{31}% 
+\contentsline {section}{\numberline {3.3}Time value of money}{32}% 
+\contentsline {section}{\numberline {3.4}New valuation technique}{33}% 
+\contentsline {paragraph}{Sets $\mathbf {T}$, $\mathbf {S}$ and $\mathbf {A}$}{33}% 
+\contentsline {paragraph}{Reward function $r$}{33}% 
+\contentsline {paragraph}{Transition probability function}{34}% 
+\contentsline {paragraph}{What is the value of a project?}{34}% 
+\contentsline {paragraph}{Dynamic programming}{34}% 
+\contentsline {paragraph}{After-action and after-period FCF}{35}% 
+\contentsline {paragraph}{Adjusting for risk-aversion}{35}% 
+\contentsline {paragraph}{Adjusting DP for time value of money}{35}% 
+\contentsline {subsection}{\numberline {3.4.1}Modelling FCF}{36}% 
+\contentsline {paragraph}{Price curves}{36}% 
+\contentsline {subsection}{\numberline {3.4.2}Approximate dynamic programming}{36}% 
+\contentsline {subsection}{\numberline {3.4.3}Problems}{36}% 
+\contentsline {chapter}{\numberline {4}Valuation of projects in multiple-source industries}{37}% 
+\contentsline {section}{\numberline {4.1}Power company}{37}% 
+\contentsline {section}{\numberline {4.2}Public transportation/Water treatment/}{37}% 
+\contentsline {chapter}{\numberline {5}Discussion}{39}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{41}% 
+\contentsline {chapter}{\numberline {7}Inspiration}{43}% 
+\contentsline {section}{\numberline {7.1}Problems of the current approach}{43}% 
+\contentsline {section}{\numberline {7.2}Black-Scholes Merton model}{43}% 
+\contentsline {section}{\numberline {7.3}Project and cash flow}{44}% 
+\contentsline {section}{\numberline {7.4}Bachelor's thesis parts that could be useful for TeX styling}{44}% 
