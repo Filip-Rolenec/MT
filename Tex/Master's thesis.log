@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  19 JUL 2020 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  26 JUL 2020 19:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1084,83 +1084,90 @@ Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 225.
 
 ]
 Chapter 1.
-[17] [18]
+
+Package natbib Warning: Citation `BlaSch73' on page 17 undefined on input line 
+354.
+
+[17] [18] [19] [20
+
+]
 Chapter 2.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 404.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 412.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 404.
- [19
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 412.
+ [21] [22]
+[23]
 
-] [20]
-[21]
-
-LaTeX Warning: Reference `' on page 22 undefined on input line 524.
-
-[22] [23]
-
-LaTeX Warning: Reference `' on page 24 undefined on input line 617.
+LaTeX Warning: Reference `' on page 24 undefined on input line 532.
 
 [24] [25]
 
-LaTeX Warning: Reference `' on page 26 undefined on input line 674.
+LaTeX Warning: Reference `' on page 26 undefined on input line 625.
 
-[26] [27] [28
+[26] [27]
+
+LaTeX Warning: Reference `' on page 28 undefined on input line 682.
+
+[28] [29] [30
 
 ]
 Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [29]
-[30] [31] [32] [33]
+ [31]
+[32] [33] [34] [35]
 
-LaTeX Warning: Reference `' on page 34 undefined on input line 861.
+LaTeX Warning: Reference `' on page 36 undefined on input line 868.
 
-[34]
+[36]
 
-LaTeX Warning: Reference `' on page 35 undefined on input line 900.
-
-
-LaTeX Warning: Reference `' on page 35 undefined on input line 914.
+LaTeX Warning: Reference `' on page 37 undefined on input line 907.
 
 
-LaTeX Warning: Reference `' on page 35 undefined on input line 914.
+LaTeX Warning: Reference `' on page 37 undefined on input line 921.
 
-[35] [36]
+
+LaTeX Warning: Reference `' on page 37 undefined on input line 921.
+
+[37] [38]
 Chapter 4.
-[37
+[39
 
-] [38
+] [40
 
 ]
 Chapter 5.
-[39] [40
-
-]
-Chapter 6.
 [41] [42
 
 ]
+Chapter 6.
+[43] [44
+
+]
 Chapter 7.
-[43]
+[45]
 
-LaTeX Warning: Reference `ValueF' on page 44 undefined on input line 1073.
+LaTeX Warning: Reference `ValueF' on page 46 undefined on input line 1080.
 
 
-LaTeX Warning: Reference `DynProgEq' on page 44 undefined on input line 1077.
+LaTeX Warning: Reference `DynProgEq' on page 46 undefined on input line 1084.
 
-(./Master's thesis.bbl [44] [45
+(./Master's thesis.bbl [46] [47
 
 ])
+
+Package natbib Warning: There were undefined citations.
+
 
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
-[46] (./Master's thesis.aux)
+[48] (./Master's thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1169,13 +1176,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 24424 strings out of 492616
- 436181 string characters out of 6129482
- 571633 words of memory out of 5000000
- 27964 multiletter control sequences out of 15000+600000
+ 24418 strings out of 492616
+ 436061 string characters out of 6129482
+ 571601 words of memory out of 5000000
+ 27958 multiletter control sequences out of 15000+600000
  617178 words of font info for 144 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
- 43i,18n,77p,1035b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 43i,18n,77p,1007b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2019/te
@@ -1192,10 +1199,10 @@ yb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
 al/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (46 pages, 237696 bytes).
+Output written on "Master's thesis.pdf" (48 pages, 237821 bytes).
 PDF statistics:
- 241 PDF objects out of 1000 (max. 8388607)
- 164 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 168 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
