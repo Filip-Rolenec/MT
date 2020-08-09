@@ -1,0 +1,98 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Master's thesis_example.aux
+The style file: plain.bst
+Database file #1: fr.bib
+I was expecting a `,' or a `)'---line 191 of file fr.bib
+ : school={CTU FJFI}
+ :                  },
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 209 of file fr.bib
+ : 
+ : address={Bristol}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 245 of file fr.bib
+ : 
+ : publisher={Springer Berlin Heidelberg},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 325 of file fr.bib
+ : 
+ : note={ISBN 978-80-01-04595-4}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 417 of file fr.bib
+ : 
+ : note={ISBN 0136566952, 9780136566953; ISSN 0891-4559}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 505 of file fr.bib
+ : 
+ : url={http://www.sciencedirect.com/science/article/pii/0005109886900154},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 641 of file fr.bib
+ : 
+ : }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `)'---line 687 of file fr.bib
+ : 
+ : }
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 743 of file fr.bib
+ : @article{BlaSch:73
+ :                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 973 of file fr.bib
+ : @article{BlaSch:73
+ :                   ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "BlaSch73"
+Warning--empty journal in Ber:54
+Warning--empty year in Ber:54
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            628 strings with 6331 characters,
+and the built_in function-call counts, 4885 in all, are:
+= -- 472
+> -- 179
+< -- 1
++ -- 75
+- -- 54
+* -- 259
+:= -- 843
+add.period$ -- 61
+call.type$ -- 19
+change.case$ -- 75
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 222
+empty$ -- 443
+format.name$ -- 54
+if$ -- 1039
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 28
+newline$ -- 98
+num.names$ -- 38
+pop$ -- 121
+preamble$ -- 1
+purify$ -- 65
+quote$ -- 0
+skip$ -- 139
+stack$ -- 0
+substring$ -- 200
+swap$ -- 28
+text.length$ -- 1
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 54
+warning$ -- 2
+while$ -- 46
+width$ -- 21
+write$ -- 207
+(There were 10 error messages)

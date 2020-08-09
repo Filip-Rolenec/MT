@@ -1,0 +1,52 @@
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\contentsline {chapter}{\numberline {1}Introduction}{17}% 
+\contentsline {chapter}{\numberline {2}Preliminaries}{21}% 
+\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{21}% 
+\contentsline {section}{\numberline {2.2}General economics}{22}% 
+\contentsline {subsection}{\numberline {2.2.1}Standard valuation metrics}{23}% 
+\contentsline {paragraph}{Net resent value}{23}% 
+\contentsline {paragraph}{Decision tree analysis}{24}% 
+\contentsline {paragraph}{Internal rate of return}{24}% 
+\contentsline {paragraph}{Weighted average cost of capital}{24}% 
+\contentsline {section}{\numberline {2.3}Real option analysis}{25}% 
+\contentsline {paragraph}{Complete analogy}{25}% 
+\contentsline {paragraph}{Partial analogy}{26}% 
+\contentsline {paragraph}{No analogy}{26}% 
+\contentsline {section}{\numberline {2.4}Statistical decision theory}{26}% 
+\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{27}% 
+\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{28}% 
+\contentsline {paragraph}{<Q-Learning, SARSA,..>}{28}% 
+\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{28}% 
+\contentsline {subsection}{\numberline {2.4.4}Utility}{29}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{31}% 
+\contentsline {section}{\numberline {3.1}Simple timing option}{31}% 
+\contentsline {paragraph}{Time set}{31}% 
+\contentsline {paragraph}{State set}{32}% 
+\contentsline {paragraph}{Action set}{32}% 
+\contentsline {paragraph}{Transition probabilities}{32}% 
+\contentsline {paragraph}{Reward function}{33}% 
+\contentsline {subsection}{\numberline {3.1.1}Solving the valuation task}{33}% 
+\contentsline {section}{\numberline {3.2}General options}{33}% 
+\contentsline {paragraph}{Single timing options}{34}% 
+\contentsline {paragraph}{Compound timing options}{34}% 
+\contentsline {paragraph}{Scale options}{34}% 
+\contentsline {paragraph}{Switching options}{34}% 
+\contentsline {paragraph}{...}{34}% 
+\contentsline {section}{\numberline {3.3}ADP approach}{34}% 
+\contentsline {section}{\numberline {3.4}Approach to risk}{34}% 
+\contentsline {chapter}{\numberline {4}Valuation of projects in multiple-source industries}{35}% 
+\contentsline {section}{\numberline {4.1}Power company}{35}% 
+\contentsline {section}{\numberline {4.2}Public transportation/Water treatment/}{35}% 
+\contentsline {chapter}{\numberline {5}Discussion}{37}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{39}% 
+\contentsline {chapter}{\numberline {7}Inspiration}{41}% 
+\contentsline {section}{\numberline {7.1}Problems of the current approach}{41}% 
+\contentsline {section}{\numberline {7.2}Black-Scholes Merton model}{41}% 
+\contentsline {section}{\numberline {7.3}Project and cash flow}{42}% 
+\contentsline {section}{\numberline {7.4}Bachelor's thesis parts that could be useful for TeX styling}{42}% 
