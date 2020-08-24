@@ -1,0 +1,97 @@
+\begin{thebibliography}{10}
+
+\bibitem{BacChi:19}
+S.~Bacci and B.~Chiandotto.
+\newblock {\em Introduction to Statistical Decision Theory: Utility Theory and
+  Causal Analysis}.
+\newblock CRC Press, 2019.
+
+\bibitem{Ber:85}
+J.O.\ Berger.
+\newblock {\em Statistical Decision Theory and {B}ayesian Analysis}.
+\newblock Springer, NY, 1985.
+
+\bibitem{BerDeM:09}
+J.~Berk and P.~DeMarzo.
+\newblock {\em Corporate Finance}.
+\newblock Pearson, 2014.
+
+\bibitem{Ber:54}
+Dino Bernoulli.
+\newblock Exposition of a new theory on the measurement of risk.
+\newblock 22(1):23--36.
+
+\bibitem{BlaSch:73}
+Fischer Black and Myron Scholes.
+\newblock The pricing of options and corporate liabilities.
+\newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
+
+\bibitem{Gue:17}
+Manuel Guerra, Peter Kort, Cláudia Nunes, and Carlos Oliveira.
+\newblock Hysteresis due to irreversible exit: Addressing the option to
+  mothball.
+\newblock {\em Journal of Economic Dynamics and Control}, 92, 05 2017.
+
+\bibitem{Gut:09}
+G.~Guthrie.
+\newblock {\em Real Options in Theory and Practice}.
+\newblock Financial Management Association Survey and Synthesis. Oxford
+  University Press, 2009.
+
+\bibitem{Jay:03}
+E.~T. Jaynes.
+\newblock {\em Probability theory: The logic of science}.
+\newblock Cambridge University Press, Cambridge, 2003.
+
+\bibitem{Kas:04}
+Ilhem Kassar and Pierre Lasserre.
+\newblock Species preservation and biodiversity value: a real options approach.
+\newblock {\em Journal of Environmental Economics and Management}, 48(2):857 --
+  879, 2004.
+
+\bibitem{Kol:60}
+Andrey~N. Kolmogorov.
+\newblock {\em Foundations of the Theory of Probability}.
+\newblock Chelsea Pub Co, 2 edition, June 1960.
+
+\bibitem{Pet:81}
+V.~Peterka.
+\newblock Bayesian approach to system identification.
+\newblock In {\em in Trends and Progress in System Identification, P. Eykhoff,
+  Ed}, pages 239--304. Pergamon Press, 1981.
+
+\bibitem{Pow:11}
+Warren~B. Powell.
+\newblock {\em Approximate Dynamic Programming: Solving the Curses of
+  Dimensionality}.
+\newblock Wiley Series in Probability and Statistics. Wiley, Hoboken, NJ, USA,
+  2nd edition, 2011.
+
+\bibitem{Que:10}
+Bertrand Quélin and Charlotte Krychowski.
+\newblock Real options and strategic investment decisions: Can they be of use
+  to scholars?
+\newblock {\em Academy of Management Perspectives}, 24, 05 2010.
+
+\bibitem{Rao:87a}
+M.M. Rao.
+\newblock {\em Measure Theory and Integration}.
+\newblock John Wiley, NY, 1987.
+
+\bibitem{Rol:18}
+F.~Rolenec.
+\newblock Feasible bayesian multi-armed bandit optimisation, 2018.
+\newblock CVUT FJFI.
+
+\bibitem{Rol:19}
+F.~Rolenec.
+\newblock Learning with forgetting preserving a guaranteed knowledge, 2019.
+\newblock CVUT FJFI.
+
+\bibitem{Vol:03}
+A.~Vollert.
+\newblock {\em A Stochastic Control Framework for Real Options in Strategic
+  Evaluation}.
+\newblock Birkh{\"a}user Boston, 2012.
+
+\end{thebibliography}

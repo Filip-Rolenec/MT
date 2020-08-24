@@ -1,0 +1,50 @@
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\babel@toc {czech}{}
+\babel@toc {american}{}
+\contentsline {chapter}{\numberline {1}Historical background and research motivation}{15}% 
+\contentsline {chapter}{\numberline {2}Preliminaries}{17}% 
+\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{17}% 
+\contentsline {section}{\numberline {2.2}General economics}{18}% 
+\contentsline {subsection}{\numberline {2.2.1}Net present value and other valuation metrics}{19}% 
+\contentsline {subsection}{\numberline {2.2.2}Risk averse investors}{19}% 
+\contentsline {subsection}{\numberline {2.2.3}Option valuation - Black-Scholes-Merton model}{19}% 
+\contentsline {section}{\numberline {2.3}Real option analysis}{19}% 
+\contentsline {paragraph}{Complete analogy}{20}% 
+\contentsline {paragraph}{Partial analogy}{20}% 
+\contentsline {paragraph}{No analogy}{20}% 
+\contentsline {section}{\numberline {2.4}Statistical decision theory}{21}% 
+\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{21}% 
+\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{22}% 
+\contentsline {paragraph}{<Q-Learning, SARSA,..>}{22}% 
+\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{22}% 
+\contentsline {subsection}{\numberline {2.4.4}Utility}{23}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{25}% 
+\contentsline {section}{\numberline {3.1}Project valuation - problem definition}{25}% 
+\contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{25}% 
+\contentsline {paragraph}{Time set}{26}% 
+\contentsline {paragraph}{State set}{26}% 
+\contentsline {paragraph}{Action set}{26}% 
+\contentsline {paragraph}{Transition probability function}{26}% 
+\contentsline {paragraph}{Reward function}{26}% 
+\contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{27}% 
+\contentsline {subsection}{\numberline {3.3.1}Time value of money}{27}% 
+\contentsline {subsection}{\numberline {3.3.2}Risk-aversion of investors}{27}% 
+\contentsline {subsection}{\numberline {3.3.3}Probability}{27}% 
+\contentsline {chapter}{\numberline {4}Valuation of facilities with simple cycle time model}{29}% 
+\contentsline {section}{\numberline {4.1}General settings of the experiment}{29}% 
+\contentsline {paragraph}{Time set}{29}% 
+\contentsline {paragraph}{State set}{29}% 
+\contentsline {paragraph}{Action function}{29}% 
+\contentsline {paragraph}{Transition probability function}{30}% 
+\contentsline {paragraph}{Reward function}{30}% 
+\contentsline {section}{\numberline {4.2}Sensitivity towards potential action set}{30}% 
+\contentsline {paragraph}{Action set 1}{30}% 
+\contentsline {paragraph}{Action set 2}{30}% 
+\contentsline {paragraph}{Action set 3}{30}% 
+\contentsline {section}{\numberline {4.3}Sensitivity toward time epoch granularity}{30}% 
+\contentsline {chapter}{\numberline {5}Discussion}{31}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{33}% 
