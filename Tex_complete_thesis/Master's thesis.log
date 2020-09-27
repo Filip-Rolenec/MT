@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  26 JUL 2020 19:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  14 SEP 2020 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,48 +1116,60 @@ LaTeX Warning: Reference `' on page 28 undefined on input line 682.
 
 ]
 Chapter 3.
+[31] [32
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [31]
-[32] [33] [34] [35]
-
-LaTeX Warning: Reference `' on page 36 undefined on input line 868.
-
-[36]
-
-LaTeX Warning: Reference `' on page 37 undefined on input line 907.
-
-
-LaTeX Warning: Reference `' on page 37 undefined on input line 921.
-
-
-LaTeX Warning: Reference `' on page 37 undefined on input line 921.
-
-[37] [38]
+]
 Chapter 4.
-[39
-
-] [40
+[33] [34
 
 ]
 Chapter 5.
-[41] [42
+[35] [36
 
 ]
 Chapter 6.
-[43] [44
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+[38] [39] [40] [41]
+
+LaTeX Warning: Reference `' on page 42 undefined on input line 897.
+
+[42]
+
+LaTeX Warning: Reference `' on page 43 undefined on input line 936.
+
+
+LaTeX Warning: Reference `' on page 43 undefined on input line 950.
+
+
+LaTeX Warning: Reference `' on page 43 undefined on input line 950.
+
+[43] [44]
+Chapter 7.
+[45
+
+] [46
 
 ]
-Chapter 7.
-[45]
+Chapter 8.
+[47] [48
 
-LaTeX Warning: Reference `ValueF' on page 46 undefined on input line 1080.
+]
+Chapter 9.
+[49] [50
+
+]
+Chapter 10.
+[51]
+
+LaTeX Warning: Reference `ValueF' on page 52 undefined on input line 1109.
 
 
-LaTeX Warning: Reference `DynProgEq' on page 46 undefined on input line 1084.
+LaTeX Warning: Reference `DynProgEq' on page 52 undefined on input line 1113.
 
-(./Master's thesis.bbl [46] [47
+(./Master's thesis.bbl [52] [53
 
 ])
 
@@ -1167,7 +1179,7 @@ Package natbib Warning: There were undefined citations.
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
-[48] (./Master's thesis.aux)
+[54] (./Master's thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1199,10 +1211,10 @@ yb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
 al/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (48 pages, 237821 bytes).
+Output written on "Master's thesis.pdf" (54 pages, 241607 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
+ 266 PDF objects out of 1000 (max. 8388607)
+ 181 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -119,12 +119,19 @@
  		\begin{itemize}
  			\item {Financial options}
 			\item {Real option analysis (ROA)}
+			\begin{itemize}
+				\item{Inspired by option valuation theory (BSM)} 
+			\end{itemize}
 			\item {Stochastic decision theory (SDT)}
+			\begin{itemize}
+				\item {3 sets - $\mathbf{T}$, $\mathbf{S}$, $\mathbf{A}$, 2 functions - $p$ and $r$}
+				\item {Optimal strategy, maximizing the reward function}
+			\end{itemize}
 		\end{itemize}	
 		\column{0.5\textwidth}
 		\begin{figure}
 			\includegraphics[scale=0.06]{Long_call.pdf}
-			\caption{Call Option \cite{Investopedia}}
+			\caption{Call Option \cite{Inv:20}}
 		\end{figure}
 \end{columns}	
 
@@ -138,13 +145,18 @@
 	\column{0.5\textwidth}
 	\begin{itemize}
 		\item {Three classes of ROA authors (BSM model analogy)}
+		\begin{itemize}
+			\item{Full analogy - limited to very simple cases}
+			\item{Partial analogy - CAPM}
+			\item {No analogy }
+		\end{itemize}
 		\item {SDT framework $>$ frameworks used in economy}
 		\item {Formulation of ROA problem in SDT framework}
 	\end{itemize}	
 	\column{0.5\textwidth}
 	\begin{figure}
 		\includegraphics[scale=0.35]{Guthrie.png}
-		\caption{Economical framework example \cite{Guthrie}}
+		\caption{Economical framework example \cite{Gut:09}}
 	\end{figure}
 \end{columns}	
 
@@ -162,20 +174,24 @@
   	\begin{columns}
   		\column{0.50\textwidth}
   		
-  \item { Replicating portfolio (efficient markets) }
+  \item { Replicating portfolio (no arbitrage principle) }
   \item { Risk neutral probabilities }
   \item { Backward induction }
   
-  \item{Probability of up and down move \cite{Guthrie}: }
+  \item{Probability of up and down move \cite{Gut:09}:}
   
   \begin{equation}
-  	\pi_u=\frac{ZR_f-X_d}{X_u-X_d}, \pi_d=\frac{X_u -ZR_f}{X_u-X_d}
+  	\pi_u=\frac{ZR_f-X_d}{X_u-X_d}, \pi_d=\frac{X_u -ZR_f}{X_u-X_d},
+  \end{equation}
+  where 
+   \begin{equation}
+  Z=\frac{E[\tilde{X}]-(E[\tilde{R_m}]-R_f)(\frac{Cov[\tilde{X},\tilde{R_m}]}{Var[\tilde{R_m}]})}{R_f}
   \end{equation}
   
   \column{0.40\textwidth}
   \begin{figure}
- \includegraphics[scale=0.3]{risk_neutral.png}
- \caption{Binomial model}
+ \includegraphics[scale=0.5]{binomial_model.png}
+ \caption{Binomial model \cite{Gut:09}}
   \end{figure}
   
 \end{columns}
@@ -186,10 +202,10 @@
 
 \begin{frame}{ROA limitations}{General}
 	\begin{itemize}
-		\item {Limited number of uncertainty sources - one (efficient market)}
+		\item {Limited number of uncertainty sources - one (no arbitrage principle)}
 		\item {Simple distributions - binomial model}
 		\item {Limited by computational complexity for higher-dimensional problems}
-		\item {Complicated scaling in types and scale of real options}
+		\item {Complicated scaling in types and number of real options}
 	\end{itemize}
 \end{frame}
 
@@ -221,13 +237,18 @@
 
 \begin{frame}{SDT Improvements}{ADP}
 		\begin{itemize}
-			\item{To be done}
+			\item{Value iteration, value function approximation}
+			\item{Value function modeled as linear model with interactions up to second degree}
+			\item{Solves the problem of uncountable state space: i.e. for Gas power plant example:}
+			\begin{equation}
+				|\mathbb{R}| \times |\mathbb{R}| \times |\mathbb{R}| \times 5\times 3 \times 3 \times 241 \times 241 
+			\end{equation}
 		\end{itemize}
 \end{frame}
 
 \section{Experiments}
 
-\subsection{Gas power plant}
+\subsection{Gas power plant valuation}
 	
 	
 	\begin{frame}{Valuation of gas power plant}{General Idea}
@@ -235,7 +256,7 @@
 		\item {Power generating company}
 		\item {In the next 5 years, possibility to build 200MW or 400MW gas unit for 65/130M EUR}
 		\item {Prices of gas, power, CO2 allowances are 24EUR, 9EUR, 40EUR per MWh}
-		\item {Government policy favoring renewables can rise -> higher volatility of prices.}
+		\item {Government policy favoring renewables can rise $\rightarrow$ higher volatility of prices}
 		\item {Lifespan of gas power plant is set to 25 years, loan possible with 3\% interest rate}
 		\item {Power plant is selling its power as monthly contracts}		
 	\end{itemize}
@@ -244,17 +265,17 @@
 	\begin{frame}{Valuation of gas power plant}{Details}
 	Considered real options:
 	\begin{itemize}
-		\item {Wait for more favorable market prices - Timing option }
-		\item {Build 200MW gas power plant. Then possibility to increase to 400MW - Scaling option}
-		\item {Sell the power plant - abandonment option}
-		\item {Mothball the plant. It is not able to produce, but the fixed costs are lowered} 
-		\item {Ability to not run the power plant (paying fixed costs)- switching option}
+		\item {Wait with construction for better prices - Timing option }
+		\item {Build 200MW/400MW gas power plant - Scaling option}
+		\item {Sell the power plant - Abandonment option}
+		\item {Ability to not run the power plant - Switching option}
+		\item {Mothball the plant. No production, lower fixed costs} 
 	\end{itemize}
 	
 	Sources of uncertainty: 
 	\begin{itemize}
-		\item {Price of gas, power and CO2 - lognormal process with different volatilities}
-		\item {Government policy for renewables  - discrete with positive mean}
+		\item {Price of gas, power and CO2 - lognormal processes}
+		\item {Government policy for renewables (1-5) - discrete with positive mean}
 	\end{itemize}	
 	\end{frame}
 	
@@ -266,25 +287,26 @@
 	\end{frame}
 
 
-\section*{Summary}
+\section{Conclusion}
 
-\begin{frame}{Summary}
-	Contributions: 
+\begin{frame}{Conclusion}
+	The contributions of my thesis are
   	\begin{itemize}
-  	\item {Item}
-  	\item {Item} 
-  	\item {Item}
-  	\item {Item}
+  	\item {Summary of ROA state of the art}
+  	\item {Identification of the core ROA knowledge} 
+  	\item {Formulation of ROA problem in SDT framework}
+  	\item {Identification of a useful ADP algorithm}
+  	\item {More robust tools allowing: more sources of uncertainty, more possible and complicated actions, complicated distributions, high-dimensional problems and Bayesian learning.}
   	\end{itemize}
   
-  \begin{itemize}
-  \item{Possible directions of future research:}
+  Possible directions of future research:
     \begin{itemize}
-    \item{Item}
-    \item{Item}
-    \item{Item}
+    \item{Real data application}
+    \item{Deeper study of replicating portfolios}
+    \item{Use case in IT development}
+    \item{More complicated model of free cash flow}
+    \item{Continuous time}
     \end{itemize}
-  \end{itemize}
 \end{frame}
 
 
@@ -292,23 +314,11 @@
 % All of the following is optional and typically not needed. 
 \appendix
 \section<presentation>*{\appendixname}
-\subsection<presentation>*{Reference}
+\subsection<presentation>*{References}
 
-\begin{frame}[allowframebreaks]
-  \frametitle<presentation>{Reference}
-   
-  \begin{thebibliography}{10}
-     \bibitem{Agent} Thebftonline.com. (2018). The process of corporate decision making – ( 5) | Business \& Financial Times Online. [online] Available at: https://thebftonline.com/features/the-process-of-corporate-decision-making-5/ [Accessed 3 Apr. 2018].
-    \bibitem{Coin} Istockphoto.com. (2018). Royalty Free Coin Flip Pictures, Images and Stock Photos - iStock. [online] Available at: https://www.istockphoto.com/photos/coin-flip [Accessed 3 Apr. 2018].
-  \bibitem{Peterka}
-  Mys.utia.cas.cz. (2018). BAYESIAN APPROACH TO SYSTEM IDENTIFICATION. [online] Available at: http://mys.utia.cas.cz:1800/educalibre/checkout/pracovni/examples2010/theory/peterka.pdf [Accessed 2 Apr. 2018].
- 
-
-  \bibitem{Putterman} M. L. Markov decision processes: discrete stochastic dynamic programming. (John Wiley \& Sons, 1994).
-   
-  \bibitem{Bellman} Bellman, R. Dynamic programming. (Princenton University Press, 1957).
-   
-  \end{thebibliography}
+\begin{frame}{Bibliography}
+	\bibliographystyle{plain}
+	\bibliography{fr}
 \end{frame}
 
 \end{document}

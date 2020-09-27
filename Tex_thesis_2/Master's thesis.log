@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  11 SEP 2020 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  20 SEP 2020 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1135,10 +1135,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 24383 strings out of 492616
- 435545 string characters out of 6129482
- 570475 words of memory out of 5000000
- 27923 multiletter control sequences out of 15000+600000
+ 24380 strings out of 492616
+ 435494 string characters out of 6129482
+ 570459 words of memory out of 5000000
+ 27920 multiletter control sequences out of 15000+600000
  613780 words of font info for 142 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,735b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1156,7 +1156,7 @@ nts/txsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (35 pages, 196343 bytes).
+Output written on "Master's thesis.pdf" (35 pages, 196119 bytes).
 PDF statistics:
  196 PDF objects out of 1000 (max. 8388607)
  132 compressed objects within 2 object streams
