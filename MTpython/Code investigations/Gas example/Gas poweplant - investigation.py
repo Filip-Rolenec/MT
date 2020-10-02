@@ -1005,6 +1005,12 @@ np.mean(list(results_0.values()))
 # - I have created two heuristic strategies and compared their results. 
 # - Now I need to create an optimal strategy finder and run the simulation with it. 
 
+# In[1]:
+
+
+from ROAsimulations import main 
+
+
 # In[ ]:
 
 
