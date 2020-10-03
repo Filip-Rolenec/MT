@@ -602,27 +602,27 @@ possible_project_states = [[i,j] for i in range(0,3) for j in range (0,3) if [i,
 
 
 def state_not_valid(state):
-    
-    #Wrong state length 
-    if len(state)!=8:
-        return(True)
-    
-    # non-positive prices 
-    if sum(np.sign(state[:3]))<3: 
-        return(True)
-    
-    #Gov_policy in range
-    if state[3] not in range (1,6): 
-        return(True)
-    
-    #Loans in order: 
-    if state[6] not in range(241) or state[7] not in range(241): 
-        return(True)
-    
-    if state[4:6] not in possible_project_states: 
-        return(True)
-    
-    return(False)   
+
+#Wrong state length 
+if len(state)!=8:
+    return(True)
+
+# non-positive prices 
+if sum(np.sign(state[:3]))<3: 
+    return(True)
+
+#Gov_policy in range
+if state[3] not in range (1,6): 
+    return(True)
+
+#Loans in order: 
+if state[6] not in range(241) or state[7] not in range(241): 
+    return(True)
+
+if state[4:6] not in possible_project_states: 
+    return(True)
+
+return(False)   
 
 
 # In[45]:
