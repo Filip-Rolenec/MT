@@ -1,8 +1,8 @@
 import numpy as np
 
-from enum_types import PowerplantState, RunningState, Action
-from fcf import compute_fcf
-from transformation_functions import get_next_price, get_next_gov_policy
+from gas_example.enum_types import PowerplantState, RunningState, Action
+from gas_example.fcf import compute_fcf
+from gas_example.transformation_functions import get_next_price, get_next_gov_policy
 
 CO2_VOLATILITY = 0.02
 GAS_VOLATILITY = 0.04

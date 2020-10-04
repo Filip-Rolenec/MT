@@ -1,5 +1,5 @@
-from enum_types import Action
-from state import State
+from gas_example.enum_types import Action
+from gas_example.state import State
 
 
 def heuristic_strategy_0(state: State, epoch: int):

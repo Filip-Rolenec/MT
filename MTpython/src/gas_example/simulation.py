@@ -1,5 +1,5 @@
-from strategy import Strategy
-from state import State
+from gas_example.strategy import Strategy
+from gas_example.state import State
 
 TIME_EPOCHS = 300
 

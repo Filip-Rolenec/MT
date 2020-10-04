@@ -1,7 +1,9 @@
 from enum import Enum
 
+
 def hello():
     print("hello")
+
 
 class Action(Enum):
     DO_NOTHING = 0  # Do not run the plant and also do not build the new stage.
@@ -23,4 +25,3 @@ class RunningState(Enum):
     NOT_RUNNING = 0
     RUNNING = 1
     MOTHBALLED = 2  # And not running
-

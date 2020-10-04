@@ -1,4 +1,4 @@
-from enum_types import RunningState, PowerplantState, Action
+from gas_example.enum_types import RunningState, PowerplantState, Action
 
 POWERPLANT_COST = 65_000_000
 MAINTENANCE_COST_PER_MW = 3
