@@ -1,15 +1,13 @@
-from progressbar import progressbar
-
-from simple_example.basis_function import get_basis_functions
-from simple_example.setup import SimpleProblemSetup
-from simple_example.vf import create_vfs, update_vf_coef
+from gas_example.model import AdpModel
+from gas_example.setup import GasProblemSetup
+from gas_example.vf import create_vfs
 
 
 def adp_algorithm_final(loops_of_update: int,
                         sample_size: int,
-                        problem_setup: SimpleProblemSetup
-                        ):
-    vfs = create_vfs(problem_setup.time_epochs, [0, 0, 0])
+                        problem_setup: GasProblemSetup,
+                        adp_model: AdpModel):
+    vfs = create_vfs(problem_setup.time_epochs, adp_model.number_of_parameters)
     basis_functions = get_basis_functions()
 
     for loop in progressbar(range(loops_of_update)):

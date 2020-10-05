@@ -1,9 +1,9 @@
 import numpy as np
 
-from simple_example.setup import ProblemSetup
+from simple_example.setup import SimpleProblemSetup
 
 
-def classic_dp(horizon_vf, problem_setup: ProblemSetup):
+def classic_dp(horizon_vf, problem_setup: SimpleProblemSetup):
     vf = {}
     vf_prev_epoch = horizon_vf
 

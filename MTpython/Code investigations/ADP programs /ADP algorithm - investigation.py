@@ -25,7 +25,7 @@ import simple_example.strategy as s
 from simple_example.simulation import run_simulation
 import matplotlib.pyplot as plt 
 import numpy as np
-from simple_example.setup import ProblemSetup
+from simple_example.setup import SimpleProblemSetup
 from sklearn.linear_model import LinearRegression
 from simple_example.state import get_new_state
 
@@ -42,7 +42,7 @@ from simple_example.dp_algorithm import classic_dp
 
 
 horizon_vf = [0,0,0]
-problem_setup = ProblemSetup()
+problem_setup = SimpleProblemSetup()
 prob_matrix = problem_setup.prob_matrix
 reward_matrix = problem_setup.reward_matrix
 time_epochs = problem_setup.time_epochs
@@ -208,7 +208,7 @@ def create_vfs(time_epochs, theta_initial):
 # In[22]:
 
 
-from simple_example.setup import ProblemSetup
+from simple_example.setup import SimpleProblemSetup
 
 
 # In[23]:
@@ -322,7 +322,7 @@ def update_vf_coef(current_vf, next_vf, problem_setup, sample_size, basis_functi
 # In[29]:
 
 
-problem_setup = ProblemSetup()
+problem_setup = SimpleProblemSetup()
 
 
 # In[30]:
@@ -364,9 +364,3 @@ vfs_1[0].params
 # - We can see that the approximation is really good in this example. The implementation is working. 
 # - This investigation will help with the implementation of the actual problem in the next phase. 
 #     - The complexity will rise significantly, each of the steps will be somehow harder and the computational complexity will rise too. Nevertheless, the framework is ready to be used. 
-
-# In[ ]:
-
-
-
-

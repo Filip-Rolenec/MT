@@ -1,7 +1,6 @@
+from gas_example.setup import TIME_EPOCHS
 from gas_example.strategy import Strategy
 from gas_example.state import State
-
-TIME_EPOCHS = 300
 
 
 def run_simulation(strategy: Strategy, initial_state: State):
