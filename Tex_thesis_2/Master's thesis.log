@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  20 SEP 2020 09:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  9 OCT 2020 14:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1078,29 +1078,30 @@ Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 225.
 
 ]
 Chapter 1.
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 349.
+[15]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 361.
 
-(/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 349.
- [15] [16]
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 361.
+ [16]
 Chapter 2.
 [17
 
 ]
-Overfull \hbox (25.46962pt too wide) in paragraph at lines 457--459
+Overfull \hbox (25.46962pt too wide) in paragraph at lines 469--471
 $[]$ \T1/txr/m/n/10.95 <Say
  []
 
 [18] [19]
 
-LaTeX Warning: Reference `' on page 20 undefined on input line 560.
+LaTeX Warning: Reference `' on page 20 undefined on input line 572.
 
 [20] [21]
 
-LaTeX Warning: Reference `' on page 22 undefined on input line 617.
+LaTeX Warning: Reference `' on page 22 undefined on input line 629.
 
 [22] [23] [24]
 Chapter 3.
@@ -1108,7 +1109,7 @@ Chapter 3.
 
 ] [26] [27]
 
-LaTeX Warning: Reference `the problem' on page 28 undefined on input line 804.
+LaTeX Warning: Reference `the problem' on page 28 undefined on input line 816.
 
 [28]
 Chapter 4.
@@ -1124,21 +1125,21 @@ Chapter 5.
 Chapter 6.
 (./Master's thesis.bbl [33] [34
 
-])
+] [35])
 
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
-[35] (./Master's thesis.aux)
+[36] (./Master's thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 24380 strings out of 492616
- 435494 string characters out of 6129482
- 570459 words of memory out of 5000000
- 27920 multiletter control sequences out of 15000+600000
+ 24395 strings out of 492616
+ 435713 string characters out of 6129482
+ 570539 words of memory out of 5000000
+ 27935 multiletter control sequences out of 15000+600000
  613780 words of font info for 142 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,735b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1156,10 +1157,10 @@ nts/txsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (35 pages, 196119 bytes).
+Output written on "Master's thesis.pdf" (36 pages, 197876 bytes).
 PDF statistics:
- 196 PDF objects out of 1000 (max. 8388607)
- 132 compressed objects within 2 object streams
+ 199 PDF objects out of 1000 (max. 8388607)
+ 134 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
