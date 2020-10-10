@@ -1,12 +1,10 @@
 from typing import List
 
+from gas_example.basis_function import get_basis_functions
+
 
 class AdpModel:
 
-    def __init__(self, parameters: List[float]):
+    def __init__(self, parameters: List[float] = (0, 0, 0, 0, 0, 0,)):
         self.basis_functions = get_basis_functions()
         self.parameters = parameters
-
-
-def get_basis_functions():
-

@@ -1,6 +1,6 @@
 from gas_example.enum_types import RunningState, PowerplantState, Action
 
-POWERPLANT_COST = 65_000_000
+POWERPLANT_COST = 650_000_000
 MAINTENANCE_COST_PER_MW = 3
 MOTHBALLED_COST_PER_MW = 1
 SALVAGE_VALUE_MONTH_PER_MW = 200
