@@ -1,0 +1,11 @@
+\babel@toc {nil}{}
+\beamer@sectionintoc {1}{Introduction}{3}{0}{1}
+\beamer@subsectionintoc {1}{1}{General}{3}{0}{1}
+\beamer@subsectionintoc {1}{2}{Detailed}{4}{0}{1}
+\beamer@sectionintoc {2}{ROA interpreted in SDT}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{ROA inspiration - Guthrie}{5}{0}{2}
+\beamer@subsectionintoc {2}{2}{ROA - limitations}{6}{0}{2}
+\beamer@subsectionintoc {2}{3}{SDT - Improvements}{7}{0}{2}
+\beamer@sectionintoc {3}{Experiments}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Gas power plant valuation}{10}{0}{3}
+\beamer@sectionintoc {4}{Conclusion}{13}{0}{4}

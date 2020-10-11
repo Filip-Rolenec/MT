@@ -2,7 +2,7 @@ from gas_example.enum_types import Action
 
 TIME_EPOCHS = 300
 
-GAS_PRICE = 13
+GAS_PRICE = 23
 GAS_VOL = 0.04
 
 CO2_PRICE = 9

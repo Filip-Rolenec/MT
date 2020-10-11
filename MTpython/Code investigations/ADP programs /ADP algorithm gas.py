@@ -136,27 +136,33 @@ from gas_example.state import get_initial_state
 vfs[0].compute_value(get_initial_state())
 
 
-# In[14]:
-
-
-911015495.983753
-
-
 # # TODO 
-# - Figure out, why the results are the same for price of powerplant 10 times higher. 
-# - Check the complete algorithm, lets print all steps. Find out the steps where the approximation is really bad. 
+# - **Check the complete algorithm**, lets print all steps. Find out the steps where the approximation is really bad. 
 # - Run the algorithm precisely for many hours over the night. 
 # - Play with the possible addition and removal of actions and different setups. 
-# - Run monte carlo simulation, wehere decisions are made based on the trategy given by the value functions. 
+# - Run monte carlo simulation, where decisions are made based on the trategy given by the value functions. 
 # - Make the more reasonable model, where there is sold identificator as a multiplier. 
 # - Check how many times mothballing is optimal action and if it makes sense. 
 # - Run with more time epochs. 
-# - Make time optimization, now I make 5 rounds of 300 time epochs, where I take 50 state samples and do a 10 samles for each in a numerical integration.
+# - **Make time optimization**, now I make 5 rounds of 300 time epochs, where I take 50 state samples and do a 10 samles for each in a numerical integration.
 #     - 750k multiplications. 
-#     - Linear model only 1500 times. 
+#     - Linear model only 1500 times.  
 
-# In[ ]:
+# In[14]:
 
 
+POWERPLANT_COST = 650_000_000
 
+
+# In[15]:
+
+
+from gas_example.fcf import compute_fcf
+from gas_example.enum_types import RunningState, PowerplantState, Action
+
+
+# In[16]:
+
+
+vfs[0].params
 

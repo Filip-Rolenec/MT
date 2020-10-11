@@ -1,17 +1,19 @@
 from gas_example.enum_types import RunningState, PowerplantState, Action
 
-POWERPLANT_COST = 650_000_000
-MAINTENANCE_COST_PER_MW = 3
+POWERPLANT_COST = 65_000_000
+MAINTENANCE_COST_PER_MW = 4
 MOTHBALLED_COST_PER_MW = 1
 SALVAGE_VALUE_MONTH_PER_MW = 200
-HOURS_IN_MONTH = 30*24
+HOURS_IN_MONTH = 30 * 24
+
 
 def compute_fcf(gas_price: float,
                 co2_price: float,
                 power_price: float,
                 running_state: RunningState,
                 plant_state: PowerplantState,
-                action: Action, epochs_left):
+                action: Action,
+                epochs_left: int):
     profit = 0
 
     # Building new capacity

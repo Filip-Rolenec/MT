@@ -603,26 +603,26 @@ possible_project_states = [[i,j] for i in range(0,3) for j in range (0,3) if [i,
 
 def state_not_valid(state):
 
-#Wrong state length 
-if len(state)!=8:
-    return(True)
+    #Wrong state length 
+    if len(state)!=8:
+        return(True)
 
-# non-positive prices 
-if sum(np.sign(state[:3]))<3: 
-    return(True)
+    # non-positive prices 
+    if sum(np.sign(state[:3]))<3: 
+        return(True)
 
-#Gov_policy in range
-if state[3] not in range (1,6): 
-    return(True)
+    #Gov_policy in range
+    if state[3] not in range (1,6): 
+        return(True)
 
-#Loans in order: 
-if state[6] not in range(241) or state[7] not in range(241): 
-    return(True)
+    #Loans in order: 
+    if state[6] not in range(241) or state[7] not in range(241): 
+        return(True)
 
-if state[4:6] not in possible_project_states: 
-    return(True)
+    if state[4:6] not in possible_project_states: 
+        return(True)
 
-return(False)   
+    return(False)   
 
 
 # In[45]:
@@ -818,7 +818,7 @@ get_FCF([24,9,40,1,1,1,239,0], 1, 40)
 
 # ## Variables 
 
-# In[66]:
+# In[111]:
 
 
 gov_policy = 1 
@@ -826,37 +826,37 @@ gov_prob_up = 0.07
 gov_prob_down = 0.03
 
 power_price = 40 
-power_volatility = 0.05*((1+(gov_policy-1)*0.2))
+power_volatility = 0.04*((1+(gov_policy-1)*0.1))
 
 gas_price = 24 
-gas_volatility = 0.04
+gas_volatility = 0.03
 
 co_price = 9 
 co_volatility = 0.02
 
-fixed_costs = 3
+fixed_costs = 4
 
-fixed_costs_mothballed = 1
+fixed_costs_mothballed = 2
 
 time_epochs =12*25
 #[gas,co2,power,gov,running or not, installed MWs, loan for first state, loan for second state]
 initial_state = [24,9,40,1,0,0,0,0]
 
 
-# In[67]:
+# In[112]:
 
 
 power_volatility
 
 
-# In[68]:
+# In[113]:
 
 
 def get_action_from_strategy(strategy_function, state, epoch): 
     return(strategy_function(state, epoch))
 
 
-# In[69]:
+# In[114]:
 
 
 def heuristic_strategy_1(state, epoch): 
@@ -869,7 +869,7 @@ def heuristic_strategy_1(state, epoch):
         return(0) # If the run is not profitable in this stage, do not run the plant. 
 
 
-# In[70]:
+# In[115]:
 
 
 def heuristic_strategy_0(state, epoch): 
@@ -879,11 +879,11 @@ def heuristic_strategy_0(state, epoch):
         return(1)
 
 
-# In[71]:
+# In[116]:
 
 
 def get_new_state(state_action): 
-    power_volatility = 0.05*((1+(state[3]-1)*0.2))
+    power_volatility = 0.04*((1+(state[3]-1)*0.1))
 
     gas_price = get_next_price(state[0], gas_volatility)
     co_price = get_next_price(state[1], co_volatility)
@@ -896,7 +896,7 @@ def get_new_state(state_action):
     
 
 
-# In[72]:
+# In[117]:
 
 
 def run_simulation(strategy): 
@@ -924,7 +924,7 @@ def run_simulation(strategy):
         payment_state = get_next_payment_state(state[6:8], FCF, 0)                                             
                                                      
                                                      
-        power_volatility = 0.05*((1+(gov_policy-1)*0.2))
+        power_volatility = 0.04*((1+(gov_policy-1)*0.1))
     
 
 #        print("Time_epoch: "+str(epoch))
@@ -949,51 +949,99 @@ def run_simulation(strategy):
     return(profit)
 
 
-# In[73]:
+# In[118]:
 
 
 run_simulation(heuristic_strategy_1)
 
 
-# In[79]:
+# In[119]:
+
+
+from progressbar import progressbar
+
+
+# In[120]:
 
 
 results_1 = {}
 results_0 = {}
 
-for i in range(5000): 
+for i in progressbar(range(5000)): 
     results_1[i] = run_simulation(heuristic_strategy_1)
     results_0[i] = run_simulation(heuristic_strategy_0)
-    print(i)
 
 
-# In[90]:
+# In[121]:
 
 
-plt.hist(results_0.values(), label = "0")
-plt.hist(results_1.values(), label ="1")
+results_1_list = [result for result in results_1.values()]
+results_0_list = [result for result in results_0.values()]
+
+
+# In[122]:
+
+
+results_1_cut = [result for result in results_1.values() if result<1e10]
+results_0_cut = [result for result in results_0.values() if result<1e10]
+
+
+# In[135]:
+
+
+plt.figure(figsize=(8.1,5))
+plt.hist(results_0_cut, label = "Not running forbiden", bins = 50)
+plt.hist(results_1_cut, label ="Not running allowed", bins = 50)
+plt.xlabel("EUR eq time 0")
+plt.ylabel("Count")
 plt.legend()
+plt.savefig('Runnability.png')
 
 
-# In[84]:
+# In[134]:
+
+
+
+plt.savefig('Runnability.png')
+
+
+# In[124]:
+
+
+np.mean(results_1_list)
+
+
+# In[125]:
+
+
+np.mean(results_0_list)
+
+
+# In[ ]:
+
+
+
+
+
+# In[94]:
 
 
 np.max(list(results_0.values()))/1000000
 
 
-# In[86]:
+# In[84]:
 
 
 np.min(list(results_1.values()))/1000000
 
 
-# In[82]:
+# In[85]:
 
 
 np.mean(list(results_1.values()))
 
 
-# In[83]:
+# In[ ]:
 
 
 np.mean(list(results_0.values()))
@@ -1005,7 +1053,7 @@ np.mean(list(results_0.values()))
 # - I have created two heuristic strategies and compared their results. 
 # - Now I need to create an optimal strategy finder and run the simulation with it. 
 
-# In[1]:
+# In[ ]:
 
 
 from ROAsimulations import main 
