@@ -333,52 +333,47 @@ my own work and I have listed all the used sources in the bibliography.
 
 
 \chapter{Historical background and research motivation}
+The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts \footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future. \cite{BerDeM:09} } and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands. There, in the end of the 17th century, the first ideas about options \footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a defined amount of money in a given future time instant. \cite{BerDeM:09}}  and option trading are published by La Vega \cite{Veg:88}. 
 
-\cite{Web:09}
+The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work the boom of option pricing methods in the 1970's culminated by Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
 
-\cite{Veg:88}
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
 
-\cite{Bac:00} 
+The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
-\cite{Bro:08}
+The valuation of project's free cash flows with the theory of ROA is in the economical world understood as very advanced and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
 
-\cite{BlaSch:73}
+Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in depth in section ... we identify three classes of ROA authors based on the level of analogy to the BSM model. 
 
+In this thesis we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}.\footnote{Second class utilizes only the no-arbitrage principle to determine probabilities of the models.}  
 
+Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty \cite{Rol:18}, \cite{Rol:19}. When studying ROA it came only natural to understand the project valuation as an optimal decision making problem. 
 
-The foundations of financial derivatives date back to … The main motivation for their creation was … Their rapid (?) adaptation to the mainstream trading lead to a need for a reasonable valuation algorithm. The nobel prize winning publication of BSM model is arguably the most known valuation tool for financial options … Several criticisms have been published, i.e. \cite{} mainly focusing on the unrealistic assumptions of ... and ... In spite of its possible inaccuracies the BSM model is taken as standard in the field. 
+The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain specific economical truths about the behavior of investors and the way they perceive value.  Two main addressed concepts are: the time value of money and the risk-aversion of investors. 
 
-The wide adoption of BSM model resulted in inspiration of <person>, who focused on project valuation. <Person> presented <Publication> in which he values project as option analogy. This approach to project valuation is in economical world understood as very advanced and its adoption was (and is) very slow \footnote{NPV, IRR and other more simple metrics are used instead}. It is argued \cite{} that due to <this reason> and <That reason> the adoption from regular investors is slow. 
+The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm will cover the classes of problems now solved by ROA and allow for new classes. 
 
-The complete analogy of ROA to BSM model is limited. Project that fit the analogy fully are very simple and for example <this usual feature of project> or <that feature of the project> cannot be accounted for at all. Various authors tried to cope with this limitation, while still keeping the concept of replicating portfolio and the arbitrage-free market. We can take Guthrie \cite{} and Vollert as examples of authors which use the arbitrage principle to obtain what they call risk-neutral probabilities. These are then used in their models as the actual probabilities and final valuation is obtained through backward induction (in case of Guthrie) and stochastic differential equations (in case of Vollert). 
-
-Through my studies on the FNSPE CTU I have specialized in the theory of dynamic decision making under uncertainty. While studying the ROA it came naturally to understood the project valuation as an optimal dynamic decision making problem. 
-
-The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of SDT. The challenge (?) of this task is to implement domain specific economical truths about the behavior of investors and the way they perceive value.  Two main concepts that will be addressed are the time value of money and the risk-aversion of investors. 
-
-The goal is to create new valuation algorithm with the following features, which respond to the current state of the art: 
+The new SDT based valuation algorithm will enable: 
 \begin{itemize}
-	\item allowing for arbitrary distributions in the model 
-	\item allowing for arbitrary number of uncertainty sources in the model 
-	\item enables to incorporate investor's risk-aversion 
-	\item addresses the time value of money in non-trivial way (maybe)
-	\item ... 
+	\item seamless integration of multiple uncertainty sources;
+	\item integration of theoretically any probability distribution as a model of uncertain variables;
+	\item usage of high number of possible actions, regardless of their nature; 
+	\item utilization of approximate dynamic programming tools for high-dimensional problems;
+	\item preservation the economical truths as time value of money and the risk-aversion of investors. 
 \end{itemize}
 
-It is worth noting that for higher-dimensional valuation models, the computational complexity of the SDT based valuation model becomes with high degree of certainty too extreme. A thorough discussion of this problem will need to be discussed in order to use the algorithm in real applications. 
-
-To illustrate the usage of the new algorithm a valuation of a selected project class is performed. The class of projects is titled as \textit{facilities with simple input-output transformation models}. It represents all facilities where the internal processes are straight-forward up to a level where an approximation with fixed rate transformation between inputs and outputs and cycle time equal to zero will not be far from the truth. This class is motivated by \cite{Gut:09} and his example of Gas power plant, which is a member of the aforementioned class. 
+To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal zero and the input-output transformation rate is constant. This class is a generalization motivated by an example of gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
 
 
-The thesis is structured in 5 chapters. Chapter 1 reminds the reader of the most important mathematical concepts used in this thesis. Beginning with the declaration of mathematical notation the chapter continues with key concepts of economical theory (…) and deep description of BSM model. The first chapter continues with a summary of ROA research of the last decades with the focus on a specific level of analogy represented by Vollert and Guthrie. The reminder of the chapter is reserved for key parts of stochastic decision theory. 
+The thesis is structured in 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economical concepts used in this thesis. Beginning with the declaration of mathematical notation the chapter continues with key concepts of economical theory and deeper description of the BSM model. The first chapter continues with a summary of the last decades in ROA research with the focus on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The reminder of the first chapter is reserved for key parts of stochastic decision theory. 
 
-Chapter 2 represents the core of this thesis. First we define the problem in a rigorous mathematical way. We state the key features that define a project and we limit this features accordingly. Then we focus on the interpretation of the problem by the general SDT framework. We illustrate the identification of the project features from ROA terminology in the SDT one.  The reminder of the chapter is reserved for resolving the economical nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economical reality of investor behavior. 
+Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project and we limit this features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The reminder of the  second chapter is reserved for resolving the economical nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economical reality of investors' behavior. 
 
-Chapter 3 illustrates the new valuation algorithm from chapter 2 on an example of <the chosen project>. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half serves to compare values of projects with different granularity of the model structure and it is aimed to guide the user to the best trade-of between computational complexity and valuation results. 
+Chapter 3 illustrates the new valuation algorithm from chapter 2 on an example of valuation of a facility with a simple input-output process model. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different granularity of the model structure and it is aimed to demonstrate the existence of trade-of between computational complexity and precision of computed results. 
 
-Chapter 4 discusses the new findings both theoretical and from the performed experiments. 
+Chapter 4 discusses the new findings both theoretical and observed from the performed experiments. 
 
-Chapter 5 summarizes the thesis - reminds the motivation, underlines the main message and lists all contributions  and problems of this thesis. Furthermore, it outlines many possible future paths of study in this field as it is, to my best knowledge, the first available publication on this topic. 
+Chapter 5 summarizes the thesis - reminds the motivation, underlines the main message and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
 
 
 %\addcontentsline{toc}{chapter}{Introduction}

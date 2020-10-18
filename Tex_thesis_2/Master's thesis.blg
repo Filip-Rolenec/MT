@@ -54,45 +54,45 @@ Warning--I didn't find a database entry for ""
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--can't use both author and editor fields in Web:09
-You've used 21 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            643 strings with 6809 characters,
-and the built_in function-call counts, 5602 in all, are:
-= -- 546
-> -- 199
+            651 strings with 6960 characters,
+and the built_in function-call counts, 5935 in all, are:
+= -- 581
+> -- 212
 < -- 2
-+ -- 84
-- -- 60
-* -- 301
-:= -- 950
-add.period$ -- 67
-call.type$ -- 21
-change.case$ -- 83
++ -- 89
+- -- 64
+* -- 327
+:= -- 1005
+add.period$ -- 70
+call.type$ -- 22
+change.case$ -- 88
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 255
-empty$ -- 505
-format.name$ -- 60
-if$ -- 1196
+cite$ -- 25
+duplicate$ -- 266
+empty$ -- 532
+format.name$ -- 64
+if$ -- 1264
 int.to.chr$ -- 0
-int.to.str$ -- 21
-missing$ -- 31
-newline$ -- 109
-num.names$ -- 42
-pop$ -- 133
+int.to.str$ -- 22
+missing$ -- 32
+newline$ -- 114
+num.names$ -- 44
+pop$ -- 136
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 76
 quote$ -- 0
-skip$ -- 165
+skip$ -- 173
 stack$ -- 0
-substring$ -- 262
-swap$ -- 40
+substring$ -- 292
+swap$ -- 41
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
+type$ -- 64
 warning$ -- 3
-while$ -- 55
-width$ -- 23
-write$ -- 230
+while$ -- 59
+width$ -- 24
+write$ -- 241
 (There were 10 error messages)
