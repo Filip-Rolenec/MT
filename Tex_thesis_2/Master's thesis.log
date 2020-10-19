@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 OCT 2020 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  19 OCT 2020 16:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1079,41 +1079,43 @@ Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 225.
 ]
 Chapter 1.
 
-Underfull \vbox (badness 2744) has occurred while \output is active []
+Package natbib Warning: Citation `SicGam:10' on page 15 undefined on input line
+ 344.
+
+
+Underfull \vbox (badness 1762) has occurred while \output is active []
 
  [15]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 352.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 358.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 352.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 358.
  [16]
 Chapter 2.
 [17
 
-]
-Overfull \hbox (25.46962pt too wide) in paragraph at lines 460--462
-$[]$ \T1/txr/m/n/10.95 <Say
- []
+] [18]
+LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 491.
+ [19] [20]
 
-[18] [19]
+LaTeX Warning: Reference `' on page 21 undefined on input line 584.
 
-LaTeX Warning: Reference `' on page 20 undefined on input line 563.
+[21] [22]
 
-[20] [21]
+LaTeX Warning: Reference `' on page 23 undefined on input line 641.
 
-LaTeX Warning: Reference `' on page 22 undefined on input line 620.
-
-[22] [23] [24]
+[23] [24]
 Chapter 3.
 [25
 
 ] [26] [27]
 
-LaTeX Warning: Reference `the problem' on page 28 undefined on input line 807.
+LaTeX Warning: Reference `the problem' on page 28 undefined on input line 828.
 
 [28]
 Chapter 4.
@@ -1131,6 +1133,9 @@ Chapter 6.
 
 ] [35])
 
+Package natbib Warning: There were undefined citations.
+
+
 Package caption Warning: Unused \captionsetup[figure] on input line 141.
 See the caption package documentation for explanation.
 
@@ -1140,11 +1145,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 24401 strings out of 492616
- 435779 string characters out of 6129482
- 570555 words of memory out of 5000000
- 27939 multiletter control sequences out of 15000+600000
- 616829 words of font info for 145 fonts, out of 8000000 for 9000
+ 24427 strings out of 492616
+ 436181 string characters out of 6129482
+ 570667 words of memory out of 5000000
+ 27962 multiletter control sequences out of 15000+600000
+ 619844 words of font info for 148 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,904b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1158,13 +1163,14 @@ public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
 blic/cm-super/sfss1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
 ic/txfonts/txex.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfo
 nts/txsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (36 pages, 198814 bytes).
+fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
+local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texl
+ive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/t
+exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "Master's thesis.pdf" (36 pages, 211823 bytes).
 PDF statistics:
- 199 PDF objects out of 1000 (max. 8388607)
- 134 compressed objects within 2 object streams
+ 203 PDF objects out of 1000 (max. 8388607)
+ 137 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

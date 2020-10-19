@@ -337,7 +337,9 @@ The foundations of financial derivatives date back to the origins of commerce in
 
 The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work the boom of option pricing methods in the 1970's culminated by Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart 
+
+s, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
 
 The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
@@ -386,8 +388,6 @@ Chapter 5 summarizes the thesis - reminds the motivation, underlines the main me
 
 
 \chapter{Preliminaries}
-\ruletext{Introduction to preliminaries}
-
 To properly understand a mathematical text it is important to first define the used notions and symbolism. Since this thesis is based on many different authors, from both financial and mathematical world, a short unifying overview of the used theory is important. 
 
 The notation used in this thesis comes predominantly from the most influential authors in the respective fields of study: 
@@ -397,13 +397,10 @@ The notation used in this thesis comes predominantly from the most influential a
 	\item stochastic decision theory \cite{BacChi:19}.
 \end{itemize}
 
- The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU and its applicability is proven in his previous works \cite{Rol:18} and \cite{Rol:19}. 
+ The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU and its proven applicability in his previous publications \cite{Rol:18} and \cite{Rol:19}. 
 
 
-\ruletext{}
 \section{Used mathematical symbolism}
-\ruletext{Sets, random variables, what do I mean by 'probability'}
-
 In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense?}, are represented with a tilde above the variable, i.e. $\tilde{x}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e. $x$. 
 
 \begin{definition}(Probability)
@@ -415,53 +412,59 @@ In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set
 
 The last general definition is the definition of well known concept of conditional probability \cite{Jay:03}. 
 \begin{definition}(Conditional probability)
-	Let, depending on the context, symbol $p(x|y)$ represents either the conditional probability on discrete variables or the conditional probability density on continuous variables. Then the $p(x|y)$ is defined as:
+	Let, depending on the context, symbol $p(x|y)$ represent the conditional probability density of a random variable variables. Then the $p(x|y)$ is defined as:
 	\begin{equation}\label{eq:condP}
 	p(x|y)=\frac{p(x,y)}{p(y)},
-	\end{equation} where $p(x,y)$ is a joint probability density of $x$ and $y$. 
+	\end{equation} where $p(x,y)$ is a joint probability density of $\tilde{x}$ and $\tilde{y}$. 
 \end{definition}
 
 \begin{remark}
 	The definition of conditional probability expressed by the equation (\ref{eq:condP}) corresponds with the classic definitions of the conditional probability and conditional probability density in both the discrete and continuous case. 
 \end{remark}
 
-<Probably some other definitions that will be needed in the following chapters> 
+\begin{definition}(Expected value)
+	Expected value of a random variable $\tilde{x}$ is defined as: 
+	\begin{equation}
+		\int_{\mathbf{X}} p(x) x d\mu,
+	\end{equation}
+	where $\mu$ is the dominating measure of the RN density and $\mathbf{X}$ is the set of all possible realizations of $\tilde{x}$.
+\end{definition}
 
-\ruletext{}
+<Probably some other definitions that will be needed in the following chapters >
 
 \section{General economics}
-\ruletext{Introduction and basic financial concepts. }
 
 This thesis is built on two main theoretical pillars, the theory of corporate finance \cite{BerDeM:09} and stochastic decision theory (SDT) \cite{BacChi:19}. A basic review of corporate finance terminology is presented in this section with a focus on project valuation techniques. 
 
 
-\begin{definition}(Project)
-	A project is defined as a piece of planned work or an activity that is finished over a period of time and intended to achieve a particular purpose, mainly a wealth increase of a company or an individual. \footnote{First part comes from Cambridge dictionary. Is that ok just to cite it? }
+\begin{definition}(\textbf{Process})
+	A process is understood as the production of goods, purchase and trade of goods or services, driven by the supply of inputs and demand for outputs. \footnote{How to cite Mr. Kulhavy? }
 \end{definition}
 
-\begin{definition}(Value)
-	The amount of money that can be received for something. \footnote{Again cambridge dictionary...Find a better definition of value. } 
+\begin{definition}(\textbf{Project})
+	A project is defined as an sequence of actions that serve as an implementation or a innovation of a process, purposefully allocating existing sources to increase the economical value of given project.  
 \end{definition}
 
-<The value of project is created by elementary monetary transactions in time> 
-
-<Tracking each individual transaction is impractical, thus the models work by aggregation in time, or with the continuous notion> 
-
-<We will use the discrete aggregation over time periods> 
-
-<There are multiple metric in economics that try to describe the financial flows in a company. In this thesis we will use FCF (defined as in Berk DeMarzo, look at it in detail), since it fits best the notion of value in time> 
-
-<We will understand FCF as being aggregated over time> 
-
-\begin{definition}(Free cash flow)
+\begin{definition}(\textbf{Free cash flow})
 	The incremental effect of a project on the firm’s available cash is the project’s free cash flow \cite{BerDeM:09}.
 \end{definition}
 
 
-\ruletext{}
+\begin{definition}(\textbf{Economical value})
+	An economical value of a project is understood to be in the future free cash flows. In this thesis the economical value of a project is the amount of cash to which is the investor logically indifferent to having in comparison to the future cash flow vector. 
+\end{definition}
 
-\subsection{Net present value and other valuation metrics}
-\ruletext{NPV, DTA, IRR, WACC and others}
+\begin{remark}
+	The indifference and time value of money will be further discussed in section ... The theory of net present value (NPV) \cite{BerDeM:09} can be used as a simplification. 
+\end{remark}
+
+\begin{definition}(\textbf{Optimal Project})
+		The goal of each project is to increase the economical value of a process. A project, if such exists, is called optimal project if the additional economical value is maximal given the set of possible projects. 
+\end{definition}
+
+
+\subsection{Net present value and other valuation metrics (?)}
+
 <Say that this section is for illustration of current state of thinking about investments> 
 
 <Say that NPV is the standard in this field> 
@@ -471,49 +474,78 @@ This thesis is built on two main theoretical pillars, the theory of corporate fi
 <A short paragraph about other metrics used in the decision making about a project, DTA,  IRR, WACC> 
 
 \subsection{Risk averse investors}
-<There is a correlation between the volatility of an investment and its average profits> 
+According to the observations made in \cite{BerDeM:09} there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, where investors are happy to hold onto a low-volatile investment even though the average returns are lower in the long run. 
 
-<This is being explained by the risk-averse investors> 
-
-<The risk-aversion is a known phenomenon studied also by psychology [find article to cite]sim>
-
+The phenomenon of risk aversion is well documented also in psychological publications, i.e. \cite{HolLau:05}, where we observe that people do not like uncertainty and they do value uncertain rewards lower than their expected value. 
 
 \subsection{Option valuation - Black-Scholes-Merton model}
+As outlined in the first chapter, the motivation for option valuation technique came  with the increased adoption of derivative trading after the WWII. The famous 1973 article from Black and Scholes \cite{BlaSch:73} presented today's standard in the option valuation - the BSM model. 
 
-<The story of the motivation for BSM model is in the first chapter, reference it> 
+\begin{remark}
+	The M in BSM model stands for Merton, as the publication of Black and Scholes ``relied on earlier work by Robert Merton.``  \footnote{I want to talk about it because I do not want to use a shortcut of BS model. }
+\end{remark}
 
-<Here we will look at the details mathematical rigorous definition> 
+In what follows we will present the BSM model in a form of a theorem \cite{BodKan:04}. In addition we will present an opinion that should summarize the idea of BSM model in few sentences. 
 
-<Plus author's view, what the theorem actually states (expected value of price)> 
+\begin{theorem}(BSM model)
+	The Black-Scholes-Merton option valuation model says that if the following list of assumption is satisfied:
+	\begin{itemize}
+		\item risk-free interest rate and volatility of the underlying asset are constant;
+		\item the underlying asset pays no dividends and its price is continuous;
+		\item the asset price evolves according to a log-normal process;
+		\item the markets are efficient - the no-arbitrage principle holds;
+		\item the option has European style;
+		\item there are no commission or transaction costs;
+		\item market is perfectly liquid;
+	\end{itemize}
 
+	then based only on the knowledge of time to maturity $T$, option's strike price $K$, the current price of underlying asset $S$ and its volatility $\sigma$ the value of a call option can be computed as: 
+	\begin{equation}
+	C = SN(d_1) - PV(K)N(d_2), 
+	\label{BSMModelEq}
+	\end{equation}
+	where  $PV(K)$ is the present value of a strike price $K$ \footnote{Price of a bond paying K on the expiration day of the option} and $N(d)$ is a cumulative normal distribution, probability that a normally distributed variable is less than $d$. Value of $d_1$ and $d_2$ is then defined as: 
+	\begin{equation}
+	d_1 = \frac{ln(S/PV(K))}{\sigma \sqrt{T}}+\frac{\sigma \sqrt{T}}{2}  \quad
+	d_2 = d_1 - \sigma \sqrt{T}
+	\end{equation}
+\end{theorem}
 
-Only four parameters and one assumption is needed to determine a value of an option according to BSM model for option pricing. Assume that the market is complete, and thus the law of one price holds \cite{}. Then to value a option you need to know only its time to maturity, its strike price, the current price of the underlying stock and its volatility as follows \cite{BerDeM:09}: 
-\begin{equation}
-C = SN(d_1) - PV(K)N(d_2), 
-\label{BSMModelEq}
-\end{equation}
-where $S$ is the strike price, $PV(K)$ is a price of a bond paying K on the expiration day of the option and $N(d)$ is a cumulative normal distribution, probability that a normally distributed variable is less than $d$. Value of $d_1$ and $d_2$ is then defined as: 
-\begin{equation}
-d_1 = \frac{ln(S/PV(K))}{\sigma \sqrt{T}}+\frac{\sigma \sqrt{T}}{2}
-d_2 = d_1 - \sigma \sqrt{T}
-\end{equation}
+\begin{remark}
+	The dependency of the price of an option is positive in case of volatility and time to maturity Increasing these parameters leads to a higher option price. On the contrary the rise in current stock price or strike price of the options lowers the value of an option. 
+\end{remark}
 
-The dependency of the price of an option is positive in case of volatility and time to maturity Increasing these parameters leads to a higher option price. On the contrary the rise in current stock price or strike price of the options lowers the value of an option. 
+Now, we would like to present our opinion about what the BSM model actually says. 
 
-
+\begin{remark}
+	The core of BSM model, assuming that "smooth" conditions hold, represents a way to derive a parameter in a log-normal model of the underlying asset. Based on the no-arbitrage principle and assumption of known volatility $\sigma$, only the parameter $\mu$ of log-normal process is missing. Building on this, the value of an option is the expected value of the maximum of difference between strike price and the realized price of the asset and zero \footnote{Since the option does not have to be realized, no further loss will occur.}, discounted by the risk-free interest rate. 
+\end{remark}
 
 
 \section{Real option analysis}\label{sec:ROA}
+As outlined in the first chapter, the theory of real option analysis (ROA) was born after the boom in publications about valuation of financial options in the 1970's. The first ideas represented by Myers \cite{Mye:77} are of a philosophical nature - options (ability to make project changes) adds value to the project. 
 
-<ROA originates as an analogy to financial option valuation> 
+Many publications were published on the ROA topic since. Through our studies of the state of the art, we have identified three classes of authors which differ by the level of analogy with the BSM model. 
 
-<There are three classes of authors using this term> 
+
+\paragraph{No analogy}
+The first class is the class of the ROA founder, Myers. This class understands the term real option analysis as a useful lens for looking at the project valuation. Authors like \cite{Kas:04} and \cite{Gue:17} accentuate the value of further managerial decisions, but the used structure resembles NPV with paths (so called decision tree analysis DTA). 
+
+\textbf{ENDED HERE}	
+Third class of authors does not use the law-of-one-price and is thus the farthest away from the original idea of ....\footnote{The pioneer name}. This class of authors, i.e. \cite{Kas:04} and \cite{Gue:17}, understands the term real option analysis as a useful lens for looking at the project valuation. They accentuate the value of further managerial decision, but the valuation structure and algorithms do not differ from the DTA approach as defined earlier. 
+
+Thus, this class of authors is declared as a misuse of terminology and not further considered. 
+
+
+
+
+<No analogy paragraph> 
 
 <Full analogy paragraph> 
 
 <Effective market analogy paragraph> 
 
-<No analogy paragraph> 
+
 
 This established and well received technique for financial option valuation spawned the idea of real option analysis. The option to buy an asset for a given price is similar to the ability to buy an expected future cash flow, i.e. invest in a project. 
 
@@ -564,9 +596,8 @@ Thus, this class of authors is declared as a misuse of terminology and not furth
 
 \bigskip
 
-In the next part of the thesis, namely \ref{} the core message behind the term real option analysis will be thoroughly discussed. 
+In what follows, our understanding of ROA will be the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
 
-\ruletext{}
 
 \section{Statistical decision theory}
 \ruletext{Standard SDT as a framework, states, actions, inputs, outputs, rewards, probability distributions}

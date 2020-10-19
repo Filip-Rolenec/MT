@@ -1,5 +1,23 @@
 \begin{thebibliography}{10}
 
+\bibitem{CopAnt:01}
+
+
+\bibitem{HolLau:05}
+
+
+\bibitem{Amp:17}
+Kwasi~Darkwa Ampofo.
+\newblock Reasons why real options analysis (roa) is not widely adopted in the
+  mineral industry.
+\newblock 2017.
+
+\bibitem{AmrKul:98}
+Martha Amram and Nalin Kulatilaka.
+\newblock {\em Real Options:: Managing Strategic Investment in an Uncertain
+  World}.
+\newblock Oxford University Press, 1998.
+
 \bibitem{BacChi:19}
 S.~Bacci and B.~Chiandotto.
 \newblock {\em Introduction to Statistical Decision Theory: Utility Theory and
@@ -34,6 +52,12 @@ Fischer Black and Myron Scholes.
 \newblock The pricing of options and corporate liabilities.
 \newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
 
+\bibitem{BodKan:04}
+Z.~Bodie, A.~Kane, and A.J. Marcus.
+\newblock {\em Investments}.
+\newblock McGraw-Hill/Irwin series in finance, insurance, and real estate.
+  McGraw-Hill Irwin, 2004.
+
 \bibitem{Bro:08}
 V.~Bronzin.
 \newblock {\em Theorie der Prämiengeschäfte}.
@@ -44,6 +68,11 @@ J.~De~La~Vega and H.~Kellenbenz.
 \newblock {\em Confusion de Confusiones [1688]: Portions Descriptive of the
   Amsterdam Stock Exchange}.
 \newblock Martino Publishing, 1688.
+
+\bibitem{DixPin:12}
+R.K. Dixit and R.S. Pindyck.
+\newblock {\em Investment Under Uncertainty}.
+\newblock Princeton University Press, 2012.
 
 \bibitem{Gue:17}
 Manuel Guerra, Peter Kort, Cláudia Nunes, and Carlos Oliveira.
@@ -56,11 +85,6 @@ G.~Guthrie.
 \newblock {\em Real Options in Theory and Practice}.
 \newblock Financial Management Association Survey and Synthesis. Oxford
   University Press, 2009.
-
-\bibitem{Hol:05}
-Charles~A Holt and Susan~K Laury.
-\newblock Risk aversion and incentive effects: New data without order effects.
-\newblock {\em American Economic Review}, 95(3):902--912, 2005.
 
 \bibitem{Jay:03}
 E.~T. Jaynes.
@@ -77,6 +101,11 @@ Ilhem Kassar and Pierre Lasserre.
 Andrey~N. Kolmogorov.
 \newblock {\em Foundations of the Theory of Probability}.
 \newblock Chelsea Pub Co, 2 edition, June 1960.
+
+\bibitem{Mye:77}
+Stewart~C. Myers.
+\newblock Determinants of corporate borrowing.
+\newblock {\em Journal of Financial Economics}, 5(2):147 -- 175, 1977.
 
 \bibitem{Pet:81}
 V.~Peterka.
@@ -122,5 +151,11 @@ A.~Vollert.
 Ernst~Juerg Weber.
 \newblock {\em A Short History of Derivative Security Markets}, pages 431--466.
 \newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2009.
+
+\bibitem{YalHak:12}
+Hakan Yalincak.
+\newblock Criticism of the black-scholes model: But why is it still used?: (the
+  answer is simpler than the formula).
+\newblock {\em SSRN Electronic Journal}, 07 2012.
 
 \end{thebibliography}

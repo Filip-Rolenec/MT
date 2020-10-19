@@ -50,49 +50,76 @@ Repeated entry---line 973 of file fr.bib
  : @article{BlaSch:73
  :                   ,
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1243 of file fr.bib
+ :  
+ :  title={Some important issues involving real options: an overview},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1263 of file fr.bib
+ :  
+ :  author = {COPELAND, Tom and Antikarov, Vladimir},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 1281 of file fr.bib
+ :  
+ :  title={Risk aversion and incentive effects: New data without order effects},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "SicGam:10"
 Warning--I didn't find a database entry for ""
+Warning--to sort, need author or key in CopAnt:01
+Warning--to sort, need author or key in HolLau:05
+Warning--empty author in CopAnt:01
+Warning--empty title in CopAnt:01
+Warning--empty journal in CopAnt:01
+Warning--empty year in CopAnt:01
+Warning--empty author in HolLau:05
+Warning--empty title in HolLau:05
+Warning--empty journal in HolLau:05
+Warning--empty year in HolLau:05
+Warning--empty journal in Amp:17
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--can't use both author and editor fields in Web:09
-You've used 22 entries,
+You've used 29 entries,
             2118 wiz_defined-function locations,
-            651 strings with 6960 characters,
-and the built_in function-call counts, 5935 in all, are:
-= -- 581
-> -- 212
+            683 strings with 7624 characters,
+and the built_in function-call counts, 7422 in all, are:
+= -- 708
+> -- 266
 < -- 2
-+ -- 89
-- -- 64
-* -- 327
-:= -- 1005
-add.period$ -- 70
-call.type$ -- 22
-change.case$ -- 88
++ -- 112
+- -- 80
+* -- 418
+:= -- 1248
+add.period$ -- 88
+call.type$ -- 29
+change.case$ -- 112
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 266
-empty$ -- 532
-format.name$ -- 64
-if$ -- 1264
+cite$ -- 43
+duplicate$ -- 342
+empty$ -- 670
+format.name$ -- 80
+if$ -- 1570
 int.to.chr$ -- 0
-int.to.str$ -- 22
-missing$ -- 32
-newline$ -- 114
-num.names$ -- 44
-pop$ -- 136
+int.to.str$ -- 29
+missing$ -- 42
+newline$ -- 145
+num.names$ -- 54
+pop$ -- 191
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 98
 quote$ -- 0
-skip$ -- 173
+skip$ -- 220
 stack$ -- 0
-substring$ -- 292
-swap$ -- 41
+substring$ -- 329
+swap$ -- 45
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 64
-warning$ -- 3
-while$ -- 59
-width$ -- 24
-write$ -- 241
-(There were 10 error messages)
+type$ -- 86
+warning$ -- 14
+while$ -- 68
+width$ -- 31
+write$ -- 299
+(There were 13 error messages)
