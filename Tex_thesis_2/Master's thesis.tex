@@ -21,7 +21,6 @@
 \usepackage[noend]{algpseudocode}
 \usepackage{caption}
 
-
 \usepackage{array}
 \usepackage{ragged2e}
 
@@ -482,7 +481,7 @@ The phenomenon of risk aversion is well documented also in psychological publica
 As outlined in the first chapter, the motivation for option valuation technique came  with the increased adoption of derivative trading after the WWII. The famous 1973 article from Black and Scholes \cite{BlaSch:73} presented today's standard in the option valuation - the BSM model. 
 
 \begin{remark}
-	The M in BSM model stands for Merton, as the publication of Black and Scholes ``relied on earlier work by Robert Merton.``  \footnote{I want to talk about it because I do not want to use a shortcut of BS model. }
+	The M in BSM model stands for Merton, as the publication of Black and Scholes ``relied on earlier work by Robert Merton.``  \footnote{I want to talk about it because I want to explain why BSM and not BS model, where I do not want to use BS model for obvious reasons. }
 \end{remark}
 
 In what follows we will present the BSM model in a form of a theorem \cite{BodKan:04}. In addition we will present an opinion that should summarize the idea of BSM model in few sentences. 
@@ -529,40 +528,27 @@ Many publications were published on the ROA topic since. Through our studies of 
 
 
 \paragraph{No analogy}
-The first class is the class of the ROA founder, Myers. This class understands the term real option analysis as a useful lens for looking at the project valuation. Authors like \cite{Kas:04} and \cite{Gue:17} accentuate the value of further managerial decisions, but the used structure resembles NPV with paths (so called decision tree analysis DTA). 
+The first class is the class of the ROA founder, Myers. This class understands the term real option analysis as a useful lens for looking at the project valuation. Authors like \cite{Kas:04} and \cite{Gue:17} accentuate the value of further managerial decisions, but the valuation strategy they use is NPV with scenarios (so called decision tree analysis DTA). 
 
-\textbf{ENDED HERE}	
-Third class of authors does not use the law-of-one-price and is thus the farthest away from the original idea of ....\footnote{The pioneer name}. This class of authors, i.e. \cite{Kas:04} and \cite{Gue:17}, understands the term real option analysis as a useful lens for looking at the project valuation. They accentuate the value of further managerial decision, but the valuation structure and algorithms do not differ from the DTA approach as defined earlier. 
+\paragraph{Partial analogy}
+The second class of authors takes advantage of the core property of the financial option valuation and that is the no-arbitrage principle. Based on this principle and further assumption of replication portfolio existence, this class of authors, e.g. \cite{Gut:09}, \cite{Tho:19} and \cite{Ryu:17}, derives so called risk-neutral probabilities, which are then used for modeling of some project's internal variable of the cash flow functions. 
 
-Thus, this class of authors is declared as a misuse of terminology and not further considered. 
+Because we find this type of approach to real options as the most appropriate one and because we build on and respect the work of Guthrie \cite{Gut:09}, \textbf{this approach is the one considered as representative of the term ROA. }
 
+Another author in this class whose work is notable is publication \cite{Vol:03} from Vollert, who goes deep into detail with modeling framework implementing complex conditional options. Vollert's publication is very advanced, using i.e. stochastic differential equations, which might be an obstacle for practitioners and real world applications.  
 
+\paragraph{Full analogy}
+The final class of the authors understands project valuation with real options as a complete analogy to thee BSM model for valuation of financial options. This class of authors is predominantly represented by voluminous economical textbooks, e.g. \cite{BerDeM:09}, \cite{BreMye:12} or \cite{Cru:08}\footnote{Crundwell also discusses the partial analogy approach in detail.}. 
 
+A complete analogy means to identify all parameters of financial option with a parameter of investment. For example in \cite{BerDeM:09} the following identification table is presented: 
 
-<No analogy paragraph> 
-
-<Full analogy paragraph> 
-
-<Effective market analogy paragraph> 
-
-
-
-This established and well received technique for financial option valuation spawned the idea of real option analysis. The option to buy an asset for a given price is similar to the ability to buy an expected future cash flow, i.e. invest in a project. 
-
-<Origins of real options> The first economist, pioneer of the term \textit{Real option analysis}, ... ... treats investments as a complete analogy of trading with options. To be able to delay an investment has a value and..... 
-
-The usage of the phrase real option analysis in literature is rather fuzzy. It is used by many authors such as \cite{BerDeM:09}, \cite{Gut:09} and \cite{Gue:17}, however their usage of the term differs. Three different usage classes of the term real option analysis were identified by the author. They differ by the level of analogy to the valuation of financial options. 
-
-\paragraph{Complete analogy}
-First, there is a class of complete analogy. All five parameters of financial options needed for their valuation with BSM model are identified with the parameters of an investment opportunity. An example of a valuation of a car dealership can be found in \cite{BerDeM:09}\footnote{Should I reference page numbers? Will anybody actually look up the example? } where the following identification is made:
 
 \begin{table}[H]
 	\begin{footnotesize}
-		
 		\centering
 		\renewcommand{\arraystretch}{1,2}
 		\label{Tab:BSModel}
-			\begin{tabular}{|l |r|}
+		\begin{tabular}{|l |r|}
 			\hline	
 			Financial option& Real option \\ \hline
 			Stock price& Current market value of asset \\ \hline
@@ -570,64 +556,68 @@ First, there is a class of complete analogy. All five parameters of financial op
 			Expiration date& Final decision date \\ \hline
 			Risk-free rate& Risk-free rate\\ \hline
 			Volatility of stock & Volatility of asset value \\ \hline
-			Dividend & FCF lost from delay \\ \hline
-			
+			Dividend\footnotemark & FCF lost from delay \\ \hline
 		\end{tabular}
 		\caption{Identification of parameters for real options with respect to the financial option \cite{BerDeM:09}. }
 	\end{footnotesize}
 \end{table}
+\footnotetext{For the BSM model with dividends}
 
-Another example can be found in \cite{Que:10} where a telecommunication company is being valued by the complete analogy valuation technique. 
+Another example can be found in \cite{Que:10}, where a telecommunication company is being valued by the same one-to-one identification of BSM model parameters. 
 
-This class of authors focuses on the clear analogy and thus the acknowledged scope of possible manager's actions is limited basically only to timing options. The only decision is to invest to a project now or later.
+By focusing on the complete analogy, the authors of this class strictly limit the application scope of the ROA valuation technique (as they understand it). One of the problematic assumptions (that is in the partial-analogy class solved by the CAMP model \footnote{Capital Asset Pricing model - for details please see \cite{Gut:09}}) is that there exists a market tradeable replicating portfolio of the asset we want to valuate. Another limitation is that this approach considers only one decision, which is usually to invest in the project now, or later \footnote{Timing option in Guthrie's terminology}. 
 
+\vspace{1em}
 
-\paragraph{Partial analogy}
-
-The second class of authors uses only the core property of the financial analogy and that is the law-of-one-price. With the help of this assumption, the authors, eg. \cite{Gut:09} usually derive risk-neutral probabilities which are then used for modeling of some internal variable of the cash flow functions. 
-
-This class of authors is the most numerous and most mathematically rigorous. The core of publications in this class is usually in solving stochastic differential equations, eg. \cite{Vol:03} whereas the role of the assumption about law-of-one-price is used mainly as the ground for obtaining one of the missing parameters of the stochastic model. 
-
-\paragraph{No analogy}
-
-Third class of authors does not use the law-of-one-price and is thus the farthest away from the original idea of ....\footnote{The pioneer name}. This class of authors, i.e. \cite{Kas:04} and \cite{Gue:17}, understands the term real option analysis as a useful lens for looking at the project valuation. They accentuate the value of further managerial decision, but the valuation structure and algorithms do not differ from the DTA approach as defined earlier. 
-
-Thus, this class of authors is declared as a misuse of terminology and not further considered. 
-
-\bigskip
-
-In what follows, our understanding of ROA will be the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
+In what follows, our understanding of ROA will be based on the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
 
 
 \section{Statistical decision theory}
-\ruletext{Standard SDT as a framework, states, actions, inputs, outputs, rewards, probability distributions}
+The second pillar upon which this thesis stands is the statistical decision theory (SDT). An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making under uncertainty in its broadest sense encapsulates the majority of human behavior, the class of problems it is able to solve (at least theoretically) is quite large. 
 
-The second pillar upon which this thesis stands is the statistical decision theory (SDT). An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making in its broadest sense encapsulates a vast amount of human behavior, the class of problems it is able to solve is quite large. 
+The SDT's main focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in dynamic and uncertain environment. In this thesis we will be modeling the decision making problems by the standard framework of Markov Decision Process (MDP).
 
-The SDT's main focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in dynamic and uncertain environment. A classical structure of a decision making problem consists of five building blocks
+\begin{definition}(Markov decision process)
+	
+	Markov decision process is defined by its five building blocks: 
+	\begin{itemize}
+		\item Set of time epochs - $\mathbf{T}$;
+		\item Set of environment states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
+		\item Set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$;
+		\item Reward function of transition from one state to another - $r(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
+		\item Transition probabilities governing the transitions from one state to another $p(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
+	\end{itemize}
+\end{definition}
 
-\begin{itemize}
-	\item Set of time epochs - $\mathbf{T}$;
-	\item Set of environment states in those epochs - $\mathbf{S}$;\footnote{Possibly different $S_t$ in different times.}
-	\item Set of actions in those states - $\mathbf{A}$;
-	\item Reward function of transition from one state to another - $r(s_t|a_t,s_{t-1})$;
-	\item Transition probabilities governing the transitions from one state to another $p(s_t|a_t,s_{t-1})$.
-\end{itemize}
+\begin{remark}
+	The set of time epochs, states, actions is usually known, defined by the structure of the decision problem that is being solved. Reward and transition functions tend to be unknown in solving these problems and they need to be often somehow estimated. 
+\end{remark}
 
-The set of time epochs, states, actions is usually known, defined by the structure of the decision problem that is being solved. Reward and transition functions tend to be unknown in solving these problems and they need to be often somehow estimated. 
 
-Usually, the biggest task in SDT is to correctly approach the uncertainty about transition probabilities between the different states of a project. There are two approaches to parameter estimation in statistics, classical approach and a Bayesian approach. Since the Bayesian approach seems to fit the format of decision making better - allowing for smooth updating on newly observed data - it is used in this thesis. 
+Usually, the biggest task in SDT is to correctly approach the uncertainty about transition probabilities between the different states of a decision making problem. There are two approaches to parameter estimation in statistics, classical approach and a Bayesian approach. Since the Bayesian approach seems to fit the format of decision making better - allowing for notion of prior probabilities, incorporating experts knowledge and possibility for smooth updating on newly observed data - it is used in this thesis. 
 
-The goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies 
+As outlined above, the goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies $\mathbf{\Pi}$: 
 
 \begin{equation}
 	\pi^*=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t\in \mathbf{T}} r(s_t|a_t,s_{t-1})|\pi\right].
 \end{equation}
 
-This maximization can be in total absolute values (in finite or discounted cases) or per time period (mostly in infinite non-discount cases). Due to the economic nature of this thesis we will focus on the total cumulative reward of a finite process (?). 
+\begin{remark}
+	This definition of optimal strategy is used mainly in finite decision problems or problems with exponential discounting of future rewards. Alternative definitions of optimality, for example maximal average reward per period, exist.
+\end{remark}
+
+ Due to the nature of project valuation, where projects are considered to be finite or their cash flow exponentially discounted, this thesis will focus on the total cumulative reward.  
 
 \subsection{Dynamic programming}
-To maximize over all possible strategies by computing the expected cumulative reward for each one of them is a very demanding task even for low-dimensional decision problems. 
+Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
+\begin{equation}
+|\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}|
+\end{equation}  
+
+very demanding task even for low-dimensional problems. 
+
+
+\textbf{ENDED HERE}
 
 Thus, a clever idea of backward induction called dynamic programming is used. A function, called the value function is defined on the set of all possible states $\mathbf{S}$. This function represents the expected cumulative reward to be obtained from the given state onwards. The idea of backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal. 
 

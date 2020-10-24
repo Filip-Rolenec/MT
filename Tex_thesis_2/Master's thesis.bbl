@@ -58,10 +58,21 @@ Z.~Bodie, A.~Kane, and A.J. Marcus.
 \newblock McGraw-Hill/Irwin series in finance, insurance, and real estate.
   McGraw-Hill Irwin, 2004.
 
+\bibitem{BreMye:12}
+Richard~A Brealey, Stewart~C Myers, Franklin Allen, and Pitabas Mohanty.
+\newblock {\em Principles of corporate finance}.
+\newblock Tata McGraw-Hill Education, 2012.
+
 \bibitem{Bro:08}
 V.~Bronzin.
 \newblock {\em Theorie der Prämiengeschäfte}.
 \newblock Verlag Franz Deticke, 1908.
+
+\bibitem{Cru:08}
+F.~Crundwell.
+\newblock {\em Finance for Engineers: Evaluation and Funding of Capital
+  Projects}.
+\newblock Springer London, 2008.
 
 \bibitem{Veg:88}
 J.~De~La~Vega and H.~Kellenbenz.
@@ -140,6 +151,19 @@ F.~Rolenec.
 F.~Rolenec.
 \newblock Learning with forgetting preserving a guaranteed knowledge, 2019.
 \newblock CVUT FJFI.
+
+\bibitem{Ryu:17}
+Young Ryu, Young-Oh Kim, Seung~Beom Seo, and Il~Seo.
+\newblock Application of real option analysis for planning under climate change
+  uncertainty: a case study for evaluation of flood mitigation plans in korea.
+\newblock {\em Mitigation and Adaptation Strategies for Global Change}, 08
+  2017.
+
+\bibitem{Tho:19}
+Grid Thoma.
+\newblock The valuation of patent real options – an analysis using patent-
+  and firm-level datasets.
+\newblock {\em Academy of Management Proceedings}, 2019(1):12922, 2019.
 
 \bibitem{Vol:03}
 A.~Vollert.

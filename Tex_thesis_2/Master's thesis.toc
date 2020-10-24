@@ -13,38 +13,38 @@
 \contentsline {subsection}{\numberline {2.2.2}Risk averse investors}{19}% 
 \contentsline {subsection}{\numberline {2.2.3}Option valuation - Black-Scholes-Merton model}{19}% 
 \contentsline {section}{\numberline {2.3}Real option analysis}{20}% 
-\contentsline {paragraph}{Complete analogy}{20}% 
-\contentsline {paragraph}{Partial analogy}{21}% 
-\contentsline {paragraph}{No analogy}{21}% 
+\contentsline {paragraph}{No analogy}{20}% 
+\contentsline {paragraph}{Partial analogy}{20}% 
+\contentsline {paragraph}{Full analogy}{21}% 
 \contentsline {section}{\numberline {2.4}Statistical decision theory}{21}% 
 \contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{22}% 
 \contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{23}% 
 \contentsline {paragraph}{<Q-Learning, SARSA,..>}{23}% 
 \contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{23}% 
 \contentsline {subsection}{\numberline {2.4.4}Utility}{24}% 
-\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{25}% 
-\contentsline {section}{\numberline {3.1}Project valuation - problem definition}{25}% 
-\contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{25}% 
-\contentsline {paragraph}{Time set}{26}% 
-\contentsline {paragraph}{State set}{26}% 
-\contentsline {paragraph}{Action set}{26}% 
-\contentsline {paragraph}{Transition probability function}{26}% 
-\contentsline {paragraph}{Reward function}{26}% 
-\contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{27}% 
-\contentsline {subsection}{\numberline {3.3.1}Time value of money}{27}% 
-\contentsline {subsection}{\numberline {3.3.2}Risk-aversion of investors}{27}% 
-\contentsline {subsection}{\numberline {3.3.3}Probability}{27}% 
-\contentsline {chapter}{\numberline {4}Valuation of facilities with simple cycle time model}{29}% 
-\contentsline {section}{\numberline {4.1}General settings of the experiment}{29}% 
-\contentsline {paragraph}{Time set}{29}% 
-\contentsline {paragraph}{State set}{29}% 
-\contentsline {paragraph}{Action function}{29}% 
-\contentsline {paragraph}{Transition probability function}{30}% 
-\contentsline {paragraph}{Reward function}{30}% 
-\contentsline {section}{\numberline {4.2}Sensitivity towards potential action set}{30}% 
-\contentsline {paragraph}{Action set 1}{30}% 
-\contentsline {paragraph}{Action set 2}{30}% 
-\contentsline {paragraph}{Action set 3}{30}% 
-\contentsline {section}{\numberline {4.3}Sensitivity toward time epoch granularity}{30}% 
-\contentsline {chapter}{\numberline {5}Discussion}{31}% 
-\contentsline {chapter}{\numberline {6}Conclusions}{33}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{27}% 
+\contentsline {section}{\numberline {3.1}Project valuation - problem definition}{27}% 
+\contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{27}% 
+\contentsline {paragraph}{Time set}{28}% 
+\contentsline {paragraph}{State set}{28}% 
+\contentsline {paragraph}{Action set}{28}% 
+\contentsline {paragraph}{Transition probability function}{28}% 
+\contentsline {paragraph}{Reward function}{28}% 
+\contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{29}% 
+\contentsline {subsection}{\numberline {3.3.1}Time value of money}{29}% 
+\contentsline {subsection}{\numberline {3.3.2}Risk-aversion of investors}{29}% 
+\contentsline {subsection}{\numberline {3.3.3}Probability}{29}% 
+\contentsline {chapter}{\numberline {4}Valuation of facilities with simple cycle time model}{31}% 
+\contentsline {section}{\numberline {4.1}General settings of the experiment}{31}% 
+\contentsline {paragraph}{Time set}{31}% 
+\contentsline {paragraph}{State set}{31}% 
+\contentsline {paragraph}{Action function}{31}% 
+\contentsline {paragraph}{Transition probability function}{32}% 
+\contentsline {paragraph}{Reward function}{32}% 
+\contentsline {section}{\numberline {4.2}Sensitivity towards potential action set}{32}% 
+\contentsline {paragraph}{Action set 1}{32}% 
+\contentsline {paragraph}{Action set 2}{32}% 
+\contentsline {paragraph}{Action set 3}{32}% 
+\contentsline {section}{\numberline {4.3}Sensitivity toward time epoch granularity}{32}% 
+\contentsline {chapter}{\numberline {5}Discussion}{33}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{35}% 
