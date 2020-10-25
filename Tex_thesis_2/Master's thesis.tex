@@ -336,9 +336,7 @@ The foundations of financial derivatives date back to the origins of commerce in
 
 The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work the boom of option pricing methods in the 1970's culminated by Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart 
-
-s, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
 
 The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
@@ -583,7 +581,7 @@ The SDT's main focus is to determine the optimal strategy (a sequence of decisio
 	\begin{itemize}
 		\item Set of time epochs - $\mathbf{T}$;
 		\item Set of environment states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
-		\item Set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$;
+		\item Set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$, $t \in \mathbf{T}$;
 		\item Reward function of transition from one state to another - $r(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
 		\item Transition probabilities governing the transitions from one state to another $p(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
 	\end{itemize}
@@ -591,6 +589,10 @@ The SDT's main focus is to determine the optimal strategy (a sequence of decisio
 
 \begin{remark}
 	The set of time epochs, states, actions is usually known, defined by the structure of the decision problem that is being solved. Reward and transition functions tend to be unknown in solving these problems and they need to be often somehow estimated. 
+\end{remark}
+
+\begin{remark}
+	For further simplification of the text, we define $\mathbf{S} = \bigcup\limits_{t \in \mathbf{T}} \mathbf{S_t}$ and$\mathbf{A} = \bigcup\limits_{s \in \mathbf{S}} \mathbf{A_{s}}$.
 \end{remark}
 
 
@@ -611,36 +613,45 @@ As outlined above, the goal of SDT is to find the optimal strategy - sequence of
 \subsection{Dynamic programming}
 Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
 \begin{equation}
-|\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}|
+|\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}| 
 \end{equation}  
-
 very demanding task even for low-dimensional problems. 
 
 
 \textbf{ENDED HERE}
 
-Thus, a clever idea of backward induction called dynamic programming is used. A function, called the value function is defined on the set of all possible states $\mathbf{S}$. This function represents the expected cumulative reward to be obtained from the given state onwards. The idea of backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal. 
-
-This clever computation of value functions from the problem horizon backwards through all the possible states of the problem decreases the complexity from exponential to polynomial. Instead of maximizing over $|\mathbf{A}|^{|\mathbf{S|^{\mathbf{|T|}}}}$ possible strategies at once, one needs to compute significantly less demanding complexity of $|\mathbf{A}|\cdot|\mathbf{T}|\cdot{|\mathbf{S}|}$. \footnote{Check this}
-
-The formula representing the backward induction is called the Bellman equation: 
-
-\begin{equation}
-	V(s_{t-1}) = \sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
+To cope with such computational complexity a clever idea of backward induction, called dynamic programming, is used. The core of dynamic programming is to define so called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
+\begin{equation}\label{eq:Bellman}
+V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
 \end{equation}
 
-By defining the value function on the horizon, we can compute value functions of states with lower and lower time indexes, until we get to the time 0, which represents the present. Not only that we have the expected value of the optimal decision making, but we have also derived the optimal strategy for every possible path through the state space. 
+Value function represents the expected cumulative reward from given state onward. The idea of computing this value through the backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal.  Optimal strategy comes together with the value function seemingly as a byproduct, where in each state, the optimal action is the argmax of the expression in equation \ref{eq:Bellman}. 
 
-The backward induction reduces the computation complexity significantly. However, for even a moderate-dimensional decision problems, the number of computations is still extremely large. 
+This clever approach significantly reduces the computational complexity to
+\begin{equation}
+	\sum_{t \in \mathbf{T}} \sum_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}|
+\end{equation}
+expected values. 
 
-The problem of computational complexity of dynamic programming is called "three curses of dimensionality" \cite{Pow:11} and various solutions have been proposed. These solutions are as a group referenced as approximate dynamic programming. 
+\begin{remark}
+	For constant number of states and actions in each time epoch, this reduction is from $|\mathbf{T}|^{|\mathbf{S_t}|^{|\mathbf{A_{s_t}}|}}$  to $|\mathbf{T}|\cdot |\mathbf{S_t}|\cdot|\mathbf{A_{s_t}}|$.
+\end{remark}
+
+The reduction of computational complexity with the DP algorithm is significant. However, for the majority of real world applications this reduction is not enough. In reality, due to the structure of decision making problems and their formulation, the cardinality of state space can explode even for fairly simple decision problems. 
+
+The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" \cite{Pow:11} and various solutions under the label of approximate dynamic programming were proposed. 
 
 
 \subsection{Approximate dynamic programming}
 
-The computational complexity of dynamic programming for moderate and high-dimensional decision making problems is so demanding that results cannot be obtained in a reasonable amount of time. 
+The computational complexity of dynamic programming for middle and high-dimensional decision making problems is so demanding that results cannot be obtained in a reasonable amount of time. 
 
-The response to this problem comes in a form of approximate dynamic programming, a section of decision making under uncertainty, that is represented by a number of algorithms that are trying to obtain quasi-optimal strategies with more reasonable demand for computation power. 
+The response to this problem comes in a form of approximate dynamic programming, a section of decision making under uncertainty, that is represented by a number of algorithms that are trying to obtain quasi-optimal strategies for decision making problems with more reasonable demands for computational power. 
+
+There are many different algorithms that try to approximate the value function, for details please read \cite{Pow:11}. For this thesis the go-to ADP algorithm is the value 
+
+
+\textbf{ENDED HERE, take inspiration from SPMS contribution}
 
 There are many different algorithms, that try to obtain approximate results of the precise dynamic programming represented by the bellman equation. In this thesis the ADP algorithm called <Q-learning, SARSA...> is used because of its high performance in ..., while being still relatively easy to implement. A longer discussion of its choice is left to its corresponding chapter \ref{}. 
 

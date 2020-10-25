@@ -122,7 +122,7 @@ Stewart~C. Myers.
 V.~Peterka.
 \newblock Bayesian approach to system identification.
 \newblock In {\em in Trends and Progress in System Identification, P. Eykhoff,
-  Ed}, pages 239--304. Pergamon Press, 1981.
+  Ed}, pages 239--304. Peron Press, 1981.
 
 \bibitem{Pow:11}
 Warren~B. Powell.
@@ -158,6 +158,11 @@ Young Ryu, Young-Oh Kim, Seung~Beom Seo, and Il~Seo.
   uncertainty: a case study for evaluation of flood mitigation plans in korea.
 \newblock {\em Mitigation and Adaptation Strategies for Global Change}, 08
   2017.
+
+\bibitem{SicGam:10}
+Gordon Sick and Andrea Gamba.
+\newblock Some important issues involving real options: an overview.
+\newblock {\em Multinational Finance Journal}, 14(1/2):73--123, 2010.
 
 \bibitem{Tho:19}
 Grid Thoma.

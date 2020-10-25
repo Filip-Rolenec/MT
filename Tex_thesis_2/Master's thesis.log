@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  24 OCT 2020 20:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  25 OCT 2020 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1079,27 +1079,27 @@ Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
 ]
 Chapter 1.
 
-Package natbib Warning: Citation `SicGam:10' on page 15 undefined on input line
- 345.
+Underfull \vbox (badness 1762) has occurred while \output is active []
 
-[15]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 359.
+ [15]
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 357.
 
- (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 359.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 357.
  [16]
 Chapter 2.
 [17
 
 ] [18]
 LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 492.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 490.
  [19] [20] [21] [22]
 
-LaTeX Warning: Reference `' on page 23 undefined on input line 645.
+LaTeX Warning: Reference `' on page 23 undefined on input line 656.
 
 [23] [24] [25] [26
 
@@ -1107,7 +1107,7 @@ LaTeX Warning: Reference `' on page 23 undefined on input line 645.
 Chapter 3.
 [27] [28] [29]
 
-LaTeX Warning: Reference `the problem' on page 30 undefined on input line 832.
+LaTeX Warning: Reference `the problem' on page 30 undefined on input line 843.
 
 [30]
 Chapter 4.
@@ -1125,9 +1125,6 @@ Chapter 6.
 
 ] [37])
 
-Package natbib Warning: There were undefined citations.
-
-
 Package caption Warning: Unused \captionsetup[figure] on input line 140.
 See the caption package documentation for explanation.
 
@@ -1137,10 +1134,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 24437 strings out of 492616
- 436345 string characters out of 6129482
- 570731 words of memory out of 5000000
- 27974 multiletter control sequences out of 15000+600000
+ 24441 strings out of 492616
+ 436408 string characters out of 6129482
+ 570758 words of memory out of 5000000
+ 27978 multiletter control sequences out of 15000+600000
  618468 words of font info for 146 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,904b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1159,7 +1156,7 @@ fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/
 local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texl
 ive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (38 pages, 214288 bytes).
+Output written on "Master's thesis.pdf" (38 pages, 215232 bytes).
 PDF statistics:
  212 PDF objects out of 1000 (max. 8388607)
  144 compressed objects within 2 object streams
