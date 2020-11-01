@@ -19,9 +19,8 @@
 \contentsline {section}{\numberline {2.4}Statistical decision theory}{21}% 
 \contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{22}% 
 \contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{23}% 
-\contentsline {paragraph}{<Q-Learning, SARSA,..>}{23}% 
-\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics}{23}% 
-\contentsline {subsection}{\numberline {2.4.4}Utility}{24}% 
+\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics (?)}{24}% 
+\contentsline {subsection}{\numberline {2.4.4}Utility}{25}% 
 \contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{27}% 
 \contentsline {section}{\numberline {3.1}Project valuation - problem definition}{27}% 
 \contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{27}% 

@@ -580,7 +580,7 @@ The SDT's main focus is to determine the optimal strategy (a sequence of decisio
 	Markov decision process is defined by its five building blocks: 
 	\begin{itemize}
 		\item Set of time epochs - $\mathbf{T}$;
-		\item Set of environment states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
+		\item Set of states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
 		\item Set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$, $t \in \mathbf{T}$;
 		\item Reward function of transition from one state to another - $r(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
 		\item Transition probabilities governing the transitions from one state to another $p(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
@@ -592,7 +592,7 @@ The SDT's main focus is to determine the optimal strategy (a sequence of decisio
 \end{remark}
 
 \begin{remark}
-	For further simplification of the text, we define $\mathbf{S} = \bigcup\limits_{t \in \mathbf{T}} \mathbf{S_t}$ and$\mathbf{A} = \bigcup\limits_{s \in \mathbf{S}} \mathbf{A_{s}}$.
+	For further simplification of the text, we define $\mathbf{S} = \bigcup\limits_{t \in \mathbf{T}} \mathbf{S_t}$ and $\mathbf{A} = \bigcup\limits_{s \in \mathbf{S}} \mathbf{A_{s}}$.
 \end{remark}
 
 
@@ -618,8 +618,6 @@ Finding the optimal policy by computing the expected reward for all policies $\p
 very demanding task even for low-dimensional problems. 
 
 
-\textbf{ENDED HERE}
-
 To cope with such computational complexity a clever idea of backward induction, called dynamic programming, is used. The core of dynamic programming is to define so called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
 \begin{equation}\label{eq:Bellman}
 V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
@@ -639,37 +637,54 @@ expected values.
 
 The reduction of computational complexity with the DP algorithm is significant. However, for the majority of real world applications this reduction is not enough. In reality, due to the structure of decision making problems and their formulation, the cardinality of state space can explode even for fairly simple decision problems. 
 
-The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" \cite{Pow:11} and various solutions under the label of approximate dynamic programming were proposed. 
+The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" \cite{Pow:11} and various solutions under the label of approximate dynamic programming (ADP) were proposed. 
 
 
 \subsection{Approximate dynamic programming}
 
-The computational complexity of dynamic programming for middle and high-dimensional decision making problems is so demanding that results cannot be obtained in a reasonable amount of time. 
+The computational complexity of dynamic programming for middle and high-dimensional decision making problems is so demanding that its results cannot be obtained in a reasonable amount of time. 
 
-The response to this problem comes in a form of approximate dynamic programming, a section of decision making under uncertainty, that is represented by a number of algorithms that are trying to obtain quasi-optimal strategies for decision making problems with more reasonable demands for computational power. 
+To cope with this problem a relevant topic to look at is the section of SDT called approximate dynamic programming (ADP). The ADP label can be understood as a unifying name for a number of algorithms\footnote{for details see Powell \cite{Pow:11}.} that are trying to obtain quasi-optimal strategies for decision making problems with reasonable demands for computational power. 
 
-There are many different algorithms that try to approximate the value function, for details please read \cite{Pow:11}. For this thesis the go-to ADP algorithm is the value 
+ADP algorithms can be divided into two main classes, policy and value iteration algorithms. In this thesis we will be focusing on the value iteration class, since we believe that due to the structure of project valuation problems (rather large $|\mathbf{S}$| and small $|\mathbf{A}|$) it is a better fit.
+
+The idea of value iteration is to have some initial heuristic value function approximation, which is being updated based on the sample of possible paths. 
+
+In this thesis, we will focus on the most simple approximation model of the value function, that enables to parameterize the value function with only a small number of parameters\footnote{A value function is in classical DP similar to a look-up table, there is no simple relationship between states and the values of value functions.}. We will model the value function in each time epoch $v_t$ as a linear function of basis functions $\phi_{i}$ and parameters $\theta_{i,t}$: 
+
+\begin{equation}
+v_t(s) = \sum_{i} \theta_{i,t} \cdot \phi_{i}(s),
+\end{equation} 
+
+where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running production. 
+
+The update of $v_t$ then unfolds as follows: 
+
+\begin{itemize}
+	\item Sample of states $\mathcal{S}$ in time $t \in \mathbf{T}$ is generated\footnote{Usually based on the model of state distribution in time $t$.} 
+	\item In each $s_t \in \mathcal{S}$ the optimal action $a_t^*$ is determined as argument maxima of the Bellman equation, where the value function is understood as its last approximation. 
+	\item In each $s_t \in \mathcal{S}$ undertaking the action $a_t^*$ and transition to the following state $s_{t+1}$ is simulated. The reward-state pair $(s_t, r(s_t, a_t^*,s_{t+1}))$ is saved. 
+	\item Based on all state-reward pairs a new linear model is constructed, resulting in new parameters $\theta_{i,t}$\footnote{We could also introduce learning here, meaning that new parameters are a weighted average of the last ones and the newly determined.}.
+\end{itemize}
+
+By updating the parameters $\theta_{i,t}$ in all $t \in \mathbf{T}$ (in this thesis we will be  updating $v_t$ from the horizon) the value function approximation is getting more and more precise\footnote{Really? I tried to look in Powell, but did not find any convergence theorems to real vf, or at least the optimal parameters of the approximation}. The algorithm ends when a predefined stopping rule is met. 
+
+An example of such rule can be that the sum of parameter changes is lower than some predefined threshold. 
+
+After the stopping rule is met, we are in possession all parameters $\theta_{i,t}$ with which we are able to determine our best approximation of the expected value of each individual state. One particularly relevant state is the one that describes the current state of the world and thus its value is our estimate of the project's valuation.  
 
 
-\textbf{ENDED HERE, take inspiration from SPMS contribution}
+\subsection{Bayesian statistics (?)}
 
-There are many different algorithms, that try to obtain approximate results of the precise dynamic programming represented by the bellman equation. In this thesis the ADP algorithm called <Q-learning, SARSA...> is used because of its high performance in ..., while being still relatively easy to implement. A longer discussion of its choice is left to its corresponding chapter \ref{}. 
+The field of mathematical statistics can be divided into two branches, classical (also called frequentist) and Bayesian. The philosophies of each one are fundamentally different and they can be used with a various level of success in different applications. 
 
-\paragraph{<Q-Learning, SARSA,..>}
-<Detailed description of the chosen ADP algorithm> 
+In this thesis, we are not trying to broadly discuss the internal philosophies of the Bayesian and classical approach as this is not a short and clear discussion. Instead, our approach is to simply use the Bayesian statistics, because it is a better fit for the narrative of learning and decision making under uncertainty. 
 
-
-\subsection{Bayesian statistics}
-
-The field of mathematical statistics can be divided into two branches, classical (also called frequentist) and Bayesian. The philosophies of each one are fundamentally different, however in principle, they can serve for revealing new truths of the measured data in a similar fashion. 
-
-Mathematical statistics is a very broad topic, not possible to summarize it in one paragraph. The use of Bayesian statistics in this thesis is only as a tool, no broader discussions about the internal philosophy of different approaches are presented.
-
-In general, statistical theory is used to determine a distribution from which the observed data come from. In majority of cases, it is assumed that the data are realizations of a random variable with a distribution from some parameterized class - normal, log-normal, poisson, etc. The goal is then to determine, with some level of confidence, the parameters that fit the observed data in some sense the best. \footnote{Large simplification, statistics can be used in many different ways.} 
+In general, statistical theory is used to determine a distribution from which the observed data come from. In majority of cases, it is assumed that the data are realizations of a random variable with a distribution from some parameterized class - normal, log-normal, Poisson, etc. The goal is then to determine, with some level of confidence, the parameters that fit the observed data in some sense the best. \footnote{Large simplification, statistics can be used in many different ways.} 
 
 The main difference between the Bayesian and classical statistics is how the parameters of a distribution are perceived by the statistician. In the classical theory, it is assumed that observed data come from some distribution with some firm but unknown parameters $\Theta$. In contrast, the Bayesian view on the parameters is such that they are perceived as random variables $\tilde{\Theta}$. 
 
-This terminology twist can be a source of initial confusion for frequentist statisticians, but it allows a simple and elegant update of parameter estimates with the Bayes formula.
+This terminology twist can be a source of initial confusion for frequentist statisticians, but it allows a simple and elegant update of parameter estimates with the Bayesian formula: 
 
 \begin{equation}
 	p(\Theta|d)=\frac{p(d|\Theta)p(\Theta)}{p(d)}, 
@@ -684,25 +699,47 @@ Since the Bayesian theory tells us only how to update an already existing distri
 
 This problem is in Bayesian statistics understood as an advantage, since one can use his knowledge about the problem that is being solved and incorporate it to the prior distribution, which is then updated on the measured data. 
 
-The task of consistent creation of prior distribution is a complicated topic and can be found in more detail in \cite{Ber:85}. Furthermore the prior information always exists, as Peterka \cite{Pet:81} puts it: "No prior information is a fallacy: an ignorant has no problems to solve".  
+The task of consistent creation of prior distribution is a complicated topic and can be found in more detail in \cite{Ber:85}. Furthermore, the prior information always exists, as Peterka \cite{Pet:81} puts it: ``No prior information is a fallacy: an ignorant has no problems to solve``.  
 
 
 \subsection{Utility}
-The concept of utility instead of monetary or other globally measurable gain comes in when the gains are valued non-linearly. 
+In many decision making situations, rational decision makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
 
- Multiple studies show \footnote{Find citations (?) or omit this formulation}, that the majority of people are risk-averse, meaning that the value of uncertain monetary gain is not equal to its expected value. 
+One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision maker, driven only by the expected value of his actions would be indifferent to the two choices. However, the majority of people ten to take the certain amount of 500\$, suggesting that the perceived value of the gamble is lower than 500\$.
 
-One of the simplest example to demonstrate the usage of utility is given by \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500\$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision maker driven only by the expected value of his actions would be indifferent to the two choices. However, the majority of people tend to take the certain amount instead of gambling. 
+This effect and its implications becomes more understandable for very large sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However one result is certain and the other one has only a 50\% probability. 
 
-This example can be reformulated as follows: How much money would the decision maker need to obtain for certain so that he would be indifferent to gamble for a 1000\$. In other words, how much the risk-averse person values that gamble. 
+Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738, \cite{Ber:54}. An expected value of the proposed game is infinite, however it is shown that people would seldom pay more than 25 USD to play it. It is interesting that this amount corresponds with the assumption that the counterparty does not posses infinite amount of money, but rather a more reasonable amount of 16.5M USD \cite{}. \footnote{This is from wikipedia, find more cool sources. Interesting, but does not have to be in the thesis} 
 
-The non-linearity of utility obtained from large amounts of money is only more understandable for very large sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD. The change in the person's life will be almost the same and presumably positive. However one result is certain and the other one has only a probability of 1/2. 
+By these two examples we demonstrate that real decision makers must, in some cases, decide based on something different than the expected value. Building on the extension of the first example, we say that decision makers maximize their well-being measured in utility of the given monetary rewards. 
 
-Another interesting example of the risk-aversion of people is the famous St. Petersburg paradox first formulated by Bernoulli in 1738, \cite{Ber:54}. A risk-neutral \footnote{Define risk-neutral (?)} decision maker would be willing to pay any amount of money to be able to play a game defined by the paradox. However it is shown that people seldom value the game more than 25 USD, which corresponds to a case that the initiator of the bet does not have an infinite amount of money, rather only 16,5M USD \cite{}. \footnote{This is from wikipedia, find more cool sources. Interesting, but does not have to be in the thesis}
+This relation between the perceived utility and monetary value if formalized by the \textbf{utility function}.
 
-Regarding to utility there is also an interesting asymmetry in human psychology about obtaining gains and incurring losses. The graphical expression of this asymmetry can be found in \cite{BacChi:19}. \footnote{Put the picture here, or cite the exact page?} 
+Based on the shape of utility function we are able to define three classes of decision makers: 
 
-The utility function of each decision maker is different and an approximation of its shape can be obtained by an algorithm based on a questionnaire, which also ensures the consistency of responses of a given individual. 
+
+\begin{itemize}
+	\item \textbf{Risk-averse} decision makers (majority of the population) have concave utility functions. They value uncertain monetary gain lower than its expected value. 
+	\item \textbf{Risk-neutral} linear utility function. They value uncertain monetary gain exactly as its expected value. 
+	\item \textbf{Risk-seeking} convex utility function. They  value uncertain monetary gain more than its expected value.  
+\end{itemize}
+
+
+The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individuals utility function can be obtained from a questionnaire by an algorithmic approach that ensures the consistency of responses given by the individual \cite{BacChi:19}.
+
+Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in \ref{fig:UF}.
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 0.7]{Images/UF.png}
+		\caption{An example of utility function \cite{BacChi:19}.} 
+	\end{center}\label{fig:UF}
+\end{figure}
+
+
+
+
 
 
 
