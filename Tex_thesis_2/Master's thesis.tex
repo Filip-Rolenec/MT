@@ -727,84 +727,119 @@ Based on the shape of utility function we are able to define three classes of de
 
 The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individuals utility function can be obtained from a questionnaire by an algorithmic approach that ensures the consistency of responses given by the individual \cite{BacChi:19}.
 
-Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in \ref{fig:UF}.
+Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in fig. \ref{fig:UF}
 
 
 \begin{figure}[htb]
 	\begin{center}
 		\includegraphics[scale = 0.7]{Images/UF.png}
 		\caption{An example of utility function \cite{BacChi:19}.} 
-	\end{center}\label{fig:UF}
+		\label{fig:UF}
+	\end{center}
 \end{figure}
 
 
 
-
-
-
-
 \chapter{Project valuation as stochastic decision problem}
-In this chapter we develop the core idea of this thesis. This idea is to take the valuation problem as stated in ROA and solve it with the tools of SDT, while preserving the economical truths about project valuation, such as time value of money and risk-aversion of investors. 
+In this chapter the core idea of this thesis is developed. This idea is to take the valuation problem as defined in ROA and solve it with SDT, while preserving the economical truths about project valuation, such as time value of money and risk-aversion of investors. 
 
-We begin by a clear definition of a project inspired by the publications in field od ROA. We define project valuation problem as a collection of mathematical constructs, and we also present the limits of this model. Next we focus the actual identification of the problem in the SDT framework. We define all the relevant sets and functions needed for a structured decision making problem. The reminder of this chapter is reserved for the incorporation of the economical truth to the model, namely the time value of money and the risk-aversion of investors.  
+We begin by a clear definition of a project inspired by publications in the field of ROA. We define project valuation problem as a collection of mathematical constructs and identify the main limitations of this approach. 
+
+Next, we focus on the identification of the project valuation in terms of SDT framework. We define all the relevant sets and functions to be able to talk about project valuation as a structured decision making under uncertainty. 
+
+The reminder of this chapter is reserved for the incorporation of the economical truths to the model, namely the time value of money and the risk aversion of investors. 
+
 
 \section{Project valuation - problem definition}
-To be able to rigorously talk about the project valuation we need to set up boundaries of what is considered a project and what do we mean by its valuation. The inspiration for our definitions comes from the examples that are being solved in the economical publications. The format and framework that is used in many different publications namely \cite{} and \cite{} and \cite{} can be presented as follows: 
+To be able to rigorously talk about the project valuation we need to define what is a \textit{project} and what do we mean by its \textit{valuation} in ROA. The inspiration for these definitions comes from examples and used rhetoric in the ROA publications, namely \cite{Gut:09}, \cite{Vol:03} and \cite{AmrKul:98}. 
 
-<Define the problem that is being solved. With sets, relationships between them, transition function etc. purposely not making the connection from the beginning> 
+None of the books that we have studied goes in detail to define a project as a collection of mathematical constructs, as for example SDT does with MDPs. Guthrie in \cite{Gut:09} illustrates what a project is with three initial examples and in each chapter presents a real investment opportunity in a way that it is ``clear`` what is meant by this specific project and what are its parameters. 
 
-Now that the problem is identified, we can follow with its interpretation in the SDT framework. 
+In other books like Vollert's \cite{Vol:03} and Kulatilaka's \cite{AmrKul:98} (???) a definition of a project is also not given, rather, it is assumed that the terms\textit{project} or \textit{capital investment} are clear. 
+
+It is worth noting that a definition of project \textit{valuation} is also not deeply discussed in the ROA books. We feel like the term of valuation is assumed to be clear and a  is always being understood as expected net present value (NPV). 
+
+NPV as a concept is easily understandable, however as we will discuss later it has some features that are not ideal, for example the unclear value of a discount rate or not reflecting the individual perception of risk. 
+
+As explained above, nothing like a clear mathematical definition of a project valuation is not presented in the ROA books. However, their rhetoric is similar and we strongly believe that the project valuation can be understood as: "An amount of value that I am able to create with actions that can be considered as a part of one project, measured in a metric of expected net present value with a special non-axiomatic determination of the discount rate." \footnote{I am really not sure here, it does not seem that authors actually defined what a project valuation is... }
+
+Now, that the position of ROA to project valuation is clearer, we can follow with its interpretation in the SDT framework.
 
 
 \section{Project valuation in the stochastic decision theory framework}
-Trying to solve the project valuation task as a stochastic decision problem means first and foremost to identify all the necessary structure of the SDT framework with the project valuation problem as defined above. After this identification the standard tools of SDT for solving the problem, dynamic programming (possibly approximate dynamic programming) can be used for obtaining the results. 
+Trying to solve the project valuation task as a stochastic decision problem means first and foremost to identify all the necessary structure of the SDT framework in the ROA formulations. This in not a particularly hard task given the rather loose definition given above. 
 
-The SDT framework consists of two parts. First there are three sets: Time set, State set and Action set, which express the structure of the decision making problem. The second part consists of two functions: transition probability function and reward function, which express the relationships between nodes of the structure and most importantly the rewards that are being optimized. 
+After this identification the standard tool of SDT, dynamic programming (or potentially approximate dynamic programming), can be used to solve the valuation problem. 
 
-The following paragraphs will focus on each of these five important building blocks od a decision problem in detail.  
+Solving a valuation problem in SDT means to define it as MDP, which is defined by two parts. First there are three sets: Time set $\mathbf{T}$, State set $\mathbf{S}$ \footnote{This global state set is a union of state set in each time $\mathbf{S_t}$}, Action set $\mathbf{A}$ \footnote{This global action set is a union of Action set in each state $\mathbf{A_{s_t} }$}, which express the structure of the decision making problem. The second part consists of two functions: transition probability function and reward function, where the first one is responsible for describing the probability evolution of the project and the second one for informing about the value gains in each time epoch.
+
+In the following paragraphs we will focus on each of these five important building blocks of the project valuation decision problem in detail. In each paragraph we will present an example from valuation of gas power-plant, helping the reader to understand and preparing the ground for our experiments that will follow. 
 
 \paragraph{Time set}
-<Discrete set with a known horizon>
+Even though the SDT theory is capable of handling infinite time horizons and continuous time modeling, these sophisticated formats are not needed when valuing a real life projects. The time element of a project can be reasonably described by a discrete set with known finite horizon for two reasons. 
 
-<Horizon matches with the perception of projects in economy>
+First is that observing new information and making impactful decisions by project's manager is not done at any time but after some reasonable time chunks. No manager changes the course of a project 10 times a day. 
 
-<Time intervals coincide with the decision making and adaptability of the project, moths, quarters,... >  
+Second reason is that managers do not think about project valuations after a certain time interval. This is given by the finite time-span nature of projects (Gas powerplant life-span) or the notion that in today's uncertain world modeling cash flow of a project in 100 years and further a wishful thinking. 
 
+Time intervals usually correspond with the intervals of large management meetings at which the course of the project can be changed significantly, e.g. week, month or quarterly intervals.  This truth is usually reflected in the ROA publications. 
+
+\begin{example}
+	Monthly time intervals in a scope of gas power plant lifespan which is 25 years. The time set is then $\mathbf{T} = \{0,1,2,...,300\}$
+\end{example}
 
 \paragraph{State set}
-<Dependent on time set or static structure> 
+Defining the state set $\mathbf{S}$ in a project valuation problem means to find a list of relevant measurable parameters of both the project itself and its environment. A state $s \in \mathbf{S}$ is then a vector of elementary states of individual parameters. 
 
-<State is a vector of elementary states> 
+The state set $\mathbf{S}$ can be constant, meaning that in each time epoch we are measuring the same parameters and the state vector has a constant length. However, it might be useful to think about variable state sets in each time epoch $t \in \mathbf{T}$ as $\mathbf{S_t}$ where for some reason the states in different time epoch have variable length \footnote{More or less features are relevant for the project in different stages}. 
 
-<Elementary state describes with one value one truth about project environment or the status of the project itself> 
+It is worth noting that there are usually some elementary states that are influenceable by the managerial actions and some states that are not. In our notation we do not distinguish between them. 
 
-<There are states that are possible to be influenced by managerial actions and those who are not, we do not distinguish between them in the notation> 
+In our models, each elementary state is understand as a random variable, which probability distributions are conditioned on the previous state and the last action taken. This probability is described with the transition probability function that follows. 
 
-<State is understood as a random variable where probabilities of realizations are conditioned by the previous states and actions. This probability is described by the transition probability function> 
+\begin{example}
+	Relevant features for a gas power plant might be for example: price of gas, price of CO2 allowances, price of power, installed capacity of the plant, debt to be returned or if the plant is currently running or not. The first four elementary states would then be considered as uninfluenceable by our future actions, while the last three would not. 
+\end{example}
+
 
 \paragraph{Action set}
-<Say that usually the action set is understood as really a set, but in the format of project valuation, it makes more sense to make it as action function> 
+In SDT structure the action set  $\mathbf{A}$ is usually understood as an actual set, however in the format of project valuation, we find it better to represent it as an action function, whose parameter is given state $s_t \in \mathbf{S_t}$ and output is a set of possible actions $\mathbf{A(s_t)}$. 
 
-<Action function takes state as an argument and returns the possible actions> 
+The reason for this is that possible managerial actions are most of the time conditioned on the current status of the project itself. Only a small portion of all possible actions might be actually performed in given state. 
 
-<This is usually because actions in a project are conditioned by the already achieved project status (i.e. action to produce if the plant has been already built)> 
+In ROA publications the term of options is used to describe possible managerial actions now or in the future. Even though we believe that this terminology helps with understanding that possibility of future managerial action has value, we do not embrace it in this thesis and we will use the standard SDT terminology. 
 
-<ROA terminology of having options, reflecting the influence of its origins in valuation of derivative markets, emerges as simply having an action in the action set of a given state>
+The advantage of the SDT approach in contrast to ROA is that there is no theoretical  complication in adding as many actions as possible of any type (as classified in ROA by Guthrie \cite{Gut:09} for example) possibly even conditioned on one another. The only concern that needs to be reminded is that of computational complexity. 
 
-<Because of the structure of SDT framework, there is no problem in adding theoretically unlimited number of actions, even conditioned on one another. Increasing the number of possible actions makes from theoretical point of view no complications, which is in contrast of the ROA framework. It it worth noting that additional actions influence the computational complexity of the dynamic programming algorithm> 
+\begin{example}
+	Actions in gas power plant valuation might be to: build some stage of the plant if there is some stage left to built, run the plant if it has some installed capacity, mothball or sell the power plant for salvage value. We believe that this example clearly shows the dependency of possible actions on given state and why is it thus better to use the function notion from now on. 
+\end{example} 
 
+Now, we have defined the structure of a project, boundaries within which the project will evolve managerial actions will be taken and value will be created. 
 
 \paragraph{Transition probability function}
-<Is a function that, conditioned on actions of the manager, defines the probability distribution of all paths the project can take> 
+Given the nature of projects the evolution from one state to another is a stochastic process. In this thesis we want to model the project as MDP and thus the probability distribution of the next state, described by so called transition probability function, is conditioned only on the previous state and the last action that was taken. In mathematical notation: 
+\begin{equation}
+	p(s_t|a_t, s_{t-1}).
+\end{equation}
 
+The probabilities in this thesis are understood as both discrete probabilities and probability distributions in case of continuous variables. Furthermore, as we will model each elementary state by a different distribution we need to be able to compute the overall probability of the future state given the elementary distributions. To make things simple, we assume individual elementary states to be represented by independent variables and thus the probability (or probability distribution) of a next state is a product of the elementary probabilities \footnote{Combination of discrete and continuous variable as elementary states results in continuous global variable (and thus probability distribution).}: 
 
-<The probabilities in this thesis are discrete> 
+\begin{equation}
+	p(s_t|a_t, s_{t-1})=\prod_{i}p(s_t^i|a_t, s_{t-1}), 
+\end{equation}
+where $s_t^i$ is the new elementary state. 
 
-<We assume that individual transformations of the state vector elements are independent. Thus the probabilities can be computed as a product of individual transition probabilities of each state vector element>
+\begin{remark}
+	It is possible that some elementary states are fully determined by the previous actions. There is no randomness, however the notion is the same and the new state is deterministically realized with a probability $p=1$. 
+\end{remark}
 
-<Product equation>  
+It is clear that in the majority of real-life projects, determining, or estimating, this transition probability function is a very hard task. Decisions will be made based on its estimate increasing or decreasing the overall profitability of a project. 
 
-<The details of obtaining the probabilities will be discussed in one of the next sections>
+The focus of ROA authors on modeling the probabilities of effectively transitioning from one state to another varies a lot. Some authors like Guthrie \cite{Gut:09}, \cite{ArmKul:98} (???) use the arbitrage principle to determine the probabilities of their binomial models. Some authors, like \cite{KulTri:94} use the principle of insufficient reason\footnote{Even though they do not call it that way. }, where they assign 50\% probability to movements in both directions of their binomial models. Some authors, also \cite{Gut:09} and \cite{Vol:03} go deeper in statistical modeling of the probabilities. 
+
+Some details of how does SDT approach the estimation of $p(\cdot)$ will be discussed later in section \ref{}, however we must note that correct estimation of these probabilities is not the focus of this thesis which is mostly on the interpretation of ROA methods in SDT. 
+
 
 \paragraph{Reward function}
 <Is a function of states and actions> 
