@@ -60,6 +60,7 @@ I was expecting a `,' or a `}'---line 1281 of file fr.bib
  :  title={Risk aversion and incentive effects: New data without order effects},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "AmrKul:98"
 Warning--I didn't find a database entry for ""
 Warning--to sort, need author or key in CopAnt:01
 Warning--to sort, need author or key in HolLau:05
@@ -75,45 +76,45 @@ Warning--empty journal in Amp:17
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--can't use both author and editor fields in Web:09
-You've used 34 entries,
+You've used 35 entries,
             2118 wiz_defined-function locations,
-            712 strings with 8437 characters,
-and the built_in function-call counts, 8846 in all, are:
-= -- 840
-> -- 339
+            722 strings with 8608 characters,
+and the built_in function-call counts, 9094 in all, are:
+= -- 864
+> -- 352
 < -- 2
-+ -- 142
-- -- 104
-* -- 514
-:= -- 1499
-add.period$ -- 103
-call.type$ -- 34
-change.case$ -- 137
++ -- 148
+- -- 108
+* -- 529
+:= -- 1545
+add.period$ -- 106
+call.type$ -- 35
+change.case$ -- 142
 chr.to.int$ -- 0
-cite$ -- 48
-duplicate$ -- 398
-empty$ -- 782
-format.name$ -- 104
-if$ -- 1858
+cite$ -- 49
+duplicate$ -- 408
+empty$ -- 799
+format.name$ -- 108
+if$ -- 1907
 int.to.chr$ -- 0
-int.to.str$ -- 34
-missing$ -- 49
-newline$ -- 170
-num.names$ -- 64
-pop$ -- 222
+int.to.str$ -- 35
+missing$ -- 50
+newline$ -- 175
+num.names$ -- 66
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 120
+purify$ -- 124
 quote$ -- 0
-skip$ -- 254
+skip$ -- 263
 stack$ -- 0
-substring$ -- 392
-swap$ -- 50
+substring$ -- 398
+swap$ -- 51
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 102
+type$ -- 106
 warning$ -- 14
-while$ -- 81
-width$ -- 36
-write$ -- 351
+while$ -- 83
+width$ -- 37
+write$ -- 362
 (There were 12 error messages)
