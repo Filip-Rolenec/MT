@@ -27,30 +27,36 @@
 \contentsline {subsection}{\numberline {3.2.1}Time set}{28}% 
 \contentsline {subsection}{\numberline {3.2.2}State set}{29}% 
 \contentsline {subsection}{\numberline {3.2.3}Action set}{29}% 
-\contentsline {subsection}{\numberline {3.2.4}Transition probability function}{29}% 
+\contentsline {subsection}{\numberline {3.2.4}Transition probability function}{30}% 
 \contentsline {subsection}{\numberline {3.2.5}Reward function}{30}% 
 \contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{31}% 
 \contentsline {subsection}{\numberline {3.3.1}Probability}{31}% 
 \contentsline {paragraph}{Risk neutral probabilities}{32}% 
 \contentsline {paragraph}{Insufficient reasons}{32}% 
-\contentsline {paragraph}{More complex ROA tactics}{32}% 
+\contentsline {paragraph}{More complex models}{32}% 
+\contentsline {paragraph}{SDT interpretation}{32}% 
 \contentsline {paragraph}{SDT innovation}{32}% 
-\contentsline {paragraph}{Summary}{32}% 
+\contentsline {paragraph}{Summary}{33}% 
 \contentsline {subsection}{\numberline {3.3.2}Time value of money}{33}% 
-\contentsline {subsection}{\numberline {3.3.3}Risk-aversion of investors}{33}% 
+\contentsline {subsection}{\numberline {3.3.3}Risk aversion of investors}{33}% 
 \contentsline {subsection}{\numberline {3.3.4}Approximate dynamic programming}{34}% 
 \contentsline {subsection}{\numberline {3.3.5}Summary}{34}% 
-\contentsline {chapter}{\numberline {4}Valuation of facilities with simple I/O process}{35}% 
-\contentsline {section}{\numberline {4.1}General settings of the experiment}{36}% 
-\contentsline {paragraph}{Time set}{36}% 
-\contentsline {paragraph}{State set}{36}% 
-\contentsline {paragraph}{Action function}{37}% 
-\contentsline {paragraph}{Transition probability function}{37}% 
-\contentsline {paragraph}{Reward function}{37}% 
-\contentsline {section}{\numberline {4.2}Sensitivity towards potential action set}{37}% 
-\contentsline {paragraph}{Action set 1}{38}% 
-\contentsline {paragraph}{Action set 2}{38}% 
-\contentsline {paragraph}{Action set 3}{38}% 
-\contentsline {section}{\numberline {4.3}Sensitivity toward time epoch granularity}{38}% 
-\contentsline {chapter}{\numberline {5}Discussion}{39}% 
-\contentsline {chapter}{\numberline {6}Conclusions}{41}% 
+\contentsline {chapter}{\numberline {4}Valuation of facilities with simple I/O process}{37}% 
+\contentsline {section}{\numberline {4.1}General settings of the experiment}{38}% 
+\contentsline {subsection}{\numberline {4.1.1}Time set}{38}% 
+\contentsline {subsection}{\numberline {4.1.2}State set}{38}% 
+\contentsline {subsection}{\numberline {4.1.3}Action function}{40}% 
+\contentsline {subsection}{\numberline {4.1.4}Transition probability function}{40}% 
+\contentsline {paragraph}{Deterministic evolution}{41}% 
+\contentsline {paragraph}{Stochastic evolution simple}{41}% 
+\contentsline {paragraph}{Power price}{42}% 
+\contentsline {paragraph}{Balance}{42}% 
+\contentsline {paragraph}{Reward function}{42}% 
+\contentsline {section}{\numberline {4.2}Approximate dynamic programming}{43}% 
+\contentsline {section}{\numberline {4.3}Sensitivity towards potential action set}{43}% 
+\contentsline {subsection}{\numberline {4.3.1}Action set 1}{43}% 
+\contentsline {subsection}{\numberline {4.3.2}Action set 2}{44}% 
+\contentsline {subsection}{\numberline {4.3.3}Action set 3}{44}% 
+\contentsline {section}{\numberline {4.4}Sensitivity toward time epoch granularity}{44}% 
+\contentsline {chapter}{\numberline {5}Discussion}{45}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{47}% 

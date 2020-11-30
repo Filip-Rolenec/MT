@@ -348,7 +348,7 @@ In this thesis we focus on the second class of ROA authors represented by brilli
 
 Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty \cite{Rol:18}, \cite{Rol:19}. When studying ROA it came only natural to understand the project valuation as an optimal decision making problem. 
 
-The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain specific economical truths about the behavior of investors and the way they perceive value.  Two main addressed concepts are: the time value of money and the risk-aversion of investors. 
+The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain specific economical truths about the behavior of investors and the way they perceive value.  Two main addressed concepts are: the time value of money and the risk aversion of investors. 
 
 The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm will cover the classes of problems now solved by ROA and allow for new classes. 
 
@@ -358,7 +358,7 @@ The new SDT based valuation algorithm will enable:
 	\item integration of theoretically any probability distribution as a model of uncertain variables;
 	\item usage of high number of possible actions, regardless of their nature; 
 	\item utilization of approximate dynamic programming tools for high-dimensional problems;
-	\item preservation the economical truths as time value of money and the risk-aversion of investors. 
+	\item preservation the economical truths as time value of money and the risk aversion of investors. 
 \end{itemize}
 
 To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal zero and the input-output transformation rate is constant. This class is a generalization motivated by an example of gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
@@ -470,7 +470,7 @@ This thesis is built on two main theoretical pillars, the theory of corporate fi
 
 <A short paragraph about other metrics used in the decision making about a project, DTA,  IRR, WACC> 
 
-\subsection{Risk averse investors}
+\subsection{Risk averse investors}\label{sec:risk_aversion_preliminaries}
 According to the observations made in \cite{BerDeM:09} there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, where investors are happy to hold onto a low-volatile investment even though the average returns are lower in the long run. 
 
 The phenomenon of risk aversion is well documented also in psychological publications, i.e. \cite{HolLau:05}, where we observe that people do not like uncertainty and they do value uncertain rewards lower than their expected value. 
@@ -741,27 +741,25 @@ Another relevant fact with the perception of utility is the asymmetry in human r
 
 
 \chapter{Project valuation as stochastic decision problem}
-In this chapter we develop the core idea of this thesis. The idea is to take the valuation problem as defined in ROA and solve it with SDT, while preserving the economical truths about project valuation, such as time value of money and risk-aversion of investors. 
+In this chapter we develop the core idea of this thesis. The idea is to take the valuation problem as defined in ROA and solve it with SDT, while preserving the economical truths about project valuation, such as time value of money and risk aversion of investors. 
 
-We begin by a clear definition of a project inspired by publications in the field of ROA. We define project valuation problem as a collection of mathematical constructs\textbf{ (?)} and identify the main limitations of this approach. 
+We begin by clarifying the meaning of the term project as it is used in the publications in the field of ROA. We define project valuation problem as a collection of mathematical constructs\textbf{ (?)} and identify the main limitations of this approach. 
 
-Next, we focus on the identification of the project valuation in terms of SDT framework. We define all the relevant sets and functions to be able to talk about project valuation as a structured decision making under uncertainty. 
+Next, we focus on the identification of the project valuation in terms of SDT framework. We define all the relevant sets and functions to be able to talk about project valuation as a structured problem of decision making under uncertainty. 
 
 The reminder of this chapter is reserved for the incorporation of the economical truths to the model, namely the time value of money and the risk aversion of investors. 
 
 
 \section{Project valuation - problem definition}
-To be able to rigorously talk about the project valuation we need to define what is a \textit{project} and what do we mean by its \textit{valuation} in ROA. The inspiration for these definitions comes from examples and used rhetoric in the ROA publications, namely \cite{Gut:09}, \cite{Vol:03} and \cite{AmrKul:98}. 
+To be able to rigorously talk about the project valuation we need to define what a \textit{project} is and what do we mean by its \textit{valuation} in ROA. The inspiration for these definitions comes from examples and used rhetoric in the ROA publications, namely \cite{Gut:09}, \cite{Vol:03} and \cite{AmrKul:98}. 
 
-None of the books that we have studied goes in detail to define a project as a collection of mathematical constructs, as for example SDT does with MDPs. Guthrie in \cite{Gut:09} illustrates what a project is with three initial examples and in each chapter presents a real investment opportunity in a way that it seems clear what is meant by this specific project, what are its parameters and rules and what is the goal of the investor. 
+None of the books that we have studied goes in detail to define a project as a collection of mathematical constructs, as for example SDT does with MDPs. Guthrie in \cite{Gut:09} opens with a three initial examples of a project and in each chapter adds new real investment opportunity. This investment opportunity is presented in such way, that  it is clear what the project is, what are its parameters and what metric is optimized by the investor. 
 
-In other books like Vollert's \cite{Vol:03} and Kulatilaka's \cite{AmrKul:98} \textbf{(???)} a definition of a project is also not given, rather, it is assumed that the terms \textit{project} or \textit{capital investment} are clear. 
+In other books like Vollert's \cite{Vol:03} and Kulatilaka's \cite{AmrKul:98}  a definition of a project is also not given, rather, it is assumed that the used terms \textit{project}, \textit{capital investment} or \textit{investment opportunity} are clear. 
 
-It is worth noting that a definition of project \textit{valuation} is also not deeply discussed in the ROA books. We feel like the term of valuation is assumed to be clear and a  is always being understood as expected net present value (NPV). 
+It is worth noting that a definition of project \textit{valuation} is also not deeply discussed in the ROA books. We feel like the term of valuation is assumed to be clear and is always represented by expected net present value (NPV), which as we discussed before is easily understandable, but not very robust metric. 
 
-NPV as a concept is easily understandable, however as we will discuss later it has some features that are not ideal, for example the unclear value of a discount rate or not reflecting the individual perception of risk. 
-
-As explained above, nothing like a clear mathematical definition of a project valuation is presented in the ROA books. However, the used rhetoric is similar and we strongly believe that the project valuation can be understood as: "An amount of value that I am able to create with actions that can be considered as a part of one project, measured in a metric of expected net present value with a special non-axiomatic determination of the discount rate." \footnote{I am really not sure here, it does not seem that authors actually defined what a project valuation is... }
+As outlined above, nothing like a clear mathematical definition of a project valuation is presented in the ROA books. However, the used rhetoric is similar and we strongly believe that the project valuation can be understood as: "An amount of value that I am able to create with actions that can be considered as a part of one project\footnote{Defined as in preliminaries}, measured by the  metric of expected net present value with a special non-axiomatic determination of the discount rate." \textbf{(???)}
 
 Now, that the position of ROA to project valuation is clearer, we can follow with its interpretation in the SDT framework.
 
@@ -771,77 +769,78 @@ Trying to solve the project valuation task as a stochastic decision problem mean
 
 After this identification the standard tool of SDT, dynamic programming (or potentially approximate dynamic programming), can be used to solve the valuation problem. 
 
-Solving a valuation problem in SDT means to define it as MDP, which consists of two parts. First there are three sets: time set $\mathbf{T}$, state set $\mathbf{S}$\footnote{This global state set is a union of state set in each time $\mathbf{S_t}$} and action set $\mathbf{A}$\footnote{This global action set is a union of action set in each state $\mathbf{A_{s_t} }$}, which express the structure of the decision making problem. The second part consists of two functions: transition probability function $p$ and reward function $r$, where $p$ is responsible for describing the stochastic evolution of the project and $r$ for informing about the value gains in each time epoch.
+Solving a valuation problem in SDT means to define it as MDP, which consists of two parts. First there are three sets: time set $\mathbf{T}$, state set $\mathbf{S}$\footnote{This global state set is a union of state set in each time $\mathbf{S_t}$} and action set $\mathbf{A}$\footnote{This global action set is a union of action set in each state $\mathbf{A_{s_t} }$}, which describe the structure of the decision making problem. The second part consists of two functions: transition probability function $p$ and reward function $r$, where $p$ is responsible for describing the stochastic evolution of the project and $r$ for informing about the value gains in each time epoch.
 
-In the following paragraphs we will focus on each of these five important building blocks of the project valuation decision problem in detail. In each paragraph we will present an example from valuation of gas power-plant, helping the reader to understand and preparing the ground for our experiments that will follow. 
+In the following sections we will focus on each of these five important building blocks in detail. To better illustrate each of the building blocks, and to prepare our ground for the experiment, an example concerning the valuation of a gas power plant is presented. 
 
 \subsection{Time set}
-Even though the SDT theory is capable of handling infinite time horizons and continuous time modeling, these sophisticated formats are not needed for valuation of real life projects. The time dimension of a project can be reasonably described by a discrete set with known finite horizon for two reasons. 
+Even though the SDT theory is capable of handling infinite time horizons and continuous time modeling, these sophisticated formats are not needed for valuation of real life projects. The time dimension of a project can be reasonably described by a discrete set with known finite horizon, which is true for two reasons. 
 
-First is that observing new information and making impactful decisions by project's manager is not done at any time but after some reasonable time chunks. No manager changes the course of a project 10 times a day\footnote{This thesis does not focus on the individual management of the internal processes of the project. This thesis focuses on managerial decisions that modify the project in a major way.}. 
+First is that observing new information and making impactful decisions by project's manager is not done continuously at all times but discretely after some practical time intervals. No manager changes the course of a project 10 times a day\footnote{This thesis does not focus on the individual management of the internal processes of the project. This thesis focuses on managerial decisions that modify the project in a major way.}. 
 
-Second reason is that managers do not think about projects as ever-lasting. Potential profits after certain time threshold are neglected. This is given either by the finite time-span nature of the projects (Gas power plant life-span) or the extreme uncertainty in modeling of cash flows (and their true values) in the far future. To model a project's cash flow in 100 years is a wishful thinking. 
+Second reason is that managers do not think about projects as ever-lasting. Potential profits after certain time threshold are neglected. This is given either by the finite-lifespan nature of the projects (gas power plant lifespan) or the extreme uncertainty in modeling of cash flows (and their equivalent is present values) in the far future. To have a good model of project's cash flow in 100 years is a wishful thinking. 
 
 
-Time intervals in our model reflect the frequency of influential management meetings at which the course of the project can be changed significantly, e.g. week, month or quarterly intervals. This notion is supported also by its usage in the ROA publications. 
+Time intervals in our model reflect the frequency of influential management meetings at which the course of the project can be changed significantly, e.g. week, month or quarterly intervals. This notion is further supported by its usage in the ROA publications. 
 
 \begin{example}
-	Monthly decision time intervals in a duration of gas power plant lifespan which is 25 years. The time set is then $\mathbf{T} = \{0,1,2,...,300\}$.
+	Monthly decision time intervals in a duration of gas power plant lifespan, say 25 years. The time set is then $\mathbf{T} = \{0,1,2,...,300\}$.
 \end{example}
 
 \subsection{State set} Defining the state set $\mathbf{S}$ in a project valuation problem means to find a list of relevant measurable parameters of both the project and its environment. A state $s \in \mathbf{S}$ is then a vector of elementary states of such individual parameters. 
 
-The state set $\mathbf{S}$ can be constant, meaning that in each time epoch we are measuring the same parameters and the state vector has a constant length. However, it might be useful to think about dynamic state sets in each time epoch $t \in \mathbf{T}$ as $\mathbf{S_t}$, where for some reason the states have variable length\footnote{There are more or less relevant parameters to measure.}. 
+The state set $\mathbf{S}$ can be constant, meaning that in each time epoch, the same parameters are measured. However, it might also be useful to think about dynamic state sets in time $\mathbf{S_t}$, $t \in \mathbf{T}$, where for some particular reasons the structure of a problem changes in time\footnote{There are more or less relevant parameters to measure.}.
 
-It is worth noting that there are usually some elementary states that are influenceable by the managerial actions and some states that are not. In our notation we do not distinguish between them. 
+It is worth noting that there are usually some elementary states that are influenceable by the managerial actions and some that are not. This classification is not reflected in our notion. 
 
 In our models, each elementary state is understood as a random variable, which probability distribution is conditioned on the previous state and the last action taken. This probability is described with the transition probability function $p$, which is discussed in detail below. 
 
 \begin{example}
-	Relevant features for a gas power plant might be for example: price of gas, price of CO2 allowances, price of power, installed capacity of the plant, debt to be repayed or if the plant is currently running or not. The first four elementary states would then be considered as uninfluenceable by our future actions, while the last three would not. 
+	Relevant features for a gas power plant might be for example: price of gas, price of CO2 allowances, price of power, installed capacity of the plant, debt to be repayed or the remaining lifespan of its blocks. The first four elementary states would then be considered as uninfluenceable by our future actions, while the last three would not. 
 \end{example}
 
 
 \subsection{Action set}
-In SDT structure the action set  $\mathbf{A}$ is usually understood as an actual set, however in the format of project valuation, we find it better to represent it as an action function, whose parameter is a  given state $s_t \in \mathbf{S_t}$ and output is a set of possible actions $\mathbf{A(s_t)}$. 
+In SDT structure the action set  $\mathbf{A}$ is usually understood as an actual set, however in the format of project valuation, we find it better to represent it as an action function, whose parameter is a  given state $s_t \in \mathbf{S_t}$ and output is a set of possible actions $\mathbf{A(s_t)}= a(s_t)$. 
 
-The reason for this is that possible managerial actions are most of the time strictly conditioned on the current status of the project itself. Only a small portion of all possible actions might be actually performed in a given state. 
+The reason for this is that possible managerial actions are most of the time strictly conditioned on the current status of the project itself. Only a small subset of all possible actions might be actually taken in a given state. 
 
 In ROA publications the term options is used to describe possible managerial actions both current and future. Even though we believe that this terminology helps with understanding that possibility of future managerial action has value, we do not embrace it in this thesis, where the standard SDT terminology is used.
 
-The advantage of the SDT approach in contrast to ROA is that there is no theoretical  complication in adding an arbitrary amount of actions of any type (as classified in ROA by Guthrie \cite{Gut:09} for example) possibly even conditioned on one another. The only concern that needs to be reminded is that of computational complexity. 
+The advantage of the SDT approach in contrast to ROA is that there is no theoretical  complication in adding an arbitrary amount of actions of any type (as classified in ROA by Guthrie \cite{Gut:09} for example) possibly even conditioned on one another. The only concern that needs to be reminded is that of computational complexity, where large number of possible managerial actions decrease the ability to compute the valuation in practice. 
 
 \begin{example}
-	Actions in gas power plant valuation might be to: build some stage of the plant if there is some stage left to built, run the plant if it has some installed capacity, mothball or sell the power plant for salvage value. We believe that this example clearly shows the dependency of possible actions on given state and why is it thus better to use the function notion from now on. 
+	Actions in gas power plant project might be to: build new block of the plant, run the plant if it has some installed capacity, mothball or sell the power plant for salvage value. 
 \end{example} 
 
-Now, we have defined the structure of a project, boundaries within which the project will evolve, managerial actions will be taken and value will be created. 
+We believe that this example clearly shows the dependency of possible actions on given state and why is it thus better to use the function notion from now on. 
 
+With the definition of action set, now function, we have defined the general structure of a project, boundaries within which the project will evolve. Now we will study the rules that guide the evolution and metrics that measure the value created. 
 
 \subsection{Transition probability function}
-Given the nature of projects the evolution from one state to another is a stochastic process. In this thesis we want to model the project as MDP and thus the probability distribution of the next state, described by so called transition probability function, is conditioned only on the previous state and the last action taken. In mathematical notation: 
+Given the nature of projects, the evolution from one state to another is stochastic. In this thesis we want to model the project as MDP and thus the probability distribution of the next state, described by so called transition probability function, is conditioned only on the previous state and the last action taken. In mathematical notation: 
 \begin{equation}
 	p(s_t|a_{t-1}, s_{t-1}).
 \end{equation}
 
 The probabilities in this thesis are understood as both discrete probabilities and probability distributions in case of continuous variables. Furthermore, as we will model each elementary state by a different distribution we need to be able to compute the overall probability of the future state given the elementary distributions. 
 
-To make things simple, we assume individual elementary states to be represented by independent variables and thus the probability (or probability distribution) of a next state is a product of the elementary probabilities \footnote{Combination of discrete and continuous variable as elementary states results in continuous global variable (and thus probability distribution).}: 
+To make things simple, we assume individual elementary states to be represented by independent variables and thus the probability (or probability distribution) of a next state is a product of the elementary probabilities\footnote{Combination of discrete and continuous variable as elementary states results in continuous global variable (and thus probability distribution).}: 
 
 \begin{equation}
 	p(s_t|a_t, s_{t-1})=\prod_{i}p(s_t^i|a_t, s_{t-1}), 
 \end{equation}
-where $s_t^i$ is the new elementary state of $s_t$\footnote{\textbf{(Maybe define better what is an elementary state somewhere above, is this even used? )}}. 
+where $s_t^i$ is the i-th elementary state of $s_t$.
 
 \begin{remark}
 	It is possible that some elementary states are fully determined by the managerial action $a_t$. Such corner case does not create a problem for the probabilistic notion above, the new elementary state $s_t^i$ is realized with probability $p(s_t^i|a_t, s_{t-1})=1$.
 \end{remark}
 
-It is clear that in the majority of real-life projects, determining, or estimating, this transition probability function is a very hard, but crucial task. Decisions will be made based on its values increasing or decreasing the overall profitability of a project. 
+It is clear that in the majority of real-life projects, determining, or estimating, this transition probability function is a very hard, but crucial task. Decisions will be made based on its values increasing or decreasing the value of a project. 
 
-The approach of ROA authors to modeling of these probabilities varies a lot. Some authors like Guthrie \cite{Gut:09}, \cite{ArmKul:98} \textbf{(???)} use the arbitrage principle to determine the probabilities of their binomial models. Some authors, like \cite{KulTri:94} use the principle of insufficient reason\footnote{Even though they do not call it that way. }, where they assign 50\% probability to movements in both directions of their binomial models. Some authors, like \cite{Gut:09} and \cite{Vol:03}, go also deeper in statistical modeling of the probabilities. 
+The approach of ROA authors to modeling of these probabilities varies a lot. Some authors like Guthrie \cite{Gut:09}, or Amram \cite{AmrKul:98} use the arbitrage principle to determine the probabilities of their binomial models. Some authors, like Kulatilaka \cite{KulTri:94}, use the principle of insufficient reasons\footnote{Even though they do not call it that way.}, where they assign 50\% probability to movements in both directions of their binomial models. Some authors, like \cite{Gut:09} and \cite{Vol:03}, go also deeper in statistical modeling of the probabilities. 
 
-Some details of how does SDT approach the estimation of $p(\cdot)$ will be discussed later in section \ref{}, however we must note that correct estimation of these probabilities is not the focus of this thesis.
+Some details of how does SDT approach the estimation of $p(\cdot)$ will be discussed later in section \ref{sec:probability}, however we must note that correct estimation of these probabilities is not the focus of this thesis.
 
 
 \subsection{Reward function}
@@ -851,115 +850,121 @@ The final part of modeling the project valuation as MDP is the reward function. 
 	r(s_t|s_{t-1}, a_{t-1}).
 \end{equation}
 
-As discussed in preliminaries, the notion of ``value`` is complicated. In our case of project valuation, the first approximation of the entity that is to be maximized is the free cash flow (FCF). FCF usually consists of expenses, which are a result of immediate managerial actions, and income, which tends to be a result of the environment (supply and demand for manufactured products or services) conditioned on a previous action or set of actions. 
+As discussed in preliminaries, the notion of ``value`` is complicated. In our case of project valuation, the first approximation of the entity that is to be maximized is the free cash flow (FCF). FCF usually consists of expenses, which are a result of immediate managerial actions, and income, which tends to be a result of the environment (supply and demand for manufactured products or services) conditioned on a previous action or action sequence. 
 
-Usually, the goal of MDP is to find a strategy, which maximizes the expected reward. However, as economical theory guides us, there is a clear preference in having money now instead of later (time value of money) and that investors do not value uncertain rewards the same as their expected values (risk-aversion of investors). Both of these economical phenomenons will influence the reward function that will be used to determine the best strategy. 
+Usually, the goal of MDP is to find a strategy, which maximizes the expected reward. However, as economical theory guides us, there is a clear preference in having money now instead of later (time value of money) and that investors do not value uncertain rewards the same as their expected values (risk aversion of investors). Both of these phenomena lead us to build a generalization of the reward function, that reflects them and its optimization defines the optimal strategy in projects defined as MDPs.
 
-The details of the incorporation of these phenomenons will be discussed deeply in the following sections \ref{} and \ref{}. For now, lets declare that the reward function will be based on FCF, adjusted for individual preferences and abilities of the investor. 
-
-The wide scope of the SDT theory encapsulates this phenomena of individual preferences in perception of value in term of utility. The ultimate goal is thus described as utility maximization. 
+The incorporation details of these phenomena will be discussed deeply in the following sections \ref{sec:time_value_of_money} and \ref{sec:risk_aversion}. For now, lets declare that the generalized reward function will be based on FCF, adjusted for individual risk preferences and borrowing and risk-free investment opportunities of the investor.
 
 \begin{example}
-	Reward function of a gas power plant is driven by its ability to make money by transforming the gas and CO2 allowances into the electrical power. The initial expenses for building the power plant result in extreme negative rewards (driven by action of building), while the profits are made as a multiple of installed capacity and the difference of input costs plus static costs and the revenue from selling the electricity (conditioned on action of running the plant in given period)
+	Reward function of a gas power plant is driven by its ability to make money by transforming the gas and CO2 allowances into the electrical power. The initial expenses for building the individual blocks result in extreme negative rewards (driven by action of building), while the profits are made as a multiple of installed capacity and the difference of input costs plus static costs and the revenue from selling the electricity (conditioned on action of running the plant).
 \end{example}
 
 \bigskip
 
-This paragraph concludes the basic identification of sets required by the SDT framework. In the next section, we will focus on the solution to the project valuation problem in detail. We will discuss the sources of transition probability function, the actual incorporation of time value of money and the risk-aversion of investors to the model. 
+This paragraph concludes the basic identification of sets required by the SDT framework. In the next section, we will focus on the solution to the project valuation problem in detail. We will discuss the sources of transition probability function, the actual incorporation of time value of money and the risk aversion of investors into the model. 
 
 \section{Solution of the project valuation as SDT problem}
-In the previous chapter, we focus on the basic structure of a project valuation understood as MDP. In this chapter we will go deeper and we focus on the details of the actual solution of such valuation problem. 
+In the previous chapter, we focused on the basic structure of a project valuation understood as MDP. In this chapter we go deeper and we focus on the details of the actual solution of such valuation problem. 
 
-We begin this section by looking in detail at the estimation of the transition probability function. There we outline how the ROA ideas can be incorporated and how the SDT theory can help with more advanced estimation techniques. 
+We begin this section by looking in detail at the estimation of the transition probability function $p$. We outline, how the SDT can not only incorporate the ideas of ROA, but also help with more advanced estimation techniques. 
 
-Then, we follow with incorporation of the economical truths - time value of money and risk-aversion of investors in a form of utility maximization principle. We focus on implementation details with accent on applicability by real-life managers. 
+Then, we pursue with incorporation of the economical truths - time value of money and risk aversion of investors in a form of utility maximization principle and the notion of PCE. We focus on implementation details with accent on applicability by real-life managers. 
 
 Finally, the last part of this section addresses the computational complexity problems of classical dynamic programming, proposing an algorithm from the ADP class, identified as the best fit for a project-valuation-style MDPs. 
 
 
-\subsection{Probability}
-In this thesis we focus on real-life projects. Such projects are from their nature stochastic and except for some edge cases, the laws guiding their evolution are unknown and complex. Our search for the optimal strategy is based on the assumption that we have some model estimating the future paths of the project and we act as if this model was the reality. In our case this model is materialized in a form of transition probability function $p$, where for example one of the assumptions is the Markovian feature of the states. 
+\subsection{Probability}\label{sec:probability}
+In this thesis we focus on real-life projects. Such projects are from their nature stochastic and except for some edge cases, the laws guiding the evolution of the relevant parameters are unknown and complex. Our search for the optimal strategy is based on the assumption that we have some model estimating the future paths of the project states and we act as if this model was the reality. In our case the model of this evolution is materialized in a form of transition probability function $p$, where for example one of the assumptions is the Markovian property of the states. 
 
-There are many ways how to model $p$. Let's first discuss the widely used techniques in ROA and how they can be translated into the SDT terminology. 
+There are many ways how to model $p$. Let's discuss the techniques used in ROA publications and how they can be translated into SDT terminology. Furthermore, lets also outline the more advanced techniques that SDT can offer in this section. 
 
 
 \paragraph{Risk neutral probabilities}
-The idea of risk neutral probabilities comes from the capital asset pricing model and is the main modeling force in \cite{Gut:09} and \ref{}\textbf{(???)}. Based on the assumption of no-arbitrage principle, we can compute the probabilities of up and down movement in the binomial models as a function of the growth rate of the market, risk-free investment rate and so called risk-premium related to our specific investment domain. 
+The idea of risk neutral probabilities is the major modeling force in the ROA publications. We observe two levels of its usage, both of which are based on the non-existence of arbitrage. 
 
-In the SDT terminology, this input could be understand as ``expert knowledge`` where the first expert is the one (usually the economist using the CAPM formula) who determines the inputs like the risk-premium, or market growth. In this philosophy of experts, the second expert is the market together with the no-arbitrage principle. 
+First, simpler approach, used by \cite{Ryu:17} or \cite{DamZro:19}, adjusts only for the time value of money represented by the risk-free rate $r_f$, where the probability of up move is computed as:
+\begin{equation}
+	\pi_u = \frac{Xr_f-X_d}{X_u-X_d}, 
+\end{equation}
+where $X, X_u, X_d$ are the values of the asset now, after one up move and after one down move. This equation represents the idea that the probability of up move of an asset is such that its expected appreciation is only the risk-free interest rate. 
 
-This techniques is used in the binomial model, but could be also used for its limit case, which is the Poisson distribution.
+The more complex equation, adjusting also for the specificity of the risk of the field, wee invest in, called risk-premium comes from the capital asset pricing model (CAPM). This model is used by the frequently mentioned Guthrie in \cite{Gut:09}, but also in other publications, like \cite{LunDid:17}.
+
+This techniques is used for binomial models, but it is easy to imagine its usage for its limit case which is a variable with the Poisson distribution. 
 
 \paragraph{Insufficient reasons}
-The second widely used strategy used for modeling the probabilities, mainly in the binomial model again, is to assign the same 0.5 probability to both up and down move. 
+The second widely observed modeling style in ROA publications, observed again mostly with the binomial models, is to assign 50\% to both up and down move. This technique can be used on different levels of the model, as the final model \cite{AmrTri:94} or for example as a helping distribution modeling a particular non-final distribution as in \cite{Gut:09}.
 
-This approach is in SDT called a principle of insufficient reasons, where the argument is that if there is no reason for expecting one outcome to be more probable that the other one, we should model them with the same probability. 
+It needs to be emphasized that the ROA authors do not use this terminology themselves. 
 
-The ROA authors, for example \cite{AmrKul:98} do not use this terminology, only the model itself. 
+\paragraph{More complex models}
+In more mathematical publications we observe more complex models of the future state outcomes. For example the normal process with dynamic parameters \cite{BenWhi:17} or \cite{AlsWan:20}, mean-reverting process with Poisson jumps \cite{SchRob:19} or the modeling by a general \^{I}to process \cite{Vis:18}. 
+
+It seems that these models come from authors with more mathematical than economic background and their unifying feature is the rigorous usage of random variables and continuous distributions. 
 
 
-\paragraph{More complex ROA tactics}
-\textbf{<Deeper research needed>}
+\paragraph{SDT interpretation}
+Now we would like to discuss the interpretation of the ROA techniques in SDT. The notion of risk-neutral probabilities can be approached with the framework of `expert knowledge`` where the first expert is the one (usually the economist using the CAPM formula) who determines the individual variables like the risk-premium, or expected market growth. In accordance with the philosophy of experts, the second expert is the market behaving by the non-arbitrage principle, giving us the equations for risk-neutral probabilities. 
 
-In all the presented cases there is a flavor of ``expert knowledge``, supported by the actually measured data on various levels. The data analysis in the studied publications is rather simple, with the exception of ... 
+The term of insufficient reasons comes from the SDT itself and thus it was already interpreted above. 
+
+The class of more advanced approach that we have discussed above is easily covered with the SDT too because of its structure. The outputs in terms of distributions, coming either from the data or again the ``expert knowledge`` are easily incorporated into the SDT framework as prior (static or dynamic) probabilities.   
 
 \paragraph{SDT innovation}
-Apart from the terminology and consistent approach outlined above, the SDT offers another frameworks for modeling $p$. We digress and remind only the most influential and innovative approaches which are Bayesian learning and "information mixing". 
+The portfolio of SDT estimation techniques is much wider than it was discussed so far. Because probability estimation is not the main focus of this thesis, we will only outline two of the most interesting techniques. 
 
-Bayesian learning, as described in preliminaries allows for an easy update of parameter estimation based on newly incoming data. For example starting experts opinion about the evolution of input prices, wee are able to update our model by Bayesian formula without asking the mentioned expert over and over again. 
+First is the Bayesian modeling, where each time new data are being observed, our probability model is updated by the Bayesian formula. This very influential modeling technique in SDT was not seen in the ROA publications, even though there is certainly a space for it. 
 
-Also, we would like to outline the possibilities of SDT in form of "information mixing", which is an innovative ...
+The second modeling strategy that we want to talk about is the consistent way of information fusion from different sources. This niche part of the SDT, lead by Karny \cite{}, allows for incorporation of multiple sources of prior probabilities, for example multiple experts, data sources, and more \textbf{(?).}
 
 \paragraph{Summary}
 To conclude, we advice to use one of two approaches to the problem of $p$ estimation. First, when a lot of information about the project is known, we have a strong case for the parameters behaving according to our smooth distributions, and we believe the market to compactly reflect the expert knowledge, we prefer Bayesian updated risk-neutral probabilities. 
 
 On the other hand, if the project is truly innovative and there is very little data to base our model on, we prefer to use a combination of expert knowledge and principle of insufficient reasons. 
 
-
-In the end, we leave the decision of the actual modeling to the framework user, where we express the empathy for simple models, where more ``unclear`` models in spite of their better precision, might not be accepted by the board making the investment decision. Clearly, we do not advice to use advanced SDT modeling techniques like probability distribution mixing. 
-
+In the end, we leave the decision of the actual modeling to the framework user, where we express the sympathy for simple models, where more ``unclear`` models in spite of their better precision, might not be accepted by the board making the investment decision. Clearly, we do not advice to use advanced SDT modeling techniques like probability distribution fusion. 
 
 
-\subsection{Time value of money}
-As outlined in the preliminaries, cash does not have the same value through time. This economical truth is one of the most important ones in project valuation and capital budgeting. The approach of the economical theory to this problem is to exponentially discount the future cash with so called risk-free interest rate. 
+
+\subsection{Time value of money}\label{sec:time_value_of_money}
+As outlined in preliminaries, money does not have the same value through time. This economical truth is one of the most important ones in project valuation and capital budgeting. The approach of the economical theory to this problem is to exponentially discount the future cash with so called risk-free interest rate. 
 
 In the studied ROA publications, the problem of different borrowing and risk-free investment rate is not addressed. The ROA publications assume that the investor is able to borrow at the risk-free interest rate, which is in reality not the case. 
 
 In our modeling, the first approximation of the optimized entity was the expected sum of future cash flows. Now, we can present the second approximation of the optimized entity, which is somehow new for both the ROA and SDT\footnote{SDT theory uses exponential discounting for example in models with infinite time sets, however we have not been able to find a study of discounting conditioned on a state\textbf{(?)}.} world. 
 
-We called this entity present cash equivalent. It represents the amount of money that an investor is logically indifferent to having instead of a future free cash flow. 
-
-In preliminaries, we argue, that given a constant borrowing and risk-free investment rate of an investor, the present cash equivalent of a free cash flow vector is unique and always defined. 
+This newly defined entity is called present cash equivalent (PCE) and it represents the amount of money that an investor is logically indifferent to having instead of a vector of future cash flows. As argued in preliminaries, this value is unique and for natural borrowing and risk-free rates always defined. 
 
 The second approximation of the MDP's optimized entity is thus the expected present cash equivalent of the free cash flow vector of the project, mathematically: 
 
 \begin{equation}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) PCE\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^d\right),
+V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^b\right),
 \end{equation}
-where $s_{t-1}^d$ is the debt state in time $t-1$. 
+where $s_{t-1}^b$ is the project's balance state in time $t-1$. 
 
 
 \begin{remark}
-	It needs to be clarified, that if we want to embrace the notion of ROA publications, where we assume the usual simply discounted free cash flow, we are able to do so with this framework as it is only a corner case, where the borrowing rate is the same as the risk-free rate. 
+	It needs to be clarified that if we want to embrace the notion of ROA publications, where we assume the simple discounting of the FCF, we are able to do it with this framework too. This notion is only a corner case of our framework, where the borrowing rate is equal to the risk-free rate. 
 \end{remark}
 
 
-\subsection{Risk-aversion of investors}
-As discussed above, the nature of real-life projects is stochastic. The uncertain evolution of states results in the uncertain FCFs defined by thee function $r$, which has implications for the decision making of investors. 
+\subsection{Risk aversion of investors}\label{sec:risk_aversion}
+As discussed above, the nature of real-life projects is stochastic. The uncertain evolution of states results in the uncertain FCFs defined by the function $r$, which has implications for the decision making of investors. 
 
-As discussed in the preliminaries \ref{} the majority of investors is risk averse, meaning that they tend to value uncertain gains lower than is their expected value. 
+As discussed in the preliminaries, section \ref{sec:risk_aversion_preliminaries}, the majority of investors is risk averse, meaning that they tend to value uncertain gains lower than is their expected value. 
 
-We believe that this characteristic of investors is important to consider and that is why it we want to incorporate it by the well established SDT notion of utility. 
+We believe that this characteristic of investors is important to consider in the valuation of a project. Fortunately, the SDT theory already has a framework for coping with such skewness in reward perception called utility theory. 
 
 The third and final approximation of the optimized entity by the Bellman equation is thus the expected utility of the present cash equivalent of individual cash flows. The third and final update of the original Bellman equation can be thus described as: 
 
 \begin{equation}
-	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \mu\left(PCE\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^d\right)\right),
+	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^d\right)\right),
 \end{equation}
 
 
 \begin{remark}
-	Even though there are consistent methods for obtaining the utility function of the individual investors, it might be hard to get individual investor on board with the idea of utility\footnote{Investor might not have a time to answer the utility questionnaire as suggested by \cite{BacChi:19}.}. This does not present a fundamental problem for our valuation techniques, because we can always use the utility of the risk-neutral investor, which is unique and its usage supported by the lack of bias against uncertain outcomes. 
+	Even though there are consistent methods for obtaining the utility function of the individual investors, it might be hard to get individual investor on board with the idea of utility\footnote{Investor might not have a time to answer the utility questionnaire as suggested by \cite{BacChi:19}.}. This does not present a fundamental problem for our valuation technique, because we can always use the utility of the risk-neutral investor, which is unique and its usage supported by the lack of bias against uncertain outcomes. 
 \end{remark}
 
 
@@ -967,17 +972,18 @@ The third and final approximation of the optimized entity by the Bellman equatio
 \subsection{Approximate dynamic programming}
 
 
-As mentioned in the previous sections of this thesis, the classic DP algorithm can be used for computing the optimal strategy MDP's with rather small cardinalities of the $\mathbf{A}$, $\mathbf{S}$ and $\mathbf{T}$ sets. This known DP problem is literature addressed as ``three curses of dimensionality`` \cite{Pow:11}.
+As mentioned in the previous sections of this thesis, the classic DP algorithm can be used for computing the optimal strategy MDP's only with rather small cardinalities of the $\mathbf{A}$, $\mathbf{S}$ and $\mathbf{T}$ sets. This known DP problem is in literature addressed as ``three curses of dimensionality`` \cite{Pow:11}.
 
-Real-life projects, interpreted as MDPs are usually rather complex and hardly-ever fulfill this condition. For example when even one measured parameter is modeled to come from a continuous distribution, the DP algorithm brakes down not only from the limitation of the actual computational complexity, but also theoretically. 
+Real-life projects, interpreted as MDPs are usually rather complex and hardly-ever fulfill this condition. For example, when even one measured parameter is modeled to come from a continuous distribution, the DP algorithm brakes down not only from the limitation of the actual computational complexity, but also theoretically. 
 
 It might be clear from the rhetoric of this thesis, that our goal is to use the developed valuation technique in practice. That is why we want to address this problem with the goal to make the solvable class of project valuation problems as large as possible. And we do so with the approximate dynamic programming (ADP) approach. 
 
-From the various possible ADP techniques, we have chosen the value iteration with parameter model approximation for two main reasons, which are coming from the fundamental features of projects. 
+From all the possible ADP techniques, we have chosen the value iteration with parameter model approximation for two main reasons, both of which originate in the fundamental characteristics of projects.
 
-First is that the real-life projects tend to have large state spaces (even uncountable), while on the other hand the action set is usually limited. We cannot ask a manager to make a choice between 10 000 actions for example. This supports the choice of value iteration (?). 
 
-Second is that we usually have a good intuition of what exactly in the given states ``makes money`` and we are able to identify and cluster the important parameters. This allows us to build a reasonable basis function set, which should allow for a good approximation of the value function.
+First is that the real-life projects tend to have large state spaces (even uncountable), while on the other hand the action set is usually limited. We cannot ask a manager to make a choice between 10 000 actions for example. This supports the choice of value iteration over a policy iteration class of ADP. 
+
+Second is that we usually have a good intuition of what exactly in the given states ``makes money`` and we are able to identify and cluster the important parameters. This allows us to build a reasonable basis function set, which should produce a good approximation of the value function.
 
 
 It needs to be clarified, that even though we believe that our approach is generally the best, regarding the mathematical complexity, its precision and clarity, there might be better ADP algorithms for individual projects the reader intends to value. 
@@ -987,11 +993,9 @@ This subsection summarizes the core idea of this thesis.
 
 Firstly we have presented the interpretation of the project valuation problem as a MDP. We have  defined all its important parts in detail and offered examples for clarity.
 
-Secondly, we have adjusted the MDP theory to respect the economical truths with the notion of present cash equivalent transformation respecting the time value of money and utility function interpretation of the risk-aversion of investors.
+Secondly, we have adjusted the MDP theory to respect the economical truths with the notion of PCE respecting the time value of money and utility function interpretation of the investors' risk aversion.
 
-Lastly, we have advised the best ADP algorithm that copes with the problems of computational complexity of the usual DP solving algorithm for non-trivial project. 
-
-
+Lastly, we have advised the best ADP algorithm that copes with the problems of computational complexity of the usual DP solving algorithm for non-trivial projects. 
 
 
 
@@ -999,106 +1003,298 @@ Lastly, we have advised the best ADP algorithm that copes with the problems of c
 
 
 \chapter{Valuation of facilities with simple I/O process}
-In the previous chapter we have presented an algorithmic approach to a project valuation grounded on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
+In the previous chapter we have presented an algorithmic approach to a project valuation based on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
 
-We have chosen the class projects that can be labeled as investment in facilities with simple I/O process and further managerial guidance. This class is characterized by a large outflow of money in the beginning used for building the facility (or its first functional part) and a small but long-term positive future revenue driven by the difference in the price of inputs and outputs of the facility. 
+We have chosen the class of projects that can be labeled as investment in facilities with simple I/O process and further managerial guidance. This class is characterized by a large outflow of money in the beginning used for building the facility (or its first functional part) and a small but long-term positive future revenue driven by the difference in the price of inputs and outputs of the facility. 
 
-This choice of class is supported by its appropriate level of complexity, allowing to show the power of the new algorithm while not being too complex, and its large representation in the project management world (?).
+This class choice is supported by its appropriate level of complexity, where it allows to demonstrate the power of the new algorithm, while at the same time not being too complex. It is also a type of project that is substantially represented in the world of capital investment. 
 
-We could present this whole chapter using a general description of the chosen project class, however we believe that using only one specific representative will result in more clear picture of the situation. 
+We could write this whole chapter using a general description of the chosen project class, however we believe that using only one specific representative will result in more clear picture of the situation. 
 
-Our choice of investment into a gas power plant is based on three grounds. First, there is certainly an influence by Guthrie's example \cite{Gut:09}. Second, as we will see this valuation problem has reasonable dimensions, that allow for a good presentation of the valuation algorithm and third, the author of this thesis has a legitimate domain knowledge based on his short, but intensive work experience. 
+Our choice of the representative - an investment into a gas power plant - is based on three grounds. First, there is certainly an influence by Guthrie's example of a similar valuation problem \cite{Gut:09}. Second, as we will see, this valuation problem has reasonable dimensions, that allow for a good presentation of the valuation algorithm. Lastly, the author of this thesis has a legitimate domain knowledge based on his short, but intensive work experience in field of power trading. 
 
 In the first part of this chapter we will describe the valuation problem with the upmost precision. 
 
-In the second part we will focus on the dependency of the project valuation and the amount of available managerial actions, allowed by its structure. 
+In the second part we will focus on the dependency between the project valuation and the amount and type of available managerial decisions. 
 
-In the final part of this experiment we will be comparing different setups of the project, with the aim to study the effects of focusing on different parts of the project setup in detail\footnote{So called sensitivity analysis}. First will be comparing projects with different time granularities (simulating more and less frequent managerial decision making) and finally we will study the effects of choosing different price models of inputs and outputs. 
+In the final part of this experiment, we will be comparing different setups of the project and their influence on the final valuation. This sensitivity analysis will be done in two parts. First, we will study the effects of variable time granularity (simulating more and less frequent managerial decision making). The second subject to a sensitivity analysis will be the different choice of parameters modeling the prices of inputs and outputs. 
 
-In the first half of the experiment we await a confirmation of the ROA conclusion, that options (actions) add significant value. In the second half, we have no strong opinion about what the changes in project valuation will be. Overall it needs to be said that the main aim of this experiment is to present the algorithm, observe and describe its possible shortcomings and support its viability with a specific and rather complex modeling example. 
+In the first half of the experiment we await a confirmation of the ROA conclusion, that options (actions) add significant value to the project. In the second half, we have no strong opinion about what the changes in project valuation will be. 
 
+In the end, the main aim of this experiment is to present the valuation algorithm, observe and describe its possible shortcoming and support its viability, not to prove any other theorems or ideas about project valuation.
 
 
 \section{General settings of the experiment}
-First lets clarify in detail what we mean by the phrase investment in the gas power plant. We are positioning ourselves in a role of an investment analytic for a large utilities company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} company with a goal to evaluate the potential of building and managing a gas power plant. 
+First, lets clarify what we mean by the phrase \textit{investment in the gas power plant}. We are positioning ourselves in a role of an investment analyst of a large utilities company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} whose task is to evaluate the value of building and managing new gas power plant. 
 
-For simplicity, we are considering building only one or two 200MW blocks with expected life-span of 25 years \cite{}. We assume, that the price of each block is 65M EUR, which is an estimate based on \cite{}. We assume that the efficiency of the power plant will be ..., meaning that ... units of gas are needed to run one 200MW block at full capacity. Furthermore, we expect ... units of required CO2 allowances for the same capacity. 
+For simplicity, we are considering building only one or two 200MW blocks with expected life-span of 25 years \cite{Car:12}. We assume, that the price of each block is 80M EUR, which is a rough estimate based on \cite{Bre:10}. We assume that the efficiency of the power plant will be 0.7 \textbf{(?)}, meaning that 0.7 units of gas (therms) are needed to run one 200MW block at full capacity. Furthermore, we expect 0.2 \textbf{(?)} units of required CO2 allowances for the same capacity. Both of these transformation parameters come from author's experience and assumption of a gas power plant with reasonable efficiency.
 
-In addition to the variable costs of CO2 and gas inputs we are counting with fixed costs of 3EUR/MW/hour(?) of installed capacity for maintenance and security. We are also allowing for a mothballed state, which cost we estimate for 500k EUR, with lowered maintenance and security costs to only 1 EUR/MW/hour (?).
+In addition to the variable costs of CO2 and gas inputs we are counting with fixed costs of 3 EUR/MWh of installed capacity for maintenance and security. We are also allowing for a mothballed state, which cost we estimate for 500k EUR, with lowered maintenance and security costs to only 1 EUR/MWh.
 
-Initially we assume that the power plant is being managed in monthly patters. Its power is being sold in monthly contracts in the beginning of each month and the needed gas and CO2 inputs are also being purchased at the same time. As was indicated earlier in this thesis, we do not want to go deep in the plant management and its internal processes. 
+The salvage price for a block is set to be 2000 EUR per installed MW per month.
 
-In this example we would also like to respect the influence of the government subsidies for renewable power plants and its effect on the volatility of the market prices. The details of which wee define below. 
+Initially we assume that the power plant is being managed in a monthly pattern. Its power is being sold by monthly contracts in the beginning of each month and the needed gas and CO2 inputs are also being purchased at the same time. As was indicated earlier in this thesis, we do not want to go deep in the plant management and its internal processes. 
 
-Regarding the financing of the project, we assume that the majority of the initial payment will be made by a flexible loan\footnote{An ideally flexible loan where we can repay what we want when we want} with an interest rate of 6\% and the risk-free interest rate is 2\%. The reality of having non-zero initial funds is reflected in the corresponding elementary state. 
+In this example we would also like to account for the influence of the government subsidies for renewable power plants and its effect on the power market price volatility. This idea is elaborated in detail below. 
 
-Now that we have clarified the project that we are to value, we can proceed with precise definitions of the MDP parts. 
+Regarding the project's financing, we assume that the majority of the initial payment will be made by a flexible loan\footnote{An ideally flexible loan where we can repay any amount at any time.} with an interest rate of 6\%. We define the risk-free interest rate as 2\%. The reality of having non-zero initial funds is reflected in the existence of corresponding elementary state. 
+
+Now that we have clarified the project that we want to value, we can proceed with precise definitions of the MDP parts. 
 
 
-\paragraph{Time set}
-As outlined in the introduction of this chapter, we assume that the life-span of a gas power plant is 25 years. Also wee assume that the management works in monthly pattern. 
+\subsection{Time set}
+As outlined in the introduction of this chapter, we assume that the life-span of a gas power plant is 25 years and that the management to work in monthly patterns. 
 
 Because we are allowing to build the blocks only in the first 3 years from now, the final time set is: 
 \begin{equation}
-\mathbf{T} = \{0,...276\}
+\mathbf{T} = \{0,...336\}.
 \end{equation}
 
 
-\paragraph{State set} 
+\subsection{State set} 
 The state set needs to consist of the smallest number of relevant parameters that enable us to model the process of building, running and potentially selling the power plant and capturing the FCF and its derived metrics of the project. 
 
-As such, we identify eight elementary states as parameter describing
+As such, we identify nine elementary states as parameters describing:
 \begin{itemize}
-	\item price of electricity
-	\item price of CO2 allowances
-	\item price of gas 
-	\item government support for renewables
-	\item number of blocks built
-	\item encoded state of the power plant in the last month 
-	\item lifespan left (in months) of the first block 
-	\item lifespan left (in months) of the second block 
-	\item potential debt to be repayed
+	\item the price of electricity - $s^1$,
+	\item the price of CO2 allowances - $s^2$,
+	\item the price of gas  - $s^3$,
+	\item government support for renewables - $s^4$,
+	\item number of blocks built - $s^5$, 
+	\item indicator of mothballed power plant- $s^6$, 
+	\item lifespan left (in months) of the first block - $s^7$, 
+	\item lifespan left (in months) of the second block - $s^8$, 
+	\item cash balance of the project (models the debt) - $s^9$, 
 \end{itemize}
-in the start of each time epoch, for example of each month. 
+in the start of each time epoch, initially each month. 
 
-The states of the state set are defined with having a constant length, since there is no significant change in relevant parameters through the project. 
+The states of the state set are defined as having a constant length, since there is no significant change in relevant parameters through the project. 
 
 Mathematically the state set $\mathbf{S}$ is defined as: 
 \begin{equation}
-	\mathbf{S} = \{[s^1,...,s^9]|s^i \in \mathbf{S^i} for i \in(1,...,9))\}, 
+	\mathbf{S} = \{(s^1,\dots,s^9)|s^i \in \mathbf{S^i} \ i \in(1,...,9))\}, 
 \end{equation}
 where $\mathbf{S^i}$ represents the limitation of the individual states. These limitations will be in detail discussed now. 
 
-The limits for the prices, i.e.  $s^i$ with $i \in \{1,2,3\}$ we define: 
+For the states representing prices, $s^i, i \in \{1,2,3\}$, we define: 
 \begin{equation}
-	\mathbf{S^i} = \mathbb{R_0^+}
+	\mathbf{S^i} = \mathbb{R}_{0}^+.
 \end{equation}
 
+The next four elementary states are either reflecting the actual number of what the state represents, like the number of blocks built, $s^5$, or the remaining lifespans fo blocks $s^7, s^8$, or encoded information like the state of the power plant or the government support for renewables. In both cases possible states are represented by a sequence of natural numbers $\mathbb{N}_0$.
 
-<State set, defined in "rectangular way", some states are logically unreachable. Vector with encoded state of the environment. For example [built/not-built plant, index of gas price increase/decrease, index of power price increase/decrease> 
+Regarding the government support we define:
+\begin{equation}
+	\mathbf{S^4} =  \{1,2,3,4,5\},
+\end{equation}
+where 1 represents the current support and 5 the highest possible support. 
 
-<Mathematical expression for the state set> 
+Then, we present the fifth and sixth elementary state which represents the influentiable states by our actions:
+\begin{equation}
+\mathbf{S^5} =  \{0,1,2\},
+\end{equation}
+showing the number of blocks built and:
+\begin{equation}
+\mathbf{S^6} =  \{0,1\}, 
+\end{equation}
+which is only an indicator state of power plant being mothballed - 1 or not - 0. 
 
-<Detail elaboration what the encoding means for each encoded state> 
+The final two sets represented as a sequence of natural numbers are: 
+\begin{equation}
+\mathbf{S^7} = \mathbf{S^8}= \{0,1,\dots,300\}. 
+\end{equation}
 
-<Discussion about the model of states. Up movements volatility could be taken from the actual volatility on the market, we are just putting some values.> 
+The final elementary state is then allowed to have any real value:
+\begin{equation}
+	\mathbf{S^9} = \mathbb{R}.
+\end{equation}
 
-\paragraph{Action function} <In the most simple case presented for now, we expect only timing option to be available> 
+These definitions represent the problem structure, the boundaries within which the simulation of initial investment and further managerial actions will take place. 
 
-<Mathematical expression of the action function> 
+\begin{remark}
+	The government support variable enters the simulation in a very simple way. We expect that by increase of one level the volatility of power prices rises 20\%. This value is not based on any data, and similarly to the choice of scale it is only illustrative.
+\end{remark}
 
-<We will increase the size of this set by adding new possible managerial actions in two levels in the following paragraphs> 
+\subsection{Action function}
+In this experiment we consider six managerial actions. They could be understood as two-dimensional, where the first dimension represents the act of running the installed capacity of the plant (if one exists), whereas the second manages more global actions of building, mothballing or selling the plant. However, because of the relations between the considered actions we decided for the following one-dimensional encoding:
+\begin{itemize}
+	\item 0 - do not change the current state of the project,
+	\item 1 - run the existing installed capacity,
+	\item 2 - run the existing capacity and build new 200MW block,
+	\item 3 - build new 200MW block,
+	\item 4 - change the mothballed state (mothball or unmothball the plant),
+	\item 5 - sell the plant for salvage value.
+\end{itemize}
 
-\paragraph{Transition probability function} <We have to cope with four sources of uncertainty: price of gas, price of CO2, price of power> 
+As discussed earlier in this thesis, certain actions are available only in certain states. The states that determine what actions are possible are exclusively the elementary states $s^5$ and $s^6$ describing the state of the project. 
 
-<We are modeling all of them by the historical prices and the log-normal model, since that is standard> 
+In what follows we define the possible action set is any given combination of these elementary states with a short explanation of its meaning. 
+\begin{itemize}
+	\item $a(s^5=0, s^6=0) = \{0,3\}$ when nothing is built, we can build the first block or do nothing and wait. 
+	\item $a(s^5=1, s^6=0) = \{0,1, 2, 3, 4, 5\}$ when only one block is built, all actions are possible. 
+	\item $a(s^5=2, s^6=0) = \{0,1, 4, 5\}$ when two blocks are built, all but building actions are available. 
+	\item $a(s^5=1, s^6=1) = \{0, 3, 4, 5\}$ when the plant is mothballed we cannot run it, however with only one block, we can build the second one. 
+	\item $a(s^5=2, s^6=1) = \{0, 4, 5\}$ when the plant is mothballed we cannot run it and since we have both blocks built, we cannot build more. 
+\end{itemize}
+It needs to be emphasized that state combination $(s^5=0, s^6=1)$ does not make sense and that the original set of actions might be limited in parts of the experiment, reducing correspondingly the outputs of the action function.
+
+
+\subsection{Transition probability function} 
+The model of evolution from one state to another is fairly complex. The best way to describe it is thus to exploit the specific features of individual elementary state evolution patterns. 
+
+In our example, there are 9 elementary states, which can be clustered into different groups. 
+
+\paragraph{Deterministic evolution}
+The first group of states is the simplest because the transition from one state to another is deterministic. This category is represented by the counters of remaining lifespan of the power plant blocks, elementary states $s^7$ and  $s^8$, and the states describing the state of the power plant, installed capacity $s^5$ and the mothball state indicator $s^6$. The first two are purely deterministic, meaning:
+\begin{equation}
+p(s^i_{t+1}=y|s^i_t = x) =
+\left\{
+\begin{array}{ll}
+1  & \mbox{if } x > 0 \land y =x-1\\
+0 & \mbox{otherwise} 
+\end{array}
+\right.
+\end{equation}
+for  $i \in \{7,8\}$.
+
+The project states are also deterministic, but conditioned on the previous action. First let's look at the state representing the number of blocks built, $s^5$: 
+\begin{equation}
+p(s^5_{t+1}=y|s^5_t = x, a_t) =
+\left\{
+\begin{array}{ll}
+1  & \mbox{if } x = y \land a_t \in \{0,1,4\}  \\
+1 & \mbox{if } x+1 = y \land a_t \in \{2,3\} \\
+1 & \mbox{if } y=0 \land a_t =5 \\
+0 & \mbox{otherwise} 
+\end{array}
+\right.
+\end{equation}
+
+Similarly, the state indicating whether the plant is mothballed or not evolves deterministically according to: 
+\begin{equation}
+p(s^6_{t+1}=y|s^6_t = x, a_t) =
+\left\{
+\begin{array}{ll}
+1  & \mbox{if } x = y \land a_t \neq 4  \\
+1 & \mbox{if } x \neq y \land a_t = 4 \\
+0 & \mbox{otherwise} 
+\end{array}
+\right.
+\end{equation}
+
+\paragraph{Stochastic evolution simple}
+The second group of elementary states consists of the ones which evolve stochastically, but their value in the next epoch is conditioned only on the current value. 
+
+By this structure we model the prices of gas and CO2 allowances on the market as well as the government approach to renewables. In terms of our notation, states $s^2, s^3$ and $s^4$. 
+
+The prices of CO2 and gas are modeled by the log-normal stochastic process, which is a standard model in economics used in many publications, i.e. \cite{} or \cite{}. 
+
+The probability \footnote{Define LogN in preliminaries} of the next state is thus conditioned only on the value of the previous state as: 
+\begin{equation}
+	p(s_{t+1}^i|s_t^i) = LogN(s_t^i, \sigma_i), 
+\end{equation}
+for $i \in \{2,3\}$. To actually model the prices we need to supply the variances and the initial values $s_0^2$ and $s_0^3$. 
+
+The initial prices that we use in our model come from the state of the market on 1st December 2020, where the Intercontinental Exchange (ICE) is understood as market. The prices (with transformed units to "per MW") are: $s_0^2 = ... EUR$ (price of CO2) and $s_0^3 = ... EUR$ (price of gas). 
+
+Even though an extensive computation of the volatility of each market could be performed, the exact values are actually not important for this thesis. Thus, the volatility parameters come from an educated guess made by the author. The volatilities used for modeling are $\sigma_2 = ...$ and $\sigma_3 = ...$. 
+
+The government approach to renewables, $s^4$ is modeled with a realizations of random variable with three outcomes: -1,0 and 1 representing decreased, stable and increased support. This variable is also bounded between 1 and 5. 
+\begin{equation}
+p(s^4_{t+1}=y|s^4_t = x,) =
+\left\{
+\begin{array}{ll}
+0.04  & \mbox{if } x+1 = y \land y \leq 5 \\
+0.02 & \mbox{if } x-1 = y \land y \geq 1  \\
+0.94 & \mbox{if } x = y  \\
+0 & \mbox{otherwise} 
+\end{array}
+\right.
+\end{equation}
+
+\paragraph{Power price}
+The price of power is modeled similarly to other prices in our experiment, by a log-normal process. The initial price is now taken from the Czech power exchange pxe (part of German eex), which is 42.30 EUR for December 2020 \footnote{Tradeable on the last day of November at noon.}. The initial volatility is then expert guess $\sigma_0 = ... $. 
+
+The difference in modeling of this variable is that we assume $\sigma$ to be non-constant. We model the volatility as being on 5 possible levels based on the state of government support, mathematically: 
+\begin{equation}
+	\sigma(s^4) = \sigma_0(0.8+0.2\cdot s^4),
+\end{equation}
+which represents increase of 20\% with each level of government support. 
+
+Thus, the transition probability of the power price, state $s^1$ is defined as: 
+\begin{equation}
+	p(s_{t+1}^1|s_t^1, s_t^4) = LogN(s_t^i, \sigma(s_t^4).
+\end{equation}
+
+\paragraph{Balance}
+The last state whose modeling we need to talk about is the one representing financial balance of the project. This state simulates the actual balance based on actions of "responsible manager" and the assumptions of completely continuous loans and possible risk free investment with constant interest.
+
+Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 0.06\%} and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^9$ as: 
+\begin{equation}
+	p(s^9_{t+1}=y|s_t, s_t^9=x) =
+	\left\{
+	\begin{array}{ll}
+	1  & \mbox{if } y = RM(FCF(s_t)+x, r_r, r_b)\\
+	0 & \mbox{otherwise,} 
+	\end{array}
+	\right.
+\end{equation}
+which means that this elementary state is deterministic and its value $s^9_{t+1}$ is computed as a result of responsible managerial actions with the previous balance adjusted for the FCF obtained in the previous state. 
+
+The actual computation of $FCF(s_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries \footnote{Not yet}. There can be an initial balance of the project if the investor will not be borrowing the full amount, but in this example, the initial balance $s^9_0=0$.  
 
 \paragraph{Reward function}: 
-<The FCF model for the gas power plant and other facilities in its class is rather simple> 
+The FCF model in our example, and actually in all projects in the class of facilities with simple I/O process, is fairly straightforward.
 
-<We do not assume the price of labor which tends not to be very volatile> 
+ First we account for the fixed price of maintenance, in our case 3 EUR for each MW of installed capacity per hour when the plant is ready and 1 EUR when mothballed. 
+ 
+ Then conditioned on the action of running or not running the facility, we account for input costs. Finally we add the profit from selling our product on the market and like that we have computed the FCF for the current time epoch, mathematically: 
+ 
+ \begin{equation}
+ 	FCF(s_t,a_t) = (s_t^5*200)*(3-(s_t^6)\cdot(2)) + I_{\{1,2\}}(a_t)(s_t^1 - (s^2_t+s_t^3))(s_t^5*200)\cdot h_m,
+ \end{equation}
+ where $h_m=720$ is a constant of hours in month, not accounting for the changes in moth lengths. 
 
-<Mathematical model of the FCF, easy and clear> 
+As discussed before, the strategy is not being optimized for the expected cumulative FCF, but rather for the cumulative expected utility of its present cash equivalent. 
+ 
+ \section{Approximate dynamic programming}
+ In this section we will describe the setup of ADP algorithm used in our models. We are using the value iteration algorithm with linear value function approximation, which was in detail discussed in preliminaries. 
+ 
+ To ensure the reproducibility of our experiment we need to present the initial value function approximation and its basis functions. The initial value of value function was set to $v_t(s) = 0$. 
+ 
+ The basis functions $\phi_i(s)$ represent the following logical units of our designed state. 
+ \begin{itemize}
+ 	\item $\phi_1(s) = s^1-s^2-s^3$ - representing the different between prices of inputs and products; 
+   	\item $\phi_2(s) = s^5$ - installed capacity of the power plant;
+ 	\item $\phi_3(s) = I_{\mathbb{R}_0^+}(s^9)$ - indicator of positive or negative balance; 
+ 	\item $\phi_4(s) = s^4$ - representing the government support of renewables directly; 
+ 	\item $\phi_5(s) = s^6$ - basically an$I$ function of mothballed ferature. 
+ 	
+ \end{itemize}
+
+The final algorithm that is used to determine the final parameters $\theta_{i,t}$ for each of the experiment setup can be described as: 
+
+\begin{algorithm}
+	\caption{Value function approximation algorithm}\label{alg:SingleKnown}
+	\begin{algorithmic}[1]
+		\Require{$xxxx$}
+		\State$ xxxx$ \Comment{yyyy}
+		\While{$t\ne 0$}
+		\For{ each $a in b $}
+		\State $ahoj$ \Comment{ahoj}
+		\EndFor
+		\State $t \gets t-1$
+		\EndWhile
+		\State $xxxx$, \Comment{Deriving the optimal policy}
+		\State	\Return{$\theta_{i,t}$}
+	\end{algorithmic}
+\end{algorithm}
+
+The final valuation of the project is then determined by the function: 
+\begin{equation}
+v_0(s_0) = \sum_{i} \theta_{i,0} \cdot \phi_{i}(s_0),
+\end{equation} 
+
  
 
 \section{Sensitivity towards potential action set}
@@ -1106,7 +1302,7 @@ The limits for the prices, i.e.  $s^i$ with $i \in \{1,2,3\}$ we define:
 
 <We will add two levels of possible managerial actions and we will investigate the changes> 
 
-\paragraph{Action set 1}: 
+\subsection{Action set 1}: 
 <We are adding these types of actions to the model> 
 
 <The reward function changes in this way> 
@@ -1115,7 +1311,7 @@ The limits for the prices, i.e.  $s^i$ with $i \in \{1,2,3\}$ we define:
 
 <Results>
 
-\paragraph{Action set 2}
+\subsection{Action set 2}
 
 <The reward function changes in this way> 
 
@@ -1123,7 +1319,7 @@ The limits for the prices, i.e.  $s^i$ with $i \in \{1,2,3\}$ we define:
 
 <Results>
 
- \paragraph{Action set 3}
+\subsection{Action set 3}
  
  <The reward function changes in this way> 
  

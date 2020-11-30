@@ -6,13 +6,23 @@
 \bibitem{HolLau:05}
 
 
+\bibitem{DamZro:19}
+
+
+\bibitem{AlsWan:20}
+Abdullah AlShelahi, Jingxing Wang, Mingdi You, Eunshin Byon, and Romesh Saigal.
+\newblock Data-driven prediction for volatile processes based on real option
+  theories.
+\newblock {\em International Journal of Production Economics}, 226:107605,
+  2020.
+
 \bibitem{Amp:17}
 Kwasi~Darkwa Ampofo.
 \newblock Reasons why real options analysis (roa) is not widely adopted in the
   mineral industry.
 \newblock 2017.
 
-\bibitem{ArmKul:98}
+\bibitem{AmrKul:98}
 Martha Amram and Nalin Kulatilaka.
 \newblock {\em Real Options:: Managing Strategic Investment in an Uncertain
   World}.
@@ -31,6 +41,12 @@ Louis Bachelier.
   17:21--88, 1900.
 \newblock Reprinted in P. H. Cootner (ed), 1964, The Random Character of Stock
   Market Prices, Cambridge, Mass. MIT Press.
+
+\bibitem{BenWhi:17}
+Michel Benaroch and Martin Whitman.
+\newblock Real options models for proactive uncertainty-reducing mitigations
+  and applications in cybersecurity investment decision-making.
+\newblock {\em Information Systems Research}, forthcoming, 01 2017.
 
 \bibitem{Ber:85}
 J.O.\ Berger.
@@ -63,10 +79,21 @@ Richard~A Brealey, Stewart~C Myers, Franklin Allen, and Pitabas Mohanty.
 \newblock {\em Principles of corporate finance}.
 \newblock Tata McGraw-Hill Education, 2012.
 
+\bibitem{Bre:10}
+Paul Breeze.
+\newblock {\em The cost of power generation: The current and future
+  competitiveness of renewable and traditional technologies}.
+\newblock Business Insights Limited, 2010.
+
 \bibitem{Bro:08}
 V.~Bronzin.
 \newblock {\em Theorie der Prämiengeschäfte}.
 \newblock Verlag Franz Deticke, 1908.
+
+\bibitem{Car:12}
+Rachel Cary.
+\newblock The future of gas power.
+\newblock {\em Critical Market and Technology Issues}, 2012.
 
 \bibitem{Cru:08}
 F.~Crundwell.
@@ -118,6 +145,11 @@ Nalin Kulatilaka and Lenos Trigeorgis.
 \newblock The general flexibility to switch: Real options revisited.
 \newblock {\em International Journal of Finance}, 6, 01 1994.
 
+\bibitem{LunDid:17}
+Diderik Lund and Ragnar Nymoen.
+\newblock Comparative statics for real options on oil: What stylized facts?
+\newblock {\em The Engineering Economist}, 63:1--12, 02 2017.
+
 \bibitem{Mye:77}
 Stewart~C. Myers.
 \newblock Determinants of corporate borrowing.
@@ -164,6 +196,12 @@ Young Ryu, Young-Oh Kim, Seung~Beom Seo, and Il~Seo.
 \newblock {\em Mitigation and Adaptation Strategies for Global Change}, 08
   2017.
 
+\bibitem{SchRob:19}
+Robin Schneider and Junichi Imai.
+\newblock Valuing investments in digital transformation of business models.
+\newblock {\em International Journal of Real Options and Strategy}, 7:1--26, 12
+  2019.
+
 \bibitem{SicGam:10}
 Gordon Sick and Andrea Gamba.
 \newblock Some important issues involving real options: an overview.
@@ -174,6 +212,12 @@ Grid Thoma.
 \newblock The valuation of patent real options – an analysis using patent-
   and firm-level datasets.
 \newblock {\em Academy of Management Proceedings}, 2019(1):12922, 2019.
+
+\bibitem{Vis:18}
+Marko Visnjic.
+\newblock {\em Mineral asset valuation under price uncertainty using real
+  options}.
+\newblock PhD thesis, Colorado School of Mines. Arthur Lakes Library, 2018.
 
 \bibitem{Vol:03}
 A.~Vollert.

@@ -60,10 +60,15 @@ I was expecting a `,' or a `}'---line 1281 of file fr.bib
  :  title={Risk aversion and incentive effects: New data without order effects},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "AmrKul:98"
+You're missing a field name---line 1421 of file fr.bib
+ : @article{DamZro:19,
+ :                    ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "AmrTri:94"
 Warning--to sort, need author or key in CopAnt:01
 Warning--to sort, need author or key in HolLau:05
+Warning--to sort, need author or key in DamZro:19
 Warning--empty author in CopAnt:01
 Warning--empty title in CopAnt:01
 Warning--empty journal in CopAnt:01
@@ -72,49 +77,53 @@ Warning--empty author in HolLau:05
 Warning--empty title in HolLau:05
 Warning--empty journal in HolLau:05
 Warning--empty year in HolLau:05
+Warning--empty author in DamZro:19
+Warning--empty title in DamZro:19
+Warning--empty journal in DamZro:19
+Warning--empty year in DamZro:19
 Warning--empty journal in Amp:17
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--can't use both author and editor fields in Web:09
-You've used 35 entries,
+You've used 43 entries,
             2118 wiz_defined-function locations,
-            722 strings with 8608 characters,
-and the built_in function-call counts, 9094 in all, are:
-= -- 864
-> -- 352
+            769 strings with 9785 characters,
+and the built_in function-call counts, 11100 in all, are:
+= -- 1052
+> -- 441
 < -- 2
-+ -- 148
-- -- 108
-* -- 529
-:= -- 1545
-add.period$ -- 106
-call.type$ -- 35
-change.case$ -- 142
++ -- 186
+- -- 136
+* -- 662
+:= -- 1896
+add.period$ -- 128
+call.type$ -- 43
+change.case$ -- 177
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 408
-empty$ -- 799
-format.name$ -- 108
-if$ -- 1907
+cite$ -- 62
+duplicate$ -- 492
+empty$ -- 958
+format.name$ -- 136
+if$ -- 2311
 int.to.chr$ -- 0
-int.to.str$ -- 35
-missing$ -- 50
-newline$ -- 175
-num.names$ -- 66
-pop$ -- 225
+int.to.str$ -- 43
+missing$ -- 58
+newline$ -- 213
+num.names$ -- 80
+pop$ -- 265
 preamble$ -- 1
-purify$ -- 124
+purify$ -- 154
 quote$ -- 0
-skip$ -- 263
+skip$ -- 321
 stack$ -- 0
-substring$ -- 398
-swap$ -- 51
+substring$ -- 482
+swap$ -- 58
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 106
-warning$ -- 14
-while$ -- 83
-width$ -- 37
-write$ -- 362
-(There were 12 error messages)
+type$ -- 136
+warning$ -- 19
+while$ -- 100
+width$ -- 45
+write$ -- 441
+(There were 13 error messages)
