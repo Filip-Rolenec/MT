@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 NOV 2020 23:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  30 NOV 2020 21:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,7 +1116,19 @@ Package natbib Warning: Citation `AmrTri:94' on page 32 undefined on input line
 
 ]
 Chapter 4.
-[37] [38] [39] [40] [41] [42] [43] [44]
+[37] [38] [39] [40]
+Overfull \hbox (11.63727pt too wide) in paragraph at lines 1203--1204
+\T1/txr/m/n/10.95 adding a re-al-iza-tion of a ran-dom vari-able with three out
+-comes $\OMS/txsy/m/n/10.95 f^^@\OT1/txr/m/n/10.95 1\OML/txmi/m/it/10.95 ; \OT1
+/txr/m/n/10.95 0\OML/txmi/m/it/10.95 ; \OT1/txr/m/n/10.95 1\OMS/txsy/m/n/10.95 
+g\OML/txmi/m/it/10.95 :$ \T1/txr/m/n/10.95 with prob-a-bil-i-ties $\OMS/txsy/m/
+n/10.95 f\OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/10.95 02\OML/tx
+mi/m/it/10.95 ; \OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/10.95 94
+\OML/txmi/m/it/10.95 ; \OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/1
+0.95 04\OMS/txsy/m/n/10.95 g$\T1/txr/m/n/10.95 .
+ []
+
+[41] [42] [43] [44]
 Chapter 5.
 [45
 
@@ -1157,7 +1169,7 @@ lic/txfonts/txsyc.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (51 pages, 293316 bytes).
+Output written on "Master's thesis.pdf" (51 pages, 294130 bytes).
 PDF statistics:
  268 PDF objects out of 1000 (max. 8388607)
  182 compressed objects within 2 object streams

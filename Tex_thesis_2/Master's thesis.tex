@@ -1183,92 +1183,100 @@ p(s^6_{t+1}=y|s^6_t = x, a_t) =
 \end{equation}
 
 \paragraph{Stochastic evolution simple}
-The second group of elementary states consists of the ones which evolve stochastically, but their value in the next epoch is conditioned only on the current value. 
+The second group of elementary states consists of the ones which evolve stochastically, but their value is not conditioned by other elementary states. 
 
-By this structure we model the prices of gas and CO2 allowances on the market as well as the government approach to renewables. In terms of our notation, states $s^2, s^3$ and $s^4$. 
+This design is used for modeling the prices of gas and CO2 allowances on the market as well as the government approach to renewables.  In terms of our notation, states $s^2, s^3$ and $s^4$. 
 
-The prices of CO2 and gas are modeled by the log-normal stochastic process, which is a standard model in economics used in many publications, i.e. \cite{} or \cite{}. 
 
-The probability \footnote{Define LogN in preliminaries} of the next state is thus conditioned only on the value of the previous state as: 
+The prices of CO2 and gas are modeled by the log-normal stochastic process, which is the model used in the BSM model and other publications like \cite{Vol:03}.
+
+The probability of the next state is thus conditioned only on the value of the previous state as: 
 \begin{equation}
 	p(s_{t+1}^i|s_t^i) = LogN(s_t^i, \sigma_i), 
 \end{equation}
-for $i \in \{2,3\}$. To actually model the prices we need to supply the variances and the initial values $s_0^2$ and $s_0^3$. 
+for $i \in \{2,3\}$. To be able to model the prices we need to supply the variances $\sigma_2$ and $\sigma_3$ and the initial values $s_0^2$ and $s_0^3$. 
 
-The initial prices that we use in our model come from the state of the market on 1st December 2020, where the Intercontinental Exchange (ICE) is understood as market. The prices (with transformed units to "per MW") are: $s_0^2 = ... EUR$ (price of CO2) and $s_0^3 = ... EUR$ (price of gas). 
+The initial prices that we use in the modeling come from the Intercontinental exchange as of 1st December 2020. The prices (with units transformed by the coefficients discussed above) are: $s_0^2 = ... $EUR (price of CO2) and $s_0^3 = ... $EUR (price of gas). 
 
-Even though an extensive computation of the volatility of each market could be performed, the exact values are actually not important for this thesis. Thus, the volatility parameters come from an educated guess made by the author. The volatilities used for modeling are $\sigma_2 = ...$ and $\sigma_3 = ...$. 
+The volatilities of both commodities could be computed from the historical data with more or less sophisticated statistic methods. However, we believe that the exact values are not that important and our expert guess from market observation will be enough for this experiment. Thus, we choose $\sigma_2 = ...$ and $\sigma_3 = ...$. 
 
-The government approach to renewables, $s^4$ is modeled with a realizations of random variable with three outcomes: -1,0 and 1 representing decreased, stable and increased support. This variable is also bounded between 1 and 5. 
+The government approach to renewables, $s^4$, artificially bounded between 1 and 5, is modeled by adding a realization of a random variable with three outcomes $\{-1,0,1\}.$ with probabilities $\{0.02,0.94,0.04\}$. The probabilities were chosen with respect to the chosen time interval of one epoch and general trend to more support of renewable energy. 
+
+The mathematical notion of the evolution of this state is then: 
 \begin{equation}
 p(s^4_{t+1}=y|s^4_t = x,) =
 \left\{
 \begin{array}{ll}
 0.04  & \mbox{if } x+1 = y \land y \leq 5 \\
 0.02 & \mbox{if } x-1 = y \land y \geq 1  \\
-0.94 & \mbox{if } x = y  \\
+0.96 & \mbox{if } x = y  \land y =1 \\
+0.98 & \mbox{if } x = y  \land y =5 \\
+0.94 & \mbox{if } x = y  \land y \notin \{1,5\} \\
 0 & \mbox{otherwise} 
 \end{array}
 \right.
 \end{equation}
 
 \paragraph{Power price}
-The price of power is modeled similarly to other prices in our experiment, by a log-normal process. The initial price is now taken from the Czech power exchange pxe (part of German eex), which is 42.30 EUR for December 2020 \footnote{Tradeable on the last day of November at noon.}. The initial volatility is then expert guess $\sigma_0 = ... $. 
+The price of power is modeled similarly to other prices in our experiment, by a log-normal process. The initial price $s_0^1= 42.30$ EUR\footnote{Price for December 2020 delivery tradeable at 30th November 2020} is now taken from the Czech power exchange PXE (part of German EEX). The initial volatility $\sigma_1 = ... $. 
 
-The difference in modeling of this variable is that we assume $\sigma$ to be non-constant. We model the volatility as being on 5 possible levels based on the state of government support, mathematically: 
+The difference in modeling of this variable is that we assume dynamic $\sigma$ in the log-normal model, that is computed based on the state of government support for renewables $s^4$ as: 
 \begin{equation}
-	\sigma(s^4) = \sigma_0(0.8+0.2\cdot s^4),
+	\sigma(s^4) = \sigma_0(0.8+0.2 \cdot s^4),
 \end{equation}
-which represents increase of 20\% with each level of government support. 
+which means an increase of 20\% with each level of government support. 
 
-Thus, the transition probability of the power price, state $s^1$ is defined as: 
+Thus, finally, the transition probability of the power price, state $s^1$, is defined as: 
 \begin{equation}
-	p(s_{t+1}^1|s_t^1, s_t^4) = LogN(s_t^i, \sigma(s_t^4).
+	p(s_{t+1}^1|s_t^1, s_t^4) = LogN(s_t^1, \sigma(s_t^4)).
 \end{equation}
 
 \paragraph{Balance}
-The last state whose modeling we need to talk about is the one representing financial balance of the project. This state simulates the actual balance based on actions of "responsible manager" and the assumptions of completely continuous loans and possible risk free investment with constant interest.
+The last model that needs to be discussed is the one representing financial balance of the project. This state simulates the actual cash balance driven by actions of a "responsible manager" and the assumptions of ideal loans\footnote{With the availability to repay any amount of money at any time.} and possible risk-free investment with constant interest rate. 
 
 Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 0.06\%} and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^9$ as: 
 \begin{equation}
 	p(s^9_{t+1}=y|s_t, s_t^9=x) =
 	\left\{
 	\begin{array}{ll}
-	1  & \mbox{if } y = RM(FCF(s_t)+x, r_r, r_b)\\
+	1  & \mbox{if } y = RM(FCF(s_t)+x, r_b, r_r)\\
 	0 & \mbox{otherwise,} 
 	\end{array}
 	\right.
 \end{equation}
 which means that this elementary state is deterministic and its value $s^9_{t+1}$ is computed as a result of responsible managerial actions with the previous balance adjusted for the FCF obtained in the previous state. 
 
-The actual computation of $FCF(s_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries \footnote{Not yet}. There can be an initial balance of the project if the investor will not be borrowing the full amount, but in this example, the initial balance $s^9_0=0$.  
+The actual computation of $FCF(s_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries. The model allows for easy interpretation of non-zero initial balance, however in our experiment we assume $s^9_0=0$.  
 
-\paragraph{Reward function}: 
+\paragraph{Reward function}
 The FCF model in our example, and actually in all projects in the class of facilities with simple I/O process, is fairly straightforward.
 
- First we account for the fixed price of maintenance, in our case 3 EUR for each MW of installed capacity per hour when the plant is ready and 1 EUR when mothballed. 
- 
- Then conditioned on the action of running or not running the facility, we account for input costs. Finally we add the profit from selling our product on the market and like that we have computed the FCF for the current time epoch, mathematically: 
+First, we account for the fixed price of maintenance, which in our case is 3 EUR/MW of installed capacity for each hour. This price is lowered to 1 EUR/MW when the plant is mothballed. 
+
+Then, conditioned on the action of running thee facility, we account for commodity input costs (here gas and CO2). Finally, we add the profit from selling our product on the market and the computation for FCF is complete. 
+
+The mathematical expression of the sentences above can be presented as:
  
  \begin{equation}
- 	FCF(s_t,a_t) = (s_t^5*200)*(3-(s_t^6)\cdot(2)) + I_{\{1,2\}}(a_t)(s_t^1 - (s^2_t+s_t^3))(s_t^5*200)\cdot h_m,
+ 	FCF(s_t,a_t) = (s_t^5\cdot 200)\cdot(3-2\cdot s_t^6)) + I_{\{1,2\}}(a_t)(s_t^1 -( s^2_t+s_t^3))\cdot s_t^5 \cdot 200\cdot h_m,
  \end{equation}
- where $h_m=720$ is a constant of hours in month, not accounting for the changes in moth lengths. 
+ where $h_m=720$ is a constant representing hours in month, not accounting for the changes in moth lengths. 
 
-As discussed before, the strategy is not being optimized for the expected cumulative FCF, but rather for the cumulative expected utility of its present cash equivalent. 
+As discussed earlier, the optimal strategy is not being optimized for the expected cumulative FCF, but rather for the cumulative expected utility of its present equivalent. 
  
  \section{Approximate dynamic programming}
  In this section we will describe the setup of ADP algorithm used in our models. We are using the value iteration algorithm with linear value function approximation, which was in detail discussed in preliminaries. 
  
  To ensure the reproducibility of our experiment we need to present the initial value function approximation and its basis functions. The initial value of value function was set to $v_t(s) = 0$. 
  
- The basis functions $\phi_i(s)$ represent the following logical units of our designed state. 
+ The basis functions $\phi_i(s)$ represent the following logical units of our designed global state. 
  \begin{itemize}
  	\item $\phi_1(s) = s^1-s^2-s^3$ - representing the different between prices of inputs and products; 
    	\item $\phi_2(s) = s^5$ - installed capacity of the power plant;
  	\item $\phi_3(s) = I_{\mathbb{R}_0^+}(s^9)$ - indicator of positive or negative balance; 
  	\item $\phi_4(s) = s^4$ - representing the government support of renewables directly; 
  	\item $\phi_5(s) = s^6$ - basically an$I$ function of mothballed ferature. 
+ 	\item $\phi_6(s) = s^7+s^8$ - the sum of remaining months of each 200MW block.
  	
  \end{itemize}
 

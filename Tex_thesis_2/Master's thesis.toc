@@ -54,7 +54,7 @@
 \contentsline {paragraph}{Reward function}{42}% 
 \contentsline {section}{\numberline {4.2}Approximate dynamic programming}{43}% 
 \contentsline {section}{\numberline {4.3}Sensitivity towards potential action set}{43}% 
-\contentsline {subsection}{\numberline {4.3.1}Action set 1}{43}% 
+\contentsline {subsection}{\numberline {4.3.1}Action set 1}{44}% 
 \contentsline {subsection}{\numberline {4.3.2}Action set 2}{44}% 
 \contentsline {subsection}{\numberline {4.3.3}Action set 3}{44}% 
 \contentsline {section}{\numberline {4.4}Sensitivity toward time epoch granularity}{44}% 
