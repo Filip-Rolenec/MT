@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  30 NOV 2020 21:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  5 DEC 2020 17:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1094,30 +1094,30 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
 Chapter 2.
 [17
 
-] [18]
+] [18] [19] [20]
 LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 490.
- [19] [20] [21] [22] [23] [24] [25]
-<Images/UF.png, id=125, 637.38126pt x 477.785pt>
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 591.
+ [21] [22] [23] [24] [25] [26]
+<Images/UF.png, id=129, 637.38126pt x 477.785pt>
 File: Images/UF.png Graphic file (type png)
 <use Images/UF.png>
-Package pdftex.def Info: Images/UF.png  used on input line 735.
+Package pdftex.def Info: Images/UF.png  used on input line 836.
 (pdftex.def)             Requested size: 446.16383pt x 334.44722pt.
- [26 <./Images/UF.png>]
+ [27] [28 <./Images/UF.png>]
 Chapter 3.
-[27
+[29
 
-] [28] [29] [30] [31]
+] [30] [31] [32] [33]
 
-Package natbib Warning: Citation `AmrTri:94' on page 32 undefined on input line
- 897.
+Package natbib Warning: Citation `AmrTri:94' on page 34 undefined on input line
+ 998.
 
-[32] [33] [34] [35] [36
+[34] [35] [36] [37] [38
 
 ]
 Chapter 4.
-[37] [38] [39] [40]
-Overfull \hbox (11.63727pt too wide) in paragraph at lines 1203--1204
+[39] [40] [41] [42]
+Overfull \hbox (11.63727pt too wide) in paragraph at lines 1304--1305
 \T1/txr/m/n/10.95 adding a re-al-iza-tion of a ran-dom vari-able with three out
 -comes $\OMS/txsy/m/n/10.95 f^^@\OT1/txr/m/n/10.95 1\OML/txmi/m/it/10.95 ; \OT1
 /txr/m/n/10.95 0\OML/txmi/m/it/10.95 ; \OT1/txr/m/n/10.95 1\OMS/txsy/m/n/10.95 
@@ -1128,26 +1128,26 @@ mi/m/it/10.95 ; \OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/10.95 94
 0.95 04\OMS/txsy/m/n/10.95 g$\T1/txr/m/n/10.95 .
  []
 
-[41] [42] [43] [44]
+[43] [44] [45] [46]
 Chapter 5.
-[45
+[47
 
-] [46
+] [48
 
 ]
 Chapter 6.
-(./Master's thesis.bbl [47] [48
+(./Master's thesis.bbl [49] [50
 
-] [49] [50])
+] [51] [52])
 
 Package natbib Warning: There were undefined citations.
 
-[51] (./Master's thesis.aux) ) 
+[53] (./Master's thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 24504 strings out of 492616
- 437411 string characters out of 6129482
- 572974 words of memory out of 5000000
- 28035 multiletter control sequences out of 15000+600000
+ 24508 strings out of 492616
+ 437473 string characters out of 6129482
+ 573001 words of memory out of 5000000
+ 28039 multiletter control sequences out of 15000+600000
  621194 words of font info for 150 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,904b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1169,10 +1169,10 @@ lic/txfonts/txsyc.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times
 fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
 ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (51 pages, 294130 bytes).
+Output written on "Master's thesis.pdf" (53 pages, 301273 bytes).
 PDF statistics:
- 268 PDF objects out of 1000 (max. 8388607)
- 182 compressed objects within 2 object streams
+ 274 PDF objects out of 1000 (max. 8388607)
+ 186 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  51 words of extra memory for PDF output out of 10000 (max. 10000000)
 

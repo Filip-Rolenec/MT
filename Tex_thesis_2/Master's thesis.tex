@@ -397,7 +397,7 @@ The notation used in this thesis comes predominantly from the most influential a
  The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU and its proven applicability in his previous publications \cite{Rol:18} and \cite{Rol:19}. 
 
 
-\section{Used mathematical symbolism}
+\section{General mathematics}
 In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense?}, are represented with a tilde above the variable, i.e. $\tilde{x}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e. $x$. 
 
 \begin{definition}(Probability)
@@ -426,8 +426,61 @@ The last general definition is the definition of well known concept of condition
 	\end{equation}
 	where $\mu$ is the dominating measure of the RN density and $\mathbf{X}$ is the set of all possible realizations of $\tilde{x}$.
 \end{definition}
-
 <Probably some other definitions that will be needed in the following chapters >
+
+\subsection{Probability distributions}
+Thorough this thesis more advanced distribution will be referenced, either as an expected model of some random variable, or in a broader discussion. The following non-trivial probability distributions are important for this thesis \cite{Bli:19}. 
+
+\paragraph{Bernoulli distribution}
+The most simple non-trivial distribution is the Bernoulli distribution $Be(p)$, which models the probability of success (1) or failure (0) with $p \in [0,1]$: 
+
+\begin{equation}
+p(\tilde{x} = x) =
+\left\{
+\begin{array}{ll}
+p  & x=1\\
+1-p & x=0.
+\end{array}
+\right.
+\end{equation}
+
+This distribution is seemingly the most used in the modeling of uncertainty in the ROA theory. It usually models the up (1) and down (0) movement of asset or commodity prices. 
+
+
+\paragraph{Binomial distribution}
+Binomial distribution $Bi(n,p)$ represents the number of successes of $n$ independent random variables distributed by $Be(p)$ as:
+
+\begin{equation}
+	p(\tilde{x}=k)=\binom{n}{k} \cdot p^k(1-p)^{n-k}.
+\end{equation}
+
+As a logical result, the binomial distribution in ROA models the asset or commodity prices after $n$ time intervals. 
+
+
+\paragraph{Poisson distribution}
+Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in modeling of number of successes in a given time-interval, so called ``arrivals`` \cite{Bli:19}. It is used for modeling of number of incoming emails or number of earthquakes in given area in one year. 
+
+Its probability density function PDF given parameter $\lambda$ is: 
+\begin{equation}
+	p(\tilde{x}=x)= \frac{\lambda^xe^{-\lambda}}{x!} , 
+\end{equation}
+where $x\in \mathbb{N_0}$.
+
+Also, it is worth noting that Poisson distribution $Po(\lambda)$ with $\lambda = np$ is the limit distribution of a $Bi(n, p)$ for $n \to \infty$. 
+
+
+\paragraph{Log-normal distribution}
+Another very popular distribution in the ROA theory is the log-normal distribution $LogN(
+\mu, \sigma)$. It represent a random variable, logarithm of which is distributed normally. 
+
+The probability density function of such variable is:
+\begin{equation}
+	p(\tilde{x}=x)=\frac{1}{x\sigma\sqrt{2\pi}} exp\left(\-\frac{(ln(x)-\mu)^2}{2\sigma^2}\right).
+\end{equation}
+
+This distribution is used again mostly for modeling of asset or commodity prices.And it has two pleasant properties. First, that its realizations are positive and  second, that variance reflects not only the parameter $\sigma$, but also $\mu$, where $\mu$ usually represents the previous price. 
+
+
 
 \section{General economics}
 
@@ -460,15 +513,63 @@ This thesis is built on two main theoretical pillars, the theory of corporate fi
 \end{definition}
 
 
-\subsection{Net present value and other valuation metrics (?)}
+\subsection{Net present value}
+Net present value is an industry standard valuation technique in capital investment. It is simple and it reflects the time value of money by exponential discounting of the future cash flow by a constant dicount rate $r$ (usually a risk-free interest rate): 
 
-<Say that this section is for illustration of current state of thinking about investments> 
+\begin{equation}
+NPV(C) = \sum_{t \in \mathbf{T}} \frac{c_t}{r^t}, 
+\end{equation}
 
-<Say that NPV is the standard in this field> 
+where $C$ is a cash flow vector with its elements $c_t, t \in \{0,1,...,|C|\}$. 
 
-<Define NPV and say it is for illustration purposes> 
+This basic form of the NPV technique is a first approximation of the real current value of cash flow vector $C$, which means that its reflection of reality is rather limited. 
 
-<A short paragraph about other metrics used in the decision making about a project, DTA,  IRR, WACC> 
+In this thesis we want to challenge the problem of constant discounting of positive and negative cash flow, which implies that the investor is able to invest in risk-free assets at the same rate at which he is able to borrow money. This is however, far from the reality. 
+
+We challenge this problem in the next section by presenting the present cash equivalent metric. 
+
+
+\subsection{Present cash equivalent}
+The ability to borrow money for a given interest rate $r_b$ is individual for each investor and naturally different from the risk-free interest rate $r_r$. This asymetry is not reflected in the standard NPV metric and thus we come up with our own metric, which we call present cash equivalent, PCE. 
+
+The notion of PCE is based on the logical indifference of an investor to a vector of future cash flow and some current amount of money. 
+
+For the purpose of PCE lets prepare also the notion of so called responsible manager (RM).  The task of RM is to reinvest the positive balance (with the rate $r_r$) and borrow more funds in case of negative balance for the rate of $r_b$. 
+
+We represent this behavior by the RM function, where the constant rates are not explicitely denoted, but rather implicitely assumed: 
+
+\begin{equation}
+RM(b) = 
+\left\{
+\begin{array}{ll}
+b\cdot(1+r_r)  &  \mbox{if } b\geq 0 \\
+b\cdot(1+r_b)  & \mbox{otherwise}
+\end{array}
+\right.
+\end{equation}
+
+Then, based on the assumption of completely dynamic loans\footnote{Meaning that bank will lend us money at any time and also will accept repayments at any time, all with the same interest rate.} we model the behavior of $RM = RM_{r_r,r_b}$ on a given cash flow vector $C = \{c_0,...c_t\} \ t \in \mathbb{N}$ as: 
+
+\begin{equation}
+	RM(C) = RM(...RM(RM(c_0)+c1)...+c_t). 
+\end{equation}
+
+The amount of $RM(C)$ represents the amount of money at time $t$ obtained from the cash flow vector $C$ and a logical money management. Then, the PCE(C) can be finally derived as: 
+
+
+\begin{equation}
+	PCE(C) = 
+	\left\{
+	\arraycolsep=5pt\def\arraystretch{1.5}
+	\begin{array}{ll}
+	\frac{RM(C)}{(1+r_r)^{t}}  &  \mbox{if } RM(C)\geq 0 \\
+		\frac{RM(C)}{(1+r_b)^{t}}  &  \mbox{otherwise} 
+	\end{array}
+	\right.
+\end{equation}
+
+
+which represents the logic, that having PCE(C) at time $t =0$ would result in the same outcome at time $t$. Thus, a manager should be logically indifferent to obtaining $PCE(C)$ now and $C$ by its parts in different times. 
 
 \subsection{Risk averse investors}\label{sec:risk_aversion_preliminaries}
 According to the observations made in \cite{BerDeM:09} there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, where investors are happy to hold onto a low-volatile investment even though the average returns are lower in the long run. 
@@ -916,7 +1017,7 @@ The portfolio of SDT estimation techniques is much wider than it was discussed s
 
 First is the Bayesian modeling, where each time new data are being observed, our probability model is updated by the Bayesian formula. This very influential modeling technique in SDT was not seen in the ROA publications, even though there is certainly a space for it. 
 
-The second modeling strategy that we want to talk about is the consistent way of information fusion from different sources. This niche part of the SDT, lead by Karny \cite{}, allows for incorporation of multiple sources of prior probabilities, for example multiple experts, data sources, and more \textbf{(?).}
+The second modeling strategy that we want to talk about is the consistent way of information fusion from different sources. This niche part of the SDT, lead by Karny \cite{Kar:20}, allows for incorporation of multiple sources of prior probabilities, for example multiple experts, data sources, and more \textbf{(?).}
 
 \paragraph{Summary}
 To conclude, we advice to use one of two approaches to the problem of $p$ estimation. First, when a lot of information about the project is known, we have a strong case for the parameters behaving according to our smooth distributions, and we believe the market to compactly reflect the expert knowledge, we prefer Bayesian updated risk-neutral probabilities. 
@@ -1002,7 +1103,7 @@ Lastly, we have advised the best ADP algorithm that copes with the problems of c
 
 
 
-\chapter{Valuation of facilities with simple I/O process}
+\chapter{Valuation of facilities with simple I/O process}\label{chapter:Experiment}
 In the previous chapter we have presented an algorithmic approach to a project valuation based on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
 
 We have chosen the class of projects that can be labeled as investment in facilities with simple I/O process and further managerial guidance. This class is characterized by a large outflow of money in the beginning used for building the facility (or its first functional part) and a small but long-term positive future revenue driven by the difference in the price of inputs and outputs of the facility. 

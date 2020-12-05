@@ -7,56 +7,62 @@
 \babel@toc {american}{}
 \contentsline {chapter}{\numberline {1}Historical background and research motivation}{15}% 
 \contentsline {chapter}{\numberline {2}Preliminaries}{17}% 
-\contentsline {section}{\numberline {2.1}Used mathematical symbolism}{17}% 
-\contentsline {section}{\numberline {2.2}General economics}{18}% 
-\contentsline {subsection}{\numberline {2.2.1}Net present value and other valuation metrics (?)}{19}% 
-\contentsline {subsection}{\numberline {2.2.2}Risk averse investors}{19}% 
-\contentsline {subsection}{\numberline {2.2.3}Option valuation - Black-Scholes-Merton model}{19}% 
-\contentsline {section}{\numberline {2.3}Real option analysis}{20}% 
-\contentsline {paragraph}{No analogy}{20}% 
-\contentsline {paragraph}{Partial analogy}{20}% 
-\contentsline {paragraph}{Full analogy}{21}% 
-\contentsline {section}{\numberline {2.4}Statistical decision theory}{21}% 
-\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{22}% 
-\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{23}% 
-\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics (?)}{24}% 
-\contentsline {subsection}{\numberline {2.4.4}Utility}{25}% 
-\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{27}% 
-\contentsline {section}{\numberline {3.1}Project valuation - problem definition}{27}% 
-\contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{28}% 
-\contentsline {subsection}{\numberline {3.2.1}Time set}{28}% 
-\contentsline {subsection}{\numberline {3.2.2}State set}{29}% 
-\contentsline {subsection}{\numberline {3.2.3}Action set}{29}% 
-\contentsline {subsection}{\numberline {3.2.4}Transition probability function}{30}% 
-\contentsline {subsection}{\numberline {3.2.5}Reward function}{30}% 
-\contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{31}% 
-\contentsline {subsection}{\numberline {3.3.1}Probability}{31}% 
-\contentsline {paragraph}{Risk neutral probabilities}{32}% 
-\contentsline {paragraph}{Insufficient reasons}{32}% 
-\contentsline {paragraph}{More complex models}{32}% 
-\contentsline {paragraph}{SDT interpretation}{32}% 
-\contentsline {paragraph}{SDT innovation}{32}% 
-\contentsline {paragraph}{Summary}{33}% 
-\contentsline {subsection}{\numberline {3.3.2}Time value of money}{33}% 
-\contentsline {subsection}{\numberline {3.3.3}Risk aversion of investors}{33}% 
-\contentsline {subsection}{\numberline {3.3.4}Approximate dynamic programming}{34}% 
-\contentsline {subsection}{\numberline {3.3.5}Summary}{34}% 
-\contentsline {chapter}{\numberline {4}Valuation of facilities with simple I/O process}{37}% 
-\contentsline {section}{\numberline {4.1}General settings of the experiment}{38}% 
-\contentsline {subsection}{\numberline {4.1.1}Time set}{38}% 
-\contentsline {subsection}{\numberline {4.1.2}State set}{38}% 
-\contentsline {subsection}{\numberline {4.1.3}Action function}{40}% 
-\contentsline {subsection}{\numberline {4.1.4}Transition probability function}{40}% 
-\contentsline {paragraph}{Deterministic evolution}{41}% 
-\contentsline {paragraph}{Stochastic evolution simple}{41}% 
-\contentsline {paragraph}{Power price}{42}% 
-\contentsline {paragraph}{Balance}{42}% 
-\contentsline {paragraph}{Reward function}{42}% 
-\contentsline {section}{\numberline {4.2}Approximate dynamic programming}{43}% 
-\contentsline {section}{\numberline {4.3}Sensitivity towards potential action set}{43}% 
-\contentsline {subsection}{\numberline {4.3.1}Action set 1}{44}% 
-\contentsline {subsection}{\numberline {4.3.2}Action set 2}{44}% 
-\contentsline {subsection}{\numberline {4.3.3}Action set 3}{44}% 
-\contentsline {section}{\numberline {4.4}Sensitivity toward time epoch granularity}{44}% 
-\contentsline {chapter}{\numberline {5}Discussion}{45}% 
-\contentsline {chapter}{\numberline {6}Conclusions}{47}% 
+\contentsline {section}{\numberline {2.1}General mathematics}{17}% 
+\contentsline {subsection}{\numberline {2.1.1}Probability distributions}{18}% 
+\contentsline {paragraph}{Bernoulli distribution}{18}% 
+\contentsline {paragraph}{Binomial distribution}{18}% 
+\contentsline {paragraph}{Poisson distribution}{18}% 
+\contentsline {paragraph}{Log-normal distribution}{19}% 
+\contentsline {section}{\numberline {2.2}General economics}{19}% 
+\contentsline {subsection}{\numberline {2.2.1}Net present value}{19}% 
+\contentsline {subsection}{\numberline {2.2.2}Present cash equivalent}{20}% 
+\contentsline {subsection}{\numberline {2.2.3}Risk averse investors}{20}% 
+\contentsline {subsection}{\numberline {2.2.4}Option valuation - Black-Scholes-Merton model}{21}% 
+\contentsline {section}{\numberline {2.3}Real option analysis}{22}% 
+\contentsline {paragraph}{No analogy}{22}% 
+\contentsline {paragraph}{Partial analogy}{22}% 
+\contentsline {paragraph}{Full analogy}{22}% 
+\contentsline {section}{\numberline {2.4}Statistical decision theory}{23}% 
+\contentsline {subsection}{\numberline {2.4.1}Dynamic programming}{24}% 
+\contentsline {subsection}{\numberline {2.4.2}Approximate dynamic programming}{25}% 
+\contentsline {subsection}{\numberline {2.4.3}Bayesian statistics (?)}{26}% 
+\contentsline {subsection}{\numberline {2.4.4}Utility}{26}% 
+\contentsline {chapter}{\numberline {3}Project valuation as stochastic decision problem}{29}% 
+\contentsline {section}{\numberline {3.1}Project valuation - problem definition}{29}% 
+\contentsline {section}{\numberline {3.2}Project valuation in the stochastic decision theory framework}{30}% 
+\contentsline {subsection}{\numberline {3.2.1}Time set}{30}% 
+\contentsline {subsection}{\numberline {3.2.2}State set}{31}% 
+\contentsline {subsection}{\numberline {3.2.3}Action set}{31}% 
+\contentsline {subsection}{\numberline {3.2.4}Transition probability function}{32}% 
+\contentsline {subsection}{\numberline {3.2.5}Reward function}{32}% 
+\contentsline {section}{\numberline {3.3}Solution of the project valuation as SDT problem}{33}% 
+\contentsline {subsection}{\numberline {3.3.1}Probability}{33}% 
+\contentsline {paragraph}{Risk neutral probabilities}{34}% 
+\contentsline {paragraph}{Insufficient reasons}{34}% 
+\contentsline {paragraph}{More complex models}{34}% 
+\contentsline {paragraph}{SDT interpretation}{34}% 
+\contentsline {paragraph}{SDT innovation}{34}% 
+\contentsline {paragraph}{Summary}{35}% 
+\contentsline {subsection}{\numberline {3.3.2}Time value of money}{35}% 
+\contentsline {subsection}{\numberline {3.3.3}Risk aversion of investors}{35}% 
+\contentsline {subsection}{\numberline {3.3.4}Approximate dynamic programming}{36}% 
+\contentsline {subsection}{\numberline {3.3.5}Summary}{36}% 
+\contentsline {chapter}{\numberline {4}Valuation of facilities with simple I/O process}{39}% 
+\contentsline {section}{\numberline {4.1}General settings of the experiment}{40}% 
+\contentsline {subsection}{\numberline {4.1.1}Time set}{40}% 
+\contentsline {subsection}{\numberline {4.1.2}State set}{40}% 
+\contentsline {subsection}{\numberline {4.1.3}Action function}{42}% 
+\contentsline {subsection}{\numberline {4.1.4}Transition probability function}{42}% 
+\contentsline {paragraph}{Deterministic evolution}{43}% 
+\contentsline {paragraph}{Stochastic evolution simple}{43}% 
+\contentsline {paragraph}{Power price}{44}% 
+\contentsline {paragraph}{Balance}{44}% 
+\contentsline {paragraph}{Reward function}{44}% 
+\contentsline {section}{\numberline {4.2}Approximate dynamic programming}{45}% 
+\contentsline {section}{\numberline {4.3}Sensitivity towards potential action set}{46}% 
+\contentsline {subsection}{\numberline {4.3.1}Action set 1}{46}% 
+\contentsline {subsection}{\numberline {4.3.2}Action set 2}{46}% 
+\contentsline {subsection}{\numberline {4.3.3}Action set 3}{46}% 
+\contentsline {section}{\numberline {4.4}Sensitivity toward time epoch granularity}{46}% 
+\contentsline {chapter}{\numberline {5}Discussion}{47}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{49}% 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  8 AUG 2020 19:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  5 DEC 2020 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1128,10 +1128,10 @@ Chapter 6.
 Chapter 7.
 [41]
 
-LaTeX Warning: Reference `ValueF' on page 42 undefined on input line 990.
+LaTeX Warning: Reference `ValueF' on page 42 undefined on input line 992.
 
 
-LaTeX Warning: Reference `DynProgEq' on page 42 undefined on input line 994.
+LaTeX Warning: Reference `DynProgEq' on page 42 undefined on input line 996.
 
 (./Master's thesis_example.bbl [42] [43
 
@@ -1172,7 +1172,7 @@ yb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyc.pfb
 al/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis_example.pdf" (44 pages, 220889 bytes).
+Output written on "Master's thesis_example.pdf" (44 pages, 221039 bytes).
 PDF statistics:
  235 PDF objects out of 1000 (max. 8388607)
  160 compressed objects within 2 object streams
