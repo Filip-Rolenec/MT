@@ -9,16 +9,14 @@
 
 
 import sys
-import os
+
 sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 
 
 # In[2]:
 
 
-from gas_example.sampling import get_state_sample
-import numpy as np
-
+from gas_example.optimization.sampling import get_state_sample
 
 # In[3]:
 
@@ -84,9 +82,6 @@ sampled_states = samples[1]
 # In[7]:
 
 
-from gas_example.setup import GasProblemSetup
-
-
 # In[8]:
 
 
@@ -107,8 +102,8 @@ epoch_b_rate = borrow_rate**(1/float(12))
 
 
 from gas_example.setup import GasProblemSetup
-from gas_example.model import AdpModel
-from gas_example.adp_algorithm import adp_algorithm_final
+from gas_example.optimization.model import AdpModel
+from gas_example.optimization.adp_algorithm import adp_algorithm_final
 
 
 # In[10]:
@@ -127,7 +122,7 @@ vfs = adp_algorithm_final(5, ps, model)
 # In[12]:
 
 
-from gas_example.state import get_initial_state
+from gas_example.simulation.state import get_initial_state
 
 
 # In[13]:
@@ -155,10 +150,6 @@ POWERPLANT_COST = 650_000_000
 
 
 # In[15]:
-
-
-from gas_example.fcf import compute_fcf
-from gas_example.enum_types import RunningState, PowerplantState, Action
 
 
 # In[16]:

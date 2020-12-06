@@ -37,6 +37,8 @@ from progressbar import progressbar
 
 
 import seaborn as sns
+import pandas as pd
+import numpy as np
 sns.set()
 
 
@@ -62,16 +64,10 @@ strategies = [strategy_0, strategy_1, strategy_2]
 # In[7]:
 
 
-final_balance, balances = run_simulation(strategy_2, initial_state)
+final_balance= run_simulation(strategy_2, initial_state)
 
 
 # In[8]:
-
-
-balances
-
-
-# In[ ]:
 
 
 import time
@@ -80,32 +76,55 @@ import sys
 results_final = {}
 for i in range(len(strategies)):
     results = []
-    for j in progressbar(range(1500)):
+    for j in progressbar(range(10000)):
         results.append(run_simulation(strategies[i], initial_state))
     results_final[i]= results
-    
 
 
-# In[ ]:
+# In[9]:
 
 
-plt.hist(results_final)
+flatten = lambda t: [item for sublist in t.values() for item in sublist]
+all_results = flatten(results_final)
+max_value_displayed = np.percentile(all_results, 98)
+min_value_displayed = np.percentile(all_results, 2)
 
 
-# In[ ]:
+# In[10]:
 
 
+total_min = min([min(results_final[i]) for i in range(len(results_final))])
+total_min = min_value_displayed
+total_max = max_value_displayed
+
+width = (total_max-total_min)/30
+b = [total_min +i*width for i in range(30)]
 
 
-
-# In[ ]:
-
+# In[25]:
 
 
+df = pd.DataFrame(results_final)
+means = [np.mean(df[i]) for i in range(len(results_final))]
+colors = sns.color_palette()[0:3]
 
 
-# In[ ]:
+# In[26]:
 
 
+fig, ax = plt.subplots(figsize = (12,6), dpi = 100)
 
+plt.hist(df, bins = b, label = [f"Strategy_{i}" for i in df.columns])
+
+trans = ax.get_xaxis_transform()
+
+
+for i,mean in enumerate(means):
+    plt.axvline(x=mean,linestyle = "dashed", color = colors[i])
+    plt.text(mean+5, 0.5+i*0.05, round(mean),transform = trans,  color = colors[i])
+plt.xlabel("M of EUR")
+plt.ylabel("Count")
+plt.legend()
+plt.title("Baseline strategies and their expected PCEs")
+plt.show()
 

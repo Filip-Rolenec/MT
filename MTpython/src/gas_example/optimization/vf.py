@@ -2,8 +2,8 @@ from datetime import datetime
 
 from sklearn.linear_model import LinearRegression
 
-from gas_example.model import AdpModel
-from gas_example.sampling import get_state_sample
+from gas_example.optimization.model import AdpModel
+from gas_example.optimization.sampling import get_state_sample
 from gas_example.simulation import get_state_reward_pairs
 
 # Number of state samples for each update of value function

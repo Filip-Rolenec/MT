@@ -818,7 +818,7 @@ get_FCF([24,9,40,1,1,1,239,0], 1, 40)
 
 # ## Variables 
 
-# In[111]:
+# In[66]:
 
 
 gov_policy = 1 
@@ -843,20 +843,20 @@ time_epochs =12*25
 initial_state = [24,9,40,1,0,0,0,0]
 
 
-# In[112]:
+# In[67]:
 
 
 power_volatility
 
 
-# In[113]:
+# In[68]:
 
 
 def get_action_from_strategy(strategy_function, state, epoch): 
     return(strategy_function(state, epoch))
 
 
-# In[114]:
+# In[69]:
 
 
 def heuristic_strategy_1(state, epoch): 
@@ -869,7 +869,7 @@ def heuristic_strategy_1(state, epoch):
         return(0) # If the run is not profitable in this stage, do not run the plant. 
 
 
-# In[115]:
+# In[70]:
 
 
 def heuristic_strategy_0(state, epoch): 
@@ -879,7 +879,7 @@ def heuristic_strategy_0(state, epoch):
         return(1)
 
 
-# In[116]:
+# In[71]:
 
 
 def get_new_state(state_action): 
@@ -896,7 +896,7 @@ def get_new_state(state_action):
     
 
 
-# In[117]:
+# In[72]:
 
 
 def run_simulation(strategy): 
@@ -949,44 +949,44 @@ def run_simulation(strategy):
     return(profit)
 
 
-# In[118]:
+# In[73]:
 
 
 run_simulation(heuristic_strategy_1)
 
 
-# In[119]:
+# In[74]:
 
 
 from progressbar import progressbar
 
 
-# In[120]:
+# In[76]:
 
 
 results_1 = {}
 results_0 = {}
 
-for i in progressbar(range(5000)): 
+for i in progressbar(range(500)): 
     results_1[i] = run_simulation(heuristic_strategy_1)
     results_0[i] = run_simulation(heuristic_strategy_0)
 
 
-# In[121]:
+# In[77]:
 
 
 results_1_list = [result for result in results_1.values()]
 results_0_list = [result for result in results_0.values()]
 
 
-# In[122]:
+# In[78]:
 
 
 results_1_cut = [result for result in results_1.values() if result<1e10]
 results_0_cut = [result for result in results_0.values() if result<1e10]
 
 
-# In[135]:
+# In[79]:
 
 
 plt.figure(figsize=(8.1,5))
@@ -998,20 +998,20 @@ plt.legend()
 plt.savefig('Runnability.png')
 
 
-# In[134]:
+# In[80]:
 
 
 
 plt.savefig('Runnability.png')
 
 
-# In[124]:
+# In[81]:
 
 
 np.mean(results_1_list)
 
 
-# In[125]:
+# In[82]:
 
 
 np.mean(results_0_list)
@@ -1023,7 +1023,7 @@ np.mean(results_0_list)
 
 
 
-# In[94]:
+# In[83]:
 
 
 np.max(list(results_0.values()))/1000000
@@ -1041,10 +1041,54 @@ np.min(list(results_1.values()))/1000000
 np.mean(list(results_1.values()))
 
 
-# In[ ]:
+# In[86]:
 
 
 np.mean(list(results_0.values()))
+
+
+# In[ ]:
+
+
+
+
+
+# ## PCE function
+# - Take a vector, simulate responsible manager and return PCE equivalent.
+
+# In[96]:
+
+
+def pce(fcfs, r_r, r_b): 
+    balance = 0
+    for fcf in fcfs: 
+        balance +=fcf
+        if balance<0: 
+            balance = balance*r_b
+        else: 
+            balance = balance*r_r
+            
+    if balance<0: 
+        return balance/(r_b)**(len(fcfs))
+    else: 
+        print(balance)
+        return balance/(r_r)**(len(fcfs))
+
+
+# In[98]:
+
+
+pce([300, -500, 100, -200, 100, 200, 300], 1.02, 1.06)
+
+
+# Which fits with the computation I made manually 
+
+# # Utility function
+
+# In[ ]:
+
+
+
 
 
 # # Conclusion 

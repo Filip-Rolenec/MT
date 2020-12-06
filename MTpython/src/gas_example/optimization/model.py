@@ -1,6 +1,6 @@
 from typing import List
 
-from gas_example.basis_function import get_basis_functions
+from gas_example.optimization.basis_function import get_basis_functions
 
 
 class AdpModel:
