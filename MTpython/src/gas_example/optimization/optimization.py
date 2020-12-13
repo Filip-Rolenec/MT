@@ -19,7 +19,7 @@ def get_state_utility_pairs(
         future_vf
 
 ):
-    #print(epoch)
+    # print(epoch)
 
     state_utility_pairs = {}
 
@@ -29,16 +29,14 @@ def get_state_utility_pairs(
         # When creating a random path, we need to also consider the various actions.
         action = get_best_action(state, INTEGRAL_SAMPLE_SIZE, epoch, future_vf)
 
-        #if epoch < 298:
-            #print(state.to_dict())
-            #print(action)
-            #print_details = True
+        # if epoch < 298:
+        #print(state.to_dict())
+        #print(action)
+        #print_details = True
 
         utility_realization = get_utility_realization(state, action, epoch, future_vf, print_details)
 
         state_utility_pairs[i] = [state, utility_realization]
-
-
 
     return list(state_utility_pairs.values())
 
@@ -59,6 +57,8 @@ def get_best_action(state: State, integral_sample_size: int, epoch: int, future_
 
         exp_utility_per_action[action] = np.mean(sample_integral_values)
 
+    #print(exp_utility_per_action)
+
     return max(exp_utility_per_action.items(), key=operator.itemgetter(1))[0]
 
 
@@ -66,6 +66,7 @@ def get_utility_realization(state: State, action: Action, epoch: int, future_vf,
     new_state, fcf = state.get_new_state_and_fcf(action, epoch)
 
     # This is utility, we need to make a money equivalent first.
+
     future_vf_utility = future_vf.compute_value(new_state)
 
     future_vf_money_equivalent = INVERSE_UTILITY_FUNCTION(future_vf_utility)
@@ -75,15 +76,16 @@ def get_utility_realization(state: State, action: Action, epoch: int, future_vf,
 
     # After this, we subtract the balance and get the amount we need.
 
-    utility_realization = UTILITY_FUNCTION(pce_realization)
+    utility_realization = round(UTILITY_FUNCTION(pce_realization), 2)
 
-    #if print_details:
-        #print(f"future_vf_util: {future_vf_utility}")
-        #print(f"future_vf_money: {future_vf_money_equivalent}")
+    if print_details:
+        print(f"Future_vf: {future_vf.params}")
+        print(f"future_vf_util: {future_vf_utility}")
+        print(f"future_vf_money: {future_vf_money_equivalent}")
 
-        #print(f"pce_realization: {pce_realization}")
-        #print(f"utility_realization: {utility_realization}")
-        #print("\n")
+        print(f"pce_realization: {pce_realization}")
+        print(f"utility_realization: {utility_realization}")
+        print("\n")
 
     return utility_realization
 

@@ -65,19 +65,50 @@ sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 from gas_example.optimization.adp_algorithm import adp_algorithm_complete
 
 
-# In[21]:
+# In[8]:
 
 
-vfs = adp_algorithm_complete(1)
+vfs = adp_algorithm_complete()
 
 
-# In[22]:
+# In[9]:
+
+
+a = list([10]).append(10)
+
+
+# In[10]:
+
+
+a = list([1,2,3])
+
+
+# In[11]:
+
+
+a[1:2]
+
+
+# In[12]:
+
+
+a = [10]
+a.extend([1,2,3])
+
+
+# In[13]:
+
+
+a
+
+
+# In[14]:
 
 
 (21.2-24.2)*200*720
 
 
-# In[23]:
+# In[15]:
 
 
 param_list = []
@@ -85,66 +116,63 @@ for vf in vfs:
     param_list.append(vf.params)
 
 
-# In[24]:
+# In[16]:
 
 
 df = pd.DataFrame.from_records(param_list).transpose()
 
 
-# In[25]:
+# In[18]:
 
 
 df.index = ["\u03C6_1", 
             "\u03C6_2", 
-            "\u03C6_3", 
-            "\u03C6_4", 
-            "\u03C6_5", 
-            "\u03C6_6"]
-
-
-# In[26]:
-
-
-pd.set_option('display.max_columns', 300)
-
-
-# In[27]:
-
-
-df
-
-
-# In[15]:
-
-
-df.to_csv(f"vfs_1.csv")
-
-
-# In[16]:
-
-
-initial_state = State(24,9,39,1,PowerplantState.NOT_BUILT, MothballedState.NORMAL,0)
-
-
-# In[17]:
-
-
-df_path = pd.read_csv("vfs_1.csv", index_col = [0])
-
-
-# In[18]:
-
-
-df_path
+            "\u03C6_3"]
 
 
 # In[19]:
 
 
-list(df_path["0"])
+pd.set_option('display.max_columns', 300)
 
 
 # In[20]:
+
+
+df
+
+
+# In[ ]:
+
+
+df.to_csv(f"vfs_1.csv")
+
+
+# In[ ]:
+
+
+initial_state = State(24,9,39,1,PowerplantState.NOT_BUILT, MothballedState.NORMAL,0)
+
+
+# In[ ]:
+
+
+df_path = pd.read_csv("vfs_1.csv", index_col = [0])
+
+
+# In[ ]:
+
+
+df_path
+
+
+# In[ ]:
+
+
+list(df_path["0"])
+
+
+# In[ ]:
 
 
 Vf()
@@ -153,7 +181,7 @@ Vf()
 # In[ ]:
 
 
-
+list(10)
 
 
 # In[ ]:

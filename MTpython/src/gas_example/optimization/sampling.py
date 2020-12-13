@@ -67,7 +67,7 @@ def get_mothball_state_sample(sample_size):
     for i in range(sample_size):
         states.append(np.random.choice([MothballedState.NORMAL,
                                         MothballedState.MOTHBALLED],
-                                       p=[0.75, 0.25]))
+                                       p=[0.9, 0.1]))
     return states
 
 
@@ -83,17 +83,13 @@ def get_individual_samples(ps: GasProblemSetup,
     power_sample = get_power_price_sample(ps.gov_prob_up, ps.gov_prob_up, epoch, ps.power_vol, ps.init_power_price,
                                           individual_sample_size,
                                           )
-    clean_policies = get_gov_samples(epoch, ps.gov_prob_up, ps.gov_prob_down, individual_sample_size)
     powerplant_state = get_powerplant_state_sample(individual_sample_size)
-    mothball_state = get_mothball_state_sample(individual_sample_size)
     balance_sample = get_balance_sample(individual_sample_size)
 
     return [gas_price_sample,
             co2_price_sample,
             power_sample,
-            clean_policies,
             powerplant_state,
-            mothball_state,
             balance_sample]
 
 
@@ -109,9 +105,7 @@ def get_state_sample(sample_size_global, sample_size_individual, epoch):
                                 state_by_element[1],
                                 state_by_element[2],
                                 state_by_element[3],
-                                state_by_element[4],
-                                state_by_element[5],
-                                state_by_element[6])
+                                state_by_element[4])
         if not state_is_invalid(generated_state, print_warning=False):
             states.append(generated_state)
 

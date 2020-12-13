@@ -1,23 +1,24 @@
-
 from sklearn.linear_model import LinearRegression
 
 from gas_example.optimization.basis_function import get_basis_functions
 from gas_example.optimization.optimization import get_state_utility_pairs
 from gas_example.optimization.sampling import get_state_sample
 
+import matplotlib.pyplot as plt
+
 # Number of state samples for each update of value function
 from simple_example.helpers import prepare_regression_variables
 
 # Global number of new state sample
-VF_SAMPLE_GLOBAL = 30
+VF_SAMPLE_GLOBAL = 20
 # Number of samples for each element of the state vector
-VF_SAMPLE_IND = 10
+VF_SAMPLE_IND = 40
 
 
 class Vf:
 
     def __init__(self, parameters=None):
-        #
+
         if parameters is None:
             self.base_functions = get_basis_functions()
             self.params = [0] * len(self.base_functions)
@@ -29,8 +30,8 @@ class Vf:
     def compute_value(self, state):
         value_sum = 0
         for i in range(len(self.params)):
-            value_sum += self.params[i] * self.base_functions[i](state)
 
+            value_sum += self.params[i] * self.base_functions[i](state)
         return value_sum
 
     def set_params(self, params):
@@ -38,7 +39,7 @@ class Vf:
 
 
 # Value functions
-def create_vfs_time_list( time_epochs: range):
+def create_vfs_time_list(time_epochs: range):
     vfs = []
     for _ in time_epochs:
         vfs.append(Vf())
@@ -54,9 +55,20 @@ def update_vf_coef(current_vf: Vf, next_vf: Vf, basis_functions, time_epoch: int
 
     # print(f"{datetime.now()} Got state_reward_pairs, size {len(state_reward_pairs_raw)}")
 
-    x, y = prepare_regression_variables(state_reward_pairs_raw, basis_functions)
-    model = LinearRegression(fit_intercept=False).fit(x, y)
+    x, y = prepare_regression_variables(state_reward_pairs_raw, basis_functions, intercept = True)
+    model = LinearRegression().fit(x, y)
+    print([(i, j) for i, j in zip(x, y)])
 
-    #print(model.coef_)
+    print(model.coef_)
+    print(model.intercept_)
+
+    #plt.scatter(x, y)
+    #plt.show()
+
+    # plt.plot(x, y)
     # Based on the linear fit of the model, update the vf_coefficients of the current epoch.
-    current_vf.set_params(model.coef_)
+
+    coefs = [model.intercept_]
+    coefs.extend(model.coef_)
+    print(coefs)
+    current_vf.set_params(coefs)

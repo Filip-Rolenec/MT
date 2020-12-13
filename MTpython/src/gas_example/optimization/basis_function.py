@@ -4,39 +4,22 @@ from gas_example.simulation.state import State
 import numpy as np
 
 
-# Spark price time installed capacity - should be positive and allow for building as a best action
+# Intercept function, representing the value of future opportunity... (maybe)
+def bf_0(state: State):
+    return 1
+
+# Spark price, representing the value of having a plant
 def bf_1(state: State):
-    return state.get_spark_price() * state.plant_state.value
-
-
-# Spark price only, reflects the value of spark, even with 0 capacity
-def bf_2(state: State):
     return state.get_spark_price()
 
+# State of a powerplant, representing the value of having already built the powerplant
 
-# Indicator of positive balance
-def bf_3(state: State):
-    return 0 if state.balance <= 0 else 1
-
-
-# How does the state favor renewables
-def bf_4(state: State):
-    return state.gov_state
-
-# Mothballed plant* spark price. This should cover the fact that mothballed plant has value in negative spark.
-# It saves money, when the spark is negative, however it is bad when spark is positive.
-def bf_5(state: State):
-    is_mothballed = 1 if state.mothballed_state == MothballedState.MOTHBALLED else 0
-
-    return state.get_spark_price() * is_mothballed
-
-# Only value of the mothballed state, should be the around the price of chaning it.
-def bf_6(state: State):
-    return 1 if state.mothballed_state == MothballedState.MOTHBALLED else 0
+def bf_2(state: State):
+    return state.plant_state.value
 
 
 def get_basis_functions():
-    return [bf_1, bf_2, bf_3, bf_4, bf_5, bf_6]
+    return [bf_0, bf_1, bf_2]
 
 
 def uf_1(x):
