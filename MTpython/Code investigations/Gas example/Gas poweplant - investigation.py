@@ -961,7 +961,7 @@ run_simulation(heuristic_strategy_1)
 from progressbar import progressbar
 
 
-# In[76]:
+# In[75]:
 
 
 results_1 = {}
@@ -972,21 +972,21 @@ for i in progressbar(range(500)):
     results_0[i] = run_simulation(heuristic_strategy_0)
 
 
-# In[77]:
+# In[76]:
 
 
 results_1_list = [result for result in results_1.values()]
 results_0_list = [result for result in results_0.values()]
 
 
-# In[78]:
+# In[77]:
 
 
 results_1_cut = [result for result in results_1.values() if result<1e10]
 results_0_cut = [result for result in results_0.values() if result<1e10]
 
 
-# In[79]:
+# In[78]:
 
 
 plt.figure(figsize=(8.1,5))
@@ -998,20 +998,20 @@ plt.legend()
 plt.savefig('Runnability.png')
 
 
-# In[80]:
+# In[79]:
 
 
 
 plt.savefig('Runnability.png')
 
 
-# In[81]:
+# In[80]:
 
 
 np.mean(results_1_list)
 
 
-# In[82]:
+# In[81]:
 
 
 np.mean(results_0_list)
@@ -1023,25 +1023,25 @@ np.mean(results_0_list)
 
 
 
-# In[83]:
+# In[82]:
 
 
 np.max(list(results_0.values()))/1000000
 
 
-# In[84]:
+# In[83]:
 
 
 np.min(list(results_1.values()))/1000000
 
 
-# In[85]:
+# In[84]:
 
 
 np.mean(list(results_1.values()))
 
 
-# In[86]:
+# In[85]:
 
 
 np.mean(list(results_0.values()))
@@ -1056,7 +1056,7 @@ np.mean(list(results_0.values()))
 # ## PCE function
 # - Take a vector, simulate responsible manager and return PCE equivalent.
 
-# In[96]:
+# In[86]:
 
 
 def pce(fcfs, r_r, r_b): 
@@ -1075,7 +1075,7 @@ def pce(fcfs, r_r, r_b):
         return balance/(r_r)**(len(fcfs))
 
 
-# In[98]:
+# In[87]:
 
 
 pce([300, -500, 100, -200, 100, 200, 300], 1.02, 1.06)
@@ -1084,11 +1084,220 @@ pce([300, -500, 100, -200, 100, 200, 300], 1.02, 1.06)
 # Which fits with the computation I made manually 
 
 # # Utility function
+# - We just want to implement an utility function, similar to what we have seen in BacChi literature. 
+# - And of course with a resonable scale, hundreds of thousands money units. 
+
+# In[88]:
+
+
+import seaborn as sns
+
+
+# In[89]:
+
+
+sns.set()
+
+
+# In[90]:
+
+
+def uf_1(x): 
+    
+    x=x/5000
+        
+    if x <= 0: 
+        return -((-x)**(1/1.7))
+    if x<100: 
+        return np.log(2*x)
+    else: 
+        return x**(1/2)-4.7
+
+
+# In[91]:
+
+
+uf_1(-864000)
+
+
+# In[92]:
+
+
+uf_1(2700000)
+
+
+# In[93]:
+
+
+r = np.linspace(-400,400,801)
+v_uf_1 = np.vectorize(uf_1)
+r_u = v_uf_1(r)
+
+
+# In[94]:
+
+
+plt.figure(figsize = (10,5), dpi = 100)
+plt.plot(r,r_u)
+
+plt.xlabel("k EUR")
+plt.ylabel("Utility")
+plt.title("UTility function")
+
+plt.show()
+
+
+# ## Does it make sense? 
+# #### 1. Coin Tosses
+# - How would a person with this utility function evaluate a 50% toss for 50k, 100k and 250k? 
+
+# In[95]:
+
+
+(uf_1(50)+uf_1(-50))/2 - uf_1(-5)
+
+
+# In[96]:
+
+
+(uf_1(100)+uf_1(-100))/2 - uf_1(-15)
+
+
+# In[97]:
+
+
+(uf_1(250)+uf_1(-250))/2 - uf_1(-30)
+
+
+# In[98]:
+
+
+(uf_1(1000000)+uf_1(-1000000))/2 - uf_1(-180000)
+
+
+# In[99]:
+
+
+(uf_1(1)+uf_1(-1))/2 - uf_1(-0.04)
+
+
+# Looks like coin tosses make sense with this utility function.
+# #### Normal distribution
+
+# In[100]:
+
+
+values = np.random.normal(0,30, 100000)
+
+
+# In[101]:
+
+
+np.mean(v_uf_1(values))-uf_1(-1.6)
+
+
+# In[102]:
+
+
+values = np.random.normal(1.7,10, 100000)
+
+
+# In[103]:
+
+
+np.mean(v_uf_1(values))-uf_1(0)
+
+
+# It behaves pretty good. In realization it is very risk-averse. Not running the plant and running at 40 EUR margin has the same result, which makes our model confused if the state 1 of the plant is good or not. I will try a second one. 
+
+# In[104]:
+
+
+def uf_2(x): 
+            
+    if x <= 0: 
+        return -((-x)**(1/1.2))
+    else: 
+        return x**(1/1.25)
+
+
+# In[105]:
+
+
+r = np.linspace(-400,400,801)
+v_uf_1 = np.vectorize(uf_2)
+r_u = v_uf_1(r)
+
+
+# In[106]:
+
+
+plt.figure(figsize = (10,5), dpi = 100)
+plt.plot(r[370:430],r_u[370:430])
+
+plt.xlabel("k EUR")
+plt.ylabel("Utility")
+plt.title("UTility function")
+
+plt.show()
+
+
+# In[107]:
+
+
+uf_2(7.450580596923828e-09)
+
+
+# In[108]:
+
+
+uf_2(0.1)
+
 
 # In[ ]:
 
 
 
+
+
+# In[109]:
+
+
+
+def uf_2(x):
+    x = x / 1000
+
+    if x <= 0:
+        return -((-x) ** (1 / 1.2))
+    else:
+        return x ** (1 / 1.25)
+
+
+def uf_2_inv(y):
+    if y < 0:
+        thousands = -((-y) ** 1.2)
+    else:
+        thousands = y ** 1.25
+
+    return thousands * 1000
+
+
+# In[110]:
+
+
+uf_2(500000)
+
+
+# In[111]:
+
+
+uf_2_inv(144)
+
+
+# In[112]:
+
+
+uf_2(uf_2_inv(-100100))
 
 
 # # Conclusion 
@@ -1096,15 +1305,3 @@ pce([300, -500, 100, -200, 100, 200, 300], 1.02, 1.06)
 # - I have used parameters which come from reality (like the current price of gas, co2 and power) and I also made up some of the variables. 
 # - I have created two heuristic strategies and compared their results. 
 # - Now I need to create an optimal strategy finder and run the simulation with it. 
-
-# In[ ]:
-
-
-from ROAsimulations import main 
-
-
-# In[ ]:
-
-
-
-

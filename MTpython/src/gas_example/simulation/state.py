@@ -9,9 +9,6 @@ from gas_example.setup import BORROW_RATE, get_epoch_rate, RISK_FREE_RATE, GAS_V
 from gas_example.simulation.evolution_models import get_next_price, get_next_gov_policy
 
 
-
-
-
 def get_initial_state():
     return State(14, 10, 40, 1, PowerplantState.NOT_BUILT, MothballedState.NORMAL, 0)
 
@@ -118,9 +115,15 @@ def action_is_invalid(action: Action, state: State, time_epoch: int, print_warni
             warnings.warn(f"State {state.to_dict()} is invalid")
         return True
 
-    if action == Action.RUN and state.plant_state == PowerplantState.NOT_BUILT:
+    if action == Action.RUN and (
+            state.plant_state == PowerplantState.NOT_BUILT or state.mothballed_state == MothballedState.MOTHBALLED):
         if print_warning:
             warnings.warn("Powerplant cannot run, it was not built yet.")
+        return True
+
+    if action == Action.RUN_AND_BUILD and state.plant_state == PowerplantState.NOT_BUILT:
+        if print_warning:
+            warnings.warn("Cannot run what is not built")
         return True
 
     if action == Action.RUN_AND_BUILD and state.plant_state == PowerplantState.STAGE_2:
@@ -156,7 +159,6 @@ def get_valid_actions(state: State, time_epoch: int):
     return [action for action in Action if not action_is_invalid(action, state, time_epoch, print_warning=False)]
 
 
-
 def compute_fcf(state: State,
                 mothballed_state: MothballedState,
                 plant_state: PowerplantState,
@@ -170,7 +172,7 @@ def compute_fcf(state: State,
     installed_mw = get_installed_mw(plant_state)
 
     if action == Action.MOTHBALL_CHANGE:
-        profit -= MOTHBALLING_COST*plant_state.value
+        profit -= MOTHBALLING_COST * plant_state.value
 
     # Paying the fixed cost
     if mothballed_state == MothballedState.NORMAL:

@@ -3,6 +3,9 @@ def vector_mult(a, b):
 
 
 def prepare_regression_variables(state_reward_pairs, basis_functions):
+    # x vector of regression values.
+    # y vector of responses
+    # pair consists of State and sampled utility.
     x = []
     y = []
     for pair in state_reward_pairs:

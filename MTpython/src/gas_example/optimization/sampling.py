@@ -2,6 +2,7 @@ import numpy as np
 
 from gas_example.enum_types import PowerplantState, MothballedState
 from gas_example.setup import GasProblemSetup
+from gas_example.simulation.state import State, state_is_invalid
 
 
 def get_lognormal_prices(start_price: float, time_epoch: int, sigma: float, sample_size: int):
@@ -56,9 +57,8 @@ def get_powerplant_state_sample(sample_size):
     for i in range(sample_size):
         states.append(np.random.choice([PowerplantState.NOT_BUILT,
                                         PowerplantState.STAGE_1,
-                                        PowerplantState.STAGE_2,
-                                        PowerplantState.SOLD],
-                                       p=[0.05, 0.4, 0.5, 0.05]))
+                                        PowerplantState.STAGE_2],
+                                       p=[0.2, 0.4, 0.4]))
     return states
 
 
@@ -67,8 +67,8 @@ def get_mothball_state_sample(sample_size):
     for i in range(sample_size):
         states.append(np.random.choice([MothballedState.NORMAL,
                                         MothballedState.MOTHBALLED],
-                                       p=[0.9, 0, 1]))
-        return states
+                                       p=[0.75, 0.25]))
+    return states
 
 
 def get_balance_sample(sample_size):
@@ -85,7 +85,7 @@ def get_individual_samples(ps: GasProblemSetup,
                                           )
     clean_policies = get_gov_samples(epoch, ps.gov_prob_up, ps.gov_prob_down, individual_sample_size)
     powerplant_state = get_powerplant_state_sample(individual_sample_size)
-    running_states = get_mothball_state_sample(individual_sample_size)
+    mothball_state = get_mothball_state_sample(individual_sample_size)
     balance_sample = get_balance_sample(individual_sample_size)
 
     return [gas_price_sample,
@@ -93,7 +93,7 @@ def get_individual_samples(ps: GasProblemSetup,
             power_sample,
             clean_policies,
             powerplant_state,
-            running_states,
+            mothball_state,
             balance_sample]
 
 

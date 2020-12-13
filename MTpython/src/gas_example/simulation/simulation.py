@@ -1,13 +1,12 @@
 from gas_example.setup import TIME_EPOCHS, RISK_FREE_RATE, get_epoch_rate, BORROW_RATE
-from gas_example.simulation.strategy import Strategy
 
 from gas_example.simulation.state import State
 
 
-def run_simulation(strategy: Strategy, initial_state: State):
+def run_simulation(strategy, initial_state: State):
     state = initial_state
     # balances = []
-    for epoch in range(TIME_EPOCHS):
+    for epoch in range(TIME_EPOCHS-1):
         action = strategy.get_action(state, epoch)
         state, fcf = state.get_new_state_and_fcf(action, epoch)
     # balances.append(round(state.balance) / 1000000.0)
