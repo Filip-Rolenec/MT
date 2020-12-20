@@ -4,8 +4,8 @@ from gas_example.enum_types import PowerplantState, MothballedState
 from gas_example.setup import GAS_PRICE, GAS_VOL, CO2_PRICE, CO2_VOL, POWER_VOL, POWER_PRICE
 from gas_example.simulation.state import State, state_is_invalid
 
-SAMPLE_SIZE_INDIVIDUAL = 40
-SAMPLE_SIZE_GLOBAL = 100
+SAMPLE_SIZE_INDIVIDUAL = 200
+SAMPLE_SIZE_GLOBAL = 2000
 
 
 def get_lognormal_prices(start_price: float, time_epoch: int, sigma: float, sample_size: int):

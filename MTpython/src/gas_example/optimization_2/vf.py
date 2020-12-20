@@ -11,7 +11,10 @@ def piecewise_linear(x, x0, y0, k1, k2):
 
 
 def create_vfs_time_list():
-    return [Vf()] * TIME_EPOCHS
+    vfs = []
+    for i in range(TIME_EPOCHS):
+        vfs.append(Vf())
+    return vfs
 
 
 class Vf:
@@ -31,7 +34,6 @@ class Vf:
 
 def update_vf_coef(current_vf: Vf, next_vf: Vf, time_epoch: int):
     sampled_states = get_state_sample(time_epoch)
-
     state_utility_pairs = get_state_utility_pairs(sampled_states, time_epoch, next_vf)
 
     new_pw_params = get_new_params(state_utility_pairs)

@@ -49,36 +49,29 @@ from gas_example.simulation.strategy import OptimalStrategy
 # - Build one stage and run only when it is profitable
 # - Build one stage, run when it is profitable and mothball with a hysteresis effect
 
-# In[5]:
+# In[14]:
 
 
-initial_state = State(24,9,39,1,PowerplantState.NOT_BUILT, MothballedState.NORMAL,0)
+initial_state = State(24,9,39,PowerplantState.NOT_BUILT,0)
 epoch = 0 
 
 
-# In[6]:
+# In[15]:
 
 
 strategy_0 = s.HeuristicStrategy(s.heuristic_strategy_function_0)
 strategy_1 = s.HeuristicStrategy(s.heuristic_strategy_function_1)
-strategy_2 = s.HeuristicStrategy(s.heuristic_strategy_function_2)
 
-opt_strategy = OptimalStrategy("vfs_1.csv")
-
-
-# In[14]:
+opt_strategy = OptimalStrategy("saved_vfs/vfs_12_20_2020.pkl")
 
 
-pd.read_csv("vfs_1.csv")
+# In[16]:
 
 
-# In[7]:
+strategies = [strategy_0, strategy_1, opt_strategy]
 
 
-strategies = [strategy_0, strategy_1, strategy_2]
-
-
-# In[8]:
+# In[ ]:
 
 
 import time
@@ -140,16 +133,6 @@ plt.title("Baseline strategies and their expected PCEs")
 plt.show()
 
 
-# # 2. Optimal strategy
-# - We have obtained the optimal strategy from the algorithm in another jupyter notebook. 
-# - Now we load its parameters and we will simulate the behavior that is guided by the value functions computed in each time epoch. 
-
-# In[13]:
-
-
-run_simulation(opt_strategy, initial_state)
-
-
 # ## Go in detail
 # - The problem now is that when optimizing V(s_t) we take (s_t,exp(utility)) and make the linear model. But for that we use for the computation of s_t's exp(utility) the optimal action, determined by the zero vf's. 
 # - Like this the action of not doing anything will always be the optimal action and the model will not evaluate V(s_t) correctly. 
@@ -158,3 +141,39 @@ run_simulation(opt_strategy, initial_state)
 # 
 # - I have an idea that we could set up the initial values not 0 but super extreme, so that the optimal actions will dissapear with the realization. 
 # - Second idea is to randomize the actions. 
+
+# In[ ]:
+
+
+
+
+
+# # 20.12.
+# - I did run the optimal strategy and it made more money, no surprise there, but happy anyway. 
+# - Further analysis can be done on this. 
+# - This result shows that is is possible to interpret the investment problem. 
+# 
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+

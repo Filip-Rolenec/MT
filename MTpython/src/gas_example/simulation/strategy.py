@@ -1,6 +1,6 @@
 from gas_example.enum_types import Action, MothballedState
-from gas_example.optimization.optimization import get_best_action, INTEGRAL_SAMPLE_SIZE
-from gas_example.optimization.vf import Vf
+from gas_example.optimization_2.vf import Vf
+from gas_example.optimization_2.optimization import get_best_action
 from gas_example.simulation.state import State
 
 import pandas as pd
@@ -27,25 +27,6 @@ def heuristic_strategy_function_1(state: State, epoch: int):
         return Action.DO_NOTHING
 
 
-def heuristic_strategy_function_2(state: State, epoch: int):
-    # In the first time epoch we build the powerplant.
-    if epoch == 0:
-        return Action.IDLE_AND_BUILD
-    # If this epoch is profitable run it.
-    if state.power_price - (state.gas_price + state.co2_price) > 0:
-        return Action.RUN
-    # If there is a sequence of negative spark prices mothball, if sequence of positive unmothball
-
-    # Mothball with a hysteresis effect
-    if state.get_spark_price() < -5 and state.mothballed_state == MothballedState.NORMAL:
-        return Action.MOTHBALL_CHANGE
-
-    if state.get_spark_price() > 5 and state.mothballed_state == MothballedState.MOTHBALLED:
-        return Action.MOTHBALL_CHANGE
-
-    else:
-        return Action.DO_NOTHING
-
 
 class HeuristicStrategy:
     def __init__(self, strategy_function):
@@ -61,14 +42,17 @@ class OptimalStrategy:
         self.vfs = get_vfs_from_path(path)
 
     def get_action(self, state, epoch):
-        return get_best_action(state, INTEGRAL_SAMPLE_SIZE, epoch, self.vfs[epoch + 1])
+        return get_best_action(state, epoch, self.vfs[epoch + 1])
+
 
 
 def get_vfs_from_path(path):
-    df_vfs = pd.read_csv(path, index_col=[0])
+    df_vfs = pd.read_pickle(path)
+
     vfs = []
-    for i in range(len(df_vfs.columns)):
-        params = df_vfs[str(i)]
-        vfs.append(Vf(params))
+    for column in df_vfs:
+        vf = Vf()
+        vf.set_params(df_vfs[column])
+        vfs.append(vf)
 
     return vfs

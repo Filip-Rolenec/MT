@@ -3,12 +3,12 @@ from typing import List
 
 import numpy as np
 
-from gas_example.enum_types import Action, PowerplantState
+from gas_example.enum_types import Action
 from gas_example.optimization_2.basis_function import uf_2, uf_2_inv
 from gas_example.setup import BORROW_RATE, RISK_FREE_RATE
 from gas_example.simulation.state import State, get_valid_actions
 
-INTEGRAL_SAMPLE_SIZE = 10
+INTEGRAL_SAMPLE_SIZE = 100
 UTILITY_FUNCTION = uf_2
 INVERSE_UTILITY_FUNCTION = uf_2_inv
 
@@ -34,7 +34,7 @@ def get_state_utility_pairs(
     return state_utility_pairs
 
 
-def get_best_action(state: State, epoch: int, future_vf):
+def get_best_action(state: State, epoch: int, future_vf, print_details=False):
     valid_actions = get_valid_actions(state, epoch)
 
     exp_utility_per_action = {}
@@ -44,11 +44,9 @@ def get_best_action(state: State, epoch: int, future_vf):
         for i in range(INTEGRAL_SAMPLE_SIZE):
             utility_realization = get_utility_realization(state, action, epoch, future_vf)
             sample_integral_values.append(utility_realization)
-        if PRINT_DETAILS_GLOBAL:
-            print(sample_integral_values)
         exp_utility_per_action[action] = np.mean(sample_integral_values)
 
-    if PRINT_DETAILS_GLOBAL:
+    if PRINT_DETAILS_GLOBAL or print_details:
         print(state.to_dict())
         print(f"Spark: {state.get_spark_price()}")
         print(exp_utility_per_action)
@@ -59,7 +57,6 @@ def get_best_action(state: State, epoch: int, future_vf):
 
 def get_utility_realization(state: State, action: Action, epoch: int, future_vf, print_details=False):
     new_state, fcf = state.get_new_state_and_fcf(action, epoch)
-
     future_vf_utility = future_vf.compute_value(new_state)
     future_vf_money_equivalent = INVERSE_UTILITY_FUNCTION(future_vf_utility)
     pce_realization = pce([state.balance + fcf, future_vf_money_equivalent]) - state.balance
