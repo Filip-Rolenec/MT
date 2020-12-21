@@ -165,16 +165,16 @@ for i in range(len(vfs)):
     vfs_params[i] = vfs[i].pw_params
 
 
-# In[18]:
+# In[15]:
 
 
 df_vfs = pd.DataFrame(vfs_params)
 
 
-# In[31]:
+# In[16]:
 
 
-df_vfs.to_pickle('saved_vfs/vfs_12_20_2020.pkl')
+df_vfs.to_pickle('saved_vfs/vfs_12_21_2020.pkl')
 
 
 # In[17]:
@@ -207,17 +207,5 @@ future_vf.set_params([[0,0,0,100],[0,0,0,0],[0,0,0,0]])
 # - Problems: 
 #     1. Negative expected price for the first plant state, should be strictly higher than 0, because I can always do. In other model cases, the project can heave negative value, but not here, where we have the option to do nothing. 
 #     2. There is s degeneration of the model as we approach time epoch 0. This is caused by low support of the modelled spark prices. We model their variance to be linearly time dependent, but we should put a limit on it. 
-#     
+#          - I have decided this is not that important... It is an approximation, it can slightly not make sense. 
 # - Powerplant cost is very low, 65M now, could be set to 650, or the volatility of prices could be set lower. 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-

@@ -1,7 +1,7 @@
 import numpy as np
 
 from gas_example.enum_types import PowerplantState, MothballedState
-from gas_example.setup import GAS_PRICE, GAS_VOL, CO2_PRICE, CO2_VOL, POWER_VOL, POWER_PRICE
+from gas_example.setup import GAS_PRICE, GAS_VOL, CO2_PRICE, CO2_VOL, POWER_VOL, POWER_PRICE, TIME_EPOCHS
 from gas_example.simulation.state import State, state_is_invalid
 
 SAMPLE_SIZE_INDIVIDUAL = 200
@@ -28,6 +28,10 @@ def get_balance_sample(sample_size):
 
 def get_individual_samples(epoch: int,
                            individual_sample_size: int):
+    # Low variability in first epochs ruins the model. Making the sample more wide should not pose a problem.
+    if epoch < TIME_EPOCHS/10:
+        epoch = 30
+
     gas_price_sample = get_lognormal_prices(GAS_PRICE, epoch, GAS_VOL, SAMPLE_SIZE_INDIVIDUAL)
     co2_price_sample = get_lognormal_prices(CO2_PRICE, epoch, CO2_VOL, SAMPLE_SIZE_INDIVIDUAL)
     power_sample = get_lognormal_prices(POWER_PRICE, epoch, POWER_VOL, SAMPLE_SIZE_INDIVIDUAL)

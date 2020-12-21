@@ -1,4 +1,4 @@
-from gas_example.enum_types import Action, MothballedState
+from gas_example.enum_types import Action, MothballedState, PowerplantState
 from gas_example.optimization_2.vf import Vf
 from gas_example.optimization_2.optimization import get_best_action
 from gas_example.simulation.state import State
@@ -27,6 +27,20 @@ def heuristic_strategy_function_1(state: State, epoch: int):
         return Action.DO_NOTHING
 
 
+def heuristic_strategy_function_2(state: State, epoch: int):
+    # if the spark price is high enough build
+    if state.power_price - (state.gas_price + state.co2_price) > 40:
+        if state.plant_state == PowerplantState.NOT_BUILT:
+            return Action.IDLE_AND_BUILD
+        elif state.plant_state == PowerplantState.STAGE_1:
+            return Action.RUN_AND_BUILD
+
+    if state.power_price - (state.gas_price + state.co2_price) > 0:
+        return Action.RUN
+    # If the run is not profitable, we are not running the plant
+    else:
+        return Action.DO_NOTHING
+
 
 class HeuristicStrategy:
     def __init__(self, strategy_function):
@@ -43,7 +57,6 @@ class OptimalStrategy:
 
     def get_action(self, state, epoch):
         return get_best_action(state, epoch, self.vfs[epoch + 1])
-
 
 
 def get_vfs_from_path(path):
