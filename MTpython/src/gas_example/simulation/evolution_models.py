@@ -1,8 +1,11 @@
 import numpy as np
 
+from gas_example.setup import EPOCHS_IN_YEAR
 
-def get_next_price(current_price, volatility) -> float:
-    return np.random.lognormal(np.log(current_price), volatility)
+
+def get_next_price(price_now, sigma):
+    dt = 1/EPOCHS_IN_YEAR
+    return price_now * np.exp((0 - sigma ** 2 / 2) * dt + sigma * np.random.normal(0, np.sqrt(dt), 1))[0]
 
 
 def get_next_gov_policy(gov_policy, negative_prob, positive_prob):

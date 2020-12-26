@@ -1,74 +1,42 @@
-from sklearn.linear_model import LinearRegression
-
-from gas_example.optimization.basis_function import get_basis_functions
+from gas_example.enum_types import PowerplantState
+from gas_example.optimization.adp_model import get_zero_model, get_new_models
 from gas_example.optimization.optimization import get_state_utility_pairs
 from gas_example.optimization.sampling import get_state_sample
-
-import matplotlib.pyplot as plt
-
-# Number of state samples for each update of value function
-from simple_example.helpers import prepare_regression_variables
-
-# Global number of new state sample
-VF_SAMPLE_GLOBAL = 20
-# Number of samples for each element of the state vector
-VF_SAMPLE_IND = 40
+from gas_example.setup import TIME_EPOCHS
+import numpy as np
 
 
-class Vf:
-
-    def __init__(self, parameters=None):
-
-        if parameters is None:
-            self.base_functions = get_basis_functions()
-            self.params = [0] * len(self.base_functions)
-        else:
-            self.params = parameters
-            self.base_functions = get_basis_functions()
-
-    # Here we can see the interaction of parameters and basis functions. For now we have classical linear model.
-    def compute_value(self, state):
-        value_sum = 0
-        for i in range(len(self.params)):
-
-            value_sum += self.params[i] * self.base_functions[i](state)
-        return value_sum
-
-    def set_params(self, params):
-        self.params = params
+def piecewise_linear(x, x0, y0, k1, k2):
+    return np.piecewise(x, [x < x0], [lambda x: k1 * x + y0 - k1 * x0, lambda x: k2 * x + y0 - k2 * x0])
 
 
-# Value functions
-def create_vfs_time_list(time_epochs: range):
+def create_vfs_time_list():
     vfs = []
-    for _ in time_epochs:
+    for i in range(TIME_EPOCHS):
         vfs.append(Vf())
     return vfs
 
 
-def update_vf_coef(current_vf: Vf, next_vf: Vf, basis_functions, time_epoch: int):
-    sampled_states = get_state_sample(VF_SAMPLE_GLOBAL, VF_SAMPLE_IND, time_epoch)
+class Vf:
 
-    # print(f"{datetime.now()} Got sample_states, time epoch {time_epoch}")
+    def __init__(self):
+        self.models = {PowerplantState.NOT_BUILT: get_zero_model(),
+                       PowerplantState.STAGE_1: get_zero_model(),
+                       PowerplantState.STAGE_2: get_zero_model()
+                       }
 
-    state_reward_pairs_raw = get_state_utility_pairs(sampled_states, time_epoch, next_vf)
+    def compute_value(self, state):
+        model = self.models[state.plant_state]  # Choose the correct piecewise parameters
+        return model.eval(x=[state.get_spark_price()])[0]
 
-    # print(f"{datetime.now()} Got state_reward_pairs, size {len(state_reward_pairs_raw)}")
+    def set_models(self, models):
+        self.models = models
 
-    x, y = prepare_regression_variables(state_reward_pairs_raw, basis_functions, intercept = True)
-    model = LinearRegression().fit(x, y)
-    print([(i, j) for i, j in zip(x, y)])
 
-    print(model.coef_)
-    print(model.intercept_)
+def update_vf_models(current_vf: Vf, next_vf: Vf):
+    sampled_states = get_state_sample()
+    state_utility_pairs = get_state_utility_pairs(sampled_states, next_vf)
 
-    #plt.scatter(x, y)
-    #plt.show()
+    new_models = get_new_models(state_utility_pairs)
 
-    # plt.plot(x, y)
-    # Based on the linear fit of the model, update the vf_coefficients of the current epoch.
-
-    coefs = [model.intercept_]
-    coefs.extend(model.coef_)
-    print(coefs)
-    current_vf.set_params(coefs)
+    current_vf.set_models(new_models)

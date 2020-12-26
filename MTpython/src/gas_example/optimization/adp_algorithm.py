@@ -1,21 +1,15 @@
 from progressbar import progressbar
 
-from gas_example.optimization.basis_function import get_basis_functions
-from gas_example.setup import GasProblemSetup
-from gas_example.optimization.vf import create_vfs_time_list, update_vf_coef
+from gas_example.optimization.vf import create_vfs_time_list, update_vf_models
+from gas_example.setup import TIME_EPOCHS
 
 
 def adp_algorithm_complete():
-    problem_setup = GasProblemSetup()
+    vfs = create_vfs_time_list()
 
-    vfs = create_vfs_time_list(problem_setup.time_epochs)
-    basis_functions = get_basis_functions()
-
-    for time_epoch in progressbar(reversed(problem_setup.time_epochs)):
-        # Value function in the last time epoch is always zero,
-        # there are no money to be gained, we do not update it.
-        if time_epoch != len(problem_setup.time_epochs) - 1:
-            # print(f"{datetime.now()} time epoch: {time_epoch}")
-            update_vf_coef(vfs[time_epoch], vfs[time_epoch + 1], basis_functions, time_epoch)
-
+    for time_epoch_left in progressbar(range(TIME_EPOCHS)):
+        time_epoch = TIME_EPOCHS - time_epoch_left-1
+        # Last Vf value is zero, no money to be gained.
+        if time_epoch != TIME_EPOCHS - 1:
+            update_vf_models(vfs[time_epoch], vfs[time_epoch + 1])
     return vfs
