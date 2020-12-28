@@ -37,7 +37,13 @@ from gas_example.simulation.state import State
 from gas_example.enum_types import PowerplantState
 
 
+from gas_example.optimization.optimization import get_best_action
+from gas_example.simulation.simulation import balance_to_pce
+from gas_example.enum_types import Action
+from gas_example.setup import BORROW_RATE_EPOCH, RISK_FREE_RATE_EPOCH
 
+import numpy as np
+import matplotlib.pyplot as plt
 
 def adp_algorithm_complete():
     vfs = create_vfs_time_list()
@@ -46,7 +52,7 @@ def adp_algorithm_complete():
         time_epoch = TIME_EPOCHS - time_epoch_left-1
         # Last Vf value is zero, no money to be gained.
         if time_epoch != TIME_EPOCHS - 1:
-            update_vf_models(vfs[time_epoch], vfs[time_epoch + 1], time_epoch)
+            update_vf_models(vfs[time_epoch], vfs[time_epoch + 1])
     return vfs
 
 
@@ -64,129 +70,158 @@ vfs = adp_algorithm_complete()
 # 
 # - Then we simulate behaving based on this Vf and record the gains... 
 
-# In[5]:
+# In[ ]:
+
+
+from gas_example.optimization.optimization import get_best_action, get_utility_realization
+from gas_example.optimization.basis_function import uf_2_inv
+init_state=State(10, 25, 80, PowerplantState.NOT_BUILT, 0)
+
+
+# In[ ]:
 
 
 vfs_0 = vfs[TIME_EPOCHS - last_epochs]
+vfs_1 = vfs[TIME_EPOCHS - last_epochs+1]
+vfs_2 = vfs[TIME_EPOCHS-1]
 
 
-# In[6]:
-
-
-TIME_EPOCHS - last_epochs
-
-
-# In[7]:
-
-
-init_state=State(10, 25, 70, PowerplantState.NOT_BUILT, 0)
-
-
-# In[8]:
+# In[ ]:
 
 
 expected_utility = vfs_0.compute_value(init_state)
-
-
-# In[9]:
-
-
 expected_utility
 
 
-# In[10]:
+# In[ ]:
 
 
-def uf_2_inv(y):
-    if y < 0:
-        thousands = -((-y) ** 1.2)
+result_1 = uf_2_inv(expected_utility)/1_000_000
+result_1
+
+
+# In[ ]:
+
+
+def balance_to_pce(balance):
+    if balance > 0:
+        pce = balance / (RISK_FREE_RATE_EPOCH ** (last_epochs-1))
     else:
-        thousands = y ** 1.25
+        pce = balance / (BORROW_RATE_EPOCH ** (last_epochs-1))
 
-    return thousands * 1000
-
-
-# In[11]:
-
-
-uf_2_inv(expected_utility)/1_000_000
+    return pce
 
 
 # 239M 
 
 # Thus we expect to gain 240 milions, when deciding based on these Vfs from the initial state stated above
 
-# In[12]:
+# In[ ]:
 
 
 from gas_example.optimization.optimization import get_best_action
-from gas_example.simulation.simulation import balance_to_pce
 
 
-# In[13]:
+# In[ ]:
 
 
 final_pces = []
-for i in range(300):
+for i in range(1000):
     print(i)
     state = init_state
     fcfs = []
     for epoch in range(last_epochs-1):
-        action = get_best_action(state, vfs[TIME_EPOCHS-last_epochs+epoch+1])
+        action, exp_utility_this_action = get_best_action(state, vfs[TIME_EPOCHS-last_epochs+epoch+1])
         state, fcf = state.get_new_state_and_fcf(action)
         fcfs.append(fcf)
-    final_pces.append(round(state.balance / 1000000.0, 2))
+    final_pces.append(round(balance_to_pce(state.balance) / 1000000.0, 5))
     
 
 
-# In[14]:
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-
-# In[15]:
-
-
-np.mean(final_pces)
-
-
-# In[16]:
+# In[ ]:
 
 
 plt.hist(final_pces)
 
 
-# 
+# In[ ]:
 
-# In[37]:
+
+result_2 = np.mean(final_pces)
+result_2
+
+
+# In[ ]:
+
+
+result_2 - result_1
+
+
+# In[ ]:
+
+
+(result_2 - result_1)/result_2*100
+
+
+# 13% 
+
+# In[ ]:
+
+
+state = init_state
+
+
+# In[ ]:
 
 
 state = init_state
 fcfs = []
 for epoch in range(last_epochs-1):
-    print(TIME_EPOCHS-last_epochs+epoch)
-    action = get_best_action(state, vfs_2[TIME_EPOCHS-last_epochs+epoch+1], print_details = True)
-    print(action)
+    action, exp_utility_this_action = get_best_action(state, vfs[TIME_EPOCHS-last_epochs+epoch+1])
     state, fcf = state.get_new_state_and_fcf(action)
     fcfs.append(fcf)
-final_pces.append(round(state.balance / 1000000.0))
+    print(f"Fcf: {fcf}")
+    print(f"Balance {state.balance}")
+    
 
 
-# In[20]:
+# In[ ]:
 
 
-sum(fcfs)/1_000_000
+uf_2_inv(vfs_0.compute_value(init_state))
 
 
-# In[26]:
+# In[ ]:
 
 
-import pandas as pd
+get_best_action(init_state, vfs_1, print_details=True)
 
 
-# In[28]:
+# In[ ]:
+
+
+get_utility_realization(init_state, Action.IDLE_AND_BUILD, vfs_1, print_details=True)
+
+
+# In[ ]:
+
+
+state_1, fcf = init_state.get_new_state_and_fcf(Action.IDLE_AND_BUILD)
+
+
+# In[ ]:
+
+
+get_utility_realization(state_1, Action.RUN, vfs_2, print_details=True)
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
 
 
 df_vfs = pd.DataFrame(vfs)
@@ -194,19 +229,13 @@ identificator = pd.Timestamp.now().strftime("%Y-%m-%d_H%H")
 df_vfs.to_pickle(f'saved_vfs/vfs_{identificator}.pkl')
 
 
-# In[31]:
+# In[ ]:
 
 
 df_vfs_2 = pd.read_pickle(f'saved_vfs/vfs_{identificator}.pkl')
 vfs_2 = list(df_vfs_2[0])
 
 
-# In[38]:
-
-
-f'saved_vfs/vfs_{identificator}.pkl'
-
-
 # In[ ]:
 
 
@@ -214,77 +243,19 @@ f'saved_vfs/vfs_{identificator}.pkl'
 
 
 # In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-
-
-
-# In[40]:
 
 
 from gas_example.enum_types import PowerplantState, Action
 
 
-# In[41]:
+# In[ ]:
 
 
-def get_next_plant_state(state: State, action: Action):
-    if action_is_invalid(action, state, print_warning=True):
-        raise Exception(f"Action {action} in state {state} is invalid")
 
-    # Building new stage
-    if action == Action.IDLE_AND_BUILD or action == Action.RUN_AND_BUILD:
-        if state.plant_state == PowerplantState.NOT_BUILT:
-            print("Building")
-            return PowerplantState.STAGE_1
-        elif state.plant_state == PowerplantState.STAGE_1:
-            return PowerplantState.STAGE_2
-        else:
-            raise Exception(f"New stage cannot be built, plant is in a state {state.plant_state}")
-
-    # Other actions do not change the plant state
-    else:
-        return state.plant_state
-
-
-# In[45]:
-
-
-from gas_example.simulation.state import State, action_is_invalid
-
-
-# In[46]:
-
-
-init_state.to_dict()
-
-
-# In[47]:
-
-
-get_next_plant_state(init_state, Action.IDLE_AND_BUILD)
-
-
-# In[51]:
-
-
-new_state, fcf  = init_state.get_new_state_and_fcf( Action.IDLE_AND_BUILD)
-
-
-# In[52]:
-
-
-new_state.to_dict()
 
 
 # In[ ]:
 
 
-
+new_state.to_dict()
 

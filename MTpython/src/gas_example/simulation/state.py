@@ -4,7 +4,8 @@ import numpy as np
 
 from gas_example.enum_types import PowerplantState, Action
 from gas_example.setup import get_epoch_rate, GAS_VOL, CO2_VOL, POWER_VOL, \
-    POWERPLANT_COST, MAINTENANCE_COST_PER_MW, HOURS_IN_EPOCH, BORROW_RATE_YEAR, RISK_FREE_RATE_YEAR
+    POWERPLANT_COST, MAINTENANCE_COST_PER_MW, HOURS_IN_EPOCH, BORROW_RATE_YEAR, RISK_FREE_RATE_YEAR, BORROW_RATE_EPOCH, \
+    RISK_FREE_RATE_EPOCH
 from gas_example.simulation.evolution_models import get_next_price
 
 
@@ -64,9 +65,9 @@ def update_balance(balance, fcf_raw):
     new_balance = balance + fcf_raw
 
     if new_balance < 0:
-        new_balance_updated = get_epoch_rate(BORROW_RATE_YEAR) * new_balance
+        new_balance_updated = BORROW_RATE_EPOCH * new_balance
     else:
-        new_balance_updated = get_epoch_rate(RISK_FREE_RATE_YEAR) * new_balance
+        new_balance_updated = RISK_FREE_RATE_EPOCH * new_balance
 
     return new_balance_updated
 

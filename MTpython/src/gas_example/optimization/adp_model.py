@@ -26,9 +26,6 @@ def get_new_models(state_utility_pairs: Dict, print_graphs_local=True):  # Dict 
 
         fitted_model = pw_model.fit(utilities, params, x=spark_prices)
 
-        if plant_state == PowerplantState.NOT_BUILT:
-            fitted_model.params["k1"].value = 0
-
         xd = np.linspace(min(spark_prices), max(spark_prices), 500)
         predicted_values = fitted_model.eval(x=xd)
 

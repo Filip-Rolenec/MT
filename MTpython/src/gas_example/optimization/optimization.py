@@ -28,6 +28,7 @@ def get_state_utility_pairs(
             print("Getting best action")
         action, exp_utility = get_best_action(state, future_vf)
 
+
         state_utility_pairs[state] = exp_utility
 
     return state_utility_pairs
@@ -67,7 +68,7 @@ def get_utility_realization(state: State, action: Action, future_vf, print_detai
 
     utility_realization = round(UTILITY_FUNCTION(pce_realization), 2)
 
-    if (state.plant_state == PowerplantState.NOT_BUILT) & (utility_realization < 0) & (action != Action.IDLE_AND_BUILD):
+    if False & (state.plant_state == PowerplantState.NOT_BUILT) & (utility_realization < 0) & (action != Action.IDLE_AND_BUILD):
         print("Negative value spotted")
         print(state.to_dict())
         print(f"Action: {action}")
