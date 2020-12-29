@@ -5,7 +5,7 @@ import numpy as np
 from gas_example.enum_types import PowerplantState, Action
 from gas_example.setup import get_epoch_rate, GAS_VOL, CO2_VOL, POWER_VOL, \
     POWERPLANT_COST, MAINTENANCE_COST_PER_MW, HOURS_IN_EPOCH, BORROW_RATE_YEAR, RISK_FREE_RATE_YEAR, BORROW_RATE_EPOCH, \
-    RISK_FREE_RATE_EPOCH
+    RISK_FREE_RATE_EPOCH, EPOCHS_IN_YEAR
 from gas_example.simulation.evolution_models import get_next_price
 
 

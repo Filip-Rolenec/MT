@@ -16,20 +16,18 @@ def get_basis_functions():
 
 
 def uf_2(x):
-
     x = x / 1000
 
     if x <= 0:
-        return -((-x) ** (1 / 1.2))
+        return -((-x) ** (1 / 1.05))
     else:
-        return x ** (1 / 1.25)
+        return x ** (1 / 1.07)
 
 
 def uf_2_inv(y):
-
     if y < 0:
-        thousands = -((-y) ** 1.2)
+        thousands = -((-y) ** 1.05)
     else:
-        thousands = y ** 1.25
+        thousands = y ** 1.07
 
     return thousands * 1000

@@ -23,7 +23,7 @@ sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 # In[2]:
 
 
-last_epochs = 300
+last_epochs = 30
 
 
 # In[3]:
@@ -70,15 +70,15 @@ vfs = adp_algorithm_complete()
 # 
 # - Then we simulate behaving based on this Vf and record the gains... 
 
-# In[ ]:
+# In[5]:
 
 
 from gas_example.optimization.optimization import get_best_action, get_utility_realization
 from gas_example.optimization.basis_function import uf_2_inv
-init_state=State(10, 25, 80, PowerplantState.NOT_BUILT, 0)
+init_state=State(10, 25, 55, PowerplantState.NOT_BUILT, 0)
 
 
-# In[ ]:
+# In[6]:
 
 
 vfs_0 = vfs[TIME_EPOCHS - last_epochs]
@@ -86,21 +86,21 @@ vfs_1 = vfs[TIME_EPOCHS - last_epochs+1]
 vfs_2 = vfs[TIME_EPOCHS-1]
 
 
-# In[ ]:
+# In[7]:
 
 
 expected_utility = vfs_0.compute_value(init_state)
 expected_utility
 
 
-# In[ ]:
+# In[8]:
 
 
 result_1 = uf_2_inv(expected_utility)/1_000_000
 result_1
 
 
-# In[ ]:
+# In[9]:
 
 
 def balance_to_pce(balance):
@@ -116,18 +116,17 @@ def balance_to_pce(balance):
 
 # Thus we expect to gain 240 milions, when deciding based on these Vfs from the initial state stated above
 
-# In[ ]:
+# In[10]:
 
 
-from gas_example.optimization.optimization import get_best_action
+from gas_example.optimization.optimization import get_best_action, pce
 
 
-# In[ ]:
+# In[19]:
 
 
 final_pces = []
-for i in range(1000):
-    print(i)
+for i in progressbar(range(1000)):
     state = init_state
     fcfs = []
     for epoch in range(last_epochs-1):
@@ -138,26 +137,26 @@ for i in range(1000):
     
 
 
-# In[ ]:
+# In[20]:
 
 
 plt.hist(final_pces)
 
 
-# In[ ]:
+# In[21]:
 
 
 result_2 = np.mean(final_pces)
 result_2
 
 
-# In[ ]:
+# In[22]:
 
 
 result_2 - result_1
 
 
-# In[ ]:
+# In[23]:
 
 
 (result_2 - result_1)/result_2*100
@@ -165,24 +164,33 @@ result_2 - result_1
 
 # 13% 
 
-# In[ ]:
+# In[16]:
 
 
 state = init_state
 
 
-# In[ ]:
+# In[17]:
 
 
 state = init_state
 fcfs = []
 for epoch in range(last_epochs-1):
-    action, exp_utility_this_action = get_best_action(state, vfs[TIME_EPOCHS-last_epochs+epoch+1])
+    action, exp_utility_this_action = get_best_action(state, vfs[TIME_EPOCHS-last_epochs+epoch+1], True)
+    print(action)
+    print(exp_utility_this_action)
     state, fcf = state.get_new_state_and_fcf(action)
+    print(state.to_dict())
     fcfs.append(fcf)
     print(f"Fcf: {fcf}")
     print(f"Balance {state.balance}")
     
+
+
+# In[18]:
+
+
+state_1.get_new_state_and_fcf(Action.RUN)
 
 
 # In[ ]:
