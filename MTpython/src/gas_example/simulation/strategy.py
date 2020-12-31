@@ -54,7 +54,7 @@ class HeuristicStrategy:
         self.strategy_function = strategy_function
 
     def get_action(self, state, epoch: int):
-        return self.strategy_function(state, epoch)
+        return self.strategy_function(state, epoch), 0
 
 
 class OptimalStrategy:
@@ -69,10 +69,5 @@ class OptimalStrategy:
 def get_vfs_from_path(path):
     df_vfs = pd.read_pickle(path)
 
-    vfs = []
-    for column in df_vfs:
-        vf = Vf()
-        vf.set_params(df_vfs[column])
-        vfs.append(vf)
+    return df_vfs[0]
 
-    return vfs

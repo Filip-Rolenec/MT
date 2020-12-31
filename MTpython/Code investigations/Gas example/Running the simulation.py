@@ -45,7 +45,7 @@ sns.set()
 # In[4]:
 
 
-initial_state = State(24,9,39,PowerplantState.NOT_BUILT,0)
+initial_state = State(10,25,45,PowerplantState.NOT_BUILT,0)
 
 
 # In[5]:
@@ -61,23 +61,23 @@ strategy_0 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_0)
 strategy_1 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_1)
 strategy_2 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_2)
 
-opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2020-12-24_H10.pkl")
+opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2020-12-30_H11.pkl")
 
 strategies = [strategy_0, strategy_1, strategy_2, opt_strategy]
 
 
-# In[7]:
+# In[ ]:
 
 
 results_final = {}
 for i in range(len(strategies)):
     results = []
-    for j in progressbar(range(5000)):
+    for j in progressbar(range(300)):
         results.append(run_simulation(strategies[i], initial_state))
     results_final[i]= results
 
 
-# In[16]:
+# In[ ]:
 
 
 def plot_results(results): 
@@ -115,7 +115,7 @@ def plot_results(results):
     plt.show()
 
 
-# In[17]:
+# In[ ]:
 
 
 plot_results(results_final)
@@ -123,19 +123,19 @@ plot_results(results_final)
 
 # ### Comparing the result value to the one given by the value function. 
 
-# In[10]:
+# In[ ]:
 
 
 vfs_0 = opt_strategy.vfs[0]
 
 
-# In[11]:
+# In[ ]:
 
 
 expected_utility = vfs_0.compute_value(initial_state)
 
 
-# In[12]:
+# In[ ]:
 
 
 def uf_2_inv(y):
@@ -147,7 +147,7 @@ def uf_2_inv(y):
     return thousands * 1000
 
 
-# In[13]:
+# In[ ]:
 
 
 uf_2_inv(expected_utility)/1_000_000

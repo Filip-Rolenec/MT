@@ -5,12 +5,25 @@ import numpy as np
 from gas_example.enum_types import PowerplantState, Action
 from gas_example.setup import get_epoch_rate, GAS_VOL, CO2_VOL, POWER_VOL, \
     POWERPLANT_COST, MAINTENANCE_COST_PER_MW, HOURS_IN_EPOCH, BORROW_RATE_YEAR, RISK_FREE_RATE_YEAR, BORROW_RATE_EPOCH, \
-    RISK_FREE_RATE_EPOCH, EPOCHS_IN_YEAR
+    RISK_FREE_RATE_EPOCH, EPOCHS_IN_YEAR, INTEGRAL_SAMPLE_SIZE
 from gas_example.simulation.evolution_models import get_next_price
 
 
 def get_initial_state():
     return State(14, 10, 40, PowerplantState.NOT_BUILT, 0)
+
+
+def get_price_coefs_dict(number_of_samples):
+    asset_names = ["CO2", "Gas", "Power"]
+    sigmas = [CO2_VOL, GAS_VOL, POWER_VOL]
+    price_coefs_dict = {}
+
+    for i, name in enumerate(asset_names):
+        dt = 1 / EPOCHS_IN_YEAR
+        price_coefs_dict[name] = np.exp(
+            (0 - sigmas[i] ** 2 / 2) * dt + sigmas[i] * np.random.normal(0, np.sqrt(dt), number_of_samples))
+
+    return price_coefs_dict
 
 
 class State:
@@ -22,6 +35,23 @@ class State:
         self.plant_state = plant_state
         self.balance = balance
 
+        self.price_coefs_dict = get_price_coefs_dict(INTEGRAL_SAMPLE_SIZE)
+
+    # Used to get faster expected utility, vector form giving us faster results
+    def get_spark_prices_and_fcfs(self, action):
+        gas_prices = self.gas_price * self.price_coefs_dict["Gas"]
+        co2_prices = self.co2_price * self.price_coefs_dict["CO2"]
+        power_prices = self.power_price * self.price_coefs_dict["Power"]
+
+        spark_prices = power_prices - co2_prices - gas_prices
+
+        fcfs = compute_fcfs(spark_prices,
+                            self.plant_state,
+                            action)
+
+        return spark_prices, fcfs
+
+    # this is for the actual simulation.
     def get_new_state_and_fcf(self, action):
         gas_price = get_next_price(self.gas_price, GAS_VOL)
         co2_price = get_next_price(self.co2_price, CO2_VOL)
@@ -36,11 +66,11 @@ class State:
 
         return State(gas_price, co2_price, power_price, plant_state, balance), fcf
 
-    def get_spark_price(self):
-        return self.power_price - self.co2_price - self.gas_price - MAINTENANCE_COST_PER_MW
-
     def to_dict(self):
         return self.__dict__
+
+    def get_spark_price(self):
+        return self.power_price - self.co2_price - self.gas_price
 
 
 def get_next_plant_state(state: State, action: Action):
@@ -143,3 +173,25 @@ def get_installed_mw(p_state: PowerplantState):
         return 400
     else:
         return 0
+
+
+def compute_fcfs(spark_prices,
+                 plant_state: PowerplantState,
+                 action: Action):
+    single_profit = 0
+
+    # Building new capacity costs money
+    if action == Action.IDLE_AND_BUILD or action == Action.RUN_AND_BUILD:
+        single_profit = - POWERPLANT_COST
+
+    installed_mw = get_installed_mw(plant_state)
+
+    single_profit -= installed_mw * MAINTENANCE_COST_PER_MW * HOURS_IN_EPOCH
+
+    # Making profit if action is to run:
+    profits = [single_profit] * INTEGRAL_SAMPLE_SIZE
+
+    if action == Action.RUN_AND_BUILD or action == Action.RUN:
+        profits += spark_prices * installed_mw * HOURS_IN_EPOCH
+
+    return profits

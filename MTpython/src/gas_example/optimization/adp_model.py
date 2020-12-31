@@ -12,7 +12,7 @@ def piecewise_linear(x, x0, y0, k1, k2):
     return np.piecewise(x, [x < x0], [lambda x: k1 * x + y0 - k1 * x0, lambda x: k2 * x + y0 - k2 * x0])
 
 
-def get_new_models(state_utility_pairs: Dict, print_graphs_local=False):  # Dict where state is key and value is utility
+def get_new_models(state_utility_pairs: Dict, print_graphs_local=True):  # Dict where state is key and value is utility
 
     # Fitting for each of the states separately
     models = {}
@@ -36,7 +36,7 @@ def get_new_models(state_utility_pairs: Dict, print_graphs_local=False):  # Dict
 
         models[plant_state] = fitted_model
 
-    print(models[PowerplantState.NOT_BUILT].params)
+    #print(models[PowerplantState.NOT_BUILT].params)
     return models
 
 

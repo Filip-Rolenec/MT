@@ -6,7 +6,7 @@ import numpy as np
 from gas_example.enum_types import Action, PowerplantState
 from gas_example.optimization.basis_function import uf_2, uf_2_inv
 from gas_example.setup import INTEGRAL_SAMPLE_SIZE, BORROW_RATE_EPOCH, RISK_FREE_RATE_EPOCH
-from gas_example.simulation.state import State, get_valid_actions
+from gas_example.simulation.state import State, get_valid_actions, get_next_plant_state
 
 import seaborn as sns
 
@@ -28,7 +28,6 @@ def get_state_utility_pairs(
             print("Getting best action")
         action, exp_utility = get_best_action(state, future_vf)
 
-
         state_utility_pairs[state] = exp_utility
 
     return state_utility_pairs
@@ -40,17 +39,11 @@ def get_best_action(state: State, future_vf, print_details=False):
     exp_utility_per_action = {}
     for action in valid_actions:
         # We would like to compute expected value, we approximate by average of samples.
-        sample_integral_dict = {}
-        for i in range(INTEGRAL_SAMPLE_SIZE):
-            utility_realization = get_utility_realization(state, action, future_vf)
-            sample_integral_dict[i] = utility_realization
+        utility_realizations = get_utility_realizations(state, action, future_vf)
 
-        # plt.hist(sample_integral_dict.values())
-        # plt.show()
-        exp_utility_per_action[action] = np.mean(list(sample_integral_dict.values()))
+        exp_utility_per_action[action] = np.mean(utility_realizations)
 
-    if PRINT_DETAILS_GLOBAL or print_details:
-        print(state.to_dict())
+    if print_details:
         print(f"Spark: {state.get_spark_price()}")
         print(exp_utility_per_action)
         print("\n")
@@ -60,32 +53,27 @@ def get_best_action(state: State, future_vf, print_details=False):
     return best_action, exp_utility_per_action[best_action]
 
 
-def get_utility_realization(state: State, action: Action, future_vf, print_details=False):
-    new_state, fcf = state.get_new_state_and_fcf(action)
-    future_vf_utility = future_vf.compute_value(new_state)
-    future_vf_money_equivalent = INVERSE_UTILITY_FUNCTION(future_vf_utility)
-    pce_realization = pce([state.balance + fcf, future_vf_money_equivalent]) - state.balance
+UTILITY_FUNCTION_V = np.vectorize(uf_2)
+INVERSE_UTILITY_FUNCTION_V = np.vectorize(uf_2_inv)
 
-    utility_realization = round(UTILITY_FUNCTION(pce_realization), 2)
 
-    if False & (state.plant_state == PowerplantState.NOT_BUILT) & (utility_realization < 0) & (action != Action.IDLE_AND_BUILD):
-        print("Negative value spotted")
-        print(state.to_dict())
-        print(f"Action: {action}")
-        print(new_state.to_dict())
-        print(f"Fcf: {fcf}")
-        print(f"Util realization: {utility_realization}")
-        print(f"future_vf_utility: {future_vf_utility}")
+def get_utility_realizations(state: State, action: Action, future_vf):
+    spark_prices, fcfs = state.get_spark_prices_and_fcfs(action)
+    new_powerplant_state = get_next_plant_state(state, action)
 
-    if print_details:
-        print(f"fcf: {fcf}")
-        print(f"future_vf_utility: {future_vf_utility}")
-        print(f"future_vf_money_equivalent: {future_vf_money_equivalent}")
-        print(f"pce_realization: {pce_realization}")
-        print(f"utility_realization: {utility_realization}")
-        print("\n")
+    future_vf_utilities = future_vf.compute_values(new_powerplant_state, spark_prices)
 
-    return utility_realization
+    future_vf_money_equivalents = INVERSE_UTILITY_FUNCTION_V(future_vf_utilities)
+
+    updated_balances = [fcf + state.balance for fcf in fcfs]
+
+    balance_future_vf_pairs = [[a, b] for a, b in zip(updated_balances, future_vf_money_equivalents)]
+
+    pce_realizations = [pce_value - state.balance for pce_value in pce_v(balance_future_vf_pairs)]
+
+    utility_realizations = np.round(UTILITY_FUNCTION_V(pce_realizations), 2)
+
+    return utility_realizations
 
 
 # General pce function, used when the entity that is being optimized is not expected cumulative FCF.
@@ -106,3 +94,10 @@ def pce(fcfs):
         return balance / r_b ** (len(fcfs))
     else:
         return balance / r_r ** (len(fcfs))
+
+
+def pce_v(fcfs_v):
+    pces = []
+    for fcfs in fcfs_v:
+        pces.append(pce(fcfs))
+    return pces

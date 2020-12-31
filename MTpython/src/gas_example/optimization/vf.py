@@ -5,6 +5,8 @@ from gas_example.optimization.sampling import get_state_sample
 from gas_example.setup import TIME_EPOCHS
 import numpy as np
 
+from gas_example.simulation.state import State
+
 
 def piecewise_linear(x, x0, y0, k1, k2):
     return np.piecewise(x, [x < x0], [lambda x: k1 * x + y0 - k1 * x0, lambda x: k2 * x + y0 - k2 * x0])
@@ -25,8 +27,12 @@ class Vf:
                        PowerplantState.STAGE_2: get_zero_model()
                        }
 
-    def compute_value(self, state):
-        model = self.models[state.plant_state]  # Choose the correct piecewise parameters
+    def compute_values(self, powerplant_state, spark_prices):
+        model = self.models[powerplant_state]  # Choose the correct piecewise parameters
+        return model.eval(x=spark_prices)
+
+    def compute_value(self, state: State):
+        model = self.models[state.plant_state]
         return model.eval(x=[state.get_spark_price()])[0]
 
     def set_models(self, models):

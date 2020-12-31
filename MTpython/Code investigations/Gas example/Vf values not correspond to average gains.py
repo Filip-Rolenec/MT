@@ -23,7 +23,7 @@ sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 # In[2]:
 
 
-last_epochs = 30
+last_epochs = 300
 
 
 # In[3]:
@@ -73,9 +73,8 @@ vfs = adp_algorithm_complete()
 # In[5]:
 
 
-from gas_example.optimization.optimization import get_best_action, get_utility_realization
+from gas_example.optimization.optimization import get_best_action
 from gas_example.optimization.basis_function import uf_2_inv
-init_state=State(10, 25, 55, PowerplantState.NOT_BUILT, 0)
 
 
 # In[6]:
@@ -89,18 +88,30 @@ vfs_2 = vfs[TIME_EPOCHS-1]
 # In[7]:
 
 
+init_state=State(10, 25, 45, PowerplantState.NOT_BUILT, 0)
+
+
+# In[8]:
+
+
 expected_utility = vfs_0.compute_value(init_state)
 expected_utility
 
 
-# In[8]:
+# In[9]:
 
 
 result_1 = uf_2_inv(expected_utility)/1_000_000
 result_1
 
 
-# In[9]:
+# In[ ]:
+
+
+
+
+
+# In[10]:
 
 
 def balance_to_pce(balance):
@@ -116,13 +127,13 @@ def balance_to_pce(balance):
 
 # Thus we expect to gain 240 milions, when deciding based on these Vfs from the initial state stated above
 
-# In[10]:
+# In[11]:
 
 
 from gas_example.optimization.optimization import get_best_action, pce
 
 
-# In[19]:
+# In[12]:
 
 
 final_pces = []
@@ -137,40 +148,46 @@ for i in progressbar(range(1000)):
     
 
 
-# In[20]:
+# In[13]:
 
 
 plt.hist(final_pces)
 
 
-# In[21]:
+# In[14]:
 
 
 result_2 = np.mean(final_pces)
 result_2
 
 
-# In[22]:
+# In[15]:
 
 
 result_2 - result_1
 
 
-# In[23]:
+# In[16]:
 
 
 (result_2 - result_1)/result_2*100
 
 
-# 13% 
+# In[27]:
 
-# In[16]:
+
+pd.DataFrame(final_pces).to_csv("Results_10_25_45_important.csv")
+
+
+# 2.17
+
+# In[17]:
 
 
 state = init_state
 
 
-# In[17]:
+# In[18]:
 
 
 state = init_state
@@ -187,49 +204,13 @@ for epoch in range(last_epochs-1):
     
 
 
-# In[18]:
+# In[21]:
 
 
-state_1.get_new_state_and_fcf(Action.RUN)
+import pandas as pd
 
 
-# In[ ]:
-
-
-uf_2_inv(vfs_0.compute_value(init_state))
-
-
-# In[ ]:
-
-
-get_best_action(init_state, vfs_1, print_details=True)
-
-
-# In[ ]:
-
-
-get_utility_realization(init_state, Action.IDLE_AND_BUILD, vfs_1, print_details=True)
-
-
-# In[ ]:
-
-
-state_1, fcf = init_state.get_new_state_and_fcf(Action.IDLE_AND_BUILD)
-
-
-# In[ ]:
-
-
-get_utility_realization(state_1, Action.RUN, vfs_2, print_details=True)
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
+# In[24]:
 
 
 df_vfs = pd.DataFrame(vfs)
@@ -240,30 +221,5 @@ df_vfs.to_pickle(f'saved_vfs/vfs_{identificator}.pkl')
 # In[ ]:
 
 
-df_vfs_2 = pd.read_pickle(f'saved_vfs/vfs_{identificator}.pkl')
-vfs_2 = list(df_vfs_2[0])
 
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-from gas_example.enum_types import PowerplantState, Action
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-new_state.to_dict()
 

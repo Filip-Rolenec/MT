@@ -6,9 +6,9 @@ from gas_example.simulation.state import State
 def run_simulation(strategy, initial_state: State):
     state = initial_state
     for epoch in range(TIME_EPOCHS - 1):
-        action = strategy.get_action(state, epoch)
+        action, _ = strategy.get_action(state, epoch)
         state, fcf = state.get_new_state_and_fcf(action)
-    return round(balance_to_pce(state.balance) / 1000000.0)
+    return round(balance_to_pce(state.balance) / 1000000.0, 5)
 
 
 def balance_to_pce(balance):
