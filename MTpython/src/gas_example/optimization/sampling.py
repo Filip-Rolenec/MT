@@ -30,7 +30,7 @@ def get_balance_sample(sample_size):
 def get_individual_samples(individual_sample_size: int):
     gas_price_sample = get_price_sample(SAMPLE_SIZE_INDIVIDUAL, 0,  30)
     co2_price_sample = get_price_sample(SAMPLE_SIZE_INDIVIDUAL, 5, 40)
-    power_sample = get_price_sample(SAMPLE_SIZE_INDIVIDUAL, 10, 100)
+    power_sample = get_price_sample(SAMPLE_SIZE_INDIVIDUAL, 10, 80)
     powerplant_state = get_powerplant_state_sample(individual_sample_size)
     balance_sample = get_balance_sample(individual_sample_size)
 

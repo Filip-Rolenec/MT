@@ -16,7 +16,6 @@ def get_basis_functions():
 
 
 def uf_2(x):
-    return x
     x = x / 1000
 
     if x <= 0:
@@ -27,7 +26,6 @@ def uf_2(x):
 
 def uf_2_inv(y):
 
-    return y
     if y < 0:
         thousands = -((-y) ** 1.05)
     else:

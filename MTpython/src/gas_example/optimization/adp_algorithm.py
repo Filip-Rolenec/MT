@@ -13,3 +13,7 @@ def adp_algorithm_complete():
         if time_epoch != TIME_EPOCHS - 1:
             update_vf_models(vfs[time_epoch], vfs[time_epoch + 1])
     return vfs
+
+
+if __name__ == "__main__":
+    adp_algorithm_complete()

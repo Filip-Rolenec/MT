@@ -65,15 +65,21 @@ def get_utility_realizations(state: State, action: Action, future_vf):
 
     future_vf_money_equivalents = INVERSE_UTILITY_FUNCTION_V(future_vf_utilities)
 
-    updated_balances = [fcf + state.balance for fcf in fcfs]
 
-    balance_future_vf_pairs = [[a, b] for a, b in zip(updated_balances, future_vf_money_equivalents)]
+    pce_realizations = [fcf + fvf_money_eq / RISK_FREE_RATE_EPOCH for fcf, fvf_money_eq in
+                        zip(fcfs, future_vf_money_equivalents)]
 
-    pce_realizations = [pce_value - state.balance for pce_value in pce_v(balance_future_vf_pairs)]
+    # updated_balances = [fcf + state.balance for fcf in fcfs]
+    # balance_future_vf_pairs = [[a, b] for a, b in zip(updated_balances, future_vf_money_equivalents)]
+    # pce_realizations = [pce_value - state.balance for pce_value in pce_v(balance_future_vf_pairs)]
 
     utility_realizations = np.round(UTILITY_FUNCTION_V(pce_realizations), 2)
-
     return utility_realizations
+
+
+# Simplification, because it takes a long time to compute
+def pce_simple(updated_balances, future_vf_money_equivalents):
+    return updated_balances + future_vf_money_equivalents / RISK_FREE_RATE_EPOCH
 
 
 # General pce function, used when the entity that is being optimized is not expected cumulative FCF.

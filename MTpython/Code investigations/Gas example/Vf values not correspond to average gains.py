@@ -23,14 +23,14 @@ sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 # In[2]:
 
 
-last_epochs = 300
+last_epochs = 25*52
 
 
 # In[3]:
 
 
 from progressbar import progressbar
-
+import pandas as pd
 from gas_example.optimization.vf import create_vfs_time_list, update_vf_models
 from gas_example.setup import TIME_EPOCHS
 from gas_example.simulation.state import State
@@ -88,7 +88,7 @@ vfs_2 = vfs[TIME_EPOCHS-1]
 # In[7]:
 
 
-init_state=State(10, 25, 45, PowerplantState.NOT_BUILT, 0)
+init_state=State(10, 25, 37, PowerplantState.NOT_BUILT, 0)
 
 
 # In[8]:
@@ -105,13 +105,9 @@ result_1 = uf_2_inv(expected_utility)/1_000_000
 result_1
 
 
-# In[ ]:
+# 131M
 
-
-
-
-
-# In[10]:
+# In[11]:
 
 
 def balance_to_pce(balance):
@@ -127,13 +123,13 @@ def balance_to_pce(balance):
 
 # Thus we expect to gain 240 milions, when deciding based on these Vfs from the initial state stated above
 
-# In[11]:
+# In[12]:
 
 
 from gas_example.optimization.optimization import get_best_action, pce
 
 
-# In[12]:
+# In[13]:
 
 
 final_pces = []
@@ -148,46 +144,54 @@ for i in progressbar(range(1000)):
     
 
 
-# In[13]:
+# In[14]:
 
 
 plt.hist(final_pces)
 
 
-# In[14]:
+# In[15]:
 
 
 result_2 = np.mean(final_pces)
 result_2
 
 
-# In[15]:
+# In[16]:
 
 
 result_2 - result_1
 
 
-# In[16]:
+# In[17]:
 
 
 (result_2 - result_1)/result_2*100
 
 
-# In[27]:
+# In[18]:
 
 
-pd.DataFrame(final_pces).to_csv("Results_10_25_45_important.csv")
+pd.DataFrame(final_pces).to_csv("Results_10_25_39_important.csv")
+
+
+# In[19]:
+
+
+df_vfs = pd.DataFrame(vfs)
+identificator = pd.Timestamp.now().strftime("%Y-%m-%d_H%H")
+df_vfs.to_pickle(f'saved_vfs/vfs_{identificator}.pkl')
 
 
 # 2.17
 
-# In[17]:
+# In[ ]:
 
 
 state = init_state
 
 
-# In[18]:
+# In[ ]:
 
 
 state = init_state
@@ -204,13 +208,13 @@ for epoch in range(last_epochs-1):
     
 
 
-# In[21]:
+# In[ ]:
 
 
 import pandas as pd
 
 
-# In[24]:
+# In[ ]:
 
 
 df_vfs = pd.DataFrame(vfs)

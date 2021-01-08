@@ -34,34 +34,41 @@ from progressbar import progressbar
 import seaborn as sns
 import pandas as pd
 import numpy as np
+from IPython.core.display import display, HTML
 
 sns.set()
+
+
+# In[4]:
+
+
+display(HTML("<style>.container { width:90% !important; }</style>"))
 
 
 # # Baseline strategies  
 # - Build one stage and run all the time
 # - Build one stage and run only when it is profitable
 
-# In[4]:
-
-
-initial_state = State(10,25,45,PowerplantState.NOT_BUILT,0)
-
-
 # In[5]:
+
+
+initial_state = State(10,25,37,PowerplantState.NOT_BUILT,0)
+
+
+# In[6]:
 
 
 [f for f in listdir("saved_vfs") if isfile(join("saved_vfs", f))]
 
 
-# In[6]:
+# In[7]:
 
 
 strategy_0 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_0)
 strategy_1 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_1)
 strategy_2 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_2)
 
-opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2020-12-30_H11.pkl")
+opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2021-01-08_H15.pkl")
 
 strategies = [strategy_0, strategy_1, strategy_2, opt_strategy]
 
@@ -70,11 +77,29 @@ strategies = [strategy_0, strategy_1, strategy_2, opt_strategy]
 
 
 results_final = {}
-for i in range(len(strategies)):
+for i in range(len(strategies)-1):
     results = []
-    for j in progressbar(range(300)):
+    for j in progressbar(range(3000)):
         results.append(run_simulation(strategies[i], initial_state))
     results_final[i]= results
+
+
+# In[ ]:
+
+
+results_final[3]=optimal_strategy_result
+
+
+# In[37]:
+
+
+optimal_strategy_result = results_final[3]
+
+
+# In[ ]:
+
+
+
 
 
 # In[ ]:
@@ -98,7 +123,7 @@ def plot_results(results):
     means = [np.mean(df[i]) for i in range(len(results_final))]
     colors = sns.color_palette()[0:4]
 
-    fig, ax = plt.subplots(figsize = (12,6), dpi = 100)
+    fig, ax = plt.subplots(figsize = (20,10), dpi = 100)
 
     plt.hist(df, bins = b, label = [f"Strategy_{i}" for i in df.columns])
 
@@ -123,19 +148,19 @@ plot_results(results_final)
 
 # ### Comparing the result value to the one given by the value function. 
 
-# In[ ]:
+# In[25]:
 
 
 vfs_0 = opt_strategy.vfs[0]
 
 
-# In[ ]:
+# In[12]:
 
 
 expected_utility = vfs_0.compute_value(initial_state)
 
 
-# In[ ]:
+# In[13]:
 
 
 def uf_2_inv(y):
@@ -147,7 +172,7 @@ def uf_2_inv(y):
     return thousands * 1000
 
 
-# In[ ]:
+# In[14]:
 
 
 uf_2_inv(expected_utility)/1_000_000
