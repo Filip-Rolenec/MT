@@ -92,7 +92,7 @@
 \@writefile{toc}{\contentsline {paragraph}{Partial analogy}{22}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Full analogy}{22}\protected@file@percent }
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{Tab:BSModel}{{\caption@xref {Tab:BSModel}{ on input line 649}}{22}}
+\newlabel{Tab:BSModel}{{\caption@xref {Tab:BSModel}{ on input line 648}}{22}}
 \@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Identification of parameters for real options with respect to the financial option \cite  {BerDeM:09}. \relax }}{22}\protected@file@percent }
 \citation{Gut:09}
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}Statistical decision theory}{23}\protected@file@percent }
@@ -149,7 +149,7 @@
 \citation{AlsWan:20}
 \citation{SchRob:19}
 \citation{Vis:18}
-\citation{}
+\citation{Kar:20}
 \@writefile{toc}{\contentsline {paragraph}{Risk neutral probabilities}{34}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{Insufficient reasons}{34}\protected@file@percent }
 \@writefile{toc}{\contentsline {paragraph}{More complex models}{34}\protected@file@percent }
@@ -162,6 +162,7 @@
 \newlabel{sec:risk_aversion}{{3.3.3}{35}}
 \citation{BacChi:19}
 \citation{Pow:11}
+\newlabel{eq:third_approximation}{{3.6}{36}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.4}Approximate dynamic programming}{36}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.5}Summary}{36}\protected@file@percent }
 \citation{Gut:09}
@@ -174,28 +175,47 @@
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}General settings of the experiment}{40}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.1}Time set}{40}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.1.2}State set}{40}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Action function}{42}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Transition probability function}{42}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.3}Action function}{41}\protected@file@percent }
 \citation{Vol:03}
-\@writefile{toc}{\contentsline {paragraph}{Deterministic evolution}{43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Stochastic evolution simple}{43}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Power price}{44}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Balance}{44}\protected@file@percent }
-\@writefile{toc}{\contentsline {paragraph}{Reward function}{44}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Approximate dynamic programming}{45}\protected@file@percent }
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces Value function approximation algorithm\relax }}{45}\protected@file@percent }
-\newlabel{alg:SingleKnown}{{1}{45}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Sensitivity towards potential action set}{46}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Action set 1}{46}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Action set 2}{46}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Action set 3}{46}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Sensitivity toward time epoch granularity}{46}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{47}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.4}Transition probability function}{42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Commodity prices}{42}\protected@file@percent }
+\newlabel{Table:init_values}{{4.1.4}{42}}
+\@writefile{toc}{\contentsline {paragraph}{Installed capacity}{42}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Balance}{43}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1.5}Reward function}{43}\protected@file@percent }
+\newlabel{eq:fcf_function}{{4.11}{43}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Approximate dynamic programming}{43}\protected@file@percent }
+\newlabel{eq:VFmodel}{{4.12}{43}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example of a pw linear fit.\relax }}{44}\protected@file@percent }
+\newlabel{fig:PW_linear}{{4.1}{44}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces ADP value iteration algorithm\relax }}{44}\protected@file@percent }
+\newlabel{alg:VFapp}{{1}{44}}
+\@writefile{toc}{\contentsline {paragraph}{Last VF}{45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{State sampling}{45}\protected@file@percent }
+\newlabel{Table:sample_values}{{4.2}{45}}
+\@writefile{toc}{\contentsline {paragraph}{Expected utility}{45}\protected@file@percent }
+\newlabel{eq:exp_util}{{4.13}{45}}
+\@writefile{toc}{\contentsline {paragraph}{Model fitting}{45}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Optimal strategy performance}{45}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Baseline strategies}{46}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Simulation algorithm}{46}\protected@file@percent }
+\@writefile{loa}{\contentsline {algorithm}{\numberline {2}{\ignorespaces Strategy performance algorithm\relax }}{46}\protected@file@percent }
+\newlabel{alg:Simulation}{{2}{46}}
+\@writefile{toc}{\contentsline {paragraph}{Determining actions}{46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Results - initial setup}{46}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Results - increased volatiltiy}{46}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of average PCE equivalents of individual strategies, realization histograms and averages with initial settings.\relax }}{47}\protected@file@percent }
+\newlabel{fig:Results_init}{{4.2}{47}}
+\newlabel{Table:Result_comparison}{{\caption@xref {Table:Result_comparison}{ on input line 1452}}{47}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Comparison of PCE for different strategies and settings.\relax }}{47}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Comparison of average PCE equivalents of individual strategies, increased volatility.\relax }}{47}\protected@file@percent }
+\newlabel{fig:Results_increased}{{4.3}{47}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Discussion}{49}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibstyle{plain}
 \bibdata{fr}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusions}{49}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Conclusion}{51}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \bibcite{CopAnt:01}{{1}{}{{}}{{}}}
@@ -223,23 +243,24 @@
 \bibcite{Gue:17}{{23}{}{{}}{{}}}
 \bibcite{Gut:09}{{24}{}{{}}{{}}}
 \bibcite{Jay:03}{{25}{}{{}}{{}}}
-\bibcite{Kas:04}{{26}{}{{}}{{}}}
-\bibcite{Kol:60}{{27}{}{{}}{{}}}
-\bibcite{KulTri:94}{{28}{}{{}}{{}}}
-\bibcite{LunDid:17}{{29}{}{{}}{{}}}
-\bibcite{Mye:77}{{30}{}{{}}{{}}}
-\bibcite{Pet:81}{{31}{}{{}}{{}}}
-\bibcite{Pow:11}{{32}{}{{}}{{}}}
-\bibcite{Que:10}{{33}{}{{}}{{}}}
-\bibcite{Rao:87a}{{34}{}{{}}{{}}}
-\bibcite{Rol:18}{{35}{}{{}}{{}}}
-\bibcite{Rol:19}{{36}{}{{}}{{}}}
-\bibcite{Ryu:17}{{37}{}{{}}{{}}}
-\bibcite{SchRob:19}{{38}{}{{}}{{}}}
-\bibcite{SicGam:10}{{39}{}{{}}{{}}}
-\bibcite{Tho:19}{{40}{}{{}}{{}}}
-\bibcite{Vis:18}{{41}{}{{}}{{}}}
-\bibcite{Vol:03}{{42}{}{{}}{{}}}
-\bibcite{Web:09}{{43}{}{{}}{{}}}
-\bibcite{YalHak:12}{{44}{}{{}}{{}}}
+\bibcite{Kar:20}{{26}{}{{}}{{}}}
+\bibcite{Kas:04}{{27}{}{{}}{{}}}
+\bibcite{Kol:60}{{28}{}{{}}{{}}}
+\bibcite{KulTri:94}{{29}{}{{}}{{}}}
+\bibcite{LunDid:17}{{30}{}{{}}{{}}}
+\bibcite{Mye:77}{{31}{}{{}}{{}}}
+\bibcite{Pet:81}{{32}{}{{}}{{}}}
+\bibcite{Pow:11}{{33}{}{{}}{{}}}
+\bibcite{Que:10}{{34}{}{{}}{{}}}
+\bibcite{Rao:87a}{{35}{}{{}}{{}}}
+\bibcite{Rol:18}{{36}{}{{}}{{}}}
+\bibcite{Rol:19}{{37}{}{{}}{{}}}
+\bibcite{Ryu:17}{{38}{}{{}}{{}}}
+\bibcite{SchRob:19}{{39}{}{{}}{{}}}
+\bibcite{SicGam:10}{{40}{}{{}}{{}}}
+\bibcite{Tho:19}{{41}{}{{}}{{}}}
+\bibcite{Vis:18}{{42}{}{{}}{{}}}
+\bibcite{Vol:03}{{43}{}{{}}{{}}}
+\bibcite{Web:09}{{44}{}{{}}{{}}}
+\bibcite{YalHak:12}{{45}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers

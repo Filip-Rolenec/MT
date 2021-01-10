@@ -24,6 +24,7 @@ from gas_example.enum_types import PowerplantState
 from gas_example.simulation.simulation import run_simulation
 from  gas_example.simulation.state import State
 import gas_example.simulation.strategy as strategy
+from gas_example.optimization.basis_function import uf_2_inv
 
 
 # In[3]:
@@ -68,38 +69,26 @@ strategy_0 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_0)
 strategy_1 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_1)
 strategy_2 = strategy.HeuristicStrategy(strategy.heuristic_strategy_function_2)
 
-opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2021-01-08_H15.pkl")
+opt_strategy = strategy.OptimalStrategy("saved_vfs/vfs_2021-01-08_H16.pkl")
 
 strategies = [strategy_0, strategy_1, strategy_2, opt_strategy]
+
+
+# In[8]:
+
+
+uf_2_inv(opt_strategy.vfs[0].compute_value(initial_state))/1_000_000
 
 
 # In[ ]:
 
 
 results_final = {}
-for i in range(len(strategies)-1):
+for i in range(len(strategies)):
     results = []
-    for j in progressbar(range(3000)):
+    for j in progressbar(range(30000)):
         results.append(run_simulation(strategies[i], initial_state))
     results_final[i]= results
-
-
-# In[ ]:
-
-
-results_final[3]=optimal_strategy_result
-
-
-# In[37]:
-
-
-optimal_strategy_result = results_final[3]
-
-
-# In[ ]:
-
-
-
 
 
 # In[ ]:
@@ -116,16 +105,16 @@ def plot_results(results):
     total_min = min_value_displayed
     total_max = max_value_displayed
 
-    width = (total_max-total_min)/20
-    b = [total_min +i*width for i in range(20)]
+    width = (total_max-total_min)/30
+    b = [total_min +i*width for i in range(30)]
     
     df = pd.DataFrame(results_final)
     means = [np.mean(df[i]) for i in range(len(results_final))]
     colors = sns.color_palette()[0:4]
 
-    fig, ax = plt.subplots(figsize = (20,10), dpi = 100)
+    fig, ax = plt.subplots(figsize = (11,5), dpi = 200)
 
-    plt.hist(df, bins = b, label = [f"Strategy_{i}" for i in df.columns])
+    plt.hist(df, bins = b, label = ["Strategy B1","Strategy B2", "Strategy B3", "Optimal strategy" ])
 
     trans = ax.get_xaxis_transform()
 
@@ -136,7 +125,8 @@ def plot_results(results):
     plt.xlabel("M of EUR")
     plt.ylabel("Count")
     plt.legend()
-    plt.title("Baseline strategies and their expected PCEs")
+    plt.title("Baseline strategies and their realized PCEs")
+    plt.savefig('plot.pdf', bbox_inches='tight')
     plt.show()
 
 
@@ -148,19 +138,19 @@ plot_results(results_final)
 
 # ### Comparing the result value to the one given by the value function. 
 
-# In[25]:
+# In[12]:
 
 
 vfs_0 = opt_strategy.vfs[0]
 
 
-# In[12]:
+# In[13]:
 
 
 expected_utility = vfs_0.compute_value(initial_state)
 
 
-# In[13]:
+# In[14]:
 
 
 def uf_2_inv(y):
@@ -172,7 +162,7 @@ def uf_2_inv(y):
     return thousands * 1000
 
 
-# In[14]:
+# In[15]:
 
 
 uf_2_inv(expected_utility)/1_000_000

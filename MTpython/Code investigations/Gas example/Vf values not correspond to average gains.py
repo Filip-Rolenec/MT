@@ -23,7 +23,7 @@ sys.path.append("/Users/filiprolenec/Desktop/MT/MTpython/src")
 # In[2]:
 
 
-last_epochs = 25*52
+last_epochs = 300
 
 
 # In[3]:
@@ -107,7 +107,7 @@ result_1
 
 # 131M
 
-# In[11]:
+# In[10]:
 
 
 def balance_to_pce(balance):
@@ -123,13 +123,13 @@ def balance_to_pce(balance):
 
 # Thus we expect to gain 240 milions, when deciding based on these Vfs from the initial state stated above
 
-# In[12]:
+# In[11]:
 
 
 from gas_example.optimization.optimization import get_best_action, pce
 
 
-# In[13]:
+# In[12]:
 
 
 final_pces = []
@@ -144,38 +144,38 @@ for i in progressbar(range(1000)):
     
 
 
-# In[14]:
+# In[ ]:
 
 
 plt.hist(final_pces)
 
 
-# In[15]:
+# In[ ]:
 
 
 result_2 = np.mean(final_pces)
 result_2
 
 
-# In[16]:
+# In[ ]:
 
 
 result_2 - result_1
 
 
-# In[17]:
+# In[ ]:
 
 
 (result_2 - result_1)/result_2*100
 
 
-# In[18]:
+# In[ ]:
 
 
 pd.DataFrame(final_pces).to_csv("Results_10_25_39_important.csv")
 
 
-# In[19]:
+# In[ ]:
 
 
 df_vfs = pd.DataFrame(vfs)

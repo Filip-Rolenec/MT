@@ -139,7 +139,6 @@
 
 \captionsetup[figure]{labelfont={bf},labelformat={default},labelsep=period,name={Fig.}}
 
-
 \def\documentdate{\today}
 
 \pagestyle{empty}
@@ -332,47 +331,47 @@ my own work and I have listed all the used sources in the bibliography.
 
 
 \chapter{Historical background and research motivation}
-The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts \footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future. \cite{BerDeM:09} } and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands. There, in the end of the 17th century, the first ideas about options \footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a defined amount of money in a given future time instant. \cite{BerDeM:09}}  and option trading are published by La Vega \cite{Veg:88}. 
+The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts \footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future. \cite{BerDeM:09} } and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options \footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant. \cite{BerDeM:09}}  and option trading are published by La Vega \cite{Veg:88}. 
 
-The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work the boom of option pricing methods in the 1970's culminated by Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
+The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, which is one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in a sense that he stresses the importance of thinking about the additional value options bring, while he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - the ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in the sense that he stresses the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
 
 The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
-The valuation of project's free cash flows with the theory of ROA is in the economical world understood as very advanced and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
+The valuation of project's free cash flows with the theory of ROA is in the economic world understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
 
-Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in depth in section ... we identify three classes of ROA authors based on the level of analogy to the BSM model. 
+Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in-depth in section ... we identify three classes of ROA authors based on the level of analogy to the BSM model. 
 
-In this thesis we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}.\footnote{Second class utilizes only the no-arbitrage principle to determine probabilities of the models.}  
+In this thesis, we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}.\footnote{Second class utilizes only the no-arbitrage principle to determine the probabilities of the models.}  
 
 Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty \cite{Rol:18}, \cite{Rol:19}. When studying ROA it came only natural to understand the project valuation as an optimal decision making problem. 
 
-The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain specific economical truths about the behavior of investors and the way they perceive value.  Two main addressed concepts are: the time value of money and the risk aversion of investors. 
+The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain-specific economical truths about investors' behavior and the way they perceive value.  Two main addressed concepts are the time value of money and the risk aversion of investors. 
 
-The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm will cover the classes of problems now solved by ROA and allow for new classes. 
+The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm will cover the classes of problems now solved by ROA and allow for new ones. 
 
 The new SDT based valuation algorithm will enable: 
 \begin{itemize}
 	\item seamless integration of multiple uncertainty sources;
 	\item integration of theoretically any probability distribution as a model of uncertain variables;
-	\item usage of high number of possible actions, regardless of their nature; 
+	\item usage of a high number of possible actions, regardless of their nature; 
 	\item utilization of approximate dynamic programming tools for high-dimensional problems;
-	\item preservation the economical truths as time value of money and the risk aversion of investors. 
+	\item preservation of the economic truths as time value of money and the risk aversion of investors. 
 \end{itemize}
 
-To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal zero and the input-output transformation rate is constant. This class is a generalization motivated by an example of gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
+To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal to zero, and the input-output transformation rate is constant. This class is a generalization motivated by an example of gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
 
 
-The thesis is structured in 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economical concepts used in this thesis. Beginning with the declaration of mathematical notation the chapter continues with key concepts of economical theory and deeper description of the BSM model. The first chapter continues with a summary of the last decades in ROA research with the focus on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The reminder of the first chapter is reserved for key parts of stochastic decision theory. 
+The thesis is structured into 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economic concepts used in this thesis. Beginning with the declaration of mathematical notation, the chapter continues with key concepts of economic theory and a deeper description of the BSM model. The first chapter continues with a summary of the last decades in ROA research, focusing on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The remainder of the first chapter is reserved for key parts of stochastic decision theory. 
 
-Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project and we limit this features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The reminder of the  second chapter is reserved for resolving the economical nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economical reality of investors' behavior. 
+Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project,and we limit these features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the second chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
 
 Chapter 3 illustrates the new valuation algorithm from chapter 2 on an example of valuation of a facility with a simple input-output process model. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different granularity of the model structure and it is aimed to demonstrate the existence of trade-of between computational complexity and precision of computed results. 
 
-Chapter 4 discusses the new findings both theoretical and observed from the performed experiments. 
+Chapter 4 discusses the new findings, both theoretical and observed from the performed experiments. 
 
-Chapter 5 summarizes the thesis - reminds the motivation, underlines the main message and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
+Chapter 5 summarizes the thesis - reminds the motivation, underlines the main message, and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
 
 
 %\addcontentsline{toc}{chapter}{Introduction}
@@ -637,7 +636,7 @@ Because we find this type of approach to real options as the most appropriate on
 Another author in this class whose work is notable is publication \cite{Vol:03} from Vollert, who goes deep into detail with modeling framework implementing complex conditional options. Vollert's publication is very advanced, using i.e. stochastic differential equations, which might be an obstacle for practitioners and real world applications.  
 
 \paragraph{Full analogy}
-The final class of the authors understands project valuation with real options as a complete analogy to thee BSM model for valuation of financial options. This class of authors is predominantly represented by voluminous economical textbooks, e.g. \cite{BerDeM:09}, \cite{BreMye:12} or \cite{Cru:08}\footnote{Crundwell also discusses the partial analogy approach in detail.}. 
+The final class of the authors understands project valuation with real options as a complete analogy to the BSM model for valuation of financial options. This class of authors is predominantly represented by voluminous economical textbooks, e.g. \cite{BerDeM:09}, \cite{BreMye:12} or \cite{Cru:08}\footnote{Crundwell also discusses the partial analogy approach in detail.}. 
 
 A complete analogy means to identify all parameters of financial option with a parameter of investment. For example in \cite{BerDeM:09} the following identification table is presented: 
 
@@ -1059,7 +1058,7 @@ We believe that this characteristic of investors is important to consider in the
 
 The third and final approximation of the optimized entity by the Bellman equation is thus the expected utility of the present cash equivalent of individual cash flows. The third and final update of the original Bellman equation can be thus described as: 
 
-\begin{equation}
+\begin{equation}\label{eq:third_approximation}
 	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^d\right)\right),
 \end{equation}
 
@@ -1080,7 +1079,6 @@ Real-life projects, interpreted as MDPs are usually rather complex and hardly-ev
 It might be clear from the rhetoric of this thesis, that our goal is to use the developed valuation technique in practice. That is why we want to address this problem with the goal to make the solvable class of project valuation problems as large as possible. And we do so with the approximate dynamic programming (ADP) approach. 
 
 From all the possible ADP techniques, we have chosen the value iteration with parameter model approximation for two main reasons, both of which originate in the fundamental characteristics of projects.
-
 
 First is that the real-life projects tend to have large state spaces (even uncountable), while on the other hand the action set is usually limited. We cannot ask a manager to make a choice between 10 000 actions for example. This supports the choice of value iteration over a policy iteration class of ADP. 
 
@@ -1104,360 +1102,424 @@ Lastly, we have advised the best ADP algorithm that copes with the problems of c
 
 
 \chapter{Valuation of facilities with simple I/O process}\label{chapter:Experiment}
-In the previous chapter we have presented an algorithmic approach to a project valuation based on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
+In the previous chapter, we have presented an algorithmic approach to a project valuation based on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
 
-We have chosen the class of projects that can be labeled as investment in facilities with simple I/O process and further managerial guidance. This class is characterized by a large outflow of money in the beginning used for building the facility (or its first functional part) and a small but long-term positive future revenue driven by the difference in the price of inputs and outputs of the facility. 
+We have chosen the class of projects that can be labeled as an investment in facilities with a simple I/O process and further managerial guidance. This class is characterized by a large outflow of money at the beginning used for building the facility (or its first functional part) and a small but long-term positive future revenue driven by the difference in the price of inputs and outputs of the facility and the further managerial decisions. 
 
-This class choice is supported by its appropriate level of complexity, where it allows to demonstrate the power of the new algorithm, while at the same time not being too complex. It is also a type of project that is substantially represented in the world of capital investment. 
+This class choice is supported by its appropriate level of complexity, where it allows to demonstrate the power of the new algorithm while at the same time not being too complicated. It is also a type of project that is substantially represented in the world of capital investment. 
 
-We could write this whole chapter using a general description of the chosen project class, however we believe that using only one specific representative will result in more clear picture of the situation. 
+We could write this whole chapter using a general description of the chosen project class; however we believe that using only one specific representative will result in a clearer picture of the situation. 
 
-Our choice of the representative - an investment into a gas power plant - is based on three grounds. First, there is certainly an influence by Guthrie's example of a similar valuation problem \cite{Gut:09}. Second, as we will see, this valuation problem has reasonable dimensions, that allow for a good presentation of the valuation algorithm. Lastly, the author of this thesis has a legitimate domain knowledge based on his short, but intensive work experience in field of power trading. 
+Our choice of the representative - an investment into a gas power plant - is based on three grounds. First, there is certainly an influence of Guthrie's example of a similar valuation problem \cite{Gut:09}. Second, as we will see, this valuation problem has reasonable dimensions that allow for a good presentation of the valuation algorithm. Lastly, the author of this thesis has legitimate domain knowledge based on his short but intensive work experience in the field of power trading. 
 
-In the first part of this chapter we will describe the valuation problem with the upmost precision. 
+In the first part of this chapter, we will describe the valuation problem with the utmost precision. 
 
-In the second part we will focus on the dependency between the project valuation and the amount and type of available managerial decisions. 
+In the second part, we will compare the PCEs of three baseline operational strategies and the optimal one derived from the valuation algorithm. Furthermore we will study the influence of the increased volatility of prices on the final valuation. From what we have learned about the value of options, the project's value should increase together with the volatility increase. 
 
-In the final part of this experiment, we will be comparing different setups of the project and their influence on the final valuation. This sensitivity analysis will be done in two parts. First, we will study the effects of variable time granularity (simulating more and less frequent managerial decision making). The second subject to a sensitivity analysis will be the different choice of parameters modeling the prices of inputs and outputs. 
-
-In the first half of the experiment we await a confirmation of the ROA conclusion, that options (actions) add significant value to the project. In the second half, we have no strong opinion about what the changes in project valuation will be. 
-
-In the end, the main aim of this experiment is to present the valuation algorithm, observe and describe its possible shortcoming and support its viability, not to prove any other theorems or ideas about project valuation.
+It needs to be emphasized that the aim of this experiment is to present the valuation algorithm, observe and describe its possible shortcoming and support its viability, not to prove any other theorems or ideas about project valuation.
 
 
 \section{General settings of the experiment}
-First, lets clarify what we mean by the phrase \textit{investment in the gas power plant}. We are positioning ourselves in a role of an investment analyst of a large utilities company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} whose task is to evaluate the value of building and managing new gas power plant. 
+First, let us clarify what we mean by the phrase \textit{investment in the gas power plant}. We are positioning ourselves in the role of an investment analyst of a large utility company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} whose task is to evaluate the value of building and managing a new gas power plant. 
 
-For simplicity, we are considering building only one or two 200MW blocks with expected life-span of 25 years \cite{Car:12}. We assume, that the price of each block is 80M EUR, which is a rough estimate based on \cite{Bre:10}. We assume that the efficiency of the power plant will be 0.7 \textbf{(?)}, meaning that 0.7 units of gas (therms) are needed to run one 200MW block at full capacity. Furthermore, we expect 0.2 \textbf{(?)} units of required CO2 allowances for the same capacity. Both of these transformation parameters come from author's experience and assumption of a gas power plant with reasonable efficiency.
+For simplicity, we are considering building only one or two 200MW blocks, the lifespan of which ends 25 years from now, disregarding the time they were built  \cite{Car:12}. We assume that each block's price is 65M EUR, which is a rough estimate based on \cite{Bre:10}. 
 
-In addition to the variable costs of CO2 and gas inputs we are counting with fixed costs of 3 EUR/MWh of installed capacity for maintenance and security. We are also allowing for a mothballed state, which cost we estimate for 500k EUR, with lowered maintenance and security costs to only 1 EUR/MWh.
+We model the power plant to be managed in a monthly pattern. Its power is being sold by monthly contracts at the beginning of each month, when the needed gas and CO2 inputs are also modelled to be purchased. This results in certain free cash flows that are assumed to be obtained immediately after taking one of the allowed actions. As was indicated earlier in this thesis, we do not want to go deep into the plant management and its internal processes. 
 
-The salvage price for a block is set to be 2000 EUR per installed MW per month.
-
-Initially we assume that the power plant is being managed in a monthly pattern. Its power is being sold by monthly contracts in the beginning of each month and the needed gas and CO2 inputs are also being purchased at the same time. As was indicated earlier in this thesis, we do not want to go deep in the plant management and its internal processes. 
-
-In this example we would also like to account for the influence of the government subsidies for renewable power plants and its effect on the power market price volatility. This idea is elaborated in detail below. 
-
-Regarding the project's financing, we assume that the majority of the initial payment will be made by a flexible loan\footnote{An ideally flexible loan where we can repay any amount at any time.} with an interest rate of 6\%. We define the risk-free interest rate as 2\%. The reality of having non-zero initial funds is reflected in the existence of corresponding elementary state. 
+Regarding the project's financing, we assume that the majority of the initial payment will be made by a flexible loan\footnote{An ideally flexible loan where we can repay any amount at any time.} with an interest rate of 6\%. We define the risk-free interest rate as 2\%. The reality of having non-zero initial funds is reflected in the existence of the corresponding elementary state. 
 
 Now that we have clarified the project that we want to value, we can proceed with precise definitions of the MDP parts. 
 
 
 \subsection{Time set}
-As outlined in the introduction of this chapter, we assume that the life-span of a gas power plant is 25 years and that the management to work in monthly patterns. 
-
-Because we are allowing to build the blocks only in the first 3 years from now, the final time set is: 
+As outlined in the introduction of this chapter, we assume that the lifespan of a gas power plant is 25 years, and it is managed on a monthly basis, thus the time set is defined as: 
 \begin{equation}
-\mathbf{T} = \{0,...336\}.
+\mathbf{T} = \{0,...300\},
 \end{equation}
+where the epoch $300$ is understood as the final epoch, where no actions can be made, and no FCF can be obtained. 
 
 
 \subsection{State set} 
-The state set needs to consist of the smallest number of relevant parameters that enable us to model the process of building, running and potentially selling the power plant and capturing the FCF and its derived metrics of the project. 
+The state set needs to consist of the smallest number of relevant parameters that enable us to model the process of building and running the power plant and capturing the FCF and its derived metrics of the project. 
 
-As such, we identify nine elementary states as parameters describing:
+As such, we identify five elementary states as parameters describing:
 \begin{itemize}
-	\item the price of electricity - $s^1$,
-	\item the price of CO2 allowances - $s^2$,
-	\item the price of gas  - $s^3$,
-	\item government support for renewables - $s^4$,
-	\item number of blocks built - $s^5$, 
-	\item indicator of mothballed power plant- $s^6$, 
-	\item lifespan left (in months) of the first block - $s^7$, 
-	\item lifespan left (in months) of the second block - $s^8$, 
-	\item cash balance of the project (models the debt) - $s^9$, 
+	\item the price of gas- $s^1$
+	\item the price of CO2 allowances - $s^2$
+	\item the price of power  - $s^3$
+	\item number of blocks built - $s^4$
+	\item cash balance of the project (models the debt) - $s^5$
 \end{itemize}
-in the start of each time epoch, initially each month. 
+in the start of each time epoch (month).
 
 The states of the state set are defined as having a constant length, since there is no significant change in relevant parameters through the project. 
 
 Mathematically the state set $\mathbf{S}$ is defined as: 
 \begin{equation}
-	\mathbf{S} = \{(s^1,\dots,s^9)|s^i \in \mathbf{S^i} \ i \in(1,...,9))\}, 
+	\mathbf{S} = \{(s^1,\dots,s^5)|s^i \in \mathbf{S^i} \ i \in(1,...,5))\}, 
 \end{equation}
-where $\mathbf{S^i}$ represents the limitation of the individual states. These limitations will be in detail discussed now. 
+where $\mathbf{S^i}$ represents the limitation of the individual elementary states. These limitations will be in detail discussed now. 
 
 For the states representing prices, $s^i, i \in \{1,2,3\}$, we define: 
 \begin{equation}
 	\mathbf{S^i} = \mathbb{R}_{0}^+.
 \end{equation}
 
-The next four elementary states are either reflecting the actual number of what the state represents, like the number of blocks built, $s^5$, or the remaining lifespans fo blocks $s^7, s^8$, or encoded information like the state of the power plant or the government support for renewables. In both cases possible states are represented by a sequence of natural numbers $\mathbb{N}_0$.
-
-Regarding the government support we define:
+The next elementary state, $s^4$, represents the number of blocks built, simply:
 \begin{equation}
-	\mathbf{S^4} =  \{1,2,3,4,5\},
-\end{equation}
-where 1 represents the current support and 5 the highest possible support. 
-
-Then, we present the fifth and sixth elementary state which represents the influentiable states by our actions:
-\begin{equation}
-\mathbf{S^5} =  \{0,1,2\},
-\end{equation}
-showing the number of blocks built and:
-\begin{equation}
-\mathbf{S^6} =  \{0,1\}, 
-\end{equation}
-which is only an indicator state of power plant being mothballed - 1 or not - 0. 
-
-The final two sets represented as a sequence of natural numbers are: 
-\begin{equation}
-\mathbf{S^7} = \mathbf{S^8}= \{0,1,\dots,300\}. 
+\mathbf{S^4} =  \{0,1,2\},
 \end{equation}
 
-The final elementary state is then allowed to have any real value:
+The final elementary state, representing the financial balance of our project is then allowed to have any real value:
 \begin{equation}
-	\mathbf{S^9} = \mathbb{R}.
+	\mathbf{S^5} = \mathbb{R}.
 \end{equation}
 
 These definitions represent the problem structure, the boundaries within which the simulation of initial investment and further managerial actions will take place. 
 
-\begin{remark}
-	The government support variable enters the simulation in a very simple way. We expect that by increase of one level the volatility of power prices rises 20\%. This value is not based on any data, and similarly to the choice of scale it is only illustrative.
-\end{remark}
 
 \subsection{Action function}
-In this experiment we consider six managerial actions. They could be understood as two-dimensional, where the first dimension represents the act of running the installed capacity of the plant (if one exists), whereas the second manages more global actions of building, mothballing or selling the plant. However, because of the relations between the considered actions we decided for the following one-dimensional encoding:
+In this experiment, we consider four managerial actions. They could be understood as two-dimensional, where the first dimension represents the act of running the installed capacity of the plant (if one exists), whereas the second manages the action of building new blocks. However, we have decided on a one-dimensional form with actions encoded as: 
 \begin{itemize}
 	\item 0 - do not change the current state of the project,
 	\item 1 - run the existing installed capacity,
-	\item 2 - run the existing capacity and build new 200MW block,
-	\item 3 - build new 200MW block,
-	\item 4 - change the mothballed state (mothball or unmothball the plant),
-	\item 5 - sell the plant for salvage value.
+	\item 2 - run the existing capacity and build a new 200MW block,
+	\item 3 - build a new 200MW block.
 \end{itemize}
 
-As discussed earlier in this thesis, certain actions are available only in certain states. The states that determine what actions are possible are exclusively the elementary states $s^5$ and $s^6$ describing the state of the project. 
+As discussed earlier in this thesis, certain actions are available only in certain states. The state that determines what actions are possible is exclusively the elementary state $s^4$ describing the number of blocks built. 
 
-In what follows we define the possible action set is any given combination of these elementary states with a short explanation of its meaning. 
+In the following list, we express the possible action set in possible elementary states $s^4$ with a short explanation.
+
 \begin{itemize}
-	\item $a(s^5=0, s^6=0) = \{0,3\}$ when nothing is built, we can build the first block or do nothing and wait. 
-	\item $a(s^5=1, s^6=0) = \{0,1, 2, 3, 4, 5\}$ when only one block is built, all actions are possible. 
-	\item $a(s^5=2, s^6=0) = \{0,1, 4, 5\}$ when two blocks are built, all but building actions are available. 
-	\item $a(s^5=1, s^6=1) = \{0, 3, 4, 5\}$ when the plant is mothballed we cannot run it, however with only one block, we can build the second one. 
-	\item $a(s^5=2, s^6=1) = \{0, 4, 5\}$ when the plant is mothballed we cannot run it and since we have both blocks built, we cannot build more. 
+	\item $a(s^4=0) = \{0,3\}$ when nothing is built, we can build the first block or do nothing and wait. 
+	\item $a(s^4=1) = \{0, 1, 2, 3\}$ when only one block is built, all actions are possible. 
+	\item $a(s^5=2) = \{0,1\}$ when two blocks are built, the building actions are not possible. 
 \end{itemize}
-It needs to be emphasized that state combination $(s^5=0, s^6=1)$ does not make sense and that the original set of actions might be limited in parts of the experiment, reducing correspondingly the outputs of the action function.
 
 
 \subsection{Transition probability function} 
-The model of evolution from one state to another is fairly complex. The best way to describe it is thus to exploit the specific features of individual elementary state evolution patterns. 
-
-In our example, there are 9 elementary states, which can be clustered into different groups. 
-
-\paragraph{Deterministic evolution}
-The first group of states is the simplest because the transition from one state to another is deterministic. This category is represented by the counters of remaining lifespan of the power plant blocks, elementary states $s^7$ and  $s^8$, and the states describing the state of the power plant, installed capacity $s^5$ and the mothball state indicator $s^6$. The first two are purely deterministic, meaning:
+The best way to describe the model of evolution from one state to another is to assume the independence of individual elementary states, which allows computing the probability of state transformation as a product of transition probabilities of the individual states: 
 \begin{equation}
-p(s^i_{t+1}=y|s^i_t = x) =
-\left\{
-\begin{array}{ll}
-1  & \mbox{if } x > 0 \land y =x-1\\
-0 & \mbox{otherwise} 
-\end{array}
-\right.
+	p(s_{t+1}|s_t,a_t)= \prod_{i = 1}^{5} p(s_{t+1}^i|s_t^i,a_t^i).
 \end{equation}
-for  $i \in \{7,8\}$.
 
-The project states are also deterministic, but conditioned on the previous action. First let's look at the state representing the number of blocks built, $s^5$: 
+In our example, there are five elementary states, where the ones representing prices of gas, CO2 allowances and power are modeled in the same way. The other two elementary states are deterministic but differ in the dependency on the previous state and action. Let's now describe the evolution of the individual elementary states in detail.
+
+\paragraph{Commodity prices}
+The prices of gas, CO2 and power are modeled by the geometric Brownian motion, the model used in the BSM model and other publications like \cite{Vol:03}.
+
+The probability of the next elementary state is thus conditioned only on the value of the previous state as: 
 \begin{equation}
-p(s^5_{t+1}=y|s^5_t = x, a_t) =
+p(s_{t+1}^i|s_t^i) = s_t^i\cdot e^{(\mu -\frac{\sigma_i^2}{2})dt+\sigma_i W_{dt}}
+\end{equation}
+for $i \in \{1, 2, 3\}$, where $dt$ represents a time fraction in years, for us $1/12$ and $W_t$ is a Wiener process with probability density function defined as: 
+\begin{equation}
+p_{W_t} = \frac{1}{\sqrt{2\pi t}}e^{\frac{-x^2}{2t}}.
+\end{equation}
+
+
+ To be able to model the prices, we need to supply the variances $\sigma_i$ and the initial values $s_0^i$ for all $i \in \{1,2,3\}$.
+ 
+ The initial prices that we use are inspired by the real prices of commodities that are being traded on the Intercontinental exchange (ICE). In this thesis, we would like to avoid going into the details of plant efficiency and unit transformation, thus we present the initial prices as illustrative and already transformed to EUR per MWh produced.
+ 
+ Similarly, the values of individual commodity volatilities are inspired by our experience with the ICE and the realization of commodity prices in recent years. However, they still remain only illustrative. 
+ 
+ In table \ref{Table:init_values} we can see the chosen initial prices and two triplets of volatilities, which are presented due to a second goal of this experiment, determining the influence of volatility on the value of a gas power plant project. The second triplet is chosen simply as a 20\% increase of the first. 
+ 
+ \begin{center}
+ 	 		\label{Table:init_values}
+ 	\begin{tabular}{|l |r |r |r|} 
+ 		\hline
+ 	    &	Initial price [EUR] & Volatility 1 & Volatility 2 \\  
+ 		\hline
+ 		Gas & 25 & 0.12 & 0.144 \\ 
+ 		\hline
+ 		CO2  & 10 & 0.10 & 0.12 \\
+ 		\hline
+ 		Power & 37 & 0.15 & 0.18 \\
+ 		\hline
+
+ 	\end{tabular}
+ \end{center}
+ 
+\paragraph{Installed capacity}
+The evolution of elementary state $s^4$ representing the number of blocks built is deterministic and conditioned on the previous action. If the chosen action is $a = 2$ or $a=3$, representing building a new block, then the elementary state of the number of blocks increases by 1 with probability 1. If chose action is $a=0$ or $a=1$ this elementary state is not changed with probability 1, mathematically: 
+\begin{equation}
+p(s^4_{t+1}=y|s^4_t = x, a_t) =
 \left\{
 \begin{array}{ll}
-1  & \mbox{if } x = y \land a_t \in \{0,1,4\}  \\
+1  & \mbox{if } x = y \land a_t \in \{0,1\}  \\
 1 & \mbox{if } x+1 = y \land a_t \in \{2,3\} \\
-1 & \mbox{if } y=0 \land a_t =5 \\
 0 & \mbox{otherwise} 
 \end{array}
 \right.
-\end{equation}
-
-Similarly, the state indicating whether the plant is mothballed or not evolves deterministically according to: 
-\begin{equation}
-p(s^6_{t+1}=y|s^6_t = x, a_t) =
-\left\{
-\begin{array}{ll}
-1  & \mbox{if } x = y \land a_t \neq 4  \\
-1 & \mbox{if } x \neq y \land a_t = 4 \\
-0 & \mbox{otherwise} 
-\end{array}
-\right.
-\end{equation}
-
-\paragraph{Stochastic evolution simple}
-The second group of elementary states consists of the ones which evolve stochastically, but their value is not conditioned by other elementary states. 
-
-This design is used for modeling the prices of gas and CO2 allowances on the market as well as the government approach to renewables.  In terms of our notation, states $s^2, s^3$ and $s^4$. 
-
-
-The prices of CO2 and gas are modeled by the log-normal stochastic process, which is the model used in the BSM model and other publications like \cite{Vol:03}.
-
-The probability of the next state is thus conditioned only on the value of the previous state as: 
-\begin{equation}
-	p(s_{t+1}^i|s_t^i) = LogN(s_t^i, \sigma_i), 
-\end{equation}
-for $i \in \{2,3\}$. To be able to model the prices we need to supply the variances $\sigma_2$ and $\sigma_3$ and the initial values $s_0^2$ and $s_0^3$. 
-
-The initial prices that we use in the modeling come from the Intercontinental exchange as of 1st December 2020. The prices (with units transformed by the coefficients discussed above) are: $s_0^2 = ... $EUR (price of CO2) and $s_0^3 = ... $EUR (price of gas). 
-
-The volatilities of both commodities could be computed from the historical data with more or less sophisticated statistic methods. However, we believe that the exact values are not that important and our expert guess from market observation will be enough for this experiment. Thus, we choose $\sigma_2 = ...$ and $\sigma_3 = ...$. 
-
-The government approach to renewables, $s^4$, artificially bounded between 1 and 5, is modeled by adding a realization of a random variable with three outcomes $\{-1,0,1\}.$ with probabilities $\{0.02,0.94,0.04\}$. The probabilities were chosen with respect to the chosen time interval of one epoch and general trend to more support of renewable energy. 
-
-The mathematical notion of the evolution of this state is then: 
-\begin{equation}
-p(s^4_{t+1}=y|s^4_t = x,) =
-\left\{
-\begin{array}{ll}
-0.04  & \mbox{if } x+1 = y \land y \leq 5 \\
-0.02 & \mbox{if } x-1 = y \land y \geq 1  \\
-0.96 & \mbox{if } x = y  \land y =1 \\
-0.98 & \mbox{if } x = y  \land y =5 \\
-0.94 & \mbox{if } x = y  \land y \notin \{1,5\} \\
-0 & \mbox{otherwise} 
-\end{array}
-\right.
-\end{equation}
-
-\paragraph{Power price}
-The price of power is modeled similarly to other prices in our experiment, by a log-normal process. The initial price $s_0^1= 42.30$ EUR\footnote{Price for December 2020 delivery tradeable at 30th November 2020} is now taken from the Czech power exchange PXE (part of German EEX). The initial volatility $\sigma_1 = ... $. 
-
-The difference in modeling of this variable is that we assume dynamic $\sigma$ in the log-normal model, that is computed based on the state of government support for renewables $s^4$ as: 
-\begin{equation}
-	\sigma(s^4) = \sigma_0(0.8+0.2 \cdot s^4),
-\end{equation}
-which means an increase of 20\% with each level of government support. 
-
-Thus, finally, the transition probability of the power price, state $s^1$, is defined as: 
-\begin{equation}
-	p(s_{t+1}^1|s_t^1, s_t^4) = LogN(s_t^1, \sigma(s_t^4)).
 \end{equation}
 
 \paragraph{Balance}
-The last model that needs to be discussed is the one representing financial balance of the project. This state simulates the actual cash balance driven by actions of a "responsible manager" and the assumptions of ideal loans\footnote{With the availability to repay any amount of money at any time.} and possible risk-free investment with constant interest rate. 
+The last model that needs to be discussed is the one representing the financial balance of the project. This state simulates the actual cash balance driven by actions of a "responsible manager", the assumptions of ideal loans\footnote{With the availability to repay any amount of money at any time.} and the possible risk-free investment with constant interest rate. 
 
-Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 0.06\%} and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^9$ as: 
+Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 0.06\%} and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^5$ as: 
 \begin{equation}
-	p(s^9_{t+1}=y|s_t, s_t^9=x) =
-	\left\{
-	\begin{array}{ll}
-	1  & \mbox{if } y = RM(FCF(s_t)+x, r_b, r_r)\\
-	0 & \mbox{otherwise,} 
-	\end{array}
-	\right.
+p(s^5_{t+1}=y|s_t, a_t,  s_t^5=x) =
+\left\{
+\begin{array}{ll}
+1  & \mbox{if } y = RM(FCF(s_t, a_t)+x, r_b, r_r)\\
+0 & \mbox{otherwise,} 
+\end{array}
+\right.
 \end{equation}
-which means that this elementary state is deterministic and its value $s^9_{t+1}$ is computed as a result of responsible managerial actions with the previous balance adjusted for the FCF obtained in the previous state. 
+which means that this elementary state is deterministic and its value $s^5_{t+1}$ is computed as a result of responsible managerial actions with the previous balance $x$ adjusted for the FCF obtained in the previous state $s_t$. 
 
-The actual computation of $FCF(s_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries. The model allows for easy interpretation of non-zero initial balance, however in our experiment we assume $s^9_0=0$.  
+The actual computation of $FCF(s_t,a_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries. The model allows for easy interpretation of non-zero initial balance, however in our experiment we define $s^5_0=0$.  
 
-\paragraph{Reward function}
+
+
+\subsection{Reward function}
 The FCF model in our example, and actually in all projects in the class of facilities with simple I/O process, is fairly straightforward.
 
-First, we account for the fixed price of maintenance, which in our case is 3 EUR/MW of installed capacity for each hour. This price is lowered to 1 EUR/MW when the plant is mothballed. 
+First, we account for the fixed price of maintenance $C_m$, which in our case is $C_m=6$ EUR/MW of installed capacity for each hour. 
 
-Then, conditioned on the action of running thee facility, we account for commodity input costs (here gas and CO2). Finally, we add the profit from selling our product on the market and the computation for FCF is complete. 
+Then, conditioned on the action of running the facility, we account for commodity input costs (here gas and CO2). Finally, we add the profit from selling our product on the market and the computation for FCF is complete. 
 
 The mathematical expression of the sentences above can be presented as:
  
- \begin{equation}
- 	FCF(s_t,a_t) = (s_t^5\cdot 200)\cdot(3-2\cdot s_t^6)) + I_{\{1,2\}}(a_t)(s_t^1 -( s^2_t+s_t^3))\cdot s_t^5 \cdot 200\cdot h_m,
+ \begin{equation}\label{eq:fcf_function}
+  	FCF(s_t,a_t) =s_t^4 \cdot \Big[-C_m + I_{\{1,2\}}(a_t)\cdot (s_t^3 - s^1_t - s_t^2)\Big]\cdot 200 \cdot h_m
  \end{equation}
- where $h_m=720$ is a constant representing hours in month, not accounting for the changes in moth lengths. 
+ where $h_m=720$ is a constant representing approximation of hours in month, not accounting for the changes in month lengths. 
 
-As discussed earlier, the optimal strategy is not being optimized for the expected cumulative FCF, but rather for the cumulative expected utility of its present equivalent. 
+\begin{remark}
+	As discussed earlier, the optimal strategy is not being optimized for the expected cumulative FCF, but rather each action optimizes the expected utility of the present cash equivalent in the current state. 
+\end{remark}
+
  
  \section{Approximate dynamic programming}
- In this section we will describe the setup of ADP algorithm used in our models. We are using the value iteration algorithm with linear value function approximation, which was in detail discussed in preliminaries. 
  
- To ensure the reproducibility of our experiment we need to present the initial value function approximation and its basis functions. The initial value of value function was set to $v_t(s) = 0$. 
+ In preliminaries we have discussed the algorithm for modelling the value function with some general function $v_f(s)=f(\phi_i(s))$. Now, as we have defined our problem, we are able to outline the specific model for our case. 
  
- The basis functions $\phi_i(s)$ represent the following logical units of our designed global state. 
- \begin{itemize}
- 	\item $\phi_1(s) = s^1-s^2-s^3$ - representing the different between prices of inputs and products; 
-   	\item $\phi_2(s) = s^5$ - installed capacity of the power plant;
- 	\item $\phi_3(s) = I_{\mathbb{R}_0^+}(s^9)$ - indicator of positive or negative balance; 
- 	\item $\phi_4(s) = s^4$ - representing the government support of renewables directly; 
- 	\item $\phi_5(s) = s^6$ - basically an$I$ function of mothballed ferature. 
- 	\item $\phi_6(s) = s^7+s^8$ - the sum of remaining months of each 200MW block.
- 	
- \end{itemize}
+ Based on the initial observations of state-utility pairs comming from the performed simulation (see algorithm \ref{alg:VFapp} step 10 and figure \ref{fig:PW_linear}) and the intuition that the FCF function \ref{eq:fcf_function} gives us, we have decided to model the value function with a model of three picewise linear models with one breaking point $x_{i,t}, y_{i,t}$: 
+ 
+\begin{equation}\label{eq:VFmodel}
+	v_t(s) = \sum_{i} I_{i}(s^4) PW(s^3-s^2-s^1, k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t}), 
+\end{equation}
+where $I_i$ is an identificator function of installed capacity $s^4$, and $k_{i,t}^1$,  $k_{i,t}^2$ the slopes of the piecewise linear function model $PW$. For a better illustration, we present an example of such model fitted to the real data. figure \ref{fig:PW_linear}.
 
-The final algorithm that is used to determine the final parameters $\theta_{i,t}$ for each of the experiment setup can be described as: 
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 0.7]{Images/pw_linear_example.png}
+		\caption{Example of a pw linear fit.} 
+		\label{fig:PW_linear}
+	\end{center}
+\end{figure}
+ 
+ 
+This model effectivelly reflects only two variables, the installed capacity of the power plant, reflected by the choice of three models and generalized "spark spread" $s_t^3-s_t^2-s_t^1$ which reflects how much money is being made by running the plant with the current costs of inputs and the market price of power. 
+
+The value function in each time epoch $t$ can thus can be represented by tvelwe variables $k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t}$ for $i \in \{1,2,3\}. $
+
+To determine these parameters for our example, we will use the ADP algorithm of value iteration, which we describe in general and then we will discuss the details of individual steps. 
 
 \begin{algorithm}
-	\caption{Value function approximation algorithm}\label{alg:SingleKnown}
+	\caption{ADP value iteration algorithm}\label{alg:VFapp}
 	\begin{algorithmic}[1]
-		\Require{$xxxx$}
-		\State$ xxxx$ \Comment{yyyy}
-		\While{$t\ne 0$}
-		\For{ each $a in b $}
-		\State $ahoj$ \Comment{ahoj}
+		\Require{$v_{300}(s)$}
+		\State Prepare empty list $L$ for vf model parameters
+		\For{ t $\in (299,298,...0)$} \Comment{Backward epoch induction}
+			\State Prepare state sample $S_t$ \Comment{See paragraph state sampling}
+			\State Declare empty list of state utility pairs $l$
+				\For{$s \in S_t$}
+					\For{$a \in a(s)$} \Comment{All allowed actions in given state}
+						\State\parbox[t]{.5\linewidth}{Evaluate the expected utility of an action $a $, $u_a$ given $v_{t+1}$ approximation} \Comment{See expected utility paragraph}
+					\EndFor
+					\State Determine $\max_{a \in a(s)}u_a = u$.
+					\State Save $(s,u)$ pair in a list $l$.
+				\EndFor
+			\State Fit the $(s,u)$ pairs from $l$ to the model described by equation \ref{eq:VFmodel}
+			\State Save the fit parameters  $k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t}$ for all $i \in \{1,2,3\}$ in a list $L$
 		\EndFor
-		\State $t \gets t-1$
-		\EndWhile
-		\State $xxxx$, \Comment{Deriving the optimal policy}
-		\State	\Return{$\theta_{i,t}$}
+		\State	\Return{$L$}
 	\end{algorithmic}
 \end{algorithm}
 
-The final valuation of the project is then determined by the function: 
-\begin{equation}
-v_0(s_0) = \sum_{i} \theta_{i,0} \cdot \phi_{i}(s_0),
-\end{equation} 
+\paragraph{Last VF}
+For the consistency in notation, there is a need for definition of the value function in the last epoch, where no action is possible anymore. Since the value function represents the metric of expected reward in the future, its value is 0. In our case the $v_{300}$ is represented by the same model shown in equation \ref{eq:VFmodel} with all parameters equal to 0. 
 
+\paragraph{State sampling}
+In the third step of our algorihtm, we define a state sample. This state sample serves the purpose to reasonably cover the uncountable state space with finite number of values. In this thesis, we create the sample by making samples of individual elementary states which are then randomly put together creating a random realization of a global state. 
+
+In the following table, we describe the distributions out of which the elementary realizations are taken. 
+\begin{center}
+	\label{Table:sample_values}
+	\begin{tabular}{|l |m{4cm}|} 
+		\hline
+		Elementary state&	Distribution  \\  
+		\hline
+		Gas price & Uniform(0,30) \\ 
+		\hline
+		CO2 price  & Uniform(0,40)  \\
+		\hline
+		Power price & Uniform(10,80)\\
+		\hline	
+		Number of blocks & $p(s^4=0)=0.3$ \newline  $p(s^4=1)=0.35$ \newline $p(s^4=2)=0.35$ \\
+		\hline	
+		Balance& Uniform(-60M, 60M), \\
+		\hline	
+	\end{tabular}
+\end{center}
+
+All the random variables are generated by python llibrary numpy and the sample size was chosen as $|S_t|=100$.
+
+\paragraph{Expected utility}
+In step 7 of the algorithm \ref{alg:VFapp}, we want to assign individual action $a$ in state $s$ the expected utility. This assignment is made with the help of the equation \ref{eq:third_approximation}, respective its part: 
+\begin{equation}\label{eq:exp_util}
+	\int_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^d\right)\right) d s_t,
+\end{equation}
+which was adjusted for our continuous case, changing the sum for an integration. 
+
+To compute this expression we use a simple numerical integration technique. Based on the state in which we are in $s_t$ and the transition probability function $p(s)$ defined above we simulate chosen number of state evolutions, here $n=100$. Then the results of the numerical integration is the average of the individual utilities of PCEs of the realizations $s_{t+1}$..
+
+
+\paragraph{Model fitting}
+In step 10 of our ADP algorithm the data from list $l$ are being fitted by the model described by the equation \ref{eq:VFmodel}. We do this in reality by fitting three individual subsets, one for each of the plant states, by the pw linear function with one breaking point. The individual fits are done with the help of python library lmfit which is using the least square evaluation metric. 
+
+
+\section{Optimal strategy performance}
+Now, that we have the estimation of the value funciton in our hands, we are able to value the project. The only thing that we need to do, is to insert the chosen initial state $s_{init} = (25,10,37,0,0)$ defined above by parts into the model of $v_0(s_{init})$, which gives us the result of 349M EUR. 
+
+Now, we want to verify the sensibility of this result by simulation of the actuall decision making process and comparing it with some baseline strategies. Let us first define these strategies and then the simulation algorithm according to which we will compare them to the optimal strategy. 
+
+\paragraph{Baseline strategies} 
+\begin{itemize}
+	\item Strategy $B_1$ builds two blocks of the powerplant in time epoch 0 and 1 and then runs them no matter all the other factors.
+	\item Strategy $B_2$ builds two blocks of the power plant similarly to strategy $B_1$ but it runs the plant, only if the prices are favorable, meaning $s_t^3-s_t^2-s_t^1-C_m>0$. 
+	\item Strategy $B_3$ does not build the blocks righ away, but waits for more favorable market states than the $s_{init}$ provides. It builds new block only when the generalized spark price rises above arbitrarily chosen amount of 40 EUR ($s_t^3-s_t^2-s_t^1-C_m>40$). The rule for running the installeed capacity remains the same as for the strategy $B_2$
+\end{itemize}
+
+\paragraph{Simulation algorithm}
+In this paragraph we will describe the simulation of the decision making upon which we compare the performance of our optimal strategy and the baseline strategies $B_i$ $i \in \{1,2,3\}$.
+
+
+\begin{algorithm}
+	\caption{Strategy performance algorithm}\label{alg:Simulation}
+	\begin{algorithmic}[1]
+		\Require{Strategy $B$, $r_r$, $r_b$} \Comment {Baseline  vf approximation based}
+		\State Define intitial state $s_0 = (25,10,37,0,0)$
+		\For{ t $\in \{0,1,...299\}$} 
+			\State Determine action $a_t$ in state $s_t$ according to strategy $B$ \Comment{See determine actions below}
+			\State Compute $s_{t+1}$ realization from the transition probability function $p$ and $s_t$
+		\EndFor
+		\Return PCE($s_{300}^5$, $r_r$, $r_b$) \Comment{The PCE of final balance of the project}
+	\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Determining actions}
+The general step 3 in the algorithm differs based on the type of strategy. The actions of baseline strategies are clearly defined, however the action of the optimal strategy computed by the ADP algorithm needs to be computed again. 
+
+The action taken in the case of optimal strategy is determined as the action with the highest expected utility, computed as numerical approximation of the equation \ref{eq:exp_util} with 100 numerical intregration samples as before. 
+
+\subsection{Results - initial setup} 
+Now, we are able to use the algorithm \ref{alg:Simulation} to compare the optimal strategy to the baseline strategies. We do this by running the simulations mulitple (3000) times and comparing the average gains (in terms of PCE) of each strategy, a Monte Carlo approach. The results of the simulations can be seen in figure \ref{fig:Results_init}. 
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 0.65]{Images/MT_results_1.pdf}
+		\caption{Comparison of average PCE equivalents of individual strategies, realization histograms and averages with initial settings.} 
+		\label{fig:Results_init}
+	\end{center}
+\end{figure}
+
+
+
+\subsection{Results - increased volatiltiy}
+The second part of the simulation is exactly the same as the firs part, the only change is in increse of all price volatilities by 20\% as can be seen in table \ref{Table:init_values}. The resuls of this simualtion can be seen in figure \ref{fig:Results_increased}, while the comparison of individual results for both cases can be found in table \ref{Table:Result_comparison}
+ 
+ 
+ 
+ \begin{figure}[htb]
+ 	\begin{center}
+ 		\includegraphics[scale = 0.65]{Images/MT_results_2.pdf}
+ 		\caption{Comparison of average PCE equivalents of individual strategies, increased volatility.} 
+ 		\label{fig:Results_increased}
+ 	\end{center}
+ \end{figure}
  
 
-\section{Sensitivity towards potential action set}
-<In this section we will focus on the effects of adding managerial actions on the valuation, in both complexity of computation and results> 
+ 	\begin{table}
+ 		\begin{center}
+ 			\label{Table:Result_comparison}
+ 	\begin{tabular}{|l |r |r |r |r|} 
+ 		\hline
+ 		Setup\ Strategy &	Baseline 1 & Baseline 2 & Baseline 3 & Optimal strategy  \\  
+ 		\hline
+ 		Initial setup & -152M & 116M & 229M & 317M \\ 
+ 		\hline
+ 		Increased volatility  & -110M & 183M & 323M & 406M \\
+ 		\hline
+ 	\end{tabular}
+ 	\caption{Comparison of PCE for different strategies and settings.}
+ 	 \end{center}
+ 	\end{table}
 
-<We will add two levels of possible managerial actions and we will investigate the changes> 
-
-\subsection{Action set 1}: 
-<We are adding these types of actions to the model> 
-
-<The reward function changes in this way> 
-
-<The probability function changes in this way> 
-
-<Results>
-
-\subsection{Action set 2}
-
-<The reward function changes in this way> 
-
-<The probability function changes in this way> 
-
-<Results>
-
-\subsection{Action set 3}
  
- <The reward function changes in this way> 
  
- <The probability function changes in this way> 
  
- <Results>
  
- \section{Sensitivity toward time epoch granularity}
-<Now we will study the sensitivity of the valuation for the length of the time epoch> 
-
-<The structure for this model is the same as in example ... above, because <reason>> 
-
-<We will change the time set to <Mathematical expression>> 
-
-<Results> 
-
-With this result we finish the chapter of experiments. Its results and  implications will be discussed in the next chapter. 
-
 
 \chapter{Discussion}
-In this chapter we will discuss both the results of the 6 variations of a single project from chapter 3 and its theoretical background from the Chapter 2. 
+We believe that in the presented experiments, we have shown the usage of the SDT-based valuation technique algorithm on an example with a reasonable complexity. We have managed to cope with the uncountable state space caused by the assumption of continuous prices and also with the modelling of approximate value functions guided by the theory of ADP. 
 
-Comparing the results of different granularity of … we can state that … 
+The economical truths that we wanted to preserve from the field of capital investment bring after the experiment mixed feelings. The notion of PCE and it usage in the experiment seems to make a logical sense. However the notion of utility and risk-aversion of investors might make a better sense in the evaluation of the project as a whole. The usage of utility will be discussed in more detail below. 
 
-Looking back at the formulation … there is a potential for improvement in … 
+\section{Value function approximation}
+In the first attempts to construct the experiment for this thesis, we came up with much more complex example than the one finally presented. There were 9 elementary states, concerning for example the support of the government of renewable sources of energy which influenced the future volatility of the power prices. We also firsly introduced actions like mothballing or selling the plant for salvage value. From the study of value funciton approximations it seemed like that it will be enought to use only the linear model and choose good basis functions. But we were wrong. 
 
-With the newly obtained knowledge we can state that the new valuation technique helps with … and is more general than the techniques used nowadays. All this while preserving … and hopefully not exceeding the mathematical capabilities of the potential users. 
+The complexity and non-linearity of the value functions is seen in the final simplified example too. It is clear now, that the option-like pattern appears, but what the future users need to keep in mind is that the complexity of the project that is to be valued will be reflected in the complexity of the value function model. 
 
-\chapter{Conclusions}
+In our case, three piecewise linear models were enough to reasonably cover the state space, but for a more complex models, there might not be such a clear patterns as we observed in our example. 
+
+Our final choice of the example was thus simplified, so that the complexity of modelling the value funciton would not take to much attention from the main message which is the illustration of the valuation algorithm itself. 
+
+We would like to raise a concern about the possible future adoption of the algorithm from the capital investment companies due to the complexity of the value function modelling for more real-life complex investments. 
+
+\section{Usage of utiltiy} 
+In this thesis, we wanted to preserve the notion of risk-averse investors. We did this by making the optimal decision strategy the one that maximizes the expected utility of the investor. However, when we thought deeper about the global view of investors, the real decision makers, the utility function may be used a little differently. 
+
+We have used the utility funciton for decisions on the micro-level, when the project is being further managed. However, in reality, the group of people that make the investment decision does not usually make the further management of the project. 
+
+On the macro level, the final valuation of a project is usually used for comparison to other investment opportunities and we believe that this is where the utility function should come into the picture. 
+
+When looking at the results of our simulaiton, we for example see that the baseline strategy B3 is more conservative than the optimal one we derived from our algorithm. Here, we can easily imagine a very risk-averse investor which would prefer the results of strategy B3 over the optimal strategy we have derived. 
+
+Thus, we believe there might be two utility adjustments, first on the micro-level, where the manager of the plant optimizes the utility of each action. The second utility adjustment for the valuation is for the macro level, where the board of decision makers will compare individual projects between each other.
+
+\section{Computational complexity}
+In the section ... we have talked about the computational complexity of dynamic programming. For the setup of the experiment we made (uncountable state space) the DP approach is not even theoretically possible, but wee would still like to address the computational complexity and the challenges our algorithm faces. 
+
+We needed to compute 3 models for each of 300 time epochs. For each model we needed to have 100 state samples to cover the state space reasonably. For each state we needed to numerically compute the expected utility which was in a for of integral, to which we have also used 100 integral samples. This results in a 90 000 of state-utility pairs and 9M of integral samples created as an evolution of state with a lenght 5. The computations took several hours on a 2-core device with  16GM of RAM, where it needs to be said that the code was optimized without a special care. 
+
+This is to say, that more complex valuation problems, might also bring with them the need for either faster hardware, or better techniques in numerical approximation of integrals and/or more robust models for the value function approximation. 
+
+
+
+\section{Experimental results}
+Even though the main focus of the experiments was to present a reasonable illustration of the valuation algorithm we can also see the individual ROA narratives in the results. 
+
+First is the notion that uncertainty brings more value to the option-like investment. We can see this being confirmed by the higher expected PCE values for the second part of our experiment, where we increased the volatility of commodity prices. 
+<Why is there an increase in the strategy B1, that should maybe not be there> 
+
+By observing the shapes of histograms of different strategies we can also observe the narative of ROA that "options have value".  The baseline strategy B1 factually represents no options in ROA sense, we simply build the plant and run it until the end of observation period. 
+
+The baseline strategy B2 represents the option to not run the plant when the market prices are not favorable. We can see that this option has a significant value, bringing the value of a given project from negative values to positive. 
+
+The baseline strategy B3 represents the combination of time option (waiting for favorable commodity prices) and the option from strategy B2. We see that for our initial state, this option also brings significant value to the project. 
+
+The final remark to the experimental results is that our intuition says that the baseline strategy B3 could be a very good approximation for the optimal strategy derived by our algorithm with a better threshold than 40 EUR. The idea is that for our simple case, the optimal strategy simply finds the best thresholds to build the first and second block. However, in comparison to B3, the optimal strategy presumably also considers the epochs left until the 300 threshold. 
+
+
+\chapter{Conclusion}
 The core message of this thesis is to interpret the problem of project valuation in the form of stochastic decision making. The contributions of the newly presented valuation algorithm in contrast to already existing techniques are: 
 \begin{itemize}
 	\item  Usage of general distributions

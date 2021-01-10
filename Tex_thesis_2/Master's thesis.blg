@@ -85,45 +85,45 @@ Warning--empty journal in Amp:17
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
 Warning--can't use both author and editor fields in Web:09
-You've used 44 entries,
+You've used 45 entries,
             2118 wiz_defined-function locations,
-            774 strings with 9872 characters,
-and the built_in function-call counts, 11351 in all, are:
-= -- 1074
-> -- 454
+            780 strings with 9970 characters,
+and the built_in function-call counts, 11564 in all, are:
+= -- 1096
+> -- 461
 < -- 2
-+ -- 191
-- -- 140
-* -- 674
-:= -- 1940
-add.period$ -- 131
-call.type$ -- 44
-change.case$ -- 181
++ -- 194
+- -- 142
+* -- 682
+:= -- 1981
+add.period$ -- 135
+call.type$ -- 45
+change.case$ -- 185
 chr.to.int$ -- 0
-cite$ -- 63
-duplicate$ -- 504
-empty$ -- 980
-format.name$ -- 140
-if$ -- 2364
+cite$ -- 64
+duplicate$ -- 514
+empty$ -- 997
+format.name$ -- 142
+if$ -- 2407
 int.to.chr$ -- 0
-int.to.str$ -- 44
-missing$ -- 60
-newline$ -- 218
-num.names$ -- 82
-pop$ -- 274
+int.to.str$ -- 45
+missing$ -- 61
+newline$ -- 224
+num.names$ -- 84
+pop$ -- 277
 preamble$ -- 1
-purify$ -- 158
+purify$ -- 161
 quote$ -- 0
-skip$ -- 328
+skip$ -- 335
 stack$ -- 0
-substring$ -- 487
-swap$ -- 59
+substring$ -- 492
+swap$ -- 60
 text.length$ -- 2
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 138
+type$ -- 142
 warning$ -- 19
-while$ -- 102
-width$ -- 46
-write$ -- 451
+while$ -- 104
+width$ -- 47
+write$ -- 463
 (There were 13 error messages)

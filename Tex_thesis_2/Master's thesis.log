@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  5 DEC 2020 17:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 JAN 2021 15:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -943,38 +943,38 @@ LaTeX Info: Redefining \selectfont on input line 129.
 <Images/TITLE/cvut.pdf, id=1, 1128.215pt x 931.48pt>
 File: Images/TITLE/cvut.pdf Graphic file (type pdf)
 <use Images/TITLE/cvut.pdf>
-Package pdftex.def Info: Images/TITLE/cvut.pdf  used on input line 151.
+Package pdftex.def Info: Images/TITLE/cvut.pdf  used on input line 150.
 (pdftex.def)             Requested size: 85.35272pt x 70.46915pt.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 153.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 152.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 153.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 152.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 153.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 152.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 153.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 152.
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 153.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 152.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 153.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 152.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/utxsyc.fd
@@ -983,7 +983,7 @@ File: utxsyc.fd 2000/12/15 v3.1
 <Images/TITLE/fjfi.pdf, id=2, 1239.63126pt x 1083.04625pt>
 File: Images/TITLE/fjfi.pdf Graphic file (type pdf)
 <use Images/TITLE/fjfi.pdf>
-Package pdftex.def Info: Images/TITLE/fjfi.pdf  used on input line 162.
+Package pdftex.def Info: Images/TITLE/fjfi.pdf  used on input line 161.
 (pdftex.def)             Requested size: 85.34549pt x 74.565pt.
  [1
 Non-PDF special ignored!
@@ -1008,64 +1008,64 @@ s/TITLE/cvut.pdf> <./Images/TITLE/fjfi.pdf>] [2]
 <Images/zadaniMT.pdf, id=21, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 207.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 207.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <Images/zadaniMT.pdf, id=24, page=1, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 207.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 207.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [3]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 207.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 207.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 1>
-Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 208.
+Package pdftex.def Info: Images/zadaniMT.pdf , page1 used on input line 207.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [4 <./Images/zadaniMT.pdf>] [5]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 223.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf>
-Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf  used on input line 223.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <Images/zadaniMT.pdf, id=52, page=2, 597.50829pt x 845.0471pt>
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [6]
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Images/zadaniMT.pdf Graphic file (type pdf)
 <use Images/zadaniMT.pdf, page 2>
-Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 224.
+Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [7 <./Images/zadaniMT.pdf>] [8] [9] [10] [11] [12]
 (./Master's thesis.toc [13
@@ -1082,26 +1082,26 @@ Underfull \vbox (badness 1762) has occurred while \output is active []
  [15
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 357.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 356.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 357.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 356.
  [16]
 Chapter 2.
 [17
 
 ] [18] [19] [20]
 LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 591.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 590.
  [21] [22] [23] [24] [25] [26]
 <Images/UF.png, id=129, 637.38126pt x 477.785pt>
 File: Images/UF.png Graphic file (type png)
 <use Images/UF.png>
-Package pdftex.def Info: Images/UF.png  used on input line 836.
+Package pdftex.def Info: Images/UF.png  used on input line 835.
 (pdftex.def)             Requested size: 446.16383pt x 334.44722pt.
  [27] [28 <./Images/UF.png>]
 Chapter 3.
@@ -1110,69 +1110,111 @@ Chapter 3.
 ] [30] [31] [32] [33]
 
 Package natbib Warning: Citation `AmrTri:94' on page 34 undefined on input line
- 998.
+ 997.
 
 [34] [35] [36] [37] [38
 
 ]
 Chapter 4.
-[39] [40] [41] [42]
-Overfull \hbox (11.63727pt too wide) in paragraph at lines 1304--1305
-\T1/txr/m/n/10.95 adding a re-al-iza-tion of a ran-dom vari-able with three out
--comes $\OMS/txsy/m/n/10.95 f^^@\OT1/txr/m/n/10.95 1\OML/txmi/m/it/10.95 ; \OT1
-/txr/m/n/10.95 0\OML/txmi/m/it/10.95 ; \OT1/txr/m/n/10.95 1\OMS/txsy/m/n/10.95 
-g\OML/txmi/m/it/10.95 :$ \T1/txr/m/n/10.95 with prob-a-bil-i-ties $\OMS/txsy/m/
-n/10.95 f\OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/10.95 02\OML/tx
-mi/m/it/10.95 ; \OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/10.95 94
-\OML/txmi/m/it/10.95 ; \OT1/txr/m/n/10.95 0\OML/txmi/m/it/10.95 :\OT1/txr/m/n/1
-0.95 04\OMS/txsy/m/n/10.95 g$\T1/txr/m/n/10.95 .
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [39]
+[40]
+Overfull \hbox (8.35078pt too wide) in paragraph at lines 1182--1183
+[]\T1/txr/m/n/10.95 In this ex-per-i-ment, we con-sider four man-age-rial ac-ti
+ons. They could be un-der-stood as two-dimensional,
  []
 
-[43] [44] [45] [46]
-Chapter 5.
-[47
+[41] [42] [43]
+<Images/pw_linear_example.png, id=188, 448.67625pt x 270.00874pt>
+File: Images/pw_linear_example.png Graphic file (type png)
+<use Images/pw_linear_example.png>
+Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1311.
 
-] [48
+(pdftex.def)             Requested size: 314.07123pt x 189.00482pt.
+
+Overfull \hbox (0.45236pt too wide) in paragraph at lines 1320--1321
+[]\T1/txr/m/n/10.95 The value func-tion in each time epoch $\OML/txmi/m/it/10.9
+5 t$ \T1/txr/m/n/10.95 can thus can be rep-re-sented by tvelwe vari-ables $\OML
+/txmi/m/it/10.95 k[]; k[]; x[]; y[]$
+ []
+
+
+Underfull \vbox (badness 1043) has occurred while \output is active []
+
+ [44 <./Images/pw_linear_example.png>] [45]
+<Images/MT_results_1.pdf, id=196, 679.72383pt x 336.73932pt>
+File: Images/MT_results_1.pdf Graphic file (type pdf)
+<use Images/MT_results_1.pdf>
+Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1428.
+(pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
+
+
+Package caption Warning: \label without proper reference on input line 1452.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `Table:Result_comparison' on page 46 undefined on inpu
+t line 1437.
+
+<Images/MT_results_2.pdf, id=197, 679.72383pt x 336.73932pt>
+File: Images/MT_results_2.pdf Graphic file (type pdf)
+<use Images/MT_results_2.pdf>
+Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1443.
+(pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
+[46] [47 <./Images/MT_results_1.pdf> <./Images/MT_results_2.pdf
+
+pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Images/MT_results_2.pdf): 
+PDF inclusion: multiple pdfs with page group included in a single page
+>] [48
+
+]
+Chapter 5.
+[49] [50
 
 ]
 Chapter 6.
-(./Master's thesis.bbl [49] [50
+(./Master's thesis.bbl [51] [52
 
-] [51] [52])
+] [53] [54])
 
 Package natbib Warning: There were undefined citations.
 
-[53] (./Master's thesis.aux) ) 
+[55] (./Master's thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 24508 strings out of 492616
- 437473 string characters out of 6129482
- 573001 words of memory out of 5000000
- 28039 multiletter control sequences out of 15000+600000
+ 24537 strings out of 492616
+ 438161 string characters out of 6129482
+ 573185 words of memory out of 5000000
+ 28065 multiletter control sequences out of 15000+600000
  621194 words of font info for 150 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
- 43i,18n,77p,904b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvi
-ps/base/8r.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/r
-txb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr
-/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive
-/2019/texmf-dist/fonts/type1/public/txfonts/rtxsc.pfb></usr/local/texlive/2019/
-texmf-dist/fonts/type1/public/cm-super/sfbx2074.pfb></usr/local/texlive/2019/te
-xmf-dist/fonts/type1/public/cm-super/sfrm1095.pfb></usr/local/texlive/2019/texm
-f-dist/fonts/type1/public/cm-super/sfss1095.pfb></usr/local/texlive/2019/texmf-
-dist/fonts/type1/public/txfonts/txex.pfb></usr/local/texlive/2019/texmf-dist/fo
-nts/type1/public/txfonts/txsy.pfb></usr/local/texlive/2019/texmf-dist/fonts/typ
-e1/public/txfonts/txsyb.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pub
-lic/txfonts/txsyc.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times
-/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.p
-fb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/l
-ocal/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texli
-ve/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (53 pages, 301273 bytes).
+ 43i,18n,77p,905b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb></usr/local/texlive/
+2019/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/txfonts/rtxr.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/txfonts/rtxsc.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publi
+c/cm-super/sfbx2074.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/
+cm-super/sfrm1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm
+-super/sfss1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfo
+nts/txex.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txs
+y.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/txfonts/txsyb.pfb>
+</usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/loca
+l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
+f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fon
+ts/type1/urw/times/utmri8a.pfb>
+Output written on "Master's thesis.pdf" (55 pages, 374743 bytes).
 PDF statistics:
- 274 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
+ 366 PDF objects out of 1000 (max. 8388607)
+ 199 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 51 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 
