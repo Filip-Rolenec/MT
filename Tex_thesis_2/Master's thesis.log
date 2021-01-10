@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 JAN 2021 15:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 JAN 2021 17:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1074,54 +1074,49 @@ Package pdftex.def Info: Images/zadaniMT.pdf , page2 used on input line 223.
 \tf@toc=\write3
 \openout3 = `"Master's thesis.toc"'.
 
- [14]
-Chapter 1.
-
-Underfull \vbox (badness 1762) has occurred while \output is active []
-
- [15
+ [14] [15
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+txr on input line 356.
+LaTeX Font Info:    Try loading font information for OMS+txr on input line 358.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/txfonts/omstxr.fd
 File: omstxr.fd 2000/12/15 v3.1
 )
 LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 356.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 358.
  [16]
-Chapter 2.
+Chapter 1.
 [17
 
 ] [18] [19] [20]
 LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 590.
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 592.
  [21] [22] [23] [24] [25] [26]
 <Images/UF.png, id=129, 637.38126pt x 477.785pt>
 File: Images/UF.png Graphic file (type png)
 <use Images/UF.png>
-Package pdftex.def Info: Images/UF.png  used on input line 835.
+Package pdftex.def Info: Images/UF.png  used on input line 837.
 (pdftex.def)             Requested size: 446.16383pt x 334.44722pt.
  [27] [28 <./Images/UF.png>]
-Chapter 3.
+Chapter 2.
 [29
 
 ] [30] [31] [32] [33]
 
 Package natbib Warning: Citation `AmrTri:94' on page 34 undefined on input line
- 997.
+ 999.
 
 [34] [35] [36] [37] [38
 
 ]
-Chapter 4.
+Chapter 3.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [39]
 [40]
-Overfull \hbox (8.35078pt too wide) in paragraph at lines 1182--1183
+Overfull \hbox (8.35078pt too wide) in paragraph at lines 1184--1185
 []\T1/txr/m/n/10.95 In this ex-per-i-ment, we con-sider four man-age-rial ac-ti
 ons. They could be un-der-stood as two-dimensional,
  []
@@ -1130,11 +1125,11 @@ ons. They could be un-der-stood as two-dimensional,
 <Images/pw_linear_example.png, id=188, 448.67625pt x 270.00874pt>
 File: Images/pw_linear_example.png Graphic file (type png)
 <use Images/pw_linear_example.png>
-Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1311.
+Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1313.
 
 (pdftex.def)             Requested size: 314.07123pt x 189.00482pt.
 
-Overfull \hbox (0.45236pt too wide) in paragraph at lines 1320--1321
+Overfull \hbox (0.45236pt too wide) in paragraph at lines 1322--1323
 []\T1/txr/m/n/10.95 The value func-tion in each time epoch $\OML/txmi/m/it/10.9
 5 t$ \T1/txr/m/n/10.95 can thus can be rep-re-sented by tvelwe vari-ables $\OML
 /txmi/m/it/10.95 k[]; k[]; x[]; y[]$
@@ -1147,21 +1142,21 @@ Underfull \vbox (badness 1043) has occurred while \output is active []
 <Images/MT_results_1.pdf, id=196, 679.72383pt x 336.73932pt>
 File: Images/MT_results_1.pdf Graphic file (type pdf)
 <use Images/MT_results_1.pdf>
-Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1428.
+Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1430.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
 
 
-Package caption Warning: \label without proper reference on input line 1452.
+Package caption Warning: \label without proper reference on input line 1454.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `Table:Result_comparison' on page 46 undefined on inpu
-t line 1437.
+t line 1439.
 
 <Images/MT_results_2.pdf, id=197, 679.72383pt x 336.73932pt>
 File: Images/MT_results_2.pdf Graphic file (type pdf)
 <use Images/MT_results_2.pdf>
-Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1443.
+Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1445.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
 [46] [47 <./Images/MT_results_1.pdf> <./Images/MT_results_2.pdf
 
@@ -1170,27 +1165,31 @@ PDF inclusion: multiple pdfs with page group included in a single page
 >] [48
 
 ]
-Chapter 5.
-[49] [50
+Chapter 4.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [49]
+[50] [51] [52
 
 ]
-Chapter 6.
-(./Master's thesis.bbl [51] [52
+Chapter 5.
+[53] (./Master's thesis.bbl [54] [55
 
-] [53] [54])
+] [56])
 
 Package natbib Warning: There were undefined citations.
 
-[55] (./Master's thesis.aux)
+[57] (./Master's thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 24537 strings out of 492616
- 438161 string characters out of 6129482
+ 24536 strings out of 492616
+ 438146 string characters out of 6129482
  573185 words of memory out of 5000000
- 28065 multiletter control sequences out of 15000+600000
+ 28064 multiletter control sequences out of 15000+600000
  621194 words of font info for 150 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,905b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1211,10 +1210,10 @@ l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (55 pages, 374743 bytes).
+Output written on "Master's thesis.pdf" (57 pages, 380368 bytes).
 PDF statistics:
- 366 PDF objects out of 1000 (max. 8388607)
- 199 compressed objects within 2 object streams
+ 373 PDF objects out of 1000 (max. 8388607)
+ 203 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

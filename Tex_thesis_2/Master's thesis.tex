@@ -283,7 +283,13 @@ my own work and I have listed all the used sources in the bibliography.
 \bigskip{}
 
 
-\noindent \emph{Abstrakt:} \textbf{BUDE DOPLNĚNO }
+\noindent \emph{Abstrakt:} \textbf{
+	
+	Investiční příležitosti jsou v současné době oceňovány pomocí řady algoritmů a metrik vzešlých z ekonomické teorie. Nejčastěji používaná metoda \textit{čisté současné hodnoty} (NPV) zohledňuje časovou hodnotu peněz a pro jednoduché projekty dává investorům velmi dobré odhady s minimálními požadavky na matematické znalosti. Složitější projekty, které v této práci chápeme jako projekty s vysokou mírou neurčitosti a existencí následných manažerských rozhodnutí, je možné oceňovat pomocí teorie \textit{reálných opcí} (ROA). Metoda ROA vychází z nedokonalé analogie oceňování finančních opcí a přiznává hodnotu možnostem změny projektového plánu. 
+	
+Tato práce má za cíl představit nový rámec pro oceňování investičních příležitostí, jejichž řízení je chápáno  jako stochastický rozhodovací problém. Tento rámec, umožňující využití desítek let výzkumu v oblasti stochastické rozhodovací teorie, pokrývá metody NPV a ROA, přičemž zjemňuje jejich předpoklady. Hlavní přínosy nového oceňovacího rámce jsou: možnost zodhlednění více zdrojů neurčitosti, modelování neurčitosti libovolnou distribucí, přímočaré začlenění bayesovského učení, modelování přístupu k riziku rozhodovacího subjektu a libovolný počet i druh povolených manažerských akcí. 
+	
+Nový rámec znatelně rozšiřuje třídu projektů ocenitelných s velkou přesností a lze ho chápat jako sjednocující zobecnění technik oceňování v podnikovém řízení.  }
 
 
 \bigskip{}
@@ -311,8 +317,14 @@ my own work and I have listed all the used sources in the bibliography.
 \bigskip{}
 
 
-\noindent \emph{Abstract:} \textbf{WILL BE ADDED}
-	
+\noindent \emph{Abstract:} \textbf{<Investments now are done with algorithms and economical theorems> 
+	<Most used is a simple NPV technique, but it does not take into account the value of the future possibility of altering the project> 
+	<The theory of real options analysis (ROA) tries to incorporate the value of such options within the economical framework> 
+	<The current ROA techniques have problem to cover more complex valuation problems, because they have limited abiility to incorporate multiple uncertain variables and different types of possible actions> 
+	< This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under unceratainty, while keeping the economical truths like time value of money and risk-aversion of investors> 
+	<SDT field is more mathematically rigorous and its decades of focus bring a lot to work with> 
+	<In this thesis we present a valuation algorithm that builds on the knowledge of SDT, covers the solutions that are being made by ROA and preserves the economical truths mentioned above> 
+	<We demonstrate the usage of the algoirithm on a specific example of valuation of a gas power plant, where the problem of uncountable state space is solved by the approximate dynamic programming technique of value function approximation, where we use piecewise linear models, to cover their option-like structure> 
 	
 \bigskip{}
 
@@ -330,18 +342,20 @@ my own work and I have listed all the used sources in the bibliography.
 \newpage{}
 
 
-\chapter{Historical background and research motivation}
+\chapter*{Historical background and research motivation}
+\addcontentsline{toc}{chapter}{Historical background and research motivation}  
+
 The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts \footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future. \cite{BerDeM:09} } and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options \footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant. \cite{BerDeM:09}}  and option trading are published by La Vega \cite{Veg:88}. 
 
-The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory\cite{YalHak:12}. 
+The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory \cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - the ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in the sense that he stresses the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - the ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in the sense that he stresses out the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
 
-The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03} Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
+The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03}, Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
 The valuation of project's free cash flows with the theory of ROA is in the economic world understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
 
-Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in-depth in section ... we identify three classes of ROA authors based on the level of analogy to the BSM model. 
+Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in-depth in section \ref{sec:ROA} we identify three classes of ROA authors based on the level of analogy to the BSM model. 
 
 In this thesis, we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}.\footnote{Second class utilizes only the no-arbitrage principle to determine the probabilities of the models.}  
 
@@ -349,13 +363,13 @@ Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic
 
 The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain-specific economical truths about investors' behavior and the way they perceive value.  Two main addressed concepts are the time value of money and the risk aversion of investors. 
 
-The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm will cover the classes of problems now solved by ROA and allow for new ones. 
+The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm covers the classes of problems now solved by ROA and allows for new ones. 
 
-The new SDT based valuation algorithm will enable: 
+The new SDT based valuation algorithm enables: 
 \begin{itemize}
 	\item seamless integration of multiple uncertainty sources;
 	\item integration of theoretically any probability distribution as a model of uncertain variables;
-	\item usage of a high number of possible actions, regardless of their nature; 
+	\item usage of a high number of possible actions (options), regardless of their nature; 
 	\item utilization of approximate dynamic programming tools for high-dimensional problems;
 	\item preservation of the economic truths as time value of money and the risk aversion of investors. 
 \end{itemize}
@@ -1520,34 +1534,40 @@ The final remark to the experimental results is that our intuition says that the
 
 
 \chapter{Conclusion}
-The core message of this thesis is to interpret the problem of project valuation in the form of stochastic decision making. The contributions of the newly presented valuation algorithm in contrast to already existing techniques are: 
-\begin{itemize}
-	\item  Usage of general distributions
-	\item  Theoretically any number and type of actions
-	\item ... 
-\end{itemize}
-
-Furthermore, the thesis copes with the problem of computational complexity, arising as a result of high-dimensional problems, with identifying a <ADP theory> as the best fitting algorithm from the class of ADP for the problem of project valuation.
-
-The new approach to project valuation is demonstrated on six variations of one project type, which show its real applicability in real world. First three examples confirm the expected sensitivity of the project’s value on the level of possible managerial actions, endorsing the idea that projects with higher degree of managerial action space have more value. The second trio of experiments shows how is the valuation sensitive on the choice of SDT framework. We conclude that … <probably not much> 
-
-The limitations of this approach are: 
-
-Finally, through the time of writing this thesis I have identified the following directions for further research as: 
+The core message of this thesis is to interpret the problem of project valuation in the form of stochastic decision making. We can declare that the aforementioned contributions of the developed algorithm have been succesfully presented by our experiment, most notably in contrast to the current valuation techniques:
 
 \begin{itemize}
-	\item ... 
+	\item The seamless integration oof multiple unceratinty sources;
+	\item The integration of continuous probability distribution models of variables; 
+	\item The easy representation of actions; 
+	\item Improved speed of computation by the usage of ADP algorithm to compute the value function approximaitons. 
+	\item Preservation of the economical truths. 
 \end{itemize}
 
+Furthermore, through the thesis we have discussed other relevant ideas about capital investment, where we believe that we are adding something new. This is the view on utility in the field, where we believe that the managers are influenced by thinking in terms of utility, only they do not call it that way. And, of course the notion of present cash equivalent PCE, where we argue that for each fcf vector, there is a value of present cash that the decision maker is logically indifferent to having instead of the proposed fcf vector. 
 
+We have demonstrated the discussed ideas and the valuation algorithm on an example of gas power plant valuation. The additional value of the experiment is in the confirmation of the ROA narratives, such as that options have value and that this value rises with the inner uncertainty of the project. 
 
+We have also outlined the limitations of our approach which apply for more complex projects such as: 
+\begin{itemize}
+	\item complexity of value function models 
+	\item numerical integration of more unceratin state evolutions
+	\item computational complexity driven by both points above
+\end{itemize}
 
+Finally, through the time of writing this thesis we have identified the following directions for further research as: 
 
+\begin{itemize}
+	\item Valuation of a more complex project in cooperation with an actual investment company. 
+	\item Sensitivity analysis of price volatilities in our example. 
+	\item Sensitivity analysis of the time granularity of decisions in our example. 
+	\item Model of investment with more complex internal processes than the simple I/O process. 
+	\item Deeper study of the macro vs micro optimization of the utility and its effects on consistency of decision making at individual levels of the investment. 
+\end{itemize}
 
 
 \pagestyle{plain}
 \bibliographystyle{plain}
 \bibliography{fr}
-
 
 \end{document}

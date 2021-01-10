@@ -1,14 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{CopAnt:01}
-
-
-\bibitem{HolLau:05}
-
-
-\bibitem{DamZro:19}
-
-
 \bibitem{AlsWan:20}
 Abdullah AlShelahi, Jingxing Wang, Mingdi You, Eunshin Byon, and Romesh Saigal.
 \newblock Data-driven prediction for volatile processes based on real option
@@ -100,6 +91,11 @@ Rachel Cary.
 \newblock The future of gas power.
 \newblock {\em Critical Market and Technology Issues}, 2012.
 
+\bibitem{CopAnt:01}
+Tom COPELAND and Vladimir Antikarov.
+\newblock Real options: A practitioner's guide.
+\newblock 01 2001.
+
 \bibitem{Cru:08}
 F.~Crundwell.
 \newblock {\em Finance for Engineers: Evaluation and Funding of Capital
@@ -117,6 +113,13 @@ R.K. Dixit and R.S. Pindyck.
 \newblock {\em Investment Under Uncertainty}.
 \newblock Princeton University Press, 2012.
 
+\bibitem{DamZro:19}
+Maurizio d’Amato, Sabina Zrobek, Malgorzata {Renigier Bilozor}, Marek
+  Walacik, and Giuseppe Mercadante.
+\newblock Valuing the effect of the change of zoning on underdeveloped land
+  using fuzzy real option approach.
+\newblock {\em Land Use Policy}, 86:365 -- 374, 2019.
+
 \bibitem{Gue:17}
 Manuel Guerra, Peter Kort, Cláudia Nunes, and Carlos Oliveira.
 \newblock Hysteresis due to irreversible exit: Addressing the option to
@@ -128,6 +131,11 @@ G.~Guthrie.
 \newblock {\em Real Options in Theory and Practice}.
 \newblock Financial Management Association Survey and Synthesis. Oxford
   University Press, 2009.
+
+\bibitem{HolLau:05}
+Charles~A Holt and Susan~K Laury.
+\newblock Risk aversion and incentive effects: New data without order effects.
+\newblock {\em American Economic Review}, 95(3):902--912, 2005.
 
 \bibitem{Jay:03}
 E.~T. Jaynes.
