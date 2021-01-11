@@ -80,7 +80,7 @@ strategies = [strategy_0, strategy_1, strategy_2, opt_strategy]
 uf_2_inv(opt_strategy.vfs[0].compute_value(initial_state))/1_000_000
 
 
-# In[ ]:
+# In[18]:
 
 
 results_final = {}
@@ -91,7 +91,7 @@ for i in range(len(strategies)):
     results_final[i]= results
 
 
-# In[ ]:
+# In[19]:
 
 
 def plot_results(results): 
@@ -130,7 +130,7 @@ def plot_results(results):
     plt.show()
 
 
-# In[ ]:
+# In[20]:
 
 
 plot_results(results_final)
