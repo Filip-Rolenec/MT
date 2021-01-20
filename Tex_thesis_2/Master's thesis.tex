@@ -283,15 +283,12 @@ my own work and I have listed all the used sources in the bibliography.
 \bigskip{}
 
 
-\noindent \emph{Abstrakt:} \textbf{
-	
-	Investiční příležitosti jsou v současné době oceňovány pomocí řady algoritmů a metrik vzešlých z ekonomické teorie. Nejčastěji používaná metoda \textit{čisté současné hodnoty} (NPV) zohledňuje časovou hodnotu peněz a pro jednoduché projekty dává investorům velmi dobré odhady s minimálními požadavky na matematické znalosti. Složitější projekty, které v této práci chápeme jako projekty s vysokou mírou neurčitosti a existencí následných manažerských rozhodnutí, je možné oceňovat pomocí teorie \textit{reálných opcí} (ROA). Metoda ROA vychází z nedokonalé analogie oceňování finančních opcí a přiznává hodnotu možnostem změny projektového plánu. 
-	
-Tato práce má za cíl představit nový rámec pro oceňování investičních příležitostí, jejichž řízení je chápáno  jako stochastický rozhodovací problém. Tento rámec, umožňující využití desítek let výzkumu v oblasti stochastické rozhodovací teorie, pokrývá metody NPV a ROA, přičemž zjemňuje jejich předpoklady. Hlavní přínosy nového oceňovacího rámce jsou: možnost zodhlednění více zdrojů neurčitosti, modelování neurčitosti libovolnou distribucí, přímočaré začlenění bayesovského učení, modelování přístupu k riziku rozhodovacího subjektu a libovolný počet i druh povolených manažerských akcí. 
-	
-Nový rámec znatelně rozšiřuje třídu projektů ocenitelných s velkou přesností a lze ho chápat jako sjednocující zobecnění technik oceňování v podnikovém řízení.  }
+\noindent \emph{Abstrakt:} Většina kapitálních investic do projektů je v dnešní době realizována za pomoci metrik ekonomické teorie. Nejpopulárnější metrika čisté současné hodnoty (NPV) je jednoduchá na výpočet a reflektuje časovou hodnotu peněz. Jednou z nevýhod NPV je její neschopnost zachytit hodnotu možných změn v projektu. 
 
+Snahou teorie reálných opcí (ROA) je zahrnout hodnotu těchto ``opcí`` do ocenění projektů za použití standardního ekonomického rámce. Domníváme se, že v současné ROA teorii neexistuje obecný algoritmus pro valuaci komplexních projektů, kterými zde myslíme projekty s více náhodnými veličinami a většim množstvím alternací projektů různého typu. 
 
+Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti stochastické teorie rozhodování (SDT). V této práci představujeme obecný valuační algoritmus, který staví na poznatcích z SDT, pokrývá problémy řešené současnou ROA teorií a navíc zachovává vliv ekonomických fenoménů jako je časová hodnota peněz a averze vůči riziku investorů. Použití jmenovaného algoritmu je představeno na problému valuace plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako po částech lineární funkce, tak aby odrážely opční strukturu projektových odměn. 
+ 
 \bigskip{}
 
 
@@ -317,19 +314,19 @@ Nový rámec znatelně rozšiřuje třídu projektů ocenitelných s velkou pře
 \bigskip{}
 
 
-\noindent \emph{Abstract:} \textbf{<Investments now are done with algorithms and economical theorems> 
-	<Most used is a simple NPV technique, but it does not take into account the value of the future possibility of altering the project> 
-	<The theory of real options analysis (ROA) tries to incorporate the value of such options within the economical framework> 
-	<The current ROA techniques have problem to cover more complex valuation problems, because they have limited abiility to incorporate multiple uncertain variables and different types of possible actions> 
-	< This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under unceratainty, while keeping the economical truths like time value of money and risk-aversion of investors> 
-	<SDT field is more mathematically rigorous and its decades of focus bring a lot to work with> 
-	<In this thesis we present a valuation algorithm that builds on the knowledge of SDT, covers the solutions that are being made by ROA and preserves the economical truths mentioned above> 
-	<We demonstrate the usage of the algoirithm on a specific example of valuation of a gas power plant, where the problem of uncountable state space is solved by the approximate dynamic programming technique of value function approximation, where we use piecewise linear models, to cover their option-like structure> 
+\noindent \emph{Abstract:} The majority of capital investment in projects is done with the help of economic valuation metrics. The most popular one is the net present value (NPV), which is simple and considers the time value of money. The major disadvantage of this metric is that it does not consider the value of future alternations of the project. 
+
+The theory of real option analysis (ROA) tries to incorporate the value of such ``options`` within the standard economic framework. To our best knowledge, the current state of ROA does not offer a unified valuation algorithm that would be able to cover valuations of more complex projects, such as those with multiple random variables or different types and a larger number of possible actions. 
+	
+This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under uncertainty from the stochastic decision theory (SDT).
+We present a general valuation algorithm that builds on the knowledge of SDT, covers the solutions proposed by ROA, and preserves the economic truths as time value of money and risk-aversion of investors.  
+This algorithm's usage is demonstrated on a problem of gas power plant valuation, where the problem of uncountable state space is solved via the approximate dynamic programming technique of value function approximation, where we use piecewise linear models to cover the option-like structure. 
+	
 	
 \bigskip{}
 
 
-\noindent \emph{Keywords:} Black-Scholes model, Dynamic programming, Net present value, Power industry, Project valuation,  Real option analysis, Stochastic decision control
+\noindent \emph{Keywords:} Black-Scholes model, Dynamic programming, Net present value, Power industry, Project valuation,  Real option analysis, Stochastic decision theory
 
 \newpage{}
 
@@ -345,23 +342,23 @@ Nový rámec znatelně rozšiřuje třídu projektů ocenitelných s velkou pře
 \chapter*{Historical background and research motivation}
 \addcontentsline{toc}{chapter}{Historical background and research motivation}  
 
-The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts \footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future. \cite{BerDeM:09} } and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options \footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant. \cite{BerDeM:09}}  and option trading are published by La Vega \cite{Veg:88}. 
+The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts\footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future \cite{BerDeM:09}.} and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options\footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant \cite{BerDeM:09}.}  and option trading were published by La Vega \cite{Veg:88}. 
 
 The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-price-winning Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory \cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - the ability to change the course of the project in the future. Myers' approach to the real options is mostly philosophical in the sense that he stresses out the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that part of the project's value is hidden in the form of real options - the ability to alter the project's course in the future. Myers' approach to the real options is mostly philosophical in the sense that he stresses out the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
 
-The idea of Real Option Analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03}, Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
+The idea of Real option analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Vollert \cite{Vol:03}, Pindyck \cite{DixPin:12} and Kulatilaka \cite{AmrKul:98}. 
 
 The valuation of project's free cash flows with the theory of ROA is in the economic world understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
 
 Through the study of the ROA state of the art, we have identified that there is a discrepancy in understanding what ROA actually is. As will be illustrated in-depth in section \ref{sec:ROA} we identify three classes of ROA authors based on the level of analogy to the BSM model. 
 
-In this thesis, we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}.\footnote{Second class utilizes only the no-arbitrage principle to determine the probabilities of the models.}  
+In this thesis, we focus on the second class of ROA authors represented by brilliant publications of Graeme Guthrie \cite{Gut:09} and Alexander Vollert \cite{Vol:03}\footnote{Second class utilizes only the no-arbitrage principle to determine the probabilities of used models.}.
 
 Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty \cite{Rol:18}, \cite{Rol:19}. When studying ROA it came only natural to understand the project valuation as an optimal decision making problem. 
 
-The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement domain-specific economical truths about investors' behavior and the way they perceive value.  Two main addressed concepts are the time value of money and the risk aversion of investors. 
+The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of stochastic decision theory (SDT). One of the challenges of this task is to implement the domain-specific economical truths about investors' behavior and the way they perceive value.  Two main addressed concepts are the time value of money and the risk aversion of investors. 
 
 The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm covers the classes of problems now solved by ROA and allows for new ones. 
 
@@ -374,14 +371,14 @@ The new SDT based valuation algorithm enables:
 	\item preservation of the economic truths as time value of money and the risk aversion of investors. 
 \end{itemize}
 
-To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal to zero, and the input-output transformation rate is constant. This class is a generalization motivated by an example of gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
+To illustrate the usage of the new SDT-based algorithm a valuation of a project from a selected class is performed. This class is denoted as \textit{facilities with simple input-output process models}. It covers all projects whose cycle time is equal to zero, and the input-output transformation rate is constant. This class is a generalization motivated by an example of a gas power plant valuation presented by Guthrie in \cite{Gut:09}. 
 
 
-The thesis is structured into 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economic concepts used in this thesis. Beginning with the declaration of mathematical notation, the chapter continues with key concepts of economic theory and a deeper description of the BSM model. The first chapter continues with a summary of the last decades in ROA research, focusing on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The remainder of the first chapter is reserved for key parts of stochastic decision theory. 
+The thesis is structured into 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economic concepts used in this thesis. Beginning with the declaration of mathematical notation, the chapter continues with key concepts of economic theory and a deeper description of the BSM model. The first chapter then follows with a summary of the last decades in ROA research, focusing on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The remainder of the first chapter is reserved for key parts of SDT. 
 
-Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project,and we limit these features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the second chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
+Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project, and we limit these features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the second chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
 
-Chapter 3 illustrates the new valuation algorithm from chapter 2 on an example of valuation of a facility with a simple input-output process model. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different granularity of the model structure and it is aimed to demonstrate the existence of trade-of between computational complexity and precision of computed results. 
+Chapter 3 illustrates the new valuation algorithm from chapter 2 on a valuation example of a facility with a simple input-output process model. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different granularity of the model structure and it is aimed to demonstrate the existence of trade-of between computational complexity and precision of computed results. 
 
 Chapter 4 discusses the new findings, both theoretical and observed from the performed experiments. 
 
@@ -398,9 +395,9 @@ Chapter 5 summarizes the thesis - reminds the motivation, underlines the main me
 
 
 \chapter{Preliminaries}
-To properly understand a mathematical text it is important to first define the used notions and symbolism. Since this thesis is based on many different authors, from both financial and mathematical world, a short unifying overview of the used theory is important. 
+To properly understand a mathematical text, it is essential first to define the used symbolism and notions. The previous statement's importance is especially true for this thesis, which was inspired by authors from both the financial and mathematical world. 
 
-The notation used in this thesis comes predominantly from the most influential authors in the respective fields of study: 
+The used notation comes predominantly from the most influential authors in the respective fields of study:  
 \begin{itemize}
 	\item general economy \cite{BerDeM:09};
 	\item real options \cite{Gut:09};
@@ -411,18 +408,18 @@ The notation used in this thesis comes predominantly from the most influential a
 
 
 \section{General mathematics}
-In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in a sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense?}, are represented with a tilde above the variable, i.e. $\tilde{x}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e. $x$. 
+In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in the sense of the standard Kolmogorov's probability theory \cite{Kol:60}\footnote{Does this citation make sense?}, are represented with a tilde above the variable, i.e., $\tilde{x}$. Realizations of random variables are denoted by the same letters as the random variable without the tilde, i.e., $x$. 
 
 \begin{definition}(Probability)
-	Let $\tilde{x}$ be a random discrete variable. Then $P(x)$ denotes a probability that the realization of $\tilde{x}=x$. Similarly if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density of the realization $\tilde{x}=x$. 
+	Let $\tilde{x}$ be a discrete random variable. Then $P(x)$ denotes a probability that the realization of $\tilde{x}=x$. Similarly, if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density of the realization $\tilde{x}=x$. 
 \end{definition}
 \begin{remark}
-	To rigorously unify the notation and simplify the formulas a Radon-Nikodým (RN) density \cite{Rao:87a} is introduced  with the notation $p(x)$ and the name ``probability density``. The dominating measure of this RN density is either the counting measure (in discrete case) or the Lebesgue measure (in continuous case). The notation $P(X)$ is reserved only for the cases when the discreteness of the argument needs to be emphasized. 
+	To rigorously unify the notation and simplify the formulas, a Radon-Nikodým (RN) density \cite{Rao:87a} is introduced  with the notation $p(x)$ and the name ``probability density``. The dominating measure of this RN density is either the counting measure (in discrete case) or the Lebesgue measure (in continuous case). 
 \end{remark}
 
-The last general definition is the definition of well known concept of conditional probability \cite{Jay:03}. 
-\begin{definition}(Conditional probability)
-	Let, depending on the context, symbol $p(x|y)$ represent the conditional probability density of a random variable variables. Then the $p(x|y)$ is defined as:
+The last general definition is the definition of a well-known concept of conditional probability \cite{Jay:03}. 
+\begin{definition}(Conditional probability) 
+	Let, depending on the context, symbol $p(x|y)$ represent the conditional probability density of a random variable. Then the $p(x|y)$ is defined as:
 	\begin{equation}\label{eq:condP}
 	p(x|y)=\frac{p(x,y)}{p(y)},
 	\end{equation} where $p(x,y)$ is a joint probability density of $\tilde{x}$ and $\tilde{y}$. 
@@ -435,17 +432,31 @@ The last general definition is the definition of well known concept of condition
 \begin{definition}(Expected value)
 	Expected value of a random variable $\tilde{x}$ is defined as: 
 	\begin{equation}
-		\int_{\mathbf{X}} p(x) x d\mu,
+		\int_{\mathbf{X}} p(x) x \ d\mu,
 	\end{equation}
 	where $\mu$ is the dominating measure of the RN density and $\mathbf{X}$ is the set of all possible realizations of $\tilde{x}$.
 \end{definition}
-<Probably some other definitions that will be needed in the following chapters >
+
+\begin{definition}(Piecewise linear function)
+	In this thesis, we consider only a two-segment piecewise linear function, which can be described by four parameters as:
+	\begin{equation}
+	pw(x, x_0, y_0, k_1, k_2) = 
+	\left\{
+	\begin{array}{ll}
+	y_0+k_1(x-x_0)&  \mbox{if } x \leq x_0 \\
+	y_0+k_2(x-x_0)&  \mbox{if } x > x_0 
+	\end{array}
+	\right.
+	\end{equation}
+	where $k_1$ and $k_2$ represent the slopes of the first and second segment and the pair $x_0$, $y_0$ the single breaing point. 
+\end{definition}
+
 
 \subsection{Probability distributions}
-Thorough this thesis more advanced distribution will be referenced, either as an expected model of some random variable, or in a broader discussion. The following non-trivial probability distributions are important for this thesis \cite{Bli:19}. 
+Through this thesis, more advanced distributions will be referenced, either as an expected model of some random variable or in a broader discussion. The following non-trivial probability distributions are important for this thesis \cite{Bli:19}. 
 
 \paragraph{Bernoulli distribution}
-The most simple non-trivial distribution is the Bernoulli distribution $Be(p)$, which models the probability of success (1) or failure (0) with $p \in [0,1]$: 
+The simplest non-trivial distribution is the Bernoulli distribution $Be(p)$, which models the probability of success (1) or failure (0) with $p \in [0,1]$: 
 
 \begin{equation}
 p(\tilde{x} = x) =
@@ -457,7 +468,7 @@ p  & x=1\\
 \right.
 \end{equation}
 
-This distribution is seemingly the most used in the modeling of uncertainty in the ROA theory. It usually models the up (1) and down (0) movement of asset or commodity prices. 
+This distribution is seemingly the most used one in the modeling of uncertainty in the ROA theory. It usually models the up (1) and down (0) movement of asset or commodity prices. 
 
 
 \paragraph{Binomial distribution}
@@ -467,31 +478,31 @@ Binomial distribution $Bi(n,p)$ represents the number of successes of $n$ indepe
 	p(\tilde{x}=k)=\binom{n}{k} \cdot p^k(1-p)^{n-k}.
 \end{equation}
 
-As a logical result, the binomial distribution in ROA models the asset or commodity prices after $n$ time intervals. 
+Its usage in the ROA is a logical result for a commodity price model after n time intervals. 
 
 
 \paragraph{Poisson distribution}
-Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in modeling of number of successes in a given time-interval, so called ``arrivals`` \cite{Bli:19}. It is used for modeling of number of incoming emails or number of earthquakes in given area in one year. 
+Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in modeling of the number of successes in a given time-interval, so-called ``arrivals`` \cite{Bli:19}. It is used for modeling of the number of incoming emails or the number of earthquakes in a given area in one year. 
 
-Its probability density function PDF given parameter $\lambda$ is: 
+Its probability density function (PDF) given parameter $\lambda$ is: 
 \begin{equation}
 	p(\tilde{x}=x)= \frac{\lambda^xe^{-\lambda}}{x!} , 
 \end{equation}
-where $x\in \mathbb{N_0}$.
+where $x\in \mathbb{N}_0$.
 
 Also, it is worth noting that Poisson distribution $Po(\lambda)$ with $\lambda = np$ is the limit distribution of a $Bi(n, p)$ for $n \to \infty$. 
 
 
 \paragraph{Log-normal distribution}
 Another very popular distribution in the ROA theory is the log-normal distribution $LogN(
-\mu, \sigma)$. It represent a random variable, logarithm of which is distributed normally. 
+\mu, \sigma)$. It represents a random variable, a logarithm of which is distributed normally. 
 
-The probability density function of such variable is:
+The PDF of such variable is:
 \begin{equation}
 	p(\tilde{x}=x)=\frac{1}{x\sigma\sqrt{2\pi}} exp\left(\-\frac{(ln(x)-\mu)^2}{2\sigma^2}\right).
 \end{equation}
 
-This distribution is used again mostly for modeling of asset or commodity prices.And it has two pleasant properties. First, that its realizations are positive and  second, that variance reflects not only the parameter $\sigma$, but also $\mu$, where $\mu$ usually represents the previous price. 
+This distribution is again used mostly for modeling of asset or commodity prices, arguably for two main reasons. The first is that its realizations are positive, and the second being that variance reflects not only the parameter $\sigma$ but also $\mu$, where $\mu$ usually represents the previous price. 
 
 
 
