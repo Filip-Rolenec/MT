@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 JAN 2021 15:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 JAN 2021 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1116,7 +1116,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [41]
 [42]
-Overfull \hbox (8.35078pt too wide) in paragraph at lines 1191--1192
+Overfull \hbox (8.35078pt too wide) in paragraph at lines 1189--1190
 []\T1/txr/m/n/10.95 In this ex-per-i-ment, we con-sider four man-age-rial ac-ti
 ons. They could be un-der-stood as two-dimensional,
  []
@@ -1125,11 +1125,11 @@ ons. They could be un-der-stood as two-dimensional,
 <Images/pw_linear_example.png, id=194, 448.67625pt x 270.00874pt>
 File: Images/pw_linear_example.png Graphic file (type png)
 <use Images/pw_linear_example.png>
-Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1320.
+Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1318.
 
 (pdftex.def)             Requested size: 314.07123pt x 189.00482pt.
 
-Overfull \hbox (0.45236pt too wide) in paragraph at lines 1329--1330
+Overfull \hbox (0.45236pt too wide) in paragraph at lines 1327--1328
 []\T1/txr/m/n/10.95 The value func-tion in each time epoch $\OML/txmi/m/it/10.9
 5 t$ \T1/txr/m/n/10.95 can thus can be rep-re-sented by tvelwe vari-ables $\OML
 /txmi/m/it/10.95 k[]; k[]; x[]; y[]$
@@ -1142,21 +1142,21 @@ Underfull \vbox (badness 1043) has occurred while \output is active []
 <Images/MT_results_1.pdf, id=202, 679.72383pt x 336.73932pt>
 File: Images/MT_results_1.pdf Graphic file (type pdf)
 <use Images/MT_results_1.pdf>
-Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1437.
+Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1435.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
 
 
-Package caption Warning: \label without proper reference on input line 1461.
+Package caption Warning: \label without proper reference on input line 1459.
 See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `Table:Result_comparison' on page 48 undefined on inpu
-t line 1446.
+t line 1444.
 
 <Images/MT_results_2.pdf, id=203, 679.72383pt x 336.73932pt>
 File: Images/MT_results_2.pdf Graphic file (type pdf)
 <use Images/MT_results_2.pdf>
-Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1452.
+Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1450.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
 [48] [49 <./Images/MT_results_1.pdf> <./Images/MT_results_2.pdf
 
@@ -1206,7 +1206,7 @@ l/texlive/2019/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texm
 f-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fon
 ts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (59 pages, 382986 bytes).
+Output written on "Master's thesis.pdf" (59 pages, 382978 bytes).
 PDF statistics:
  379 PDF objects out of 1000 (max. 8388607)
  207 compressed objects within 3 object streams
