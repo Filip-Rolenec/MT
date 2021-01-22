@@ -50,8 +50,6 @@ Repeated entry---line 973 of file fr.bib
  : @article{BlaSch:73
  :                   ,
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for ""
-Warning--I didn't find a database entry for "AmrTri:94"
 Warning--empty journal in Amp:17
 Warning--empty journal in Ber:54
 Warning--empty year in Ber:54
@@ -59,41 +57,41 @@ Warning--empty journal in CopAnt:01
 Warning--can't use both author and editor fields in Web:09
 You've used 45 entries,
             2118 wiz_defined-function locations,
-            794 strings with 10422 characters,
-and the built_in function-call counts, 12102 in all, are:
-= -- 1163
-> -- 512
-< -- 2
-+ -- 212
-- -- 160
-* -- 708
-:= -- 2109
+            794 strings with 10559 characters,
+and the built_in function-call counts, 12034 in all, are:
+= -- 1153
+> -- 516
+< -- 1
++ -- 213
+- -- 161
+* -- 715
+:= -- 2112
 add.period$ -- 141
 call.type$ -- 45
-change.case$ -- 197
+change.case$ -- 199
 chr.to.int$ -- 0
 cite$ -- 50
-duplicate$ -- 516
-empty$ -- 1015
-format.name$ -- 160
-if$ -- 2518
+duplicate$ -- 507
+empty$ -- 1008
+format.name$ -- 161
+if$ -- 2490
 int.to.chr$ -- 0
 int.to.str$ -- 45
-missing$ -- 61
+missing$ -- 60
 newline$ -- 230
-num.names$ -- 90
-pop$ -- 263
+num.names$ -- 92
+pop$ -- 259
 preamble$ -- 1
 purify$ -- 170
 quote$ -- 0
-skip$ -- 337
+skip$ -- 324
 stack$ -- 0
-substring$ -- 544
-swap$ -- 62
-text.length$ -- 2
+substring$ -- 537
+swap$ -- 52
+text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 142
+type$ -- 144
 warning$ -- 5
 while$ -- 113
 width$ -- 47

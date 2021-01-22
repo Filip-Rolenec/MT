@@ -25,15 +25,14 @@
 \contentsline {section}{\numberline {1.4}Statistical decision theory}{25}% 
 \contentsline {subsection}{\numberline {1.4.1}Dynamic programming}{26}% 
 \contentsline {subsection}{\numberline {1.4.2}Approximate dynamic programming}{27}% 
-\contentsline {subsection}{\numberline {1.4.3}Bayesian statistics (?)}{28}% 
-\contentsline {subsection}{\numberline {1.4.4}Utility}{29}% 
+\contentsline {subsection}{\numberline {1.4.3}Utility}{28}% 
 \contentsline {chapter}{\numberline {2}Project valuation as stochastic decision problem}{31}% 
 \contentsline {section}{\numberline {2.1}Project valuation - problem definition}{31}% 
 \contentsline {section}{\numberline {2.2}Project valuation in the stochastic decision theory framework}{32}% 
 \contentsline {subsection}{\numberline {2.2.1}Time set}{32}% 
 \contentsline {subsection}{\numberline {2.2.2}State set}{33}% 
 \contentsline {subsection}{\numberline {2.2.3}Action set}{33}% 
-\contentsline {subsection}{\numberline {2.2.4}Transition probability function}{34}% 
+\contentsline {subsection}{\numberline {2.2.4}Transition probability function}{33}% 
 \contentsline {subsection}{\numberline {2.2.5}Reward function}{34}% 
 \contentsline {section}{\numberline {2.3}Solution of the project valuation as SDT problem}{35}% 
 \contentsline {subsection}{\numberline {2.3.1}Probability}{35}% 
@@ -44,9 +43,9 @@
 \contentsline {paragraph}{SDT innovation}{36}% 
 \contentsline {paragraph}{Summary}{37}% 
 \contentsline {subsection}{\numberline {2.3.2}Time value of money}{37}% 
-\contentsline {subsection}{\numberline {2.3.3}Risk aversion of investors}{37}% 
+\contentsline {subsection}{\numberline {2.3.3}Risk aversion of investors}{38}% 
 \contentsline {subsection}{\numberline {2.3.4}Approximate dynamic programming}{38}% 
-\contentsline {subsection}{\numberline {2.3.5}Summary}{38}% 
+\contentsline {subsection}{\numberline {2.3.5}Summary}{39}% 
 \contentsline {chapter}{\numberline {3}Valuation of facilities with simple I/O process}{41}% 
 \contentsline {section}{\numberline {3.1}General settings of the experiment}{42}% 
 \contentsline {subsection}{\numberline {3.1.1}Time set}{42}% 

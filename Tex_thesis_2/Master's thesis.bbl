@@ -39,11 +39,6 @@ Michel Benaroch and Martin Whitman.
   and applications in cybersecurity investment decision-making.
 \newblock {\em Information Systems Research}, forthcoming, 01 2017.
 
-\bibitem{Ber:85}
-J.O.\ Berger.
-\newblock {\em Statistical Decision Theory and {B}ayesian Analysis}.
-\newblock Springer, NY, 1985.
-
 \bibitem{BerDeM:09}
 J.~Berk and P.~DeMarzo.
 \newblock {\em Corporate Finance}.
@@ -169,16 +164,23 @@ Diderik Lund and Ragnar Nymoen.
 \newblock Comparative statics for real options on oil: What stylized facts?
 \newblock {\em The Engineering Economist}, 63:1--12, 02 2017.
 
+\bibitem{Mer:73}
+Robert~C. Merton.
+\newblock Theory of rational option pricing.
+\newblock {\em The Bell Journal of Economics and Management Science},
+  4(1):141--183, 1973.
+
 \bibitem{Mye:77}
 Stewart~C. Myers.
 \newblock Determinants of corporate borrowing.
 \newblock {\em Journal of Financial Economics}, 5(2):147 -- 175, 1977.
 
-\bibitem{Pet:81}
-V.~Peterka.
-\newblock Bayesian approach to system identification.
-\newblock In {\em in Trends and Progress in System Identification, P. Eykhoff,
-  Ed}, pages 239--304. Peron Press, 1981.
+\bibitem{Pet:20}
+Martin Peterson.
+\newblock {The St. Petersburg Paradox}.
+\newblock In Edward~N. Zalta, editor, {\em The {Stanford} Encyclopedia of
+  Philosophy}. Metaphysics Research Lab, Stanford University, fall 2020
+  edition, 2020.
 
 \bibitem{Pow:11}
 Warren~B. Powell.
