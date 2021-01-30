@@ -5,71 +5,72 @@
 \babel@toc {american}{}
 \babel@toc {czech}{}
 \babel@toc {american}{}
-\contentsline {chapter}{Historical background and research motivation}{17}% 
-\contentsline {chapter}{\numberline {1}Preliminaries}{19}% 
-\contentsline {section}{\numberline {1.1}General mathematics}{19}% 
-\contentsline {subsection}{\numberline {1.1.1}Probability distributions}{20}% 
-\contentsline {paragraph}{Bernoulli distribution}{20}% 
-\contentsline {paragraph}{Binomial distribution}{20}% 
-\contentsline {paragraph}{Poisson distribution}{21}% 
-\contentsline {paragraph}{Log-normal distribution}{21}% 
-\contentsline {section}{\numberline {1.2}General economics}{21}% 
-\contentsline {subsection}{\numberline {1.2.1}Net present value}{22}% 
-\contentsline {subsection}{\numberline {1.2.2}Present cash equivalent}{22}% 
-\contentsline {subsection}{\numberline {1.2.3}Risk averse investors}{23}% 
-\contentsline {subsection}{\numberline {1.2.4}Option valuation - Black-Scholes-Merton model}{23}% 
-\contentsline {section}{\numberline {1.3}Real option analysis}{24}% 
-\contentsline {paragraph}{No analogy}{24}% 
-\contentsline {paragraph}{Partial analogy}{24}% 
-\contentsline {paragraph}{Full analogy}{24}% 
-\contentsline {section}{\numberline {1.4}Statistical decision theory}{25}% 
-\contentsline {subsection}{\numberline {1.4.1}Dynamic programming}{26}% 
-\contentsline {subsection}{\numberline {1.4.2}Approximate dynamic programming}{27}% 
-\contentsline {subsection}{\numberline {1.4.3}Utility}{28}% 
-\contentsline {chapter}{\numberline {2}Project valuation as stochastic decision problem}{31}% 
-\contentsline {section}{\numberline {2.1}Project valuation - problem definition}{31}% 
-\contentsline {section}{\numberline {2.2}Project valuation in the stochastic decision theory framework}{32}% 
-\contentsline {subsection}{\numberline {2.2.1}Time set}{32}% 
-\contentsline {subsection}{\numberline {2.2.2}State set}{33}% 
-\contentsline {subsection}{\numberline {2.2.3}Action set}{33}% 
-\contentsline {subsection}{\numberline {2.2.4}Transition probability function}{33}% 
-\contentsline {subsection}{\numberline {2.2.5}Reward function}{34}% 
-\contentsline {section}{\numberline {2.3}Solution of the project valuation as SDT problem}{35}% 
-\contentsline {subsection}{\numberline {2.3.1}Probability}{35}% 
-\contentsline {paragraph}{Risk neutral probabilities}{36}% 
-\contentsline {paragraph}{Insufficient reasons}{36}% 
-\contentsline {paragraph}{More complex models}{36}% 
-\contentsline {paragraph}{SDT interpretation}{36}% 
-\contentsline {paragraph}{SDT innovation}{36}% 
-\contentsline {paragraph}{Summary}{37}% 
-\contentsline {subsection}{\numberline {2.3.2}Time value of money}{37}% 
-\contentsline {subsection}{\numberline {2.3.3}Risk aversion of investors}{38}% 
-\contentsline {subsection}{\numberline {2.3.4}Approximate dynamic programming}{38}% 
-\contentsline {subsection}{\numberline {2.3.5}Summary}{39}% 
-\contentsline {chapter}{\numberline {3}Valuation of facilities with simple I/O process}{41}% 
-\contentsline {section}{\numberline {3.1}General settings of the experiment}{42}% 
-\contentsline {subsection}{\numberline {3.1.1}Time set}{42}% 
-\contentsline {subsection}{\numberline {3.1.2}State set}{42}% 
-\contentsline {subsection}{\numberline {3.1.3}Action function}{43}% 
-\contentsline {subsection}{\numberline {3.1.4}Transition probability function}{44}% 
-\contentsline {paragraph}{Commodity prices}{44}% 
-\contentsline {paragraph}{Installed capacity}{44}% 
-\contentsline {paragraph}{Balance}{45}% 
-\contentsline {subsection}{\numberline {3.1.5}Reward function}{45}% 
-\contentsline {section}{\numberline {3.2}Approximate dynamic programming}{45}% 
-\contentsline {paragraph}{Last VF}{47}% 
-\contentsline {paragraph}{State sampling}{47}% 
-\contentsline {paragraph}{Expected utility}{47}% 
-\contentsline {paragraph}{Model fitting}{47}% 
-\contentsline {section}{\numberline {3.3}Optimal strategy performance}{47}% 
-\contentsline {paragraph}{Baseline strategies}{48}% 
-\contentsline {paragraph}{Simulation algorithm}{48}% 
-\contentsline {paragraph}{Determining actions}{48}% 
-\contentsline {subsection}{\numberline {3.3.1}Results - initial setup}{48}% 
-\contentsline {subsection}{\numberline {3.3.2}Results - increased volatiltiy}{48}% 
-\contentsline {chapter}{\numberline {4}Discussion}{51}% 
-\contentsline {section}{\numberline {4.1}Value function approximation}{51}% 
-\contentsline {section}{\numberline {4.2}Usage of utiltiy}{52}% 
-\contentsline {section}{\numberline {4.3}Computational complexity}{52}% 
-\contentsline {section}{\numberline {4.4}Experimental results}{52}% 
-\contentsline {chapter}{\numberline {5}Conclusion}{55}% 
+\contentsline {chapter}{Historical background and research motivation}{15}% 
+\contentsline {chapter}{\numberline {1}Preliminaries}{17}% 
+\contentsline {section}{\numberline {1.1}General mathematics}{17}% 
+\contentsline {subsection}{\numberline {1.1.1}Probability distributions}{18}% 
+\contentsline {paragraph}{Bernoulli distribution}{18}% 
+\contentsline {paragraph}{Binomial distribution}{18}% 
+\contentsline {paragraph}{Poisson distribution}{18}% 
+\contentsline {paragraph}{Log-normal distribution}{19}% 
+\contentsline {subsection}{\numberline {1.1.2}Binomial model}{19}% 
+\contentsline {section}{\numberline {1.2}General economics}{19}% 
+\contentsline {subsection}{\numberline {1.2.1}Net present value}{20}% 
+\contentsline {subsection}{\numberline {1.2.2}Present cash equivalent}{20}% 
+\contentsline {subsection}{\numberline {1.2.3}Risk averse investors}{21}% 
+\contentsline {subsection}{\numberline {1.2.4}Option valuation - Black-Scholes-Merton model}{21}% 
+\contentsline {section}{\numberline {1.3}Real option analysis}{22}% 
+\contentsline {paragraph}{No analogy}{22}% 
+\contentsline {paragraph}{Partial analogy}{22}% 
+\contentsline {paragraph}{Full analogy}{22}% 
+\contentsline {section}{\numberline {1.4}Statistical decision theory}{23}% 
+\contentsline {subsection}{\numberline {1.4.1}Dynamic programming}{24}% 
+\contentsline {subsection}{\numberline {1.4.2}Approximate dynamic programming}{25}% 
+\contentsline {subsection}{\numberline {1.4.3}Utility}{26}% 
+\contentsline {chapter}{\numberline {2}Project valuation as stochastic decision problem}{29}% 
+\contentsline {section}{\numberline {2.1}Project valuation - problem definition}{29}% 
+\contentsline {section}{\numberline {2.2}Project valuation in the stochastic decision theory framework}{30}% 
+\contentsline {subsection}{\numberline {2.2.1}Time set}{30}% 
+\contentsline {subsection}{\numberline {2.2.2}State set}{31}% 
+\contentsline {subsection}{\numberline {2.2.3}Action set}{31}% 
+\contentsline {subsection}{\numberline {2.2.4}Transition probability function}{31}% 
+\contentsline {subsection}{\numberline {2.2.5}Reward function}{32}% 
+\contentsline {section}{\numberline {2.3}Solution of the project valuation as SDT problem}{33}% 
+\contentsline {subsection}{\numberline {2.3.1}Probability}{33}% 
+\contentsline {paragraph}{Risk neutral probabilities}{34}% 
+\contentsline {paragraph}{Insufficient reasons}{34}% 
+\contentsline {paragraph}{More complex models}{34}% 
+\contentsline {paragraph}{SDT interpretation}{34}% 
+\contentsline {paragraph}{SDT innovation}{34}% 
+\contentsline {paragraph}{Summary}{35}% 
+\contentsline {subsection}{\numberline {2.3.2}Time value of money}{35}% 
+\contentsline {subsection}{\numberline {2.3.3}Risk aversion of investors}{36}% 
+\contentsline {subsection}{\numberline {2.3.4}Approximate dynamic programming}{36}% 
+\contentsline {subsection}{\numberline {2.3.5}Summary}{37}% 
+\contentsline {chapter}{\numberline {3}Valuation of facilities with simple I/O process}{39}% 
+\contentsline {section}{\numberline {3.1}General settings of the experiment}{40}% 
+\contentsline {subsection}{\numberline {3.1.1}Time set}{40}% 
+\contentsline {subsection}{\numberline {3.1.2}State set}{40}% 
+\contentsline {subsection}{\numberline {3.1.3}Action function}{41}% 
+\contentsline {subsection}{\numberline {3.1.4}Transition probability function}{42}% 
+\contentsline {paragraph}{Commodity prices}{42}% 
+\contentsline {paragraph}{Installed capacity}{42}% 
+\contentsline {paragraph}{Balance}{43}% 
+\contentsline {subsection}{\numberline {3.1.5}Reward function}{43}% 
+\contentsline {section}{\numberline {3.2}Approximate dynamic programming}{43}% 
+\contentsline {paragraph}{Last VF}{44}% 
+\contentsline {paragraph}{State sampling}{44}% 
+\contentsline {paragraph}{Expected utility}{45}% 
+\contentsline {paragraph}{Model fitting}{45}% 
+\contentsline {section}{\numberline {3.3}Optimal strategy performance}{46}% 
+\contentsline {paragraph}{Baseline strategies}{46}% 
+\contentsline {paragraph}{Simulation algorithm}{46}% 
+\contentsline {paragraph}{Determining actions}{46}% 
+\contentsline {subsection}{\numberline {3.3.1}Results - initial setup}{46}% 
+\contentsline {subsection}{\numberline {3.3.2}Results - increased volatiltiy}{47}% 
+\contentsline {chapter}{\numberline {4}Discussion}{49}% 
+\contentsline {section}{\numberline {4.1}Value function approximation}{49}% 
+\contentsline {section}{\numberline {4.2}Usage of utiltiy}{50}% 
+\contentsline {section}{\numberline {4.3}Computational complexity}{50}% 
+\contentsline {section}{\numberline {4.4}Experimental results}{50}% 
+\contentsline {chapter}{\numberline {5}Conclusion}{53}% 
