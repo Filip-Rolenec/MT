@@ -32,68 +32,47 @@ I was expecting a `,' or a `)'---line 505 of file fr.bib
  : url={http://www.sciencedirect.com/science/article/pii/0005109886900154},
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-I was expecting a `,' or a `)'---line 641 of file fr.bib
- : 
- : }
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `)'---line 687 of file fr.bib
- : 
- : }
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-Repeated entry---line 743 of file fr.bib
- : @article{BlaSch:73
- :                   ,
-I'm skipping whatever remains of this entry
-Repeated entry---line 973 of file fr.bib
- : @article{BlaSch:73
- :                   ,
-I'm skipping whatever remains of this entry
-Warning--empty journal in Amp:17
-Warning--empty journal in Ber:54
-Warning--empty year in Ber:54
-Warning--empty journal in CopAnt:01
+Warning--empty school in Amp:17
 Warning--can't use both author and editor fields in Web:09
-You've used 45 entries,
+You've used 47 entries,
             2118 wiz_defined-function locations,
-            794 strings with 10559 characters,
-and the built_in function-call counts, 12034 in all, are:
-= -- 1153
-> -- 516
+            796 strings with 10189 characters,
+and the built_in function-call counts, 12433 in all, are:
+= -- 1187
+> -- 530
 < -- 1
-+ -- 213
-- -- 161
-* -- 715
-:= -- 2112
-add.period$ -- 141
-call.type$ -- 45
-change.case$ -- 199
++ -- 220
+- -- 165
+* -- 727
+:= -- 2179
+add.period$ -- 144
+call.type$ -- 47
+change.case$ -- 205
 chr.to.int$ -- 0
-cite$ -- 50
-duplicate$ -- 507
-empty$ -- 1008
-format.name$ -- 161
-if$ -- 2490
+cite$ -- 49
+duplicate$ -- 527
+empty$ -- 1054
+format.name$ -- 165
+if$ -- 2579
 int.to.chr$ -- 0
-int.to.str$ -- 45
-missing$ -- 60
-newline$ -- 230
-num.names$ -- 92
-pop$ -- 259
+int.to.str$ -- 47
+missing$ -- 62
+newline$ -- 238
+num.names$ -- 96
+pop$ -- 277
 preamble$ -- 1
-purify$ -- 170
+purify$ -- 176
 quote$ -- 0
-skip$ -- 324
+skip$ -- 336
 stack$ -- 0
-substring$ -- 537
-swap$ -- 52
+substring$ -- 548
+swap$ -- 57
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 144
-warning$ -- 5
-while$ -- 113
-width$ -- 47
-write$ -- 482
-(There were 10 error messages)
+type$ -- 148
+warning$ -- 2
+while$ -- 117
+width$ -- 49
+write$ -- 499
+(There were 6 error messages)

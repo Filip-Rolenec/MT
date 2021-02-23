@@ -1,21 +1,21 @@
 \begin{thebibliography}{10}
 
 \bibitem{AlsWan:20}
-Abdullah AlShelahi, Jingxing Wang, Mingdi You, Eunshin Byon, and Romesh Saigal.
+A.~AlShelahi, J.~Wang, M.~You, F.~Byon, and R.~Saigal.
 \newblock Data-driven prediction for volatile processes based on real option
   theories.
 \newblock {\em International Journal of Production Economics}, 226:107605,
   2020.
 
 \bibitem{Amp:17}
-Kwasi~Darkwa Ampofo.
-\newblock Reasons why real options analysis (roa) is not widely adopted in the
-  mineral industry.
-\newblock 2017.
+K.~D. Ampofo.
+\newblock {\em Reasons why Real Options Analysis {(ROA)} is not widely adopted
+  in the mineral industry}.
+\newblock PhD thesis, 2017.
 
 \bibitem{AmrKul:98}
-Martha Amram and Nalin Kulatilaka.
-\newblock {\em Real Options:: Managing Strategic Investment in an Uncertain
+M.~Amram and N.~Kulatilaka.
+\newblock {\em Real Options: Managing Strategic Investment in an Uncertain
   World}.
 \newblock Oxford University Press, 1998.
 
@@ -26,18 +26,16 @@ S.~Bacci and B.~Chiandotto.
 \newblock CRC Press, 2019.
 
 \bibitem{Bac:00}
-Louis Bachelier.
+L.~Bachelier.
 \newblock Th\'eorie de la sp\'eculation.
 \newblock {\em Annales Scientifiques de L'Ecole Normale Sup\'erieure},
   17:21--88, 1900.
-\newblock Reprinted in P. H. Cootner (ed), 1964, The Random Character of Stock
-  Market Prices, Cambridge, Mass. MIT Press.
 
 \bibitem{BenWhi:17}
-Michel Benaroch and Martin Whitman.
+M.~Benaroch and M.~Whitman.
 \newblock Real options models for proactive uncertainty-reducing mitigations
   and applications in cybersecurity investment decision-making.
-\newblock {\em Information Systems Research}, forthcoming, 01 2017.
+\newblock {\em Information Systems Research}, forthcoming, January 2017.
 
 \bibitem{BerDeM:09}
 J.~Berk and P.~DeMarzo.
@@ -45,33 +43,32 @@ J.~Berk and P.~DeMarzo.
 \newblock Pearson, 2014.
 
 \bibitem{Ber:54}
-Dino Bernoulli.
+D.~Bernoulli.
 \newblock Exposition of a new theory on the measurement of risk.
-\newblock 22(1):23--36.
+\newblock {\em Econometrica}, 22(1):23--36, 1954.
 
 \bibitem{BlaSch:73}
-Fischer Black and Myron Scholes.
+F.~Black and M.~Scholes.
 \newblock The pricing of options and corporate liabilities.
 \newblock {\em Journal of Political Economy}, 81(3):637--654, 1973.
 
 \bibitem{Bli:19}
-Joseph~K Blitzstein and Jessica Hwang.
+J.~K. Blitzstein and J.~Hwang.
 \newblock {\em Introduction to probability}.
 \newblock Crc Press, 2019.
 
 \bibitem{BodKan:04}
-Z.~Bodie, A.~Kane, and A.J. Marcus.
+Z.~Bodie, A.~Kane, and A.~J. Marcus.
 \newblock {\em Investments}.
-\newblock McGraw-Hill/Irwin series in finance, insurance, and real estate.
-  McGraw-Hill Irwin, 2004.
+\newblock McGraw-Hill, fifth edition, 2004.
 
 \bibitem{BreMye:12}
-Richard~A Brealey, Stewart~C Myers, Franklin Allen, and Pitabas Mohanty.
+R.~A. Brealey, S.~C. Myers, F.~Allen, and P.~Mohanty.
 \newblock {\em Principles of corporate finance}.
-\newblock Tata McGraw-Hill Education, 2012.
+\newblock Tata McGraw-Hill Education, tenth edition, 2012.
 
 \bibitem{Bre:10}
-Paul Breeze.
+P.~Breeze.
 \newblock {\em The cost of power generation: The current and future
   competitiveness of renewable and traditional technologies}.
 \newblock Business Insights Limited, 2010.
@@ -82,14 +79,14 @@ V.~Bronzin.
 \newblock Verlag Franz Deticke, 1908.
 
 \bibitem{Car:12}
-Rachel Cary.
+R.~Cary.
 \newblock The future of gas power.
 \newblock {\em Critical Market and Technology Issues}, 2012.
 
 \bibitem{CopAnt:01}
-Tom COPELAND and Vladimir Antikarov.
-\newblock Real options: A practitioner's guide.
-\newblock 01 2001.
+T.~Copeland and V.~Antikarov.
+\newblock {\em Real Options: A Practitioner's Guide}.
+\newblock Texere New York, 2001.
 
 \bibitem{Cru:08}
 F.~Crundwell.
@@ -97,29 +94,22 @@ F.~Crundwell.
   Projects}.
 \newblock Springer London, 2008.
 
-\bibitem{Veg:88}
-J.~De~La~Vega and H.~Kellenbenz.
-\newblock {\em Confusion de Confusiones [1688]: Portions Descriptive of the
-  Amsterdam Stock Exchange}.
-\newblock Martino Publishing, 1688.
-
 \bibitem{DixPin:12}
-R.K. Dixit and R.S. Pindyck.
+R.K. Dixit and R.~S. Pindyck.
 \newblock {\em Investment Under Uncertainty}.
 \newblock Princeton University Press, 2012.
 
 \bibitem{DamZro:19}
-Maurizio d’Amato, Sabina Zrobek, Malgorzata {Renigier Bilozor}, Marek
-  Walacik, and Giuseppe Mercadante.
+M.~d’Amato, S.~Zrobek, M.~R. Bilozor, M.~Walacik, and G.~Mercadante.
 \newblock Valuing the effect of the change of zoning on underdeveloped land
   using fuzzy real option approach.
 \newblock {\em Land Use Policy}, 86:365 -- 374, 2019.
 
 \bibitem{Gue:17}
-Manuel Guerra, Peter Kort, Cláudia Nunes, and Carlos Oliveira.
+M.~Guerra, P.~Kort, C.~Nunes, and C.~Oliveira.
 \newblock Hysteresis due to irreversible exit: Addressing the option to
   mothball.
-\newblock {\em Journal of Economic Dynamics and Control}, 92, 05 2017.
+\newblock {\em Journal of Economic Dynamics and Control}, 92, May 2017.
 
 \bibitem{Gut:09}
 G.~Guthrie.
@@ -128,14 +118,14 @@ G.~Guthrie.
   University Press, 2009.
 
 \bibitem{HolLau:05}
-Charles~A Holt and Susan~K Laury.
+C.~A. Holt and S.~K. Laury.
 \newblock Risk aversion and incentive effects: New data without order effects.
 \newblock {\em American Economic Review}, 95(3):902--912, 2005.
 
 \bibitem{Jay:03}
 E.~T. Jaynes.
 \newblock {\em Probability theory: The logic of science}.
-\newblock Cambridge University Press, Cambridge, 2003.
+\newblock Cambridge University Press, 2003.
 
 \bibitem{Kar:20}
 M.~K\'{a}rn\'{y}.
@@ -144,61 +134,70 @@ M.~K\'{a}rn\'{y}.
 \newblock submitted.
 
 \bibitem{Kas:04}
-Ilhem Kassar and Pierre Lasserre.
+I.~Kassar and P.~Lasserre.
 \newblock Species preservation and biodiversity value: a real options approach.
 \newblock {\em Journal of Environmental Economics and Management}, 48(2):857 --
   879, 2004.
 
 \bibitem{Kol:60}
-Andrey~N. Kolmogorov.
+A.~N. Kolmogorov.
 \newblock {\em Foundations of the Theory of Probability}.
-\newblock Chelsea Pub Co, 2 edition, June 1960.
+\newblock Chelsea Pub Co, second edition, June 1960.
 
 \bibitem{KulTri:94}
-Nalin Kulatilaka and Lenos Trigeorgis.
+N.~Kulatilaka and L.~Trigeorgis.
 \newblock The general flexibility to switch: Real options revisited.
-\newblock {\em International Journal of Finance}, 6, 01 1994.
+\newblock {\em International Journal of Finance}, 6, January 1994.
+
+\bibitem{Kul:20}
+R.~Kulhavý.
+\newblock Personal communication, 2020.
 
 \bibitem{LunDid:17}
-Diderik Lund and Ragnar Nymoen.
+D.~Lund and R.~Nymoen.
 \newblock Comparative statics for real options on oil: What stylized facts?
-\newblock {\em The Engineering Economist}, 63:1--12, 02 2017.
+\newblock {\em The Engineering Economist}, 63:1--12, February 2017.
 
 \bibitem{Mer:73}
-Robert~C. Merton.
+R.~C. Merton.
 \newblock Theory of rational option pricing.
 \newblock {\em The Bell Journal of Economics and Management Science},
   4(1):141--183, 1973.
 
 \bibitem{Mye:77}
-Stewart~C. Myers.
+S.~C. Myers.
 \newblock Determinants of corporate borrowing.
 \newblock {\em Journal of Financial Economics}, 5(2):147 -- 175, 1977.
 
 \bibitem{Pet:20}
-Martin Peterson.
-\newblock {The St. Petersburg Paradox}.
+M~.Peterson.
+\newblock The st. petersburg paradox.
 \newblock In Edward~N. Zalta, editor, {\em The {Stanford} Encyclopedia of
   Philosophy}. Metaphysics Research Lab, Stanford University, fall 2020
   edition, 2020.
 
 \bibitem{Pow:11}
-Warren~B. Powell.
+W.~B. Powell.
 \newblock {\em Approximate Dynamic Programming: Solving the Curses of
   Dimensionality}.
-\newblock Wiley Series in Probability and Statistics. Wiley, Hoboken, NJ, USA,
-  2nd edition, 2011.
+\newblock Wiley Series in Probability and Statistics. Wiley, 2nd edition, 2011.
+
+\bibitem{Put:05}
+M.~L. Puterman.
+\newblock {\em Markov Decsion Processes: Discrete Stochastic Dynamic
+  Programming}.
+\newblock Wiley, 2005.
 
 \bibitem{Que:10}
-Bertrand Quélin and Charlotte Krychowski.
+B.~Quélin and C.~Krychowski.
 \newblock Real options and strategic investment decisions: Can they be of use
   to scholars?
-\newblock {\em Academy of Management Perspectives}, 24, 05 2010.
+\newblock {\em Academy of Management Perspectives}, 24, May 2010.
 
 \bibitem{Rao:87a}
-M.M. Rao.
+M.~M. Rao.
 \newblock {\em Measure Theory and Integration}.
-\newblock John Wiley, NY, 1987.
+\newblock John Wiley, 1987.
 
 \bibitem{Rol:18}
 F.~Rolenec.
@@ -211,31 +210,37 @@ F.~Rolenec.
 \newblock CVUT FJFI.
 
 \bibitem{Ryu:17}
-Young Ryu, Young-Oh Kim, Seung~Beom Seo, and Il~Seo.
+Y.~Ryu, Y.~Kim, S.~B. Seo, and I.~Seo.
 \newblock Application of real option analysis for planning under climate change
   uncertainty: a case study for evaluation of flood mitigation plans in korea.
-\newblock {\em Mitigation and Adaptation Strategies for Global Change}, 08
+\newblock {\em Mitigation and Adaptation Strategies for Global Change}, August
   2017.
 
 \bibitem{SchRob:19}
-Robin Schneider and Junichi Imai.
+R.~Schneider and J.~Imai.
 \newblock Valuing investments in digital transformation of business models.
-\newblock {\em International Journal of Real Options and Strategy}, 7:1--26, 12
-  2019.
+\newblock {\em International Journal of Real Options and Strategy}, 7:1--26,
+  December 2019.
 
 \bibitem{SicGam:10}
-Gordon Sick and Andrea Gamba.
+G.~Sick and A.~Gamba.
 \newblock Some important issues involving real options: an overview.
 \newblock {\em Multinational Finance Journal}, 14(1/2):73--123, 2010.
 
 \bibitem{Tho:19}
-Grid Thoma.
+G.~Thoma.
 \newblock The valuation of patent real options – an analysis using patent-
   and firm-level datasets.
 \newblock {\em Academy of Management Proceedings}, 2019(1):12922, 2019.
 
+\bibitem{Veg:88}
+J.~De~La Vega and H.~Kellenbenz.
+\newblock {\em Confusion de Confusiones [1688]: Portions Descriptive of the
+  Amsterdam Stock Exchange}.
+\newblock Martino Publishing, 1688.
+
 \bibitem{Vis:18}
-Marko Visnjic.
+M.~Visnjic.
 \newblock {\em Mineral asset valuation under price uncertainty using real
   options}.
 \newblock PhD thesis, Colorado School of Mines. Arthur Lakes Library, 2018.
@@ -247,14 +252,14 @@ A.~Vollert.
 \newblock Birkh{\"a}user Boston, 2012.
 
 \bibitem{Web:09}
-Ernst~Juerg Weber.
+E.~J. Weber.
 \newblock {\em A Short History of Derivative Security Markets}, pages 431--466.
-\newblock Springer Berlin Heidelberg, Berlin, Heidelberg, 2009.
+\newblock Springer Berlin Heidelberg, 2009.
 
 \bibitem{YalHak:12}
-Hakan Yalincak.
-\newblock Criticism of the black-scholes model: But why is it still used?: (the
-  answer is simpler than the formula).
-\newblock {\em SSRN Electronic Journal}, 07 2012.
+H.~Yalincak.
+\newblock Criticism of the {Black-Scholes} model: But why is it still used?:
+  (the answer is simpler than the formula).
+\newblock {\em SSRN Electronic Journal}, July 2012.
 
 \end{thebibliography}
