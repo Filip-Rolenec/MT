@@ -1,5 +1,6 @@
 from typing import Dict
 
+from IPython.core.display import display
 from lmfit import Model
 from lmfit.models import StepModel
 
@@ -30,9 +31,11 @@ def get_new_models(state_utility_pairs: Dict, print_graphs_local=True):  # Dict 
         predicted_values = fitted_model.eval(x=xd)
 
         if print_graphs_local:
-            plt.plot(spark_prices, utilities, "o")
-            plt.plot(xd, predicted_values)
-            plt.show()
+            display(spark_prices)
+            display(utilities)
+            #plt.plot(spark_prices, utilities, "o")
+            #plt.plot(xd, predicted_values)
+            #plt.show()
 
         models[plant_state] = fitted_model
 

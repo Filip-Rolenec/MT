@@ -1,5 +1,4 @@
 from progressbar import progressbar
-
 from gas_example.optimization.vf import create_vfs_time_list, update_vf_models
 from gas_example.setup import TIME_EPOCHS
 

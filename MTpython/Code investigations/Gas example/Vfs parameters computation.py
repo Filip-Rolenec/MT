@@ -146,6 +146,32 @@ plt.plot(sparks, utilities, "o")
 plt.plot(xd, piecewise_linear(xd, *p))
 
 
+# In[16]:
+
+
+import plotly.express as px
+import plotly.graph_objects as go
+
+
+# In[28]:
+
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=xd, y=piecewise_linear(xd, *p),
+                    mode='lines', marker = dict(color="orange"), name = "Pw-linear fit"))
+fig.add_trace(go.Scatter(x=sparks, y=utilities,
+                    mode='markers',marker = dict(color="blue"), name = "Spark-utility values"))
+
+
+fig.update_layout(xaxis_title="Spark spread", yaxis_title="Utility")
+
+
+# In[ ]:
+
+
+
+
+
 # # Looking good 
 # - What is the equation? Now we want to write a strategy that will behave based on these value functions. 
 # - We save the vfs parameters as csv and we will use it in another notebook. ADP simulaiton. 

@@ -194,11 +194,6 @@ B.~Quélin and C.~Krychowski.
   to scholars?
 \newblock {\em Academy of Management Perspectives}, 24, May 2010.
 
-\bibitem{Rao:87a}
-M.~M. Rao.
-\newblock {\em Measure Theory and Integration}.
-\newblock John Wiley, 1987.
-
 \bibitem{Rol:18}
 F.~Rolenec.
 \newblock Feasible bayesian multi-armed bandit optimisation, 2018.
@@ -208,6 +203,11 @@ F.~Rolenec.
 F.~Rolenec.
 \newblock Learning with forgetting preserving a guaranteed knowledge, 2019.
 \newblock CVUT FJFI.
+
+\bibitem{Ros:11}
+S.M. Ross.
+\newblock {\em An Elementary Introduction to Mathematical Finance}.
+\newblock Cambridge University Press, 2011.
 
 \bibitem{Ryu:17}
 Y.~Ryu, Y.~Kim, S.~B. Seo, and I.~Seo.

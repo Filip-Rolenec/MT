@@ -36,12 +36,12 @@ Warning--empty school in Amp:17
 Warning--can't use both author and editor fields in Web:09
 You've used 47 entries,
             2118 wiz_defined-function locations,
-            796 strings with 10189 characters,
-and the built_in function-call counts, 12433 in all, are:
+            794 strings with 10194 characters,
+and the built_in function-call counts, 12435 in all, are:
 = -- 1187
 > -- 530
 < -- 1
-+ -- 220
++ -- 221
 - -- 165
 * -- 727
 := -- 2179
@@ -65,7 +65,7 @@ purify$ -- 176
 quote$ -- 0
 skip$ -- 336
 stack$ -- 0
-substring$ -- 548
+substring$ -- 549
 swap$ -- 57
 text.length$ -- 1
 text.prefix$ -- 0

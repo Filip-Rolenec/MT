@@ -287,7 +287,7 @@ my own work and I have listed all the used sources in the bibliography.
 
 Domníváme se, že v současné ROA teorii neexistuje obecný algoritmus pro valuaci komplexních projektů, kterými zde myslíme projekty s více náhodnými veličinami a většim množstvím alternací projektů různého typu. 
 
-Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V této práci představujeme obecný valuační algoritmus, který staví na poznatcích z SDT, pokrývá problémy řešené současnou ROA teorií a navíc zachovává vliv ekonomických fenoménů jako je časová hodnota peněz a averze vůči riziku investorů. Použití jmenovaného algoritmu je představeno na problému valuace plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako po částech lineární funkce, tak aby odrážely opční strukturu projektových odměn. 
+Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V této práci představujeme obecný valuační algoritmus, který staví na poznatcích z SDT, pokrývá problémy řešené současnou ROA teorií a navíc respektuje vliv ekonomických konceptů jako je časová hodnota peněz a averze vůči riziku investorů. Použití jmenovaného algoritmu je představeno na problému valuace plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako po částech lineární funkce, tak aby odrážely opční strukturu projektových odměn. 
  
 \bigskip{}
 
@@ -318,7 +318,7 @@ Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží s
 
  To our best knowledge, the current state of ROA does not offer a unified valuation algorithm that would be able to cover valuations of more complex projects, such as those with multiple random variables or different types and a larger number of possible actions. 
 	
-This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under uncertainty from the Statistical decision theory (SDT).
+This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under uncertainty from the statistical decision theory (SDT).
 We present a general valuation algorithm that builds on the knowledge of SDT, covers the solutions proposed by ROA, and preserves the business-specific concepts as time value of money and risk-aversion of investors.  
 This algorithm's usage is demonstrated on a problem of gas power plant valuation, where the problem of uncountable state space is solved via the approximate dynamic programming technique of value function approximation, where we use piecewise linear models to cover the option-like structure. 
 	
@@ -339,9 +339,13 @@ This algorithm's usage is demonstrated on a problem of gas power plant valuation
 \newpage{}
 
 \chapter{Introduction}
-<Introduction to investment decision making> 
-<Intro for derivatives and more light introduction to the topic> 
-\section{Historical Background}
+Investing is a problem of optimal allocation of resources (mostly money) between an investor's alternative choices. Two main groups of investments can be recognized as first: the investment in financial (or commodity) market and second: the direct investment in business ventures. The first type of investments is driven by the fairly strict rules of the specific institutions (banks, exchanges, brokers,...), whereas the second type of investments is regulated in essence only by the commercial code in the given country. 
+
+In this thesis, we will focus on the investments in business ventures, where the problem of resource allocation between various opportunities is being solved with the metric of project valuation. From the various project valuation techniques, we have chosen the theory of real options (ROA) as an inspiration for a creation of a valuation model based on the ideas of statistical decision theory (SDT).
+
+First, we describe the historical background of the ROA valuation. Next, we focus on the reasons why we investigate the idea of SDT interpretation of ROA. In the remainder of this chapter, we present the outline of this thesis. 
+
+\section{Historical Background - Real Options}
 
 The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts\footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future \cite{BerDeM:09}.} and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options\footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant \cite{BerDeM:09}.}  and option trading were published by La Vega \cite{Veg:88}. 
 
@@ -354,7 +358,7 @@ The idea of Real option analysis (ROA) as a valuation tool for projects was furt
 The valuation of project's free cash flows with the theory of ROA is in corporate finance understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: "Why should our company use a new tool that no one else is using?" \cite{CopAnt:01}. 
 
 \section{Research Motivation}
-Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty. In the final years of the university I also became curious about the world of corporate finance, since I was working for a venture capital company. This combination of my interests is nicely reflected in the assignment of this thesis - interpretation of real options in the terms of SDT. 
+Through my studies at the FNSPE CTU, I have specialized in the theory of dynamic decision making under uncertainty. In my final years at the university I also became curious about the world of corporate finance, since I was working for a venture capital investor Presto Ventures. This combination of my professional interests is pleasantly reflected in the assignment of this thesis - the interpretation of ROA in terms of SDT. 
 
 Through the study of the ROA state of the art, we have found out that the term real options is not clearly defined. As will be illustrated in-depth in section \ref{sec:ROA} we identify three classes of ROA authors based on the level of analogy to the BSM model. 
 
@@ -416,39 +420,44 @@ In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set
 \begin{definition}(Probability)
 	Let $\tilde{x}$ be a discrete random variable. Then $P(x)$ denotes a value of the probability mass function (p.m.f.)  for the realization $\tilde{x}=x$. Similarly, if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density function (p.d.f.) at $x$. 
 \end{definition}
-\begin{remark}
-	To rigorously unify the notation and simplify the formulas, a Radon-Nikodym (RN) density \cite{Rao:87a} is introduced  with the notation $p(x)$ and the name ``probability density``. The dominating measure of this RN density is either the counting measure (in discrete case) or the Lebesgue measure (in continuous case). 
-\end{remark}
 
-The last general definition is the definition of a well-known concept of conditional probability \cite{Jay:03}. 
-\begin{definition}(Conditional density) 
-	Let symbol $p(x|y)$ represent the conditional density of a random variable. Then the $p(x|y)$ is defined as:
-	\begin{equation}\label{eq:condP}
-	p(x|y)=\frac{p(x,y)}{p(y)},
-	\end{equation} where $p(x,y)$ is a joint probability density of $\tilde{x}$ and $\tilde{y}$. 
+Next, we define the well-known concept of conditional probability \cite{Jay:03}. 
+\begin{definition}(Conditional probability) 
+	Let symbol $P(x|y)$ represent the conditional probability of a discrete random variable. Then the $P(x|y)$ is defined as:
+	\begin{equation}
+	P(x|y)=\frac{P(x,y)}{P(y)},
+	\end{equation} where $P(x,y)$ is a joint p.m.f. of $\tilde{x}$ and $\tilde{y}$. 
 \end{definition}
 
-\begin{remark}
-	The definition of conditional density expressed by the equation (\ref{eq:condP}) corresponds with the classic definitions of the conditional probability mass function and conditional probability density function in both the discrete and continuous case. 
-\end{remark}
+A similar concept is also used for the continuous random variables with the name of conditional density \cite{Jay:03}. 
+
+\begin{definition}(Conditional density)
+	Let symbol $p(x|y)$ represent the conditional density of a continuous random variable. Then the $P(x|y)$ is defined as:
+	\begin{equation}\label{eq:condP}
+	p(x|y)=\frac{p(x,y)}{p(y)},
+	\end{equation} where $p(x,y)$ is a joint p.d.f. of $\tilde{x}$ and $\tilde{y}$. 
+\end{definition} 
 
 \begin{definition}(Expected value)
-	Expected value of a random variable $\tilde{x}$ is defined as: 
+	Expected value of a discrete random variable $\tilde{x}$ is defined as: 
 	\begin{equation}
-		\int_{\mathbf{X}} p(x) x \ d\mu,
+		\sum_{\mathbf{X}} P(x) x. 
 	\end{equation}
-	where $\mu$ is the dominating measure of the RN density and $\mathbf{X}$ is the set of all possible realizations of $\tilde{x}$.
+	Similarly, for the continuous random variable $\tilde{y}$ the expected value is defined as: 
+	\begin{equation}
+	\int_{\mathbf{Y}} p(y) y \ dy. 
+	\end{equation}
 \end{definition}
 
 
 \subsection{Probability distributions}
-Through this thesis, more advanced distributions will be referenced, either as an expected model of some random variable or in a broader discussion. The following non-trivial probability distributions are important for this thesis \cite{Bli:19}. 
+Through this thesis, the following distributions will be referenced, either as an expected model of some random variable or in a broader discussion \cite{Bli:19}. 
 
 \paragraph{Bernoulli distribution}
-The simplest non-trivial distribution is the Bernoulli distribution $Be(p)$, which models the probability of success (1) or failure (0) with $p \in [0,1]$ by the p.m.f.: 
+The Bernoulli distribution $Be(p)$ models the probability of success (1) or failure (0) with $p \in [0,1]$ by the p.m.f.: 
 
 \begin{equation}
-p(\tilde{x} = x, p) =
+P(\tilde{x} = x, p) =
 \left\{
 \begin{array}{ll}
 p  & x=1\\
@@ -456,15 +465,22 @@ p  & x=1\\
 \end{array}
 \right.
 \end{equation}
-
-This distribution is seemingly the most used one in the modeling of uncertainty in the ROA theory. It usually models the up (1) and down (0) movement of asset or commodity prices. 
+This distribution is widely used in the ROA theory. It is usually used for the modeling of the up (1) and down (0) movement of asset or commodity prices. 
 
 
 \paragraph{Binomial distribution}
 Binomial distribution $Bi(n,p)$ represents the number of successes of $n$ independent random variables distributed by $Be(p)$ with p.m.f.:
 
 \begin{equation}
-	p(\tilde{x}=k, n, p)=\binom{n}{k} \cdot p^k(1-p)^{n-k}, \ k \in \{0,1,2, \dots ,n\}
+	P(\tilde{x}=k, n, p)=\binom{n}{k} \cdot p^k(1-p)^{n-k}, \ k \in \{0,1,2, \dots ,n\}. 
+\end{equation}
+
+This distribution is used in a popular ROA modeling tool - \textit{the binomial model} \cite{Gut:09}. The idea is that a random variable (price, quantity) evolves as a realization of consequential up or down movements distributed by $Be(p_u)$, where $p_u$ is the probability of the up movement. Each move then updates the variable's value by multiplying it by a given coefficient $U$ or $D$. To ensure that the number of possible states rises linearly and not exponentially with the number of time epochs, the model limits the parameters as $D=1/U$.
+
+Based on the number of up movements $n_u$ (as a realization of $Bi(n, p_u)$) until the $n$-th time epoch, and the initial value $v_{init}$, the realization of the modeled variable can be expressed as: 
+
+\begin{equation}
+v = v_{init} \cdot U^{2n_u-n}.
 \end{equation}
 
 
@@ -473,7 +489,7 @@ Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in mo
 
 Its probability p.m.f. given parameter $\lambda$ is: 
 \begin{equation}
-	p(\tilde{x}=x, \lambda)= \frac{\lambda^xe^{-\lambda}}{x!} , 
+	P(\tilde{x}=x, \lambda)= \frac{\lambda^xe^{-\lambda}}{x!} , 
 \end{equation}
 where $x\in \{0,1,2,\dots\}$.
 
@@ -481,8 +497,7 @@ Also, it is worth noting that Poisson distribution $Po(\lambda)$ with $\lambda =
 
 
 \paragraph{Log-normal distribution}
-Another very popular distribution in the ROA theory is the log-normal distribution $LogN(
-\mu, \sigma)$. It represents a random variable, a logarithm of which is distributed normally. 
+Another very popular distribution in the ROA field is the log-normal distribution $LogN(\mu, \sigma)$. It represents a random variable, a logarithm of which is distributed normally. 
 
 The p.d.f. of such variable is:
 \begin{equation}
@@ -492,36 +507,11 @@ The p.d.f. of such variable is:
 This distribution is again used mostly for modeling of asset or commodity prices, arguably for two main reasons. The first is that its realizations are positive, and the second being that variance reflects not only the parameter $\sigma$ but also $\mu$, where $\mu$ usually represents the previous price. 
 
 
-\subsection{Binomial model}
-The binomial model is one of the simplest models of variable evolution \cite{Gut:09}. The idea is that there is some constant probability of an up movement $p_u$ (in price, quantity, etc.) and a down movement $p_d$ of the variable. Each move then updates the variable's value by multiplying it by a given coefficient $U$ or $D$. To ensure that the number of possible states rises linearly and not exponentially with the number of time epochs, the model limits the parameters as $D=1/U$.
-
-Based on the number of up movements $n_u$, the time epoch number $t$, and the initial value $v_{init}$, the expression of variables value is fairly simple: 
-
-\begin{equation}
-	v = v_{init} \cdot U^{2n_u-t}.
-\end{equation}
-
-The distribution of $n_u$ in time $t$ is then described by a binomial distribution $Bi(t,p_u)$.
-
-
-\begin{definition}(Piecewise linear function)
-	In this thesis, we consider only a two-segment piecewise linear function, which can be described by four parameters as:
-	\begin{equation}
-	pw(x, x_0, y_0, k_1, k_2) = 
-	\left\{
-	\begin{array}{ll}
-	y_0+k_1(x-x_0)&  \mbox{if } x \leq x_0 \\
-	y_0+k_2(x-x_0)&  \mbox{if } x > x_0 
-	\end{array}
-	\right.
-	\end{equation}
-	where $k_1$ and $k_2$ represent the slopes of the first and second segment and the pair $x_0$, $y_0$ the single breaking point. 
-\end{definition}
-
 \section{Valuation in Finance}
 
-This thesis is built on two main theoretical pillars. The first is the principles of corporate finance \cite{BerDeM:09}, which culminates in real option analysis (ROA), and the second is statistic decision theory (SDT) \cite{BacChi:19}. A basic review of corporate finance terminology is presented in this section, focusing on project valuation techniques. 
+This thesis is built on two main theoretical pillars. The first is the valuation principles of corporate finance \cite{BerDeM:09}, which culminates in real option analysis (ROA), and the second is the statistical decision theory (SDT) \cite{BacChi:19}. In this section we focus on the basic review corporate finance terminology. 
 
+\subsection{Project Valuation}
 
 \begin{definition}(\textbf{Process})
 	A process is understood as the production of goods, purchase and trade of goods or services, driven by the supply of inputs and demand for outputs \cite{Kul:20}.
@@ -549,7 +539,7 @@ This thesis is built on two main theoretical pillars. The first is the principle
 \end{definition}
 
 
-\subsection{Net present value}
+\paragraph{Net present value}
 Net present value is an industry-standard valuation metric used in capital investment. It is simple, and it reflects the time value of money by exponential discounting of the future cash flow by a constant discount rate $r$ (usually a risk-free interest rate): 
 
 \begin{equation}
@@ -560,12 +550,13 @@ where $c$ is a cash flow vector with its elements $c_t, t \in \{0,1,...,|c|\}$.
 
 This basic form of the NPV metric is a first approximation of the real current value of cash flow vector $c$, meaning that its descriptive power might be limited. 
 
-In this thesis, we want to challenge the problem of constant discounting of positive and negative cash flow, which implies that the investor is able to invest in risk-free assets at the same rate at which he is able to borrow money. This is, however, far from the reality. 
+In this thesis, we want to challenge the problem of constant discounting of positive and negative cash flow, which implies that the investor is able to invest in risk-free assets at the same rate at which he is able to borrow money.
 
 We challenge this problem in the next section by presenting the \textit{present cash equivalent} (PCE) metric. 
 
 
-\subsection{Present cash equivalent}
+\paragraph{Present cash equivalent(??)}
+<Without this paragraph this section might look good> 
 The ability to borrow money for a given interest rate $r_b$ is individual for each investor and naturally different from the risk-free interest rate $r_r$. This asymmetry is not reflected in the standard NPV metric, and thus we come up with our own metric, which we call present cash equivalent, PCE. 
 
 The notion of PCE is based on an investor's logical indifference to a vector of future cash flow and some current amount of money. 
@@ -611,16 +602,36 @@ which represents the logic that having PCE(C) at time $t =0$ would result in the
 	Based on the straightforward derivation algorithm of PCE, we argue that for each FCF vector, a unique PCE equivalent always exists. 
 \end{remark}
 
-\subsection{Risk averse investors}\label{sec:risk_aversion_preliminaries}
+
+\paragraph{Risk averse investors}\label{sec:risk_aversion_preliminaries}
 According to the observations made in \cite{BerDeM:09}, there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, where investors are happy to hold onto a low-volatile investment even though the average returns are lower in the long run. 
 
-The phenomenon of risk aversion is also well documented in psychological publications, e.g., \cite{HolLau:05}, where it is observed that people do not like uncertainty and value uncertain rewards lower than their expected value. 
+The phenomenon of risk aversion is also well documented in psychological publications, e.g., \cite{HolLau:05}, where it is observed that people value the uncertain rewards below their expected value. 
 
-\subsection{Option valuation - Black-Scholes-Merton model}
-As outlined in the first chapter, the motivation for option valuation technique came  with the increased adoption of derivative trading after WWII. The famous 1973 article from Black and Scholes \cite{BlaSch:73} describes today's standard tool in the financial option valuation - the BSM model. 
+\subsection{Financial option valuation}
+There exist two types of financial options, calls and puts. 
+\begin{definition}(Call option)
+	A call option gives its owner the right to buy stock (or a commodity) at a specified exercise or strike price on or before a specified maturity date. If thee option can be exercised only at maturity it is known as European call, in other cases the option can be exercised at any time before maturity and it is then known as American call\cite{BreMye:12}.
+\end{definition}
+
+\begin{example}
+	One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European call option with a strike price of \$2500 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be lower than \$2500 and thus, exercising the option (buying the stock at \$2500) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price rises to $x>\$2500$. In this case, the investor will use his right to buy the stock for \$2500, which he is able to immediately sell on the market and pocket the difference $x-2500$ USD. 
+\end{example}
+
+\begin{definition}(Put option)
+	Similarly to call options, which allows the investor holding them to buy the stock or the unit of a commodity on or before the maturity date, the put option allows the investor to sell for a given exercise price. American and European puts are again distinguished by the possibility to exercise before or precisely on the maturity date. 
+\end{definition}
+
+\begin{example}
+		One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European put option with a strike price of \$150 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be higher than \$150 and thus, exercising the option (selling the stock at \$150) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price drops to $x<\$150$. In this case, the investor is able to buy the share on the market for $x$ and exercise the option (selling the share for \$150) pocketing the $\$150-x$ difference.
+\end{example}
+
+As outlined in the first chapter, the idea of options and option trading dates back to 17th century. However, the motivation for a proper option valuation technique came with the increased adoption of derivative trading after WWII. 
+
+The famous 1973 article from Black and Scholes \cite{BlaSch:73} describes today's standard tool in the financial option valuation - the BSM model. 
 
 \begin{remark}
-	The M in BSM model stands for Merton, who expanded on the article \cite{BlaSch:73} with his article \cite{Mer:73} and received the Nobel price together with Scholes. \footnote{I want to talk about it because I want to explain why BSM and not BS model, where I do not want to use BS model for obvious reasons. }
+	The M in BSM model stands for Merton, who expanded on the article \cite{BlaSch:73} with his article \cite{Mer:73} and received the Nobel price together with Scholes.
 \end{remark}
 
 In what follows, we will present the BSM model in the form of a theorem \cite{BodKan:04}. In addition, we will offer an opinion that should summarize the idea of the BSM model in few sentences. 
@@ -628,13 +639,13 @@ In what follows, we will present the BSM model in the form of a theorem \cite{Bo
 \begin{theorem}(BSM model)
 	The Black-Scholes-Merton option valuation model says that if the following list of assumption is satisfied:
 	\begin{itemize}
-		\item risk-free interest rate and volatility of the underlying asset are constant;
+		\item risk-free interest rate and volatility\footnote{A variance of asset price understood as a random variable.} of the underlying asset are constant;
 		\item the underlying asset pays no dividends and its price is continuous;
 		\item the asset price evolves according to a log-normal process;
 		\item the markets are efficient - the no-arbitrage principle holds;
 		\item the option is of the European style;
-		\item there are no commission or transaction costs;
-		\item market is perfectly liquid;
+		\item there are no commission or service charges;
+		\item market is perfectly liquid\footnote{The investor is able to buy and sell any amount of the asset at any time and and as frequently as he wishes to.};
 	\end{itemize}
 
 	then based only on the knowledge of time to maturity $T$, option's strike price $K$, the current price of underlying asset $S$ and its volatility $\sigma$ the value of a call option can be computed as: 
@@ -653,14 +664,19 @@ In what follows, we will present the BSM model in the form of a theorem \cite{Bo
 	The option's value is positively dependent on the volatility and the time to maturity. An increase in these parameters leads to a higher option value. On the contrary, the rise in the current stock price or strike price of the options lowers an option's value. 
 \end{remark}
 
-Now, we would like to present our opinion about what the BSM model actually says. 
+From the combination of remarks to the BSM model from authors like  \cite{BodKan:04} \cite{Ros:11} we formulate our own remark of what does the BSM model represent. 
 
 \begin{remark}
 	The core of the BSM model, assuming that ``smooth`` conditions hold, is that we are able to derive the missing parameter $\mu$ of the asset's log-normal price model (known $\sigma$ is an assumption). Building on this, the value of an option is then the expected value of the maximum of the difference between the strike price and the realized price of the asset and zero\footnote{Since when the option is not realized no further loss occurs.}, discounted by the risk-free interest rate. 
 \end{remark}
 
+Finally to illustrate the usage of BSM model we present an option valuation example from \cite{Ros:11}.
+\begin{example}
+	Suppose that a stock's current value is 30, the risk-free interest rate 8\% and the volatility of the stock is 0.2. Assume that all assumptions for the BSM model hold. Then the call option with strike price 34 that expires in three month has a value of 0.24. 
+\end{example}
 
-\section{Real Option Analysis}\label{sec:ROA}
+
+\subsection{Real Option Valuation}\label{sec:ROA}
 As outlined in the first chapter, the theory of real option analysis (ROA) was born after the boom in publications about financial option valuation in the 1970s. The first ideas represented by Myers \cite{Mye:77} are of a philosophical nature - options (ability to make project changes) add value to the project. 
 
 Many publications were published on the ROA topic since. Through our studies of the state of the art, we have identified three classes of authors that differ by the level of analogy with the BSM model. 
@@ -712,11 +728,60 @@ By focusing on the complete analogy, the authors of this class strictly limit th
 In what follows, our understanding of ROA will be based on the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
 
 
-\section{Statistical Decision Theory}
+\section{Statistical Decision Theory} 
 The second pillar upon which this thesis stands is the statistical decision theory (SDT). An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making under uncertainty in its broadest sense encapsulates the majority of human behavior, the class of problems it is able to solve (at least theoretically) is quite large. 
 
-The SDT's primary focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in a dynamic and uncertain environment. In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov Decision Process (MDP) \cite{Put:05}. 
+The SDT's primary focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in a dynamic and uncertain environment. The optimality of the given strategy is measured by some reward metric, in the simplest case by a pure monetary gain. This metric is, however, not sufficient for many applications, so a general metric of agent's reward via utility is used. 
+\subsection{Probability}
+<What should be here?> 
 
+
+\subsection{Utility}
+In many decision-making situations, rational decision-makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
+
+One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, most people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
+
+This effect and its implications become more understandable for  substantial sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However, in one case, the benefit is certain and in the other case, there is only a 50\% of win. 
+
+Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738 \cite{Ber:54}. This paradox is illustrated on a game with the following rules. A fair coin is being repeatedly tossed until the result is ``tails``, say in $n$-th toss. Then the reward for the participant is driven by the equation $2^{n-1}$, where for example the firs appearance of 	``tails`` in fourth toss rewards the participant with 8 units of currency.
+
+The expected value of the proposed game is infinite. However, it is shown that people would seldom pay more than 25 USD to play it. Interestingly, that this amount corresponds with the assumption that the counterparty does not possess an infinite amount of money but rather a more reasonable amount of 16M USD \cite{Pet:20}. 
+
+By these two examples, we demonstrate that real decision-makers must, in some cases, decide based on something different than the expected value. Building on the extension of the first example, we say that decision-makers maximize their well-being measured in the utility of the given monetary rewards. 
+
+This relation between the perceived utility and monetary value is formalized by the utility function, which existence for rational decision makers is conditioned on a set of axioms (for more details, please see \cite{BacChi:19}). 
+
+\begin{definition}(Utility function)
+	The utility function is a real value function, that, in accordance with the decisional setting, represents the decision maker's preferences. The maximum well-being of the decision maker is achieved through the action corresponding to the maximum of the utility function.
+\end{definition}
+
+Based on the shape of the utility function, we can define three classes of decision-makers: 
+
+
+\begin{itemize}
+	\item \textbf{Risk-averse} decision-makers (the majority of the population) have concave utility functions. They value uncertain monetary gain lower than its expected value. 
+	\item \textbf{Risk-neutral} decision-makers have  linear utility functions. They value uncertain monetary gain exactly as its expected value. 
+	\item \textbf{Risk-seeking} decision-makers have convex utility functions. They value uncertain monetary gain more than its expected value.  
+\end{itemize}
+
+
+The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individual's utility function can be obtained from a questionnaire by an algorithmic approach that ensures the individual's consistency of responses \cite{BacChi:19}.
+
+Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in fig. \ref{fig:UF}.
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 0.7]{Images/UF.png}
+		\caption{An example of utility function, where $c$ represents a monetary gain and u(c) its utility for predominantly risk averse decision-maker \cite{BacChi:19}. We can observe how in the region of negative montary gains, the utility function becomes convex.} 
+		\label{fig:UF}
+	\end{center}
+\end{figure}
+
+
+
+\subsection{Markov Decision Process (Sequential Decision Problem)}
+In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov Decision Process (MDP) \cite{Put:05}. 
 \begin{definition}(Markov decision process)
 	
 	Markov decision process is defined by its five building blocks: 
@@ -745,7 +810,7 @@ In this thesis, however, we will not go into the detail of modeling the transiti
 As outlined above, the goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies $\mathbf{\Pi}$: 
 
 \begin{equation}
-	\pi^*=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t\in \mathbf{T}} r(s_t,a_t,s_{t-1})|\pi\right].
+	\pi^*=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t\in \mathbf{T}} r(s_t,a_t,s_{t-1})\Bigg|\pi\right].
 \end{equation}
 
 \begin{remark}
@@ -754,17 +819,18 @@ As outlined above, the goal of SDT is to find the optimal strategy - sequence of
 
  Due to the nature of project valuation, where projects are considered to be finite or their cash flow exponentially discounted, this thesis will focus on a metric based on the presented notion of expected cumulative reward.
 
-\subsection{Dynamic programming/Reinforcement learning}\label{Sec:DP}
+\subsection{Dynamic programming}\label{Sec:DP}
 Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
 \begin{equation}
 |\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}| 
 \end{equation}  
 a very demanding task, even for low-dimensional problems. 
 
+To cope with such computational complexity clever algorithms were developed, most notably the dynamic programming approach and the reinforcement learning approach. In this thesis we will focus on the first one, which is based on the idea of backward induction.
 
-To cope with such computational complexity, a clever idea of backward induction, called dynamic programming, is used. The core of dynamic programming is to define the so-called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
+ The core of dynamic programming is to define the so-called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
 \begin{equation}\label{eq:Bellman}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
+V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
 \end{equation}
 
 Value function represents the expected cumulative reward from a given state onward. The idea of computing this value through the backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal.  Optimal strategy comes together with the value function seemingly as a byproduct, where in each state, the optimal action is the argmax of the expression in equation \ref{eq:Bellman}. 
@@ -808,6 +874,23 @@ where the cardinality $|\mathbf{\Theta_t}|$ is finite and preferably small.
 	where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running the production.
 \end{remark}
 
+\begin{remark}
+	Because of the option-like structure of the investment opportunities in projects, it is worth it to define the piece-wise linear function, which is a potential candidate for a function $f$.
+	\begin{definition}(Piecewise linear function)
+		In this thesis, we consider only a two-segment piecewise linear function, which can be described by four parameters as:
+		\begin{equation}
+		pw(x, x_0, y_0, k_1, k_2) = 
+		\left\{
+		\begin{array}{ll}
+		y_0+k_1(x-x_0)&  \mbox{if } x \leq x_0 \\
+		y_0+k_2(x-x_0)&  \mbox{if } x > x_0 
+		\end{array}
+		\right.
+		\end{equation}
+		where $k_1$ and $k_2$ represent the slopes of the first and second segment and the pair $x_0$, $y_0$ the single breaking point. 
+	\end{definition}
+\end{remark}
+
 The update of $v_t$ then unfolds as follows: 
 
 \begin{itemize}
@@ -820,43 +903,6 @@ The update of $v_t$ then unfolds as follows:
 By updating the parameters $\theta_{i,t}$ in all $t \in \mathbf{T}$ (starting from the horizon - the last time epoch), the value function approximation is being gradually discovered. 
 
 With the obtained parameters $\theta_{i,t}$ for all time epochs $t \in \mathbf{T}$, we are able to determine our best approximation of the expected value of each individual state and thus replicate the optimal decision making. Furthermore, from the perspective of project valuation, one particularly relevant value function approximation is $v_0(s)$, where $s$ describes the current state of the world. This value represents our approximate of the project valuation.
-
-
-\subsection{Utility}
-In many decision-making situations, rational decision-makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
-
-One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, most people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
-
-This effect and its implications become more understandable for  substantial sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However, in one case, the benefit is certain and in the other case, there is only a 50\% of win. 
-
-Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738 \cite{Ber:54}. The expected value of the proposed game is infinite. However, it is shown that people would seldom pay more than 25 USD to play it. Interestingly, that this amount corresponds with the assumption that the counterparty does not possess an infinite amount of money but rather a more reasonable amount of 16M USD \cite{Pet:20}. 
-
-By these two examples, we demonstrate that real decision-makers must, in some cases, decide based on something different than the expected value. Building on the extension of the first example, we say that decision-makers maximize their well-being measured in the utility of the given monetary rewards. 
-
-This relation between the perceived utility and monetary value is formalized by the \textbf{utility function}.
-
-Based on the shape of the utility function, we can define three classes of decision-makers: 
-
-
-\begin{itemize}
-	\item \textbf{Risk-averse} decision-makers (the majority of the population) have concave utility functions. They value uncertain monetary gain lower than its expected value. 
-	\item \textbf{Risk-neutral} decision-makers have  linear utility functions. They value uncertain monetary gain exactly as its expected value. 
-	\item \textbf{Risk-seeking} decision-makers have convex utility functions. They value uncertain monetary gain more than its expected value.  
-\end{itemize}
-
-
-The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individual's utility function can be obtained from a questionnaire by an algorithmic approach that ensures the individual's consistency of responses \cite{BacChi:19}.
-
-Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in fig. \ref{fig:UF}.
-
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale = 0.7]{Images/UF.png}
-		\caption{An example of utility function, where $c$ represents a monetary gain and u(c) its utility for predominantly risk averse decision-maker \cite{BacChi:19}. We can observe how in the region of negative montary gains, the utility function becomes convex.} 
-		\label{fig:UF}
-	\end{center}
-\end{figure}
 
 
 
@@ -1066,7 +1112,7 @@ This second approximation of the optimized entity is defined as the expected pre
 The following equation represents the update of the Bellman equation \ref{eq:Bellman}, adjusting the crucial step in the optimal strategy determination:
 
 \begin{equation}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) PCE\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right),
+V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) PCE\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right),
 \end{equation}
 where $s_{t-1}^b$ is the project's balance state in time $t-1$, $r_r$ the risk-free interest rate and $r_b$ the borrowing rate. 
 
@@ -1086,7 +1132,7 @@ We believe that this characteristic of investors is important to consider in the
 The third and final approximation of the optimized entity and the corresponding adjustment of the Bellman equation \ref{eq:Bellman} is to transform the PCE by the utility function $\mu(\cdot)$ of the given investor, which can be expressed as: 
 
 \begin{equation}\label{eq:third_approximation}
-	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \cdot \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right)\right).
+	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) \cdot \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right)\right).
 \end{equation}
 
 \begin{remark}
@@ -1270,7 +1316,7 @@ p_{W_t}(x) = \frac{1}{\sqrt{2\pi t}} \cdot exp\left(\frac{-x^2}{2t}\right).
 \paragraph{Installed capacity}
 The evolution of elementary state $s^4$ representing the number of blocks built is deterministic and conditioned on the previous action. If the chosen action is $a = 2$ or $a=3$, representing building a new block, then the elementary state of the number of blocks increases by 1 with probability 1. If the chosen action is $a=0$ or $a=1$, this elementary state is not changed with probability 1, mathematically: 
 \begin{equation}
-p(s^4_{t+1}=y|s^4_t = x, a_t) =
+P(s^4_{t+1}=y|s^4_t = x, a_t) =
 \left\{
 \begin{array}{ll}
 1  & \mbox{if } x = y \land a_t \in \{0,1\}  \\
@@ -1285,7 +1331,7 @@ The last model that needs to be discussed is the one representing the financial 
 
 Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 6\%}, and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^5$ as: 
 \begin{equation}
-p(s^5_{t+1}=y|s_t, a_t,  s_t^5=x) =
+P(s^5_{t+1}=y|s_t, a_t,  s_t^5=x) =
 \left\{
 \begin{array}{ll}
 1  & \mbox{if } y = RM(FCF(s_t, a_t)+x, r_b, r_r)\\
@@ -1317,6 +1363,21 @@ The mathematical expression of the sentences above can be presented as:
 	As discussed earlier, the optimal strategy is not being optimized for the expected cumulative FCF, but rather each action optimizes the expected utility of the present cash equivalent in the current state. 
 \end{remark}
 
+
+\subsection{Utility function}
+The chosen utility function $v$ for this example was chosen as:
+
+\begin{equation}
+v(x) =
+\left\{
+\begin{array}{ll}
+-(-x) ^{0.9}  & \mbox{if } x<0,\\
+x^{0.85}& \mbox{otherwise.} 
+\end{array}
+\right.
+\end{equation}
+
+This choice represents slight risk aversion of the investors, with an asymmetric perception of losses and gains. Its purpose is only illustrative as the details of utility function creation, its meaning,  and derivation are out of the scope of this thesis. 
  
  \section{Approximate Dynamic Programming}
  
@@ -1332,7 +1393,7 @@ where $I_i$ is an identificator function of installed capacity $s^4$, and $k_{i,
 
 \begin{figure}[htb]
 	\begin{center}
-		\includegraphics[scale = 0.7]{Images/pw_linear_example.png}
+		\includegraphics[scale = 0.47]{Images/pw_linear_example.png}
 		\caption{Example of a pw linear fit.} 
 		\label{fig:PW_linear}
 	\end{center}
@@ -1571,6 +1632,7 @@ Finally, through the time of writing this thesis, we have identified the followi
 	\item valuation of a more complex project in cooperation with an actual investment company;
 	\item sensitivity analysis of price volatilities in our example;
 	\item sensitivity analysis of the time granularity of decisions in our example;
+	\item so-called option games, which combine elements of SDT and game-theory (studying, for example, the optimality of companies' competition vs. collaboration);
 	\item model of investment with more complex internal processes than the simple I/O process;
 	\item a deeper study of the macro vs. micro-optimization of the utility and its effects on consistency of decision making at individual levels of the investment. 
 \end{itemize}
