@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 FEB 2021 13:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 MAR 2021 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1091,104 +1091,107 @@ LaTeX Font Info:    Font shape `OMS/txr/m/n' in size <10.95> not available
 
 ]
 Chapter 2.
-[19] [20] [21] [22]
+[19] [20]
 LaTeX Font Info:    Font shape `OMS/txr/m/it' in size <10.95> not available
-(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 642.
- [23] [24] [25] [26]
-<Images/UF.png, id=129, 637.38126pt x 477.785pt>
+(Font)              Font shape `OMS/txsy/m/n' tried instead on input line 523.
+ [21] [22] [23] [24]
+<Images/UF.png, id=120, 637.38126pt x 477.785pt>
 File: Images/UF.png Graphic file (type png)
 <use Images/UF.png>
-Package pdftex.def Info: Images/UF.png  used on input line 773.
+Package pdftex.def Info: Images/UF.png  used on input line 679.
 (pdftex.def)             Requested size: 446.16383pt x 334.44722pt.
- [27] [28 <./Images/UF.png>] [29]
-[30]
+ [25] [26 <./Images/UF.png>]
 Chapter 3.
-[31
+[27
+
+] [28] [29] [30] [31] [32
 
 ]
+Chapter 4.
+[33]
 Overfull \hbox (86.44643pt too wide) has occurred while \output is active
-\T1/txr/m/n/10.95 32 \T1/txr/m/sl/10.95 CHAPTER 3.  PROJECT VALUATION REVISITED
- FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
- []
-
-[32] [33]
-Overfull \hbox (86.44643pt too wide) has occurred while \output is active
-\T1/txr/m/n/10.95 34 \T1/txr/m/sl/10.95 CHAPTER 3.  PROJECT VALUATION REVISITED
+\T1/txr/m/n/10.95 34 \T1/txr/m/sl/10.95 CHAPTER 4.  PROJECT VALUATION REVISITED
  FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
  []
 
 [34] [35]
 Overfull \hbox (86.44643pt too wide) has occurred while \output is active
-\T1/txr/m/n/10.95 36 \T1/txr/m/sl/10.95 CHAPTER 3.  PROJECT VALUATION REVISITED
+\T1/txr/m/n/10.95 36 \T1/txr/m/sl/10.95 CHAPTER 4.  PROJECT VALUATION REVISITED
  FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
  []
 
 [36] [37]
 Overfull \hbox (86.44643pt too wide) has occurred while \output is active
-\T1/txr/m/n/10.95 38 \T1/txr/m/sl/10.95 CHAPTER 3.  PROJECT VALUATION REVISITED
+\T1/txr/m/n/10.95 38 \T1/txr/m/sl/10.95 CHAPTER 4.  PROJECT VALUATION REVISITED
  FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
  []
 
 [38] [39]
 Overfull \hbox (86.44643pt too wide) has occurred while \output is active
-\T1/txr/m/n/10.95 40 \T1/txr/m/sl/10.95 CHAPTER 3.  PROJECT VALUATION REVISITED
+\T1/txr/m/n/10.95 40 \T1/txr/m/sl/10.95 CHAPTER 4.  PROJECT VALUATION REVISITED
  FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
  []
 
-[40
+[40] [41]
+Overfull \hbox (86.44643pt too wide) has occurred while \output is active
+\T1/txr/m/n/10.95 42 \T1/txr/m/sl/10.95 CHAPTER 4.  PROJECT VALUATION REVISITED
+ FROM THE STATISTICAL DECISION THEORY PERSPECTIVE
+ []
+
+[42
 
 ]
-Chapter 4.
-[41] [42]
-Overfull \hbox (8.35078pt too wide) in paragraph at lines 1252--1253
+Chapter 5.
+[43] [44]
+Overfull \hbox (8.35078pt too wide) in paragraph at lines 1253--1254
 []\T1/txr/m/n/10.95 In this ex-per-i-ment, we con-sider four man-age-rial ac-ti
 ons. They could be un-der-stood as two-dimensional,
  []
 
-[43] [44] [45]
-<Images/pw_linear_example.png, id=194, 988.69376pt x 526.96875pt>
+[45] [46] [47]
+<Images/pw_linear_example.png, id=200, 988.69376pt x 526.96875pt>
 File: Images/pw_linear_example.png Graphic file (type png)
 <use Images/pw_linear_example.png>
-Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1396.
+Package pdftex.def Info: Images/pw_linear_example.png  used on input line 1397.
 
 (pdftex.def)             Requested size: 464.68614pt x 247.67534pt.
 
-Overfull \hbox (9.44203pt too wide) in paragraph at lines 1396--1397
+Overfull \hbox (9.44203pt too wide) in paragraph at lines 1397--1398
  [] 
  []
 
-[46 <./Images/pw_linear_example.png>] [47]
-<Images/MT_results_1.pdf, id=202, 679.72383pt x 336.73932pt>
+[48 <./Images/pw_linear_example.png>] [49]
+<Images/MT_results_1.pdf, id=209, 679.72383pt x 336.73932pt>
 File: Images/MT_results_1.pdf Graphic file (type pdf)
 <use Images/MT_results_1.pdf>
-Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1513.
+Package pdftex.def Info: Images/MT_results_1.pdf  used on input line 1514.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
- [48]
-<Images/MT_results_2.pdf, id=206, 679.72383pt x 336.73932pt>
+ [50]
+<Images/MT_results_2.pdf, id=213, 679.72383pt x 336.73932pt>
 File: Images/MT_results_2.pdf Graphic file (type pdf)
 <use Images/MT_results_2.pdf>
-Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1528.
+Package pdftex.def Info: Images/MT_results_2.pdf  used on input line 1529.
 (pdftex.def)             Requested size: 441.81525pt x 218.87794pt.
- [49 <./Images/MT_results_1.pdf>] [50 <./Images/MT_results_2.pdf>]
-Chapter 5.
+ [51 <./Images/MT_results_1.pdf>] [52 <./Images/MT_results_2.pdf>]
+Chapter 6.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [51
+ [53
 
 ]
-[52] [53] [54
+[54] [55] [56
 
 ]
-Chapter 6.
-[55] (./Master's thesis.bbl [56] [57
+Chapter 7.
+[57] (./Master's thesis.bbl [58] [59
 
-] [58]) [59] (./Master's thesis.aux) ) 
+] [60]) [61] (./Master's thesis.aux) ) 
 Here is how much of TeX's memory you used:
- 24544 strings out of 492616
- 438244 string characters out of 6129482
- 573200 words of memory out of 5000000
- 28072 multiletter control sequences out of 15000+600000
+ 24546 strings out of 492616
+ 438272 string characters out of 6129482
+ 573208 words of memory out of 5000000
+ 28074 multiletter control sequences out of 15000+600000
  621194 words of font info for 150 fonts, out of 8000000 for 9000
  1152 hyphenation exceptions out of 8191
  43i,18n,77p,903b,588s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1209,10 +1212,10 @@ ype1/urw/times/utmb8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/t
 imes/utmbi8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr
 8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></u
 sr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Master's thesis.pdf" (59 pages, 373736 bytes).
+Output written on "Master's thesis.pdf" (61 pages, 375193 bytes).
 PDF statistics:
- 380 PDF objects out of 1000 (max. 8388607)
- 208 compressed objects within 3 object streams
+ 387 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

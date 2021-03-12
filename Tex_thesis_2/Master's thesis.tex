@@ -400,22 +400,22 @@ Chapter 5 summarizes the thesis - reminds the motivation, underlines the main me
 
 
 
-
 \chapter{Preliminaries}
-To properly understand a mathematical text, it is essential first to define the used symbolism and notions. The previous statement's importance is especially true for this thesis, which was inspired by authors from both the financial and mathematical world. 
+To properly understand a mathematical text, it is essential first to define the used symbolism and notions. The used mathematical notation comes from influential authors in their respective fields of study: 
 
-The used notation comes predominantly from the most influential authors in the respective fields of study:  
 \begin{itemize}
-	\item financial analysis \cite{BerDeM:09};
-	\item real options \cite{Gut:09};
-	\item statistical decision theory \cite{BacChi:19}.
+	\item statistical decision theory \cite{BacChi:19}, \cite{Put:05}, 
+	\item probability theory \cite{Jay:03}, 
+	\item approximate dynamic programming \cite{Pow:11}.
 \end{itemize}
 
  The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU demonstrated also in his previous publications \cite{Rol:18} and \cite{Rol:19}. 
 
 
 \section{Probability Theory}
-In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. Random variables, understood in the sense of the standard Kolmogorov's probability theory \cite{Kol:60}, are denoted with a tilde above the variable, e.g., $\tilde{x}$. Values of random variables are denoted by the same letters as the random variable without the tilde, e.g., $x$. 
+In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. 
+
+Random variables, understood in the sense of the standard Kolmogorov's probability theory \cite{Kol:60}, are denoted with a tilde above the variable, e.g., $\tilde{x}$. Values of random variables are denoted by the same letters as the random variable without the tilde, e.g., $x$. 
 
 \begin{definition}(Probability)
 	Let $\tilde{x}$ be a discrete random variable. Then $P(x)$ denotes a value of the probability mass function (p.m.f.)  for the realization $\tilde{x}=x$. Similarly, if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density function (p.d.f.) at $x$. 
@@ -432,7 +432,7 @@ Next, we define the well-known concept of conditional probability \cite{Jay:03}.
 A similar concept is also used for the continuous random variables with the name of conditional density \cite{Jay:03}. 
 
 \begin{definition}(Conditional density)
-	Let symbol $p(x|y)$ represent the conditional density of a continuous random variable. Then the $P(x|y)$ is defined as:
+	Let symbol $p(x|y)$ represent the conditional density of a continuous random variable. Then the $p(x|y)$ is defined as:
 	\begin{equation}\label{eq:condP}
 	p(x|y)=\frac{p(x,y)}{p(y)},
 	\end{equation} where $p(x,y)$ is a joint p.d.f. of $\tilde{x}$ and $\tilde{y}$. 
@@ -441,16 +441,16 @@ A similar concept is also used for the continuous random variables with the name
 \begin{definition}(Expected value)
 	Expected value of a discrete random variable $\tilde{x}$ is defined as: 
 	\begin{equation}
-		\sum_{\mathbf{X}} P(x) x. 
+		E[\tilde{x}]=\sum_{\mathbf{X}} P(x) x. 
 	\end{equation}
 	Similarly, for the continuous random variable $\tilde{y}$ the expected value is defined as: 
 	\begin{equation}
-	\int_{\mathbf{Y}} p(y) y \ dy. 
+	E[\tilde{y}]=\int_{\mathbf{Y}} p(y) y \ dy. 
 	\end{equation}
 \end{definition}
 
 
-\subsection{Probability distributions}
+\subsection{Probability Distributions}
 Through this thesis, the following distributions will be referenced, either as an expected model of some random variable or in a broader discussion \cite{Bli:19}. 
 
 \paragraph{Bernoulli distribution}
@@ -475,7 +475,7 @@ Binomial distribution $Bi(n,p)$ represents the number of successes of $n$ indepe
 	P(\tilde{x}=k, n, p)=\binom{n}{k} \cdot p^k(1-p)^{n-k}, \ k \in \{0,1,2, \dots ,n\}. 
 \end{equation}
 
-This distribution is used in a popular ROA modeling tool - \textit{the binomial model} \cite{Gut:09}. The idea is that a random variable (price, quantity) evolves as a realization of consequential up or down movements distributed by $Be(p_u)$, where $p_u$ is the probability of the up movement. Each move then updates the variable's value by multiplying it by a given coefficient $U$ or $D$. To ensure that the number of possible states rises linearly and not exponentially with the number of time epochs, the model limits the parameters as $D=1/U$.
+This distribution is used in a popular ROA modeling tool - \textit{the binomial model} \cite{Gut:09}. The idea is that a random variable (price, quantity, \dots) evolves as a realization of consequential up or down movements distributed by $Be(p_u)$, where $p_u$ is the probability of the up movement. Each move then updates the variable's value by multiplying it by a given coefficient $U$ or $D$. To ensure that the number of possible states rises linearly and not exponentially with the number of time epochs, the model limits the parameters as $D=1/U$.
 
 Based on the number of up movements $n_u$ (as a realization of $Bi(n, p_u)$) until the $n$-th time epoch, and the initial value $v_{init}$, the realization of the modeled variable can be expressed as: 
 
@@ -485,9 +485,9 @@ v = v_{init} \cdot U^{2n_u-n}.
 
 
 \paragraph{Poisson distribution}
-Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in modeling of the number of successes in a given time-interval, so-called ``arrivals`` \cite{Bli:19}. It is used for modeling of the number of incoming emails or the number of earthquakes in a given area in one year. 
+Poisson distribution $Po(\lambda)$ is a popular discrete distribution used in modeling of the number of successes in a given time-interval, so-called ``arrivals`` \cite{Bli:19}. This distribution is used for modeling of the number of incoming emails or the number of earthquakes in a given area in one year. 
 
-Its probability p.m.f. given parameter $\lambda$ is: 
+Its p.m.f. given parameter $\lambda$ is: 
 \begin{equation}
 	P(\tilde{x}=x, \lambda)= \frac{\lambda^xe^{-\lambda}}{x!} , 
 \end{equation}
@@ -497,7 +497,7 @@ Also, it is worth noting that Poisson distribution $Po(\lambda)$ with $\lambda =
 
 
 \paragraph{Log-normal distribution}
-Another very popular distribution in the ROA field is the log-normal distribution $LogN(\mu, \sigma)$. It represents a random variable, a logarithm of which is distributed normally. 
+Another useful distribution for this thesis is the log-normal distribution $LogN(\mu, \sigma)$. It represents a continuous random variable, a logarithm of which is distributed normally. 
 
 The p.d.f. of such variable is:
 \begin{equation}
@@ -507,11 +507,196 @@ The p.d.f. of such variable is:
 This distribution is again used mostly for modeling of asset or commodity prices, arguably for two main reasons. The first is that its realizations are positive, and the second being that variance reflects not only the parameter $\sigma$ but also $\mu$, where $\mu$ usually represents the previous price. 
 
 
-\section{Valuation in Finance}
+\section{Statistical Decision Theory} 
+The first pillar upon which this thesis stands is the statistical decision theory (SDT). An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making under uncertainty in its broadest sense encapsulates the majority of human behavior, the class of problems it is able to solve (at least theoretically) is quite large. 
 
+The SDT's primary focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in a dynamic and uncertain environment. The optimality of the given strategy is measured by some reward metric, in the simplest case by a pure monetary gain. This metric is, however, not sufficient for many applications, so a general metric of agent's reward via utility (described in section \ref{sec:utility}) is used. 
+
+
+
+\subsection{Markov Decision Process (Sequential Decision Problem)}
+In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov Decision Process (MDP) \cite{Put:05}. 
+\begin{definition}(Markov decision process)
+	
+	Markov decision process is defined by its five building blocks: 
+	\begin{itemize}
+		\item The set of time epochs - $\mathbf{T}$;
+		\item The set of states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
+		\item The set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$, $t \in \mathbf{T}$;
+		\item The reward function of transition from one state to another - $r(s_t, a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
+		\item Transition probabilities governing the transition from one state to another $p(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$.
+	\end{itemize}
+\end{definition}
+
+\begin{remark}
+	The set of time epochs, states and actions is usually known, defined by the structure of the decision making problem that is being solved. Reward and mostly the transition function tend to be unknown, and they need to be estimated. 
+\end{remark}
+
+\begin{remark}
+	For further simplification of the text, we define $\mathbf{S} = \bigcup\limits_{t \in \mathbf{T}} \mathbf{S_t}$ and $\mathbf{A} = \bigcup\limits_{s \in \mathbf{S}} \mathbf{A_{s}}$.
+\end{remark}
+
+
+Usually, the biggest task in SDT is to correctly approach the uncertainty about transition probabilities between the different states of a decision making problem. There are two approaches to parameter estimation in statistics, a classical approach, and a Bayesian approach. Since the Bayesian approach seems to fit the decision-making format better, allowing for the notion of prior probabilities, incorporating expert knowledge, and the possibility for smooth updating on newly observed data - it is a preferable choice. 
+
+In this thesis, however, we will not go into the detail of modeling the transition probability function, and we will assume it to be known. 
+
+As outlined above, the goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies $\mathbf{\Pi}$: 
+
+\begin{equation}
+	\pi^*=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t\in \mathbf{T}} r(s_t,a_t,s_{t-1})\Bigg|\pi\right].
+\end{equation}
+
+\begin{remark}
+	This definition of the optimal strategy is used mainly for finite decision problems or problems with exponential discounting of future rewards. Alternative definitions of optimality, for example, maximal average reward per period, exist.
+\end{remark}
+
+ Due to the nature of project valuation, where projects are considered to be finite or their cash flow exponentially discounted, this thesis will focus on a metric based on the presented notion of expected cumulative reward. 
+
+\subsection{Dynamic Programming}\label{Sec:DP}
+Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
+\begin{equation}
+|\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}| 
+\end{equation}  
+a very demanding task, even for low-dimensional MDP's. 
+
+To cope with such computational complexity clever algorithms were developed, most notably the dynamic programming approach and the reinforcement learning approach. In this thesis we will focus on the first one, which is based on the idea of backward induction.
+
+ The core of dynamic programming is to define the so-called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
+\begin{equation}\label{eq:Bellman}
+V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_{t-1}, s_{t-1}) [r(s_t, a_{t-1}, s_{t-1})+V(s_t)].
+\end{equation}
+
+Value function represents the expected cumulative reward from a given state onward. The idea of computing this value through the backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal.  Optimal strategy comes together with the value function seemingly as a byproduct, where in each state, the optimal action is the argmax of the expression in equation \ref{eq:Bellman}. 
+
+This approach significantly reduces the computational complexity to
+\begin{equation}
+	\sum_{t \in \mathbf{T}} \sum_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}|
+\end{equation}
+expected value computations. 
+
+\begin{remark}
+	For a constant number of states in each time epoch $|\mathbf{S_t}|$  and a constant number of actions in each state $|\mathbf{A_{s_t}}|$, this reduction is from $|\mathbf{A_{s_t}}|^{|\mathbf{S_t}|^{|\mathbf{T}|}}$  to $|\mathbf{A_{s_t}}|\cdot |\mathbf{S_t}|\cdot|\mathbf{T}|$.
+\end{remark}
+
+The reduction of computational complexity with the DP algorithm is significant. However, for the majority of real-world applications it is not sufficient. In reality, due to the structure of decision-making problems and their formulation, the cardinality of state space can explode even for fairly simple decision problems. 
+
+The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" by Powel \cite{Pow:11}, who, among others, proposes solutions under the label of approximate dynamic programming (ADP). 
+
+
+\subsection{Approximate Dynamic Programming}
+The computational complexity of dynamic programming for middle and high-dimensional decision-making problems is so demanding that its results cannot be obtained in a reasonable amount of time. 
+
+To cope with this problem, a relevant topic to look at is the section of SDT called approximate dynamic programming (ADP). The ADP label can be understood as a unifying name for a number of algorithms trying to obtain quasi-optimal strategies for decision-making problems with reasonable demands for computational power\footnote{For details, please see Powell \cite{Pow:11}.}. 
+
+ADP algorithms can be divided into two main classes, policy and value iteration algorithms. In this thesis, we will be focusing on the value iteration class since we believe that due to the structure of project valuation problems (rather large $|\mathbf{S}$| and rather small $|\mathbf{A}|$), it is a better fit.
+
+The idea of value iteration is to have some initial heuristic value function approximation, which is being updated based on samples of possible paths. 
+
+In this section of the thesis, we present the most general form of the value function approximation model, which aims to describe the general shape of the value function by a small number of parameters\footnote{A value function is in classical DP similar to a look-up table. There is no simple functional relationship between states and the values of value functions.}. We will model the value function in each time epoch $v_t$ as a function of the state itself $s$ and a parametric function $f$ as: 
+
+\begin{equation}\label{eq:genADP}
+v_t(s) = f(s, \theta_{i,t} ),  \quad \theta_{i,t} \in \mathbf{\Theta_t},
+\end{equation} 
+where the cardinality $|\mathbf{\Theta_t}|$ is finite and preferably small. 
+
+\begin{remark}
+	To clarify the general formula represented by the equation \ref{eq:genADP}, we present an example, where the parametric function $f$ is a linear combination of some basis functions $\phi_{i}$: 
+	\begin{equation}
+	v_t(s) = \sum_{i} \theta_{i,t} \cdot \phi_{i}(s),
+	\end{equation} 
+	where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running the production.
+\end{remark}
+
+\begin{remark}
+	Because of the option-like structure of the investment opportunities in projects, it is worth it to define the piece-wise linear function, which is a potential candidate for a function $f$.
+	\begin{definition}(Piecewise linear function)
+		In this thesis, we consider only a two-segment piecewise linear function, which can be described by four parameters as:
+		\begin{equation}
+		pw(x, x_0, y_0, k_1, k_2) = 
+		\left\{
+		\begin{array}{ll}
+		y_0+k_1(x-x_0)&  \mbox{if } x \leq x_0 \\
+		y_0+k_2(x-x_0)&  \mbox{if } x > x_0 
+		\end{array}
+		\right.
+		\end{equation}
+		where $k_1$ and $k_2$ represent the slopes of the first and second segment and the pair $x_0$, $y_0$ the single breaking point. 
+	\end{definition}
+\end{remark}
+
+
+To determine the parameters $\theta_{i,t}$ for each value function approximation $v_t$ we first need to heuristically derive the parameters for the value function in the last time epoch $\theta_{|\mathbf{T}|,t}$. This is done with the respect to the specific MDP and its meaning. Then, gradually, starting from the last time epochs by a backward induction we discover all the remaining $\theta_{i,t}$ by the following steps. 
+
+\begin{itemize}
+	\item We generate a sample of states $\mathcal{S}_t$ in time $t \in \mathbf{T}$\footnote{Usually based on the model of state distribution in time $t$.}.
+	\item In each $s_t \in \mathcal{S}_t$ we determine the optimal action $a_t^*$ as the argument maximizing the Bellman equation \ref{eq:Bellman}, where the future value function $v_{t+1}$ is understood as its approximation from the previous step.
+	\item In each $s_t \in \mathcal{S}_t$ we undertake the action $a_t^*$ and simulate the transition to the following state $s_{t+1}$. The reward-state pair $(s_t, r(s_{t+1}, a_t^*,s_{t}))$ is saved.
+	\item Based on all state-reward pairs, we fit the parametric function $f$, resulting in parameters $\theta_{i,t}$.
+\end{itemize}
+
+With the obtained parameters $\theta_{i,t}$ for all time epochs $t \in \mathbf{T}$, we are able to determine our best approximation of the expected value of each individual state and thus replicate the optimal decision making. 
+
+
+\subsection{Utility}\label{sec:utility}
+In many decision-making situations, rational decision-makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
+
+One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, most people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
+
+This effect and its implications become more understandable for  substantial sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However, in one case, the benefit is certain and in the other case, there is only a 50\% chance of win. 
+
+Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738 \cite{Ber:54}. This paradox is illustrated on a game with the following rules. 
+
+A fair coin is being repeatedly tossed until the result is ``tails``, say in $n$-th toss. Then the reward for the participant is driven by the equation $2^{n-1}$, where for example the first appearance of 	``tails`` in fourth toss rewards the participant with 8 units of currency.
+
+The expected value of the proposed game is infinite. However, it is shown that people would seldom pay more than 25 USD to play it. Interestingly, that this amount corresponds with the assumption that the counterparty does not possess an infinite amount of money but rather a more reasonable amount of 16M USD \cite{Pet:20}. 
+
+By these two examples, we demonstrate that real decision-makers must, in some cases, decide based on something different than the expected value. Building on the extension of the first example, we say that decision-makers maximize their well-being measured in the utility of the given monetary rewards. 
+
+This relation between the perceived utility and monetary value is formalized by the utility function, which existence for rational decision makers is conditioned on a set of axioms (for more details, please see \cite{BacChi:19}). 
+
+\begin{definition}(Utility function)
+	The utility function is a real value function, that, in accordance with the decisional setting, represents the decision maker's preferences. The maximum well-being of the decision maker is achieved through the action corresponding to the maximum of the utility function.
+\end{definition}
+
+Based on the shape of the utility function, we can define three classes of decision-makers: 
+
+
+\begin{itemize}
+	\item \textbf{Risk-averse} decision-makers (the majority of the population) have concave utility functions. They value uncertain monetary gain lower than its expected value. 
+	\item \textbf{Risk-neutral} decision-makers have  linear utility functions. They value uncertain monetary gain exactly as its expected value. 
+	\item \textbf{Risk-seeking} decision-makers have convex utility functions. They value uncertain monetary gain more than its expected value.  
+\end{itemize}
+
+
+The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individual's utility function can be obtained from a questionnaire by an algorithmic approach that ensures the individual's consistency of responses \cite{BacChi:19}.
+
+Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in fig. \ref{fig:UF}.
+
+
+\begin{figure}[htb]
+	\begin{center}
+		\includegraphics[scale = 0.7]{Images/UF.png}
+		\caption{An example of utility function, where $c$ represents a monetary gain and u(c) its utility. Since the function is not concave or convex on the complete interval of gains, this decision-maker cannot be labeled as any of the three classes defined above \cite{BacChi:19}.} 
+		\label{fig:UF}
+	\end{center}
+\end{figure}
+
+
+
+
+
+\chapter{Valuation - state of the art}
+This thesis is built on two main theoretical pillars. The first, already described in the previous chapter, is the SDT. The second is is the project valuation principles of corporate finance \cite{BerDeM:09}, an overview of which will be presented in this chapter. 
+
+First, we will define the necessary 
+
+
+We will focus on the valuation of \textit{projects}, where the industry standard is the theory of discounted cash flow (DCF), which forms the metric called the net present value of a project (NPV). 
+
+The
 This thesis is built on two main theoretical pillars. The first is the valuation principles of corporate finance \cite{BerDeM:09}, which culminates in real option analysis (ROA), and the second is the statistical decision theory (SDT) \cite{BacChi:19}. In this section we focus on the basic review corporate finance terminology. 
 
-\subsection{Project Valuation}
 
 \begin{definition}(\textbf{Process})
 	A process is understood as the production of goods, purchase and trade of goods or services, driven by the supply of inputs and demand for outputs \cite{Kul:20}.
@@ -535,7 +720,7 @@ This thesis is built on two main theoretical pillars. The first is the valuation
 \end{remark}
 
 \begin{definition}(\textbf{Optimal Project})
-		The goal of each project is to increase the economic value of a process. A project, if such exists, is called an optimal project if the additional economic value is maximal given the set of possible projects. 
+	The goal of each project is to increase the economic value of a process. A project, if such exists, is called an optimal project if the additional economic value is maximal given the set of possible projects. 
 \end{definition}
 
 
@@ -578,21 +763,21 @@ b\cdot(1+r_b)  & \mbox{otherwise}
 Then, based on the assumption of completely dynamic loans\footnote{Meaning that the bank will lend the investor money at any time and accept repayments at any time, all with the same interest rate.},we model the behavior of $RM$ on a given cash flow vector $C = \{c_0,...c_t\} \ t \in \mathbb{N}$ as: 
 
 \begin{equation}
-	RM(C) = RM(...RM(RM(c_0)+c1)...+c_t). 
+RM(C) = RM(...RM(RM(c_0)+c1)...+c_t). 
 \end{equation}
 
 The amount of $RM(C)$ represents the amount of money at time $t$ obtained from the cash flow vector $C$ and logical money management. Then, the PCE(C) can be finally derived as: 
 
 
 \begin{equation}
-	PCE(C) = 
-	\left\{
-	\arraycolsep=5pt\def\arraystretch{1.5}
-	\begin{array}{ll}
-	\frac{RM(C)}{(1+r_r)^{t}}  &  \mbox{if } RM(C)\geq 0 \\
-		\frac{RM(C)}{(1+r_b)^{t}}  & \mbox{if } RM(C) < 0 
-	\end{array}
-	\right.
+PCE(C) = 
+\left\{
+\arraycolsep=5pt\def\arraystretch{1.5}
+\begin{array}{ll}
+\frac{RM(C)}{(1+r_r)^{t}}  &  \mbox{if } RM(C)\geq 0 \\
+\frac{RM(C)}{(1+r_b)^{t}}  & \mbox{if } RM(C) < 0 
+\end{array}
+\right.
 \end{equation}
 
 
@@ -623,7 +808,7 @@ There exist two types of financial options, calls and puts.
 \end{definition}
 
 \begin{example}
-		One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European put option with a strike price of \$150 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be higher than \$150 and thus, exercising the option (selling the stock at \$150) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price drops to $x<\$150$. In this case, the investor is able to buy the share on the market for $x$ and exercise the option (selling the share for \$150) pocketing the $\$150-x$ difference.
+	One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European put option with a strike price of \$150 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be higher than \$150 and thus, exercising the option (selling the stock at \$150) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price drops to $x<\$150$. In this case, the investor is able to buy the share on the market for $x$ and exercise the option (selling the share for \$150) pocketing the $\$150-x$ difference.
 \end{example}
 
 As outlined in the first chapter, the idea of options and option trading dates back to 17th century. However, the motivation for a proper option valuation technique came with the increased adoption of derivative trading after WWII. 
@@ -647,7 +832,7 @@ In what follows, we will present the BSM model in the form of a theorem \cite{Bo
 		\item there are no commission or service charges;
 		\item market is perfectly liquid\footnote{The investor is able to buy and sell any amount of the asset at any time and and as frequently as he wishes to.};
 	\end{itemize}
-
+	
 	then based only on the knowledge of time to maturity $T$, option's strike price $K$, the current price of underlying asset $S$ and its volatility $\sigma$ the value of a call option can be computed as: 
 	\begin{equation}
 	C = SN(d_1) - PV(K)N(d_2), 
@@ -726,183 +911,6 @@ By focusing on the complete analogy, the authors of this class strictly limit th
 
 
 In what follows, our understanding of ROA will be based on the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
-
-
-\section{Statistical Decision Theory} 
-The second pillar upon which this thesis stands is the statistical decision theory (SDT). An area of applied mathematics that formalizes and studies optimal decision making of agents. As decision making under uncertainty in its broadest sense encapsulates the majority of human behavior, the class of problems it is able to solve (at least theoretically) is quite large. 
-
-The SDT's primary focus is to determine the optimal strategy (a sequence of decisions) to act upon, generally in a dynamic and uncertain environment. The optimality of the given strategy is measured by some reward metric, in the simplest case by a pure monetary gain. This metric is, however, not sufficient for many applications, so a general metric of agent's reward via utility is used. 
-\subsection{Probability}
-<What should be here?> 
-
-
-\subsection{Utility}
-In many decision-making situations, rational decision-makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
-
-One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, most people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
-
-This effect and its implications become more understandable for  substantial sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However, in one case, the benefit is certain and in the other case, there is only a 50\% of win. 
-
-Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738 \cite{Ber:54}. This paradox is illustrated on a game with the following rules. A fair coin is being repeatedly tossed until the result is ``tails``, say in $n$-th toss. Then the reward for the participant is driven by the equation $2^{n-1}$, where for example the firs appearance of 	``tails`` in fourth toss rewards the participant with 8 units of currency.
-
-The expected value of the proposed game is infinite. However, it is shown that people would seldom pay more than 25 USD to play it. Interestingly, that this amount corresponds with the assumption that the counterparty does not possess an infinite amount of money but rather a more reasonable amount of 16M USD \cite{Pet:20}. 
-
-By these two examples, we demonstrate that real decision-makers must, in some cases, decide based on something different than the expected value. Building on the extension of the first example, we say that decision-makers maximize their well-being measured in the utility of the given monetary rewards. 
-
-This relation between the perceived utility and monetary value is formalized by the utility function, which existence for rational decision makers is conditioned on a set of axioms (for more details, please see \cite{BacChi:19}). 
-
-\begin{definition}(Utility function)
-	The utility function is a real value function, that, in accordance with the decisional setting, represents the decision maker's preferences. The maximum well-being of the decision maker is achieved through the action corresponding to the maximum of the utility function.
-\end{definition}
-
-Based on the shape of the utility function, we can define three classes of decision-makers: 
-
-
-\begin{itemize}
-	\item \textbf{Risk-averse} decision-makers (the majority of the population) have concave utility functions. They value uncertain monetary gain lower than its expected value. 
-	\item \textbf{Risk-neutral} decision-makers have  linear utility functions. They value uncertain monetary gain exactly as its expected value. 
-	\item \textbf{Risk-seeking} decision-makers have convex utility functions. They value uncertain monetary gain more than its expected value.  
-\end{itemize}
-
-
-The examples above illustrate that the majority of people are risk-averse. This statement is supported by many publications (for example \cite{HolLau:05}). An individual's utility function can be obtained from a questionnaire by an algorithmic approach that ensures the individual's consistency of responses \cite{BacChi:19}.
-
-Another relevant fact with the perception of utility is the asymmetry in human response to gains and losses. The graphical expression of this asymmetry can be seen in fig. \ref{fig:UF}.
-
-
-\begin{figure}[htb]
-	\begin{center}
-		\includegraphics[scale = 0.7]{Images/UF.png}
-		\caption{An example of utility function, where $c$ represents a monetary gain and u(c) its utility for predominantly risk averse decision-maker \cite{BacChi:19}. We can observe how in the region of negative montary gains, the utility function becomes convex.} 
-		\label{fig:UF}
-	\end{center}
-\end{figure}
-
-
-
-\subsection{Markov Decision Process (Sequential Decision Problem)}
-In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov Decision Process (MDP) \cite{Put:05}. 
-\begin{definition}(Markov decision process)
-	
-	Markov decision process is defined by its five building blocks: 
-	\begin{itemize}
-		\item The set of time epochs - $\mathbf{T}$;
-		\item The set of states in those epochs - $\mathbf{S_t}$, $t \in \mathbf{T}$;
-		\item The set of actions in those states - $\mathbf{A_{s_t}}$, $s_t \in \mathbf{S_t}$, $t \in \mathbf{T}$;
-		\item The reward function of transition from one state to another - $r(s_t, a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
-		\item Transition probabilities governing the transition from one state to another $p(s_t|a_t,s_{t-1})$, where $s_t, \in \mathbf{S_t}$, $s_{t-1}, \in \mathbf{S_{t-1}}$,  and $a_t \in \mathbf{A_{s_t}}$;
-	\end{itemize}
-\end{definition}
-
-\begin{remark}
-	The set of time epochs, states and actions is usually known, defined by the structure of the decision making problem that is being solved. Reward and mostly the transition function tend to be unknown, and they need to be often estimated. 
-\end{remark}
-
-\begin{remark}
-	For further simplification of the text, we define $\mathbf{S} = \bigcup\limits_{t \in \mathbf{T}} \mathbf{S_t}$ and $\mathbf{A} = \bigcup\limits_{s \in \mathbf{S}} \mathbf{A_{s}}$.
-\end{remark}
-
-
-Usually, the biggest task in SDT is to correctly approach the uncertainty about transition probabilities between the different states of a decision making problem. There are two approaches to parameter estimation in statistics, a classical approach, and a Bayesian approach. Since the Bayesian approach seems to fit the decision-making format, allowing for the notion of prior probabilities, incorporating expert knowledge, and the possibility for smooth updating on newly observed data - it is a preferable choice. 
-
-In this thesis, however, we will not go into the detail of modeling the transition probability function, and we will assume it to be known. 
-
-As outlined above, the goal of SDT is to find the optimal strategy - sequence of actions. The optimality of such strategy is defined as it having the maximal expected cumulative reward among all eligible strategies $\mathbf{\Pi}$: 
-
-\begin{equation}
-	\pi^*=\argmax_{\pi \in \mathbf{\Pi}} E\left[\sum_{t\in \mathbf{T}} r(s_t,a_t,s_{t-1})\Bigg|\pi\right].
-\end{equation}
-
-\begin{remark}
-	This definition of the optimal strategy is used mainly for finite decision problems or problems with exponential discounting of future rewards. Alternative definitions of optimality, for example, maximal average reward per period, exist.
-\end{remark}
-
- Due to the nature of project valuation, where projects are considered to be finite or their cash flow exponentially discounted, this thesis will focus on a metric based on the presented notion of expected cumulative reward.
-
-\subsection{Dynamic programming}\label{Sec:DP}
-Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
-\begin{equation}
-|\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}| 
-\end{equation}  
-a very demanding task, even for low-dimensional problems. 
-
-To cope with such computational complexity clever algorithms were developed, most notably the dynamic programming approach and the reinforcement learning approach. In this thesis we will focus on the first one, which is based on the idea of backward induction.
-
- The core of dynamic programming is to define the so-called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
-\begin{equation}\label{eq:Bellman}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) [r(s_t|a_t, s_{t-1})+V(s_t)].
-\end{equation}
-
-Value function represents the expected cumulative reward from a given state onward. The idea of computing this value through the backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal.  Optimal strategy comes together with the value function seemingly as a byproduct, where in each state, the optimal action is the argmax of the expression in equation \ref{eq:Bellman}. 
-
-This clever approach significantly reduces the computational complexity to
-\begin{equation}
-	\sum_{t \in \mathbf{T}} \sum_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}|
-\end{equation}
-expected value computations. 
-
-\begin{remark}
-	For a constant number of states and actions in each time epoch, this reduction is from $|\mathbf{A_{s_t}}|^{|\mathbf{S_t}|^{|\mathbf{T}|}}$  to $|\mathbf{A_{s_t}}|\cdot |\mathbf{S_t}|\cdot|\mathbf{T}|$.
-\end{remark}
-
-The reduction of computational complexity with the DP algorithm is significant. However, for the majority of real-world applications, this reduction is not enough. In reality, due to the structure of decision-making problems and their formulation, the cardinality of state space can explode even for fairly simple decision problems. 
-
-The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" by Powel \cite{Pow:11}, who, among others, proposes solutions under the label of approximate dynamic programming (ADP). 
-
-
-\subsection{Approximate dynamic programming}
-The computational complexity of dynamic programming for middle and high-dimensional decision-making problems is so demanding that its results cannot be obtained in a reasonable amount of time. 
-
-To cope with this problem, a relevant topic to look at is the section of SDT called approximate dynamic programming (ADP). The ADP label can be understood as a unifying name for a number of algorithms trying to obtain quasi-optimal strategies for decision-making problems with reasonable demands for computational power\footnote{For details, please see Powell \cite{Pow:11}.}. 
-
-ADP algorithms can be divided into two main classes, policy and value iteration algorithms. In this thesis, we will be focusing on the value iteration class since we believe that due to the structure of project valuation problems (rather large $|\mathbf{S}$| and small $|\mathbf{A}|$), it is a better fit.
-
-The idea of value iteration is to have some initial heuristic value function approximation, which is being updated based on samples of possible paths. 
-
-In this section of the thesis, we present the most general form of the value function approximation model, which aims to describe the general shape of the value function by a small number of parameters\footnote{A value function is in classical DP similar to a look-up table. There is no simple relationship between states and the values of value functions.}. We will model the value function in each time epoch $v_t$ as a function of the state itself $s$ and a parametric function $f$ as: 
-
-\begin{equation}\label{eq:genADP}
-v_t(s) = f(s, \theta_{i,t} ),  \quad \theta_{i,t} \in \mathbf{\Theta_t}|,
-\end{equation} 
-where the cardinality $|\mathbf{\Theta_t}|$ is finite and preferably small. 
-
-\begin{remark}
-	To clarify the general formula represented by the equation \ref{eq:genADP}, we present an example, where the parametric function $f$ is a linear combination of some basis functions $\phi_{i}$: 
-	\begin{equation}
-	v_t(s) = \sum_{i} \theta_{i,t} \cdot \phi_{i}(s),
-	\end{equation} 
-	where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running the production.
-\end{remark}
-
-\begin{remark}
-	Because of the option-like structure of the investment opportunities in projects, it is worth it to define the piece-wise linear function, which is a potential candidate for a function $f$.
-	\begin{definition}(Piecewise linear function)
-		In this thesis, we consider only a two-segment piecewise linear function, which can be described by four parameters as:
-		\begin{equation}
-		pw(x, x_0, y_0, k_1, k_2) = 
-		\left\{
-		\begin{array}{ll}
-		y_0+k_1(x-x_0)&  \mbox{if } x \leq x_0 \\
-		y_0+k_2(x-x_0)&  \mbox{if } x > x_0 
-		\end{array}
-		\right.
-		\end{equation}
-		where $k_1$ and $k_2$ represent the slopes of the first and second segment and the pair $x_0$, $y_0$ the single breaking point. 
-	\end{definition}
-\end{remark}
-
-The update of $v_t$ then unfolds as follows: 
-
-\begin{itemize}
-	\item sample of states $\mathcal{S}_t$ in time $t \in \mathbf{T}$ is generated\footnote{Usually based on the model of state distribution in time $t$.} ;
-	\item in each $s_t \in \mathcal{S}_t$ the optimal action $a_t^*$ is determined as argument maximizing the Bellman equation \ref{eq:Bellman}, where the future value function is understood as its approximation from the previous step\footnote{Or in case of the last epoch $t$ it is defined.}; 
-	\item in each $s_t \in \mathcal{S}_t$ undertaking the action $a_t^*$ and transition to the following state $s_{t+1}$ is simulated. The reward-state pair $(s_t, r(s_{t+1}| a_t^*,s_{t}))$ is saved;
-	\item based on all state-reward pairs, the parametric function $f$ is fitted, resulting in parameters $\theta_{i,t}$.
-\end{itemize}
-
-By updating the parameters $\theta_{i,t}$ in all $t \in \mathbf{T}$ (starting from the horizon - the last time epoch), the value function approximation is being gradually discovered. 
-
-With the obtained parameters $\theta_{i,t}$ for all time epochs $t \in \mathbf{T}$, we are able to determine our best approximation of the expected value of each individual state and thus replicate the optimal decision making. Furthermore, from the perspective of project valuation, one particularly relevant value function approximation is $v_0(s)$, where $s$ describes the current state of the world. This value represents our approximate of the project valuation.
 
 
 
