@@ -171,7 +171,7 @@
 
 
 \selectlanguage{czech}%
-\textbf{\huge{}Oceňování projektů metodou reálných opcí z pohledu dynamického progamování}{\huge \par}
+\textbf{\huge{}Oceňování Projektů Metodou Reálných Opcí z Pohledu Dynamického Progamování}{\huge \par}
 
 \selectlanguage{american}%
 \vspace{2cm}
@@ -255,7 +255,7 @@ my own work and I have listed all the used sources in the bibliography.
 \begin{onehalfspace}
 \noindent \emph{Název práce:}
 
-\noindent \textbf{Oceňování projektů metodou reálných opcí z pohledu dynamického progamování}
+\noindent \textbf{Oceňování Projektů Metodou Reálných Opcí z Pohledu Dynamického Progamování}
 \end{onehalfspace}
 
 \bigskip{}
@@ -283,11 +283,11 @@ my own work and I have listed all the used sources in the bibliography.
 \bigskip{}
 
 
-\noindent \emph{Abstrakt:} Teorie reálných opcí (ROA) je pokročilá valuační technika pro projekty, která respektuje hodnotu možných budoucích změn (tzv. \textit{reálných opcí}). 
+\noindent \emph{Abstrakt:} Teorie reálných opcí (ROA) je pokročilá valuační technika projektů, která respektuje hodnotu možných budoucích změn (tzv. \textit{reálných opcí}). 
 
-Domníváme se, že v současné ROA teorii neexistuje obecný algoritmus pro valuaci komplexních projektů, kterými zde myslíme projekty s více náhodnými veličinami a většim množstvím alternací projektů různého typu. 
+Domníváme se, že v současné ROA neexistuje obecný algoritmus pro valuaci komplexních projektů, kterými myslíme projekty s více náhodnými veličinami a větším množstvím projektových alternací různého typu. 
 
-Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V této práci představujeme obecný valuační algoritmus, který staví na poznatcích z SDT, pokrývá problémy řešené současnou ROA teorií a navíc respektuje vliv ekonomických konceptů jako je časová hodnota peněz a averze vůči riziku investorů. Použití jmenovaného algoritmu je představeno na problému valuace plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako po částech lineární funkce, tak aby odrážely opční strukturu projektových odměn. 
+Tato diplomová práce se inspiruje problémem valuace ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V této práci představujeme obecný valuační algoritmus, který staví na poznatcích ze SDT, pokrývá problémy řešené současnou ROA teorií a navíc respektuje vliv ekonomických konceptů jako je časová hodnota peněz a averze vůči riziku investorů. Použití jmenovaného algoritmu je představeno na problému valuace plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako po částech lineární funkce, tak aby odrážely opční strukturu projektových odměn. 
  
 \bigskip{}
 
@@ -339,19 +339,19 @@ This algorithm's usage is demonstrated on a problem of gas power plant valuation
 \newpage{}
 
 \chapter{Introduction}
-Investing is a problem of optimal allocation of resources (mostly money) between an investor's alternative choices. Two main groups of investments can be recognized as first: the investment in financial (or commodity) market and second: the direct investment in business ventures. The first type of investments is driven by the fairly strict rules of the specific institutions (banks, exchanges, brokers,...), whereas the second type of investments is regulated in essence only by the commercial code in the given country. 
+Investing is a problem of optimal allocation of resources (mostly money) between an investor's alternative choices. Two main groups of investments can be recognized as first, the investment in the financial (or commodity) market, and second, the direct investment in business ventures. The first type of investments is driven by the fairly strict rules of the specific institutions (banks, exchanges, brokers,...), whereas the second type of investments is regulated in essence only by the commercial code in the given country. 
 
-In this thesis, we will focus on the investments in business ventures, where the problem of resource allocation between various opportunities is being solved with the metric of project valuation. From the various project valuation techniques, we have chosen the theory of real options (ROA) as an inspiration for a creation of a valuation model based on the ideas of statistical decision theory (SDT).
+In this thesis, we will focus on investments in business ventures, where the problem of resource allocation between various opportunities is being solved with the metric of project valuation. From the various project valuation techniques, we have chosen the theory of real options (ROA) as an inspiration for creating a valuation model based on the ideas of statistical decision theory (SDT).
 
 First, we describe the historical background of the ROA valuation. Next, we focus on the reasons why we investigate the idea of SDT interpretation of ROA. In the remainder of this chapter, we present the outline of this thesis. 
 
 \section{Historical Background - Real Options}
 
-The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts\footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future \cite{BerDeM:09}.} and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options\footnote{A financial option is the \textbf{ability} to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money in a given future time instant \cite{BerDeM:09}.}  and option trading were published by La Vega \cite{Veg:88}. 
+The foundations of financial derivatives date back to the origins of commerce in Mesopotamia in the fourth millennium BC \cite{Web:09}. The derivative market consisted mainly of forward contracts\footnote{A forward contract is a contract to purchase an asset at a fixed price on a particular date in the future \cite{BerDeM:09}.} and it was introduced to the European continent through Spain in Roman times. After the expulsion of derivative trading in Spain the center of this type of commerce for Europe were the Low Lands, where at the end of the 17th century, the first ideas about options\footnote{A financial option is the ability to buy (call option) or sell (put option) a defined volume of an asset for a specified amount of money at some future time instant \cite{BerDeM:09}.}  and option trading were published by La Vega \cite{Veg:88}. 
 
-The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-prize-awarded Black-Scholes model \cite{BlaSch:73}, which is today's standard in the option pricing theory \cite{YalHak:12}. 
+The first attempts of a mathematical option pricing come from Bachelier (1900) \cite{Bac:00} and Bronzin  (1908) \cite{Bro:08}. Based on their work, the boom of option pricing methods in the 1970's culminated in Nobel-prize-awarded Black-Scholes model (BSM) \cite{BlaSch:73}, which is today's standard in the financial option pricing theory \cite{YalHak:12}. 
 
-The publicity and wide adoption of the BSM model most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that real options - the ability to alter the project's course in the future - are able to bring significantly larger value in comparison to the same project without them. Myers' approach to the real options is mostly philosophical in the sense that he stresses out the importance of thinking about the additional value options bring. At the same time he does not present any computational tool for the said value. 
+The publicity and wide adoption of the BSM most likely inspired an expert on capital budgeting, Stewart Myers, to introduce the term "Real Options" \cite{Mye:77}, one of two main pillars of this thesis. Myers builds on the idea that real options - the ability to alter the project's course in the future - are able to bring significantly larger value in comparison to the same project without them. Myers' approach to the real options is mostly philosophical in the sense that he stresses out the importance of thinking about the additional value real options can bring. At the same time he does not present any computational tool for the said value. 
 
 The idea of Real option analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Pindyck \cite{DixPin:12} or Kulatilaka \cite{AmrKul:98}. 
 
@@ -366,7 +366,7 @@ In this thesis, we focus on the class of ROA authors, which utilize only the non
 
 The goal of this thesis is to take the project valuation problem structure as is understood in ROA and look at it from the perspective of statistical decision theory (SDT). One of the challenges of this task is to implement the business-specific concepts about investors' behavior and the way they perceive value.  Two main addressed concepts are the time value of money and the risk aversion of investors. 
 
-The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible current cash equivalent of the uncertain future cash flows. This valuation algorithm covers the classes of problems now solved by ROA and allows for new ones. 
+The goal of this thesis is to provide an SDT-based valuation algorithm for projects, whose value is understood as a maximal possible present cash equivalent of the uncertain future cash flows. This valuation algorithm covers the classes of problems now solved by ROA and allows for new ones. 
 
 The new SDT based valuation algorithm enables: 
 \begin{itemize}
@@ -381,15 +381,19 @@ To illustrate the usage of the new SDT-based algorithm a valuation of a project 
 
 \section{Outline of the Thesis}
 
-The thesis is structured into 5 chapters. Chapter 1 reminds the reader of the most important mathematical and economic concepts used in this thesis. Beginning with the declaration of mathematical notation, the chapter continues with key concepts of economic theory and a deeper description of the BSM model. The first chapter then follows with a summary of the last decades in ROA research, focusing on a specific level of analogy represented by Vollert \cite{Vol:03} and Guthrie \cite{Gut:09}. The remainder of the first chapter is reserved for key parts of SDT. 
+The thesis is structured into 7 chapters, introduction being the first.
 
-Chapter 2 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project, and we limit these features accordingly (?). Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the second chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
+Chapter 2 defines the mathematical notation and presents the mathematical concepts used through the thesis. Useful probability concepts are reminded at the beginning, while the rest of the chapter is reserved for the SDT. 
 
-Chapter 3 illustrates the new valuation algorithm from chapter 2 on a valuation example of a simple I/O business. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different granularity of the model structure and it is aimed to demonstrate the existence of trade-of between computational complexity and precision of computed results. 
+Chapter 3 introduces the second pillar of this thesis, which is the economic concept of a project valuation. The chapter begins with a description of a classic valuation technique called the net present value NPV, which is, for the purpose of this thesis, upgraded to a new concept of present cash equivalent (PCE). The remainder of the chapter is left for the discussion about financial and real options. 
 
-Chapter 4 discusses the new findings, both theoretical and observed from the performed experiments. 
+Chapter 4 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project, and we limit these features accordingly. Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the fourth chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
 
-Chapter 5 summarizes the thesis - reminds the motivation, underlines the main message, and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
+Chapter 5 illustrates the new valuation algorithm from chapter 4 on a valuation example of a simple I/O business. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different price variances, and it is aimed to demonstrate the increase in value of a more uncertain environment. 
+
+Chapter 6 discusses the new findings, both theoretical and observed from the performed experiments. 
+
+Chapter 7 summarizes the thesis - reminds the motivation, underlines the main message, and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
 
 
 %\addcontentsline{toc}{chapter}{Introduction}
@@ -450,7 +454,7 @@ A similar concept is also used for the continuous random variables with the name
 \end{definition}
 
 
-\subsection{Probability Distributions}
+\subsection{Probability distributions}
 Through this thesis, the following distributions will be referenced, either as an expected model of some random variable or in a broader discussion \cite{Bli:19}. 
 
 \paragraph{Bernoulli distribution}
@@ -514,8 +518,8 @@ The SDT's primary focus is to determine the optimal strategy (a sequence of deci
 
 
 
-\subsection{Markov Decision Process (Sequential Decision Problem)}
-In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov Decision Process (MDP) \cite{Put:05}. 
+\subsection{Markov decision process}
+In this thesis, we will be modeling the decision-making problems using the standard framework of the Markov decision process (MDP) \cite{Put:05}. 
 \begin{definition}(Markov decision process)
 	
 	Markov decision process is defined by its five building blocks: 
@@ -553,7 +557,7 @@ As outlined above, the goal of SDT is to find the optimal strategy - sequence of
 
  Due to the nature of project valuation, where projects are considered to be finite or their cash flow exponentially discounted, this thesis will focus on a metric based on the presented notion of expected cumulative reward. 
 
-\subsection{Dynamic Programming}\label{Sec:DP}
+\subsection{Dynamic programming}\label{Sec:DP}
 Finding the optimal policy by computing the expected reward for all policies $\pi \in \mathbf{\Pi}$ is due to the cardinality of $\mathbf{\Pi}$: 
 \begin{equation}
 |\mathbf{\Pi}|= \prod_{t\in\mathbf{T}} \prod_{s_t \in \mathbf{S_t}} |\mathbf{A_{s_t}}| 
@@ -564,7 +568,7 @@ To cope with such computational complexity clever algorithms were developed, mos
 
  The core of dynamic programming is to define the so-called value function $V(s)$ on each of the possible states $s \in \mathbf{S}$. Each of the values is computed via the Bellman equation: 
 \begin{equation}\label{eq:Bellman}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_{t-1}, s_{t-1}) [r(s_t, a_{t-1}, s_{t-1})+V(s_t)].
+v(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_{t-1}, s_{t-1}) [r(s_t, a_{t-1}, s_{t-1})+v(s_t)].
 \end{equation}
 
 Value function represents the expected cumulative reward from a given state onward. The idea of computing this value through the backward induction is based on the truth that a sequence of actions is optimal if and only if the last action is optimal.  Optimal strategy comes together with the value function seemingly as a byproduct, where in each state, the optimal action is the argmax of the expression in equation \ref{eq:Bellman}. 
@@ -584,7 +588,7 @@ The reduction of computational complexity with the DP algorithm is significant. 
 The problem of remaining computational complexity of DP algorithm is in literature addressed as "three curses of dimensionality" by Powel \cite{Pow:11}, who, among others, proposes solutions under the label of approximate dynamic programming (ADP). 
 
 
-\subsection{Approximate Dynamic Programming}
+\subsection{Approximate dynamic programming}
 The computational complexity of dynamic programming for middle and high-dimensional decision-making problems is so demanding that its results cannot be obtained in a reasonable amount of time. 
 
 To cope with this problem, a relevant topic to look at is the section of SDT called approximate dynamic programming (ADP). The ADP label can be understood as a unifying name for a number of algorithms trying to obtain quasi-optimal strategies for decision-making problems with reasonable demands for computational power\footnote{For details, please see Powell \cite{Pow:11}.}. 
@@ -605,7 +609,7 @@ where the cardinality $|\mathbf{\Theta_t}|$ is finite and preferably small.
 	\begin{equation}
 	v_t(s) = \sum_{i} \theta_{i,t} \cdot \phi_{i}(s),
 	\end{equation} 
-	where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running the production.
+	where each of the basis functions $\phi_{i}$ represents some heuristically important feature of each state $s \in \mathbf{S}$.  A project valuation example of such basis function might be a difference between state elements representing prices of inputs and outputs or indicator function of state element representing running production.
 \end{remark}
 
 \begin{remark}
@@ -626,7 +630,7 @@ where the cardinality $|\mathbf{\Theta_t}|$ is finite and preferably small.
 \end{remark}
 
 
-To determine the parameters $\theta_{i,t}$ for each value function approximation $v_t$ we first need to heuristically derive the parameters for the value function in the last time epoch $\theta_{|\mathbf{T}|,t}$. This is done with the respect to the specific MDP and its meaning. Then, gradually, starting from the last time epochs by a backward induction we discover all the remaining $\theta_{i,t}$ by the following steps. 
+To determine the parameters $\theta_{i,t}$ for each value function approximation $v_t$ we first need to heuristically derive the parameters for the value function in the last time epoch $\theta_{|\mathbf{T}|,t}$. This is done with the respect to the specific MDP and its meaning. Then, gradually, starting from the last time epoch by a backward induction we discover all the remaining $\theta_{i,t}$ by the following steps. 
 
 \begin{itemize}
 	\item We generate a sample of states $\mathcal{S}_t$ in time $t \in \mathbf{T}$\footnote{Usually based on the model of state distribution in time $t$.}.
@@ -641,13 +645,13 @@ With the obtained parameters $\theta_{i,t}$ for all time epochs $t \in \mathbf{T
 \subsection{Utility}\label{sec:utility}
 In many decision-making situations, rational decision-makers do not behave in a way that their decisions would maximize the expected nominal monetary value. 
 
-One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, most people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
+One of the simplest examples used to demonstrate this behavior is given by Bacci and Chiandotto \cite{BacChi:19}. Imagine an individual is given a choice, either to get 500 \$ right away or to gamble for 1000\$ in a fair coin toss. A rational decision-maker, driven only by his actions' expected value, would be indifferent to the two choices. However, the majority of people tend to take a certain amount of 500\$, implying that the gamble's perceived value is lower than 500\$. 
 
 This effect and its implications become more understandable for  substantial sums of money. There is a little difference for an average human in obtaining 10M USD and 20M USD in a fair coin toss. The change in his quality of life will be almost the same and presumably positive. However, in one case, the benefit is certain and in the other case, there is only a 50\% chance of win. 
 
 Another interesting example of the non-linear gain perception of individuals is the famous St. Petersburg paradox first formulated by Bernoulli in 1738 \cite{Ber:54}. This paradox is illustrated on a game with the following rules. 
 
-A fair coin is being repeatedly tossed until the result is ``tails``, say in $n$-th toss. Then the reward for the participant is driven by the equation $2^{n-1}$, where for example the first appearance of 	``tails`` in fourth toss rewards the participant with 8 units of currency.
+A fair coin is being repeatedly tossed until the result is ``tails``, say in $n$-th toss. Then the reward for the participant is driven by the equation $2^{n-1}$, where, for example, the first appearance of 	``tails`` in fourth toss rewards the participant with 8 units of currency.
 
 The expected value of the proposed game is infinite. However, it is shown that people would seldom pay more than 25 USD to play it. Interestingly, that this amount corresponds with the assumption that the counterparty does not possess an infinite amount of money but rather a more reasonable amount of 16M USD \cite{Pet:20}. 
 
@@ -686,17 +690,17 @@ Another relevant fact with the perception of utility is the asymmetry in human r
 
 
 
-\chapter{Valuation - state of the art}
-This thesis is built on two main theoretical pillars. The first, already described in the previous chapter, is the SDT. The second is is the project valuation principles of corporate finance \cite{BerDeM:09}, an overview of which will be presented in this chapter. 
+\chapter{Valuation - state of the art}\label{chapter:Economics}
+This thesis is built on two main theoretical pillars. The first, already described in the previous chapter, is the SDT. The second is the project valuation principles of corporate finance \cite{BerDeM:09}, an overview of which will be presented in this chapter. 
 
-First, we will define the necessary 
+First, we will define the necessary project valuation terminology that will be used throughout the thesis. 
 
+Then, we will describe the industry standard of project valuation, which is the idea of discounted cash flow (DCF) and the corresponding metric called the net present value (NPV). Together with NPV, we also present a new useful tool for the project's cash flow management called the present cash equivalent (PCE). In addition, we recall the risk-aversion of investors. 
 
-We will focus on the valuation of \textit{projects}, where the industry standard is the theory of discounted cash flow (DCF), which forms the metric called the net present value of a project (NPV). 
+At the end of this chapter we will look at an advanced project valuation technique called the real option analysis (ROA), which is based on the financial options valuation ideas. 
 
-The
-This thesis is built on two main theoretical pillars. The first is the valuation principles of corporate finance \cite{BerDeM:09}, which culminates in real option analysis (ROA), and the second is the statistical decision theory (SDT) \cite{BacChi:19}. In this section we focus on the basic review corporate finance terminology. 
-
+\section{Terminology}\label{sec:Terminology}
+Let us define the project valuation terminology used in this thesis. 
 
 \begin{definition}(\textbf{Process})
 	A process is understood as the production of goods, purchase and trade of goods or services, driven by the supply of inputs and demand for outputs \cite{Kul:20}.
@@ -716,35 +720,62 @@ This thesis is built on two main theoretical pillars. The first is the valuation
 \end{definition}
 
 \begin{remark}
-	The indifference and time value of money will be further discussed in section \ref{sec:time_value_of_money}. The theory of net present value (NPV) \cite{BerDeM:09} can be used as a simplification. 
+	The indifference is in this thesis understood in the presented concept of PCE, which incorporates the problem of project's financing. 
 \end{remark}
 
 \begin{definition}(\textbf{Optimal Project})
 	The goal of each project is to increase the economic value of a process. A project, if such exists, is called an optimal project if the additional economic value is maximal given the set of possible projects. 
 \end{definition}
 
+\begin{definition}(\textbf{Risk averse investors})
+		A risk-averse investor is an investor, who prefers a low-volatile investment despite its lower expected return. 
+\end{definition}
 
-\paragraph{Net present value}
-Net present value is an industry-standard valuation metric used in capital investment. It is simple, and it reflects the time value of money by exponential discounting of the future cash flow by a constant discount rate $r$ (usually a risk-free interest rate): 
+\begin{remark}
+	According to the observations made in \cite{BerDeM:09}, there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, who keep investing in assets with a lower expected return. This phenomenon, also well documented in psychological publications (e.g., \cite{HolLau:05}, where it is observed that people value the uncertain rewards below their expected value) has a link to the concept of utility from SDT discussed earlier. 
+\end{remark}
+
+
+\section{Net Present Value}\label{sec:NPV}
+The net present value (NPV) is an industry-standard valuation metric used in capital investment. Its computation is simple and it respects the time value of money by an exponential discounting of the future cash flow by a constant rate $r$ (usually a risk-free interest rate). The exponentially discounted elements  $c_t, t \in \{1,...,|c|\}$ of a cash flow vector $c$ form a \textit{discounted cash flow} (DCF) vector, and their sum is the NPV of $c$: 
 
 \begin{equation}
-NPV(c) = \sum_{t \in \mathbf{T}} \frac{c_t}{r^t}, 
+NPV(c) = \sum_{t \in \mathbf{T}} \frac{c_t}{r^t}.
 \end{equation}
 
-where $c$ is a cash flow vector with its elements $c_t, t \in \{0,1,...,|c|\}$. 
+There are deep economical reasons for the usage of this valuation metric in capital investment as presented in chapter 3 of \cite{CopAnt:01}. However, for the purpose of our thesis, it is worth to present a generalized version of NPV, which also incorporates the process of borrowing and repayment of cash, so called capital budgeting, which is a broad topic on its own. 
 
-This basic form of the NPV metric is a first approximation of the real current value of cash flow vector $c$, meaning that its descriptive power might be limited. 
+We call this new metric the present cash equivalent (PCE) and we present it the following section. 
 
-In this thesis, we want to challenge the problem of constant discounting of positive and negative cash flow, which implies that the investor is able to invest in risk-free assets at the same rate at which he is able to borrow money.
+\subsection{Present cash equivalent}\label{sec:PCE}
+The goal of the present cash equivalent (PCE) is to value a FCF vector, while covering the problem of capital budgeting (borrowing and repayment of cash needed to proceed with the project). The usual problem of the capital budgeting needs to discuss the specific types of loans (issuing bonds, shares, taking mortgages, etc.), their different interest rates and the repayment structure. This certainly reflects the reality better, however it brings a significant overhead to the project valuation problem. 
 
-We challenge this problem in the next section by presenting the \textit{present cash equivalent} (PCE) metric. 
+This is why we present PCE, which incorporates the costs and the usually complex borrowing structure of the capital budgeting based on two assumptions. First is that there is a possibility of a \textit{fully liquid loan} financing with a constant interest rate $r_b$. 
 
+\begin{definition}(\textbf{Fully liquid loan})
+	A fully liquid loan (FLL) with an interest rate $\emph{r}_b$ for $\emph{n}$ periods is a loan, the initial principal of which changes after each predefined period as follows:
+	\begin{itemize}
+		\item If the borrower needs to borrow more money $\emph{m}$, the principal from previous period increases by the interest rate factor $1+\emph{r}_b$ and the $\emph{m}$ is added to the principal.
+		\item If the borrower repays the amount of money $\emph{m}$ in a given period, the previous principal increases by the interest rate factor $1+\emph{r}_b$ and the $\emph{m}$ is subtracted. 
+	\end{itemize} 
+	
+	The fully liquid loan ends in two scenarios. Either the principal was fully repaid in some period $t\leq n$, or it was not and the borrower is unable to pay back and defaults on the loan. 
+\end{definition}
 
-\paragraph{Present cash equivalent(??)}
-<Without this paragraph this section might look good> 
-The ability to borrow money for a given interest rate $r_b$ is individual for each investor and naturally different from the risk-free interest rate $r_r$. This asymmetry is not reflected in the standard NPV metric, and thus we come up with our own metric, which we call present cash equivalent, PCE. 
+\begin{remark}
+	A fully liquid loan is a simplification of a mortgage, where the borrower is not obliged to follow a predefined payment calendar and has more flexibility even to the extend of borrowing more money. It is an idealistic representation which in real life would need to impose limits preventing the borrower's default.  
+\end{remark}
 
-The notion of PCE is based on an investor's logical indifference to a vector of future cash flow and some current amount of money. 
+\begin{example}
+	Investor borrows 1M for a new factory with a FLL with $r_b= 5\%$ for the maximum of $n=5$ years. He repays all his FCF, which is 400k in all years except of year 2. The second year ended up in a loss of 100k which investors borrows based on the ideas of FLL. This results in the following vector of principal in year 0 to year 5\footnote{The figures from year 3 are rounded.}:
+	\begin{equation}
+		[1M, \ 0.65M, \ 782.5k, \ 421.6k, \ 42.7k, \ 0].
+	\end{equation}
+\end{example}
+
+The second assumption for the concept of PCE is the ability to invest money with a constant risk-free interest rate $r_r$. 
+
+When the investor can take advantage of both the FLL and the ability to invest money with risk-free interest rate, we argue that there is only a single amount of cash, to which the investor should be indifferent to having, instead of a given FCF vector, thus making it the present cash value of such FCF vector. 
 
 For the purpose of PCE, let us also prepare the notion of the so-called responsible manager (RM). RM's task is to reinvest the positive balance (with the rate $r_r$) and borrow more funds in case of a negative balance for the rate of $r_b$. 
 
@@ -760,55 +791,53 @@ b\cdot(1+r_b)  & \mbox{otherwise}
 \right.
 \end{equation}
 
-Then, based on the assumption of completely dynamic loans\footnote{Meaning that the bank will lend the investor money at any time and accept repayments at any time, all with the same interest rate.},we model the behavior of $RM$ on a given cash flow vector $C = \{c_0,...c_t\} \ t \in \mathbb{N}$ as: 
+Then, based on the two assumptions, we model the behavior of $RM$ on a given cash flow vector $c = \{c_0,...c_t\} \ t \in \mathbb{N}$ as: 
 
 \begin{equation}
-RM(C) = RM(...RM(RM(c_0)+c1)...+c_t). 
+RM(c) = RM(...RM(RM(c_0)+c1)...+c_t). 
 \end{equation}
 
-The amount of $RM(C)$ represents the amount of money at time $t$ obtained from the cash flow vector $C$ and logical money management. Then, the PCE(C) can be finally derived as: 
+The amount of $RM(c)$ represents the amount of money at time $t$ obtained from the cash flow vector $c$ and a logical money management. Then, the PCE(c) can be finally derived as: 
 
 
 \begin{equation}
-PCE(C) = 
+PCE(c) = 
 \left\{
 \arraycolsep=5pt\def\arraystretch{1.5}
 \begin{array}{ll}
-\frac{RM(C)}{(1+r_r)^{t}}  &  \mbox{if } RM(C)\geq 0 \\
-\frac{RM(C)}{(1+r_b)^{t}}  & \mbox{if } RM(C) < 0 
+\frac{RM(c)}{(1+r_r)^{t}}  &  \mbox{if } RM(c)\geq 0 \\
+\frac{RM(c)}{(1+r_b)^{t}}  & \mbox{if } RM(c) < 0 
 \end{array}
 \right.
 \end{equation}
 
 
-which represents the logic that having PCE(C) at time $t =0$ would result in the same outcome at time $t$. Thus, a manager should be logically indifferent to obtaining $PCE(C)$ now and $C$ by its parts at different times. 
+which represents the logic that having PCE(c) at time $t =0$ would result in the same outcome at time $t$. Thus, a manager should be logically indifferent to obtaining $PCE(c)$ now and $c$ by its parts at different times. 
 
 \begin{remark}
-	Based on the straightforward derivation algorithm of PCE, we argue that for each FCF vector, a unique PCE equivalent always exists. 
+	Based on the straightforwardness of the PCE  computation, we argue that for each FCF vector, a unique PCE equivalent always exists. In the remainder of the thesis, we will understand the value of an FCF vector to be its PCE value. 
 \end{remark}
 
+\begin{example}
+	Let us for the illustration value the following cash flow vector $c = [-200,100,100,100]$, which represents an initial loss and three constant follow-up profits. Assume that $r_b=10\%$ and $r_r=2\%$. Then the $RM(c) = 80.16$ and the $PCE(c) = 75.64$\footnote{Both values are rounded.}. For comparison, the $NPV(c) = 88.39$.
+\end{example}
 
-\paragraph{Risk averse investors}\label{sec:risk_aversion_preliminaries}
-According to the observations made in \cite{BerDeM:09}, there is a positive correlation between the volatility of an investment and its average profit. This correlation is being explained by the risk aversion of investors, where investors are happy to hold onto a low-volatile investment even though the average returns are lower in the long run. 
-
-The phenomenon of risk aversion is also well documented in psychological publications, e.g., \cite{HolLau:05}, where it is observed that people value the uncertain rewards below their expected value. 
-
-\subsection{Financial option valuation}
+\section{Financial Option Valuation}
 There exist two types of financial options, calls and puts. 
 \begin{definition}(Call option)
-	A call option gives its owner the right to buy stock (or a commodity) at a specified exercise or strike price on or before a specified maturity date. If thee option can be exercised only at maturity it is known as European call, in other cases the option can be exercised at any time before maturity and it is then known as American call\cite{BreMye:12}.
+	A call option gives its owner the right to buy stock (or a commodity) at a specified exercise or strike price on or before a specified maturity date. If the option can be exercised only at its maturity date it is known as European call, in other cases the option can be exercised at any time before its maturity date and it is then known as American call \cite{BreMye:12}.
 \end{definition}
 
 \begin{example}
-	One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European call option with a strike price of \$2500 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be lower than \$2500 and thus, exercising the option (buying the stock at \$2500) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price rises to $x>\$2500$. In this case, the investor will use his right to buy the stock for \$2500, which he is able to immediately sell on the market and pocket the difference $x-2500$ USD. 
+	One share of Tesla stock is traded at $\$700$ at the moment (30.5.2021). An European call option with a strike price of $\$2500$ with a maturity date of 1.1.2022 costs $\$1.25$. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be lower than $\$2500$ and thus, exercising the option (buying the stock at $\$2500$) would be unprofitable. Investor doesn't do anything and he lost $\$1.25$. In a second, less probable case, the stock price rises to $x>\$2500$. In this case, the investor will use his right to buy the stock for $\$2500$, which he is able to immediately sell on the market and pocket the difference $\$(x-2500)$. 
 \end{example}
 
 \begin{definition}(Put option)
-	Similarly to call options, which allows the investor holding them to buy the stock or the unit of a commodity on or before the maturity date, the put option allows the investor to sell for a given exercise price. American and European puts are again distinguished by the possibility to exercise before or precisely on the maturity date. 
+	Similarly to call options, which allow the investor holding them to buy the stock or the unit of a commodity on or before the maturity date, the put option allows the investor to sell for a given exercise price. American and European puts are again distinguished by the possibility to exercise before or precisely on the maturity date. 
 \end{definition}
 
 \begin{example}
-	One share of Tesla stock is traded at \$700 at the moment (30.5.2021). An European put option with a strike price of \$150 with a maturity date of 1.1.2022 costs \$1.25. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be higher than \$150 and thus, exercising the option (selling the stock at \$150) would be unprofitable. Investor doesn't do anything and he lost \$1.25. In a second, less probable case, the stock price drops to $x<\$150$. In this case, the investor is able to buy the share on the market for $x$ and exercise the option (selling the share for \$150) pocketing the $\$150-x$ difference.
+	One share of Tesla stock is traded at $\$700$ at the moment (30.5.2021). An European put option with a strike price of $\$150$ with a maturity date of 1.1.2022 costs $\$1.25$. An investor buys this option and two things can happen on 1.1.2022. First, more probable case is that the Tesla stock price will be higher than $\$150$ and thus, exercising the option (selling the stock at $\$150$) would be unprofitable. Investor doesn't do anything and he lost $\$1.25$. In a second, less probable case, the stock price drops to $x<\$150$. In this case, the investor is able to buy the share on the market for $x$ and exercise the option (selling the share for $\$150$) pocketing the $\$(150-x)$ difference.
 \end{example}
 
 As outlined in the first chapter, the idea of options and option trading dates back to 17th century. However, the motivation for a proper option valuation technique came with the increased adoption of derivative trading after WWII. 
@@ -816,7 +845,7 @@ As outlined in the first chapter, the idea of options and option trading dates b
 The famous 1973 article from Black and Scholes \cite{BlaSch:73} describes today's standard tool in the financial option valuation - the BSM model. 
 
 \begin{remark}
-	The M in BSM model stands for Merton, who expanded on the article \cite{BlaSch:73} with his article \cite{Mer:73} and received the Nobel price together with Scholes.
+	The M in BSM model stands for Merton, who expanded on \cite{BlaSch:73} with his article \cite{Mer:73} and received the Nobel price together with Scholes.
 \end{remark}
 
 In what follows, we will present the BSM model in the form of a theorem \cite{BodKan:04}. In addition, we will offer an opinion that should summarize the idea of the BSM model in few sentences. 
@@ -838,7 +867,7 @@ In what follows, we will present the BSM model in the form of a theorem \cite{Bo
 	C = SN(d_1) - PV(K)N(d_2), 
 	\label{BSMModelEq}
 	\end{equation}
-	where  $PV(K)$ is the present value of a strike price $K$\footnote{Price of a bond paying K on the expiration day of the option.} and $N(d)$ is a cumulative normal distribution, the probability that a normally distributed variable is less than $d$. Value of $d_1$ and $d_2$ are then defined as: 
+	where  $PV(K)$ is the present value of a strike price $K$\footnote{Price of a bond paying K on the expiration day of the option.} and $N(d)$ is a cumulative normal distribution, the probability that a normally distributed variable is less than $d$. Values of $d_1$ and $d_2$ are then defined as: 
 	\begin{equation}
 	d_1 = \frac{ln(S/PV(K))}{\sigma \sqrt{T}}+\frac{\sigma \sqrt{T}}{2},  \quad
 	d_2 = d_1 - \sigma \sqrt{T}
@@ -849,20 +878,20 @@ In what follows, we will present the BSM model in the form of a theorem \cite{Bo
 	The option's value is positively dependent on the volatility and the time to maturity. An increase in these parameters leads to a higher option value. On the contrary, the rise in the current stock price or strike price of the options lowers an option's value. 
 \end{remark}
 
-From the combination of remarks to the BSM model from authors like  \cite{BodKan:04} \cite{Ros:11} we formulate our own remark of what does the BSM model represent. 
+From the combination of remarks about the BSM model from authors like \cite{BodKan:04} and \cite{Ros:11} we formulate our own remark of what does the BSM model represent. 
 
 \begin{remark}
-	The core of the BSM model, assuming that ``smooth`` conditions hold, is that we are able to derive the missing parameter $\mu$ of the asset's log-normal price model (known $\sigma$ is an assumption). Building on this, the value of an option is then the expected value of the maximum of the difference between the strike price and the realized price of the asset and zero\footnote{Since when the option is not realized no further loss occurs.}, discounted by the risk-free interest rate. 
+	The core of the BSM model, assuming that ``smooth`` conditions hold, is that we are able to derive the missing parameter $\mu$ of the asset's log-normal price model (known $\sigma$ is an assumption). Building on this, the value of an option is then the expected value of the maximum of the difference between the strike price and the asset's realized price and zero\footnote{Since when the option is not realized no further loss occurs.}, discounted by the risk-free interest rate. 
 \end{remark}
 
 Finally to illustrate the usage of BSM model we present an option valuation example from \cite{Ros:11}.
 \begin{example}
-	Suppose that a stock's current value is 30, the risk-free interest rate 8\% and the volatility of the stock is 0.2. Assume that all assumptions for the BSM model hold. Then the call option with strike price 34 that expires in three month has a value of 0.24. 
+	Suppose that a stock's current value is 30, the risk-free interest rate 8\% and the volatility of the stock is 0.2. Assume that all assumptions for the BSM model hold. Then the call option with strike price 34 that expires in three months has a value of 0.24. 
 \end{example}
 
 
-\subsection{Real Option Valuation}\label{sec:ROA}
-As outlined in the first chapter, the theory of real option analysis (ROA) was born after the boom in publications about financial option valuation in the 1970s. The first ideas represented by Myers \cite{Mye:77} are of a philosophical nature - options (ability to make project changes) add value to the project. 
+\section{Real Option Valuation}\label{sec:ROA}
+As outlined in the introduction, the theory of real option analysis (ROA) was born after the boom in publications about financial option valuation in the 1970s. The first ideas represented by Myers \cite{Mye:77} are of a philosophical nature - options (ability to make project changes) help to extract the value from a project. 
 
 Many publications were published on the ROA topic since. Through our studies of the state of the art, we have identified three classes of authors that differ by the level of analogy with the BSM model. 
 
@@ -871,14 +900,14 @@ Many publications were published on the ROA topic since. Through our studies of 
 The first class is the class of the ROA founder, Myers. This class understands the term real option analysis as a useful lens for looking at the project valuation. Authors like Kassar \cite{Kas:04} and Guerra \cite{Gue:17} accentuate the value of further managerial decisions, but the valuation strategy they use is NPV with scenarios (so-called decision tree analysis DTA). 
 
 \paragraph{Partial analogy}
-The second class of authors takes advantage of the financial option valuation's core property, which is the no-arbitrage principle. Based on this principle and further assumption of replication portfolio existence, this class of authors, represented by, e.g., Guthrie \cite{Gut:09}, Thoma \cite{Tho:19} and Ryu \cite{Ryu:17}, derives so-called risk-neutral probabilities, which are then used for modeling of project's internal variable of the cash flow functions\footnote{Where the binomial model of evolution is the most frequently used.}. 
+The second class of authors takes advantage of the financial option valuation's core property, which is the no-arbitrage principle. Based on this principle and further assumption of replication portfolio existence, this class of authors, represented by, e.g., Guthrie \cite{Gut:09}, Thoma \cite{Tho:19} and Ryu \cite{Ryu:17}, derives so-called risk-neutral probabilities, which are then used for modeling of project's internal variable of the cash flow functions\footnote{In the majority of cases the binomial models are used.}. 
 
 Because we find this type of approach to real options the best and because we build on and respect the work of Guthrie \cite{Gut:09}, \textbf{this approach is the one considered as representative of the term ROA. }
 
-Another notable author in this class is Vollert \cite{Vol:03}, who goes deep into detail building a modeling framework implementing complex conditional options. Vollert's publication is very advanced, using, for example, stochastic differential equations, which might be an obstacle for practitioners and real-world applications.  
+Another notable author in this class is Vollert \cite{Vol:03}, who goes deep into details, building a modeling framework which allows the implementation of complex conditional options. Vollert's publication is very advanced, using, for example, stochastic differential equations, which might be an obstacle for practitioners and real-world applications.  
 
 \paragraph{Full analogy}
-The final class of the authors understands project valuation with real options as a complete analogy to the BSM model for valuation of financial options. This class of authors is predominantly represented by voluminous economic textbooks, e.g., Berk and DeMarzo \cite{BerDeM:09}, Brealey \cite{BreMye:12}, or Crundwell \cite{Cru:08}\footnote{Crundwell also discusses the partial analogy approach in detail.}. 
+The final class of authors describing the ROA principle understands it as a complete analogy to the BSM model for the financial option valuation. This class of authors is predominantly represented by voluminous economic textbooks, e.g., Berk and DeMarzo \cite{BerDeM:09}, Brealey \cite{BreMye:12}, or Crundwell \cite{Cru:08}\footnote{Crundwell also discusses the partial analogy approach in detail.}. 
 
 A complete analogy means to identify all parameters of a financial option with parameters of given investment. For example in \cite{BerDeM:09} the following identification table is presented: 
 
@@ -890,7 +919,7 @@ A complete analogy means to identify all parameters of a financial option with p
 		\label{Tab:BSModel}
 		\begin{tabular}{|l |r|}
 			\hline	
-			Financial option& Real option \\ \hline
+			\textbf{Financial option}& \textbf{Real option} \\ \hline
 			Stock price& Current market value of asset \\ \hline
 			Strike price& Upfront investment required	\\ \hline
 			Expiration date& Final decision date \\ \hline
@@ -910,12 +939,11 @@ By focusing on the complete analogy, the authors of this class strictly limit th
 \vspace{1em}
 
 
-In what follows, our understanding of ROA will be based on the one presented by Guthrie. This decision is based on the exceptionality of his publication \cite{Gut:09}. A rigorous definition of ROA as we will understand it will be presented in the beginning of the following chapter. 
+As explained in the \textit{partial analogy} paragraph we base our understanding of ROA on Guthrie's work. A rigorous definition of ROA as used in this thesis will be presented in the beginning of the following chapter. 
 
 
-
-\chapter{Project Valuation Revisited from the Statistical Decision Theory Perspective}
-In this chapter, we develop the core idea of this thesis. The idea is to take the valuation problem as defined in ROA reframe it as a sequential decision problem and then use the statistical decision theory to solve it while preserving the business-specific concepts of the project valuation, such as time value of money and risk aversion of investors. 
+\chapter{Project Valuation Revisited from the SDT Perspective}
+In this chapter, we develop the core idea of this thesis. The idea is to take the valuation problem as defined in ROA reframe it as a Markov decision process and then use the statistical decision theory to solve it while preserving the business-specific concepts of the project valuation, such as time value of money and risk aversion of investors. 
 
 We begin by clarifying the meaning of the term project valuation as is used in the publications of the ROA field, and we identify the main limitations of this approach.
 
@@ -927,13 +955,13 @@ The remainder of this chapter is reserved for the incorporation of the business-
 \section{Project Valuation - Problem Definition}
 To be able to talk about the project valuation rigorously, we need to define what a \textit{project} is and what we mean by its \textit{valuation} in ROA. The inspiration for these definitions comes from examples and used rhetoric in the ROA publications, namely \cite{Gut:09}, \cite{Vol:03} and \cite{AmrKul:98}. 
 
-None of the books that we have studied goes into detail to define a project as a collection of mathematical constructs, as, for example, SDT does with MDPs. Guthrie in \cite{Gut:09} opens with three initial examples of a project and in each chapter adds new real investment opportunity. This investment opportunity is presented in such a way that it is clear what the project is, what its parameters are, and what metric is optimized by the investor. 
+None of the books that we have studied goes into detail to define a project as a collection of mathematical constructs, as, for example, SDT does with MDPs. Guthrie in \cite{Gut:09} opens with three initial examples of a project and in each chapter adds new real-life investment opportunity. This investment opportunity is presented in such a way that it is clear what the project is, what its parameters are, and what metric is optimized by the investor. 
 
 In other books like Vollert's \cite{Vol:03} and Kulatilaka's \cite{AmrKul:98},  a definition of a project is also not given. Rather, it is assumed that the used terms \textit{project}, \textit{capital investment}, or \textit{investment opportunity} are clear. 
 
-It is worth noting that a definition of project \textit{valuation} is also not deeply discussed in the ROA books. We feel like the term of valuation is assumed to be clear and is always represented by expected net present value (NPV), which, as we discussed before, is easily understandable but not a very robust metric. 
+It is worth noting that a definition of project \textit{valuation} is also not deeply discussed in the ROA books. We feel like the term of valuation is assumed to be clear and is always represented by expected net present value (NPV). 
 
-As outlined above, nothing like a clear mathematical definition of a project valuation is presented in the ROA books. However, the used rhetoric is similar, and we strongly believe that the project valuation in the ROA field can be summarized as: "An amount of value that an investor is able to create with actions that can be considered as a part of one project\footnote{Defined as in preliminaries.}, measured by the  metric of expected net present value with a special non-axiomatic determination of the discount rate."
+As outlined above, nothing like a clear mathematical definition of a project valuation is presented in the ROA books. However, the used rhetoric is similar, and we strongly believe that the project valuation in the ROA field can be summarized as: "An amount of value that an investor is able to create with actions that can be considered as a part of one project\footnote{Defined as in preliminaries.}, measured by the  metric of expected NPV with a special non-axiomatic determination of the discount rate."
 
 Now that the position of ROA to project valuation is clearer, we can follow with its interpretation in the SDT framework.
 
@@ -943,7 +971,7 @@ Trying to solve the project valuation task as a statistical decision problem mea
 
 After this identification, the standard tool of SDT, dynamic programming (or potentially approximate dynamic programming), can be used to solve the valuation problem. 
 
-Solving a valuation problem in SDT means to define it as MDP, which consists of two parts. First, there are three sets: time set $\mathbf{T}$, state set $\mathbf{S}$\footnote{This global state set is a union of state set in each time $\mathbf{S_t}$.} and action set $\mathbf{A}$\footnote{This global action set is a union of action set in each state $\mathbf{A_{s_t} }$.}, which describe the structure of the decision-making problem. The second part consists of two functions: transition probability function $p$ and reward function $r$, where $p$ is responsible for describing the project's stochastic evolution and $r$ for informing about the value gains in each time epoch.
+Solving a valuation problem in SDT means to define it as MDP, which consists of two parts. First, there are three sets: time set $\mathbf{T}$, state set $\mathbf{S}$ and action set $\mathbf{A}$, which describe the structure of the decision-making problem. The second part consists of two functions: transition probability function $p$ and reward function $r$, where $p$ is responsible for describing the project's stochastic evolution and $r$ for informing about the value gains in each time epoch.
 
 In the following sections, we will focus on each of these five important building blocks in detail. To better illustrate each of the building blocks, and to prepare our ground for the experiment, an example concerning the valuation of a gas power plant is presented. 
 
@@ -970,16 +998,16 @@ It is worth noting that there are usually some elementary states that are influe
 In our models, each elementary state is understood as a random variable, the probability distribution of which is conditioned on the previous state and the last action taken. This probability is described with the transition probability function $p$, which is discussed in detail below. 
 
 \begin{example}
-	Relevant features for a gas power plant might be, for example, price of gas, price of CO2 allowances, price of power, installed capacity of the plant, or debt to be repaid. The first three elementary states would then be considered uninfluenceable by our future actions, while the last two would not. 
+	Relevant features for a gas power plant project might be, for example, price of gas, price of CO2 allowances, price of power, installed capacity of the plant, or debt to be repaid. The first three elementary states would then be considered uninfluenceable by investor's future actions, while the last two would not. 
 \end{example}
 
 
 \subsection{Action sets}
-In SDT structure, the action set  $\mathbf{A}$ is usually understood as an actual set, however in the format of project valuation, we find it better to represent it as an action function, whose parameter is a  given state $s_t \in \mathbf{S_t}$ and output is a set of possible actions $\mathbf{A_{s_t}}= a(s_t)$. 
+In SDT structure, the action set  $\mathbf{A}$ is usually understood as an actual set, however in the format of project valuation, we find it better to represent it as an action function $a$, whose parameter is a  given state $s_t \in \mathbf{S_t}$ and output is a set of possible actions $\mathbf{A_{s_t}}= a(s_t)$. 
 
-The reason for this is that possible managerial actions are most of the time strictly conditioned on the current status of the project itself. Only a small subset of all possible actions might be actually taken in a given state. 
+This is because possible managerial actions are most of the time strictly conditioned on the current status of the project itself. Only a small subset of all possible actions might be actually taken in a given state. 
 
-In ROA publications, the term options is used to describe possible managerial actions both current and future. Even though we believe that this terminology helps with understanding that the possibility of future managerial action has value, we do not embrace a notion of future actions since it is not consistent with the SDT terminology. 
+In ROA publications, the term \textit{options} is used to describe possible managerial actions both current and future. Even though we believe that this terminology helps with understanding that the possibility of future managerial action has value, we do not embrace a notion of future actions since it is not consistent with the SDT terminology. 
 
 The advantage of the SDT approach in contrast to ROA is that there is no theoretical  complication in adding an arbitrary amount of actions of any type (as classified in ROA by Guthrie \cite{Gut:09}, for example), possibly even conditioned on one another. The only concern that needs to be reminded is that of computational complexity, where a large number of possible managerial actions decreases the ability to compute the valuation in practice. 
 
@@ -987,7 +1015,7 @@ The advantage of the SDT approach in contrast to ROA is that there is no theoret
 	Possible actions for a gas power plant project might be to: build a new block of the plant, run the plant if it has some installed capacity, or wait for a better situation on the market and do nothing. 
 \end{example} 
 
-We believe that this example clearly shows the dependency of possible actions on a given state and why it is thus better to use the function notion. 
+We believe that this example shows the dependency of possible actions on a given state and why it is thus better to use the function notion $a(s_t)$.
 
 With the definition of action function, we have defined the general structure of a project, boundaries within which the project will evolve. Now, we will study the rules that guide the evolution and metrics that measure the value created. 
 
@@ -1012,9 +1040,9 @@ where $s_t^i$ is the i-th elementary state of $s_t$.
 
 It is clear that in the majority of real-life projects, determining or estimating this transition probability function is a challenging but crucial task. Decisions will be made based on its values increasing or decreasing the value of a project. 
 
-The approach of ROA authors to the modeling of these probabilities varies a lot. Some authors like Guthrie \cite{Gut:09} or Amram \cite{AmrKul:98} use the no-arbitrage principle to determine the probabilities of their binomial models. Some authors, like Kulatilaka \cite{KulTri:94}, use the principle of insufficient reasons\footnote{Even though they do not call it that way.}, where they assign 50\% probability to movements in both directions of their binomial models. Some authors, like Guthrie \cite{Gut:09} and Vollert \cite{Vol:03}, also go deeper in statistical modeling of the probabilities. 
+The approach of ROA authors to the modeling of these probabilities varies a lot. Some authors like Guthrie \cite{Gut:09} or Amram \cite{AmrKul:98} use the no-arbitrage principle to determine the probabilities of their binomial models. Some authors, like Kulatilaka \cite{KulTri:94}, use the principle of insufficient reasons\footnote{Even though they do not call it that way.}, where they assign 50\% probability to movements in both directions of their binomial models. Some authors, like Guthrie \cite{Gut:09} and Vollert \cite{Vol:03}, also offer a more elaborate statistical modeling of the probabilities. 
 
-Some details of how does SDT approach the estimation of $p(\cdot)$ will be discussed later in section \ref{sec:probability}, however, we must note that correct estimation of these probabilities is beyond the scope of this thesis.
+Some details of how does SDT approach the estimation of $p(\cdot)$ will be discussed later in section \ref{sec:probability}, however, we must note that the actual estimation of these probabilities is beyond the scope of this thesis.
 
 
 \begin{example}
@@ -1027,7 +1055,7 @@ Some details of how does SDT approach the estimation of $p(\cdot)$ will be discu
 The final part of modeling the project valuation as MDP is the reward function. Its purpose is to assign a numerical value to the state realization $s_t$ given the previous state $s_{t-1}$ and last managerial action $a_{t-1}$, mathematically: 
 
 \begin{equation}
-	r(s_t|s_{t-1}, a_{t-1}).
+	r(s_t, s_{t-1}, a_{t-1}).
 \end{equation}
 
 As discussed in preliminaries, the notion of ``value`` is complicated. In our case of project valuation, this value is understood as FCF. Thus, the first approximation of the entity to be maximized is the expected cumulative FCF, which usually consists of expenses resulting mostly from immediate managerial actions and income, which tends to result from the environment (supply and demand for manufactured products or services) conditioned on a previous action or action sequence. 
@@ -1050,13 +1078,13 @@ In the previous chapter, we have focused on the basic structure of a project val
 
 We begin this section by looking in detail at the estimation of the transition probability function $p$. We outline how the SDT can not only incorporate the ideas of ROA but also help with more advanced estimation techniques. 
 
-Then, we pursue with the incorporation of the business-specific concepts - time value of money and risk aversion of investors in the form of utility maximization principle and the notion of present cash equivalent (PCE). We focus on implementation details with an accent on applicability by real-life managers. 
+Then, we continue with the incorporation of the business-specific concepts - time value of money and risk aversion of investors in the form of utility maximization principle and the notion of present cash equivalent (PCE). We focus on implementation details with an accent on applicability by real-life managers. 
 
 Finally, the last part of this section addresses the computational complexity problems of classical dynamic programming, proposing an ADP class algorithm identified as the best fit for a project-valuation-style MDPs. 
 
 
 \subsection{Probability}\label{sec:probability}
-In this thesis, we focus on real-life projects. Such projects are, by their nature stochastic, and except for some edge cases, the laws guiding the evolution of the relevant parameters are unknown and complex. Our search for the optimal strategy is based on the assumption that we have some model estimating the future paths of the project states, and we act as if this model was the reality. In our case, the model of this evolution is materialized in the form of transition probability function $p$, where for example, one of the assumptions is the Markovian property of the states. 
+In this thesis, we focus on real-life projects. Such projects are, by their nature stochastic, and except for some edge cases, the laws guiding the evolution of the relevant parameters are unknown and complex. Our search for the optimal strategy is based on the assumption that we have some model estimating the future paths of the project states, and we act as if this model was the reality. In our case, the model of this evolution is materialized in the form of transition probability function $p$, where for example, one of the assumptions is the Markovian property of the states\footnote{Meaning that the probability of evolution to the state $s_{t+1}$ depends only on $s_t$ and $a_t$.}. 
 
 There are many ways how to model $p$. Let us discuss the techniques used in ROA publications and how they can be translated into SDT terminology. Furthermore, let us also outline the more advanced techniques that SDT can offer in this section. 
 
@@ -1075,7 +1103,7 @@ The more complex equation, also adjusting for the specificity of the risk of the
 This technique is presented exclusively in the context of binomial models, but it is easy to imagine its usage for their limit case, which is a variable with the Poisson distribution. 
 
 \paragraph{Insufficient reasons}
-The second widely observed modeling style in ROA publications, observed again mostly with the binomial models, is to assign 50\% to both up and down move. This technique can be used on different levels of the model, as the final model \cite{KulTri:94} or, for example, as a helping distribution modeling a particular supportive distribution as in \cite{Gut:09}.
+The second widely observed modeling style in ROA publications, observed again mostly with the binomial models, is to assign 50\% to both up and down move. This technique can be used on different levels of the model, as the final model (as in \cite{KulTri:94}) or, for example, as a helping distribution modeling a particular supportive distribution (as in \cite{Gut:09}).
 
 It needs to be emphasized that the ROA authors do not use this terminology of insufficient reasons themselves. 
 
@@ -1086,7 +1114,7 @@ It seems that these models come from authors with more mathematical than economi
 
 
 \paragraph{SDT interpretation}
-Now we would like to discuss the interpretation of the ROA probability modelling techniques in SDT. The notion of risk-neutral probabilities can be approached with the framework of ``expert knowledge``, where the first expert is the one (usually the economist using the CAPM formula) who determines the individual variables like the risk-premium or expected market growth. In accordance with the philosophy of experts, the second expert is the market behaving by the non-arbitrage principle, giving us the equations for risk-neutral probabilities. 
+Now we would like to discuss the interpretation of the ROA probability modelling techniques in SDT. The notion of risk-neutral probabilities can be approached with the framework of ``expert knowledge``, where the first expert is the one (usually the economist using the CAPM formula) who determines the individual variables like the risk-premium or expected market growth. In accordance with the philosophy of \textit{experts}, the second expert is the market behaving by the non-arbitrage principle, giving us the equations for risk-neutral probabilities. 
 
 The term of insufficient reasons comes from the SDT itself, and thus, it was already interpreted above. 
 
@@ -1109,38 +1137,38 @@ In the end, we leave the decision of the actual modeling to the framework user, 
 
 
 \subsection{Time value of money}\label{sec:time_value_of_money}
-As outlined in preliminaries, money does not have the same value through time. This concept is one of the most important ones in project valuation and capital budgeting. The approach of the economic theory to this problem is to exponentially discount the future cash with the so-called risk-free interest rate. 
+As outlined in preliminaries, money does not have the same value through time. This concept is one of the most important ones in project valuation and capital budgeting. The approach of the economic theory to this problem is to exponentially discount the future cash with the so-called risk-free interest rate and measure value of a FCF vector with the NPV metric. 
 
-In the studied ROA publications, the problem of different borrowing and risk-free investment rate is not addressed. The ROA publications assume that the investor is able to borrow at the risk-free interest rate, which is in reality not the case. 
+In this thesis, we will use the updated version of NPV, described in chapter \ref{chapter:Economics} as PCE, which already accounts for the process of borrowing and reinvesting the money from the FCF vector in a sense of the \textit{responsible manager}. The existence of \textit{fully liquid loan} FLL and the ability to invest in risk-free asset is assumed. 
 
-In our modeling, the first approximation of the optimized entity is the expected cumulative future FCF. Now we present the second approximation of the optimized entity, which is original for both the ROA and SDT\footnote{SDT theory uses exponential discounting, for example, in models with infinite time sets, however, through our study, we have not encountered the idea of discounting conditioned on a state.} world. 
+Earlier in this thesis we have denoted the expected cumulative future FCF as the first approximation of a metric that we want to maximize with our decision making. Now, we present the second approximation of the optimized entity, which is original for both the ROA and SDT\footnote{SDT theory uses exponential discounting, for example, in models with infinite time sets, however, through our study, we have not encountered the idea of discounting conditioned on a state.} world, the present cash equivalent (PCE). 
 
-This second approximation of the optimized entity is defined as the expected present cash equivalent (PCE). The PCE represents the amount of money the investor is logically indifferent to having instead of a vector of future cash flows. As argued in preliminaries, this value is unique and for natural borrowing and risk-free rates always defined. 
+The PCE represents the amount of money the investor is logically indifferent to having instead of a vector of future cash flows. As argued in preliminaries, this value is unique and for natural borrowing and risk-free rates always defined. 
 
 The following equation represents the update of the Bellman equation \ref{eq:Bellman}, adjusting the crucial step in the optimal strategy determination:
 
 \begin{equation}
-V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) PCE\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right),
+v(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_{t-1}, s_{t-1}) PCE_{r_r,r_b}\left(\left[s_{t-1}^b,v(s_t)+r(s_t,a_{t-1}, s_{t-1})\right]\right),
 \end{equation}
-where $s_{t-1}^b$ is the project's balance state in time $t-1$, $r_r$ the risk-free interest rate and $r_b$ the borrowing rate. 
+where $s_{t-1}^b$ is the project's balance state in time $t-1$, $r_r$ the risk-free interest rate and $r_b$ the borrowing rate of the FLL. 
 
 
 \begin{remark}
-	It needs to be clarified that if we want to embrace the ROA discounting, we are able to do so. Such simple discounting is a special case of the PCE notion, with $r_r = r_b$.
+	In essence, this notion only ensures that different discounting of future cash flow is applied for cases where the project is in debt (and thus investors value the earlier cash flow more), and when its balance is already positive. In case that $r_r = r_b$ the NPV notion gives the same results as PCE.
 \end{remark}
 
 
 \subsection{Risk aversion of investors}\label{sec:risk_aversion}
 As discussed above, the nature of real-life projects is stochastic. The uncertain evolution of states results in the uncertain FCFs defined by the function $r$, which has implications for the manager's decision making. 
 
-As discussed in the preliminaries, section \ref{sec:risk_aversion_preliminaries}, the majority of investors is risk-averse, meaning that they tend to value uncertain gains lower than is their expected value. 
+As discussed in section \ref{sec:Terminology}, the majority of investors is risk-averse, meaning that they tend to value uncertain gains lower than is their expected value. 
 
 We believe that this characteristic of investors is important to consider in the valuation of a project. Fortunately, the SDT theory already has a framework for coping with such skewness in reward perception called utility theory. 
 
 The third and final approximation of the optimized entity and the corresponding adjustment of the Bellman equation \ref{eq:Bellman} is to transform the PCE by the utility function $\mu(\cdot)$ of the given investor, which can be expressed as: 
 
 \begin{equation}\label{eq:third_approximation}
-	V(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_t, s_{t-1}) \cdot \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t)|s_{t-1}^b, r_r, r_b\right)\right).
+	v(s_{t-1}) = \max_{a_{t-1} \in \mathbf{A_{s_{t-1}}}}\sum_{s_t \in \mathbf{S_t}} P(s_t|a_{t-1}, s_{t-1}) \cdot \mu\left( PCE_{r_r,r_b}\left(\left[s_{t-1}^b,v(s_t)+r(s_t,a_{t-1}, s_{t-1})\right]\right)\right).
 \end{equation}
 
 \begin{remark}
@@ -1162,7 +1190,7 @@ From the numerous ADP techniques, we have chosen the value iteration with parame
 
 First is that the real-life projects tend to have large state spaces (even uncountable), while on the other hand, the action set is usually limited. We cannot ask a manager to choose between 10 000 actions, for example. This argument supports the choice of value iteration over a policy iteration class of ADP. 
 
-The second reason is that we usually have a good intuition of what precisely in the given states ``make money``. This allows us to build a good approximation function $f$ with reasonable parametrization, capturing the most important parts of the model. 
+The second reason is that we usually have a good intuition of what precisely in the given states ``makes money``. This allows us to build a good approximation function $f$ with reasonable parametrization, capturing the most important parts of the model. 
 
 
 It needs to be clarified that even though we believe that our approach is generally the best, regarding the mathematical complexity, its precision and clarity, there might be better ADP algorithms for individual projects the reader intends to value. 
@@ -1172,7 +1200,7 @@ This subsection summarizes the core idea of this thesis.
 
 Firstly we have presented the interpretation of the project valuation problem as a MDP. We have defined all its important parts in detail and offered examples for clarity.
 
-Secondly, we have adjusted the Bellman function \ref{eq:Bellman} to respect the business-specific concepts with the notion of PCE (respecting the time value of money) and utility function (the interpretation of the investors' risk aversion).
+Secondly, we have adjusted the Bellman function \ref{eq:Bellman} to respect the business-specific concepts with the notion of PCE (respecting the time value of money and incorporating the capital budgeting problem) and utility function (the interpretation of the investors' risk aversion).
 
 Lastly, we have advised the best ADP algorithm that copes with the problems of the computational complexity of the usual DP solving algorithm for non-trivial projects that can naturally be used with the adjusted Bellman equation \ref{eq:third_approximation}.
 
@@ -1182,29 +1210,29 @@ Lastly, we have advised the best ADP algorithm that copes with the problems of t
 \chapter{Valuation of Simple I/O Businesses}\label{chapter:Experiment}
 In the previous chapter, we have presented an algorithmic approach to a project valuation based on the SDT framework and its ideas. Now we want to illustrate the actual usage of this algorithmic approach on a chosen class of projects. 
 
-We have chosen the class of projects that can be labeled as an investment in simple I/O business (businesses that can, for the valuation purposes, be described by a simple input-output process) . This class is characterized by a large outflow of money at the beginning, which is used for building the business (or its first functional part) and a small but long-term positive future net cash flow driven by the difference in the price of inputs and outputs and the further managerial decisions. 
+We have chosen the class of projects that can be labeled as an investment in simple I/O business (businesses that can, for the valuation purposes, be described by a simple input-output process). This class is characterized by a large outflow of money at the beginning, which is used for building the business (or its first functional part) and a small but long-term positive future net cash flow driven by the difference in the price of inputs and outputs and the further managerial decisions. 
 
 This class choice is supported by its appropriate level of complexity, which allows demonstrating the power of the new algorithm while at the same time not being too complicated. It is also a type of project that is substantially represented in the world of capital investment. 
 
 We could write this whole chapter using a general description of the chosen project class; however, we believe that using only one specific representative will result in a clearer picture of the situation. 
 
-Our choice of the representative - an investment into a gas power plant - is based on three grounds. First, there is certainly an influence of Guthrie's example of a similar valuation problem \cite{Gut:09}. Second, as we will see, this valuation problem has reasonable dimensions that allow for a good presentation of the valuation algorithm. Lastly, the author of this thesis has proven domain knowledge based on his short but intensive work experience in the field of power trading. 
+Our choice of the representative - an investment into a gas power plant - is based on three grounds. First, there is certainly an influence of Guthrie's example of a similar valuation problem \cite{Gut:09}. Second, as we will see, this valuation problem has reasonable dimensions that allow for a good presentation of the valuation algorithm. Lastly, the author of this thesis has proven domain knowledge based on his short but intensive work experience in the field of electricity trading. 
 
 In the first part of this chapter, we will describe the valuation problem in detail. 
 
 In the second part, we will compare the PCEs of three baseline operational strategies and the optimal one derived from the valuation algorithm. Furthermore, we will study the influence of the increased volatility of prices on the final valuation. From what we have learned about the value of options, the project's value should increase together with the volatility increase. 
 
-It needs to be emphasized that the aim of this experiment is to present the valuation algorithm, observe and describe its possible shortcoming and support its viability, not to prove any other theorems or ideas about project valuation.
+It needs to be emphasized that the aim of this experiment is to present the valuation algorithm, observe and describe its possible shortcomings and support its viability, not to prove any other theorems or ideas about project valuation.
 
 
 \section{General Settings of the Experiment}
-First, let us clarify what we mean by the phrase \textit{investment in the gas power plant}. We are positioning ourselves in the role of an investment analyst of a large utility company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} whose task is to evaluate the value of building and managing a new gas power plant. 
+First, let us clarify what we mean by the phrase \textit{investment in the gas power plant}. We are positioning ourselves in the role of an investment analyst of a large utilities company\footnote{Companies that generate electric power usually provide also gas, water, sewage or other basic services.} whose task is to evaluate the value of building and managing a new gas power plant. 
 
 For simplicity, we are considering building only one or two 200MW blocks, the lifespan of which ends 25 years from now, disregarding the time they were built  \cite{Car:12}. We assume that each block's price is 65M EUR, which is a rough estimate based on \cite{Bre:10}. 
 
 We model the power plant to be managed in a monthly pattern. Its power is being sold by monthly contracts at the beginning of each month when the needed gas and CO2 inputs are also modeled to be purchased. This results in certain free cash flows that are assumed to be obtained immediately after taking one of the allowed actions. As was indicated earlier in this thesis, we do not want to go deep into the plant management and its internal processes. 
 
-Regarding the project's financing, we assume that the majority of the initial payment will be made by an ideally flexible loan\footnote{An ideally flexible loan where we can repay any amount at any time.} with an interest rate of 6\%. We define the risk-free interest rate as 2\%. The reality of having non-zero initial funds is reflected in the existence of the corresponding elementary state. 
+The project's financing is done by a FLL with a borrowing rate $r_b =6\%$ and a risk-free interest rate is $r_r=2\%$. The reality of having non-zero initial funds is reflected in the existence of the corresponding elementary state. 
 
 Now that we have clarified the project that we want to value, we can proceed with its precise definition in the MDP format. 
 
@@ -1226,7 +1254,7 @@ As such, we identify five elementary states as parameters describing:
 	\item the price of CO2 allowances - $s^2$;
 	\item the price of power  - $s^3$;
 	\item number of power plant blocks built - $s^4$;
-	\item cash balance of the project (models the debt) - $s^5$;
+	\item cash balance of the project (modeling the debt) - $s^5$;
 \end{itemize}
 in the start of each time epoch.
 
@@ -1259,7 +1287,7 @@ The defintion of the state set $\mathbf{S}$ represents the problem structure, th
 \subsection{Action function}
 In this experiment, we consider four managerial actions. They could be understood as two-dimensional, where the first dimension represents the act of running the installed capacity of the plant (if one exists), whereas the second manages the action of building new blocks. However, we have decided to use the following one-dimensional encoding:
 \begin{itemize}
-	\item 0 - do not change the current state of the project,
+	\item 0 - do nothing (don't build a new block and do not run the production),
 	\item 1 - run the existing installed capacity,
 	\item 2 - run the existing capacity and build a new 200MW block,
 	\item 3 - build a new 200MW block.
@@ -1277,7 +1305,7 @@ In the following list, we express the possible action set as a result of the act
 
 
 \subsection{Transition probability function} 
-The best way to describe the model of evolution from one state to another is to assume the independence of random variables representing the individual elementary states, which allows computing the probability of state transformation as a product of transition probabilities of the individual states: 
+The best way to describe the model of evolution from one state to another is to assume the independence of random variables representing the individual elementary states. This allows computing the probability of state transformation as a product of transition probabilities of the individual states: 
 \begin{equation}
 	p(s_{t+1}|s_t,a_t)= \prod_{i = 1}^{5} p(s_{t+1}^i|s_t^i,a_t).
 \end{equation}
@@ -1335,9 +1363,8 @@ P(s^4_{t+1}=y|s^4_t = x, a_t) =
 \end{equation}
 
 \paragraph{Balance}
-The last model that needs to be discussed is the one representing the financial balance of the project. This state simulates the actual cash balance driven by the actions of a responsible manager (RM), the assumptions of ideal loans\footnote{With the availability to repay any amount of money at any time.} and the possible risk-free investment with a constant interest rate. 
+The last model that needs to be discussed is the one representing the financial balance of the project, $s^5$, which is driven by the simulation of an RM behavior with $r_b = 6\%$ and $r_r=2\%$. This evolution is mathematically described as: 
 
-Based on two types of monthly interest rates, the one for which the investor can borrow in a bank $r_b=\sqrt[12]{0.06}$ \footnote{We assume the yearly borrowing interest rate of 6\%}, and the one of risk-free interest rate $r_r=\sqrt[12]{0.02}$, we define the evolution of $s^5$ as: 
 \begin{equation}
 P(s^5_{t+1}=y|s_t, a_t,  s_t^5=x) =
 \left\{
@@ -1349,7 +1376,7 @@ P(s^5_{t+1}=y|s_t, a_t,  s_t^5=x) =
 \end{equation}
 which means that this elementary state is deterministic, and its value $s^5_{t+1}$ is computed as a result of responsible managerial actions with the previous balance $x$ adjusted for the FCF obtained in the previous state $s_t$ given the action $a_t$. 
 
-The actual computation of $FCF(s_t,a_t)$ will be revealed in the next section, whereas the $RM(\cdot,r_b,r_r)$ function can be found in preliminaries. The model allows for easy interpretation of non-zero initial balance, however, in our experiment, we define $s^5_0=0$.  
+The actual computation of $FCF(s_t,a_t)$ will be revealed in the next section, whereas the $RM$ function can be found in section \ref{sec:PCE}. The model allows for easy interpretation of non-zero initial balance, however, in our experiment, we define $s^5_0=0$.  
 
 
 
@@ -1376,7 +1403,7 @@ The mathematical expression of the sentences above can be presented as:
 The chosen utility function $v$ for this example was chosen as:
 
 \begin{equation}
-v(x) =
+\mu(x) =
 \left\{
 \begin{array}{ll}
 -(-x) ^{0.9}  & \mbox{if } x<0,\\
@@ -1394,7 +1421,7 @@ This choice represents slight risk aversion of the investors, with an asymmetric
  Based on the initial observations of state-utility pairs coming from the performed simulation (see algorithm \ref{alg:VFapp} step 10 and figure \ref{fig:PW_linear}) and the intuition that the FCF function, equation \ref{eq:fcf_function} gives us, we have decided to model the value function with a model of three picewise linear models with one breaking point $x_{i,t}, y_{i,t}$: 
  
 \begin{equation}\label{eq:VFmodel}
-	v_t(s) = \sum_{i=0}^{2} I_{i}(s^4) PW(s^3-s^2-s^1, k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t}), 
+	v_t(s) = \sum_{i=0}^{2} I_{i}(s^4) pw(s^3-s^2-s^1, k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t}), 
 \end{equation}
 where $I_i$ is an identificator function of installed capacity $s^4$, and $k_{i,t}^1$,  $k_{i,t}^2$ represent the slopes of the piecewise linear function model $PW$. For a better illustration, we present an example of such model fitted to the real data in figure \ref{fig:PW_linear}.
 
@@ -1447,7 +1474,7 @@ In the following table, we describe the distributions out of which the elementar
 	\label{Table:sample_values}
 	\begin{tabular}{|l |m{4cm}|} 
 		\hline
-		Elementary state&	Distribution  \\  
+		\textbf{Elementary state}&	\textbf{Distribution}  \\  
 		\hline
 		Gas price & Uniform (0,30) \\ 
 		\hline
@@ -1467,11 +1494,11 @@ All the random variables are generated by the python library NumPy, and the samp
 \paragraph{Expected utility}
 In step 7 of algorithm \ref{alg:VFapp}, we want to assign individual action $a$ in state $s$ the expected utility. This assignment is made with the help of the equation \ref{eq:third_approximation}, respective its part: 
 \begin{equation}\label{eq:exp_util}
-	\int_{s_t \in \mathbf{S_t}} p(s_t|a_t, s_{t-1}) \mu\left(PCE_{t-1}\left(r(s_t|a_t, s_{t-1})+V(s_t), s_{t-1}^5, r_r, r_b\right)\right) d s_t,
+	\int_{s_t \in \mathbf{S_t}} p(s_t|a_{t-1}, s_{t-1}) \mu\left(PCE_{r_r,r_b}\left(\left[s_{t-1}^b,v(s_t)+r(s_t,a_{t-1}, s_{t-1})\right]\right)\right) d s_t,
 \end{equation}
 which was adjusted for our continuous case, changing the sum for an integration. 
 
-To compute this expression, we use a simple numerical integration technique. Based on the state in which we are in $s_t$ and the transition probability function $p(s)$ defined above, we simulate chosen number of state evolutions, here $n=100$. Then the results of the numerical integration is the average of the individual utilities of PCEs of the realizations $s_{t+1}$.
+To compute this expression, we use a simple numerical integration technique. Based on the state in which we are in $s_t$ and the transition probability function $p(s-{t-1})$ defined above, we simulate chosen number of state evolutions, here $n=100$. Then the result of the numerical integration is the average of the individual utilities of PCEs of the realizations $s_t$.
 
 
 \paragraph{Model fitting}
@@ -1513,7 +1540,7 @@ The general step 3 in the algorithm differs based on the type of strategy. The a
 The action taken in the case of the optimal strategy is determined as the action with the highest expected utility, computed as a numerical approximation of the equation \ref{eq:exp_util} with 100 numerical integration samples as before. 
 
 \subsection{Results - initial setup} 
-Now, we are able to use algorithm \ref{alg:Simulation} to compare the optimal strategy to the baseline strategies. We do this by running the simulations multiple (3000) times and comparing the average gains (in terms of PCE) of each strategy, a Monte Carlo approach. The results of the simulations can be seen in figure \ref{fig:Results_init}. 
+Now, we are able to use algorithm \ref{alg:Simulation} to compare the optimal strategy to the baseline strategies. We do this by running the simulations 3000 times and comparing the average gains (in terms of PCE) of each strategy, a Monte Carlo approach. The results of the simulations can be seen in figure \ref{fig:Results_init}. 
 
 
 \begin{figure}[htb]
@@ -1604,7 +1631,7 @@ First is the notion that the value of project control in highly uncertain projec
 
 By observing the shapes of histograms of different strategies, we can also observe the narrative of ROA that "options have value". The baseline strategy B1 factually represents no options in the ROA sense. We simply build the plant and run it until the end of the observation period. 
 
-The baseline strategy B2 represents the option not to run the plant when the market prices are not favorable. We can see that this option has a significant value, bringing the value of a given project from negative values to positive. 
+The baseline strategy B2 represents the option not to run the plant when the market prices are not favorable. We can see that this option has a significant value, bringing the value of a given project from negative to positive. 
 
 The baseline strategy B3 represents the combination of the time option (waiting for favorable commodity prices) and the option from strategy B2. We see that for our initial state, this option also brings significant value to the project. 
 
@@ -1612,14 +1639,14 @@ The final remark to the experimental results is that our intuition says that the
 
 
 \chapter{Conclusion}
-The core message of this thesis is to interpret the problem of project valuation in the form of statistical decision making. We can declare that the aforementioned contributions of the developed algorithm have been successfully presented by our experiment, most notably in contrast to the current valuation techniques as:
+The core message of this thesis is to interpret the problem of project valuation in the form of statistical decision making. We can declare that the aforementioned contributions of the developed algorithm have been presented by our experiment, most notably in contrast to the current valuation techniques as:
 
 \begin{itemize}
 	\item the seamless integration of multiple uncertainty sources;
 	\item the integration of continuous probability distribution models of variables; 
 	\item the easy representation of actions; 
 	\item improved speed of computation by the usage of ADP algorithm to compute the value function approximations;
-	\item preservation of the domain-specific concepts. 
+	\item preservation of the domain-specific concepts like the time-value of money and the risk-aversion of investors. 
 \end{itemize}
 
 Furthermore, through the thesis, we have discussed other relevant ideas about capital investment, where we believe we can add some value. We talk about the term of utility in a field, which is influenced by it but is not using this notion. We also present the notion of present cash equivalent (PCE), where we argue that for each FCF vector, there is an amount of present cash that the decision-maker is logically indifferent to having instead of the proposed FCF vector. 
@@ -1638,10 +1665,10 @@ Finally, through the time of writing this thesis, we have identified the followi
 
 \begin{itemize}
 	\item valuation of a more complex project in cooperation with an actual investment company;
-	\item sensitivity analysis of price volatilities in our example;
 	\item sensitivity analysis of the time granularity of decisions in our example;
+	\item a proper sensitivity analysis of price volatilities in our example;
 	\item so-called option games, which combine elements of SDT and game-theory (studying, for example, the optimality of companies' competition vs. collaboration);
-	\item model of investment with more complex internal processes than the simple I/O process;
+	\item model of investments with more complex internal processes than the simple I/O process;
 	\item a deeper study of the macro vs. micro-optimization of the utility and its effects on consistency of decision making at individual levels of the investment. 
 \end{itemize}
 
