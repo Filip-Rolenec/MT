@@ -68,7 +68,7 @@
 % - Use the \inst command only if there are several affiliations.
 % - Keep it simple, no one is interested in your street address.
 
-\date{SPMS Conference, 20.09.2020}
+\date{MT Presentation, 06.06.2021}
 % - Either use conference name or its abbreviation.
 % - Not really informative to the audience, more for people (including
 %   yourself) who are reading the slides online
@@ -110,22 +110,19 @@
 
 \section{Introduction}
 
-\subsection{General}
 
-\begin{frame}{Introduction}{General}
+\begin{frame}{Introduction}{ROA}
 
 	\begin{columns}
 		\column{0.5\textwidth}
  		\begin{itemize}
- 			\item {Financial options}
+ 			\item {Project valuation problem}
+ 			\item {Project - alternation or creation of a process}
 			\item {Real option analysis (ROA)}
 			\begin{itemize}
-				\item{Inspired by option valuation theory (BSM)} 
-			\end{itemize}
-			\item {Stochastic decision theory (SDT)}
-			\begin{itemize}
-				\item {3 sets - $\mathbf{T}$, $\mathbf{S}$, $\mathbf{A}$, 2 functions - $p$ and $r$}
-				\item {Optimal strategy, maximizing the cumulative}
+				\item {Economic framework}
+				\item{Inspired by financial option valuation theory (BSM)} 
+				\item{Financial options}
 			\end{itemize}
 		\end{itemize}	
 		\column{0.5\textwidth}
@@ -137,20 +134,18 @@
 
 \end{frame}
 
-\subsection{Detailed}
-
-\begin{frame}{Introduction}{Detailed}
+\begin{frame}{Introduction}{SDT}
 
 \begin{columns}
 	\column{0.5\textwidth}
 	\begin{itemize}
-		\item {Three classes of ROA authors (BSM model analogy)}
+		\item {Stochastic decision theory (SDT)}
 		\begin{itemize}
-			\item{Full analogy - limited to very simple cases}
-			\item{Partial analogy - CAPM}
-			\item {No analogy }
+			\item {3 sets - $\mathbf{T}$, $\mathbf{S}$, $\mathbf{A}$, 2 functions - $p$ and $r$}
+			\item {Optimal strategy, maximizing the cumulative reward}
 		\end{itemize}
-		\item {SDT framework $>$ frameworks used in economy}
+		
+		\item {SDT framework for DM $>$ frameworks used in economy}
 		\item {Formulation of ROA problem in SDT framework}
 	\end{itemize}	
 	\column{0.5\textwidth}
@@ -167,13 +162,13 @@
 
 \section{ROA interpreted in SDT}
 
-\subsection{ROA inspiration - Guthrie}
+\subsection{ROA idea}
 
-\begin{frame}{ROA inspiration}{Graeme Guthrie}
+\begin{frame}{ROA idea}{Inspiration -Graeme Guthrie}
   \begin{itemize}
   	\begin{columns}
   		\column{0.50\textwidth}
-  		
+   \item { Partial BSM analogy}
   \item { Replicating portfolio (no arbitrage principle) }
   \item { Risk neutral probabilities }
   \item { Backward induction }
@@ -226,7 +221,7 @@
 	\end{itemize}
 \end{frame}
 
-\begin{frame}{SDT Improvements}{Preserving economical truths}
+\begin{frame}{SDT Improvements}{Preserving domain-specific concepts}
 	\begin{itemize}
 		\item {Time value of money - discounting factors}
 		\item {Risk aversion of investors - utility theory }
@@ -238,13 +233,13 @@
 \begin{frame}{SDT Improvements}{Approximate dynamic programming}
 		\begin{itemize}
 			\item{Value iteration, value function approximation}
-			\item{Value function modeled as linear model (for gas power plant example)}
+			\item{Value function modeled as three piecewise linear functions (for gas power plant example)}
 			\begin{equation}
-				v_t(s) = \sum_{i=1}^{6} \theta_{i,t} \cdot \phi_{i,t}(s)
+				v_t(s) = \sum_{i=0}^{2} I_{i}(s^4) pw(x, k_{i,t}^1, k_{i,t}^2, x_{i,t}, y_{i,t})
 			\end{equation}
 			\item{Solves the problem of uncountable state space: i.e. for Gas power plant example:}
 			\begin{equation}
-				|\mathbb{R}| \times |\mathbb{R}| \times |\mathbb{R}| \times 5\times 3 \times 3 \times |\mathbb{R}|
+				|\mathbb{R}| \times |\mathbb{R}| \times |\mathbb{R}| \times 3  \times |\mathbb{R}|
 			\end{equation}
 		\end{itemize}
 \end{frame}
@@ -257,37 +252,50 @@
 	
 	\begin{frame}{Valuation of gas power plant}{General Idea}
 	\begin{itemize}
-		\item {Power generating company}
-		\item {In the next 5 years, possibility to build 200MW or 400MW gas unit for 65/130M EUR}
-		\item {Prices of gas, CO2 allowances and power are 24EUR, 9EUR, 40EUR per MWh}
-		\item {Government policy favoring renewables can rise $\rightarrow$ higher volatility of prices}
-		\item {Lifespan of gas power plant is set to 25 years, loan possible with 7\% interest rate}
-		\item {Power plant is selling its power as monthly contracts}		
+		\item {Utility company has possibility to build 1 or 2 200MW gas powerplant blocks for 65M each in the following 25 years.}
+		\item {Power plant sell its power and buying the needed gas and CO2 allowances as monthly contracts.}		
+		\item {Ability to use FLL at 6\% $r_b$ and invest with risk-free interest rate 2\%}
+		\item {Initial prices of gas, CO2 allowances and power are 24EUR, 9EUR, 40EUR per MWh}
+		
 	\end{itemize}
 	\end{frame}
 
 	\begin{frame}{Valuation of gas power plant}{Details}
-	Considered real options:
+	Optimized actions:
 	\begin{itemize}
-		\item {Wait with construction for better prices - Timing option }
-		\item {Build 200MW/400MW gas power plant - Scaling option}
-		\item {Sell the power plant - Abandonment option}
-		\item {Ability to not run the power plant - Switching option}
-		\item {Mothball the plant. No production, lower fixed costs} 
+		\item {Build a new block or don't}
+		\item {Run the existing installed capacity or don't}
 	\end{itemize}
 	
 	Sources of uncertainty: 
 	\begin{itemize}
-		\item {Price of gas, power and CO2 - lognormal processes}
-		\item {Government policy for renewables (1-5) - discrete with positive mean}
+		\item {Price of gas, power and CO2 - lognormal processes, 2 sets of volatilites}
 	\end{itemize}	
 	\end{frame}
 	
 
 	\begin{frame}{Results}
-	  \begin{figure}
-		\includegraphics[scale=0.5]{figures/Runnability.png}
-		\caption{Cash equivalent realizations comparison}
+		Optimal management + its value
+		Comparison to three baseline strategies
+		\begin{itemize}
+			\item{Build both blocks and run all the time}
+			\item{Build both blocks and run only if spark price "in the money"}
+			\item{Build both blocks, when the spark price is 40 EUR lower than the price of power}
+		\end{itemize}
+	\end{frame}
+
+
+	\begin{frame}{Results}{Initial setup}
+	\begin{figure}
+		\includegraphics[scale=0.5]{figures/MT_results_1.pdf}
+		\caption{PCE comparison between 3 baseline strategies and the optimal one - initial setup.}
+	\end{figure}
+	\end{frame}
+
+	\begin{frame}{Results}{Increased volatility}
+	\begin{figure}
+		\includegraphics[scale=0.5]{figures/MT_results_2.pdf}
+		\caption{PCE comparison between 3 baseline strategies and the optimal one - increased price volatility.}
 	\end{figure}
 	\end{frame}
 
@@ -298,17 +306,17 @@
 	The contributions of my thesis are
   	\begin{itemize}
   	\item {Summary of ROA state of the art}
-  	\item {Formulation of ROA problem in SDT framework}
+  	\item {Formulation of ROA project valuation problem in SDT framework}
   	\item {Identification of a fitting ADP algorithm}
-	\item {Demonstration of the applicability on a fairly complex example}
+	\item {Demonstration of the applicability on a gas powerplant project}
   	\end{itemize}
   
   Possible directions of future research:
     \begin{itemize}
-    \item{Real data application}
-    \item{Use case in IT development}
-    \item{More complicated model of free cash flow}
-    \item{Continuous time}
+    \item{real data application;}
+    \item{sensitivity analysis of time granularity;}
+    \item{so-called option games (SDT+Game theory) competition vs collaboration;}
+    \item{deeper study of utility in the micro and macro optimization;}
     \end{itemize}
 \end{frame}
 
