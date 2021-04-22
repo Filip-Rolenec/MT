@@ -27,12 +27,11 @@
 \contentsline {paragraph}{Project}{27}% 
 \contentsline {paragraph}{Project's free cash flow}{27}% 
 \contentsline {paragraph}{Economic value}{27}% 
-\contentsline {paragraph}{Optimal project}{28}% 
 \contentsline {paragraph}{Risk averse investors}{28}% 
 \contentsline {section}{\numberline {3.2}Net Present Value}{28}% 
 \contentsline {subsection}{\numberline {3.2.1}Present cash equivalent}{28}% 
 \contentsline {section}{\numberline {3.3}Financial Option Valuation}{30}% 
-\contentsline {section}{\numberline {3.4}Real Option Valuation}{32}% 
+\contentsline {section}{\numberline {3.4}Real Option Valuation}{31}% 
 \contentsline {paragraph}{No analogy}{32}% 
 \contentsline {paragraph}{Partial analogy}{32}% 
 \contentsline {paragraph}{Full analogy}{32}% 

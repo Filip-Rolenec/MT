@@ -171,7 +171,7 @@
 
 
 \selectlanguage{czech}%
-\textbf{\huge{}Oceňování Projektů Metodou Reálných Opcí z Pohledu Dynamického Progamování}{\huge \par}
+\textbf{\huge{}Oceňování projektů metodou reálných opcí z pohledu dynamického programování}{\huge \par}
 
 \selectlanguage{american}%
 \vspace{2cm}
@@ -185,7 +185,7 @@
 
 \begin{lyxlist}{MMMMMMMMM}
 \begin{singlespace}
-\item [{Author:}] \textbf{Filip Rolenec}
+\item [{Author:}] \textbf{Bc. Filip Rolenec}
 \item [{Supervisor:}] \textbf{Ing. Rudolf Kulhavý, DrSc.}
 \end{singlespace}
 
@@ -255,7 +255,7 @@ my own work and I have listed all the used sources in the bibliography.
 \begin{onehalfspace}
 \noindent \emph{Název práce:}
 
-\noindent \textbf{Oceňování Projektů Metodou Reálných Opcí z Pohledu Dynamického Progamování}
+\noindent \textbf{Oceňování projektů metodou reálných opcí z pohledu dynamického programování}
 \end{onehalfspace}
 
 \bigskip{}
@@ -287,7 +287,7 @@ my own work and I have listed all the used sources in the bibliography.
 
 Domníváme se, že v současné ROA neexistuje obecný algoritmus pro valuaci komplexních projektů, kterými myslíme projekty s více náhodnými veličinami a větším množstvím projektových alternací různého typu. 
 
-Tato diplomová práce se inspiruje problémem oceňování ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V práci představujeme obecný valuační algoritmus, který staví na poznatcích ze SDT, pokrývá problémy řešené současnou ROA a navíc respektuje vliv ekonomických konceptů jako je časová hodnota peněz a averze vůči riziku investorů. 
+Tato diplomová práce se inspiruje problémem oceňování ve smyslu ROA a snaží se ho interpretovat jako problém dynamického rozhodování za neurčitosti z oblasti statistické teorie rozhodování (SDT). V práci představujeme obecný valuační algoritmus, který staví na poznatcích ze SDT, pokrývá problémy řešené současnou ROA a zároveň respektuje vliv ekonomických konceptů jako je časová hodnota peněz a averze vůči riziku investorů. 
 
 Použití jmenovaného algoritmu je představeno na problému ocenění plynové elektrárny, kde problém nespočetného stavového prostoru řešíme pomocí techniky přibližného dynamického programování nazývané aproximace hodnotové funkce. Hodnotové funkce modelujeme jako součet po částech lineárních funkcí, tak aby odrážely opční strukturu projektových odměn. 
  
@@ -323,7 +323,7 @@ Použití jmenovaného algoritmu je představeno na problému ocenění plynové
 This thesis takes the problem of ROA and tries to interpret it as a problem of decision making under uncertainty from the statistical decision theory (SDT).
 We present a general valuation algorithm that builds on the knowledge of SDT, covers the solutions proposed by ROA, and preserves the business-specific concepts as time value of money and risk-aversion of investors.  
 
-This algorithm's usage is demonstrated on a problem of gas power plant§s valuation, where the problem of uncountable state space is solved via the approximate dynamic programming technique of value function approximation, where we use piecewise linear models to cover the option-like structure. 
+This algorithm's usage is demonstrated on a problem of gas power plant's valuation, where the problem of uncountable state space is solved via the approximate dynamic programming technique of value function approximation, where we use piecewise linear models to cover the option-like structure. 
 	
 	
 \bigskip{}
@@ -358,7 +358,7 @@ The publicity and wide adoption of the BSM most likely inspired an expert on cap
 
 The idea of real option analysis (ROA) as a valuation tool for projects was further developed by several influential authors in the following decades, for example Guthrie \cite{Gut:09}, Pindyck \cite{DixPin:12} or Kulatilaka \cite{AmrKul:98}. 
 
-The valuation of project's free cash flows with ROA is in corporate finance understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: ``Why should our company use a new tool that no one else is using?`` \cite{CopAnt:01}. 
+The valuation of project's free cash flows with ROA is in corporate finance understood as very advanced, and its adoption in practice is slow \cite{Amp:17}. It is argued that this slow adoption is caused mainly by misunderstanding the more difficult mathematical concept of ROA \cite{SicGam:10} and the low adoption rate of a competition: ``Why should our company use a new tool that no one else is using\text{?}`` \cite{CopAnt:01}. 
 
 \section{Research Motivation}
 Through the author's studies at FNSPE CTU, he has specialized in the theory of dynamic decision-making under uncertainty. In his final years at the university he also became curious about the world of corporate finance, since he was working for a venture capital investor Presto Ventures. This combination of his professional interests is pleasantly reflected in the assignment of this thesis - the interpretation of ROA in terms of SDT. 
@@ -386,17 +386,17 @@ To illustrate the usage of the new SDT-based algorithm a valuation of a project 
 
 The thesis is structured into 7 chapters, introduction being the first.
 
-Chapter 2 defines the mathematical notation and presents the mathematical concepts used through the thesis. Useful probability concepts are reminded at the beginning, while the rest of the chapter is reserved for the SDT. 
+Chapter 2 defines the mathematical notation and presents the mathematical concepts used through the thesis. Useful probability concepts are reminded at the beginning while the rest of the chapter is reserved for the SDT. 
 
-Chapter 3 introduces the second pillar of this thesis, which is the economic concept of a project valuation. The chapter begins with a description of a classic valuation technique called the net present value NPV, which is, for the purpose of this thesis, upgraded to a new concept of present cash equivalent (PCE). The remainder of the chapter is left for the discussion about financial and real options. 
+Chapter 3 introduces the second pillar of this thesis that is the economic concept of a project valuation. The chapter begins with a description of a classic valuation technique called the net present value NPV, which is, for the purpose of this thesis, upgraded to a new concept of present cash equivalent (PCE). The remainder of the chapter is left for the discussion about financial and real options. 
 
 Chapter 4 represents the core of this thesis. First, we define what will be understood as a problem of ROA project valuation. We state the key features that define a project, and we limit these features accordingly. Then we focus on the interpretation of the problem by a general SDT framework. We illustrate the identification of ROA project features in SDT. The remainder of the fourth chapter is reserved for resolving the economic nuances that need to be accounted for in the SDT framework in order to make the valuation procedure consistent with the economic reality of investors' behavior. 
 
 Chapter 5 illustrates the new valuation algorithm from chapter 4 on a valuation example of a simple flow business. A valuation of a gas power plant is chosen as the representative of this class. The first half of the chapter focuses on the value sensitivity with regard to the volume of available managerial actions in the project. The second half presents a value comparison  of project alternations in different price variances, and it is aimed to demonstrate the increase in value of a more uncertain environment. 
 
-Chapter 6 discusses the new findings, both theoretical and observed from the performed experiments. 
+Chapter 6 discusses the new findings, both theoretical and observed, from the performed experiments. 
 
-Chapter 7 summarizes the thesis - reminds the motivation, underlines the main message, and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is, to our best knowledge, the first available publication on this topic. 
+Chapter 7 summarizes the thesis - reminds the motivation, underlines the main message, and lists all contributions of this thesis. Furthermore, it outlines many possible future research paths in this field as it is one of the first available publications on this topic. 
 
 
 %\addcontentsline{toc}{chapter}{Introduction}
@@ -416,21 +416,21 @@ To properly understand a mathematical text, it is essential to first define the 
 	\item approximate dynamic programming - Powel \cite{Pow:11}.
 \end{itemize}
 
- The pure mathematical symbolism comes from the author's studying experience at FNSPE CTU demonstrated also in his previous publications \cite{Rol:18} and \cite{Rol:19}. 
+ The mathematical symbolism comes from the author's studying experience at FNSPE CTU demonstrated also in his previous publications \cite{Rol:18} and \cite{Rol:19}. 
 
 
 \section{Probability Theory}
-In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. 
+In the whole thesis, bold capital letters, such as $\mathbf{X}$, represent a set of all elements $x \in \mathbf{X}$ as in \cite{Rol:18}. The cardinality of a finitee set $\mathbf{X}$ is denoted with two vertical lines as $|\mathbf{X}|$. 
 
 Random variables, understood in the sense of the standard Kolmogorov's probability theory \cite{Kol:60}, are denoted with a tilde above the variable, e.g., $\tilde{x}$. Values of random variables are denoted by the same letters as the random variable without the tilde, e.g., $x$. 
 
 \begin{definition}(Probability)
-	Let $\tilde{x}$ be a discrete random variable. Then $P(x)$ denotes a value of the probability mass function (p.m.f.)  for the realization $\tilde{x}=x$. Similarly, if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes a probability density function (p.d.f.) at $x$. 
+	Let $\tilde{x}$ be a discrete random variable. Then $P(x)$ denotes a value of the probability mass function (p.m.f.)  for the realization $\tilde{x}=x$. Similarly, if $\tilde{x}$ is a continuous random variable, then $p(x)$ denotes the value of a probability density function (p.d.f.) at $x$. 
 \end{definition}
 
-Next, we define the well-known concept of conditional probability \cite{Jay:03}. 
+Next, we define the concept of conditional probability \cite{Jay:03}. 
 \begin{definition}(Conditional probability) 
-	Let symbol $P(x|y)$ represent the conditional probability of a discrete random variable. Then the $P(x|y)$ is defined as:
+	Let symbol $P(x|y)$ represent the conditional probability of a discrete random variable $\tilde{x}$ given $y$. Then, if $P(y) \neq 0$, we define $P(x|y)$ as:
 	\begin{equation}
 	P(x|y)=\frac{P(x,y)}{P(y)},
 	\end{equation} where $P(x,y)$ is a joint p.m.f. of $\tilde{x}$ and $\tilde{y}$. 
@@ -439,7 +439,7 @@ Next, we define the well-known concept of conditional probability \cite{Jay:03}.
 A similar concept is also used for the continuous random variables with the name of conditional probability density \cite{Jay:03}. 
 
 \begin{definition}(Conditional probability density)
-	Let symbol $p(x|y)$ represent the conditional probability density of a continuous random variable. Then the $p(x|y)$ is defined as:
+	Let symbol $p(x|y)$ represent the conditional probability density of a continuous random variable $\tilde{x}$ given $y$. Then, if $p(y) \neq 0$ we define $p(x|y)$ as:
 	\begin{equation}\label{eq:condP}
 	p(x|y)=\frac{p(x,y)}{p(y)},
 	\end{equation} where $p(x,y)$ is a joint p.d.f. of $\tilde{x}$ and $\tilde{y}$. 
@@ -722,8 +722,6 @@ Let us now introduce the project valuation terminology used in this thesis.
 	The indifference is in this thesis understood in the presented concept of PCE, which incorporates the problem of project's financing in addition to the time value of money already covered by the NPV. 
 \end{remark}
 
-\paragraph{Optimal project}
-	The goal of each project is to increase the economic value of a process. A project, if such exists, is called an optimal project if the additional economic value is maximal given the set of possible projects. 
 \paragraph{Risk averse investors}
 		A risk-averse investor is an investor, who prefers a low-volatile investment despite its lower expected return. 
 
@@ -736,7 +734,7 @@ Let us now introduce the project valuation terminology used in this thesis.
 The \textit{net present value} (NPV) is an industry-standard valuation metric used in capital investments. Its computation is simple and it respects the time value of money by an exponential discounting of the FCF by a constant rate $r$ (usually a risk-free interest rate). The exponentially discounted elements  $c_t, t \in \{1,...,|c|\}$ of a FCF vector $c$ form a \textit{discounted cash flow} (DCF) vector, and their sum is the NPV of $c$: 
 
 \begin{equation}
-NPV(c) = \sum_{t \in \mathbf{T}} \frac{c_t}{r^t}.
+NPV(c) = \sum_{t \in \mathbf{T}} \frac{c_t}{(1+r)^t}.
 \end{equation}
 
 There are deep economical reasons for the usage of this valuation metric in capital investment as presented in chapter 3 of \cite{CopAnt:01}. However, for the purpose of our thesis, it is worth to present a generalized version of NPV, which also incorporates the process of borrowing and repayment of cash, so called capital budgeting, which is a broad topic on its own. 
@@ -1188,7 +1186,7 @@ First is that the real-life projects tend to have large state spaces (even uncou
 The second reason is that we usually have a good intuition of what precisely in the given states of the project ``makes money``. This allows us to build a good approximation function $f$ with reasonable parametrization, capturing the most important parts of the model. 
 
 
-It needs to be clarified that even though we believe that our approach is generally the best, regarding the mathematical complexity, its precision and clarity, there might be better ADP algorithms for individual projects the reader intends to value. 
+It needs to be clarified that even though we believe that our approach is generally good, regarding the mathematical complexity, its precision and clarity, there might be better ADP algorithms for individual projects the reader intends to value. 
 
 \subsection{Summary}
 This subsection summarizes the core idea of this thesis. 
@@ -1251,7 +1249,7 @@ As such, we identify five elementary states as parameters describing:
 	\item number of power plant blocks built - $s^4$;
 	\item cash balance of the project (modeling the debt) - $s^5$;
 \end{itemize}
-in the start of each time epoch.
+at the start of each time epoch.
 
 The states of the state set are defined as having a constant length since there is no significant change in relevant parameters through project's lifespan. 
 
@@ -1665,7 +1663,7 @@ Finally, through the time of writing this thesis, we have identified the followi
 	\item valuation of a more complex project in cooperation with an actual investment company;
 	\item sensitivity analysis of the time granularity of decisions in our example;
 	\item a proper sensitivity analysis of price volatilities in our example;
-	\item so-called option games, which combine elements of SDT and game-theory (studying, for example, the optimality of companies' competition vs. collaboration);
+	\item so-called option games, which combine elements of SDT and game-theory (studying, for example, the optimality of companies' competition vs. collaboration) \cite{CheBen:11};
 	\item model of investments with more complex internal processes than the simple flow process;
 	\item a deeper study of the macro vs. micro-optimization of the utility and its effects on consistency of decision making at individual levels of the investment. 
 \end{itemize}
